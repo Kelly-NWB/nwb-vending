@@ -1,0 +1,13 @@
+# Not part of the live site
+archive/
+export/
+Kaveman Ops Home/
+
+# Local backups and experiments
+index backup*.html
+index final*.html
+
+# Duplicate assets at project root
+/kaveman.png
+/kavemannobg.png
+/new kaveman.jpg

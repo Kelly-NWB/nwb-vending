@@ -1,0 +1,35 @@
+NWB-Vending.com — quick publish (GitHub Pages)
+
+WHAT GOES LIVE
+  index.html          (home page)
+  assets/             (images + landing.css)
+  2nd-pages/          (all lane pages)
+  .nojekyll           (tells GitHub not to strip anything)
+
+WHAT STAYS LOCAL (already in .gitignore)
+  archive/
+  export/
+  backups, old index files, Kaveman Ops Home/
+
+GITHUB STEPS (first time)
+  1. Create a new repo on GitHub (public is fine for free Pages)
+  2. In this folder, open terminal:
+       git init
+       git add index.html assets 2nd-pages .nojekyll .gitignore
+       git commit -m "NWB Vending home page"
+       git branch -M main
+       git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
+       git push -u origin main
+  3. On GitHub: repo Settings → Pages → Source: Deploy from branch → main → / (root) → Save
+  4. Wait 1–2 minutes. Site URL: https://YOUR_USERNAME.github.io/YOUR_REPO/
+
+CUSTOM DOMAIN (NWB-Vending.com)
+  1. In repo Settings → Pages → Custom domain → enter NWB-Vending.com
+  2. At your domain registrar, add DNS records GitHub shows you (usually A records + CNAME for www)
+  3. GitHub will add a CNAME file to the repo when you save the domain
+
+BUTTONS ON HOME
+  All card and hero links go to 2nd-pages/*/index.html — stubs are live-safe until you flesh them out.
+
+CONTACT
+  Footer + Let's Talk: NWBvending@gmail.com

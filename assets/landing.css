@@ -93,6 +93,21 @@ a { color: inherit; }
   text-underline-offset: 0.15em;
 }
 
+.contact-email {
+  margin: 0.75rem 0 1rem;
+  font-size: clamp(1rem, 3.5vw, 1.15rem);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #e8c97a;
+  text-align: center;
+}
+
+.landing-actions button.btn-primary {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
 .landing-note {
   margin: 0 0 1.25rem;
   padding: 0.85rem 1rem;

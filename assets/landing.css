@@ -285,3 +285,40 @@ footer a:hover {
   font-weight: 700;
   color: #e8c97a;
 }
+
+.container-bio {
+  max-width: 780px;
+}
+
+.bio-portrait {
+  display: block;
+  width: min(140px, 36vw);
+  margin: 0 auto 1.25rem;
+  filter: drop-shadow(0 10px 28px rgba(201, 166, 107, 0.35));
+}
+
+.bio-lead {
+  margin: 0 0 1.25rem;
+  text-align: center;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.35rem, 4vw, 1.65rem);
+  font-weight: 700;
+  color: #f5f0e8;
+  line-height: 1.3;
+}
+
+.bio-turn {
+  margin-top: 1.35rem;
+  padding-top: 1.15rem;
+  border-top: 1px solid rgba(201, 166, 107, 0.22);
+}
+
+.bio-close {
+  margin: 1.5rem 0 0;
+  text-align: center;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #e8c97a;
+  line-height: 1.55;
+}

@@ -294,8 +294,8 @@ footer a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(1rem, 4vw, 1.75rem);
-  margin-bottom: 0.65rem;
+  gap: clamp(2.25rem, 10vw, 4.5rem);
+  margin-bottom: 1.5rem;
 }
 
 .bio-duo img {
@@ -315,7 +315,7 @@ footer a:hover {
 }
 
 .bio-x-link {
-  margin: 0 0 1.15rem;
+  margin: 0 0 2rem;
   text-align: center;
   font-size: 0.72rem;
   font-weight: 600;
@@ -333,7 +333,7 @@ footer a:hover {
 }
 
 .bio-lead {
-  margin: 0 0 1.25rem;
+  margin: 0 0 1.5rem;
   text-align: center;
   font-family: "Cormorant Garamond", serif;
   font-size: clamp(1.35rem, 4vw, 1.65rem);
@@ -349,11 +349,16 @@ footer a:hover {
 }
 
 .bio-close {
-  margin: 1.5rem 0 0;
+  margin: 1.75rem 0 0;
   text-align: center;
   font-family: "Cormorant Garamond", serif;
   font-size: 1.1rem;
   font-weight: 700;
   color: #e8c97a;
   line-height: 1.55;
+}
+
+.container-bio .landing-actions {
+  margin-top: 2.5rem;
+  gap: 1rem;
 }

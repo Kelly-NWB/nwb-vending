@@ -376,3 +376,35 @@ footer a:hover {
   text-align: center;
   box-sizing: border-box;
 }
+
+.bio-audio {
+  margin: 1.35rem 0 0.25rem;
+  text-align: center;
+}
+
+.btn-bio-audio {
+  padding: 0.7rem 1.35rem;
+  font-family: inherit;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #e8c97a;
+  background: transparent;
+  border: 1px solid rgba(201, 166, 107, 0.45);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-bio-audio:hover {
+  border-color: rgba(201, 166, 107, 0.7);
+  color: #f5f0e8;
+}
+
+.bio-audio-note {
+  margin: 0.7rem 0 0;
+  font-size: 0.78rem;
+  font-style: italic;
+  color: #6b6560;
+  line-height: 1.5;
+}

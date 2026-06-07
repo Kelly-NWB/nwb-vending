@@ -359,6 +359,14 @@ footer a:hover {
 }
 
 .container-bio .landing-actions {
-  margin-top: 2.5rem;
-  gap: 1rem;
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  width: 100%;
+  max-width: 28rem;
+  margin-left: auto;
+  margin-right: auto;
+  column-gap: clamp(1.5rem, 10vw, 4rem);
+  row-gap: 1.25rem;
 }

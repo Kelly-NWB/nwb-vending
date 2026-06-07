@@ -93,13 +93,33 @@ a { color: inherit; }
   text-underline-offset: 0.15em;
 }
 
-.contact-email {
-  margin: 0.75rem 0 1rem;
-  font-size: clamp(1rem, 3.5vw, 1.15rem);
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  color: #e8c97a;
+.contact-channels {
   text-align: center;
+}
+
+.contact-channels p {
+  margin: 0 0 0.55rem;
+  font-size: 0.95rem;
+  color: #b8b2ac;
+}
+
+.contact-channels p:last-child {
+  margin-bottom: 0;
+}
+
+.contact-email {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #e8c97a;
+}
+
+.contact-focus {
+  margin: 1.25rem 0 0;
+  text-align: center;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #8a8580;
+  line-height: 1.55;
 }
 
 .landing-actions button.btn-primary {

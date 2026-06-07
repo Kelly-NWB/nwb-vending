@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Contact NWB Vending. Message Kelly to start a project.">
+  <meta name="description" content="Contact NWB Vending. Web, email, and X.">
   <title>Let's Talk | NWB Vending</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,27 +16,27 @@
     <img class="landing-logo" src="../../assets/nwb-logo.png" alt="NWB Vending" width="120" height="120">
     <p class="landing-badge">Contact</p>
     <h1>Let's Talk</h1>
-    <p class="landing-tag">Tell me what you need. We'll figure out the smallest fix that works.</p>
   </header>
 
   <main class="container">
     <div class="panel">
-      <div class="landing-body">
-        <p>Use whatever email you already use and send a note when you're ready.</p>
-        <p class="contact-email">NWBvending@gmail.com</p>
-        <p>Tell me what's bugging you or what you're trying to pull off. Kuna Legends, locals, and veterans — that's my lane, and always has been.</p>
+      <div class="landing-body contact-channels">
+        <p>Web: <a href="https://NWB-Vending.com">NWB-Vending.com</a></p>
+        <p>Email: <span class="contact-email">NWBVending@gmail.com</span></p>
+        <p>X: <a href="https://x.com/NWBVending" target="_blank" rel="noopener noreferrer">@NWBVending</a></p>
       </div>
+      <p class="contact-focus">Kuna Legends, locals, and veterans — that's my lane, and always has been.</p>
       <div class="landing-actions">
         <button type="button" class="btn-primary" id="copy-email">Copy email address</button>
         <a class="btn-ghost" href="../../index.html">Back to the cave</a>
       </div>
     </div>
-    <footer><a href="https://NWB-Vending.com">NWB Vending</a> | Kuna, Idaho | <a href="../lets-talk/">Message Anytime</a></footer>
+    <footer><a href="https://NWB-Vending.com">NWB Vending</a> | <a href="https://x.com/NWBVending" target="_blank" rel="noopener noreferrer">@NWBVending</a> | <a href="../lets-talk/">Message Anytime</a></footer>
   </main>
   <script>
     document.getElementById("copy-email")?.addEventListener("click", function () {
       var btn = this;
-      var address = "NWBvending@gmail.com";
+      var address = "NWBVending@gmail.com";
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(address).then(function () {
           btn.textContent = "Copied";

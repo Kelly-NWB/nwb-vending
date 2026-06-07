@@ -300,16 +300,17 @@ footer a:hover {
 
 .bio-duo img {
   display: block;
-  width: min(130px, 32vw);
   height: auto;
-  border-radius: 12px;
 }
 
 .bio-photo {
+  width: min(150px, 34vw);
+  border-radius: 50%;
   filter: drop-shadow(0 10px 28px rgba(94, 179, 255, 0.3));
 }
 
 .bio-mascot {
+  width: min(170px, 40vw);
   filter: drop-shadow(0 10px 28px rgba(201, 166, 107, 0.35));
 }
 

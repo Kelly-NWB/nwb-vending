@@ -42,8 +42,15 @@ REV CONTROL (simple)
 
   So: this folder = what's live. No extra download step after a Grok session.
 
-  Open files from HERE:
+  Open files from HERE (the real home page):
     D:\GrokBuild\experiments\Vending Machine\NWB CORE\index.html
+
+  NOT these (old backups, no 2nd-page links):
+    index backup 6-4-2026.html
+    index final old 6-4.html
+
+  LOCAL PREVIEW (double-click index.html):
+    Links use 2nd-pages/.../index.html so buttons work without a server.
 
   End of session check (Grok runs this for you):
     git status  →  should say "up to date with origin/main"

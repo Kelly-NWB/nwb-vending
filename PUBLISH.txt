@@ -33,3 +33,24 @@ BUTTONS ON HOME
 
 CONTACT
   Footer + Let's Talk: NWBvending@gmail.com
+
+REV CONTROL (simple)
+  When Grok edits in this folder and pushes:
+    1. Your LOCAL files update first (that's what we edit)
+    2. git push copies that same stuff to GitHub
+    3. GitHub Pages updates the live site (~1-2 min)
+
+  So: this folder = what's live. No extra download step after a Grok session.
+
+  Open files from HERE:
+    D:\GrokBuild\experiments\Vending Machine\NWB CORE\index.html
+
+  End of session check (Grok runs this for you):
+    git status  →  should say "up to date with origin/main"
+
+  If local ever looks old:
+    - Wrong folder open (check path above)
+    - Browser cache on nwb-vending.com (hard refresh: Ctrl+F5)
+    - You edited on another PC → run: git pull
+
+  Untracked files (wav, new images) stay local until you say add them.

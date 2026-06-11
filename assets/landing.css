@@ -70,6 +70,14 @@ a { color: inherit; }
   color: #8a8580;
 }
 
+.landing-hero-badge {
+  display: block;
+  width: min(220px, 58vw);
+  height: auto;
+  margin: 0.75rem auto 0;
+  filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.45));
+}
+
 .panel {
   margin-top: 1.5rem;
   background: linear-gradient(180deg, #12121a 0%, #0c0c10 100%);
@@ -407,4 +415,227 @@ footer a:hover {
   font-style: italic;
   color: #6b6560;
   line-height: 1.5;
+}
+
+.request-form {
+  margin-top: 1.25rem;
+  text-align: left;
+}
+
+.request-form label {
+  display: block;
+  margin: 0 0 0.35rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8a8580;
+}
+
+.request-form input,
+.request-form select,
+.request-form textarea {
+  width: 100%;
+  margin: 0 0 1rem;
+  padding: 0.7rem 0.85rem;
+  font-family: inherit;
+  font-size: 0.92rem;
+  color: #f5f0e8;
+  background: #0c0c12;
+  border: 1px solid rgba(201, 166, 107, 0.35);
+  border-radius: 8px;
+}
+
+.request-form input:focus,
+.request-form select:focus,
+.request-form textarea:focus {
+  outline: none;
+  border-color: rgba(232, 201, 122, 0.7);
+}
+
+.request-form textarea {
+  min-height: 5.5rem;
+  resize: vertical;
+}
+
+.request-checks {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0 0 1.15rem;
+}
+
+.request-checks label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  color: #b8b2ac;
+  cursor: pointer;
+}
+
+.request-checks input {
+  width: auto;
+  margin: 0.15rem 0 0;
+}
+
+.request-note {
+  margin: 0 0 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(201, 166, 107, 0.28);
+  background: rgba(201, 166, 107, 0.05);
+  font-size: 0.82rem;
+  color: #9a9590;
+  line-height: 1.6;
+}
+
+.request-note strong {
+  color: #e8c97a;
+}
+
+.form-success {
+  margin: 0 0 1.25rem;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 8px;
+  border: 1px solid rgba(110, 231, 160, 0.35);
+  background: rgba(110, 231, 160, 0.08);
+  color: #b8b2ac;
+  line-height: 1.65;
+}
+
+.form-success strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.15rem;
+  color: #6ee7a0;
+}
+
+.offer-grid {
+  display: grid;
+  gap: 0.65rem;
+  margin: 0 0 1.25rem;
+}
+
+.offer-card {
+  padding: 0.85rem 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #0c0c12;
+}
+
+.offer-card h3 {
+  margin: 0 0 0.25rem;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #f5f0e8;
+}
+
+.offer-card .offer-price {
+  margin: 0 0 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #e8c97a;
+}
+
+.offer-card p {
+  margin: 0;
+  font-size: 0.82rem;
+  color: #8a8580;
+  line-height: 1.55;
+}
+
+.offer-card .offer-includes {
+  margin: 0.55rem 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.78rem;
+  color: #9a9590;
+  line-height: 1.5;
+}
+
+.offer-card .offer-includes li {
+  position: relative;
+  padding-left: 0.85rem;
+}
+
+.offer-card .offer-includes li::before {
+  content: "·";
+  position: absolute;
+  left: 0;
+  color: #e8c97a;
+}
+
+.offer-card .offer-includes li + li {
+  margin-top: 0.2rem;
+}
+
+.offer-card .offer-includes strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #c9c4bc;
+}
+
+.terms-block {
+  margin: 0 0 1.25rem;
+  padding: 1rem 1.1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(201, 166, 107, 0.35);
+  background: rgba(8, 8, 10, 0.55);
+  font-size: 0.8rem;
+  color: #9a9590;
+  line-height: 1.6;
+}
+
+.terms-block h2 {
+  margin: 0 0 0.55rem;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #f5f0e8;
+}
+
+.terms-block p {
+  margin: 0 0 0.55rem;
+}
+
+.terms-block p:last-child {
+  margin-bottom: 0;
+}
+
+.terms-block strong {
+  color: #e8c97a;
+}
+
+.legend-aside {
+  margin: 0 0 1rem;
+  padding: 0.9rem 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(94, 179, 255, 0.28);
+  background: rgba(94, 179, 255, 0.06);
+  font-size: 0.82rem;
+  color: #9a9590;
+  line-height: 1.6;
+}
+
+.legend-aside p {
+  margin: 0;
+}
+
+.legend-aside-lead {
+  margin-bottom: 0.35rem !important;
+  font-weight: 700;
+  color: #f5f0e8;
 }

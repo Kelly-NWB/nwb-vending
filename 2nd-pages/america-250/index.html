@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="USA 250 themed assets. Signs, posts, flyers for small businesses.">
-  <title>America 250 | NWB Vending</title>
+  <meta name="description" content="Request a free July 4 patriotic flyer or custom packages for Kuna Days. Local business promotion by NWB Vending.">
+  <title>Star-Spangled Shop Stuff | NWB Vending</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -14,24 +14,130 @@
   <header class="landing-top theme-gold">
     <a class="back-link" href="../../index.html">Back to the cave</a>
     <img class="landing-logo" src="../../assets/nwb-logo.png" alt="NWB Vending" width="120" height="120">
-    <p class="landing-badge">03 · America 250</p>
+    <p class="landing-badge">03 · Red, White &amp; You</p>
     <h1>Star-Spangled Shop Stuff</h1>
-    <p class="landing-tag">Patriotic and hometown proud. Still looks like your business.</p>
+    <img class="landing-hero-badge" src="../../assets/usa250-kaveman-button.png" alt="USA 250 Celebration" width="220" height="220">
+    <p class="landing-tag">Patriotic July 4 flyers for Kuna businesses. Hometown proud. Still looks like your shop.</p>
   </header>
 
   <main class="container">
-    <div class="panel">
-      <p class="landing-status">Samples and turnaround details coming soon</p>
-      <div class="landing-body">
-        <p>America's 250th is coming. Signs, posts, flyers, window clings. Fast turnaround, quoted straight.</p>
-        <p>Need something before the parade rolls past? Message me and we'll get you sorted.</p>
+    <div class="panel" id="request">
+      <div class="form-success" id="form-success" hidden>
+        <strong>Request received</strong>
+        We'll follow up with your flyer details. July 4 at Bernie Fisher Park.
       </div>
-      <div class="landing-actions">
-        <a class="btn-primary" href="../lets-talk/">Let's Talk</a>
-        <a class="btn-ghost" href="../../index.html">Back to the cave</a>
+
+      <div class="landing-body">
+        <p><strong>July 4</strong> at Bernie Fisher Park. Food trucks, music, fireworks. No parade, just the party. <strong>250th Celebration flyer is free</strong> for Kuna businesses that request it here.</p>
+        <p><strong>Kuna Days</strong> comes about a month later. The parade, bigger crowd. <strong>Custom packages only</strong>, not free, but early buyers are set before it hits. Kuna Days deliverables go out the week after July 4.</p>
+      </div>
+
+      <div class="offer-grid">
+        <div class="offer-card">
+          <h3>250th Celebration Flyer</h3>
+          <p class="offer-price">Free · July 4 · businesses only</p>
+          <p>Patriotic 8.5x11 flyer for Kuna shops. Your business name on our 250th Celebration design. USA USA USA.</p>
+          <ul class="offer-includes">
+            <li><strong>What you get</strong></li>
+            <li>8.5x11 letter flyer with your business name</li>
+            <li>PDF + PNG by email</li>
+            <li>No custom logo work</li>
+            <li>No custom back page</li>
+            <li>Modifications not included</li>
+          </ul>
+        </div>
+        <div class="offer-card">
+          <h3>Custom 250</h3>
+          <p class="offer-price">$250 · one event</p>
+          <p>Your brand, one event. July 4 or Kuna Days.</p>
+          <ul class="offer-includes">
+            <li><strong>What you get</strong></li>
+            <li>Customer flyer (8.5x11) with your logo and QR code</li>
+            <li>Custom back page</li>
+            <li>PDF + PNG by email</li>
+            <li>One event only</li>
+            <li>Modification options available. Quoted separately.</li>
+          </ul>
+        </div>
+        <div class="offer-card">
+          <h3>Go Kaveman Heavy</h3>
+          <p class="offer-price">$420 · Kuna 250 + Kuna Days</p>
+          <p>Both events. Custom throughout. Save 80 bucks, you know, for bundling. Not that other thing.</p>
+          <ul class="offer-includes">
+            <li><strong>What you get</strong></li>
+            <li>Customer flyer for July 4 (8.5x11, front, back, logo, QR)</li>
+            <li>Customer flyer for Kuna Days (8.5x11, delivered week after July 4)</li>
+            <li>PDF + PNG for each flyer</li>
+            <li>Modification options available. Quoted separately.</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="request-note"><strong>Kuna Legends &amp; Veteran-Owned Businesses:</strong> 50% off paid packages when noted on your request. Custom 250 for $125, Go Kaveman Heavy for $210. Discounts are at NWB Vending discretion and not guaranteed for future orders.</p>
+      <p class="request-note">No, Veteran Legends who check both boxes do NOT get 100% off. Even though they should.</p>
+
+      <form class="request-form" action="https://formsubmit.co/NWBVending@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="July 4 / Kuna Days Flyer Request">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://nwb-vending.com/2nd-pages/america-250/?sent=1#request">
+
+        <label for="business">Business name</label>
+        <input id="business" name="business" type="text" required placeholder="Your biz name">
+
+        <label for="contact">Email or phone</label>
+        <input id="contact" name="contact" type="text" required placeholder="how to reach you">
+
+        <label for="package">What interests you?</label>
+        <select id="package" name="package" required>
+          <option value="">Choose one</option>
+          <option value="250th Celebration Flyer (business) - free (July 4th)">250th Celebration Flyer (business) - free (July 4th)</option>
+          <option value="Custom 250 ($250)">Custom 250, $250 (one event)</option>
+          <option value="Go Kaveman Heavy (Kuna 250 + Kuna Days) $420 for both">Go Kaveman Heavy -- (Kuna 250+ Kuna Days) -- $420 for both.</option>
+          <option value="Kuna Dayz Cutomz - Contact me">Kuna Dayz Cutomz - Contact me</option>
+        </select>
+
+        <div class="legend-aside" id="kuna-legend">
+          <p class="legend-aside-lead">You might be asking... What's a Kuna Legend?</p>
+          <p>We'll show you some soon. Checking the box is a heads-up, not a coupon. NWB Vending confirms eligibility before any paid package is priced.</p>
+        </div>
+
+        <div class="request-checks">
+          <label>
+            <input type="checkbox" name="veteran_owned_business" value="Yes">
+            Veteran-Owned Business (50% off paid packages, confirmed on follow-up)
+          </label>
+          <label>
+            <input type="checkbox" name="kuna_legend" value="Yes">
+            Kuna Legend (50% off paid packages, confirmed on follow-up)
+          </label>
+        </div>
+
+        <label for="notes">Logo link, website, or notes (optional)</label>
+        <textarea id="notes" name="notes" placeholder="Paste a logo link, menu URL, or anything NWB Vending should know."></textarea>
+
+        <p class="request-note" style="margin-top: 0.5rem;">By submitting, you agree to the <a href="#terms" style="color: #e8c97a;">quick notes</a> below for this request.</p>
+
+        <div class="landing-actions">
+          <button class="btn-primary" type="submit">Request My Flyer</button>
+          <a class="btn-ghost" href="../lets-talk/index.html">Questions? Let's Talk</a>
+        </div>
+      </form>
+
+      <div class="terms-block" id="terms">
+        <h2>Quick notes</h2>
+        <p>Digital delivery (PDF + PNG, 8.5x11) by email. You print locally.</p>
+        <p>Once delivered, the files are yours. Use them however you want. NWB Vending keeps no rights to your finished work.</p>
+        <p>NWB Vending is not affiliated with America's 250th, the City of Kuna, or any official campaign. Package price names are ours, not government seals.</p>
+        <p>Need changes beyond what's listed? We'll quote it. Discounts confirmed on follow-up.</p>
       </div>
     </div>
-    <footer><a href="https://NWB-Vending.com">NWB Vending</a> | Idahome | <a href="https://x.com/NWBVending" target="_blank" rel="noopener noreferrer">@NWBVending</a> | <a href="../lets-talk/">Message Anytime</a></footer>
+    <footer><a href="https://NWB-Vending.com">NWB Vending</a> | Idahome | <a href="https://x.com/NWBVending" target="_blank" rel="noopener noreferrer">@NWBVending</a> | <a href="../lets-talk/index.html">Message Anytime</a></footer>
   </main>
+  <script>
+    if (new URLSearchParams(window.location.search).get('sent') === '1') {
+      document.getElementById('form-success').hidden = false;
+    }
+  </script>
 </body>
 </html>

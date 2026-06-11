@@ -391,7 +391,7 @@
       margin-top: 1.1rem;
       margin-bottom: 0;
       width: 100%;
-      padding: 1.85rem clamp(1.25rem, 3vw, 1.75rem) 1.75rem;
+      padding: 1.85rem clamp(1rem, 2.5vw, 1.5rem) 1.75rem;
       text-align: center;
       border-radius: 10px;
       border: 2px solid transparent;
@@ -402,6 +402,74 @@
         0 12px 40px rgba(29, 78, 216, 0.15);
       overflow: hidden;
       isolation: isolate;
+    }
+
+    .america-body {
+      position: relative;
+      z-index: 3;
+    }
+
+    .america-pledge {
+      position: relative;
+      z-index: 3;
+      display: block;
+      margin: 1.35rem auto 0;
+      max-width: 32rem;
+      padding: 0.85rem 1rem 0.9rem;
+      text-decoration: none;
+      text-align: center;
+      border-radius: 8px;
+      border: 1px solid rgba(201, 166, 107, 0.35);
+      border-top: 2px solid rgba(185, 28, 28, 0.55);
+      background: linear-gradient(180deg, rgba(30, 58, 95, 0.55) 0%, rgba(12, 12, 18, 0.72) 100%);
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .america-pledge:hover {
+      border-color: rgba(232, 201, 122, 0.55);
+      background: linear-gradient(180deg, rgba(30, 58, 95, 0.68) 0%, rgba(12, 12, 18, 0.82) 100%);
+    }
+
+    .america-pledge-title {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #f0d998;
+    }
+
+    .america-pledge-copy {
+      display: block;
+      margin-top: 0.45rem;
+      font-size: 0.92rem;
+      font-weight: 500;
+      line-height: 1.55;
+      color: #d4cfc7;
+    }
+
+    .america-pledge-promise {
+      display: block;
+      margin-top: 0.4rem;
+      font-size: 0.92rem;
+      font-weight: 600;
+      line-height: 1.45;
+      color: #f5f0e8;
+    }
+
+    .america-pledge-fine {
+      display: block;
+      margin-top: 0.55rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #fecaca;
+    }
+
+    .america-pledge-fine .pledge-star {
+      color: #f0d998;
+      letter-spacing: 0.05em;
     }
 
     .america-bg {
@@ -505,7 +573,20 @@
     .america-special {
       position: relative;
       z-index: 3;
-      margin: 0 auto 1rem;
+      margin: 1.35rem auto 0.4rem;
+      max-width: 32rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #fecaca;
+      line-height: 1.45;
+    }
+
+    .america-special-cta {
+      position: relative;
+      z-index: 3;
+      margin: 0.65rem auto 1rem;
       max-width: 32rem;
       font-size: 0.82rem;
       font-weight: 700;
@@ -589,10 +670,24 @@
       overflow: hidden;
       isolation: isolate;
       background:
-        linear-gradient(345deg, rgba(201, 166, 107, 0.04) 0%, rgba(38, 160, 125, 0.03) 42%, rgba(61, 120, 198, 0.02) 100%),
-        linear-gradient(180deg, rgba(16, 16, 24, 0.04) 0%, rgba(8, 8, 10, 0.1) 100%),
+        linear-gradient(345deg, rgba(201, 166, 107, 0.02) 0%, rgba(38, 160, 125, 0.02) 42%, rgba(61, 120, 198, 0.01) 100%),
         url("assets/lab4.jpg?v=5") 18% 28% / cover no-repeat;
       box-shadow: inset 0 1px 0 rgba(201, 166, 107, 0.12);
+    }
+
+    .cta-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 8px;
+      background: linear-gradient(
+        180deg,
+        rgba(8, 8, 10, 0.28) 0%,
+        rgba(8, 8, 10, 0.52) 55%,
+        rgba(8, 8, 10, 0.68) 100%
+      );
+      z-index: 0;
+      pointer-events: none;
     }
 
     .cta-card > * {
@@ -608,21 +703,19 @@
     .cta-card h3,
     .cta-card .cta-lead,
     .cta-card .cta-note {
-      -webkit-text-stroke: 0.45px #000;
-      paint-order: stroke fill;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9), 0 2px 10px rgba(0, 0, 0, 0.55);
     }
 
     .cta-card .card-num {
-      color: #e8c97a;
+      color: #f0d998;
     }
 
     .cta-card h3 {
       margin: 0 0 0.5rem;
       font-family: "Cormorant Garamond", serif;
       font-size: 1.6rem;
-      color: #e8c97a;
+      color: #f5f0e8;
       text-align: center;
-      -webkit-text-stroke: 0.55px #000;
     }
 
     .cta-card .cta-lead {
@@ -631,7 +724,7 @@
       font-size: 0.9rem;
       font-weight: 700;
       font-style: italic;
-      color: #e8c97a;
+      color: #f5f0e8;
       line-height: 1.5;
     }
 
@@ -646,7 +739,7 @@
       font-weight: 600;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: #e8c97a;
+      color: #f0d998;
       line-height: 1.45;
     }
 
@@ -708,8 +801,9 @@
             <span class="card-num">01</span>
             <h3>Kaveman Style</h3>
             <p class="card-sub">Been here 30 years, or 30 minutes... I can help you shine, with more options than you might think.</p>
+            <p class="card-sub">I craft your brand voice, welcome pages, and customer stories that feel like you, not corporate.</p>
             <div class="card-actions">
-              <p class="kuna-special">Kuna Legends &amp; Vets get special pricing!</p>
+              <p class="kuna-special">Kuna Legends &amp; Vets get 1/2 off!</p>
               <a class="card-link" href="2nd-pages/tell-my-story/index.html">Get the Club</a>
             </div>
           </article>
@@ -717,6 +811,7 @@
             <span class="card-num">02</span>
             <h3>Problem Solver</h3>
             <p class="card-sub">I know how the big guys operate. Now I use xAI to build tools that help small businesses like yours win.</p>
+            <p class="card-sub">Practical AI tools and systems that solve real small business problems fast, affordable, and built for you.</p>
             <div class="card-actions">
               <p class="kuna-special">Real Problems. Real Fixes. Real Fast.</p>
               <a class="card-link card-link-solve" href="2nd-pages/solve-for-x/index.html" aria-label="Solve for x">Solve For <span class="solve-x">X</span></a>
@@ -726,13 +821,22 @@
 
         <section class="america america-standalone" aria-labelledby="america-teaser">
           <div class="america-bg" aria-hidden="true"></div>
-          <span class="card-num">03</span>
-          <p class="america-badge" id="america-teaser">★ USA Quick Hits ★</p>
-          <h3>Star-Spangled Shop Stuff</h3>
-          <p class="america-sub">America's 250th is coming. Slap some red, white, and blue on your business before the parade rolls past. Patriotic, hometown proud, still looks like you.</p>
-          <p class="america-special">Signs. Posts. Flyers. Window clings. Fast turnaround.</p>
-          <div class="america-actions">
-            <a class="card-link card-link-america" href="2nd-pages/america-250/index.html">Light That Fuse</a>
+          <div class="america-body">
+            <span class="card-num">03</span>
+            <p class="america-badge" id="america-teaser">★ USA Quick Hits ★</p>
+            <h3>Star-Spangled Shop Stuff</h3>
+            <p class="america-sub">America's 250th is coming. Slap some red, white, and blue on your business before the fireworks and festivities. Patriotic, hometown proud, on-demand.</p>
+            <p class="america-special">Flyers, Logos, Artwork, or Just Feeling Patriotic.</p>
+            <p class="america-special-cta">If it needs a 250 upgrade, I got you!</p>
+            <div class="america-actions">
+              <a class="card-link card-link-america" href="2nd-pages/america-250/index.html">Red, White &amp; You</a>
+            </div>
+            <a class="america-pledge" href="2nd-pages/lets-talk/index.html" aria-label="Kelly_NWB Pledge">
+              <span class="america-pledge-title">Kelly_NWB Pledge</span>
+              <span class="america-pledge-copy">You showed up when it counted. I show up for you.</span>
+              <span class="america-pledge-promise">We'll make it work.</span>
+              <span class="america-pledge-fine"><span class="pledge-star" aria-hidden="true">★★</span> Thank You For Your Service <span class="pledge-star" aria-hidden="true">★★</span></span>
+            </a>
           </div>
         </section>
 

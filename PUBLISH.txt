@@ -1,5 +1,8 @@
 NWB-Vending.com — quick publish (GitHub Pages)
 
+*** DEPLOY GATE: Only Kelly_NWB runs git push / go-live. Agents stage; Kelly approves. ***
+    See: D:\GrokBuild\nwb\Org Structure\DEPLOY-GATE.md
+
 WHAT GOES LIVE
   index.html          (home page)
   assets/             (images + landing.css)

@@ -95,6 +95,30 @@ a { color: inherit; }
 
 .landing-body p:last-child { margin-bottom: 0; }
 
+.landing-list {
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+  color: #9a9590;
+  line-height: 1.65;
+}
+
+.landing-list li {
+  position: relative;
+  padding-left: 0.85rem;
+}
+
+.landing-list li::before {
+  content: "·";
+  position: absolute;
+  left: 0;
+  color: #8ec5ff;
+}
+
+.landing-list li + li {
+  margin-top: 0.35rem;
+}
+
 .landing-body a {
   color: #e8c97a;
   text-decoration: underline;
@@ -495,6 +519,18 @@ footer a:hover {
 
 .request-note strong {
   color: #e8c97a;
+}
+
+.request-note-accent {
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-align: center;
+  color: #e8c97a;
+  line-height: 1.55;
+}
+
+.landing-list.green li::before {
+  color: #4ade80;
 }
 
 .form-success {

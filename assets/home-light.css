@@ -1,14 +1,15 @@
-/* Home page half-light mode — warm stone, not snow */
+/* Home page lighter mode — mirrors dark layout on warm linen */
 
 html[data-theme="light"] body {
-  color: #2a2826;
-  background: #94908a;
+  color: var(--l-ink-body);
+  background: var(--l-page);
 }
 
+/* Hero stays vivid — brand anchor on lighter page */
 html[data-theme="light"] .hero-inset {
-  background: linear-gradient(165deg, #6a8ab8 0%, #5a9a88 38%, #7a756e 72%);
-  border-color: rgba(42, 40, 38, 0.22);
-  box-shadow: 0 20px 48px rgba(30, 28, 26, 0.2);
+  background: linear-gradient(165deg, #3d6fc6 0%, #2a9a78 38%, #22222e 72%);
+  border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 24px 60px rgba(42, 40, 38, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 html[data-theme="light"] .hero h1 {
@@ -17,81 +18,99 @@ html[data-theme="light"] .hero h1 {
 
 html[data-theme="light"] .hero-tagline,
 html[data-theme="light"] .hero-promise {
-  color: #e8d4a0;
+  color: #e8c97a;
 }
 
 html[data-theme="light"] .hero-intro {
-  color: #e8e4dc;
+  color: #d4cfc7;
 }
 
 html[data-theme="light"] .panel {
-  background:
-    linear-gradient(180deg, rgba(61, 120, 198, 0.12) 0%, transparent 28%),
-    linear-gradient(0deg, rgba(38, 160, 125, 0.1) 0%, transparent 32%),
-    linear-gradient(180deg, #8f8a84 0%, #84807a 100%);
-  border-color: rgba(120, 90, 48, 0.45);
-  box-shadow: 0 16px 40px rgba(30, 28, 26, 0.18);
+  background: var(--l-panel);
+  border-color: var(--l-border);
+  box-shadow: var(--l-shadow);
 }
 
 html[data-theme="light"] .section-label {
-  color: #1f1d1b;
+  color: var(--l-ink);
 }
 
 html[data-theme="light"] .section-note {
-  color: #3a3836;
+  color: var(--l-ink-muted);
 }
 
 html[data-theme="light"] .card {
-  background: #7a756e;
+  background: var(--l-surface);
 }
 
 html[data-theme="light"] .card.blue {
-  background: linear-gradient(165deg, rgba(61, 120, 198, 0.35) 0%, rgba(122, 117, 110, 0.95) 55%), #7a8594;
+  background:
+    linear-gradient(165deg, rgba(61, 120, 198, 0.2) 0%, rgba(38, 160, 125, 0.1) 42%, rgba(245, 242, 236, 0.98) 100%),
+    var(--l-surface);
 }
 
 html[data-theme="light"] .card.green {
-  background: linear-gradient(345deg, rgba(38, 160, 125, 0.32) 0%, rgba(122, 117, 110, 0.95) 55%), #7a8a82;
+  background:
+    linear-gradient(345deg, rgba(38, 160, 125, 0.18) 0%, rgba(61, 120, 198, 0.1) 42%, rgba(245, 242, 236, 0.98) 100%),
+    var(--l-surface);
 }
 
 html[data-theme="light"] .card h3 {
-  color: #5c4218;
+  color: var(--l-gold);
 }
 
 html[data-theme="light"] .card.blue h3 {
-  color: #1e4a8a;
+  color: #1e5a9e;
+}
+
+html[data-theme="light"] .card.green h3 {
+  color: #15803d;
+}
+
+html[data-theme="light"] .card.blue .kuna-special,
+html[data-theme="light"] .card.green .kuna-special {
+  color: var(--l-gold);
+}
+
+html[data-theme="light"] .card.green .card-special {
+  color: #15803d;
 }
 
 html[data-theme="light"] .card p,
 html[data-theme="light"] .card-sub {
-  color: #3a3836;
+  color: var(--l-ink-muted);
+}
+
+html[data-theme="light"] .card-price {
+  border-top-color: rgba(42, 40, 38, 0.1);
+}
+
+html[data-theme="light"] .card-price .amount {
+  color: var(--l-ink);
 }
 
 html[data-theme="light"] .cta-card {
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(34, 197, 94, 0.18)), #7a756e;
+  background:
+    linear-gradient(135deg, rgba(59, 130, 246, 0.12), rgba(34, 197, 94, 0.1)),
+    var(--l-surface);
 }
 
 html[data-theme="light"] .cta-card h3 {
-  color: #1f1d1b;
+  color: var(--l-ink);
 }
 
 html[data-theme="light"] .cta-lead {
-  color: #3a3836;
+  color: var(--l-ink-muted);
 }
 
+/* America block keeps its own dark patriotic treatment */
 html[data-theme="light"] .america-standalone {
-  box-shadow: 0 12px 32px rgba(30, 28, 26, 0.2);
-}
-
-html[data-theme="light"] .america-standalone .america-body {
-  background: linear-gradient(135deg, rgba(37, 99, 235, 0.22), rgba(6, 95, 70, 0.2)), #7a756e;
-}
-
-html[data-theme="light"] .card-link-gallery {
-  color: #f5e0e0;
-  border-color: rgba(180, 80, 80, 0.45);
-  background: rgba(80, 40, 40, 0.25);
+  box-shadow:
+    0 0 0 1px rgba(42, 40, 38, 0.08),
+    0 12px 40px rgba(185, 28, 28, 0.12),
+    0 12px 40px rgba(29, 78, 216, 0.1);
 }
 
 html[data-theme="light"] footer {
-  color: #4a4845;
+  color: var(--l-ink-muted);
 }

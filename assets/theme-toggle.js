@@ -9,12 +9,6 @@
     }
   }
 
-  function systemTheme() {
-    return window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches
-      ? "light"
-      : "dark";
-  }
-
   function apply(theme) {
     var root = document.documentElement;
     root.setAttribute("data-theme", theme === "light" ? "light" : "dark");
@@ -24,9 +18,9 @@
     var btn = document.getElementById("nwb-theme-toggle");
     if (btn) {
       var light = theme === "light";
-      btn.setAttribute("aria-label", light ? "Switch to dark mode" : "Switch to half-light mode");
+      btn.setAttribute("aria-label", light ? "Switch to dark mode" : "Switch to lighter mode");
       btn.setAttribute("aria-pressed", light ? "true" : "false");
-      btn.title = light ? "Back to dark mode" : "Half-light mode";
+      btn.title = light ? "Back to dark mode" : "Lighter mode";
     }
   }
 
@@ -42,13 +36,13 @@
     btn.setAttribute("aria-pressed", "false");
     btn.innerHTML =
       '<span class="nwb-theme-toggle-icon" aria-hidden="true">☀</span>' +
-      '<span class="nwb-theme-toggle-label">Half-light</span>';
+      '<span class="nwb-theme-toggle-label">Lighter</span>';
 
     btn.addEventListener("click", function () {
       var next = document.documentElement.getAttribute("data-theme") === "light" ? "dark" : "light";
       apply(next);
       var label = btn.querySelector(".nwb-theme-toggle-label");
-      if (label) label.textContent = next === "light" ? "Dark" : "Half-light";
+      if (label) label.textContent = next === "light" ? "Dark" : "Lighter";
     });
 
     var label = btn.querySelector(".nwb-theme-toggle-label");
@@ -57,8 +51,8 @@
       btn.setAttribute("aria-label", "Switch to dark mode");
       if (label) label.textContent = "Dark";
     } else {
-      btn.setAttribute("aria-label", "Switch to half-light mode");
-      if (label) label.textContent = "Half-light";
+      btn.setAttribute("aria-label", "Switch to lighter mode");
+      if (label) label.textContent = "Lighter";
     }
 
     document.body.appendChild(btn);

@@ -1,0 +1,97 @@
+/* Home page light mode (index.html) */
+
+html[data-theme="light"] body {
+  color: #2a2826;
+  background: #ebe8e1;
+}
+
+html[data-theme="light"] .hero-inset {
+  background: linear-gradient(165deg, #dce8f8 0%, #d4efe6 38%, #f7f4ee 72%);
+  border-color: rgba(42, 40, 38, 0.12);
+  box-shadow: 0 20px 48px rgba(42, 40, 38, 0.1);
+}
+
+html[data-theme="light"] .hero h1 {
+  color: #1a1816;
+}
+
+html[data-theme="light"] .hero-tagline,
+html[data-theme="light"] .hero-promise {
+  color: #9a7b42;
+}
+
+html[data-theme="light"] .hero-intro {
+  color: #4a4845;
+}
+
+html[data-theme="light"] .panel {
+  background:
+    linear-gradient(180deg, rgba(61, 120, 198, 0.06) 0%, transparent 28%),
+    linear-gradient(0deg, rgba(38, 160, 125, 0.05) 0%, transparent 32%),
+    linear-gradient(180deg, #ffffff 0%, #f5f2ec 100%);
+  border-color: rgba(154, 123, 66, 0.35);
+  box-shadow: 0 16px 40px rgba(42, 40, 38, 0.08);
+}
+
+html[data-theme="light"] .section-label {
+  color: #1a1816;
+}
+
+html[data-theme="light"] .section-note {
+  color: #5c5854;
+}
+
+html[data-theme="light"] .card {
+  background: #ffffff;
+}
+
+html[data-theme="light"] .card.blue {
+  background: linear-gradient(165deg, rgba(110, 192, 255, 0.18) 0%, rgba(255, 255, 255, 0.95) 55%), #f8fbff;
+}
+
+html[data-theme="light"] .card.green {
+  background: linear-gradient(345deg, rgba(52, 211, 153, 0.14) 0%, rgba(255, 255, 255, 0.95) 55%), #f6fcf9;
+}
+
+html[data-theme="light"] .card h3 {
+  color: #9a7b42;
+}
+
+html[data-theme="light"] .card.blue h3 {
+  color: #2563eb;
+}
+
+html[data-theme="light"] .card p,
+html[data-theme="light"] .card-sub {
+  color: #5c5854;
+}
+
+html[data-theme="light"] .cta-card {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(34, 197, 94, 0.1)), #ffffff;
+}
+
+html[data-theme="light"] .cta-card h3 {
+  color: #1a1816;
+}
+
+html[data-theme="light"] .cta-lead {
+  color: #4a4845;
+}
+
+html[data-theme="light"] .america-standalone {
+  box-shadow: 0 12px 32px rgba(42, 40, 38, 0.08);
+}
+
+html[data-theme="light"] .america-standalone .america-body {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(6, 95, 70, 0.1)), #ffffff;
+}
+
+html[data-theme="light"] .card-link-gallery {
+  color: #991b1b;
+  border-color: rgba(153, 27, 27, 0.35);
+  background: rgba(255, 255, 255, 0.85);
+}
+
+html[data-theme="light"] footer {
+  color: #7a756e;
+}

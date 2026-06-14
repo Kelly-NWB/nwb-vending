@@ -1171,10 +1171,18 @@ body.gallery-page .landing-top .landing-tag {
 .gallery-package-note {
   margin: 0 0 1rem;
   font-size: 0.82rem;
-  font-style: italic;
+  font-style: normal;
   color: #8a8580;
   text-align: center;
   line-height: 1.55;
+}
+
+.gallery-package-note-cta {
+  display: block;
+  margin-top: 0.45rem;
+  font-style: italic;
+  text-align: center;
+  color: #b8b2ac;
 }
 
 .gallery-package-list {

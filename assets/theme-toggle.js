@@ -24,9 +24,9 @@
     var btn = document.getElementById("nwb-theme-toggle");
     if (btn) {
       var light = theme === "light";
-      btn.setAttribute("aria-label", light ? "Switch to dark mode" : "Switch to light mode");
+      btn.setAttribute("aria-label", light ? "Switch to dark mode" : "Switch to half-light mode");
       btn.setAttribute("aria-pressed", light ? "true" : "false");
-      btn.title = light ? "Dark mode" : "Light mode";
+      btn.title = light ? "Back to dark mode" : "Half-light mode";
     }
   }
 
@@ -42,13 +42,13 @@
     btn.setAttribute("aria-pressed", "false");
     btn.innerHTML =
       '<span class="nwb-theme-toggle-icon" aria-hidden="true">☀</span>' +
-      '<span class="nwb-theme-toggle-label">Light</span>';
+      '<span class="nwb-theme-toggle-label">Half-light</span>';
 
     btn.addEventListener("click", function () {
       var next = document.documentElement.getAttribute("data-theme") === "light" ? "dark" : "light";
       apply(next);
       var label = btn.querySelector(".nwb-theme-toggle-label");
-      if (label) label.textContent = next === "light" ? "Dark" : "Light";
+      if (label) label.textContent = next === "light" ? "Dark" : "Half-light";
     });
 
     var label = btn.querySelector(".nwb-theme-toggle-label");
@@ -57,8 +57,8 @@
       btn.setAttribute("aria-label", "Switch to dark mode");
       if (label) label.textContent = "Dark";
     } else {
-      btn.setAttribute("aria-label", "Switch to light mode");
-      if (label) label.textContent = "Light";
+      btn.setAttribute("aria-label", "Switch to half-light mode");
+      if (label) label.textContent = "Half-light";
     }
 
     document.body.appendChild(btn);

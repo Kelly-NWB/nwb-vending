@@ -557,23 +557,15 @@ footer a:hover {
   color: #6ee7a0;
 }
 
-.form-success p {
-  margin: 0.75rem 0 0;
-  font-size: 0.88rem;
-  text-align: left;
-}
-
-.form-success p strong {
-  font-family: Montserrat, system-ui, sans-serif;
-  font-size: inherit;
-  font-weight: 700;
-  color: #6ee7a0;
-}
-
 .offer-grid {
   display: grid;
   gap: 0.65rem;
   margin: 0 0 1.25rem;
+}
+
+.offer-tiers {
+  gap: 0.85rem;
+  margin-top: 1.25rem;
 }
 
 .offer-card {
@@ -581,6 +573,10 @@ footer a:hover {
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: #0c0c12;
+}
+
+.offer-tiers .offer-card {
+  padding: 1.1rem 1.15rem;
 }
 
 .offer-card h3 {
@@ -591,6 +587,12 @@ footer a:hover {
   color: #f5f0e8;
 }
 
+.offer-tiers .offer-card h3 {
+  margin: 0 0 0.35rem;
+  font-size: clamp(1.35rem, 4vw, 1.65rem);
+  line-height: 1.15;
+}
+
 .offer-card .offer-price {
   margin: 0 0 0.35rem;
   font-size: 0.72rem;
@@ -598,6 +600,36 @@ footer a:hover {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #e8c97a;
+}
+
+.offer-tiers .offer-card .offer-price {
+  margin: 0 0 0.5rem;
+  font-size: clamp(0.82rem, 2.2vw, 0.95rem);
+  letter-spacing: 0.14em;
+}
+
+.offer-card--free .offer-price {
+  color: #8ec5ff;
+}
+
+.offer-card--custom .offer-price {
+  color: #e8c97a;
+}
+
+.offer-card--heavy .offer-price {
+  color: #6ee7a0;
+}
+
+.offer-card--free {
+  border-color: rgba(94, 179, 255, 0.28);
+}
+
+.offer-card--custom {
+  border-color: rgba(201, 166, 107, 0.38);
+}
+
+.offer-card--heavy {
+  border-color: rgba(110, 231, 160, 0.28);
 }
 
 .offer-card p {
@@ -640,6 +672,54 @@ footer a:hover {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #c9c4bc;
+}
+
+.terms-fold {
+  margin: 0.75rem 0 0;
+  border: 1px solid rgba(201, 166, 107, 0.22);
+  border-radius: 8px;
+  background: rgba(8, 8, 10, 0.35);
+}
+
+.terms-fold summary {
+  padding: 0.75rem 1rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8a8580;
+  cursor: pointer;
+  list-style: none;
+}
+
+.terms-fold summary::-webkit-details-marker {
+  display: none;
+}
+
+.terms-fold summary::after {
+  content: "+";
+  float: right;
+  color: #e8c97a;
+  font-weight: 700;
+}
+
+.terms-fold[open] summary::after {
+  content: "−";
+}
+
+.terms-fold-body {
+  padding: 0 1rem 1rem;
+  font-size: 0.8rem;
+  color: #9a9590;
+  line-height: 1.6;
+}
+
+.terms-fold-body p {
+  margin: 0 0 0.55rem;
+}
+
+.terms-fold-body p:last-child {
+  margin-bottom: 0;
 }
 
 .terms-block {

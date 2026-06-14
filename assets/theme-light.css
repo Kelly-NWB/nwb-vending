@@ -227,6 +227,31 @@ html[data-theme="light"] .offer-card {
   border-color: rgba(42, 40, 38, 0.1);
 }
 
+html[data-theme="light"] .offer-card--free {
+  border-color: rgba(37, 99, 235, 0.28);
+}
+
+html[data-theme="light"] .offer-card--custom {
+  border-color: var(--l-border);
+}
+
+html[data-theme="light"] .offer-card--heavy {
+  border-color: rgba(21, 128, 61, 0.28);
+}
+
+html[data-theme="light"] .terms-fold {
+  background: rgba(255, 255, 255, 0.35);
+  border-color: rgba(42, 40, 38, 0.12);
+}
+
+html[data-theme="light"] .terms-fold summary {
+  color: var(--l-ink-muted);
+}
+
+html[data-theme="light"] .terms-fold-body {
+  color: var(--l-ink-muted);
+}
+
 html[data-theme="light"] .offer-card .offer-price {
   color: var(--l-gold);
 }

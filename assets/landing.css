@@ -549,11 +549,24 @@ footer a:hover {
   line-height: 1.65;
 }
 
-.form-success strong {
+.form-success > strong {
   display: block;
   margin-bottom: 0.35rem;
   font-family: "Cormorant Garamond", serif;
   font-size: 1.15rem;
+  color: #6ee7a0;
+}
+
+.form-success p {
+  margin: 0.75rem 0 0;
+  font-size: 0.88rem;
+  text-align: left;
+}
+
+.form-success p strong {
+  font-family: Montserrat, system-ui, sans-serif;
+  font-size: inherit;
+  font-weight: 700;
   color: #6ee7a0;
 }
 

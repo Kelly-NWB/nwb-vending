@@ -361,7 +361,7 @@ html[data-theme="light"] .kil-poss-note {
 
 html[data-theme="light"] .kil-video-card {
   border-color: var(--l-border);
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.7), var(--l-surface));
+  background: var(--l-surface);
 }
 
 html[data-theme="light"] .kil-video-card:hover {
@@ -370,6 +370,7 @@ html[data-theme="light"] .kil-video-card:hover {
 
 html[data-theme="light"] .kil-video-label {
   color: var(--l-ink);
+  background: var(--l-surface);
 }
 
 html[data-theme="light"] .kil-superc-shoutout {

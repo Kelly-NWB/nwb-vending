@@ -330,27 +330,6 @@ html[data-theme="light"] .gallery-lightbox-close {
   color: #f5f0e8;
 }
 
-html[data-theme="light"] .gallery-frame-band h2,
-html[data-theme="light"] .gallery-possibilities-band h2,
-html[data-theme="light"] .gallery-shops-band > h2 {
-  color: var(--l-ink);
-}
-
-html[data-theme="light"] .gallery-frame-caption,
-html[data-theme="light"] .gallery-possibilities-lead,
-html[data-theme="light"] .gallery-shops-lead {
-  color: var(--l-ink-muted);
-}
-
-html[data-theme="light"] .gallery-possibility-thumb {
-  border-color: var(--l-border);
-  background: var(--l-surface);
-}
-
-html[data-theme="light"] .gallery-possibility-label {
-  color: var(--l-gold);
-}
-
 /* Toggle button */
 .nwb-theme-toggle {
   position: fixed;

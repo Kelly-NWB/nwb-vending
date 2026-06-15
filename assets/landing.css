@@ -1289,15 +1289,8 @@ body.gallery-page .landing-top .landing-tag {
   margin-bottom: 1.1rem;
 }
 
-.kil-page-tabs {
-  justify-content: center;
-  gap: 0.65rem;
-  margin-bottom: 1.35rem;
-}
-
 .kil-legends-tabs {
   margin-top: 0.25rem;
-  justify-content: center;
 }
 
 .kil-tab {
@@ -1312,13 +1305,6 @@ body.gallery-page .landing-top .landing-tag {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 6px;
   cursor: pointer;
-}
-
-.kil-tab--page {
-  padding: 0.85rem 2rem;
-  font-size: 0.82rem;
-  letter-spacing: 0.14em;
-  border-radius: 8px;
 }
 
 .kil-tab.is-active {
@@ -1499,38 +1485,6 @@ body.gallery-page .landing-top .landing-tag {
   font-size: 0.78rem;
   line-height: 1.45;
   color: #8a8580;
-}
-
-.kil-superc-shoutout {
-  margin-top: 1.75rem;
-  padding: 1.1rem 1.15rem;
-  border-radius: 10px;
-  border: 1px solid rgba(201, 166, 107, 0.35);
-  background: rgba(201, 166, 107, 0.06);
-  text-align: center;
-}
-
-.kil-superc-shoutout h3 {
-  margin: 0 0 0.35rem;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: #f5f0e8;
-}
-
-.kil-superc-shoutout .kil-lead {
-  margin-bottom: 0.75rem;
-}
-
-.kil-superc-shoutout .kil-links {
-  justify-content: center;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1.25rem;
-}
-
-.kil-superc-shoutout .kil-links li + li {
-  margin-top: 0;
 }
 
 .kil-cta {

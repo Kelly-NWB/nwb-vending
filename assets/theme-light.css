@@ -349,15 +349,6 @@ html[data-theme="light"] .kil-shop {
   border-top-color: rgba(42, 40, 38, 0.12);
 }
 
-html[data-theme="light"] .kil-superc-shoutout {
-  background: rgba(255, 255, 255, 0.5);
-  border-color: var(--l-border);
-}
-
-html[data-theme="light"] .kil-superc-shoutout h3 {
-  color: var(--l-ink);
-}
-
 /* Toggle button */
 .nwb-theme-toggle {
   position: fixed;

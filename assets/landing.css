@@ -887,6 +887,117 @@ body.gallery-page .landing-top .landing-tag {
   margin: 0 0 1rem;
 }
 
+.gallery-section-label {
+  margin: 0 0 0.35rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #e8c97a;
+}
+
+.gallery-frame-band,
+.gallery-possibilities-band {
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(201, 166, 107, 0.2);
+}
+
+.gallery-frame-band h2,
+.gallery-possibilities-band h2 {
+  margin: 0 0 0.5rem;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.45rem, 3.2vw, 1.75rem);
+  font-weight: 700;
+  color: #f5f0e8;
+}
+
+.gallery-frame-stage {
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.gallery-frame-caption {
+  margin: 0.85rem 0 0;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: #9a9590;
+  text-align: center;
+}
+
+.gallery-possibilities-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 720px) {
+  .gallery-possibilities-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.gallery-possibility {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+}
+
+.gallery-possibility-thumb {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 8px;
+  border: 1px solid rgba(201, 166, 107, 0.28);
+  background: #0a0a0e;
+}
+
+.gallery-possibility-label {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #c9b896;
+  line-height: 1.35;
+}
+
+.gallery-possibilities-lead {
+  margin: 0 0 0.25rem;
+  font-size: 0.92rem;
+  color: #9a9590;
+  line-height: 1.6;
+}
+
+.gallery-shops-band {
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(201, 166, 107, 0.2);
+}
+
+.gallery-shops-band > h2 {
+  margin: 0 0 0.35rem;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(1.45rem, 3.2vw, 1.75rem);
+  font-weight: 700;
+  color: #f5f0e8;
+}
+
+.gallery-shops-lead {
+  margin: 0 0 1rem;
+  font-size: 0.92rem;
+  color: #9a9590;
+  line-height: 1.6;
+}
+
 .gallery-grid {
   display: grid;
   gap: 1.75rem;

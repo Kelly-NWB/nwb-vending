@@ -62,9 +62,15 @@ def main() -> None:
     from_pdf_page(PRINTABLES / "NWB-Both-Final.pdf", 0, "nwb-window")
     from_pdf_page(PRINTABLES / "NWB-Both-Final.pdf", 1, "nwb-story")
 
-    free_pdf = PRINTABLES / "FedEx-Print" / "print-these" / "01 - Grandma's Attic.pdf"
-    from_pdf_page(free_pdf, 0, "free-window")
-    from_pdf_page(free_pdf, 1, "free-back")
+    import sys
+
+    sys.path.insert(0, str(Path(r"D:\GrokBuild\experiments\250 Parade\06-process\delivery")))
+    from fulfill_free_customer import stamp_front
+
+    free_img = stamp_front("Your Business")
+    save_png(resize_width(free_img, DISPLAY_W), OUT / "free-window-display.png")
+    save_png(resize_width(free_img, LIGHTBOX_W), OUT / "free-window-full.png")
+    print("free-window", free_img.size)
 
     pairs = [
         (PRINTABLES / "Kettle Korn - window.pdf", "kettle-korn-window"),

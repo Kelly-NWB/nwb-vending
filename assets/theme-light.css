@@ -330,25 +330,6 @@ html[data-theme="light"] .gallery-lightbox-close {
   color: #f5f0e8;
 }
 
-html[data-theme="light"] .kil-panel h2,
-html[data-theme="light"] .kil-skill-title {
-  color: var(--l-ink);
-}
-
-html[data-theme="light"] .kil-lead,
-html[data-theme="light"] .kil-skill-note {
-  color: var(--l-ink-muted);
-}
-
-html[data-theme="light"] .kil-skill {
-  background: var(--l-surface);
-  border-color: var(--l-border);
-}
-
-html[data-theme="light"] .kil-shop {
-  border-top-color: rgba(42, 40, 38, 0.12);
-}
-
 /* Toggle button */
 .nwb-theme-toggle {
   position: fixed;

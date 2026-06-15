@@ -1,0 +1,24 @@
+NWB-Vending.com — how the site actually goes live
+=================================================
+
+Your domain (NWB-Vending.com) runs on Cloudflare Workers.
+GitHub Pages (kelly-nwb.github.io/nwb-vending) is a preview — not the custom domain.
+
+ONE-TIME SETUP (Kelly, ~2 minutes — then Grok handles the rest)
+---------------------------------------------------------------
+1. Cloudflare dashboard → My Profile → API Tokens → Create Token
+   Use template: "Edit Cloudflare Workers"
+2. Copy the token.
+3. GitHub → Kelly-NWB/nwb-vending → Settings → Secrets and variables → Actions
+   Add secret: CLOUDFLARE_API_TOKEN = (paste token)
+   Add secret: CLOUDFLARE_ACCOUNT_ID = (Cloudflare dashboard URL has it: dash.cloudflare.com/ACCOUNT_ID/...)
+4. Tell Grok: "deploy secrets are set"
+
+AFTER THAT
+----------
+Grok pushes to main → GitHub Action deploys → NWB-Vending.com updates.
+No separate branch. No wrangler commands for Kelly.
+
+TEMPORARY PREVIEW (always current after main push)
+--------------------------------------------------
+https://kelly-nwb.github.io/nwb-vending/2nd-pages/america-250/gallery/

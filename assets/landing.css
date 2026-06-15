@@ -674,6 +674,41 @@ footer a:hover {
   color: #c9c4bc;
 }
 
+.offer-card-pay {
+  margin-top: 0.85rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.btn-pay {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.65rem 1rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  color: #08080a;
+  background: linear-gradient(90deg, #c9a66b, #e8c97a);
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(201, 166, 107, 0.22);
+}
+
+.btn-pay--heavy {
+  background: linear-gradient(90deg, #22a86b, #6ee7a0);
+  box-shadow: 0 6px 18px rgba(34, 168, 107, 0.22);
+}
+
+.offer-pay-note {
+  margin: 0.45rem 0 0;
+  font-size: 0.68rem;
+  line-height: 1.45;
+  color: #7a7570;
+}
+
 .terms-fold {
   margin: 0.75rem 0 0;
   border: 1px solid rgba(201, 166, 107, 0.22);

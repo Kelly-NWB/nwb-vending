@@ -265,6 +265,14 @@ html[data-theme="light"] .offer-card .offer-includes strong {
   color: var(--l-ink-body);
 }
 
+html[data-theme="light"] .offer-card-pay {
+  border-top-color: rgba(42, 40, 38, 0.1);
+}
+
+html[data-theme="light"] .offer-pay-note {
+  color: var(--l-ink-muted);
+}
+
 html[data-theme="light"] .request-note,
 html[data-theme="light"] .terms-block {
   color: var(--l-ink-muted);

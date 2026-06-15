@@ -1,0 +1,42 @@
+# Git history (pack files exceed Workers 25 MiB asset limit)
+.git/
+
+# Not part of the live site
+archive/
+export/
+Kaveman Ops Home/
+sandbox/
+deliveries/
+
+# Local backups and experiments
+index backup*.html
+index final*.html
+
+# Duplicate assets at project root
+/kaveman.png
+/kavemannobg.png
+/new kaveman.jpg
+
+# Local handoff / deploy notes
+LOCAL-HANDOFF.txt
+DEPLOY-GATE.md
+START-HERE.txt
+SITE-DEPLOY.txt
+PUBLISH.txt
+KELLY-SPEAK-WALLET.txt
+
+# wrangler / Cloudflare local
+.wrangler/
+.dev.vars*
+.env*
+
+# CI and tooling (not served)
+.github/
+node_modules/
+wrangler.jsonc
+package.json
+package-lock.json
+assets/gallery/build_thumbs.py
+
+# Unused large audio (bio page uses bionwb.wav only)
+assets/bio read by nwb.wav

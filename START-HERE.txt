@@ -1,0 +1,19 @@
+NWB-VENDING.COM — LIVE SITE
+============================
+
+This is the real working copy. Not an experiment.
+
+  Open:  index.html
+  Push:  git push main (after one-time Cloudflare setup — see SITE-DEPLOY.txt)
+  Live:  https://nwb-vending.com
+  Preview (always current): https://kelly-nwb.github.io/nwb-vending/
+
+See SITE-DEPLOY.txt (custom domain) and PUBLISH.txt.
+Strategy notes: LOCAL-HANDOFF.txt (gitignored — stays local)
+
+Kelly-Speak wallet card (how to read Kelly's directions):
+  KELLY-SPEAK-WALLET.txt  (full: ..\nwb\Org Structure\KELLY-SPEAK.md)
+
+This repo = LIVE VENDING SITE ONLY.
+  Experiments (250, MP3, games) stay walled off — see Org Structure\PROJECT-WALLS.md
+  Push = Kelly only — see Org Structure\DEPLOY-GATE.md

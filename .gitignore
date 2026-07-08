@@ -31,4 +31,3 @@ LOCAL-HANDOFF.txt
 
 # Worker deps
 node_modules/
-package-lock.json

@@ -1,0 +1,147 @@
+{
+  "artifact": "mf-train-001",
+  "title": "LLM API Bootcamp",
+  "version": "2.0.0",
+  "audience": "agent",
+  "section": "training",
+  "provider": "xAI Grok API",
+  "description": "Theory-first curriculum (~2 hours). Maps console, HTTP/JSON requests, credit math, product picker, troubleshooting. For developers and agents wiring automation without drowning in docs.",
+  "scope": {
+    "provider": "xAI",
+    "console_url": "https://console.x.ai",
+    "docs_url": "https://docs.x.ai",
+    "pricing_url": "https://docs.x.ai/developers/pricing",
+    "not_for": [
+      "production SRE runbooks",
+      "non-xAI provider specifics"
+    ]
+  },
+  "one_sentence": "An API is a remote service your software calls with a fixed question/answer format so a program gets work done without a human clicking buttons.",
+  "browser_vs_api": {
+    "browser": "You typing in grok.com or the app.",
+    "api": "Your program calling the same models 24/7 with your API key and credits.",
+    "same_models": true,
+    "use_browser_when": [
+      "one-off questions",
+      "brainstorming",
+      "editing a paragraph"
+    ],
+    "use_api_when": [
+      "Discord bot",
+      "batch narration",
+      "app button for a family member",
+      "cron job",
+      "voice pipeline"
+    ]
+  },
+  "console_fields": {
+    "credits_remaining": "Prepaid balance. Every API call deducts.",
+    "tokens": "Text units the model reads/writes.",
+    "requests": "API call count.",
+    "api_key": "Password for programs. Authorization Bearer header. Not your login password.",
+    "auto_top_up": "Optional for learning. Enable when production cannot afford downtime."
+  },
+  "products": [
+    {
+      "id": "grok-build",
+      "name": "Grok Build 0.1",
+      "use_when": "IDE agents, multi-step code edits",
+      "model": "grok-build-0.1",
+      "cost_note": "~$1.00 / 1M input, $2.00 / 1M output tokens"
+    },
+    {
+      "id": "grok-chat",
+      "name": "Grok 4.3 Chat API",
+      "use_when": "Bots, Q&A, summarization, tool calling",
+      "endpoint": "POST /v1/responses",
+      "cost_note": "~$1.25 / 1M input, $2.50 / 1M output tokens"
+    },
+    {
+      "id": "voice-agents",
+      "name": "Voice Agents",
+      "use_when": "Realtime duplex voice, phone agents",
+      "cost_note": "Realtime ~$0.05/min. TTS ~$15 / 1M characters."
+    },
+    {
+      "id": "imagine",
+      "name": "Imagine API",
+      "use_when": "Image and video from text",
+      "cost_note": "Images $0.02-$0.05 each. Video $0.05-$0.08 per second."
+    }
+  ],
+  "request_anatomy": {
+    "parts": [
+      {
+        "part": "URL",
+        "example": "https://api.x.ai/v1/responses"
+      },
+      {
+        "part": "Method",
+        "example": "POST"
+      },
+      {
+        "part": "Headers",
+        "example": "Authorization: Bearer xai-..."
+      },
+      {
+        "part": "Body",
+        "example": "JSON with model, input/messages, optional max_tokens"
+      }
+    ],
+    "token_fields": [
+      "input_tokens",
+      "output_tokens",
+      "total_tokens"
+    ],
+    "common_errors": [
+      {
+        "code": "401",
+        "meaning": "Bad or missing API key"
+      },
+      {
+        "code": "402",
+        "meaning": "Insufficient credits"
+      },
+      {
+        "code": "429",
+        "meaning": "Rate limit"
+      },
+      {
+        "code": "400",
+        "meaning": "Malformed JSON or invalid model"
+      }
+    ]
+  },
+  "credit_rules": {
+    "rule_of_thumb": "1 token ~ 3/4 English word. Text is cheap. Voice realtime and video burn fast.",
+    "drains_fast": [
+      "Always-on voice agent",
+      "Long video generation loops",
+      "Tool-heavy agents with web search",
+      "Huge context resent every call"
+    ],
+    "learning_strategy": [
+      "Phase 1 (week 1-2): short grok-4.3 tests, spend under $1",
+      "Phase 2: one bot or narration pipeline, cap max_tokens, log daily",
+      "Phase 3: auto top-up only when uptime matters"
+    ]
+  },
+  "modules_order": [
+    "what-is-api",
+    "console-map",
+    "request-anatomy",
+    "credit-math",
+    "capabilities",
+    "reference"
+  ],
+  "completion_criteria": [
+    "Console shows >0 requests",
+    "Can explain request/response flow",
+    "Knows which product fits next build",
+    "Knows what would drain prepaid credits"
+  ],
+  "related_artifacts": [
+    "mf-tool-001",
+    "mf-tpl-001"
+  ]
+}

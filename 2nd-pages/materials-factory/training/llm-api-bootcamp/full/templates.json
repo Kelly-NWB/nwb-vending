@@ -1,0 +1,118 @@
+{
+  "artifact": "mf-train-001",
+  "templates": [
+    {
+      "id": "powershell-first-call",
+      "label": "First live API call (PowerShell)",
+      "body": "$env:XAI_API_KEY = \"paste-your-key-here\"\n$body = @{\n  model = \"grok-4.3\"\n  input = @(\n    @{ role = \"user\"; content = \"Reply with exactly: API works.\" }\n  )\n} | ConvertTo-Json -Depth 5\n\nInvoke-RestMethod -Uri \"https://api.x.ai/v1/responses\" -Method POST -Headers @{\n  \"Authorization\" = \"Bearer $env:XAI_API_KEY\"\n  \"Content-Type\"  = \"application/json\"\n} -Body $body"
+    },
+    {
+      "id": "one-pager",
+      "label": "Printable one-pager",
+      "sections": {
+        "api_30_seconds": "Program -> HTTP POST + JSON + API key -> xAI -> JSON response -> credits deducted.",
+        "console": [
+          "Credits = money left",
+          "Tokens = text units billed",
+          "Requests = call count"
+        ],
+        "product_picker": [
+          "Text / bots -> Grok 4.3 Chat API",
+          "Code / agents -> Grok Build 0.1",
+          "Narration / clone -> Voice TTS",
+          "Live phone voice -> Voice Agents realtime",
+          "Pictures / video -> Imagine API"
+        ],
+        "guardrails": [
+          "Learn with short text calls first",
+          "Cap max_tokens on bots",
+          "Batch for bulk offline work",
+          "Do not leave realtime voice running unattended"
+        ]
+      }
+    },
+    {
+      "id": "cost-estimator",
+      "label": "Monthly cost estimator (approximate)",
+      "inputs": [
+        "task_type",
+        "units_per_day",
+        "size_per_unit",
+        "days_per_month"
+      ],
+      "task_types": {
+        "chat": {
+          "label": "Text chat (Grok 4.3)",
+          "unit": "requests_per_day",
+          "size": "words_in_out"
+        },
+        "code": {
+          "label": "Coding (Grok Build)",
+          "unit": "requests_per_day",
+          "size": "words_in_out"
+        },
+        "image": {
+          "label": "Image (Imagine)",
+          "unit": "images_per_day",
+          "size": "n/a"
+        },
+        "tts": {
+          "label": "TTS narration",
+          "unit": "chars_per_day",
+          "size": "n/a"
+        },
+        "voice": {
+          "label": "Voice realtime",
+          "unit": "minutes_per_day",
+          "size": "n/a"
+        }
+      }
+    },
+    {
+      "id": "checklist-what-is-api",
+      "label": "Module 1 checklist",
+      "items": [
+        "I can explain API in one sentence: program sends structured request, gets structured response",
+        "I know browser Grok vs API is same models, different access path",
+        "I can name one thing I did (voice clone, app) and which API category it used"
+      ]
+    },
+    {
+      "id": "checklist-console-map",
+      "label": "Module 2 checklist",
+      "items": [
+        "I can identify credits, tokens, and requests on my console",
+        "I know all four products draw from the same $50 pool",
+        "I understand the API key is a billing password for programs"
+      ]
+    },
+    {
+      "id": "checklist-request-anatomy",
+      "label": "Module 3 checklist",
+      "items": [
+        "I can name URL, headers, body as the three request parts",
+        "I understand model, system, user roles in JSON",
+        "I know input_tokens and output_tokens drive cost",
+        "I ran the PowerShell example OR know exactly what success looks like"
+      ]
+    },
+    {
+      "id": "checklist-credit-math",
+      "label": "Module 4 checklist",
+      "items": [
+        "I know text vs voice vs video cost order of magnitude",
+        "I used the calculator for one scenario I care about",
+        "I have a decision on auto top-up (on/off) with a reason"
+      ]
+    },
+    {
+      "id": "checklist-capabilities",
+      "label": "Module 5 checklist",
+      "items": [
+        "I understand tool calling = model triggers my code",
+        "I can distinguish TTS vs realtime voice agents",
+        "I picked which API matches my next actual project"
+      ]
+    }
+  ]
+}

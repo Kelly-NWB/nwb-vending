@@ -36,7 +36,7 @@ const GATED_ROUTES: GatedRoute[] = [
   {
     prefix: "/2nd-pages/materials-factory/training/llm-api-bootcamp/full",
     price: "$0.40",
-    description: "LLM API Bootcamp full interactive training (mf-train-001)",
+    description: "LLM API Bootcamp agent pack v2: playbook + modules + templates (mf-train-001)",
     artifact: "mf-train-001",
   },
   {

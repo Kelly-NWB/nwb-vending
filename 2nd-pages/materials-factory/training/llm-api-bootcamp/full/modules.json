@@ -1,0 +1,222 @@
+{
+  "artifact": "mf-train-001",
+  "modules": [
+    {
+      "id": "what-is-api",
+      "number": 1,
+      "title": "What an API actually is",
+      "cards": [
+        {
+          "id": "what-is-api-1",
+          "eyebrow": "Module 1 · Foundation",
+          "title": "The one-sentence definition",
+          "body": "An API is a remote service your software can call - with a fixed format for questions and answers - so a program can get work done without a human clicking buttons.\n\n              Not a website. Not a chat window. A machine contract: send structured data in, get structured data out.\n\n              \n                Your codescript, bot, app\n\n                →\n                HTTP requestJSON + API key\n\n                →\n                xAI serversGrok runs here\n\n                →\n                HTTP responseJSON back\n\n              \n\n              \n                Analogy (accurate enough)\n\n                Restaurant kitchen. You don't walk into the kitchen. You write an order on a standard form (request). The kitchen produces food (response). The menu + order form = the API specification. The waiter = HTTP.",
+          "checklist": false
+        },
+        {
+          "id": "what-is-api-2",
+          "eyebrow": "Module 1 · Foundation",
+          "title": "API vs using Grok in a browser",
+          "body": "Browser (grok.com, Grok app)API (your key + code)\n\n                Who talks to GrokYou, typingYour program, automatically\n\n                When it runsWhen you're there24/7 - bot, cron job, app button\n\n                What you paySubscription (if any)Your API credits (example balance)\n\n                Output goes toChat windowWherever your code sends it (Discord, file, speaker)\n\n                Same brain?Same models. Different door into the building.\n\n              \n              \n                When you do NOT need the API\n\n                One-off questions, brainstorming, editing a paragraph, exploring an idea. Use the browser. Cheaper mentally, zero integration work.\n\n              \n\n              \n                When you DO need the API\n\n                Something must run without you: a Discord bot, an app button for a family member, batch-processing 40 story chapters, generating images from a script, voice that plays when a file lands in a folder.",
+          "checklist": false
+        },
+        {
+          "id": "what-is-api-3",
+          "eyebrow": "Module 1 · Foundation",
+          "title": "What you already did (mapped to API concepts)",
+          "body": "You've touched API territory without necessarily knowing the vocabulary.\n\n              \n                \n                  Cloned your voice\n\n                  That used a Voice API capability - text in, audio out, with a voice profile. Someone else's servers rendered audio from your text. That's an API call whether you clicked a button or ran a script.\n\n                \n\n                \n                  Built a client app for a non-technical user\n\n                  That app is a client. Somewhere in the chain it either calls xAI directly (API key in the app) or calls your own backend that calls xAI. The user sees buttons; under the hood it's requests and responses.\n\n                \n\n                \n                  Grok Build / Cursor\n\n                  The IDE agent uses an API key (yours or bundled) to send your prompts to a coding model (grok-build-0.1). You're already a consumer of API infrastructure - you just didn't see the JSON.\n\n                \n\n              \n\n              The bootcamp makes the hidden layer visible: what gets sent, what comes back, what it costs.",
+          "checklist": false
+        },
+        {
+          "id": "what-is-api-4",
+          "eyebrow": "Module 1 · Checklist",
+          "title": "Module 1 checklist",
+          "body": "I can explain API in one sentence: program sends structured request, gets structured response\n\n                \nI know browser Grok vs API is same models, different access path\n\n                \nI can name one thing I did (voice clone, app) and which API category it used",
+          "checklist": true
+        }
+      ]
+    },
+    {
+      "id": "console-map",
+      "number": 2,
+      "title": "Your xAI console decoded",
+      "cards": [
+        {
+          "id": "console-map-1",
+          "eyebrow": "Module 2 · Console",
+          "title": "What you see after login",
+          "body": "Screen description - match this to console.x.ai:\n\n              \n                Welcome, [your account] · xAI Console\n\n                \n                  Create API keyDone ✓\n\n                  Enable auto top upYour choice - see Module 4\n\n                  Credits remaining$50\n\n                  Credits usage$0.00\n\n                  Tokens0\n\n                  Requests0\n\n                \n\n              \n\n              Credits remaining = prepaid balance. Every API call deducts from this.\n\n              Tokens = units of text the model reads/writes. Usage dashboard aggregates them.\n\n              Requests = number of API calls. One Discord message = one request (roughly).\n\n              $0.00 usage with $50 sitting there = key exists, nothing has called the API yet. Grok Build in the IDE may use separate billing - check which key powers what.",
+          "checklist": false
+        },
+        {
+          "id": "console-map-2",
+          "eyebrow": "Module 2 · Products",
+          "title": "The four products on your dashboard",
+          "body": "Grok Build 0.1 New\n\n                  Coding/agent model. Built for multi-step engineering tasks in IDEs and agents.\n\n                  Use when: Grok Build, Cursor, automated code edits, workflow agents.\nEndpoint: Same API base, model name grok-build-0.1.\nCost: ~$1.00 / 1M input tokens, $2.00 / 1M output.\n\n                \n\n                \n                  Grok 4.3 - Chat API Core\n\n                  Text generation, multi-turn chat, tool/function calling.\n\n                  Use when: Bots, Q&A, story generation, summarization, anything text.\nEndpoint: POST /v1/responses or chat completions.\nCost: ~$1.25 / 1M input, $2.50 / 1M output tokens.\n\n                \n\n                \n                  Voice Agents New\n\n                  Real-time voice: listen, think, speak. Can tie to phone numbers.\n\n                  Use when: Phone agent, live voice conversation, duplex audio.\nCost: Realtime ~$0.05/min ($3/hr). TTS ~$15 / 1M characters.\n\n                \n\n                \n                  Imagine API\n\n                  Image and video generation from text (and image-to-video).\n\n                  Use when: Thumbnails, storyboards, visual assets.\nCost: Images $0.02-0.05 each. Video $0.05-0.08 / second.\n\n                \n\n              \n\n              These are not separate accounts. One credit pool. Voice marathon burns it faster than text homework.",
+          "checklist": false
+        },
+        {
+          "id": "console-map-3",
+          "eyebrow": "Module 2 · Console",
+          "title": "API key - what it is and isn't",
+          "body": "Your API key is a password that programs use, not you.\n\n              \n                Format: Long string, sent as Authorization: Bearer YOUR_KEY on every request.\n\n                Scope: Charges your team's credits. Anyone with the key can spend your $50.\n\n                Not your login password. Not shown in chat UIs. Lives in env vars, config files, or app secrets.\n\n                Rotation: Revoke and recreate in console if leaked (Discord, GitHub, screenshot).\n\n              \n              \n                Security rule\n\n                Never paste the key in a public repo, Discord, or a browser extension you don't trust. For learning on your own PC, local scripts are fine.\n\n              \n\n              Auto top-up\n\n              When credits hit zero, requests fail. Auto top-up charges your card automatically. For learning phase: optional. You have $50; that's thousands of small text experiments. Enable when you deploy something production-grade that can't afford downtime.",
+          "checklist": false
+        },
+        {
+          "id": "console-map-4",
+          "eyebrow": "Module 2 · Checklist",
+          "title": "Module 2 checklist",
+          "body": "I can identify credits, tokens, and requests on my console\n\n                \nI know all four products draw from the same $50 pool\n\n                \nI understand the API key is a billing password for programs",
+          "checklist": true
+        }
+      ]
+    },
+    {
+      "id": "request-anatomy",
+      "number": 3,
+      "title": "Anatomy of a request",
+      "cards": [
+        {
+          "id": "request-anatomy-1",
+          "eyebrow": "Module 3 · HTTP",
+          "title": "The four parts every call has",
+          "body": "PartWhat it isExample\n\n                URL (endpoint)Address of the capabilityhttps://api.x.ai/v1/responses\n\n                MethodWhat action (almost always POST for AI)POST\n\n                HeadersMetadata: auth, content typeAuthorization: Bearer xai-...\n\n                BodyThe actual order (JSON)model, messages, temperature…\n\n              \n              The response is also JSON: model output, token counts, sometimes tool results. Your job as API user: build the body, parse the response, handle errors.",
+          "checklist": false
+        },
+        {
+          "id": "request-anatomy-2",
+          "eyebrow": "Module 3 · JSON",
+          "title": "JSON - the order form",
+          "body": "JSON is nested key-value text. Machines parse it. You read it with practice.\n\n              {\n  \"model\": \"grok-4.3\",\n  \"input\": [\n    { \"role\": \"system\", \"content\": \"You answer in one sentence.\" },\n    { \"role\": \"user\", \"content\": \"What is an API?\" }\n  ]\n}\n              \n                FieldMeaning\n\n                modelWhich brain. Wrong model = wrong price/behavior.\n\n                role: systemInstructions the user doesn't see. Sets behavior.\n\n                role: userThe actual prompt.\n\n                role: assistantPrevious model replies - for multi-turn chat history.\n\n              \n              Optional knobs: temperature (randomness), max_tokens (cap on reply length), tools array (lets model call functions).",
+          "checklist": false
+        },
+        {
+          "id": "request-anatomy-3",
+          "eyebrow": "Module 3 · Response",
+          "title": "What comes back",
+          "body": "Success looks like HTTP status 200 and a JSON body with the generated text plus billing metadata.\n\n              {\n  \"id\": \"resp_...\",\n  \"model\": \"grok-4.3\",\n  \"output\": [...],\n  \"usage\": {\n    \"input_tokens\": 42,\n    \"output_tokens\": 87,\n    \"total_tokens\": 129\n  }\n}\n              input_tokens = what you sent (including system prompt + history).\n\n              output_tokens = what the model wrote.\n\n              That's how $50 becomes line items.\n\n              \n                Common errors (theory)\n\n                \n                  401 - bad or missing API key\n\n                  402 / insufficient credits - balance empty\n\n                  429 - too many requests too fast (rate limit)\n\n                  400 - malformed JSON or invalid model name",
+          "checklist": false
+        },
+        {
+          "id": "request-anatomy-4",
+          "eyebrow": "Module 3 · Hands-on",
+          "title": "First live call (instructions)",
+          "body": "Theory only until you run this once. Then the console Usage tab will move off zero.\n\n              Step 1 - set key in PowerShell (session only)\n\n              $env:XAI_API_KEY = \"paste-your-key-here\"\n              Step 2 - send one request\n\n              $body = @{\n  model = \"grok-4.3\"\n  input = @(\n    @{ role = \"user\"; content = \"Reply with exactly: API works.\" }\n  )\n} | ConvertTo-Json -Depth 5\n\nInvoke-RestMethod -Uri \"https://api.x.ai/v1/responses\" -Method POST -Headers @{\n  \"Authorization\" = \"Bearer $env:XAI_API_KEY\"\n  \"Content-Type\"  = \"application/json\"\n} -Body $body\n              What you should see\n\n              PowerShell prints an object. Look for output text containing API works. Refresh console.x.ai - Requests should show 1, usage a fraction of a cent.\n\n              \n                What you learned from one call\n\n                The entire API pattern: auth header + JSON body → remote model → JSON response → money deducted. Every product (voice, images, bots) is a variation on this.",
+          "checklist": false
+        },
+        {
+          "id": "request-anatomy-5",
+          "eyebrow": "Module 3 · Checklist",
+          "title": "Module 3 checklist",
+          "body": "I can name URL, headers, body as the three request parts\n\n                \nI understand model, system, user roles in JSON\n\n                \nI know input_tokens and output_tokens drive cost\n\n                \nI ran the PowerShell example OR know exactly what success looks like",
+          "checklist": true
+        }
+      ]
+    },
+    {
+      "id": "credit-math",
+      "number": 4,
+      "title": "Credit math & strategy",
+      "cards": [
+        {
+          "id": "credit-math-1",
+          "eyebrow": "Module 4 · Pricing",
+          "title": "How $50 actually depletes",
+          "body": "Text is cheap. Voice realtime and video are not. Source: xAI pricing docs (USD).\n\n              \n                ProductUnitApprox cost\n\n                Grok 4.3 text1M input tokens$1.25\n\n                Grok 4.3 text1M output tokens$2.50\n\n                Grok Build 0.11M input / output$1.00 / $2.00\n\n                Imagine imageper image$0.02 - $0.05\n\n                Imagine videoper second$0.05 - $0.08\n\n                Voice realtimeper minute$0.05 ($3/hr)\n\n                TTS (narration)1M characters$15\n\n              \n              Rule of thumb: 1 token ≈ ¾ of an English word. A 500-word reply ≈ 650 output tokens ≈ $0.0016. Pennies.",
+          "checklist": false
+        },
+        {
+          "id": "credit-math-2",
+          "eyebrow": "Module 4 · Calculator",
+          "title": "Cost estimator",
+          "body": "Adjust inputs. This is approximate - actual bills include system prompts, history, tools.\n\n              \n                \n                  \n                    Task type\n                    \n                      Text chat (Grok 4.3)\n                      Coding (Grok Build)\n                      Image (Imagine)\n                      TTS narration (chars)\n                      Voice realtime (minutes)\n                    \n                  \n\n                  \n                    Requests per day\n                    \n                  \n\n                  \n                    Words per request (in+out)\n                    \n                  \n\n                  \n                    Days per month\n                    \n                  \n\n                  \n\n                \n\n              \n\n              \n                What drains $50 fast\n\n                \n                  Always-on voice agent (hours × $3/hr)\n\n                  Long video generation (seconds × $0.05+)\n\n                  Tool-heavy agents (web search $5 / 1k calls on top of tokens)\n\n                  Huge context pasted every request (100k+ tokens × hundreds of calls)",
+          "checklist": false
+        },
+        {
+          "id": "credit-math-3",
+          "eyebrow": "Module 4 · Strategy",
+          "title": "$50 learning strategy",
+          "body": "Phase 1 - Learn (week 1-2): Short prompts, grok-4.3, manual tests. Expected spend: under $1.\n\n                Phase 2 - Prototype: One bot or one narration pipeline. Cap max_tokens. Log usage daily in console.\n\n                Phase 3 - Decide on auto top-up: Only when something must stay up and you'd rather pay than fix downtime.\n\n              \n              \n                ActivityRough monthly cost\n\n                50 short API lessons< $0.10\n\n                Discord bot, 100 msgs/day, medium replies$2 - $15\n\n                Narrate 2hr audiobook via TTS~$15-30 (char-based)\n\n                Voice agent, 1 hr/day realtime~$90/mo - burns $50 in ~2 weeks\n\n              \n              Your $50 is plenty for education + several prototypes. It is not plenty for an unmanaged 24/7 voice bot.",
+          "checklist": false
+        },
+        {
+          "id": "credit-math-4",
+          "eyebrow": "Module 4 · Checklist",
+          "title": "Module 4 checklist",
+          "body": "I know text vs voice vs video cost order of magnitude\n\n                \nI used the calculator for one scenario I care about\n\n                \nI have a decision on auto top-up (on/off) with a reason",
+          "checklist": true
+        }
+      ]
+    },
+    {
+      "id": "capabilities",
+      "number": 5,
+      "title": "Capabilities beyond plain chat",
+      "cards": [
+        {
+          "id": "capabilities-1",
+          "eyebrow": "Module 5 · Tools",
+          "title": "Function / tool calling",
+          "body": "The model doesn't just talk - it can request that your code run a function (look up weather, query a database, post to Discord).\n\n              \n                User asks\"What's in stock?\"\n\n                →\n                Modelreturns tool_call\n\n                →\n                Your coderuns function\n\n                →\n                Modelfinal answer\n\n              \n\n              This is how \"perform functions\" works in Discord bots and agents. The API conversation bounces between xAI and your handler. Extra cost: tool invocation fees (e.g. web search $5/1000 calls) plus tokens.",
+          "checklist": false
+        },
+        {
+          "id": "capabilities-2",
+          "eyebrow": "Module 5 · Voice",
+          "title": "Voice: three different things",
+          "body": "CapabilityWhat it doesWhen to use\n\n                TTS (text-to-speech)Text → audio file/streamNarration, audiobook chapters, voice clone playback\n\n                STT (speech-to-text)Audio → textTranscription, voice commands\n\n                Realtime Voice AgentsFull duplex conversationPhone support bot, live interview\n\n              \n              Your voice clone = TTS path with a specific voice ID. Not the same as a Voice Agent that listens on a phone line.",
+          "checklist": false
+        },
+        {
+          "id": "capabilities-3",
+          "eyebrow": "Module 5 · Batch",
+          "title": "Batch API (half-price homework)",
+          "body": "Send 100 narration jobs or summaries async - processed within ~24h, 20-50% cheaper on tokens. Use for: processing long-form manuscript chapters overnight, bulk image prompts, dataset labeling.\n\n              Tradeoff: not real-time. Wrong for Discord. Right for offline pipelines.",
+          "checklist": false
+        },
+        {
+          "id": "capabilities-4",
+          "eyebrow": "Module 5 · Decision tree",
+          "title": "Which API for which job",
+          "body": "I need something to reply in Discord when I'm asleep\n\n                  Grok 4.3 Chat API + a small always-on host (VPS, Railway, etc.). Your bot code receives Discord event → calls API → posts reply. Text only unless you add TTS upload.\n\n                \n\n                \n                  I need to turn written stories into spoken audio\n\n                  Voice API TTS. Chunk by chapter. Batch API if not urgent. Watch character count - 1M chars ≈ $15.\n\n                \n\n                \n                  I need cover art or scene images for a fiction project\n\n                  Imagine API (image). ~$0.02-0.05 per image. Script loops prompts → saves files.\n\n                \n\n                \n                  I need help writing code in an IDE\n\n                  Grok Build 0.1 via Grok Build / compatible tools. Already what you're doing. Separate from one-off personal app projects.\n\n                \n\n                \n                  I need a phone number people can call and talk to AI\n\n                  Voice Agents (realtime). Highest burn rate. Prototype in minutes, not hours, until you understand billing.",
+          "checklist": false
+        },
+        {
+          "id": "capabilities-5",
+          "eyebrow": "Module 5 · Checklist",
+          "title": "Module 5 checklist",
+          "body": "I understand tool calling = model triggers my code\n\n                \nI can distinguish TTS vs realtime voice agents\n\n                \nI picked which API matches my next actual project",
+          "checklist": true
+        }
+      ]
+    },
+    {
+      "id": "reference",
+      "number": 6,
+      "title": "Troubleshooting & one-pager",
+      "cards": [
+        {
+          "id": "reference-1",
+          "eyebrow": "Module 6 · Errors",
+          "title": "Troubleshooting",
+          "body": "401 Unauthorized\n\n                Key wrong, expired, or missing Bearer prefix. Regenerate in console. Re-export env var.\n\n              \n\n              \n                Usage stays at $0 after \"using\" Grok Build\n\n                IDE may use different billing or a bundled key. Check Grok Build settings for which API key is configured. Console only tracks requests made with your team key.\n\n              \n\n              \n                402 / insufficient credits\n\n                Balance empty. Add credits or enable top-up. Failed requests after this still may charge violation fee on some endpoints.\n\n              \n\n              \n                429 Rate limit\n\n                Too fast. Back off, retry with delay. Batch API for bulk work.\n\n              \n\n              \n                Response empty or truncated\n\n                Hit max_tokens cap. Increase cap or shorten input. Check finish_reason in response.\n\n              \n\n              \n                App works locally, fails deployed\n\n                Env var not set on server. Key committed to git and revoked. CORS only affects browser-direct calls - server-side bots don't have CORS issues.\n\n              \n\n              \n                Credits dropping faster than expected\n\n                Check console usage breakdown. Look for: long chat history resent every call, tool invocations, realtime voice left connected, image/video loops.",
+          "checklist": false
+        },
+        {
+          "id": "reference-2",
+          "eyebrow": "Module 6 · Reference",
+          "title": "One-pager (print this)",
+          "body": "API in 30 seconds\n\n                Program → HTTP POST + JSON + API key → xAI → JSON response → credits deducted.\n\n                Your console\n\n                \n                  Credits = money left\n\n                  Tokens = text units billed\n\n                  Requests = call count\n\n                \n\n                Product picker\n\n                \n                  Text / bots → Grok 4.3 Chat API\n\n                  Code / agents → Grok Build 0.1\n\n                  Narration / clone → Voice TTS\n\n                  Live phone voice → Voice Agents realtime\n\n                  Pictures / video → Imagine API\n\n                \n\n                Cost guardrails\n\n                \n                  Learn with short text calls first\n\n                  Cap max_tokens on bots\n\n                  Batch for bulk offline work\n\n                  Don't leave realtime voice running unattended\n\n                \n\n                First test command\n\n                $env:XAI_API_KEY = \"your-key\"\n# Then Invoke-RestMethod to https://api.x.ai/v1/responses\n# See Module 3 card 4 in this app\n\n                Links\n\n                \n                  Console: console.x.ai\n\n                  Docs: docs.x.ai\n\n                  Pricing: docs.x.ai/developers/pricing",
+          "checklist": false
+        },
+        {
+          "id": "reference-3",
+          "eyebrow": "Module 6 · Done",
+          "title": "What to do next",
+          "body": "You have theory. Pick one path:\n\n              \n                PathFirst actionAPI\n\n                Prove the pipe worksRun Module 3 PowerShell callChat\n\n                Automate textScript that reads a .txt file, sends chunks, saves repliesChat or Batch\n\n                Voice outputOne TTS call on a single paragraph with your cloned voice IDVoice\n\n                DiscordRegister bot in Discord Developer Portal, echo bot without AI first, then add API callChat\n\n              \n              Docs are reference. This app is the map. When you build, you'll look up endpoint specifics - you won't read them cover to cover.\n\n              \n                Bootcamp complete when\n\n                Console shows >0 requests, you can explain request/response, you know which product fits your next build, and you know what would drain $50.",
+          "checklist": false
+        }
+      ]
+    }
+  ]
+}

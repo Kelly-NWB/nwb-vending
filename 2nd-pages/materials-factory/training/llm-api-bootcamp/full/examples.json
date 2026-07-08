@@ -1,0 +1,39 @@
+{
+  "artifact": "mf-train-001",
+  "examples": [
+    {
+      "id": "ex-first-call",
+      "scenario": "Prove the pipe works",
+      "learner_goal": "See console Requests move off zero",
+      "steps": [
+        "Set XAI_API_KEY in PowerShell session",
+        "Run powershell-first-call template",
+        "Confirm output contains 'API works.'",
+        "Refresh console.x.ai usage"
+      ],
+      "api_product": "grok-chat",
+      "expected_spend": "under $0.01"
+    },
+    {
+      "id": "ex-discord-bot",
+      "scenario": "Discord bot while asleep",
+      "pick": "Grok 4.3 Chat API + small always-on host",
+      "why": "Text replies to events. Not realtime voice.",
+      "cost_band": "$2-$15/mo at ~100 msgs/day medium replies"
+    },
+    {
+      "id": "ex-audiobook-tts",
+      "scenario": "Turn written chapters into spoken audio",
+      "pick": "Voice API TTS, chunk by chapter, Batch API if not urgent",
+      "why": "Character-based billing. 1M chars ~ $15.",
+      "cost_band": "~$15-30 for 2hr audiobook rough order"
+    },
+    {
+      "id": "ex-voice-agent-warning",
+      "scenario": "Phone line people can call and talk to AI",
+      "pick": "Voice Agents realtime",
+      "why": "Highest burn. Prototype in minutes until billing is understood.",
+      "cost_band": "~$90/mo at 1 hr/day realtime"
+    }
+  ]
+}

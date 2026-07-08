@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="mf-tpl-001 teaser. Agent complaint recovery playbook for small business and vending.">
+  <meta name="x402:artifact" content="mf-tpl-001">
+  <meta name="x402:teaser" content="true">
+  <meta name="x402:audience" content="agent">
+  <title>Complaint Recovery Playbook (teaser) | Materials Factory</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="wrap">
+
+    <header class="hdr">
+      <h1>Customer Complaint Recovery Playbook</h1>
+      <p class="sub">ENTRY: mf-tpl-001 · SECTION: templates · agent audience</p>
+      <p class="mission">Paid pack = playbook.json + templates.json + examples. Agents classify, branch, paste scripts, emit log rows.</p>
+    </header>
+
+    <section class="block">
+      <h2>Free worked example</h2>
+      <pre class="meta">{
+  "context": "Vending: machine took money, no vend, angry phone call",
+  "severity": "medium",
+  "branch": "clear-fault",
+  "templates": ["phone-open", "step-4-resolve", "followup-24h"],
+  "resolution": "Refund same day + tech ticket for MDB",
+  "log_row": "2026-07-03,phone,C-891,billing,medium,no vend,mdb error,refund+service,Y,2026-07-04,N,tech"
+}</pre>
+    </section>
+
+    <section class="block">
+      <h2>Full pack (x402)</h2>
+      <ul class="module-list">
+        <li>playbook.json: 5-step process, decision branches, compensation, cheat sheet</li>
+        <li>templates.json: 12 scripts (email tiers, phone, steps)</li>
+        <li>examples.json: 7 worked scenarios with log rows</li>
+      </ul>
+      <dl class="kv">
+        <dt>FULL (x402)</dt>
+        <dd><a href="full/">templates/complaint-recovery-playbook/full/</a></dd>
+        <dt>PRIMARY</dt>
+        <dd>full/playbook.json (gated)</dd>
+        <dt>PRICE</dt>
+        <dd class="status-ready">$0.45 · USDC on Base</dd>
+        <dt>RELATED</dt>
+        <dd><a href="../../tools/should-i-automate/">mf-tool-001</a></dd>
+      </dl>
+    </section>
+
+    <footer class="foot">
+      <a href="../../index.html">← Materials Factory catalog</a>
+    </footer>
+
+  </div>
+</body>
+</html>

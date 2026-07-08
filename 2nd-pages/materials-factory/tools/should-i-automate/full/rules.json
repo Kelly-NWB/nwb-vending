@@ -1,0 +1,163 @@
+{
+  "artifact": "mf-tool-001",
+  "title": "Should I Automate This?",
+  "version": "2.0.0",
+  "audience": "agent",
+  "section": "tools",
+  "description": "Vending and small-business automation decision rubric. Apply rules to inputs; do not present as a click-through quiz to end users.",
+  "inputs": {
+    "idea": { "type": "string", "required": false, "description": "What the operator is considering automating" },
+    "category": { "type": "enum", "required": true, "values": ["ops", "comms", "data", "inventory", "staff", "other"] },
+    "freq": { "type": "enum", "required": true, "values": ["daily", "weekly", "monthly", "rare"] },
+    "people": { "type": "enum", "required": true, "values": ["one", "twofive", "sixplus"] },
+    "written": { "type": "enum", "required": true, "values": ["yes", "partial", "no"] },
+    "judgment": { "type": "enum", "required": true, "values": ["always", "sometimes", "rarely"] },
+    "stakes": { "type": "enum", "required": true, "values": ["annoyance", "customer", "money", "safety"] },
+    "data": { "type": "enum", "required": true, "values": ["yes", "rough", "no", "guess"] }
+  },
+  "categories": [
+    { "id": "ops", "label": "Operations & routes", "example": "Route notes, machine visit logs, opening checklists" },
+    { "id": "comms", "label": "Customer communication", "example": "Complaint replies, order updates, review responses" },
+    { "id": "data", "label": "Data & reporting", "example": "Per-machine sales pulls, weekly owner dashboard" },
+    { "id": "inventory", "label": "Inventory & ordering", "example": "Restock lists, par levels, vendor POs" },
+    { "id": "staff", "label": "Staff & scheduling", "example": "Shift swaps, training checklists, handoff notes" },
+    { "id": "other", "label": "Other", "example": "Anything else tempted to software-ify" }
+  ],
+  "outcomes": {
+    "manual_ok": {
+      "label": "Stay manual",
+      "title": "Manual is fine for now",
+      "summary": "Low frequency or low stakes. Software adds cost, training, and failure modes you do not need yet.",
+      "next_steps": [
+        "Write the 3-step version on a laminated card or shared doc.",
+        "Set a calendar reminder to revisit if volume doubles.",
+        "Track time spent for 30 days. Numbers beat gut feel."
+      ],
+      "do_not": "Do not buy SaaS or hire a dev until frequency or pain clearly rises."
+    },
+    "template": {
+      "label": "Template first",
+      "title": "Use a template or checklist before software",
+      "summary": "Task repeats but process is not stable. Standardize words and steps first.",
+      "next_steps": [
+        "Draft one canonical version (email, phone script, or checklist).",
+        "Run it unchanged for 30 days. Note every exception.",
+        "Only automate steps that never need judgment."
+      ],
+      "do_not": "Skip custom apps until the template survives a busy week without edits.",
+      "cross_artifact": "mf-tpl-001 for customer comms templates"
+    },
+    "spreadsheet": {
+      "label": "Spreadsheet",
+      "title": "A shared sheet is probably enough",
+      "summary": "Multiple people need the same live view. Formulas beat custom code for tabular work.",
+      "next_steps": [
+        "One Google Sheet or Excel file with clear column headers.",
+        "Single owner for structure changes. Everyone else adds rows.",
+        "Add simple formulas (counts, flags, due dates) before any API."
+      ],
+      "do_not": "Move to a tool only when the sheet breaks (permissions, mobile, or 10+ daily editors)."
+    },
+    "simple_tool": {
+      "label": "Simple tool",
+      "title": "Buy or configure an existing tool",
+      "summary": "Problem fits a known SaaS category. Building custom is slower and riskier.",
+      "next_steps": [
+        "List must-haves vs nice-to-haves. Kill nice-to-haves for v1.",
+        "Trial with real data for 14 days. One champion user.",
+        "Export test: can you get your data out if you leave?"
+      ],
+      "do_not": "Custom build only if no SaaS covers 80% after an honest search."
+    },
+    "build": {
+      "label": "Build custom",
+      "title": "Custom build may be justified",
+      "summary": "High volume, stable process, clear ROI, and existing tools do not fit. Still start small.",
+      "next_steps": [
+        "Write a one-page spec: inputs, outputs, users, edge cases.",
+        "Ship the smallest slice in 2 weeks (not 6 months).",
+        "Measure hours saved vs build + maintenance cost."
+      ],
+      "do_not": "Never greenfield an app before spreadsheet + template failed."
+    },
+    "dont_automate": {
+      "label": "Do not automate",
+      "title": "Keep humans in the loop",
+      "summary": "Judgment, empathy, or safety calls every time. Automation creates angry customers or liability.",
+      "next_steps": [
+        "Invest in training and scripts, not bots.",
+        "Use templates for boring parts only (logging, follow-up timing).",
+        "Escalation paths on paper. Who decides when rules do not fit?"
+      ],
+      "do_not": "AI auto-replies and unattended workflows are the wrong move for this bucket.",
+      "cross_artifact": "mf-tpl-001 for complaint recovery (template, not bot)"
+    },
+    "gather_data": {
+      "label": "Gather data first",
+      "title": "Not enough data to decide",
+      "summary": "Automating a guess wastes money. Run manual or sheet for 90 days and count.",
+      "next_steps": [
+        "Log each occurrence: date, who, minutes spent, what went wrong.",
+        "After 90 days: frequency, total hours, cost of mistakes.",
+        "Re-run this rubric with real numbers."
+      ],
+      "do_not": "No vendor quotes until you can answer how many per month from logs."
+    }
+  },
+  "vending_lens": {
+    "ops": "Route notes app often loses to group text + one Sheet for 90 days first.",
+    "comms": "Templates + log sheet before any AI inbox tool. See mf-tpl-001.",
+    "data": "Sheet that ingests CSV exports beats a dashboard nobody opens.",
+    "inventory": "Par-level sheet with driver checkboxes before inventory SaaS.",
+    "staff": "Shared calendar + group text before scheduling software.",
+    "other": "Vending ops rarely need net-new software. They need shared visibility."
+  },
+  "decision_rules": [
+    { "priority": 100, "when": { "data": "guess" }, "outcome": "gather_data" },
+    { "priority": 99, "when": { "judgment": "always" }, "outcome": "dont_automate" },
+    { "priority": 98, "when": { "judgment": "sometimes", "category": "comms" }, "outcome": "dont_automate" },
+    { "priority": 97, "when": { "judgment": "sometimes", "stakes": "customer" }, "outcome": "dont_automate" },
+    { "priority": 96, "when": { "judgment": "sometimes", "stakes": "safety" }, "outcome": "dont_automate" },
+    { "priority": 95, "when": { "written": "no" }, "outcome": "template" },
+    { "priority": 94, "when": { "freq": "rare", "stakes": "annoyance" }, "outcome": "manual_ok" },
+    { "priority": 93, "when": { "data": "no" }, "outcome": "gather_data" },
+    { "priority": 92, "when": { "category": "comms", "judgment": "always" }, "outcome": "dont_automate" },
+    { "priority": 91, "when": { "category": "comms", "judgment": "sometimes" }, "outcome": "template" },
+    { "priority": 90, "when": { "category": "comms", "judgment": "rarely", "written": "yes", "data": "yes" }, "outcome": "simple_tool" },
+    { "priority": 89, "when": { "category": "comms", "judgment": "rarely" }, "outcome": "template" },
+    { "priority": 88, "when": { "category": "other", "freq": "daily", "people": "sixplus", "written": "yes", "data": "yes" }, "outcome": "build" },
+    { "priority": 87, "when": { "category": "ops", "freq": "rare", "people": "one" }, "outcome": "manual_ok" },
+    { "priority": 86, "when": { "category": "ops", "people": "one", "freq": "weekly" }, "outcome": "template" },
+    { "priority": 85, "when": { "category": "ops", "people": "one", "freq": "monthly" }, "outcome": "template" },
+    { "priority": 84, "when": { "category": "ops", "freq": "daily", "written": "yes", "people": "twofive" }, "outcome": "spreadsheet" },
+    { "priority": 83, "when": { "category": "ops", "freq": "daily", "written": "yes", "people": "sixplus" }, "outcome": "spreadsheet" },
+    { "priority": 82, "when": { "category": "ops" }, "outcome": "spreadsheet" },
+    { "priority": 81, "when": { "category": "inventory", "freq": "daily", "people": "sixplus", "written": "yes" }, "outcome": "simple_tool" },
+    { "priority": 80, "when": { "category": "inventory", "freq": "weekly", "people": "twofive" }, "outcome": "spreadsheet" },
+    { "priority": 79, "when": { "category": "inventory" }, "outcome": "spreadsheet" },
+    { "priority": 78, "when": { "category": "data", "freq": "daily", "people": "sixplus" }, "outcome": "build" },
+    { "priority": 77, "when": { "category": "data", "freq": "rare" }, "outcome": "spreadsheet" },
+    { "priority": 76, "when": { "category": "data", "freq": "monthly" }, "outcome": "spreadsheet" },
+    { "priority": 75, "when": { "category": "data", "people": "one" }, "outcome": "spreadsheet" },
+    { "priority": 74, "when": { "category": "data" }, "outcome": "simple_tool" },
+    { "priority": 73, "when": { "category": "staff", "judgment": "sometimes" }, "outcome": "template" },
+    { "priority": 72, "when": { "category": "staff", "people": "sixplus" }, "outcome": "simple_tool" },
+    { "priority": 71, "when": { "category": "staff" }, "outcome": "spreadsheet" },
+    { "priority": 70, "when": { "freq": "daily", "people": "twofive", "written": "yes", "stakes": "money" }, "outcome": "simple_tool" },
+    { "priority": 69, "when": { "freq": "daily", "people": "sixplus", "written": "yes", "stakes": "money" }, "outcome": "simple_tool" },
+    { "priority": 68, "when": { "freq": "daily", "people": "twofive", "written": "yes", "stakes": "safety" }, "outcome": "simple_tool" },
+    { "priority": 68, "when": { "freq": "daily", "written": "yes", "people": "twofive" }, "outcome": "spreadsheet" },
+    { "priority": 67, "when": { "freq": "daily", "written": "yes", "people": "sixplus" }, "outcome": "spreadsheet" },
+    { "priority": 66, "when": { "freq": "weekly", "people": "twofive" }, "outcome": "spreadsheet" },
+    { "priority": 65, "when": { "freq": "weekly", "people": "sixplus" }, "outcome": "spreadsheet" },
+    { "priority": 64, "when": { "freq": "monthly", "people": "one" }, "outcome": "manual_ok" },
+    { "priority": 63, "when": { "written": "partial" }, "outcome": "template" },
+    { "priority": 62, "when": { "stakes": "annoyance", "freq": "monthly" }, "outcome": "manual_ok" },
+    { "priority": 61, "when": { "stakes": "annoyance", "freq": "rare" }, "outcome": "manual_ok" }
+  ],
+  "default_outcome": "template",
+  "output_format": {
+    "summary_template": "SHOULD I AUTOMATE THIS? · mf-tool-001\nIdea: {idea}\nCategory: {category_label}\nFrequency: {freq}\nPeople/week: {people}\nWritten process: {written}\nHuman judgment: {judgment}\nIf skipped once: {stakes}\n90-day data: {data}\n\nOUTCOME: {outcome_label}\n{outcome_title}\n\nNext steps:\n{next_steps_numbered}\n\nDo not: {do_not}\n\nVending lens: {vending_lens}"
+  },
+  "related_artifacts": ["mf-tpl-001"]
+}

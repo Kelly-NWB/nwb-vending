@@ -25,32 +25,55 @@ export interface Env {
   FACILITATOR_URL?: string;
 }
 
-const GATED_PREFIX =
-  "/2nd-pages/materials-factory/training/llm-api-bootcamp/full";
+type GatedRoute = {
+  prefix: string;
+  price: string;
+  description: string;
+  artifact: string;
+};
 
-const GATED_PRICE = "$0.40";
-const GATED_DESCRIPTION =
-  "LLM API Bootcamp — full 6-module interactive training (mf-train-001)";
+const GATED_ROUTES: GatedRoute[] = [
+  {
+    prefix: "/2nd-pages/materials-factory/training/llm-api-bootcamp/full",
+    price: "$0.40",
+    description: "LLM API Bootcamp full interactive training (mf-train-001)",
+    artifact: "mf-train-001",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/complaint-recovery-playbook/full",
+    price: "$0.45",
+    description: "Complaint Recovery Playbook agent pack (mf-tpl-001)",
+    artifact: "mf-tpl-001",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/tools/should-i-automate/full",
+    price: "$0.35",
+    description: "Should I Automate This decision rubric (mf-tool-001)",
+    artifact: "mf-tool-001",
+  },
+];
 
 function normalizePath(path: string): string {
   if (path.length > 1) return path.replace(/\/+$/, "");
   return path;
 }
 
-function isGatedPath(path: string): boolean {
+function findGatedRoute(path: string): GatedRoute | undefined {
   const p = normalizePath(path);
-  return p === GATED_PREFIX || p.startsWith(GATED_PREFIX + "/");
+  return GATED_ROUTES.find(
+    (r) => p === r.prefix || p.startsWith(r.prefix + "/")
+  );
 }
 
-function paymentRoutes(path: string, network: Env["NETWORK"]): RoutesConfig {
+function paymentRoutes(path: string, route: GatedRoute, network: Env["NETWORK"]): RoutesConfig {
   const normalized = normalizePath(path);
   const routes: RoutesConfig = {};
 
   for (const key of [normalized, normalized + "/", path]) {
     routes[key] = {
-      price: GATED_PRICE,
+      price: route.price,
       network,
-      config: { description: GATED_DESCRIPTION },
+      config: { description: route.description },
     };
   }
 
@@ -64,16 +87,20 @@ app.get("/__x402/health", (c) =>
     ok: true,
     service: "nwb-vending",
     network: c.env.NETWORK,
-    gated_prefix: GATED_PREFIX,
-    price: GATED_PRICE,
+    gated_routes: GATED_ROUTES.map((r) => ({
+      prefix: r.prefix,
+      price: r.price,
+      artifact: r.artifact,
+    })),
     pay_to_suffix: c.env.PAY_TO?.slice(-6) ?? null,
   })
 );
 
 app.all("*", async (c) => {
   const path = c.req.path;
+  const gated = findGatedRoute(path);
 
-  if (!isGatedPath(path)) {
+  if (!gated) {
     return c.env.ASSETS.fetch(c.req.raw);
   }
 
@@ -84,7 +111,7 @@ app.all("*", async (c) => {
   const routePath = normalizePath(path);
   const payMw = paymentMiddleware(
     c.env.PAY_TO as `0x${string}`,
-    paymentRoutes(routePath, c.env.NETWORK),
+    paymentRoutes(routePath, gated, c.env.NETWORK),
     facilitator
   );
 

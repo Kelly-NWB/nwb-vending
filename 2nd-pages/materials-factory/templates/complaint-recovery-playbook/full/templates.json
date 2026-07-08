@@ -1,0 +1,93 @@
+{
+  "artifact": "mf-tpl-001",
+  "version": "2.0.0",
+  "templates": [
+    {
+      "id": "email-mild",
+      "tier": "mild",
+      "channel": "email",
+      "use_when": "First reply, customer calm or mildly frustrated",
+      "subject": "Re: your experience with [Business]",
+      "body": "Hi [Name],\n\nThank you for reaching out. I'm sorry [specific issue] happened: that's not the experience we aim for.\n\nI've looked into this: [1-2 sentences on facts].\n\nHere's what I'm doing: [specific fix] by [date].\n\nIf anything changes or this doesn't fix it, reply to this email and it comes straight to me.\n\n[Your name]\n[Business]"
+    },
+    {
+      "id": "email-medium",
+      "tier": "medium",
+      "channel": "email",
+      "use_when": "Repeat contact, missed deadline, or rising frustration",
+      "subject": "Update on your complaint (ref #)",
+      "body": "Hi [Name],\n\nI owe you an update. You contacted us on [date] about [issue]. You were right to expect [X] by [date]: we missed that.\n\nWhat happened: [brief honest cause, no jargon].\n\nWhat we're doing now: [action] by [new date]. I've assigned this to [name/role].\n\nI'll follow up again on [date] even if it's resolved, so you're not wondering.\n\n[Your name]"
+    },
+    {
+      "id": "email-nuclear",
+      "tier": "nuclear",
+      "channel": "email",
+      "use_when": "Serious failure, safety, legal tone, or owner escalation",
+      "subject": "Personal follow-up from [Owner/Manager] ([Business])",
+      "body": "Hi [Name],\n\n[Owner name] here. I've read your account of [issue] and I'm sorry. We failed you on [specific point].\n\nI'm not asking you to accept a generic response. Here's what I've personally approved: [remedy].\n\nPlease contact me directly at [phone/email] if this isn't resolved to your satisfaction by [date].\n\nWe track every complaint like this so it doesn't repeat.\n\n[Name], [Title]"
+    },
+    {
+      "id": "phone-open",
+      "tier": "any",
+      "channel": "phone",
+      "use_when": "Inbound complaint call opening",
+      "body": "[Business], this is [Name]. How can I help you today?"
+    },
+    {
+      "id": "phone-hold",
+      "tier": "any",
+      "channel": "phone",
+      "use_when": "Need time to check system or person",
+      "body": "I'm still here: checking [system/person]. Thanks for your patience."
+    },
+    {
+      "id": "followup-24h",
+      "tier": "any",
+      "channel": "sms_or_email",
+      "use_when": "Within 24-48h after resolution promised",
+      "body": "Hi [Name]: [Your name] from [Business]. Checking in: did [fix] work? Reply if anything's still off. Thank you again for your patience."
+    },
+    {
+      "id": "step-1-receive",
+      "tier": "any",
+      "channel": "any",
+      "use_when": "Recovery step 1",
+      "body": "Thank you for telling us. I'm going to take this seriously. Tell me what happened, from the start. I'm listening."
+    },
+    {
+      "id": "step-2-acknowledge",
+      "tier": "any",
+      "channel": "any",
+      "use_when": "Recovery step 2",
+      "body": "So if I understand: [repeat issue]. That would frustrate me too. I'm sorry you had that experience."
+    },
+    {
+      "id": "step-3-diagnose",
+      "tier": "any",
+      "channel": "any",
+      "use_when": "Recovery step 3",
+      "body": "Let me check [order / appointment / account] so we're working from facts. Give me [X minutes]."
+    },
+    {
+      "id": "step-4-resolve",
+      "tier": "any",
+      "channel": "any",
+      "use_when": "Recovery step 4",
+      "body": "Here's what I can do: [specific action] by [date/time]. Does that work for you?"
+    },
+    {
+      "id": "step-5-close",
+      "tier": "any",
+      "channel": "any",
+      "use_when": "Recovery step 5",
+      "body": "I'm logging this so we follow up. Expect [email/call] from [name] by [time]. Is [contact] still best?"
+    },
+    {
+      "id": "testimonial-ask",
+      "tier": "any",
+      "channel": "any",
+      "use_when": "Only after customer satisfied, never during heat",
+      "body": "We're glad we could make this right. If you'd be willing to share that we fixed it, it helps other customers know we stand behind our work. No pressure either way."
+    }
+  ]
+}

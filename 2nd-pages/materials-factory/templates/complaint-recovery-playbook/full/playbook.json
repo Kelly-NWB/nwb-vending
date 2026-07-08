@@ -1,0 +1,116 @@
+{
+  "artifact": "mf-tpl-001",
+  "title": "Customer Complaint Recovery Playbook",
+  "version": "2.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Repeatable complaint recovery for small business and vending ops. Apply framework + templates; do not improvise under stress.",
+  "mindset": {
+    "principle": "Complaint is feedback delivered badly. Job is restore trust, not win argument.",
+    "mistakes": [
+      { "id": "defend-first", "label": "Defend before you listen", "cost": "Customer hears you're wrong; escalation guaranteed" },
+      { "id": "over-promise", "label": "Over-promise to end the call", "cost": "Broken promise = second complaint, worse tone" },
+      { "id": "sorry-disappear", "label": "Sorry and disappear", "cost": "No follow-up = insincere even if you meant it" }
+    ],
+    "framework": {
+      "name": "Recovery Mindset",
+      "steps": [
+        { "id": "listen", "action": "Let them finish; take notes; repeat back the problem" },
+        { "id": "own", "action": "Apologize for their experience (not always legal fault)" },
+        { "id": "solve", "action": "Offer specific fix with timeline" },
+        { "id": "confirm", "action": "Does this work for you? before closing" },
+        { "id": "followup", "action": "Within 24-48h; close loop in writing" }
+      ]
+    }
+  },
+  "process": {
+    "overview": "Same five steps for phone, in-person, email, chat. Tone changes; steps do not.",
+    "steps": [
+      { "id": 1, "name": "Receive", "goal": "De-escalate, gather facts", "minutes": "2-5" },
+      { "id": 2, "name": "Acknowledge", "goal": "Validate emotion + restate issue", "minutes": "1-2" },
+      { "id": 3, "name": "Diagnose", "goal": "Root cause, not symptom", "minutes": "2-10" },
+      { "id": 4, "name": "Resolve", "goal": "Offer fix + timeline", "minutes": "1-5" },
+      { "id": 5, "name": "Close and log", "goal": "Confirm + document", "minutes": "2" }
+    ],
+    "template_ids": ["step-1-receive", "step-2-acknowledge", "step-3-diagnose", "step-4-resolve", "step-5-close"]
+  },
+  "decision_branches": [
+    {
+      "id": "yelling-wont-pause",
+      "situation": "Customer yelling / won't pause",
+      "script": "I want to fix this: I need thirty seconds to understand exactly what happened. Can we do that?",
+      "notes": "Lower voice, slow down, don't match volume. Escalate only for threats or abuse, not discomfort."
+    },
+    {
+      "id": "clear-fault",
+      "situation": "Clear service failure (our fault)",
+      "script": "You're right: we dropped this. Here's what I'm doing in the next [timeframe].",
+      "notes": "Offer remedy before they demand. Log as service_failure."
+    },
+    {
+      "id": "policy-no-refund",
+      "situation": "Policy says no refund / no exception",
+      "script": "I can't refund per our policy because [reason]. What I can do is [credit / redo / discount next visit].",
+      "notes": "Never lead with that's policy."
+    },
+    {
+      "id": "wants-manager",
+      "situation": "Customer wants someone higher up",
+      "script": "I'll get a manager now OR I'm the person who can resolve this: give me one chance, and if you're still not satisfied I'll bring in [name].",
+      "notes": "Don't pass off without context."
+    },
+    {
+      "id": "review-threat",
+      "situation": "Online review threat",
+      "script": "Treat like any complaint. Fix issue first.",
+      "notes": "No review bargaining. After resolution: optional invite to update review. Never pay for reviews."
+    }
+  ],
+  "tracking": {
+    "log_fields": [
+      { "field": "date", "why": "When reported" },
+      { "field": "channel", "why": "Phone / email / in-person / review" },
+      { "field": "customer_id", "why": "Name or anonymized ID" },
+      { "field": "category", "why": "Product / service / wait / staff / billing" },
+      { "field": "severity", "why": "mild / medium / nuclear" },
+      { "field": "issue_summary", "why": "What customer reported" },
+      { "field": "root_cause", "why": "What actually broke" },
+      { "field": "resolution", "why": "What you offered" },
+      { "field": "cost_usd", "why": "Refund, credit, time (optional)" },
+      { "field": "followup_done", "why": "Y/N" },
+      { "field": "followup_date", "why": "When closed loop" },
+      { "field": "repeat_90d", "why": "Same customer again within 90d" },
+      { "field": "owner", "why": "Who handled" }
+    ],
+    "csv_header": "date,channel,customer_id,category,severity,issue_summary,root_cause,resolution,cost_usd,followup_done,followup_date,repeat_90d,owner",
+    "monthly_review": [
+      "Top 3 complaint categories this month?",
+      "Any repeat customers? Same root cause?",
+      "Average time to first response?",
+      "Any nuclear complaints? What changed in process?",
+      "One fix to implement before next month?",
+      "One recovery that went well: share with team."
+    ]
+  },
+  "compensation": [
+    { "situation": "Minor inconvenience", "move": "Sincere apology + small credit (5-15% next order)" },
+    { "situation": "Clear service failure", "move": "Redo service or full refund of affected item" },
+    { "situation": "Repeat failure same customer", "move": "Manager involvement + meaningful remedy" },
+    { "situation": "Nuclear / safety / legal", "move": "Stop: document, escalate, no liability admission in writing without advice" }
+  ],
+  "compensation_rule": "Compensation matches harm, not volume of yelling.",
+  "prevention": [
+    "Fix root cause in ops, not just customer in front of you.",
+    "Tag log categories; wait time spikes = scheduling problem.",
+    "Train staff on Steps 1-2 monthly.",
+    "Post internal what we learned from nuclear complaints (no names)."
+  ],
+  "cheat_sheet": {
+    "quick_ref": "Listen · Acknowledge · Resolve · Ask (confirm) · follow up in writing",
+    "never": ["defend first", "vague sorry", "promise without date", "ghost after fix"],
+    "always": ["repeat issue back", "name next step", "log before end of shift"],
+    "escalate_when": ["threats", "legal mention", "safety", "lack authority for remedy"],
+    "email_tiers": { "mild": "first reply", "medium": "missed expectation", "nuclear": "owner voice" }
+  },
+  "related_artifacts": ["mf-tool-001"]
+}

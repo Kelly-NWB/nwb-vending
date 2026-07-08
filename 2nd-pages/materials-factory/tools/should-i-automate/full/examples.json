@@ -1,0 +1,95 @@
+{
+  "artifact": "mf-tool-001",
+  "version": "2.0.0",
+  "description": "Worked inputs and expected outcomes. Use to validate agent application of rules.json without one-shot guessing.",
+  "examples": [
+    {
+      "id": "ex-route-notes-app",
+      "idea": "Every driver needs an app for route notes",
+      "inputs": { "category": "ops", "freq": "daily", "people": "twofive", "written": "no", "judgment": "sometimes", "stakes": "annoyance", "data": "rough" },
+      "outcome": "template",
+      "why": "Process not written. Daily + multiple people, but exceptions on every stop. Standardize checklist before any app.",
+      "vending_lens": "Group text + shared Sheet for 90 days. App after columns stop changing."
+    },
+    {
+      "id": "ex-dex-weekly-pull",
+      "idea": "Build a dashboard that pulls Dex files automatically",
+      "inputs": { "category": "data", "freq": "weekly", "people": "one", "written": "yes", "judgment": "rarely", "stakes": "money", "data": "yes" },
+      "outcome": "spreadsheet",
+      "why": "One owner, weekly tabular data, stable steps. Sheet with import folder beats custom dashboard.",
+      "vending_lens": "Drop CSVs into Drive folder; Sheet pivots by machine. Dashboard when 3+ people need live view daily."
+    },
+    {
+      "id": "ex-complaint-ai-inbox",
+      "idea": "AI auto-reply to all customer complaint emails",
+      "inputs": { "category": "comms", "freq": "weekly", "people": "twofive", "written": "partial", "judgment": "sometimes", "stakes": "customer", "data": "yes" },
+      "outcome": "dont_automate",
+      "why": "Customer stakes + judgment on tone and remedy. Use mf-tpl-001 templates; human sends.",
+      "vending_lens": "Wrong auto-reply on refund demand = review bomb. Template + log sheet first."
+    },
+    {
+      "id": "ex-par-level-saas",
+      "idea": "Buy inventory SaaS for warehouse par levels",
+      "inputs": { "category": "inventory", "freq": "weekly", "people": "twofive", "written": "yes", "judgment": "rarely", "stakes": "money", "data": "yes" },
+      "outcome": "spreadsheet",
+      "why": "Written weekly process, small team. Sheet with par columns and driver checkboxes until sheet breaks.",
+      "vending_lens": "Drivers already text photos. Sheet + checkbox column beats $200/mo SaaS for 2 routes."
+    },
+    {
+      "id": "ex-machine-alert-bot",
+      "idea": "Custom bot that texts owner when machine reports error",
+      "inputs": { "category": "data", "freq": "daily", "people": "sixplus", "written": "yes", "judgment": "rarely", "stakes": "money", "data": "yes" },
+      "outcome": "build",
+      "why": "Daily, large team, stable alert rules, money at stake, existing tools do not wire telemetry to SMS cleanly.",
+      "vending_lens": "Start with email alerts from telemetry vendor. Custom only if alerts are ignored."
+    },
+    {
+      "id": "ex-shift-scheduling-app",
+      "idea": "Scheduling app for 4 part-time route fillers",
+      "inputs": { "category": "staff", "freq": "weekly", "people": "twofive", "written": "partial", "judgment": "sometimes", "stakes": "annoyance", "data": "rough" },
+      "outcome": "template",
+      "why": "Exceptions every holiday and swap request. Shared calendar + coverage rules doc before software.",
+      "vending_lens": "Group text + Google Calendar free blocks. App when 6+ staff across sites."
+    },
+    {
+      "id": "ex-quarterly-tax-export",
+      "idea": "Automate quarterly sales export for accountant",
+      "inputs": { "category": "data", "freq": "rare", "people": "one", "written": "yes", "judgment": "rarely", "stakes": "annoyance", "data": "yes" },
+      "outcome": "manual_ok",
+      "why": "Rare, one person, low stakes if late by a day. Calendar reminder + checklist enough.",
+      "vending_lens": "4 exports per year. Not worth script maintenance."
+    },
+    {
+      "id": "ex-review-response-ai",
+      "idea": "ChatGPT plugin to respond to Google reviews",
+      "inputs": { "category": "comms", "freq": "weekly", "people": "one", "written": "no", "judgment": "sometimes", "stakes": "customer", "data": "guess" },
+      "outcome": "gather_data",
+      "why": "No volume data and no written voice. Log 90 days of reviews; draft templates by tier first.",
+      "vending_lens": "Count reviews/month. Under 4: owner replies manually with 2 template variants."
+    },
+    {
+      "id": "ex-route-checklist-laminate",
+      "idea": "Nothing yet, just drivers forgetting machine checks",
+      "inputs": { "category": "ops", "freq": "daily", "people": "twofive", "written": "no", "judgment": "rarely", "stakes": "money", "data": "guess" },
+      "outcome": "gather_data",
+      "why": "Pure guess on failure rate. Log missed checks and shrink for 90 days before tooling.",
+      "vending_lens": "Laminated truck checklist costs $2. Data first, then sheet if misses persist."
+    },
+    {
+      "id": "ex-customer-request-form",
+      "idea": "Typeform for location product requests",
+      "inputs": { "category": "comms", "freq": "weekly", "people": "one", "written": "yes", "judgment": "rarely", "stakes": "customer", "data": "yes" },
+      "outcome": "simple_tool",
+      "why": "Stable intake, low judgment, known SaaS category. Typeform/Tally + sheet export.",
+      "vending_lens": "QR on machine sticker → form → weekly Sheet tab. No custom app."
+    },
+    {
+      "id": "ex-multi-site-ops-hub",
+      "idea": "Internal ops portal for 8 locations",
+      "inputs": { "category": "other", "freq": "daily", "people": "sixplus", "written": "yes", "judgment": "sometimes", "stakes": "money", "data": "yes" },
+      "outcome": "build",
+      "why": "High volume, many users, money stakes, no off-shelf fit after sheet phase.",
+      "vending_lens": "Only after Notion/Sheet phase fails at permissions or mobile offline."
+    }
+  ]
+}

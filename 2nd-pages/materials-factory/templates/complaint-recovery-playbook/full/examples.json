@@ -1,0 +1,73 @@
+{
+  "artifact": "mf-tpl-001",
+  "version": "2.0.0",
+  "description": "Worked complaint scenarios with branch, tier, templates, and log row.",
+  "examples": [
+    {
+      "id": "ex-vend-stale-snack",
+      "context": "Vending: customer email, product tasted stale, $1.50",
+      "severity": "mild",
+      "branch": "clear-fault",
+      "email_template": "email-mild",
+      "resolution": "Refund $1.50 via Venmo + check machine date on that coil",
+      "log_row": "2026-07-01,email,C-442,product,mild,stale chips,old product on coil,refund 1.50,Y,2026-07-02,N,owner"
+    },
+    {
+      "id": "ex-vend-ate-money",
+      "context": "Vending: machine took money, no vend, angry phone call",
+      "severity": "medium",
+      "branch": "clear-fault",
+      "steps_used": [1, 2, 3, 4, 5],
+      "phone_scripts": ["phone-open", "phone-hold", "step-4-resolve"],
+      "resolution": "Remote vend or refund same day + tech ticket for MDB",
+      "log_row": "2026-07-03,phone,C-891,billing,medium,no vend $2,mdb error,refund+service,Y,2026-07-04,N,tech"
+    },
+    {
+      "id": "ex-review-threat",
+      "context": "Google review threat after missed restock at office location",
+      "severity": "medium",
+      "branch": "review-threat",
+      "email_template": "email-medium",
+      "resolution": "Same-day restock + credit for next purchase",
+      "notes": "No review removal bargain. Fix first.",
+      "log_row": "2026-07-05,email,C-120,service,medium,empty machine missed visit,missed schedule,restock+credit,Y,2026-07-06,N,route"
+    },
+    {
+      "id": "ex-lunch-rush-wrong-order",
+      "context": "Cafe: wrong order, line behind customer, in person",
+      "severity": "mild",
+      "branch": "yelling-wont-pause",
+      "steps_used": [1, 2, 4],
+      "resolution": "Remake order, comp drink, move to side counter",
+      "log_row": "2026-07-06,in-person,walk-in,product,mild,wrong sandwich,rush mis-ring,remake+comp,Y,same day,N,counter"
+    },
+    {
+      "id": "ex-nuclear-all-caps-email",
+      "context": "ALL CAPS email, third contact, promised callback never happened",
+      "severity": "nuclear",
+      "branch": "wants-manager",
+      "email_template": "email-nuclear",
+      "resolution": "Owner call within 4h + remedy above medium tier",
+      "log_row": "2026-07-07,email,C-505,service,nuclear,missed callback x2,staff no log,owner remedy+process fix,Y,2026-07-08,N,owner"
+    },
+    {
+      "id": "ex-policy-no-refund",
+      "context": "Customer wants refund outside policy window",
+      "severity": "medium",
+      "branch": "policy-no-refund",
+      "email_template": "email-medium",
+      "resolution": "Policy explained + credit on next order (not full refund)",
+      "log_row": "2026-07-08,email,C-331,billing,medium,refund request late,policy window,credit 15pct,Y,2026-07-09,N,manager"
+    },
+    {
+      "id": "ex-repeat-customer",
+      "context": "Same customer, second complaint in 60 days, same root cause",
+      "severity": "nuclear",
+      "branch": "clear-fault",
+      "email_template": "email-nuclear",
+      "compensation": "Repeat failure same customer",
+      "resolution": "Manager remedy + ops fix on root cause tagged in log",
+      "log_row": "2026-07-09,phone,C-442,service,nuclear,repeat stale product,coil not rotated,manager remedy+coil SOP,Y,2026-07-10,Y,manager"
+    }
+  ]
+}

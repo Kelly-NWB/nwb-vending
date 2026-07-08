@@ -1,14 +1,22 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "nwb-vending",
+  "main": "worker/index.ts",
   "compatibility_date": "2026-06-15",
   "observability": {
     "enabled": true
   },
   "assets": {
-    "directory": "."
+    "directory": ".",
+    "binding": "ASSETS",
+    "run_worker_first": true
   },
   "compatibility_flags": [
     "nodejs_compat"
-  ]
+  ],
+  "vars": {
+    "PAY_TO": "0x53799D42E72E3d41625006d310A55EC486DA5213",
+    "NETWORK": "base-sepolia",
+    "FACILITATOR_URL": "https://x402.org/facilitator"
+  }
 }

@@ -1,0 +1,2 @@
+# Copy to .dev.vars for local wrangler dev (not committed)
+# PAY_TO is set in wrangler.jsonc vars for deploy; override here if needed

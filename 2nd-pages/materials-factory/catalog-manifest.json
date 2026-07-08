@@ -1,0 +1,51 @@
+{
+  "catalog": "mf-nwb-001",
+  "title": "Materials Factory",
+  "host": "https://NWB-Vending.com",
+  "base_path": "/2nd-pages/materials-factory/",
+  "protocol": "x402",
+  "network": "base",
+  "health": "/__x402/health",
+  "audience": "agent",
+  "entry_count": 19,
+  "job_spine": {
+    "description": "Small-business job lifecycle. Fetch in order when wiring a shop workflow.",
+    "chain": [
+      "mf-tpl-004",
+      "mf-tpl-006",
+      "mf-tpl-014",
+      "mf-tpl-010",
+      "mf-tpl-011",
+      "mf-tpl-012",
+      "mf-tpl-013",
+      "mf-tpl-009",
+      "mf-tpl-007",
+      "mf-tpl-008",
+      "mf-tpl-015"
+    ],
+    "ops_overlay": "mf-tpl-005",
+    "complaint_route": "mf-tpl-001",
+    "tools": ["mf-tool-001", "mf-tool-002", "mf-tool-003"]
+  },
+  "entries": [
+    { "id": "mf-train-001", "section": "training", "title": "LLM API Bootcamp", "price": "$0.40", "teaser": "training/llm-api-bootcamp/", "full": "training/llm-api-bootcamp/full/", "primary": "playbook.json" },
+    { "id": "mf-tool-001", "section": "tools", "title": "Should I Automate This?", "price": "$0.35", "teaser": "tools/should-i-automate/", "full": "tools/should-i-automate/full/", "primary": "rules.json" },
+    { "id": "mf-tool-002", "section": "tools", "title": "AI Task Fit", "price": "$0.35", "teaser": "tools/ai-task-fit/", "full": "tools/ai-task-fit/full/", "primary": "rules.json" },
+    { "id": "mf-tool-003", "section": "tools", "title": "Scope Creep / Say-No", "price": "$0.35", "teaser": "tools/scope-creep-say-no/", "full": "tools/scope-creep-say-no/full/", "primary": "rules.json" },
+    { "id": "mf-tpl-001", "section": "templates", "title": "Customer Complaint Recovery", "price": "$0.45", "teaser": "templates/complaint-recovery-playbook/", "full": "templates/complaint-recovery-playbook/full/", "primary": "playbook.json" },
+    { "id": "mf-tpl-002", "section": "templates", "title": "Rapid Employee Onboarding", "price": "$0.45", "teaser": "templates/employee-onboarding-kit/", "full": "templates/employee-onboarding-kit/full/", "primary": "playbook.json" },
+    { "id": "mf-tpl-003", "section": "templates", "title": "Hiring Character Gauge", "price": "$0.45", "teaser": "templates/hiring-character-gauge/", "full": "templates/hiring-character-gauge/full/", "primary": "playbook.json" },
+    { "id": "mf-tpl-004", "section": "templates", "title": "Client Intake Playbook", "price": "$0.45", "teaser": "templates/client-intake-playbook/", "full": "templates/client-intake-playbook/full/", "primary": "playbook.json", "apply": "classify → first touch → qualify → log" },
+    { "id": "mf-tpl-005", "section": "templates", "title": "Weekly 15-Min Ops Review", "price": "$0.45", "teaser": "templates/weekly-ops-review/", "full": "templates/weekly-ops-review/full/", "primary": "playbook.json" },
+    { "id": "mf-tpl-006", "section": "templates", "title": "Quote / Estimate Gate", "price": "$0.45", "teaser": "templates/quote-estimate-gate/", "full": "templates/quote-estimate-gate/full/", "primary": "playbook.json", "apply": "gate → branch → quote + terms" },
+    { "id": "mf-tpl-007", "section": "templates", "title": "Delivery + Handoff", "price": "$0.45", "teaser": "templates/delivery-handoff/", "full": "templates/delivery-handoff/full/", "primary": "playbook.json" },
+    { "id": "mf-tpl-008", "section": "templates", "title": "Invoice + Payment Chase", "price": "$0.45", "teaser": "templates/invoice-payment-chase/", "full": "templates/invoice-payment-chase/full/", "primary": "playbook.json" },
+    { "id": "mf-tpl-009", "section": "templates", "title": "Vendor Issue Playbook", "price": "$0.45", "teaser": "templates/vendor-issue/", "full": "templates/vendor-issue/full/", "primary": "playbook.json" },
+    { "id": "mf-tpl-010", "section": "templates", "title": "Project Kickoff Checklist", "price": "$0.45", "teaser": "templates/project-kickoff/", "full": "templates/project-kickoff/full/", "primary": "playbook.json" },
+    { "id": "mf-tpl-011", "section": "templates", "title": "Proof + Client Approval Gate", "price": "$0.45", "teaser": "templates/proof-approval-gate/", "full": "templates/proof-approval-gate/full/", "primary": "playbook.json" },
+    { "id": "mf-tpl-012", "section": "templates", "title": "Change Order Mid-Job", "price": "$0.45", "teaser": "templates/change-order-mid-job/", "full": "templates/change-order-mid-job/full/", "primary": "playbook.json" },
+    { "id": "mf-tpl-013", "section": "templates", "title": "Client Status Update", "price": "$0.45", "teaser": "templates/client-status-update/", "full": "templates/client-status-update/full/", "primary": "playbook.json" },
+    { "id": "mf-tpl-014", "section": "templates", "title": "Quote Follow-Up", "price": "$0.45", "teaser": "templates/quote-follow-up/", "full": "templates/quote-follow-up/full/", "primary": "playbook.json" },
+    { "id": "mf-tpl-015", "section": "templates", "title": "Job Close + Archive", "price": "$0.45", "teaser": "templates/job-close-archive/", "full": "templates/job-close-archive/full/", "primary": "playbook.json" }
+  ]
+}

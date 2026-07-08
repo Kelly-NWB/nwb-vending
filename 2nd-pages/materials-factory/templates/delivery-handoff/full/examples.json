@@ -1,0 +1,14 @@
+{
+  "artifact": "mf-tpl-007",
+  "version": "1.0.0",
+  "examples": [
+    { "id": "ex-pickup-ok", "context": "50 banners ready. Client pickup Friday.", "delivery_type": "pickup", "branch": "standard-close", "templates": ["delivery-confirm", "handoff-pack"], "resolution": "Pickup 2-5pm. Log closed on RECEIVED.", "log_row": "2026-07-20,job-120,pickup,standard-close,y,n,2026-07-20,owner" },
+    { "id": "ex-ship-track", "context": "Out-of-town client. Boxes ship UPS.", "delivery_type": "ship", "branch": "ship-tracking", "templates": ["ship-notify"], "resolution": "Tracking sent. Close on delivery scan + OK.", "log_row": "2026-07-21,job-125,ship,ship-tracking,pending,n,,owner" },
+    { "id": "ex-install", "context": "Window graphics install Monday.", "delivery_type": "install", "branch": "install-day", "templates": ["install-checklist", "delivery-confirm"], "resolution": "Sign-off sheet signed on site.", "log_row": "2026-07-22,job-130,install,install-day,y,n,2026-07-22,owner" },
+    { "id": "ex-digital", "context": "Logo finals. No print.", "delivery_type": "digital", "branch": "digital-drop", "templates": ["digital-handoff"], "resolution": "Link 30-day expiry. Closed same day.", "log_row": "2026-07-18,job-118,digital,digital-drop,y,n,2026-07-18,owner" },
+    { "id": "ex-damage", "context": "Client reports corner bent on arrival.", "delivery_type": "ship", "branch": "issue-at-delivery", "templates": ["issue-capture-same-day"], "resolution": "Reprint 2 units. mf-tpl-001 tone if heated.", "cross_artifact": "mf-tpl-001", "log_row": "2026-07-19,job-119,ship,issue-at-delivery,n,y,,owner" },
+    { "id": "ex-unpaid-hold", "context": "Work done. Balance $420 out.", "delivery_type": "pickup", "branch": "unpaid-hold", "templates": ["hold-until-paid"], "resolution": "Hold at shop. mf-tpl-008 chase parallel.", "cross_artifact": "mf-tpl-008", "log_row": "2026-07-23,job-132,pickup,unpaid-hold,n,n,,owner" },
+    { "id": "ex-scope-extra", "context": "At pickup asks for 10 more same day.", "delivery_type": "pickup", "branch": "scope-extra", "templates": ["defer-change-order"], "resolution": "No extra work without mf-tool-003 change order.", "cross_artifact": "mf-tool-003", "log_row": "2026-07-24,job-135,pickup,scope-extra,y,n,2026-07-24,owner" },
+    { "id": "ex-ops-close", "context": "Weekly ops: job shipped Tuesday, no confirm.", "delivery_type": "ship", "branch": "standard-close", "templates": ["delivery-confirm"], "resolution": "Nudge confirm from mf-tpl-005 stuck_job unblock.", "cross_artifact": "mf-tpl-005", "log_row": "2026-07-25,job-128,ship,standard-close,pending,n,,owner" }
+  ]
+}

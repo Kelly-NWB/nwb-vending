@@ -1,0 +1,14 @@
+{
+  "artifact": "mf-tpl-011",
+  "version": "1.0.0",
+  "templates": [
+    { "id": "proof-send-standard", "body": "Hi [name],\n\nPROOF round [n] for [job_id].\nCheck: spelling, size, colors, placement.\n\nReply APPROVED to release production, or list numbered changes.\nReply by [datetime] or ship date may move." },
+    { "id": "proof-changes-minor", "body": "Got changes [list]. Round [n+1] by [date]. Included in quoted scope." },
+    { "id": "proof-changes-major", "body": "Changes affect scope/price. Sending change order before round [n+1]." },
+    { "id": "proof-approved-release", "body": "APPROVED logged [timestamp]. Production starts [date]. Ship target [date]." },
+    { "id": "proof-silent-hold", "body": "Hi [name],\n\nProof [ref] still needs APPROVED or changes. Production on hold.\nReply by [date] or we pause slot." },
+    { "id": "proof-rush-window", "body": "RUSH PROOF: reply by [hard_time] today or rush date forfeits." },
+    { "id": "proof-checklist-client", "body": "YOU CHECK:\n[ ] Names/spelling\n[ ] Size/dimensions\n[ ] Colors (screen variance note)\n[ ] Quantity on proof matches order" },
+    { "id": "proof-internal-hold", "body": "INTERNAL: job [id] PROOF_HOLD until written OK. Do not run." }
+  ]
+}

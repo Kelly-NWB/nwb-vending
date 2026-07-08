@@ -1,0 +1,14 @@
+{
+  "artifact": "mf-tpl-014",
+  "version": "1.0.0",
+  "examples": [
+    { "context": "Quote sent Monday. Thursday silence.", "quote_status": "sent", "branch": "followup-day-3", "templates": ["quote-nudge-day-3"], "resolution": "Soft nudge.", "log_row": "2026-07-10,Q-882,sent,followup-day-3,2026-07-24,2026-07-13,owner" },
+    { "context": "Day 7 still quiet.", "quote_status": "cold", "branch": "followup-day-7", "templates": ["quote-nudge-day-7"], "resolution": "Hold or close ask.", "log_row": "2026-07-14,Q-882,cold,followup-day-7,2026-07-24,2026-07-17,owner" },
+    { "context": "Client asked about paper stock.", "quote_status": "warm", "branch": "followup-questions", "templates": ["quote-answer-then-hold", "quote-warm-priority"], "resolution": "Answer, no discount.", "log_row": "2026-07-11,Q-885,warm,followup-questions,2026-07-25,2026-07-14,owner" },
+    { "context": "Past valid_until.", "quote_status": "expired", "branch": "followup-expire", "templates": ["quote-expired-close"], "resolution": "File closed expired.", "log_row": "2026-07-25,Q-870,expired,followup-expire,2026-07-24,,owner" },
+    { "context": "Returns month later.", "quote_status": "expired", "branch": "followup-requote", "templates": ["quote-requote-offer"], "cross_artifact": "mf-tpl-006", "resolution": "New quote path.", "log_row": "2026-08-10,Q-870,expired,followup-requote,,2026-08-11,owner" },
+    { "context": "Client says let's go.", "quote_status": "won", "branch": "followup-won", "templates": ["quote-accept-next"], "cross_artifact": "mf-tpl-010", "resolution": "Deposit + kickoff.", "log_row": "2026-07-12,Q-882,won,followup-won,2026-07-24,,owner" },
+    { "context": "Ghost after nudge.", "quote_status": "lost", "branch": "followup-expire", "templates": ["quote-lost-close"], "resolution": "Lost internal note.", "log_row": "2026-07-20,Q-901,lost,followup-expire,2026-07-18,,owner" },
+    { "context": "Weekly ops: quotes out no reply.", "quote_status": "sent", "branch": "followup-day-7", "templates": ["quote-nudge-day-7"], "cross_artifact": "mf-tpl-005", "resolution": "From money block review.", "log_row": "2026-07-30,Q-882,sent,followup-day-7,2026-07-24,2026-08-02,owner" }
+  ]
+}

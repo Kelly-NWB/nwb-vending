@@ -1,0 +1,56 @@
+{
+  "artifact": "mf-tpl-006",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "quote-standard",
+      "use_when": "gate-pass-send",
+      "body": "Hi [name],\n\nQuote for [deliverable]:\n[line items with amounts]\n\nAssumptions: [what is not included]\nTurnaround: [date]\nValid until: [valid_until]\nDeposit to start: [deposit_pct]%\n\nReply ACCEPT to proceed or ask questions here.\nChanges after acceptance go through change order (scope may affect price)."
+    },
+    {
+      "id": "terms-block",
+      "use_when": "Append to any outbound quote",
+      "body": "TERMS (short)\n- Quote valid until [valid_until]\n- Deposit [deposit_pct]% to schedule production\n- Proof approval required before print/run\n- Scope changes: written change order before extra work"
+    },
+    {
+      "id": "hold-need-specs",
+      "use_when": "hold-specs branch",
+      "body": "Hi [name],\n\nAlmost ready to quote. Still need:\n1) [missing field]\n2) [missing field]\n\nOnce I have these I will send numbers within [24h]. No charge for the clarify step."
+    },
+    {
+      "id": "tier-menu-3",
+      "use_when": "tier-not-custom branch",
+      "body": "Hi [name],\n\nThree options for [deliverable]:\n\nA) [tier_a_name] · $[a] · [includes]\nB) [tier_b_name] · $[b] · [includes]\nC) [tier_c_name] · $[c] · [includes]\n\nReply A, B, or C and I will confirm timeline and send formal quote."
+    },
+    {
+      "id": "quote-rush-line",
+      "use_when": "rush-surcharge branch",
+      "body": "Rush line item: +$[rush_fee] ([rush_reason])\nBase: $[base]\nTotal with rush: $[total]\n\nRush only if deposit received by [cutoff_datetime]."
+    },
+    {
+      "id": "decline-with-referral",
+      "use_when": "decline-polite branch",
+      "body": "Hi [name],\n\nThanks for thinking of us. We are not the right fit for [reason] on this timeline/budget.\n\nIf helpful: [referral name or alternate path]\n\nWishing you a smooth project."
+    },
+    {
+      "id": "repeat-quote-fast",
+      "use_when": "repeat-shortcut branch",
+      "body": "Hi [name],\n\nSame as [prior_job_id] on [date]?\n\nIf yes: $[amount], same specs, turnaround [date].\nIf anything changed, tell me before I lock this in."
+    },
+    {
+      "id": "requote-scope-changed",
+      "use_when": "scope-changed branch",
+      "body": "Hi [name],\n\nYour ask now includes [new scope]. Prior quote [old_quote_id] is void.\n\nUpdated quote:\n[line items]\nValid until: [valid_until]\n\nExtra scope after you accept will be a change order."
+    },
+    {
+      "id": "quote-followup-3d",
+      "use_when": "No reply 3 days after quote sent",
+      "body": "Hi [name],\n\nChecking if quote [ref] for [deliverable] still works. Valid until [valid_until].\n\nReply yes, questions, or pass and I will close the file."
+    },
+    {
+      "id": "clarify-scope-before-quote",
+      "use_when": "scope_locked checklist fail",
+      "body": "Quick confirm before I send numbers:\nYour latest message asks for [summary].\nLast specs we had: [prior summary].\n\nWhich is correct? One reply and I quote same day."
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "artifact": "mf-tpl-015",
+  "version": "1.0.0",
+  "templates": [
+    { "id": "close-thanks-review", "body": "Hi [name],\n\n[job_id] complete. Thanks for trusting us.\nIf willing, review here: [link]\nReferrals welcome." },
+    { "id": "close-thanks-short", "body": "Hi [name],\n\n[job_id] wrapped. Thanks as always. Same specs on file for reorder." },
+    { "id": "close-blocked-unpaid", "body": "INTERNAL: do not archive. Balance $[amt] on [job_id]. mf-tpl-008 active." },
+    { "id": "close-internal-checklist", "body": "CLOSE [job_id]\n[ ] Paid\n[ ] Delivered OK\n[ ] Finals in [path]\n[ ] Hours logged\n[ ] Sheet status closed" },
+    { "id": "close-after-issue", "body": "Hi [name],\n\nGlad we fixed [issue]. Job closed. Reach out anytime for next project." },
+    { "id": "close-writeoff-note", "body": "INTERNAL: writeoff $[amt] on [job_id]. Reason [notes]. Close anyway." },
+    { "id": "close-archive-path", "body": "Archive: /jobs/[year]/[job_id]/finals + proofs + COs" },
+    { "id": "close-ops-clear", "body": "mf-tpl-005: remove from stuck jobs. one_fix N/A. closed [date]." }
+  ]
+}

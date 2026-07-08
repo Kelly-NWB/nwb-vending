@@ -1,0 +1,14 @@
+{
+  "artifact": "mf-tpl-009",
+  "version": "1.0.0",
+  "examples": [
+    { "id": "ex-late", "context": "Vinyl roll PO due Monday. Wednesday, job Friday.", "issue_type": "late", "branch": "vendor-chase-late", "templates": ["vendor-late-escalate", "client-delay-honest"], "resolution": "Escalate vendor. Client hears new date.", "log_row": "2026-07-16,SignSupply,PO-882,late,vendor-chase-late,job-120,pending,owner" },
+    { "id": "ex-wrong-color", "context": "Banner material wrong shade.", "issue_type": "wrong_spec", "branch": "wrong-spec-return", "templates": ["vendor-wrong-rma"], "resolution": "RMA + rush replace.", "log_row": "2026-07-14,PrintCo,PO-901,wrong_spec,wrong-spec-return,job-115,y,owner" },
+    { "id": "ex-short", "context": "Ordered 500 got 450.", "issue_type": "short", "branch": "short-ship", "templates": ["vendor-short-make-good"], "resolution": "Ship 50 no charge.", "log_row": "2026-07-12,PromoInc,PO-877,short,short-ship,job-110,y,owner" },
+    { "id": "ex-damaged", "context": "Boxes crushed.", "issue_type": "damaged", "branch": "damaged-claim", "templates": ["vendor-damage-photos"], "resolution": "Photos to vendor. Replace stock.", "log_row": "2026-07-18,FreightMat,PO-910,damaged,damaged-claim,job-122,pending,owner" },
+    { "id": "ex-backup", "context": "Primary vendor late twice same month.", "issue_type": "late", "branch": "backup-source-switch", "templates": ["backup-source-switch"], "resolution": "Switch vendor. Log score.", "log_row": "2026-07-20,SignSupply,PO-920,late,backup-source-switch,job-125,y,owner" },
+    { "id": "ex-reorder", "context": "Stock shirt blanks low.", "issue_type": "reorder", "branch": "routine-reorder", "templates": ["reorder-standard"], "resolution": "Routine PO. No client impact.", "log_row": "2026-07-08,GarmentWh,PO-850,reorder,routine-reorder,none,y,owner" },
+    { "id": "ex-ops-vendor", "context": "Weekly ops: ignore equipment browsing, real issue is late ink.", "issue_type": "late", "branch": "vendor-chase-late", "templates": ["vendor-late-escalate"], "resolution": "One fix from mf-tpl-005: call vendor AM.", "cross_artifact": "mf-tpl-005", "log_row": "2026-07-07,InkDirect,PO-870,late,vendor-chase-late,job-108,pending,owner" },
+    { "id": "ex-job-risk", "context": "Install Thursday. Material still in transit.", "issue_type": "late", "branch": "client-delay-notice", "templates": ["client-delay-honest", "vendor-late-escalate"], "resolution": "Honest client mail same day.", "log_row": "2026-07-21,MountPro,PO-905,late,client-delay-notice,job-130,pending,owner" }
+  ]
+}

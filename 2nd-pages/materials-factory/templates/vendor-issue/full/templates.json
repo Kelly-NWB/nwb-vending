@@ -1,0 +1,14 @@
+{
+  "artifact": "mf-tpl-009",
+  "version": "1.0.0",
+  "templates": [
+    { "id": "vendor-late-escalate", "use_when": "vendor-chase-late", "body": "PO [po] was due [date]. Need ship date today or replacement source.\nJob [job_id] at risk. Account [acct]." },
+    { "id": "vendor-wrong-rma", "use_when": "wrong-spec-return", "body": "PO [po] received wrong: ordered [x] got [y]. Photos attached.\nNeed RMA + correct ship by [date]." },
+    { "id": "vendor-short-make-good", "use_when": "short-ship", "body": "PO [po] short [qty] units. Ship balance no charge by [date] or credit memo." },
+    { "id": "vendor-damage-photos", "use_when": "damaged-claim", "body": "PO [po] arrived damaged. Photos [n] attached.\nReplace or credit by [date]." },
+    { "id": "client-delay-honest", "use_when": "client-delay-notice", "body": "Hi [name],\n\nUpdate on [job]: material delay from supplier. New target: [date].\n\nWe are absorbing rush cost on our side. I will confirm 24h before install/ship." },
+    { "id": "backup-source-switch", "use_when": "backup-vendor", "body": "Internal: switch PO [po] to backup vendor [name]. Client date holds [date]. Log cost delta." },
+    { "id": "reorder-standard", "use_when": "routine-reorder", "body": "Reorder PO [template]: [sku] qty [n]. Ship to [address]. Need by [date]." },
+    { "id": "vendor-score-note", "use_when": "After resolve", "body": "Vendor log: [vendor] · [issue_type] · resolved [y/n] · days late [n] · use again [y/n]" }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "artifact": "mf-tpl-013",
+  "version": "1.0.0",
+  "templates": [
+    { "id": "status-on-track", "body": "Hi [name],\n\n[job_id] on track. Ship target [date].\nNext: [step]. No action needed unless questions." },
+    { "id": "status-delay-honest", "body": "Hi [name],\n\n[job_id] update: ship moves to [new_date].\nReason: [brief].\nWe own the fix. Next confirm [date]." },
+    { "id": "status-waiting-client", "body": "Hi [name],\n\n[job_id] waiting on: [item].\nShip stays [date] once we have it.\nReply here when ready." },
+    { "id": "status-in-production", "body": "Hi [name],\n\n[job_id] in production now. Still on for [date]." },
+    { "id": "status-weekly-brief", "body": "Weekly [job_id]: [on_track/delayed]. Ship [date]. Blocker: [none/item]." },
+    { "id": "status-before-complaint", "body": "Hi [name],\n\nI owe you a clear update on [job_id] before you chase us.\n[status]. My direct line: [phone]." },
+    { "id": "status-internal", "body": "Client touch logged [date]. job [id]. Do not promise new date without [owner]." },
+    { "id": "status-stuck-unblock", "body": "Blocked on [x]. One unblock: [action] by [who] today." }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "artifact": "mf-tpl-014",
+  "title": "Quote Follow-Up",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Quote sent, no reply: nudge, expire, close file. Downstream of mf-tpl-006.",
+  "mindset": {
+    "principle": "Quotes age. Follow up on calendar, expire on date, free the slot.",
+    "mistakes": [
+      { "id": "chase-forever", "label": "Nudge monthly for a year", "cost": "CRM fiction" },
+      { "id": "drop-silent", "label": "Never close lost quotes", "cost": "Ops reports lies" },
+      { "id": "discount-panic", "label": "Slash price on day 2", "cost": "Trains clients to wait" }
+    ],
+    "framework": {
+      "steps": [
+        { "id": "check", "action": "Valid until date from mf-tpl-006" },
+        { "id": "nudge", "action": "Day 3 and 7 if hot lead" },
+        { "id": "expire", "action": "Past valid_until → close or requote" },
+        { "id": "win", "action": "Accept → mf-tpl-010" },
+        { "id": "log", "action": "Quote status updated" }
+      ]
+    }
+  },
+  "quote_status": [
+    { "id": "sent", "label": "Out, awaiting reply" },
+    { "id": "warm", "label": "Asked questions" },
+    { "id": "cold", "label": "No reply 7+ days" },
+    { "id": "expired", "label": "Past valid_until" },
+    { "id": "won", "label": "Accepted" },
+    { "id": "lost", "label": "Passed or ghosted" }
+  ],
+  "decision_branches": [
+    { "id": "followup-day-3", "situation": "No reply 3 days, still valid", "action": "quote-nudge-day-3" },
+    { "id": "followup-questions", "situation": "Client asked questions", "action": "quote-answer-then-hold" },
+    { "id": "followup-day-7", "situation": "Still silent day 7", "action": "quote-nudge-day-7" },
+    { "id": "followup-expire", "situation": "Past valid_until", "action": "quote-expired-close" },
+    { "id": "followup-requote", "situation": "Interested after expire", "action": "quote-requote-offer", "cross_artifact": "mf-tpl-006" },
+    { "id": "followup-won", "situation": "Client accepts", "action": "quote-accept-next", "cross_artifact": "mf-tpl-010" }
+  ],
+  "tracking": {
+    "csv_header": "date,quote_ref,status,branch,valid_until,next_touch,owner",
+    "sheet_tab_name": "quote_followup"
+  },
+  "related_artifacts": ["mf-tpl-006", "mf-tpl-010", "mf-tpl-004", "mf-tpl-005"]
+}

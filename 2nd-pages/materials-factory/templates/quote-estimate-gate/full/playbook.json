@@ -1,0 +1,128 @@
+{
+  "artifact": "mf-tpl-006",
+  "title": "Quote / Estimate Gate",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "After intake qualify: gate before any custom price leaves the building. Checklist, branches, scripts. Chains from mf-tpl-004 ready-to-quote.",
+  "scope": {
+    "team_size": "solo to 25",
+    "after": "mf-tpl-004 qualify complete or ready-to-quote branch",
+    "not_for": ["full CPQ software", "commodity price lists with zero judgment", "complaint threads"]
+  },
+  "mindset": {
+    "principle": "Quote is a decision, not a reflex. Gate first, number second.",
+    "mistakes": [
+      { "id": "number-first", "label": "Send price before gate passes", "cost": "Rework, margin bleed, trust loss" },
+      { "id": "no-expiry", "label": "Open-ended quote with no valid-until", "cost": "Stale price argument months later" },
+      { "id": "scope-drift", "label": "Quote old scope after client changed ask", "cost": "mf-tool-003 fire drill mid-job" }
+    ],
+    "framework": {
+      "name": "Quote gate",
+      "steps": [
+        { "id": "verify", "action": "Run gate checklist from qualify fields" },
+        { "id": "branch", "action": "Pick quote_branch (send, hold, tier, rush, decline)" },
+        { "id": "compose", "action": "Template + line items + assumptions stated" },
+        { "id": "terms", "action": "Deposit, expiry, change-order pointer" },
+        { "id": "log", "action": "Log row + follow-up if no reply" }
+      ]
+    }
+  },
+  "gate_checklist": [
+    { "id": "deliverable_clear", "label": "Deliverable named", "fail_action": "hold-need-specs" },
+    { "id": "quantity_known", "label": "Quantity or size known", "fail_action": "hold-need-specs" },
+    { "id": "deadline_real", "label": "Deadline fits capacity or rush fee named", "fail_action": "rush-fee-or-defer" },
+    { "id": "margin_ok", "label": "Margin acceptable at this tier", "fail_action": "decline-or-tier-up" },
+    { "id": "scope_locked", "label": "Scope matches last client message", "fail_action": "clarify-scope-before-quote" },
+    { "id": "not_complaint", "label": "Thread is not complaint-mask", "fail_action": "route-mf-tpl-001" }
+  ],
+  "quote_types": [
+    { "id": "custom", "label": "Custom quote", "signal": "One-off specs, line items" },
+    { "id": "tier_menu", "label": "Tier menu", "signal": "Budget band unknown, standard packages fit" },
+    { "id": "repeat_fast", "label": "Repeat client", "signal": "Prior job on file, same specs" },
+    { "id": "requote", "label": "Re-quote", "signal": "Scope changed since last quote" },
+    { "id": "rush", "label": "Rush", "signal": "Deadline under normal turnaround" }
+  ],
+  "decision_branches": [
+    {
+      "id": "gate-pass-send",
+      "situation": "All checklist items pass",
+      "action": "quote-standard + terms-block",
+      "notes": "Include valid-until and deposit if policy requires."
+    },
+    {
+      "id": "hold-specs",
+      "situation": "Missing deliverable, qty, or proof reference",
+      "action": "hold-need-specs",
+      "notes": "No number. Back to mf-tpl-004 clarify templates."
+    },
+    {
+      "id": "tier-not-custom",
+      "situation": "Scope fits package A/B/C, budget unknown",
+      "action": "tier-menu-3",
+      "notes": "Let them pick tier; custom only after selection."
+    },
+    {
+      "id": "rush-surcharge",
+      "situation": "Deadline tight but doable with fee",
+      "action": "quote-rush-line + terms-block",
+      "notes": "Rush fee as line item, not buried."
+    },
+    {
+      "id": "decline-polite",
+      "situation": "Wrong fit, margin bad, or cannot hit date",
+      "action": "decline-with-referral",
+      "notes": "Refer if possible. Log declined."
+    },
+    {
+      "id": "repeat-shortcut",
+      "situation": "Repeat client, same job as prior order",
+      "action": "repeat-quote-fast",
+      "notes": "Confirm nothing changed; still send terms."
+    },
+    {
+      "id": "scope-changed",
+      "situation": "Client added pages, colors, or locations since qualify",
+      "action": "requote-scope-changed",
+      "notes": "Void prior quote id. See mf-tool-003 if mid-job."
+    },
+    {
+      "id": "complaint-route",
+      "situation": "Anger or past failure on thread",
+      "action": "Stop quote path",
+      "cross_artifact": "mf-tpl-001"
+    }
+  ],
+  "quote_fields": [
+    { "field": "line_items", "why": "What they pay for, each named" },
+    { "field": "assumptions", "why": "What is NOT included" },
+    { "field": "valid_until", "why": "Default 14 days unless rush" },
+    { "field": "deposit_pct", "why": "0, 50, or 100 per policy" },
+    { "field": "turnaround", "why": "Ship or delivery date" },
+    { "field": "change_order_rule", "why": "Pointer to mf-tool-003 after acceptance" }
+  ],
+  "tracking": {
+    "log_fields": [
+      { "field": "date", "why": "Quote sent date" },
+      { "field": "lead_id", "why": "Thread or intake log ref" },
+      { "field": "quote_type", "why": "custom / tier_menu / repeat_fast / requote / rush" },
+      { "field": "branch", "why": "decision_branch id" },
+      { "field": "amount", "why": "Total quoted" },
+      { "field": "valid_until", "why": "ISO date" },
+      { "field": "deposit", "why": "none / partial / full" },
+      { "field": "status", "why": "sent / accepted / expired / declined / hold" },
+      { "field": "followup_date", "why": "Nudge if no reply" },
+      { "field": "owner", "why": "Who sent quote" }
+    ],
+    "csv_header": "date,lead_id,quote_type,branch,amount,valid_until,deposit,status,followup_date,owner",
+    "sheet_tab_name": "quotes"
+  },
+  "automation_hooks": {
+    "mf-tpl-004": "Upstream: qualify complete before gate",
+    "mf-tool-003": "Mid-job scope change after quote accepted",
+    "mf-tpl-001": "Never quote on complaint threads",
+    "mf-tpl-005": "Weekly ops: quotes out with no reply",
+    "mf-tool-001": "Before buying quoting SaaS, run automate rubric"
+  },
+  "related_artifacts": ["mf-tpl-004", "mf-tpl-010", "mf-tpl-007", "mf-tpl-008", "mf-tool-003", "mf-tpl-001", "mf-tpl-005", "mf-tool-001"]
+}

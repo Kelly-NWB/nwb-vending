@@ -1,0 +1,45 @@
+{
+  "artifact": "mf-tpl-010",
+  "title": "Project Kickoff Checklist",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Quote accepted: deposit, schedule, proof path, owner assigned. Between mf-tpl-006 accept and production start.",
+  "mindset": {
+    "principle": "Accept is not start. Kickoff locks scope, dates, and who does what.",
+    "mistakes": [
+      { "id": "start-no-deposit", "label": "Production before deposit", "cost": "Client ghosts mid-job" },
+      { "id": "no-proof-path", "label": "No proof deadline named", "cost": "Rush blame at end" },
+      { "id": "owner-none", "label": "No internal owner on calendar", "cost": "Job floats, misses ship date" }
+    ],
+    "framework": {
+      "steps": [
+        { "id": "accept", "action": "Written accept + quote ref" },
+        { "id": "deposit", "action": "Deposit per mf-tpl-006 terms" },
+        { "id": "schedule", "action": "Start, proof, ship on calendar" },
+        { "id": "assign", "action": "Internal owner + client POC" },
+        { "id": "kickoff-send", "action": "One email: what happens next" }
+      ]
+    }
+  },
+  "kickoff_types": [
+    { "id": "standard", "label": "Normal turnaround" },
+    { "id": "rush", "label": "Rush from mf-tpl-006" },
+    { "id": "repeat", "label": "Repeat client, same specs" },
+    { "id": "complex", "label": "Multi-deliverable or install" }
+  ],
+  "decision_branches": [
+    { "id": "kickoff-standard", "situation": "Deposit received, standard job", "action": "kickoff-email-standard" },
+    { "id": "await-deposit", "situation": "Accept but no deposit", "action": "hold-await-deposit", "cross_artifact": "mf-tpl-008" },
+    { "id": "rush-kickoff", "situation": "Rush fee paid", "action": "kickoff-rush-dates" },
+    { "id": "proof-heavy", "situation": "Custom creative, multiple rounds", "action": "kickoff-proof-rounds" },
+    { "id": "install-kickoff", "situation": "On-site install job", "action": "kickoff-install-site" },
+    { "id": "scope-lock", "situation": "Client added note after accept", "action": "scope-lock-confirm", "cross_artifact": "mf-tool-003" },
+    { "id": "repeat-short", "situation": "Repeat order", "action": "kickoff-repeat-fast" }
+  ],
+  "tracking": {
+    "csv_header": "date,job_id,quote_ref,kickoff_type,branch,deposit_ok,ship_target,owner,client_poc",
+    "sheet_tab_name": "kickoffs"
+  },
+  "related_artifacts": ["mf-tpl-006", "mf-tpl-008", "mf-tpl-007", "mf-tool-003", "mf-tpl-005"]
+}

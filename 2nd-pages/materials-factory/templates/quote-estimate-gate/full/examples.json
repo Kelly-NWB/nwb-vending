@@ -1,0 +1,86 @@
+{
+  "artifact": "mf-tpl-006",
+  "version": "1.0.0",
+  "description": "8 worked quote gates. Category seed for money + jobs template batch.",
+  "examples": [
+    {
+      "id": "ex-gate-pass-banner",
+      "context": "Intake complete. 50 banners, size, date, art ready.",
+      "quote_type": "custom",
+      "branch": "gate-pass-send",
+      "gate_passed": ["deliverable_clear", "quantity_known", "deadline_real", "margin_ok", "scope_locked", "not_complaint"],
+      "templates": ["quote-standard", "terms-block"],
+      "resolution": "Quote $1,240, 50% deposit, valid 14 days.",
+      "log_row": "2026-07-10,lead-882,custom,gate-pass-send,1240,2026-07-24,partial,sent,2026-07-13,owner"
+    },
+    {
+      "id": "ex-hold-no-qty",
+      "context": "Wants shirts for team event. No count.",
+      "quote_type": "custom",
+      "branch": "hold-specs",
+      "gate_passed": ["deliverable_clear", "not_complaint"],
+      "gate_failed": ["quantity_known"],
+      "templates": ["hold-need-specs"],
+      "resolution": "Hold. Ask quantity and sizes. No price.",
+      "cross_artifact": "mf-tpl-004",
+      "log_row": "2026-07-11,lead-901,custom,hold-specs,,,none,hold,2026-07-12,owner"
+    },
+    {
+      "id": "ex-tier-menu",
+      "context": "Nonprofit gala. Wants something nice, no budget.",
+      "quote_type": "tier_menu",
+      "branch": "tier-not-custom",
+      "templates": ["tier-menu-3"],
+      "resolution": "Send A/B/C packages. Formal quote after they pick.",
+      "log_row": "2026-07-12,lead-915,tier_menu,tier-not-custom,,2026-07-26,none,sent,2026-07-15,owner"
+    },
+    {
+      "id": "ex-rush-fee",
+      "context": "Logo vector by Friday. Today is Wednesday.",
+      "quote_type": "rush",
+      "branch": "rush-surcharge",
+      "templates": ["quote-standard", "quote-rush-line", "terms-block"],
+      "resolution": "Base $320 + $120 rush. Deposit by Thursday noon.",
+      "log_row": "2026-07-09,lead-870,rush,rush-surcharge,440,2026-07-16,partial,sent,2026-07-10,owner"
+    },
+    {
+      "id": "ex-repeat-fast",
+      "context": "Dental office reorders same window decals as March.",
+      "quote_type": "repeat_fast",
+      "branch": "repeat-shortcut",
+      "templates": ["repeat-quote-fast", "terms-block"],
+      "resolution": "Confirm same specs. $185 repeat price.",
+      "log_row": "2026-07-14,lead-933,repeat_fast,repeat-shortcut,185,2026-07-28,partial,sent,2026-07-17,owner"
+    },
+    {
+      "id": "ex-scope-changed",
+      "context": "Client added 4 pages after quote draft, not sent yet.",
+      "quote_type": "requote",
+      "branch": "scope-changed",
+      "templates": ["clarify-scope-before-quote", "requote-scope-changed"],
+      "resolution": "Void draft. New quote with 4 extra pages line item.",
+      "cross_artifact": "mf-tool-003",
+      "log_row": "2026-07-15,lead-940,requote,scope-changed,2100,2026-07-29,partial,sent,2026-07-18,owner"
+    },
+    {
+      "id": "ex-decline-margin",
+      "context": "Full vehicle wrap. Budget $800. Floor cost $2k.",
+      "quote_type": "custom",
+      "branch": "decline-polite",
+      "templates": ["decline-with-referral"],
+      "resolution": "Decline politely. Refer wrap shop.",
+      "log_row": "2026-07-16,lead-948,custom,decline-polite,,,none,declined,,owner"
+    },
+    {
+      "id": "ex-complaint-block",
+      "context": "Thread says quote me again but also never got last order.",
+      "quote_type": "custom",
+      "branch": "complaint-route",
+      "templates": [],
+      "resolution": "No quote. Route mf-tpl-001 first.",
+      "cross_artifact": "mf-tpl-001",
+      "notes": "Gate checklist not_complaint failed.",
+      "log_row": "2026-07-17,lead-955,custom,complaint-route,,,none,hold,,owner"
+    }
+  ]
+}

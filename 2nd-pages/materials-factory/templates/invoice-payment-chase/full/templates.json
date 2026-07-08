@@ -1,0 +1,14 @@
+{
+  "artifact": "mf-tpl-008",
+  "version": "1.0.0",
+  "templates": [
+    { "id": "invoice-standard", "use_when": "initial-invoice", "body": "Hi [name],\n\nInvoice #[id] for [job]: $[amount]\nDue: [due_date]\nPay: [link]\n\nMatches quote [quote_ref]. Questions welcome." },
+    { "id": "chase-day-3", "use_when": "friendly-nudge", "body": "Hi [name],\n\nFriendly reminder: invoice #[id] $[amount] due [due_date].\nPay: [link]\n\nLet me know if you need anything to process." },
+    { "id": "chase-day-7", "use_when": "direct-day-7", "body": "Hi [name],\n\nInvoice #[id] is 7 days out. Can you confirm payment date or if something is blocking?\nPay: [link]" },
+    { "id": "chase-day-14-hold", "use_when": "hold-future", "body": "Hi [name],\n\nInvoice #[id] remains open ($[amount]). Future work pauses until balance clears.\nPay: [link] or call to arrange plan." },
+    { "id": "dispute-clarify", "use_when": "dispute-route", "body": "Hi [name],\n\nYou noted a dispute on #[id]. Attached: quote [ref] and line items.\n\nTell me which line looks wrong and we will fix facts first." },
+    { "id": "payment-link-send", "use_when": "payment-link", "body": "Pay here: [link]\nAmount: $[amount]\nInvoice #[id]\n\nReceipt auto-emails on payment." },
+    { "id": "paid-confirm-close", "use_when": "paid-thanks", "body": "Hi [name],\n\nPayment received. Thank you.\nInvoice #[id] closed. Job [job_id] complete." },
+    { "id": "balance-at-delivery", "use_when": "Partial deposit, balance on delivery", "body": "Balance $[amount] due on pickup/delivery per quote terms.\nPay before release: [link]" }
+  ]
+}

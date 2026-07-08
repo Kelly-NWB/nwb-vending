@@ -1,0 +1,44 @@
+{
+  "artifact": "mf-tpl-015",
+  "title": "Job Close + Archive",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "After delivery and payment: internal close checklist, files archived, optional review ask. Ends job lifecycle.",
+  "mindset": {
+    "principle": "Closed means paid, delivered, filed, not still floating in ops review.",
+    "mistakes": [
+      { "id": "close-unpaid", "label": "Archive before balance clear", "cost": "Chase from a folder" },
+      { "id": "no-files", "label": "Finals scattered on desktop", "cost": "Reorder nightmare" },
+      { "id": "skip-review", "label": "Never ask happy clients for review", "cost": "Leave referrals on table" }
+    ],
+    "framework": {
+      "steps": [
+        { "id": "verify", "action": "Delivery confirmed + invoice paid" },
+        { "id": "files", "action": "Archive finals to standard path" },
+        { "id": "internal", "action": "Job card closed, hours noted" },
+        { "id": "client", "action": "Thank you + optional review ask" },
+        { "id": "log", "action": "Status closed in sheet" }
+      ]
+    }
+  },
+  "close_types": [
+    { "id": "standard", "label": "Clean close" },
+    { "id": "repeat", "label": "Repeat client, skip review ask" },
+    { "id": "issue_resolved", "label": "Had delivery issue, now OK" },
+    { "id": "writeoff", "label": "Small balance forgiven" }
+  ],
+  "decision_branches": [
+    { "id": "close-standard", "situation": "Paid and delivered", "action": "close-thanks-review" },
+    { "id": "close-repeat", "situation": "Frequent client", "action": "close-thanks-short" },
+    { "id": "close-hold-unpaid", "situation": "Delivered, balance out", "action": "close-blocked-unpaid", "cross_artifact": "mf-tpl-008" },
+    { "id": "close-internal", "situation": "Owner only checklist", "action": "close-internal-checklist" },
+    { "id": "close-issue-ok", "situation": "Issue fixed, client OK", "action": "close-after-issue" },
+    { "id": "close-writeoff", "situation": "Tiny balance, move on", "action": "close-writeoff-note" }
+  ],
+  "tracking": {
+    "csv_header": "date,job_id,close_type,branch,paid_y,n,archived_path,owner",
+    "sheet_tab_name": "job_close"
+  },
+  "related_artifacts": ["mf-tpl-007", "mf-tpl-008", "mf-tpl-005", "mf-tpl-006"]
+}

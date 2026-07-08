@@ -1,0 +1,14 @@
+{
+  "artifact": "mf-tpl-008",
+  "version": "1.0.0",
+  "examples": [
+    { "id": "ex-invoice-new", "context": "Quote accepted. Deposit 50% received. Balance on completion.", "state": "sent", "branch": "initial-invoice", "templates": ["invoice-standard"], "resolution": "Invoice $620 balance. Due net 7.", "log_row": "2026-07-10,inv-401,Acme,620,sent,initial-invoice,2026-07-10,2026-07-13,owner" },
+    { "id": "ex-nudge-3", "context": "Invoice 3 days, no payment, no dispute.", "state": "due", "branch": "friendly-nudge", "templates": ["chase-day-3"], "resolution": "Friendly reminder sent.", "log_row": "2026-07-13,inv-401,Acme,620,due,friendly-nudge,2026-07-13,2026-07-17,owner" },
+    { "id": "ex-day-7", "context": "Still unpaid day 7.", "state": "due", "branch": "direct-day-7", "templates": ["chase-day-7"], "resolution": "Ask payment date.", "log_row": "2026-07-17,inv-401,Acme,620,due,direct-day-7,2026-07-17,2026-07-20,owner" },
+    { "id": "ex-hold-14", "context": "Repeat client, 14 days, third late payment.", "state": "due", "branch": "hold-future", "templates": ["chase-day-14-hold"], "resolution": "Future work paused.", "log_row": "2026-07-24,inv-388,RepeatCo,1100,due,hold-future,2026-07-24,,owner" },
+    { "id": "ex-dispute", "context": "Client says quote was lower.", "state": "disputed", "branch": "dispute-route", "templates": ["dispute-clarify"], "resolution": "Attach quote ref. Not angry chase.", "cross_artifact": "mf-tpl-001", "log_row": "2026-07-15,inv-405,Beta,900,disputed,dispute-clarify,2026-07-15,2026-07-18,owner" },
+    { "id": "ex-link", "context": "Client asks how to pay.", "state": "sent", "branch": "payment-link", "templates": ["payment-link-send"], "resolution": "Link only, no new terms.", "log_row": "2026-07-11,inv-402,Gamma,320,sent,payment-link,2026-07-11,,owner" },
+    { "id": "ex-paid", "context": "Stripe shows paid.", "state": "paid", "branch": "paid-thanks", "templates": ["paid-confirm-close"], "resolution": "Close invoice. Release mf-tpl-007 hold if any.", "cross_artifact": "mf-tpl-007", "log_row": "2026-07-12,inv-402,Gamma,320,paid,paid-thanks,2026-07-12,,owner" },
+    { "id": "ex-ops-tight", "context": "mf-tpl-005 money_flag tight. Two invoices out.", "state": "due", "branch": "direct-day-7", "templates": ["chase-day-7"], "resolution": "Chase Acme from ops review.", "cross_artifact": "mf-tpl-005", "log_row": "2026-07-30,inv-401,Acme,620,due,direct-day-7,2026-07-30,2026-08-02,owner" }
+  ]
+}

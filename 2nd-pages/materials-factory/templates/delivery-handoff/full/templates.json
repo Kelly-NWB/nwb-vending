@@ -1,0 +1,14 @@
+{
+  "artifact": "mf-tpl-007",
+  "version": "1.0.0",
+  "templates": [
+    { "id": "delivery-confirm", "use_when": "standard-close", "body": "Hi [name],\n\n[deliverable] is ready. [pickup window / ship date].\n\nPlease reply RECEIVED when in hand or note any issue same day." },
+    { "id": "handoff-pack", "use_when": "standard-close", "body": "HANDOFF\n- Files: [links or pickup location]\n- Care: [instructions]\n- Warranty: [if any]\n- Questions: reply on this thread" },
+    { "id": "ship-notify", "use_when": "ship-tracking", "body": "Hi [name],\n\nShipped today via [carrier]. Tracking: [number].\nExpected: [date].\n\nInspect on arrival; report damage within 24h." },
+    { "id": "install-checklist", "use_when": "install-day", "body": "INSTALL DAY\n[ ] Site access confirmed\n[ ] Tools on truck\n[ ] Sign-off sheet printed\n[ ] Photo before/after\n[ ] Client POC on site: [name]" },
+    { "id": "digital-handoff", "use_when": "digital-drop", "body": "Hi [name],\n\nFinal files: [link]\nFormats: [list]\nUsage: [print/web/license notes]\n\nDownload by [date]; link expires [date]." },
+    { "id": "issue-capture-same-day", "use_when": "issue-at-delivery", "body": "Hi [name],\n\nSorry something missed the mark: [issue].\n\nToday I will: [fix plan] by [date].\nConfirm this works or call [phone]." },
+    { "id": "hold-until-paid", "use_when": "unpaid-hold", "body": "Hi [name],\n\nWork is complete and held at shop until balance $[amount] clears.\nPay: [link or method]\n\nHappy to release same day payment posts." },
+    { "id": "defer-change-order", "use_when": "scope-extra", "body": "We can add [extra] as a change order. I will send updated price before any extra work. Original delivery stays as quoted until you approve." }
+  ]
+}

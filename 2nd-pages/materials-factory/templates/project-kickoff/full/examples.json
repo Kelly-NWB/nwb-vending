@@ -1,0 +1,14 @@
+{
+  "artifact": "mf-tpl-010",
+  "version": "1.0.0",
+  "examples": [
+    { "id": "ex-standard", "context": "Quote accepted. Deposit in. Banner job.", "kickoff_type": "standard", "branch": "kickoff-standard", "templates": ["kickoff-email-standard", "internal-job-card"], "resolution": "Kickoff sent. Owner assigned. Ship on calendar.", "log_row": "2026-07-10,job-120,Q-882,standard,kickoff-standard,y,2026-07-18,owner,client-poc" },
+    { "id": "ex-no-deposit", "context": "Client said go but no deposit.", "kickoff_type": "standard", "branch": "await-deposit", "templates": ["hold-await-deposit"], "resolution": "No production. mf-tpl-008 link.", "cross_artifact": "mf-tpl-008", "log_row": "2026-07-11,job-121,Q-883,standard,await-deposit,n,,owner," },
+    { "id": "ex-rush", "context": "Rush quote from mf-tpl-006 paid.", "kickoff_type": "rush", "branch": "rush-kickoff", "templates": ["kickoff-rush-dates"], "resolution": "Hard proof window named.", "cross_artifact": "mf-tpl-006", "log_row": "2026-07-09,job-118,Q-870,rush,rush-kickoff,y,2026-07-12,owner,client-poc" },
+    { "id": "ex-proof-heavy", "context": "Brand package, 3 deliverables.", "kickoff_type": "complex", "branch": "proof-heavy", "templates": ["kickoff-proof-rounds", "kickoff-email-standard"], "resolution": "Proof rounds in writing.", "log_row": "2026-07-14,job-125,Q-901,complex,proof-heavy,y,2026-07-28,owner,client-poc" },
+    { "id": "ex-install", "context": "Wall mural install.", "kickoff_type": "complex", "branch": "install-kickoff", "templates": ["kickoff-install-site"], "resolution": "Site access confirmed.", "log_row": "2026-07-16,job-130,Q-915,complex,install-kickoff,y,2026-07-22,owner,site-mgr" },
+    { "id": "ex-scope-lock", "context": "Client email after accept adds second location.", "kickoff_type": "standard", "branch": "scope-lock", "templates": ["scope-lock-confirm"], "resolution": "Confirm or mf-tool-003 change order.", "cross_artifact": "mf-tool-003", "log_row": "2026-07-15,job-122,Q-890,standard,scope-lock,y,2026-07-20,owner,client-poc" },
+    { "id": "ex-repeat", "context": "Dental decals repeat order.", "kickoff_type": "repeat", "branch": "repeat-short", "templates": ["kickoff-repeat-fast"], "resolution": "Fast kickoff. Same specs.", "log_row": "2026-07-14,job-133,Q-933,repeat,repeat-short,y,2026-07-21,owner,front-desk" },
+    { "id": "ex-chain", "context": "Intake → quote → accept. Full chain.", "kickoff_type": "standard", "branch": "kickoff-standard", "templates": ["kickoff-email-standard"], "resolution": "Closes mf-tpl-004/006 loop into production.", "cross_artifact": "mf-tpl-006", "log_row": "2026-07-12,job-128,Q-905,standard,kickoff-standard,y,2026-07-19,owner,client-poc" }
+  ]
+}

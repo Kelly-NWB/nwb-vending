@@ -1,0 +1,14 @@
+{
+  "artifact": "mf-tpl-014",
+  "version": "1.0.0",
+  "templates": [
+    { "id": "quote-nudge-day-3", "body": "Hi [name],\n\nChecking quote [ref] for [deliverable]. Valid until [valid_until].\nQuestions or ready to proceed?" },
+    { "id": "quote-nudge-day-7", "body": "Hi [name],\n\nQuote [ref] still open. Should I keep slot held or close file?" },
+    { "id": "quote-answer-then-hold", "body": "Answers: [list]. Quote unchanged unless scope shifts. Valid until [date]." },
+    { "id": "quote-expired-close", "body": "Hi [name],\n\nQuote [ref] expired [date]. Reply REQUOTE if still interested." },
+    { "id": "quote-requote-offer", "body": "Happy to refresh pricing. Specs still [summary]? New valid-until on send." },
+    { "id": "quote-accept-next", "body": "Great. Next: deposit $[amt] and kickoff checklist.\nPay: [link]" },
+    { "id": "quote-lost-close", "body": "Internal: quote [ref] closed lost. Reason: [ghost/price/timing]." },
+    { "id": "quote-warm-priority", "body": "Warm lead: questions in thread. Owner follow [date]." }
+  ]
+}

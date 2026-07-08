@@ -1,0 +1,45 @@
+{
+  "artifact": "mf-tpl-007",
+  "title": "Delivery + Handoff",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Job done: confirm delivery, handoff assets, close loop, log. After production, before archive.",
+  "mindset": {
+    "principle": "Delivery is not silence. Confirm, handoff, ask one review question, log closed.",
+    "mistakes": [
+      { "id": "drop-and-ghost", "label": "Ship with no confirmation", "cost": "He said / she said on what was delivered" },
+      { "id": "scope-at-door", "label": "Extra work at delivery without change order", "cost": "mf-tool-003 fight on the truck" },
+      { "id": "no-close", "label": "Never mark job closed in log", "cost": "Ops review shows phantom jobs in flight" }
+    ],
+    "framework": {
+      "steps": [
+        { "id": "verify", "action": "Match deliverable to accepted quote scope" },
+        { "id": "notify", "action": "Client knows when and how delivery happens" },
+        { "id": "handoff", "action": "Files, care notes, warranty if any" },
+        { "id": "confirm", "action": "Written OK or issue captured same day" },
+        { "id": "close", "action": "Log closed; route issues to mf-tpl-001" }
+      ]
+    }
+  },
+  "delivery_types": [
+    { "id": "pickup", "label": "Client pickup" },
+    { "id": "ship", "label": "Shipped / courier" },
+    { "id": "install", "label": "On-site install" },
+    { "id": "digital", "label": "Digital files only" }
+  ],
+  "decision_branches": [
+    { "id": "standard-close", "situation": "Delivered as quoted, client OK", "action": "delivery-confirm + handoff-pack" },
+    { "id": "ship-tracking", "situation": "Physical ship", "action": "ship-notify + tracking-line" },
+    { "id": "install-day", "situation": "On-site install", "action": "install-checklist + signoff" },
+    { "id": "digital-drop", "situation": "Files only", "action": "digital-handoff + usage-notes" },
+    { "id": "issue-at-delivery", "situation": "Damage, wrong qty, scope dispute", "action": "issue-capture-same-day", "cross_artifact": "mf-tpl-001" },
+    { "id": "unpaid-hold", "situation": "Balance due before release", "action": "hold-until-paid", "cross_artifact": "mf-tpl-008" },
+    { "id": "scope-extra", "situation": "Client wants add-on at handoff", "action": "defer-change-order", "cross_artifact": "mf-tool-003" }
+  ],
+  "tracking": {
+    "csv_header": "date,job_id,delivery_type,branch,confirmed,issue_y,n,closed_date,owner",
+    "sheet_tab_name": "deliveries"
+  },
+  "related_artifacts": ["mf-tpl-006", "mf-tpl-008", "mf-tpl-001", "mf-tool-003", "mf-tpl-005"]
+}

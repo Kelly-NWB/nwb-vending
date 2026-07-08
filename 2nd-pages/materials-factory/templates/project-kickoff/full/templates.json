@@ -1,0 +1,14 @@
+{
+  "artifact": "mf-tpl-010",
+  "version": "1.0.0",
+  "templates": [
+    { "id": "kickoff-email-standard", "use_when": "kickoff-standard", "body": "Hi [name],\n\nProject [job_id] is live.\n\nDeposit: received\nProof due from you: [proof_date]\nShip target: [ship_date]\nYour POC: [client_poc]\n\nReply with assets or questions. Changes after today need change order." },
+    { "id": "hold-await-deposit", "use_when": "await-deposit", "body": "Hi [name],\n\nQuote [ref] accepted. Production starts when deposit $[amount] clears.\nPay: [link]\n\nCalendar slot held 48h pending payment." },
+    { "id": "kickoff-rush-dates", "use_when": "rush-kickoff", "body": "RUSH KICKOFF [job_id]\nDeposit + rush fee: received\nProof back by: [datetime] hard\nShip: [date]\n\nMissed proof window may move ship." },
+    { "id": "kickoff-proof-rounds", "use_when": "proof-heavy", "body": "PROOF PATH\nRound 1 mockup: [date]\nYour feedback by: [date]\nRound 2 if needed: [date]\nFinal approval before production: required in writing" },
+    { "id": "kickoff-install-site", "use_when": "install-kickoff", "body": "INSTALL KICKOFF\nSite: [address]\nDate: [date] window [time]\nAccess: [notes]\nSite POC: [name] [phone]\n\nConfirm access 24h prior." },
+    { "id": "scope-lock-confirm", "use_when": "scope-lock", "body": "Before we start: confirming scope matches quote [ref]:\n[list]\n\nReply CONFIRM or list changes (may affect price/timeline)." },
+    { "id": "kickoff-repeat-fast", "use_when": "repeat-short", "body": "Repeat of [prior_job]. Same specs unless you note changes by [date].\nShip target: [date]." },
+    { "id": "internal-job-card", "use_when": "Owner assignment", "body": "JOB CARD\nID: [job_id]\nOwner: [name]\nShip: [date]\nDeposit: [y/n]\nProof: [status]\nNotes: ___" }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "artifact": "mf-tpl-013",
+  "version": "1.0.0",
+  "examples": [
+    { "context": "Job running normal. Client anxious.", "status_type": "on_track", "branch": "update-on-track", "templates": ["status-on-track"], "resolution": "Short calm update.", "log_row": "2026-07-15,job-120,on_track,update-on-track,2026-07-18,,owner" },
+    { "context": "Vendor late. Date slips 3 days.", "status_type": "delayed", "branch": "update-delay", "templates": ["status-delay-honest"], "cross_artifact": "mf-tpl-009", "resolution": "Own delay, new date.", "log_row": "2026-07-16,job-125,delayed,update-delay,2026-07-22,,owner" },
+    { "context": "Waiting on logo file.", "status_type": "waiting_client", "branch": "update-waiting", "templates": ["status-waiting-client"], "resolution": "Clear ask.", "log_row": "2026-07-14,job-122,waiting_client,update-waiting,2026-07-19,logo file,owner" },
+    { "context": "Press started.", "status_type": "in_production", "branch": "update-production", "templates": ["status-in-production"], "resolution": "In production ping.", "log_row": "2026-07-17,job-128,in_production,update-production,2026-07-19,,owner" },
+    { "context": "3-week install job.", "status_type": "on_track", "branch": "update-weekly", "templates": ["status-weekly-brief"], "resolution": "Weekly brief only.", "log_row": "2026-07-21,job-130,on_track,update-weekly,2026-07-28,,owner" },
+    { "context": "Tone getting sharp in email.", "status_type": "delayed", "branch": "update-escalate", "templates": ["status-before-complaint"], "cross_artifact": "mf-tpl-001", "resolution": "Update before complaint.", "log_row": "2026-07-20,job-119,delayed,update-escalate,2026-07-21,,owner" },
+    { "context": "mf-tpl-005 stuck_job unblock.", "status_type": "waiting_client", "branch": "update-waiting", "templates": ["status-stuck-unblock"], "cross_artifact": "mf-tpl-005", "resolution": "Named unblock.", "log_row": "2026-07-28,job-128,waiting_client,update-waiting,2026-07-30,A/B pick,owner" },
+    { "context": "Post-kickoff no news 5 days.", "status_type": "on_track", "branch": "update-on-track", "templates": ["status-on-track"], "cross_artifact": "mf-tpl-010", "resolution": "Proactive after kickoff.", "log_row": "2026-07-15,job-120,on_track,update-on-track,2026-07-18,,owner" }
+  ]
+}

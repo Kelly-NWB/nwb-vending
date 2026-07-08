@@ -1,0 +1,14 @@
+{
+  "artifact": "mf-tpl-011",
+  "version": "1.0.0",
+  "examples": [
+    { "context": "Banner mockup ready. First proof.", "proof_type": "visual", "branch": "proof-send", "templates": ["proof-send-standard", "proof-checklist-client"], "resolution": "Proof out. Ship hold until APPROVED.", "log_row": "2026-07-12,job-120,1,visual,proof-send,n,n,,2026-07-14,owner" },
+    { "context": "Client replies APPROVED all caps.", "proof_type": "visual", "branch": "approved", "templates": ["proof-approved-release"], "resolution": "Production released.", "log_row": "2026-07-13,job-120,1,visual,approved,y,n,client,2026-07-18,owner" },
+    { "context": "Two typos listed.", "proof_type": "copy", "branch": "changes-minor", "templates": ["proof-changes-minor"], "resolution": "Round 2 tomorrow.", "log_row": "2026-07-14,job-122,1,copy,changes-minor,n,n,,2026-07-16,owner" },
+    { "context": "Wants full redesign on proof.", "proof_type": "visual", "branch": "changes-major", "templates": ["proof-changes-major"], "cross_artifact": "mf-tool-003", "resolution": "CO before new proof.", "log_row": "2026-07-15,job-125,2,visual,changes-major,n,n,,,owner" },
+    { "context": "No reply past deadline.", "proof_type": "visual", "branch": "silent-hold", "templates": ["proof-silent-hold", "proof-internal-hold"], "resolution": "Production frozen.", "log_row": "2026-07-16,job-128,1,visual,silent-hold,n,n,,2026-07-17,owner" },
+    { "context": "Rush job proof same day.", "proof_type": "final", "branch": "rush-proof", "templates": ["proof-rush-window"], "resolution": "Hard window in email.", "log_row": "2026-07-10,job-118,1,final,rush-proof,n,n,,2026-07-10,owner" },
+    { "context": "Kickoff promised proof path.", "proof_type": "visual", "branch": "proof-send", "templates": ["proof-send-standard"], "cross_artifact": "mf-tpl-010", "resolution": "Matches kickoff dates.", "log_row": "2026-07-11,job-120,1,visual,proof-send,n,n,,2026-07-13,owner" },
+    { "context": "Weekly ops stuck on client color.", "proof_type": "color", "branch": "silent-hold", "templates": ["proof-silent-hold"], "cross_artifact": "mf-tpl-005", "resolution": "Unblock from ops review.", "log_row": "2026-07-21,job-130,1,color,silent-hold,n,n,,2026-07-22,owner" }
+  ]
+}

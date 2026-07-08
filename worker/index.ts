@@ -87,6 +87,66 @@ const GATED_ROUTES: GatedRoute[] = [
     description: "Weekly 15-Min Ops Review agent pack (mf-tpl-005)",
     artifact: "mf-tpl-005",
   },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/quote-estimate-gate/full",
+    price: "$0.45",
+    description: "Quote / Estimate Gate agent pack (mf-tpl-006)",
+    artifact: "mf-tpl-006",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/delivery-handoff/full",
+    price: "$0.45",
+    description: "Delivery + Handoff agent pack (mf-tpl-007)",
+    artifact: "mf-tpl-007",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/invoice-payment-chase/full",
+    price: "$0.45",
+    description: "Invoice + Payment Chase agent pack (mf-tpl-008)",
+    artifact: "mf-tpl-008",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/vendor-issue/full",
+    price: "$0.45",
+    description: "Vendor Issue Playbook agent pack (mf-tpl-009)",
+    artifact: "mf-tpl-009",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/project-kickoff/full",
+    price: "$0.45",
+    description: "Project Kickoff Checklist agent pack (mf-tpl-010)",
+    artifact: "mf-tpl-010",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/proof-approval-gate/full",
+    price: "$0.45",
+    description: "Proof + Client Approval Gate agent pack (mf-tpl-011)",
+    artifact: "mf-tpl-011",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/change-order-mid-job/full",
+    price: "$0.45",
+    description: "Change Order Mid-Job agent pack (mf-tpl-012)",
+    artifact: "mf-tpl-012",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/client-status-update/full",
+    price: "$0.45",
+    description: "Client Status Update agent pack (mf-tpl-013)",
+    artifact: "mf-tpl-013",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/quote-follow-up/full",
+    price: "$0.45",
+    description: "Quote Follow-Up agent pack (mf-tpl-014)",
+    artifact: "mf-tpl-014",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/job-close-archive/full",
+    price: "$0.45",
+    description: "Job Close + Archive agent pack (mf-tpl-015)",
+    artifact: "mf-tpl-015",
+  },
 ];
 
 function normalizePath(path: string): string {

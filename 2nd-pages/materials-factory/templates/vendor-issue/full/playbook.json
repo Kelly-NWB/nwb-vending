@@ -1,0 +1,46 @@
+{
+  "artifact": "mf-tpl-009",
+  "title": "Vendor Issue Playbook",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Supplier late, wrong, short, or damaged: document, chase vendor, protect client job. Ops shelf for small shops.",
+  "mindset": {
+    "principle": "Vendor problem is your problem until the client knows the plan.",
+    "mistakes": [
+      { "id": "hope-ship", "label": "Wait silently for vendor", "cost": "Miss client deadline" },
+      { "id": "blame-forward", "label": "Tell client vendor fault with no plan", "cost": "You still look unreliable" },
+      { "id": "no-doc", "label": "No photos or PO reference", "cost": "Vendor denies, you eat cost" }
+    ],
+    "framework": {
+      "steps": [
+        { "id": "document", "action": "PO, photos, qty, date promised" },
+        { "id": "classify", "action": "late / wrong / short / damaged" },
+        { "id": "vendor-touch", "action": "One clear ask with deadline" },
+        { "id": "client-plan", "action": "Client hears plan before panic" },
+        { "id": "log", "action": "Vendor score + job impact" }
+      ]
+    }
+  },
+  "issue_types": [
+    { "id": "late", "label": "Late shipment" },
+    { "id": "wrong_spec", "label": "Wrong item or spec" },
+    { "id": "short", "label": "Short count" },
+    { "id": "damaged", "label": "Damaged in transit" },
+    { "id": "reorder", "label": "Routine reorder" }
+  ],
+  "decision_branches": [
+    { "id": "vendor-chase-late", "situation": "Past promise date", "action": "vendor-late-escalate" },
+    { "id": "wrong-spec-return", "situation": "Wrong SKU or color", "action": "vendor-wrong-rma" },
+    { "id": "short-ship", "situation": "Qty short", "action": "vendor-short-make-good" },
+    { "id": "damaged-claim", "situation": "Damage on arrival", "action": "vendor-damage-photos" },
+    { "id": "client-delay-notice", "situation": "Job date at risk", "action": "client-delay-honest" },
+    { "id": "backup-vendor", "situation": "Primary failed twice", "action": "backup-source-switch" },
+    { "id": "routine-reorder", "situation": "Stock reorder, no issue", "action": "reorder-standard" }
+  ],
+  "tracking": {
+    "csv_header": "date,vendor,po,issue_type,branch,job_impact,resolved_y,n,owner",
+    "sheet_tab_name": "vendor_issues"
+  },
+  "related_artifacts": ["mf-tpl-005", "mf-tpl-007", "mf-tpl-006"]
+}

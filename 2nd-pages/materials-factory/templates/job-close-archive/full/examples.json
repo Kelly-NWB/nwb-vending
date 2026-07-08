@@ -1,0 +1,14 @@
+{
+  "artifact": "mf-tpl-015",
+  "version": "1.0.0",
+  "examples": [
+    { "context": "Paid, delivered, happy.", "close_type": "standard", "branch": "close-standard", "templates": ["close-thanks-review", "close-internal-checklist", "close-archive-path"], "resolution": "Closed with review ask.", "log_row": "2026-07-22,job-120,standard,close-standard,y,y,/jobs/2026/120,owner" },
+    { "context": "Dental repeat order.", "close_type": "repeat", "branch": "close-repeat", "templates": ["close-thanks-short", "close-internal-checklist"], "resolution": "No review spam.", "log_row": "2026-07-21,job-133,repeat,close-repeat,y,y,/jobs/2026/133,owner" },
+    { "context": "Delivered, $200 out.", "close_type": "standard", "branch": "close-hold-unpaid", "templates": ["close-blocked-unpaid"], "cross_artifact": "mf-tpl-008", "resolution": "No archive.", "log_row": "2026-07-23,job-132,standard,close-hold-unpaid,n,n,,owner" },
+    { "context": "Owner end of week cleanup.", "close_type": "standard", "branch": "close-internal", "templates": ["close-internal-checklist"], "resolution": "Internal only.", "log_row": "2026-07-25,job-128,standard,close-internal,y,y,/jobs/2026/128,owner" },
+    { "context": "Had bend issue, fixed.", "close_type": "issue_resolved", "branch": "close-issue-ok", "templates": ["close-after-issue", "close-internal-checklist"], "resolution": "Close after fix.", "log_row": "2026-07-24,job-119,issue_resolved,close-issue-ok,y,y,/jobs/2026/119,owner" },
+    { "context": "$12 rounding, move on.", "close_type": "writeoff", "branch": "close-writeoff", "templates": ["close-writeoff-note", "close-internal-checklist"], "resolution": "Writeoff logged.", "log_row": "2026-07-20,job-110,writeoff,close-writeoff,y,y,/jobs/2026/110,owner" },
+    { "context": "Delivery confirm from 007.", "close_type": "standard", "branch": "close-standard", "templates": ["close-thanks-review"], "cross_artifact": "mf-tpl-007", "resolution": "Chain after handoff.", "log_row": "2026-07-20,job-120,standard,close-standard,y,y,/jobs/2026/120,owner" },
+    { "context": "Clear stuck list in weekly ops.", "close_type": "standard", "branch": "close-internal", "templates": ["close-ops-clear"], "cross_artifact": "mf-tpl-005", "resolution": "Ops phantom cleared.", "log_row": "2026-07-28,job-128,standard,close-internal,y,y,/jobs/2026/128,owner" }
+  ]
+}

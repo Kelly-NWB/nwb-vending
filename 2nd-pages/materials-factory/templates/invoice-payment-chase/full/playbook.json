@@ -1,0 +1,46 @@
+{
+  "artifact": "mf-tpl-008",
+  "title": "Invoice + Payment Chase",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Invoice sent, balance due, polite chase sequence. Pairs with mf-tpl-006 deposit and mf-tpl-005 money block.",
+  "mindset": {
+    "principle": "Chase early, stay polite, escalate on calendar not emotion.",
+    "mistakes": [
+      { "id": "invoice-late", "label": "Invoice after delivery with no prior terms", "cost": "Payment surprise fights" },
+      { "id": "one-ghost-chase", "label": "One email then give up", "cost": "Cash stuck 90 days" },
+      { "id": "angry-chase", "label": "Threaten before day 14", "cost": "Relationship dead, still unpaid" }
+    ],
+    "framework": {
+      "steps": [
+        { "id": "send", "action": "Invoice with terms already quoted" },
+        { "id": "remind", "action": "Day 3 friendly nudge if unpaid" },
+        { "id": "call", "action": "Day 7 direct ask" },
+        { "id": "escalate", "action": "Day 14+ hold future work or collections path" },
+        { "id": "log", "action": "Every touch logged" }
+      ]
+    }
+  },
+  "invoice_states": [
+    { "id": "sent", "label": "Invoice sent, not due yet" },
+    { "id": "due", "label": "Due date passed" },
+    { "id": "partial", "label": "Deposit paid, balance out" },
+    { "id": "disputed", "label": "Client disputes amount" },
+    { "id": "paid", "label": "Closed" }
+  ],
+  "decision_branches": [
+    { "id": "initial-invoice", "situation": "First invoice after quote accept", "action": "invoice-standard" },
+    { "id": "friendly-nudge", "situation": "3 days unpaid, no dispute", "action": "chase-day-3" },
+    { "id": "direct-day-7", "situation": "7 days unpaid", "action": "chase-day-7" },
+    { "id": "hold-future", "situation": "14+ days, repeat offender", "action": "chase-day-14-hold" },
+    { "id": "dispute-route", "situation": "Wrong amount claim", "action": "dispute-clarify", "cross_artifact": "mf-tpl-001" },
+    { "id": "payment-link", "situation": "Client asks how to pay", "action": "payment-link-send" },
+    { "id": "paid-thanks", "situation": "Payment received", "action": "paid-confirm-close" }
+  ],
+  "tracking": {
+    "csv_header": "date,invoice_id,client,amount,state,branch,last_touch,next_touch,owner",
+    "sheet_tab_name": "invoices"
+  },
+  "related_artifacts": ["mf-tpl-006", "mf-tpl-007", "mf-tpl-005", "mf-tpl-001"]
+}

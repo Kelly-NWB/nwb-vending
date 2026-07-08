@@ -1,0 +1,14 @@
+{
+  "artifact": "mf-tpl-012",
+  "version": "1.0.0",
+  "examples": [
+    { "context": "Add 50 more shirts mid-run.", "change_type": "add_qty", "branch": "co-standard", "templates": ["change-order-standard", "change-order-internal"], "resolution": "CO $380. Work paused.", "log_row": "2026-07-14,job-120,CO-12,add_qty,co-standard,380,n,owner" },
+    { "context": "One typo fix on label.", "change_type": "spec_shift", "branch": "co-courtesy-once", "templates": ["change-order-courtesy"], "resolution": "Courtesy once logged.", "log_row": "2026-07-15,job-121,CO-13,spec_shift,co-courtesy-once,0,y,owner" },
+    { "context": "Add second location after accept.", "change_type": "add_item", "branch": "co-standard", "templates": ["change-order-standard"], "resolution": "Delta quoted.", "log_row": "2026-07-16,job-125,CO-14,add_item,co-standard,650,n,owner" },
+    { "context": "Client wants extras after delivery.", "change_type": "add_item", "branch": "co-defer", "templates": ["change-order-defer"], "resolution": "Phase 2 CO.", "log_row": "2026-07-20,job-110,CO-15,add_item,co-defer,0,n,owner" },
+    { "context": "Pull in date impossible.", "change_type": "rush_pull", "branch": "co-decline", "templates": ["change-order-decline"], "resolution": "Decline pull-in.", "log_row": "2026-07-12,job-118,CO-11,rush_pull,co-decline,0,n,owner" },
+    { "context": "CO signed.", "change_type": "add_qty", "branch": "co-accepted", "templates": ["change-order-accepted"], "resolution": "Resume production.", "log_row": "2026-07-17,job-120,CO-12,add_qty,co-accepted,380,y,owner" },
+    { "context": "Says extras were in quote.", "change_type": "add_item", "branch": "co-dispute", "templates": ["change-order-scope-remind"], "cross_artifact": "mf-tpl-006", "resolution": "Attach quote ref.", "log_row": "2026-07-18,job-125,CO-14,add_item,co-dispute,650,n,owner" },
+    { "context": "mf-tool-003 said fee_required.", "change_type": "spec_shift", "branch": "co-standard", "templates": ["change-order-standard"], "cross_artifact": "mf-tool-003", "resolution": "Tool → template script.", "log_row": "2026-07-07,job-115,CO-10,spec_shift,co-standard,120,n,owner" }
+  ]
+}

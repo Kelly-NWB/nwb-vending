@@ -1,0 +1,14 @@
+{
+  "artifact": "mf-tpl-012",
+  "version": "1.0.0",
+  "templates": [
+    { "id": "change-order-standard", "body": "CHANGE ORDER [co_id] · job [job_id]\n\nOriginal: [quoted scope]\nNow requested: [new scope]\n\nAdded cost: $[delta]\nTime impact: [days]\n\nReply ACCEPT CO to proceed. Work paused until then." },
+    { "id": "change-order-courtesy", "body": "One courtesy tweak included: [item].\nIf more changes, they will be quoted as CO." },
+    { "id": "change-order-defer", "body": "We can add [item] as phase 2 after delivery. CO attached for optional schedule." },
+    { "id": "change-order-decline", "body": "We cannot add [item] on this timeline/margin. Options: [alt]." },
+    { "id": "change-order-accepted", "body": "CO [co_id] accepted. New ship target: [date]. Invoice delta: $[delta]." },
+    { "id": "change-order-scope-remind", "body": "Quote [ref] covered [list]. [new ask] is outside scope. CO required." },
+    { "id": "change-order-internal", "body": "STOP work on [component] until CO signed. Job [id]." },
+    { "id": "change-order-log", "body": "CO row: date,job_id,co_id,type,delta,accepted,owner" }
+  ]
+}

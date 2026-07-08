@@ -1,0 +1,49 @@
+{
+  "artifact": "mf-tpl-003",
+  "version": "1.0.0",
+  "scale": {
+    "strong": 3,
+    "adequate": 2,
+    "weak": 1,
+    "fail": 0
+  },
+  "finisher_scoring": {
+    "three_adjectives": {
+      "strong": "Three distinct adjectives. Each has a specific accomplishment. No buzzword soup.",
+      "adequate": "Two solid, one vague. Still shows some self-awareness.",
+      "weak": "Generic traits only. Cannot link to outcomes.",
+      "fail": "Refuses, jokes it off, or hostile."
+    },
+    "last_book": {
+      "strong": "Recent book or honest learning substitute with takeaway applied to work or life.",
+      "adequate": "Remembers something; takeaway thin but real.",
+      "weak": "Vague, long ago only, clearly stretching.",
+      "fail": "Pride in not learning. Dismissive."
+    },
+    "define_success": {
+      "strong": "Success includes doing the job well, trust, reliability, or customer outcome.",
+      "adequate": "Mix of personal and work goals with some substance.",
+      "weak": "Only external rewards. No tie to work quality.",
+      "fail": "Success = minimum effort or gaming the system."
+    }
+  },
+  "decision_matrix": {
+    "hire": "No fail scores on finishers. At least two strong or adequate on finishers. Core questions pass. Technical gate pass if applicable.",
+    "pass": "Any finisher fail. Two or more weak finishers. Red flags on reliability or accountability. Failed technical gate.",
+    "maybe": "One weak finisher but strong elsewhere. Use sparingly. 48h rule from playbook."
+  },
+  "retention_signals": {
+    "positive": [
+      "Owned mistake story with fix",
+      "Success definition includes craft or customer",
+      "Learning answer is honest and recent",
+      "Adjectives tied to real work"
+    ],
+    "negative": [
+      "Blame-heavy mistake story",
+      "Success = as little work as possible",
+      "Contempt for questions",
+      "Charm with empty finishers"
+    ]
+  }
+}

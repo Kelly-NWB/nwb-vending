@@ -51,6 +51,18 @@ const GATED_ROUTES: GatedRoute[] = [
     description: "Should I Automate This decision rubric (mf-tool-001)",
     artifact: "mf-tool-001",
   },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/employee-onboarding-kit/full",
+    price: "$0.45",
+    description: "Rapid Employee Onboarding Kit agent pack (mf-tpl-002)",
+    artifact: "mf-tpl-002",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/hiring-character-gauge/full",
+    price: "$0.45",
+    description: "Hiring Character Gauge interview pack (mf-tpl-003)",
+    artifact: "mf-tpl-003",
+  },
 ];
 
 function normalizePath(path: string): string {

@@ -1,0 +1,50 @@
+{
+  "artifact": "mf-tpl-003",
+  "title": "Hiring Character Gauge",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Interview questions, rules, and scoring for small business hires (2-15 people). Resume is secondary except technical roles. Three finisher questions reveal character and retention fit.",
+  "scope": {
+    "team_size": "2-15",
+    "focus": "SMB and vending ops",
+    "not_for": ["enterprise ATS workflows", "executive search", "legal compliance programs"]
+  },
+  "rules": [
+    "Same core questions for every candidate in the same role. No improvisation.",
+    "Resume opens the door. Character questions decide (non-technical roles).",
+    "Technical roles: short skills gate first, then same character block.",
+    "One primary interviewer. Owner or trusted lead. No panel theater.",
+    "Take notes during or within 10 minutes after. Use scorecard template.",
+    "Do not hire on charm alone. Charm without substance = pass.",
+    "If uneasy after interview, pass. SMB cannot afford a bad month.",
+    "Never skip the three finisher questions. They trump the resume."
+  ],
+  "do_not_ask": [
+    "Age, family plans, religion, disability, national origin",
+    "Arrest record (varies by jurisdiction; owner checks local rules)",
+    "Anything not job-related used to exclude a protected class"
+  ],
+  "process": {
+    "steps": [
+      { "id": "screen", "label": "5-min phone or message", "goal": "Availability, pay range alignment, basic fit" },
+      { "id": "interview", "label": "30-45 min in person or video", "goal": "Core questions + three finishers + notes" },
+      { "id": "score", "label": "Scorecard within 1 hour", "goal": "hire / pass / maybe + why" },
+      { "id": "reference", "label": "One reference if hire", "goal": "Confirm reliability, not gossip" }
+    ]
+  },
+  "role_types": [
+    { "id": "non_technical", "label": "Non-technical (default)", "technical_gate": false },
+    { "id": "route_ops", "label": "Route / field ops", "technical_gate": false },
+    { "id": "customer_facing", "label": "Customer-facing", "technical_gate": false },
+    { "id": "technical", "label": "Technical / specialist", "technical_gate": true }
+  ],
+  "finisher_questions": {
+    "required": true,
+    "order": ["three_adjectives", "last_book", "define_success"],
+    "note": "Always ask all three in order. Score using scoring.json."
+  },
+  "decision_outcomes": ["hire", "pass", "maybe"],
+  "maybe_rule": "Maybe expires in 48 hours. Second interview or pass. SMB cannot sit on maybes.",
+  "related_artifacts": ["mf-tpl-002", "mf-tpl-001"]
+}

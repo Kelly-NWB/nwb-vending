@@ -1,0 +1,91 @@
+{
+  "artifact": "mf-tpl-002",
+  "title": "Rapid Employee Onboarding Kit",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "7/30-day onboarding for small teams (2-15 people) with no HR department. Vending and shop ops forward. Checklists, scripts, tracking.",
+  "scope": {
+    "team_size": "2-15",
+    "has_hr": false,
+    "not_for": ["enterprise HRIS rollout", "benefits enrollment compliance packs", "100+ employee programs"]
+  },
+  "roles": [
+    {
+      "id": "route_driver",
+      "label": "Route driver (vending)",
+      "typical_week_1": "Shadow full route, learn keys and cash rules, practice machine checks, solo run with buddy on radio day 5"
+    },
+    {
+      "id": "warehouse_inventory",
+      "label": "Warehouse / inventory",
+      "typical_week_1": "Par levels, pick paths, vendor labels, restock load-out with experienced driver"
+    },
+    {
+      "id": "counter_customer",
+      "label": "Counter / customer-facing",
+      "typical_week_1": "POS, complaint handoff (see mf-tpl-001), rush-hour shadow, recovery script read-through"
+    },
+    {
+      "id": "route_filler_pt",
+      "label": "Route filler (part-time)",
+      "typical_week_1": "One route segment only, checklist laminated, explicit do-not-touch list for week 1"
+    },
+    {
+      "id": "first_hire",
+      "label": "First hire (owner had no system)",
+      "typical_week_1": "Owner documents as they go; this pack becomes the seed SOP"
+    }
+  ],
+  "timeline": {
+    "day_0": {
+      "label": "Offer accepted → start date",
+      "goals": ["Confirm start date/time/location", "What to bring (ID, shoes, phone)", "Point of contact", "Send day-1 one-pager"]
+    },
+    "day_1": {
+      "label": "Day 1",
+      "goals": ["Welcome + tour", "Safety and keys/cash rules", "Buddy assigned", "Shadow or observe", "End-of-day 5-minute recap"],
+      "checklist_template_id": "day-1-checklist"
+    },
+    "week_1": {
+      "label": "Days 2-7",
+      "goals": ["Role milestones from roles[].typical_week_1", "Daily 10-min morning touchpoint", "One skill demonstrated solo before day 7", "Day 7 check-in (template day-7-checkin)"]
+    },
+    "day_30": {
+      "label": "Day 30 review",
+      "goals": ["Still right fit?", "Errors trending down?", "Promote to full autonomy or extend buddy?", "Update checklist from what broke"],
+      "template_id": "day-30-review"
+    }
+  },
+  "buddy_system": {
+    "rules": [
+      "Buddy = competent peer, not always the owner",
+      "Buddy is answerable for first 7 days (not blame, availability)",
+      "New hire goes to buddy before owner for how-to questions",
+      "Owner does day 1 welcome and day 7 + day 30 reviews"
+    ],
+    "template_id": "buddy-assignment"
+  },
+  "week_1_failure_modes": [
+    { "id": "no-written-plan", "signal": "Owner wings it daily", "fix": "Print role one-pager; same questions every morning" },
+    { "id": "sink-or-swim", "signal": "Solo on day 2 with no checklist", "fix": "Shadow through one full cycle minimum" },
+    { "id": "keys-cash-surprise", "signal": "Cash handling argued on day 3", "fix": "Day 1 keys/cash rules signed or acknowledged" },
+    { "id": "ghost-buddy", "signal": "Buddy on another route, unreachable", "fix": "Name backup contact on day-1 sheet" },
+    { "id": "complaint-unprepared", "signal": "Customer-facing hire improvises", "fix": "mf-tpl-001 cheat sheet before solo counter" }
+  ],
+  "tracking": {
+    "log_fields": [
+      { "field": "hire_name", "why": "Who" },
+      { "field": "role_id", "why": "Which role pack applied" },
+      { "field": "start_date", "why": "Day 0" },
+      { "field": "buddy_name", "why": "Accountability" },
+      { "field": "day_7_done", "why": "Y/N + date" },
+      { "field": "day_30_done", "why": "Y/N + date" },
+      { "field": "week_1_incidents", "why": "Mistakes or near-misses" },
+      { "field": "autonomy_level", "why": "shadow / partial / full after day 30" },
+      { "field": "owner_notes", "why": "What to fix in next hire" }
+    ],
+    "csv_header": "hire_name,role_id,start_date,buddy_name,day_7_done,day_30_done,week_1_incidents,autonomy_level,owner_notes"
+  },
+  "related_artifacts": ["mf-tpl-001", "mf-tool-001"]
+}

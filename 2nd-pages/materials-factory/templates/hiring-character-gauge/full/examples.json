@@ -1,0 +1,113 @@
+{
+  "artifact": "mf-tpl-003",
+  "version": "1.0.0",
+  "examples": [
+    {
+      "id": "ex-route-driver-hire",
+      "role_type": "route_ops",
+      "context": "Vending route driver, 3-person op",
+      "finishers": {
+        "three_adjectives": "Steady: finished a year without a missed collection log. Observant: caught a bad coil before it emptied. Direct: told me a stop was unsafe to service at night.",
+        "last_book": "Road atlas habits plus a safety brief from DMV site last month. Takeaway: backup lighting in truck.",
+        "define_success": "Every machine serviced right, cash logged, home safe."
+      },
+      "finisher_scores": { "three_adjectives": "strong", "last_book": "adequate", "define_success": "strong" },
+      "decision": "hire",
+      "onboarding_role_id": "route_driver",
+      "operator_note": "Resume was fine. Finishers sold me. This is the retention hire."
+    },
+    {
+      "id": "ex-route-driver-pass",
+      "role_type": "route_ops",
+      "context": "Same role, great driving record on paper",
+      "finishers": {
+        "three_adjectives": "Hard-working, passionate, team player. Accomplishments: I always try my best.",
+        "last_book": "Don't really read. Too busy.",
+        "define_success": "Getting paid and not having a boss breathe down my neck."
+      },
+      "finisher_scores": { "three_adjectives": "weak", "last_book": "weak", "define_success": "fail" },
+      "decision": "pass",
+      "operator_note": "Resume almost talked me into it. Three questions saved a month of pain."
+    },
+    {
+      "id": "ex-counter-hire",
+      "role_type": "customer_facing",
+      "context": "Cafe counter, handles complaints",
+      "finishers": {
+        "three_adjectives": "Patient: de-escalated a line when POS froze. Honest: admitted wrong ring before customer had to. Quick: learned opening checklist in two shifts.",
+        "last_book": "Short stories on audiobook during commute. Takeaway: people want to be seen first.",
+        "define_success": "Regulars leave happier than they came in."
+      },
+      "finisher_scores": { "three_adjectives": "strong", "last_book": "strong", "define_success": "strong" },
+      "decision": "hire",
+      "onboarding_role_id": "counter_customer"
+    },
+    {
+      "id": "ex-technical-nerd-hire",
+      "role_type": "technical",
+      "context": "Part-time telemetry/script helper",
+      "finishers": {
+        "three_adjectives": "Curious: built a CSV parser for Dex exports. Careful: version-controls before touching prod. Blunt: tells me when my idea won't work.",
+        "last_book": "O'Reilly pocket guide on APIs. Takeaway: read error messages first.",
+        "define_success": "System stays up. Owner understands what broke."
+      },
+      "finisher_scores": { "three_adjectives": "strong", "last_book": "strong", "define_success": "strong" },
+      "technical_gate": "pass",
+      "decision": "hire",
+      "operator_note": "Technical gate first. Same three finishers still matter for a nerd who has to talk to you."
+    },
+    {
+      "id": "ex-overqualified-maybe",
+      "role_type": "non_technical",
+      "context": "Ex-corporate manager applying for part-time warehouse",
+      "finishers": {
+        "three_adjectives": "Organized: ran a team of 12. Strategic: cut shrink 8%. Restless: left corp because meetings ate the day.",
+        "last_book": "Business book last year. Takeaway vague.",
+        "define_success": "Building something real with my hands again."
+      },
+      "finisher_scores": { "three_adjectives": "strong", "last_book": "weak", "define_success": "adequate" },
+      "decision": "maybe",
+      "operator_note": "Will they leave in 90 days when something corporate opens? 48h second chat on why this role."
+    },
+    {
+      "id": "ex-filler-pass-charm",
+      "role_type": "route_ops",
+      "context": "Holiday route filler, likable interview",
+      "finishers": {
+        "three_adjectives": "Funny, friendly, easy-going. Accomplishments: people like me.",
+        "last_book": "TikTok mostly.",
+        "define_success": "Easy money."
+      },
+      "finisher_scores": { "three_adjectives": "weak", "last_book": "weak", "define_success": "fail" },
+      "decision": "pass",
+      "operator_note": "Charm is not character. Pass."
+    },
+    {
+      "id": "ex-first-hire-owner",
+      "role_type": "non_technical",
+      "context": "Owner's first hire ever, nervous interviewer",
+      "finishers": {
+        "three_adjectives": "Reliable: never late at last job 2 years. Teachable: asked for checklist on day one. Calm: didn't panic when I fumbled the interview.",
+        "last_book": "YouTube tutorials on espresso. Takeaway: grind size matters.",
+        "define_success": "Shop opens smooth even when I'm not here."
+      },
+      "finisher_scores": { "three_adjectives": "adequate", "last_book": "adequate", "define_success": "strong" },
+      "decision": "hire",
+      "onboarding_role_id": "first_hire",
+      "operator_note": "Owner doesn't need corpo HR. Needs same three questions and notes."
+    },
+    {
+      "id": "ex-learning-honest-adequate",
+      "role_type": "route_ops",
+      "context": "Older candidate, no recent books",
+      "finishers": {
+        "three_adjectives": "Punctual: 14 years same delivery route elsewhere. Thorough: manager cited zero cash discrepancies. Quiet: doesn't need chatter to work.",
+        "last_book": "Haven't read a book in years. Listens to route podcasts. Takeaway: check MDB error codes before calling tech.",
+        "define_success": "Done when the list is done right."
+      },
+      "finisher_scores": { "three_adjectives": "strong", "last_book": "adequate", "define_success": "adequate" },
+      "decision": "hire",
+      "operator_note": "Book answer was honest. Podcast takeaway was real. Hire."
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "artifact": "mf-tpl-002",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "day-0-welcome-email",
+      "use_when": "Offer accepted, before day 1",
+      "channel": "email",
+      "subject": "Welcome to [Business] (start date [date])",
+      "body": "Hi [Name],\n\nWe're glad you're joining us. Your first day is [date] at [time]. Meet at [location].\n\nBring: [ID / steel-toe / phone / etc.].\n\nYour point of contact: [Name, phone]. Wear [dress code if any].\n\nYou'll get a printed day-1 checklist when you arrive. Reply to confirm you got this.\n\n[Owner name]\n[Business]"
+    },
+    {
+      "id": "day-1-checklist",
+      "use_when": "Day 1 for any role",
+      "channel": "checklist",
+      "body": "DAY 1 · [Name] · [Role] · [Date]\n\n[ ] Welcome + tour (restrooms, exits, where to eat)\n[ ] Safety: emergency, injury, who to call\n[ ] Keys / codes / vehicle rules (if applicable)\n[ ] Cash / card / refund rules (if applicable)\n[ ] Buddy introduced: [Buddy name, phone]\n[ ] Shadow: observe full [route / shift / process]\n[ ] End of day: 5-min recap: what was clear? what was confusing?\n[ ] Owner sign-off"
+    },
+    {
+      "id": "buddy-assignment",
+      "use_when": "Day 1 morning",
+      "channel": "internal",
+      "body": "Buddy assignment: [New hire] → [Buddy]\n\nBuddy responsibilities (days 1-7):\n- Answer how-to questions within 15 minutes on shift\n- Ride along or check in once per day\n- Flag owner if new hire is lost or unsafe\n\nBackup if buddy unreachable: [Name, phone]\n\nNew hire: ask buddy first, owner second."
+    },
+    {
+      "id": "route-driver-week-1",
+      "use_when": "role_id route_driver",
+      "channel": "checklist",
+      "body": "WEEK 1 · Route driver\n\nDay 1-2: Shadow full route. Notes on every stop type.\nDay 3: Drive with buddy in passenger seat.\nDay 4: Lead route, buddy follows.\nDay 5: Solo route, buddy on group text.\nDay 6-7: Solo + end-of-day 3-question debrief.\n\nMust demonstrate before solo:\n[ ] Machine check procedure\n[ ] Cash collection / handoff\n[ ] What to do when machine is down\n[ ] Who to call (tech, owner)\n\nLaminated truck card: emergency + owner numbers."
+    },
+    {
+      "id": "warehouse-week-1",
+      "use_when": "role_id warehouse_inventory",
+      "channel": "checklist",
+      "body": "WEEK 1 · Warehouse / inventory\n\nDay 1: Walk pick path, label system, where overstock lives.\nDay 2: Build one load-out with supervisor.\nDay 3: Build load-out solo, supervisor spot-check.\nDay 4-5: Par sheet updates with driver feedback loop.\nDay 7: Accurate pick list without rework on one route.\n\nMust demonstrate:\n[ ] Read par sheet\n[ ] Mark shortages correctly\n[ ] FIFO / date rotation if food"
+    },
+    {
+      "id": "counter-week-1",
+      "use_when": "role_id counter_customer",
+      "channel": "checklist",
+      "body": "WEEK 1 · Counter / customer-facing\n\nDay 1: Shadow rush + slow period. Read mf-tpl-001 cheat sheet.\nDay 2: POS only, no complaints solo.\nDay 3: Complaints with supervisor beside you.\nDay 4-5: Solo counter, supervisor on call.\nDay 7: Handle mild complaint solo per playbook.\n\nMust demonstrate:\n[ ] Opening / closing checklist\n[ ] Complaint step 1-2 scripts\n[ ] When to escalate to owner"
+    },
+    {
+      "id": "day-7-checkin",
+      "use_when": "End of day 7",
+      "channel": "script",
+      "body": "Day 7 check-in (15 minutes):\n\n1. What still feels unclear?\n2. What mistake are you most afraid of making?\n3. Ready for more autonomy next week, or need more shadow?\n\nOwner notes → log row. Adjust week 2 plan before Monday."
+    },
+    {
+      "id": "day-30-review",
+      "use_when": "Day 30",
+      "channel": "script",
+      "body": "Day 30 review (30 minutes):\n\n1. Role still right fit?\n2. Top 3 things you do confidently now\n3. One process we should fix for the next hire\n4. Autonomy: shadow / partial / full route or shift\n5. Compensation or hours conversation if applicable (owner decision)\n\nLog outcome. Update role checklist if something broke in week 1."
+    },
+    {
+      "id": "keys-cash-rules-vending",
+      "use_when": "Any vending role with keys or cash",
+      "channel": "acknowledgment",
+      "body": "Keys & cash rules · [Business]\n\n- Keys stay [on person / in lockbox]. Never duplicate without owner approval.\n- Collections logged same day: amount, machine ID, date.\n- Shortages reported immediately, not end of week.\n- No lending keys to non-employees.\n\nI have read and understand: _______________ Date: _______"
+    },
+    {
+      "id": "crash-onboarding-midweek",
+      "use_when": "Replacing someone who quit with no handoff",
+      "channel": "internal",
+      "body": "Crash onboarding (replacement hire):\n\nDay 1 only: safety, keys, one route segment or one station.\nSkip nice-to-haves for 72 hours.\nOwner writes what previous employee never documented.\nDay 7 mandatory: what gaps remain?\n\nUse buddy + laminated minimum viable checklist."
+    },
+    {
+      "id": "handoff-from-previous",
+      "use_when": "Planned transition with outgoing employee",
+      "channel": "checklist",
+      "body": "Outgoing → incoming handoff (2 hours together):\n\n[ ] Route map / machine list walkthrough\n[ ] Odd machines and account quirks\n[ ] Where logs live\n[ ] Vendor contacts\n[ ] One week overlap if possible\n\nOutgoing writes 5 things only they know."
+    }
+  ]
+}

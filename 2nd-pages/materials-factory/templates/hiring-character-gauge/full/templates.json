@@ -1,0 +1,26 @@
+{
+  "artifact": "mf-tpl-003",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "interview-scorecard",
+      "use_when": "During or immediately after interview",
+      "body": "INTERVIEW SCORECARD · [Business]\nCandidate: _______________  Role: _______________  Date: _______\nInterviewer: _______________\n\nCORE\n[ ] why-this-job: notes _______________________\n[ ] owned-mistake: notes _______________________\n[ ] reliability: notes _______________________\n\nROLE-SPECIFIC\n[ ] notes _______________________\n\nFINISHERS (required)\n1. Three adjectives + accomplishments:\n   _____________________________________________\n   Score: strong / adequate / weak / fail\n\n2. Last book / learning:\n   _____________________________________________\n   Score: strong / adequate / weak / fail\n\n3. Define success:\n   _____________________________________________\n   Score: strong / adequate / weak / fail\n\nDECISION: hire / pass / maybe\nWhy (one sentence): _____________________________\n\nIf hire → mf-tpl-002 onboarding role_id: _________"
+    },
+    {
+      "id": "phone-screen-5min",
+      "use_when": "Before in-person interview",
+      "body": "5-MINUTE SCREEN\n\n1. Still looking? Still available [days/hours]?\n2. Pay range we can offer: [range]. Workable?\n3. Anything that would keep you from starting [date]?\n4. Schedule full interview or pass."
+    },
+    {
+      "id": "reference-one-call",
+      "use_when": "After hire decision, before start date",
+      "body": "REFERENCE (one call)\n\nHi, [Name] listed you as a reference for [role]. Two quick questions:\n1. Would you hire them again for similar work?\n2. Anything I should know about reliability or how they handle mistakes?\n\nThank you. [Do not fish for gossip.]"
+    },
+    {
+      "id": "pass-email-kind",
+      "use_when": "Pass decision",
+      "body": "Subject: Update on your application ([Business])\n\nHi [Name],\n\nThank you for your time. We moved forward with another candidate.\n\nWe appreciate you considering us.\n\n[Name]"
+    }
+  ]
+}

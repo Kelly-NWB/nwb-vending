@@ -1,0 +1,73 @@
+{
+  "artifact": "mf-tpl-003",
+  "version": "1.0.0",
+  "core_questions": [
+    {
+      "id": "why-this-job",
+      "ask": "Why this job and why now?",
+      "listen_for": "Specific interest in work, not only pay. Red flag: vague or desperate with no tie to role."
+    },
+    {
+      "id": "owned-mistake",
+      "ask": "Tell me about a mistake you owned. What did you do after?",
+      "listen_for": "Accountability without blaming others. Red flag: cannot name a mistake."
+    },
+    {
+      "id": "reliability",
+      "ask": "What does showing up reliably look like for you?",
+      "listen_for": "Concrete habits. Red flag: excuses pre-loaded about why schedules slip."
+    }
+  ],
+  "role_questions": {
+    "route_ops": [
+      {
+        "id": "solo-work",
+        "ask": "You're alone on a route for hours. What goes wrong when that's not a fit for someone?",
+        "listen_for": "Self-awareness about isolation, honesty, safety mindset."
+      },
+      {
+        "id": "cash-comfort",
+        "ask": "Comfort level with cash handling and logging it same day?",
+        "listen_for": "Straight answer. Evasion = pass for cash roles."
+      }
+    ],
+    "customer_facing": [
+      {
+        "id": "angry-customer",
+        "ask": "Customer is upset and wrong. Walk me through your first 30 seconds.",
+        "listen_for": "Listen first, not argue. Tie to mf-tpl-001 mindset if hired."
+      }
+    ],
+    "technical": [
+      {
+        "id": "tech-gate",
+        "ask": "[Owner inserts 2-3 role-specific technical checks]",
+        "listen_for": "Can do the job today or ramp in agreed window. Fail gate = pass regardless of character."
+      }
+    ]
+  },
+  "finisher_questions": [
+    {
+      "id": "three_adjectives",
+      "ask": "Give me three adjectives that describe you. For each one, tell me something it helped you accomplish.",
+      "purpose": "Self-awareness and outcome thinking. Separates substance from buzzwords.",
+      "weak_pattern": "hard-working, passionate, team-player with no real accomplishment per word",
+      "strong_pattern": "specific words tied to a real result each"
+    },
+    {
+      "id": "last_book",
+      "ask": "What's the last book you read? If not books, what did you learn from lately?",
+      "purpose": "Learning habit vs stalled. How they answer matters more than medium.",
+      "weak_pattern": "nothing, can't remember, contempt for reading",
+      "strong_pattern": "title or alternative + one takeaway they still use",
+      "smb_note": "No book is not auto-fail for field roles. Dishonesty or zero curiosity is."
+    },
+    {
+      "id": "define_success",
+      "ask": "Define success.",
+      "purpose": "Values: team, customer, craft vs clock-punch. Owner mindset signal.",
+      "weak_pattern": "only money, fame, or doing the minimum",
+      "strong_pattern": "doing the job right, customer trust, team reliability, mastery"
+    }
+  ]
+}

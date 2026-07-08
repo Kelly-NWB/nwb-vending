@@ -1,0 +1,63 @@
+{
+  "artifact": "mf-tpl-023",
+  "version": "1.0.0",
+  "examples": [
+    {
+      "id": "ex-1",
+      "context": "Out of delivery radius.",
+      "branch": "refer-out-area",
+      "resolution": "Applied Not-a-Fit Referral branch.",
+      "log_row": "2026-08-01,job-100,refer-out-area,ok,owner"
+    },
+    {
+      "id": "ex-2",
+      "context": "Need CNC metal, we print.",
+      "branch": "refer-out-scope",
+      "resolution": "Applied Not-a-Fit Referral branch.",
+      "log_row": "2026-08-02,job-101,refer-out-scope,ok,owner"
+    },
+    {
+      "id": "ex-3",
+      "context": "Partner shop for wraps.",
+      "branch": "refer-partner",
+      "resolution": "Applied Not-a-Fit Referral branch.",
+      "log_row": "2026-08-03,job-102,refer-partner,ok,owner"
+    },
+    {
+      "id": "ex-4",
+      "context": "Polite close wrong fit.",
+      "branch": "refer-polite-close",
+      "resolution": "Applied Not-a-Fit Referral branch.",
+      "log_row": "2026-08-04,job-103,refer-polite-close,ok,owner"
+    },
+    {
+      "id": "ex-5",
+      "context": "Ethical no on job type.",
+      "branch": "refer-out-area",
+      "resolution": "Applied Not-a-Fit Referral branch.",
+      "log_row": "2026-08-05,job-104,refer-out-area,ok,owner"
+    },
+    {
+      "id": "ex-6",
+      "context": "Capacity full this quarter.",
+      "branch": "refer-out-scope",
+      "resolution": "Applied Not-a-Fit Referral branch.",
+      "log_row": "2026-08-06,job-105,refer-out-scope,ok,owner"
+    },
+    {
+      "id": "ex-7",
+      "context": "Refer installer only.",
+      "branch": "refer-partner",
+      "resolution": "Applied Not-a-Fit Referral branch.",
+      "log_row": "2026-08-07,job-106,refer-partner,ok,owner"
+    },
+    {
+      "id": "ex-8",
+      "context": "Archive after refer out.",
+      "branch": "refer-polite-close",
+      "resolution": "Applied Not-a-Fit Referral branch.",
+      "log_row": "2026-08-08,job-107,refer-polite-close,ok,owner",
+      "cross_artifact": "mf-tpl-004"
+    }
+  ]
+}

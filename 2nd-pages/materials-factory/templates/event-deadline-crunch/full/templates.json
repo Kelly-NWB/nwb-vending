@@ -1,0 +1,26 @@
+{
+  "artifact": "mf-tpl-053",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "event-hard-date",
+      "use_when": "event-hard-date",
+      "body": "Hard event date [date]. Proof by [deadline] or we cannot guarantee."
+    },
+    {
+      "id": "event-slip-risk",
+      "use_when": "event-slip-risk",
+      "body": "Risk missing [event]. Options: rush fee, reduce scope, or partial ship."
+    },
+    {
+      "id": "event-all-nighter",
+      "use_when": "event-all-nighter",
+      "body": "Internal: approved OT to hit [event]. Client update mf-tpl-021."
+    },
+    {
+      "id": "event-made-it",
+      "use_when": "event-made-it",
+      "body": "Delivered for [event]. Good luck on the show."
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "artifact": "mf-tpl-037",
+  "title": "Shipping / Tracking Client Update",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Shipping / Tracking Client Update for small-business job spine.",
+  "mindset": {
+    "principle": "Short scripts, log row, cross-route when heated or paid.",
+    "mistakes": [
+      {
+        "id": "no-log",
+        "label": "No log row",
+        "cost": "Ops blind"
+      }
+    ]
+  },
+  "decision_branches": [
+    {
+      "id": "ship-label-sent",
+      "situation": "Branch 1",
+      "action": "ship-label-sent"
+    },
+    {
+      "id": "ship-in-transit",
+      "situation": "Branch 2",
+      "action": "ship-in-transit"
+    },
+    {
+      "id": "ship-delayed",
+      "situation": "Branch 3",
+      "action": "ship-delayed"
+    },
+    {
+      "id": "ship-delivered",
+      "situation": "Branch 4",
+      "action": "ship-delivered"
+    }
+  ],
+  "tracking": {
+    "csv_header": "date,job_id,branch,resolution,owner",
+    "sheet_tab_name": "shipping_tracking_update"
+  },
+  "related_artifacts": [
+    "mf-tpl-007",
+    "mf-tpl-013",
+    "mf-tpl-008"
+  ]
+}

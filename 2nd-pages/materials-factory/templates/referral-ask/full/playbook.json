@@ -1,0 +1,49 @@
+{
+  "artifact": "mf-tpl-019",
+  "title": "Referral Ask",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Referral Ask for small-business job spine.",
+  "mindset": {
+    "principle": "Short scripts, log row, cross-route when heated or paid.",
+    "mistakes": [
+      {
+        "id": "no-log",
+        "label": "No log row",
+        "cost": "Ops blind"
+      }
+    ]
+  },
+  "decision_branches": [
+    {
+      "id": "referral-happy",
+      "situation": "Branch 1",
+      "action": "referral-happy"
+    },
+    {
+      "id": "referral-repeat",
+      "situation": "Branch 2",
+      "action": "referral-repeat"
+    },
+    {
+      "id": "referral-decline",
+      "situation": "Branch 3",
+      "action": "referral-decline"
+    },
+    {
+      "id": "referral-follow",
+      "situation": "Branch 4",
+      "action": "referral-follow"
+    }
+  ],
+  "tracking": {
+    "csv_header": "date,job_id,branch,resolution,owner",
+    "sheet_tab_name": "referral_ask"
+  },
+  "related_artifacts": [
+    "mf-tpl-015",
+    "mf-tpl-007",
+    "mf-tpl-001"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "artifact": "mf-tpl-050",
+  "version": "1.0.0",
+  "examples": [
+    {
+      "id": "ex-1",
+      "context": "Rain day install moved.",
+      "branch": "weather-rain",
+      "resolution": "Applied Weather Delay (Outdoor Work) branch.",
+      "log_row": "2026-11-01,job-400,weather-rain,ok,owner"
+    },
+    {
+      "id": "ex-2",
+      "context": "Wind unsafe on ladder.",
+      "branch": "weather-wind",
+      "resolution": "Applied Weather Delay (Outdoor Work) branch.",
+      "log_row": "2026-11-02,job-401,weather-wind,ok,owner"
+    },
+    {
+      "id": "ex-3",
+      "context": "Reschedule outdoor window.",
+      "branch": "weather-reschedule",
+      "resolution": "Applied Weather Delay (Outdoor Work) branch.",
+      "log_row": "2026-11-03,job-402,weather-reschedule,ok,owner"
+    },
+    {
+      "id": "ex-4",
+      "context": "Clear weather go tomorrow.",
+      "branch": "weather-safe-window",
+      "resolution": "Applied Weather Delay (Outdoor Work) branch.",
+      "log_row": "2026-11-04,job-403,weather-safe-window,ok,owner"
+    },
+    {
+      "id": "ex-5",
+      "context": "Client push install anyway.",
+      "branch": "weather-rain",
+      "resolution": "Applied Weather Delay (Outdoor Work) branch.",
+      "log_row": "2026-11-05,job-404,weather-rain,ok,owner"
+    },
+    {
+      "id": "ex-6",
+      "context": "Tent install workaround.",
+      "branch": "weather-wind",
+      "resolution": "Applied Weather Delay (Outdoor Work) branch.",
+      "log_row": "2026-11-06,job-405,weather-wind,ok,owner"
+    },
+    {
+      "id": "ex-7",
+      "context": "Multi-day job slip.",
+      "branch": "weather-reschedule",
+      "resolution": "Applied Weather Delay (Outdoor Work) branch.",
+      "log_row": "2026-11-07,job-406,weather-reschedule,ok,owner"
+    },
+    {
+      "id": "ex-8",
+      "context": "Honest ETA mf-tpl-013.",
+      "branch": "weather-safe-window",
+      "resolution": "Applied Weather Delay (Outdoor Work) branch.",
+      "log_row": "2026-11-08,job-407,weather-safe-window,ok,owner",
+      "cross_artifact": "mf-tpl-036"
+    }
+  ]
+}

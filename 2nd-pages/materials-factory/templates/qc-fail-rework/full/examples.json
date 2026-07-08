@@ -1,0 +1,63 @@
+{
+  "artifact": "mf-tpl-026",
+  "version": "1.0.0",
+  "examples": [
+    {
+      "id": "ex-1",
+      "context": "Color shift on run 3 banners.",
+      "branch": "qc-fail-floor",
+      "resolution": "Applied QC Fail / Rework (Internal) branch.",
+      "log_row": "2026-09-01,job-200,qc-fail-floor,ok,owner"
+    },
+    {
+      "id": "ex-2",
+      "context": "Vendor laminate bubbled.",
+      "branch": "qc-fail-vendor",
+      "resolution": "Applied QC Fail / Rework (Internal) branch.",
+      "log_row": "2026-09-02,job-201,qc-fail-vendor,ok,owner"
+    },
+    {
+      "id": "ex-3",
+      "context": "Rework assigned to night shift.",
+      "branch": "qc-rework-assign",
+      "resolution": "Applied QC Fail / Rework (Internal) branch.",
+      "log_row": "2026-09-03,job-202,qc-rework-assign,ok,owner"
+    },
+    {
+      "id": "ex-4",
+      "context": "QC pass after second pass.",
+      "branch": "qc-pass-release",
+      "resolution": "Applied QC Fail / Rework (Internal) branch.",
+      "log_row": "2026-09-04,job-203,qc-pass-release,ok,owner"
+    },
+    {
+      "id": "ex-5",
+      "context": "Client deadline tomorrow.",
+      "branch": "qc-fail-floor",
+      "resolution": "Applied QC Fail / Rework (Internal) branch.",
+      "log_row": "2026-09-05,job-204,qc-fail-floor,ok,owner"
+    },
+    {
+      "id": "ex-6",
+      "context": "Wrong trim on decal set.",
+      "branch": "qc-fail-vendor",
+      "resolution": "Applied QC Fail / Rework (Internal) branch.",
+      "log_row": "2026-09-06,job-205,qc-fail-vendor,ok,owner"
+    },
+    {
+      "id": "ex-7",
+      "context": "Photo doc for internal only.",
+      "branch": "qc-rework-assign",
+      "resolution": "Applied QC Fail / Rework (Internal) branch.",
+      "log_row": "2026-09-07,job-206,qc-rework-assign,ok,owner"
+    },
+    {
+      "id": "ex-8",
+      "context": "Route heated client to mf-tpl-001.",
+      "branch": "qc-pass-release",
+      "resolution": "Applied QC Fail / Rework (Internal) branch.",
+      "log_row": "2026-09-08,job-207,qc-pass-release,ok,owner",
+      "cross_artifact": "mf-tpl-017"
+    }
+  ]
+}

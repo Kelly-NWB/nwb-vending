@@ -1,0 +1,26 @@
+{
+  "artifact": "mf-tpl-055",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "taxex-request",
+      "use_when": "taxex-request",
+      "body": "Need valid tax exempt cert on file before tax-free invoice."
+    },
+    {
+      "id": "taxex-received",
+      "use_when": "taxex-received",
+      "body": "Cert received. Tax removed on quote [id]."
+    },
+    {
+      "id": "taxex-expired",
+      "use_when": "taxex-expired",
+      "body": "Cert expired. Send renewal or tax applies on ship."
+    },
+    {
+      "id": "taxex-invoice-adjust",
+      "use_when": "taxex-invoice-adjust",
+      "body": "Invoice adjusted per cert. Tax $0 on exempt lines."
+    }
+  ]
+}

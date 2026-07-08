@@ -1,0 +1,26 @@
+{
+  "artifact": "mf-tpl-018",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "archive-ghost",
+      "use_when": "archive-ghost",
+      "body": "Internal: lead [id] closed ghost. Last touch [date]."
+    },
+    {
+      "id": "archive-price",
+      "use_when": "archive-price",
+      "body": "Internal: lost on price. Competitor unknown."
+    },
+    {
+      "id": "archive-timing",
+      "use_when": "archive-timing",
+      "body": "Internal: timing not now. Revisit [quarter]."
+    },
+    {
+      "id": "archive-won-elsewhere",
+      "use_when": "archive-won-elsewhere",
+      "body": "Internal: went elsewhere. No burn bridge."
+    }
+  ]
+}

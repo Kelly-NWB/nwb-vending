@@ -1,0 +1,63 @@
+{
+  "artifact": "mf-tpl-019",
+  "version": "1.0.0",
+  "examples": [
+    {
+      "id": "ex-1",
+      "context": "Happy close last week.",
+      "branch": "referral-happy",
+      "resolution": "Applied Referral Ask branch.",
+      "log_row": "2026-08-01,job-100,referral-happy,ok,owner"
+    },
+    {
+      "id": "ex-2",
+      "context": "Repeat client skip hard ask.",
+      "branch": "referral-repeat",
+      "resolution": "Applied Referral Ask branch.",
+      "log_row": "2026-08-02,job-101,referral-repeat,ok,owner"
+    },
+    {
+      "id": "ex-3",
+      "context": "Job had minor issue.",
+      "branch": "referral-decline",
+      "resolution": "Applied Referral Ask branch.",
+      "log_row": "2026-08-03,job-102,referral-decline,ok,owner"
+    },
+    {
+      "id": "ex-4",
+      "context": "Client offered cousin intro.",
+      "branch": "referral-follow",
+      "resolution": "Applied Referral Ask branch.",
+      "log_row": "2026-08-04,job-103,referral-follow,ok,owner"
+    },
+    {
+      "id": "ex-5",
+      "context": "No ask after complaint job.",
+      "branch": "referral-happy",
+      "resolution": "Applied Referral Ask branch.",
+      "log_row": "2026-08-05,job-104,referral-happy,ok,owner"
+    },
+    {
+      "id": "ex-6",
+      "context": "Follow up named referral.",
+      "branch": "referral-repeat",
+      "resolution": "Applied Referral Ask branch.",
+      "log_row": "2026-08-06,job-105,referral-repeat,ok,owner"
+    },
+    {
+      "id": "ex-7",
+      "context": "Review left, light ask.",
+      "branch": "referral-decline",
+      "resolution": "Applied Referral Ask branch.",
+      "log_row": "2026-08-07,job-106,referral-decline,ok,owner"
+    },
+    {
+      "id": "ex-8",
+      "context": "Declined referral gracefully.",
+      "branch": "referral-follow",
+      "resolution": "Applied Referral Ask branch.",
+      "log_row": "2026-08-08,job-107,referral-follow,ok,owner",
+      "cross_artifact": "mf-tpl-015"
+    }
+  ]
+}

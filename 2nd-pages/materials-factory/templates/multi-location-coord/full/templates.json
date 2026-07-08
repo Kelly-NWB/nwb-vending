@@ -1,0 +1,26 @@
+{
+  "artifact": "mf-tpl-048",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "multi-quote-split",
+      "use_when": "multi-quote-split",
+      "body": "Multi-site quote: line per location. One brand, split ship."
+    },
+    {
+      "id": "multi-ship-route",
+      "use_when": "multi-ship-route",
+      "body": "Ship plan: [loc1] [date], [loc2] [date]. Confirm contacts."
+    },
+    {
+      "id": "multi-one-invoice",
+      "use_when": "multi-one-invoice",
+      "body": "Single invoice to [HQ]. Locations noted on packing slips."
+    },
+    {
+      "id": "multi-contact-loop",
+      "use_when": "multi-contact-loop",
+      "body": "Looping [store contact] on proof for [location]."
+    }
+  ]
+}

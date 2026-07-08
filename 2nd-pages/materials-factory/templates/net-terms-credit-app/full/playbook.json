@@ -1,0 +1,49 @@
+{
+  "artifact": "mf-tpl-046",
+  "title": "Net Terms / Credit Application",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Net Terms / Credit Application for small-business job spine.",
+  "mindset": {
+    "principle": "Short scripts, log row, cross-route when heated or paid.",
+    "mistakes": [
+      {
+        "id": "no-log",
+        "label": "No log row",
+        "cost": "Ops blind"
+      }
+    ]
+  },
+  "decision_branches": [
+    {
+      "id": "terms-request",
+      "situation": "Branch 1",
+      "action": "terms-request"
+    },
+    {
+      "id": "terms-approved",
+      "situation": "Branch 2",
+      "action": "terms-approved"
+    },
+    {
+      "id": "terms-denied",
+      "situation": "Branch 3",
+      "action": "terms-denied"
+    },
+    {
+      "id": "terms-overdue",
+      "situation": "Branch 4",
+      "action": "terms-overdue"
+    }
+  ],
+  "tracking": {
+    "csv_header": "date,job_id,branch,resolution,owner",
+    "sheet_tab_name": "net_terms_credit_app"
+  },
+  "related_artifacts": [
+    "mf-tpl-008",
+    "mf-tpl-006",
+    "mf-tpl-004"
+  ]
+}

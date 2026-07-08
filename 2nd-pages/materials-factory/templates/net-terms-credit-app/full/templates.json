@@ -1,0 +1,26 @@
+{
+  "artifact": "mf-tpl-046",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "terms-request",
+      "use_when": "terms-request",
+      "body": "Net terms request: please complete credit app [link]. References: [n]."
+    },
+    {
+      "id": "terms-approved",
+      "use_when": "terms-approved",
+      "body": "Net [days] approved for [account]. PO optional per job."
+    },
+    {
+      "id": "terms-denied",
+      "use_when": "terms-denied",
+      "body": "Prepay or deposit path for now. Revisit after [n] paid jobs."
+    },
+    {
+      "id": "terms-overdue",
+      "use_when": "terms-overdue",
+      "body": "Account past due $[amt]. Hold new work until current."
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "artifact": "mf-tpl-021",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "rush-confirm",
+      "use_when": "rush-confirm",
+      "body": "Rush confirmed. Proof by [time]. Ship [date]. Fee on invoice."
+    },
+    {
+      "id": "rush-slip",
+      "use_when": "rush-slip",
+      "body": "Rush date slipped to [new]. We own it. New confirm [date]."
+    },
+    {
+      "id": "rush-proof-hard",
+      "use_when": "rush-proof-hard",
+      "body": "RUSH: proof reply by [hard_time] or date moves."
+    },
+    {
+      "id": "rush-fee-remind",
+      "use_when": "rush-fee-remind",
+      "body": "Reminder: rush fee $[amt] on final invoice per quote."
+    }
+  ]
+}

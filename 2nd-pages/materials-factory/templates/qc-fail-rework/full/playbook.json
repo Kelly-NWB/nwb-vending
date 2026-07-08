@@ -1,0 +1,50 @@
+{
+  "artifact": "mf-tpl-026",
+  "title": "QC Fail / Rework (Internal)",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "QC Fail / Rework (Internal) for small-business job spine.",
+  "mindset": {
+    "principle": "Short scripts, log row, cross-route when heated or paid.",
+    "mistakes": [
+      {
+        "id": "no-log",
+        "label": "No log row",
+        "cost": "Ops blind"
+      }
+    ]
+  },
+  "decision_branches": [
+    {
+      "id": "qc-fail-floor",
+      "situation": "Branch 1",
+      "action": "qc-fail-floor"
+    },
+    {
+      "id": "qc-fail-vendor",
+      "situation": "Branch 2",
+      "action": "qc-fail-vendor"
+    },
+    {
+      "id": "qc-rework-assign",
+      "situation": "Branch 3",
+      "action": "qc-rework-assign"
+    },
+    {
+      "id": "qc-pass-release",
+      "situation": "Branch 4",
+      "action": "qc-pass-release"
+    }
+  ],
+  "tracking": {
+    "csv_header": "date,job_id,branch,resolution,owner",
+    "sheet_tab_name": "qc_fail_rework"
+  },
+  "related_artifacts": [
+    "mf-tpl-017",
+    "mf-tpl-011",
+    "mf-tpl-013",
+    "mf-tpl-007"
+  ]
+}

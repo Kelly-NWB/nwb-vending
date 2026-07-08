@@ -1,0 +1,63 @@
+{
+  "artifact": "mf-tpl-031",
+  "version": "1.0.0",
+  "examples": [
+    {
+      "id": "ex-1",
+      "context": "Send 1-question NPS day 2.",
+      "branch": "survey-send",
+      "resolution": "Applied Post-Delivery Survey (Light) branch.",
+      "log_row": "2026-09-01,job-200,survey-send,ok,owner"
+    },
+    {
+      "id": "ex-2",
+      "context": "No survey reply day 7 nudge.",
+      "branch": "survey-nudge",
+      "resolution": "Applied Post-Delivery Survey (Light) branch.",
+      "log_row": "2026-09-02,job-201,survey-nudge,ok,owner"
+    },
+    {
+      "id": "ex-3",
+      "context": "Low score triggers call.",
+      "branch": "survey-issue",
+      "resolution": "Applied Post-Delivery Survey (Light) branch.",
+      "log_row": "2026-09-03,job-202,survey-issue,ok,owner"
+    },
+    {
+      "id": "ex-4",
+      "context": "High score light referral ask.",
+      "branch": "survey-referral",
+      "resolution": "Applied Post-Delivery Survey (Light) branch.",
+      "log_row": "2026-09-04,job-203,survey-referral,ok,owner"
+    },
+    {
+      "id": "ex-5",
+      "context": "Delivery issue in survey.",
+      "branch": "survey-send",
+      "resolution": "Applied Post-Delivery Survey (Light) branch.",
+      "log_row": "2026-09-05,job-204,survey-send,ok,owner"
+    },
+    {
+      "id": "ex-6",
+      "context": "Skip survey on complaint job.",
+      "branch": "survey-nudge",
+      "resolution": "Applied Post-Delivery Survey (Light) branch.",
+      "log_row": "2026-09-06,job-205,survey-nudge,ok,owner"
+    },
+    {
+      "id": "ex-7",
+      "context": "Repeat client short survey.",
+      "branch": "survey-issue",
+      "resolution": "Applied Post-Delivery Survey (Light) branch.",
+      "log_row": "2026-09-07,job-206,survey-issue,ok,owner"
+    },
+    {
+      "id": "ex-8",
+      "context": "Archive survey in close row.",
+      "branch": "survey-referral",
+      "resolution": "Applied Post-Delivery Survey (Light) branch.",
+      "log_row": "2026-09-08,job-207,survey-referral,ok,owner",
+      "cross_artifact": "mf-tpl-007"
+    }
+  ]
+}

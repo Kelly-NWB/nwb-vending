@@ -1,0 +1,63 @@
+{
+  "artifact": "mf-tpl-028",
+  "version": "1.0.0",
+  "examples": [
+    {
+      "id": "ex-1",
+      "context": "Client added second location.",
+      "branch": "rev-scope-up",
+      "resolution": "Applied Estimate Revision / Change Quote branch.",
+      "log_row": "2026-09-01,job-200,rev-scope-up,ok,owner"
+    },
+    {
+      "id": "ex-2",
+      "context": "Scope cut to meet budget.",
+      "branch": "rev-scope-down",
+      "resolution": "Applied Estimate Revision / Change Quote branch.",
+      "log_row": "2026-09-02,job-201,rev-scope-down,ok,owner"
+    },
+    {
+      "id": "ex-3",
+      "context": "Competitor quote price match ask.",
+      "branch": "rev-price-match",
+      "resolution": "Applied Estimate Revision / Change Quote branch.",
+      "log_row": "2026-09-03,job-202,rev-price-match,ok,owner"
+    },
+    {
+      "id": "ex-4",
+      "context": "Old quote expired, reissue.",
+      "branch": "rev-expire-old",
+      "resolution": "Applied Estimate Revision / Change Quote branch.",
+      "log_row": "2026-09-04,job-203,rev-expire-old,ok,owner"
+    },
+    {
+      "id": "ex-5",
+      "context": "Material cost spike revision.",
+      "branch": "rev-scope-up",
+      "resolution": "Applied Estimate Revision / Change Quote branch.",
+      "log_row": "2026-09-05,job-204,rev-scope-up,ok,owner"
+    },
+    {
+      "id": "ex-6",
+      "context": "Qty change on sticker run.",
+      "branch": "rev-scope-down",
+      "resolution": "Applied Estimate Revision / Change Quote branch.",
+      "log_row": "2026-09-06,job-205,rev-scope-down,ok,owner"
+    },
+    {
+      "id": "ex-7",
+      "context": "Rush fee added on revision.",
+      "branch": "rev-price-match",
+      "resolution": "Applied Estimate Revision / Change Quote branch.",
+      "log_row": "2026-09-07,job-206,rev-price-match,ok,owner"
+    },
+    {
+      "id": "ex-8",
+      "context": "Revision accepted, new deposit.",
+      "branch": "rev-expire-old",
+      "resolution": "Applied Estimate Revision / Change Quote branch.",
+      "log_row": "2026-09-08,job-207,rev-expire-old,ok,owner",
+      "cross_artifact": "mf-tpl-006"
+    }
+  ]
+}

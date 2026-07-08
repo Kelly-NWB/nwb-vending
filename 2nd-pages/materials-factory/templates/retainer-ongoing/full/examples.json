@@ -1,0 +1,63 @@
+{
+  "artifact": "mf-tpl-045",
+  "version": "1.0.0",
+  "examples": [
+    {
+      "id": "ex-1",
+      "context": "Monthly retainer proposal sent.",
+      "branch": "retainer-proposal",
+      "resolution": "Applied Retainer / Ongoing Service Client branch.",
+      "log_row": "2026-10-01,job-300,retainer-proposal,ok,owner"
+    },
+    {
+      "id": "ex-2",
+      "context": "First of month check-in.",
+      "branch": "retainer-monthly-touch",
+      "resolution": "Applied Retainer / Ongoing Service Client branch.",
+      "log_row": "2026-10-02,job-301,retainer-monthly-touch,ok,owner"
+    },
+    {
+      "id": "ex-3",
+      "context": "Retainer scope creep ask.",
+      "branch": "retainer-scope-creep",
+      "resolution": "Applied Retainer / Ongoing Service Client branch.",
+      "log_row": "2026-10-03,job-302,retainer-scope-creep,ok,owner"
+    },
+    {
+      "id": "ex-4",
+      "context": "Annual retainer renewal.",
+      "branch": "retainer-renew",
+      "resolution": "Applied Retainer / Ongoing Service Client branch.",
+      "log_row": "2026-10-04,job-303,retainer-renew,ok,owner"
+    },
+    {
+      "id": "ex-5",
+      "context": "Retainer hours exhausted.",
+      "branch": "retainer-proposal",
+      "resolution": "Applied Retainer / Ongoing Service Client branch.",
+      "log_row": "2026-10-05,job-304,retainer-proposal,ok,owner"
+    },
+    {
+      "id": "ex-6",
+      "context": "Convert retainer to project quote.",
+      "branch": "retainer-monthly-touch",
+      "resolution": "Applied Retainer / Ongoing Service Client branch.",
+      "log_row": "2026-10-06,job-305,retainer-monthly-touch,ok,owner"
+    },
+    {
+      "id": "ex-7",
+      "context": "Three locations one retainer.",
+      "branch": "retainer-scope-creep",
+      "resolution": "Applied Retainer / Ongoing Service Client branch.",
+      "log_row": "2026-10-07,job-306,retainer-scope-creep,ok,owner"
+    },
+    {
+      "id": "ex-8",
+      "context": "Ops review retainer margin.",
+      "branch": "retainer-renew",
+      "resolution": "Applied Retainer / Ongoing Service Client branch.",
+      "log_row": "2026-10-08,job-307,retainer-renew,ok,owner",
+      "cross_artifact": "mf-tpl-006"
+    }
+  ]
+}

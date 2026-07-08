@@ -1,0 +1,49 @@
+{
+  "artifact": "mf-tpl-045",
+  "title": "Retainer / Ongoing Service Client",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Retainer / Ongoing Service Client for small-business job spine.",
+  "mindset": {
+    "principle": "Short scripts, log row, cross-route when heated or paid.",
+    "mistakes": [
+      {
+        "id": "no-log",
+        "label": "No log row",
+        "cost": "Ops blind"
+      }
+    ]
+  },
+  "decision_branches": [
+    {
+      "id": "retainer-proposal",
+      "situation": "Branch 1",
+      "action": "retainer-proposal"
+    },
+    {
+      "id": "retainer-monthly-touch",
+      "situation": "Branch 2",
+      "action": "retainer-monthly-touch"
+    },
+    {
+      "id": "retainer-scope-creep",
+      "situation": "Branch 3",
+      "action": "retainer-scope-creep"
+    },
+    {
+      "id": "retainer-renew",
+      "situation": "Branch 4",
+      "action": "retainer-renew"
+    }
+  ],
+  "tracking": {
+    "csv_header": "date,job_id,branch,resolution,owner",
+    "sheet_tab_name": "retainer_ongoing"
+  },
+  "related_artifacts": [
+    "mf-tpl-006",
+    "mf-tpl-024",
+    "mf-tpl-005"
+  ]
+}

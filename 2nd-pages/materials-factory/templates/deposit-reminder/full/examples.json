@@ -1,0 +1,63 @@
+{
+  "artifact": "mf-tpl-016",
+  "version": "1.0.0",
+  "examples": [
+    {
+      "id": "ex-1",
+      "context": "Accepted quote, no deposit 24h.",
+      "branch": "remind-day-1",
+      "resolution": "Applied Deposit Reminder branch.",
+      "log_row": "2026-08-01,job-100,remind-day-1,ok,owner"
+    },
+    {
+      "id": "ex-2",
+      "context": "Day 3 still unpaid on banner job.",
+      "branch": "remind-day-3",
+      "resolution": "Applied Deposit Reminder branch.",
+      "log_row": "2026-08-02,job-101,remind-day-3,ok,owner"
+    },
+    {
+      "id": "ex-3",
+      "context": "Hold window expired Friday.",
+      "branch": "release-slot",
+      "resolution": "Applied Deposit Reminder branch.",
+      "log_row": "2026-08-03,job-102,release-slot,ok,owner"
+    },
+    {
+      "id": "ex-4",
+      "context": "Stripe shows deposit landed.",
+      "branch": "deposit-in",
+      "resolution": "Applied Deposit Reminder branch.",
+      "log_row": "2026-08-04,job-103,deposit-in,ok,owner"
+    },
+    {
+      "id": "ex-5",
+      "context": "Kickoff blocked on job 120.",
+      "branch": "remind-day-1",
+      "resolution": "Applied Deposit Reminder branch.",
+      "log_row": "2026-08-05,job-104,remind-day-1,ok,owner"
+    },
+    {
+      "id": "ex-6",
+      "context": "Partial deposit wrong amount.",
+      "branch": "remind-day-3",
+      "resolution": "Applied Deposit Reminder branch.",
+      "log_row": "2026-08-06,job-105,remind-day-3,ok,owner"
+    },
+    {
+      "id": "ex-7",
+      "context": "Client asked to pay Monday.",
+      "branch": "release-slot",
+      "resolution": "Applied Deposit Reminder branch.",
+      "log_row": "2026-08-07,job-106,release-slot,ok,owner"
+    },
+    {
+      "id": "ex-8",
+      "context": "Ops review: deposit stuck.",
+      "branch": "deposit-in",
+      "resolution": "Applied Deposit Reminder branch.",
+      "log_row": "2026-08-08,job-107,deposit-in,ok,owner",
+      "cross_artifact": "mf-tpl-006"
+    }
+  ]
+}

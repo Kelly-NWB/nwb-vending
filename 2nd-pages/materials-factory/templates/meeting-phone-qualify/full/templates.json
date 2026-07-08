@@ -1,0 +1,26 @@
+{
+  "artifact": "mf-tpl-022",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "phone-qualify",
+      "use_when": "phone-qualify",
+      "body": "Quick call to nail scope: deliverable, qty, date, budget band."
+    },
+    {
+      "id": "meeting-book",
+      "use_when": "meeting-book",
+      "body": "Booked [datetime]. Bring examples you like."
+    },
+    {
+      "id": "meeting-no-show",
+      "use_when": "meeting-no-show",
+      "body": "Missed call. Reply with 2 windows or email specs."
+    },
+    {
+      "id": "meeting-summary",
+      "use_when": "meeting-summary",
+      "body": "Call summary: [bullets]. Next: quote or clarify."
+    }
+  ]
+}

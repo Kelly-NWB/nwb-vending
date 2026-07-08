@@ -1,0 +1,26 @@
+{
+  "artifact": "mf-tpl-040",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "cancel-before-prod",
+      "use_when": "cancel-before-prod",
+      "body": "Cancel confirmed before production. Refund $[amt] per policy [days]."
+    },
+    {
+      "id": "cancel-mid-job",
+      "use_when": "cancel-mid-job",
+      "body": "Mid-job cancel: materials/labor to date $[amt]. Refund balance $[refund]."
+    },
+    {
+      "id": "refund-partial",
+      "use_when": "refund-partial",
+      "body": "Partial refund $[amt] approved. Reason logged."
+    },
+    {
+      "id": "refund-denied-policy",
+      "use_when": "refund-denied-policy",
+      "body": "Refund not available per signed quote section [ref]. Happy to discuss."
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "artifact": "mf-tpl-031",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "survey-send",
+      "use_when": "survey-send",
+      "body": "Quick favor: how did we do on [job]? 1-10 reply or [link]."
+    },
+    {
+      "id": "survey-nudge",
+      "use_when": "survey-nudge",
+      "body": "Gentle nudge on quick feedback for [job]."
+    },
+    {
+      "id": "survey-issue",
+      "use_when": "survey-issue",
+      "body": "Sorry it missed. Call you today to fix."
+    },
+    {
+      "id": "survey-referral",
+      "use_when": "survey-referral",
+      "body": "Thanks for 9/10. Know one owner who needs [service]?"
+    }
+  ]
+}

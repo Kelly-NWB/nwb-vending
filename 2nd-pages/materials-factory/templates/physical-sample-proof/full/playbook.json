@@ -1,0 +1,49 @@
+{
+  "artifact": "mf-tpl-043",
+  "title": "Physical Sample / Color Proof Approval",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Physical Sample / Color Proof Approval for small-business job spine.",
+  "mindset": {
+    "principle": "Short scripts, log row, cross-route when heated or paid.",
+    "mistakes": [
+      {
+        "id": "no-log",
+        "label": "No log row",
+        "cost": "Ops blind"
+      }
+    ]
+  },
+  "decision_branches": [
+    {
+      "id": "sample-ship-client",
+      "situation": "Branch 1",
+      "action": "sample-ship-client"
+    },
+    {
+      "id": "sample-approve",
+      "situation": "Branch 2",
+      "action": "sample-approve"
+    },
+    {
+      "id": "sample-reject-rework",
+      "situation": "Branch 3",
+      "action": "sample-reject-rework"
+    },
+    {
+      "id": "sample-match-production",
+      "situation": "Branch 4",
+      "action": "sample-match-production"
+    }
+  ],
+  "tracking": {
+    "csv_header": "date,job_id,branch,resolution,owner",
+    "sheet_tab_name": "physical_sample_proof"
+  },
+  "related_artifacts": [
+    "mf-tpl-011",
+    "mf-tpl-017",
+    "mf-tpl-007"
+  ]
+}

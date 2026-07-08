@@ -1,0 +1,49 @@
+{
+  "artifact": "mf-tpl-042",
+  "title": "Design Revision Loop (Pre-Proof)",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Design Revision Loop (Pre-Proof) for small-business job spine.",
+  "mindset": {
+    "principle": "Short scripts, log row, cross-route when heated or paid.",
+    "mistakes": [
+      {
+        "id": "no-log",
+        "label": "No log row",
+        "cost": "Ops blind"
+      }
+    ]
+  },
+  "decision_branches": [
+    {
+      "id": "rev-round-1",
+      "situation": "Branch 1",
+      "action": "rev-round-1"
+    },
+    {
+      "id": "rev-round-2-cap",
+      "situation": "Branch 2",
+      "action": "rev-round-2-cap"
+    },
+    {
+      "id": "rev-client-stalled",
+      "situation": "Branch 3",
+      "action": "rev-client-stalled"
+    },
+    {
+      "id": "rev-approved-to-proof",
+      "situation": "Branch 4",
+      "action": "rev-approved-to-proof"
+    }
+  ],
+  "tracking": {
+    "csv_header": "date,job_id,branch,resolution,owner",
+    "sheet_tab_name": "design_revision_loop"
+  },
+  "related_artifacts": [
+    "mf-tpl-011",
+    "mf-tpl-034",
+    "mf-tpl-012"
+  ]
+}

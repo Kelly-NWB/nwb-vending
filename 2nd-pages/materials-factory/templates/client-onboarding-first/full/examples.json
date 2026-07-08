@@ -1,0 +1,63 @@
+{
+  "artifact": "mf-tpl-027",
+  "version": "1.0.0",
+  "examples": [
+    {
+      "id": "ex-1",
+      "context": "First job after quote accept.",
+      "branch": "onboard-welcome",
+      "resolution": "Applied Client Onboarding (First Job) branch.",
+      "log_row": "2026-09-01,job-200,onboard-welcome,ok,owner"
+    },
+    {
+      "id": "ex-2",
+      "context": "Send portal and contact card.",
+      "branch": "onboard-portal",
+      "resolution": "Applied Client Onboarding (First Job) branch.",
+      "log_row": "2026-09-02,job-201,onboard-portal,ok,owner"
+    },
+    {
+      "id": "ex-3",
+      "context": "Set proof and payment expectations.",
+      "branch": "onboard-expect",
+      "resolution": "Applied Client Onboarding (First Job) branch.",
+      "log_row": "2026-09-03,job-202,onboard-expect,ok,owner"
+    },
+    {
+      "id": "ex-4",
+      "context": "Day 3 check-in no reply.",
+      "branch": "onboard-checkin",
+      "resolution": "Applied Client Onboarding (First Job) branch.",
+      "log_row": "2026-09-04,job-203,onboard-checkin,ok,owner"
+    },
+    {
+      "id": "ex-5",
+      "context": "New buyer, no repeat history.",
+      "branch": "onboard-welcome",
+      "resolution": "Applied Client Onboarding (First Job) branch.",
+      "log_row": "2026-09-05,job-204,onboard-welcome,ok,owner"
+    },
+    {
+      "id": "ex-6",
+      "context": "Trade show lead first order.",
+      "branch": "onboard-portal",
+      "resolution": "Applied Client Onboarding (First Job) branch.",
+      "log_row": "2026-09-06,job-205,onboard-portal,ok,owner"
+    },
+    {
+      "id": "ex-7",
+      "context": "Multi-contact account setup.",
+      "branch": "onboard-expect",
+      "resolution": "Applied Client Onboarding (First Job) branch.",
+      "log_row": "2026-09-07,job-206,onboard-expect,ok,owner"
+    },
+    {
+      "id": "ex-8",
+      "context": "Onboard complete, kickoff done.",
+      "branch": "onboard-checkin",
+      "resolution": "Applied Client Onboarding (First Job) branch.",
+      "log_row": "2026-09-08,job-207,onboard-checkin,ok,owner",
+      "cross_artifact": "mf-tpl-010"
+    }
+  ]
+}

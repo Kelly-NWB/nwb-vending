@@ -1,0 +1,63 @@
+{
+  "artifact": "mf-tpl-038",
+  "version": "1.0.0",
+  "examples": [
+    {
+      "id": "ex-1",
+      "context": "Mid-run photo for anxious client.",
+      "branch": "photo-mid-run",
+      "resolution": "Applied Progress Photo Update (Mid-Job) branch.",
+      "log_row": "2026-10-01,job-300,photo-mid-run,ok,owner"
+    },
+    {
+      "id": "ex-2",
+      "context": "Install prep photo on site.",
+      "branch": "photo-install-prep",
+      "resolution": "Applied Progress Photo Update (Mid-Job) branch.",
+      "log_row": "2026-10-02,job-301,photo-install-prep,ok,owner"
+    },
+    {
+      "id": "ex-3",
+      "context": "Client asked for progress pic.",
+      "branch": "photo-client-ask",
+      "resolution": "Applied Progress Photo Update (Mid-Job) branch.",
+      "log_row": "2026-10-03,job-302,photo-client-ask,ok,owner"
+    },
+    {
+      "id": "ex-4",
+      "context": "No reply after photo sent.",
+      "branch": "photo-no-reply",
+      "resolution": "Applied Progress Photo Update (Mid-Job) branch.",
+      "log_row": "2026-10-04,job-303,photo-no-reply,ok,owner"
+    },
+    {
+      "id": "ex-5",
+      "context": "Blurry photo retake internal.",
+      "branch": "photo-mid-run",
+      "resolution": "Applied Progress Photo Update (Mid-Job) branch.",
+      "log_row": "2026-10-05,job-304,photo-mid-run,ok,owner"
+    },
+    {
+      "id": "ex-6",
+      "context": "Do not share other client jobs.",
+      "branch": "photo-install-prep",
+      "resolution": "Applied Progress Photo Update (Mid-Job) branch.",
+      "log_row": "2026-10-06,job-305,photo-install-prep,ok,owner"
+    },
+    {
+      "id": "ex-7",
+      "context": "Photo with QC pass note.",
+      "branch": "photo-client-ask",
+      "resolution": "Applied Progress Photo Update (Mid-Job) branch.",
+      "log_row": "2026-10-07,job-306,photo-client-ask,ok,owner"
+    },
+    {
+      "id": "ex-8",
+      "context": "Rush client wants daily photo.",
+      "branch": "photo-no-reply",
+      "resolution": "Applied Progress Photo Update (Mid-Job) branch.",
+      "log_row": "2026-10-08,job-307,photo-no-reply,ok,owner",
+      "cross_artifact": "mf-tpl-013"
+    }
+  ]
+}

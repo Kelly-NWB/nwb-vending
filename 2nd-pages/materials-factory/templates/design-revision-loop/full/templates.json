@@ -1,0 +1,26 @@
+{
+  "artifact": "mf-tpl-042",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "rev-round-1",
+      "use_when": "rev-round-1",
+      "body": "Rev 1 attached for [job]. Reply consolidated feedback by [date]."
+    },
+    {
+      "id": "rev-round-2-cap",
+      "use_when": "rev-round-2-cap",
+      "body": "Rev 2 included. Further rounds bill at $[rate]/hr per quote."
+    },
+    {
+      "id": "rev-client-stalled",
+      "use_when": "rev-client-stalled",
+      "body": "Checking in on design feedback for [job]. Proof date holds until [date]."
+    },
+    {
+      "id": "rev-approved-to-proof",
+      "use_when": "rev-approved-to-proof",
+      "body": "Design approved. Formal proof path mf-tpl-011 next."
+    }
+  ]
+}

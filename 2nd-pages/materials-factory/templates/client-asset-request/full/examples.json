@@ -1,0 +1,63 @@
+{
+  "artifact": "mf-tpl-034",
+  "version": "1.0.0",
+  "examples": [
+    {
+      "id": "ex-1",
+      "context": "Logo missing from intake.",
+      "branch": "asset-missing",
+      "resolution": "Applied Client Asset / File Request branch.",
+      "log_row": "2026-09-01,job-200,asset-missing,ok,owner"
+    },
+    {
+      "id": "ex-2",
+      "context": "File wrong DPI for print.",
+      "branch": "asset-wrong-format",
+      "resolution": "Applied Client Asset / File Request branch.",
+      "log_row": "2026-09-02,job-201,asset-wrong-format,ok,owner"
+    },
+    {
+      "id": "ex-3",
+      "context": "Chase assets day 3.",
+      "branch": "asset-late-chase",
+      "resolution": "Applied Client Asset / File Request branch.",
+      "log_row": "2026-09-03,job-202,asset-late-chase,ok,owner"
+    },
+    {
+      "id": "ex-4",
+      "context": "Assets in, proof scheduled.",
+      "branch": "asset-received",
+      "resolution": "Applied Client Asset / File Request branch.",
+      "log_row": "2026-09-04,job-203,asset-received,ok,owner"
+    },
+    {
+      "id": "ex-5",
+      "context": "Client sent phone photo only.",
+      "branch": "asset-missing",
+      "resolution": "Applied Client Asset / File Request branch.",
+      "log_row": "2026-09-05,job-204,asset-missing,ok,owner"
+    },
+    {
+      "id": "ex-6",
+      "context": "Brand guide link broken.",
+      "branch": "asset-wrong-format",
+      "resolution": "Applied Client Asset / File Request branch.",
+      "log_row": "2026-09-06,job-205,asset-wrong-format,ok,owner"
+    },
+    {
+      "id": "ex-7",
+      "context": "Multiple versions, pick one.",
+      "branch": "asset-late-chase",
+      "resolution": "Applied Client Asset / File Request branch.",
+      "log_row": "2026-09-07,job-206,asset-late-chase,ok,owner"
+    },
+    {
+      "id": "ex-8",
+      "context": "Late assets push ship date.",
+      "branch": "asset-received",
+      "resolution": "Applied Client Asset / File Request branch.",
+      "log_row": "2026-09-08,job-207,asset-received,ok,owner",
+      "cross_artifact": "mf-tpl-004"
+    }
+  ]
+}

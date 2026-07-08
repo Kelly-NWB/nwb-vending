@@ -1,0 +1,26 @@
+{
+  "artifact": "mf-tpl-026",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "qc-fail-floor",
+      "use_when": "qc-fail-floor",
+      "body": "QC FAIL [job]: [issue]. Rework owner [name] by [date]. Client date at risk."
+    },
+    {
+      "id": "qc-fail-vendor",
+      "use_when": "qc-fail-vendor",
+      "body": "Vendor lot [id] failed QC. Replace or credit. Do not ship."
+    },
+    {
+      "id": "qc-rework-assign",
+      "use_when": "qc-rework-assign",
+      "body": "Rework [job]: steps ___. Re-QC before release to mf-tpl-007."
+    },
+    {
+      "id": "qc-pass-release",
+      "use_when": "qc-pass-release",
+      "body": "QC PASS [job]. Cleared for delivery path."
+    }
+  ]
+}

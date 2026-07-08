@@ -1,0 +1,63 @@
+{
+  "artifact": "mf-tpl-024",
+  "version": "1.0.0",
+  "examples": [
+    {
+      "id": "ex-1",
+      "context": "Same decals as March.",
+      "branch": "reorder-same",
+      "resolution": "Applied Reorder Repeat Client branch.",
+      "log_row": "2026-08-01,job-100,reorder-same,ok,owner"
+    },
+    {
+      "id": "ex-2",
+      "context": "Tweak color on repeat.",
+      "branch": "reorder-tweak",
+      "resolution": "Applied Reorder Repeat Client branch.",
+      "log_row": "2026-08-02,job-101,reorder-tweak,ok,owner"
+    },
+    {
+      "id": "ex-3",
+      "context": "Expedite repeat order.",
+      "branch": "reorder-expedite",
+      "resolution": "Applied Reorder Repeat Client branch.",
+      "log_row": "2026-08-03,job-102,reorder-expedite,ok,owner"
+    },
+    {
+      "id": "ex-4",
+      "context": "Fast quote repeat branch.",
+      "branch": "reorder-quote-fast",
+      "resolution": "Applied Reorder Repeat Client branch.",
+      "log_row": "2026-08-04,job-103,reorder-quote-fast,ok,owner"
+    },
+    {
+      "id": "ex-5",
+      "context": "Annual reorder reminder.",
+      "branch": "reorder-same",
+      "resolution": "Applied Reorder Repeat Client branch.",
+      "log_row": "2026-08-05,job-104,reorder-same,ok,owner"
+    },
+    {
+      "id": "ex-6",
+      "context": "Price match last invoice.",
+      "branch": "reorder-tweak",
+      "resolution": "Applied Reorder Repeat Client branch.",
+      "log_row": "2026-08-06,job-105,reorder-tweak,ok,owner"
+    },
+    {
+      "id": "ex-7",
+      "context": "New contact on repeat acct.",
+      "branch": "reorder-expedite",
+      "resolution": "Applied Reorder Repeat Client branch.",
+      "log_row": "2026-08-07,job-106,reorder-expedite,ok,owner"
+    },
+    {
+      "id": "ex-8",
+      "context": "Combine with open quote.",
+      "branch": "reorder-quote-fast",
+      "resolution": "Applied Reorder Repeat Client branch.",
+      "log_row": "2026-08-08,job-107,reorder-quote-fast,ok,owner",
+      "cross_artifact": "mf-tpl-004"
+    }
+  ]
+}

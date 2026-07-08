@@ -1,0 +1,63 @@
+{
+  "artifact": "mf-tpl-040",
+  "version": "1.0.0",
+  "examples": [
+    {
+      "id": "ex-1",
+      "context": "Cancel before production starts.",
+      "branch": "cancel-before-prod",
+      "resolution": "Applied Refund / Cancellation Policy branch.",
+      "log_row": "2026-10-01,job-300,cancel-before-prod,ok,owner"
+    },
+    {
+      "id": "ex-2",
+      "context": "Cancel mid-job after materials cut.",
+      "branch": "cancel-mid-job",
+      "resolution": "Applied Refund / Cancellation Policy branch.",
+      "log_row": "2026-10-02,job-301,cancel-mid-job,ok,owner"
+    },
+    {
+      "id": "ex-3",
+      "context": "Partial refund negotiated.",
+      "branch": "refund-partial",
+      "resolution": "Applied Refund / Cancellation Policy branch.",
+      "log_row": "2026-10-03,job-302,refund-partial,ok,owner"
+    },
+    {
+      "id": "ex-4",
+      "context": "Refund denied per policy.",
+      "branch": "refund-denied-policy",
+      "resolution": "Applied Refund / Cancellation Policy branch.",
+      "log_row": "2026-10-04,job-303,refund-denied-policy,ok,owner"
+    },
+    {
+      "id": "ex-5",
+      "context": "Deposit non-refundable reminder.",
+      "branch": "cancel-before-prod",
+      "resolution": "Applied Refund / Cancellation Policy branch.",
+      "log_row": "2026-10-05,job-304,cancel-before-prod,ok,owner"
+    },
+    {
+      "id": "ex-6",
+      "context": "Client ghost then cancel request.",
+      "branch": "cancel-mid-job",
+      "resolution": "Applied Refund / Cancellation Policy branch.",
+      "log_row": "2026-10-06,job-305,cancel-mid-job,ok,owner"
+    },
+    {
+      "id": "ex-7",
+      "context": "Chargeback threat route mf-tpl-001.",
+      "branch": "refund-partial",
+      "resolution": "Applied Refund / Cancellation Policy branch.",
+      "log_row": "2026-10-07,job-306,refund-partial,ok,owner"
+    },
+    {
+      "id": "ex-8",
+      "context": "Archive cancel reason.",
+      "branch": "refund-denied-policy",
+      "resolution": "Applied Refund / Cancellation Policy branch.",
+      "log_row": "2026-10-08,job-307,refund-denied-policy,ok,owner",
+      "cross_artifact": "mf-tpl-008"
+    }
+  ]
+}

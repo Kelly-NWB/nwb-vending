@@ -1,0 +1,26 @@
+{
+  "artifact": "mf-tpl-016",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "deposit-remind-soft",
+      "use_when": "deposit-remind-soft",
+      "body": "Hi [name], deposit $[amt] for [job] when ready: [link]. Slot held until [date]."
+    },
+    {
+      "id": "deposit-remind-direct",
+      "use_when": "deposit-remind-direct",
+      "body": "Checking on deposit for [job]. Need payment to hold [ship_date]."
+    },
+    {
+      "id": "deposit-slot-released",
+      "use_when": "deposit-slot-released",
+      "body": "Slot released. Reply when ready to requote availability."
+    },
+    {
+      "id": "deposit-received-kickoff",
+      "use_when": "deposit-received-kickoff",
+      "body": "Deposit received. Kickoff next: mf-tpl-010 path."
+    }
+  ]
+}

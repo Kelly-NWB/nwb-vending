@@ -1,0 +1,26 @@
+{
+  "artifact": "mf-tpl-043",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "sample-ship-client",
+      "use_when": "sample-ship-client",
+      "body": "Color sample shipping to you. Approve in writing when received."
+    },
+    {
+      "id": "sample-approve",
+      "use_when": "sample-approve",
+      "body": "Sample approved [date]. Production will match approved sample."
+    },
+    {
+      "id": "sample-reject-rework",
+      "use_when": "sample-reject-rework",
+      "body": "Sample rejected: [note]. Rematch and reship by [date]."
+    },
+    {
+      "id": "sample-match-production",
+      "use_when": "sample-match-production",
+      "body": "Press matched approved sample. Proceeding to run."
+    }
+  ]
+}

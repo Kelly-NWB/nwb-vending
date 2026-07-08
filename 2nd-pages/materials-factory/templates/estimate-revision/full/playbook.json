@@ -1,0 +1,49 @@
+{
+  "artifact": "mf-tpl-028",
+  "title": "Estimate Revision / Change Quote",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Estimate Revision / Change Quote for small-business job spine.",
+  "mindset": {
+    "principle": "Short scripts, log row, cross-route when heated or paid.",
+    "mistakes": [
+      {
+        "id": "no-log",
+        "label": "No log row",
+        "cost": "Ops blind"
+      }
+    ]
+  },
+  "decision_branches": [
+    {
+      "id": "rev-scope-up",
+      "situation": "Branch 1",
+      "action": "rev-scope-up"
+    },
+    {
+      "id": "rev-scope-down",
+      "situation": "Branch 2",
+      "action": "rev-scope-down"
+    },
+    {
+      "id": "rev-price-match",
+      "situation": "Branch 3",
+      "action": "rev-price-match"
+    },
+    {
+      "id": "rev-expire-old",
+      "situation": "Branch 4",
+      "action": "rev-expire-old"
+    }
+  ],
+  "tracking": {
+    "csv_header": "date,job_id,branch,resolution,owner",
+    "sheet_tab_name": "estimate_revision"
+  },
+  "related_artifacts": [
+    "mf-tpl-006",
+    "mf-tpl-012",
+    "mf-tpl-014"
+  ]
+}

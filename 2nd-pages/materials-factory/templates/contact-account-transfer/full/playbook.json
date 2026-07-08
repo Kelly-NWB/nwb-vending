@@ -1,0 +1,49 @@
+{
+  "artifact": "mf-tpl-051",
+  "title": "Client Contact / Account Transfer",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Client Contact / Account Transfer for small-business job spine.",
+  "mindset": {
+    "principle": "Short scripts, log row, cross-route when heated or paid.",
+    "mistakes": [
+      {
+        "id": "no-log",
+        "label": "No log row",
+        "cost": "Ops blind"
+      }
+    ]
+  },
+  "decision_branches": [
+    {
+      "id": "contact-new-primary",
+      "situation": "Branch 1",
+      "action": "contact-new-primary"
+    },
+    {
+      "id": "contact-left-company",
+      "situation": "Branch 2",
+      "action": "contact-left-company"
+    },
+    {
+      "id": "contact-handoff",
+      "situation": "Branch 3",
+      "action": "contact-handoff"
+    },
+    {
+      "id": "contact-confirm-auth",
+      "situation": "Branch 4",
+      "action": "contact-confirm-auth"
+    }
+  ],
+  "tracking": {
+    "csv_header": "date,job_id,branch,resolution,owner",
+    "sheet_tab_name": "contact_account_transfer"
+  },
+  "related_artifacts": [
+    "mf-tpl-004",
+    "mf-tpl-027",
+    "mf-tpl-013"
+  ]
+}

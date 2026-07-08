@@ -1,0 +1,26 @@
+{
+  "artifact": "mf-tpl-024",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "reorder-same",
+      "use_when": "reorder-same",
+      "body": "Same as job [prior]? Confirm and we schedule."
+    },
+    {
+      "id": "reorder-tweak",
+      "use_when": "reorder-tweak",
+      "body": "Small tweak from last order: describe. May affect price."
+    },
+    {
+      "id": "reorder-expedite",
+      "use_when": "reorder-expedite",
+      "body": "Repeat rush available [date] for fee [amt]."
+    },
+    {
+      "id": "reorder-quote-fast",
+      "use_when": "reorder-quote-fast",
+      "body": "Repeat pricing path mf-tpl-006 fast branch."
+    }
+  ]
+}

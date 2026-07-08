@@ -1,0 +1,63 @@
+{
+  "artifact": "mf-tpl-051",
+  "version": "1.0.0",
+  "examples": [
+    {
+      "id": "ex-1",
+      "context": "New marketing mgr primary.",
+      "branch": "contact-new-primary",
+      "resolution": "Applied Client Contact / Account Transfer branch.",
+      "log_row": "2026-11-01,job-400,contact-new-primary,ok,owner"
+    },
+    {
+      "id": "ex-2",
+      "context": "Old contact left company.",
+      "branch": "contact-left-company",
+      "resolution": "Applied Client Contact / Account Transfer branch.",
+      "log_row": "2026-11-02,job-401,contact-left-company,ok,owner"
+    },
+    {
+      "id": "ex-3",
+      "context": "Handoff intro email.",
+      "branch": "contact-handoff",
+      "resolution": "Applied Client Contact / Account Transfer branch.",
+      "log_row": "2026-11-03,job-402,contact-handoff,ok,owner"
+    },
+    {
+      "id": "ex-4",
+      "context": "Confirm who approves proof.",
+      "branch": "contact-confirm-auth",
+      "resolution": "Applied Client Contact / Account Transfer branch.",
+      "log_row": "2026-11-04,job-403,contact-confirm-auth,ok,owner"
+    },
+    {
+      "id": "ex-5",
+      "context": "Billing contact separate.",
+      "branch": "contact-new-primary",
+      "resolution": "Applied Client Contact / Account Transfer branch.",
+      "log_row": "2026-11-05,job-404,contact-new-primary,ok,owner"
+    },
+    {
+      "id": "ex-6",
+      "context": "Unauthorized sender flag.",
+      "branch": "contact-left-company",
+      "resolution": "Applied Client Contact / Account Transfer branch.",
+      "log_row": "2026-11-06,job-405,contact-left-company,ok,owner"
+    },
+    {
+      "id": "ex-7",
+      "context": "Franchisee vs franchisor.",
+      "branch": "contact-handoff",
+      "resolution": "Applied Client Contact / Account Transfer branch.",
+      "log_row": "2026-11-07,job-406,contact-handoff,ok,owner"
+    },
+    {
+      "id": "ex-8",
+      "context": "Update CRM before quote.",
+      "branch": "contact-confirm-auth",
+      "resolution": "Applied Client Contact / Account Transfer branch.",
+      "log_row": "2026-11-08,job-407,contact-confirm-auth,ok,owner",
+      "cross_artifact": "mf-tpl-004"
+    }
+  ]
+}

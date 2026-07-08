@@ -1,0 +1,49 @@
+{
+  "artifact": "mf-tpl-039",
+  "title": "Goodwill Credit / Courtesy Discount",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Goodwill Credit / Courtesy Discount for small-business job spine.",
+  "mindset": {
+    "principle": "Short scripts, log row, cross-route when heated or paid.",
+    "mistakes": [
+      {
+        "id": "no-log",
+        "label": "No log row",
+        "cost": "Ops blind"
+      }
+    ]
+  },
+  "decision_branches": [
+    {
+      "id": "credit-small-issue",
+      "situation": "Branch 1",
+      "action": "credit-small-issue"
+    },
+    {
+      "id": "credit-repeat-loyalty",
+      "situation": "Branch 2",
+      "action": "credit-repeat-loyalty"
+    },
+    {
+      "id": "credit-delay-apology",
+      "situation": "Branch 3",
+      "action": "credit-delay-apology"
+    },
+    {
+      "id": "credit-applied-invoice",
+      "situation": "Branch 4",
+      "action": "credit-applied-invoice"
+    }
+  ],
+  "tracking": {
+    "csv_header": "date,job_id,branch,resolution,owner",
+    "sheet_tab_name": "goodwill_credit"
+  },
+  "related_artifacts": [
+    "mf-tpl-001",
+    "mf-tpl-008",
+    "mf-tpl-015"
+  ]
+}

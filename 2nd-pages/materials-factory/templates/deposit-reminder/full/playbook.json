@@ -1,0 +1,17 @@
+{
+  "artifact": "mf-tpl-016",
+  "title": "Deposit Reminder",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Quote accepted, deposit not in: remind on calendar without starting production. Between mf-tpl-006/014 and mf-tpl-010.",
+  "mindset": { "principle": "Calendar chase, not guilt trip. Slot held briefly, then released.", "mistakes": [{ "id": "start-anyway", "label": "Start work before deposit", "cost": "Ghost mid-job" }] },
+  "decision_branches": [
+    { "id": "remind-day-1", "situation": "Accept verbal, no payment 24h", "action": "deposit-remind-soft" },
+    { "id": "remind-day-3", "situation": "Still unpaid 3 days", "action": "deposit-remind-direct" },
+    { "id": "release-slot", "situation": "Past hold window", "action": "deposit-slot-released" },
+    { "id": "deposit-in", "situation": "Paid", "action": "deposit-received-kickoff", "cross_artifact": "mf-tpl-010" }
+  ],
+  "tracking": { "csv_header": "date,quote_ref,branch,amount,hold_until,owner", "sheet_tab_name": "deposits" },
+  "related_artifacts": ["mf-tpl-006", "mf-tpl-014", "mf-tpl-010", "mf-tpl-008"]
+}

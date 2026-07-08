@@ -1,0 +1,63 @@
+{
+  "artifact": "mf-tpl-017",
+  "version": "1.0.0",
+  "examples": [
+    {
+      "id": "ex-1",
+      "context": "Proof approved, send to press.",
+      "branch": "handoff-floor",
+      "resolution": "Applied Production Handoff (Internal) branch.",
+      "log_row": "2026-08-01,job-100,handoff-floor,ok,owner"
+    },
+    {
+      "id": "ex-2",
+      "context": "Rush job after current run.",
+      "branch": "handoff-rush",
+      "resolution": "Applied Production Handoff (Internal) branch.",
+      "log_row": "2026-08-02,job-101,handoff-rush,ok,owner"
+    },
+    {
+      "id": "ex-3",
+      "context": "Proof not approved yet.",
+      "branch": "handoff-hold-proof",
+      "resolution": "Applied Production Handoff (Internal) branch.",
+      "log_row": "2026-08-03,job-102,handoff-hold-proof,ok,owner"
+    },
+    {
+      "id": "ex-4",
+      "context": "Floor done, ready delivery.",
+      "branch": "handoff-complete",
+      "resolution": "Applied Production Handoff (Internal) branch.",
+      "log_row": "2026-08-04,job-103,handoff-complete,ok,owner"
+    },
+    {
+      "id": "ex-5",
+      "context": "Wrong specs on traveler.",
+      "branch": "handoff-floor",
+      "resolution": "Applied Production Handoff (Internal) branch.",
+      "log_row": "2026-08-05,job-104,handoff-floor,ok,owner"
+    },
+    {
+      "id": "ex-6",
+      "context": "Night shift handoff note.",
+      "branch": "handoff-rush",
+      "resolution": "Applied Production Handoff (Internal) branch.",
+      "log_row": "2026-08-06,job-105,handoff-rush,ok,owner"
+    },
+    {
+      "id": "ex-7",
+      "context": "Owner assigns press owner.",
+      "branch": "handoff-hold-proof",
+      "resolution": "Applied Production Handoff (Internal) branch.",
+      "log_row": "2026-08-07,job-106,handoff-hold-proof,ok,owner"
+    },
+    {
+      "id": "ex-8",
+      "context": "QC fail sent back floor.",
+      "branch": "handoff-complete",
+      "resolution": "Applied Production Handoff (Internal) branch.",
+      "log_row": "2026-08-08,job-107,handoff-complete,ok,owner",
+      "cross_artifact": "mf-tpl-010"
+    }
+  ]
+}

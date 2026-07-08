@@ -1,0 +1,26 @@
+{
+  "artifact": "mf-tpl-036",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "install-schedule",
+      "use_when": "install-schedule",
+      "body": "Install [job] scheduled [datetime]. Crew arrival window [window]. Site contact [name]."
+    },
+    {
+      "id": "install-access",
+      "use_when": "install-access",
+      "body": "Need access: [gate/code/parking]. Confirm someone on site."
+    },
+    {
+      "id": "install-delay",
+      "use_when": "install-delay",
+      "body": "Install delayed to [new_date]: [reason]. Sorry for the shift."
+    },
+    {
+      "id": "install-complete",
+      "use_when": "install-complete",
+      "body": "Install complete [job]. Photos attached. Sign-off [name]."
+    }
+  ]
+}

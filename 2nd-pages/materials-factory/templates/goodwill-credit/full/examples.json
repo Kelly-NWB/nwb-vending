@@ -1,0 +1,63 @@
+{
+  "artifact": "mf-tpl-039",
+  "version": "1.0.0",
+  "examples": [
+    {
+      "id": "ex-1",
+      "context": "Small scratch, $50 credit.",
+      "branch": "credit-small-issue",
+      "resolution": "Applied Goodwill Credit / Courtesy Discount branch.",
+      "log_row": "2026-10-01,job-300,credit-small-issue,ok,owner"
+    },
+    {
+      "id": "ex-2",
+      "context": "Repeat client loyalty 5%.",
+      "branch": "credit-repeat-loyalty",
+      "resolution": "Applied Goodwill Credit / Courtesy Discount branch.",
+      "log_row": "2026-10-02,job-301,credit-repeat-loyalty,ok,owner"
+    },
+    {
+      "id": "ex-3",
+      "context": "Late ship apology credit.",
+      "branch": "credit-delay-apology",
+      "resolution": "Applied Goodwill Credit / Courtesy Discount branch.",
+      "log_row": "2026-10-03,job-302,credit-delay-apology,ok,owner"
+    },
+    {
+      "id": "ex-4",
+      "context": "Credit applied on final invoice.",
+      "branch": "credit-applied-invoice",
+      "resolution": "Applied Goodwill Credit / Courtesy Discount branch.",
+      "log_row": "2026-10-04,job-303,credit-applied-invoice,ok,owner"
+    },
+    {
+      "id": "ex-5",
+      "context": "Credit instead of full refund.",
+      "branch": "credit-small-issue",
+      "resolution": "Applied Goodwill Credit / Courtesy Discount branch.",
+      "log_row": "2026-10-05,job-304,credit-small-issue,ok,owner"
+    },
+    {
+      "id": "ex-6",
+      "context": "Owner approval over $100.",
+      "branch": "credit-repeat-loyalty",
+      "resolution": "Applied Goodwill Credit / Courtesy Discount branch.",
+      "log_row": "2026-10-06,job-305,credit-repeat-loyalty,ok,owner"
+    },
+    {
+      "id": "ex-7",
+      "context": "Document in close row.",
+      "branch": "credit-delay-apology",
+      "resolution": "Applied Goodwill Credit / Courtesy Discount branch.",
+      "log_row": "2026-10-07,job-306,credit-delay-apology,ok,owner"
+    },
+    {
+      "id": "ex-8",
+      "context": "Skip credit on scope creep fight.",
+      "branch": "credit-applied-invoice",
+      "resolution": "Applied Goodwill Credit / Courtesy Discount branch.",
+      "log_row": "2026-10-08,job-307,credit-applied-invoice,ok,owner",
+      "cross_artifact": "mf-tpl-001"
+    }
+  ]
+}

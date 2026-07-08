@@ -1,0 +1,63 @@
+{
+  "artifact": "mf-tpl-044",
+  "version": "1.0.0",
+  "examples": [
+    {
+      "id": "ex-1",
+      "context": "Corner crushed on arrival.",
+      "branch": "damage-report",
+      "resolution": "Applied Damage in Transit Claim branch.",
+      "log_row": "2026-10-01,job-300,damage-report,ok,owner"
+    },
+    {
+      "id": "ex-2",
+      "context": "Photo request within 24h.",
+      "branch": "damage-photo-request",
+      "resolution": "Applied Damage in Transit Claim branch.",
+      "log_row": "2026-10-02,job-301,damage-photo-request,ok,owner"
+    },
+    {
+      "id": "ex-3",
+      "context": "Replacement rush shipped.",
+      "branch": "damage-replace-ship",
+      "resolution": "Applied Damage in Transit Claim branch.",
+      "log_row": "2026-10-03,job-302,damage-replace-ship,ok,owner"
+    },
+    {
+      "id": "ex-4",
+      "context": "Carrier claim filed internal.",
+      "branch": "damage-carrier-claim",
+      "resolution": "Applied Damage in Transit Claim branch.",
+      "log_row": "2026-10-04,job-303,damage-carrier-claim,ok,owner"
+    },
+    {
+      "id": "ex-5",
+      "context": "Client angry on phone.",
+      "branch": "damage-report",
+      "resolution": "Applied Damage in Transit Claim branch.",
+      "log_row": "2026-10-05,job-304,damage-report,ok,owner"
+    },
+    {
+      "id": "ex-6",
+      "context": "Partial damage usable qty.",
+      "branch": "damage-photo-request",
+      "resolution": "Applied Damage in Transit Claim branch.",
+      "log_row": "2026-10-06,job-305,damage-photo-request,ok,owner"
+    },
+    {
+      "id": "ex-7",
+      "context": "Vendor box fault not carrier.",
+      "branch": "damage-replace-ship",
+      "resolution": "Applied Damage in Transit Claim branch.",
+      "log_row": "2026-10-07,job-306,damage-replace-ship,ok,owner"
+    },
+    {
+      "id": "ex-8",
+      "context": "Route heated thread mf-tpl-001.",
+      "branch": "damage-carrier-claim",
+      "resolution": "Applied Damage in Transit Claim branch.",
+      "log_row": "2026-10-08,job-307,damage-carrier-claim,ok,owner",
+      "cross_artifact": "mf-tpl-007"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "artifact": "mf-tpl-053",
+  "title": "Event / Trade Show Deadline",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Event / Trade Show Deadline for small-business job spine.",
+  "mindset": {
+    "principle": "Short scripts, log row, cross-route when heated or paid.",
+    "mistakes": [
+      {
+        "id": "no-log",
+        "label": "No log row",
+        "cost": "Ops blind"
+      }
+    ]
+  },
+  "decision_branches": [
+    {
+      "id": "event-hard-date",
+      "situation": "Branch 1",
+      "action": "event-hard-date"
+    },
+    {
+      "id": "event-slip-risk",
+      "situation": "Branch 2",
+      "action": "event-slip-risk"
+    },
+    {
+      "id": "event-all-nighter",
+      "situation": "Branch 3",
+      "action": "event-all-nighter"
+    },
+    {
+      "id": "event-made-it",
+      "situation": "Branch 4",
+      "action": "event-made-it"
+    }
+  ],
+  "tracking": {
+    "csv_header": "date,job_id,branch,resolution,owner",
+    "sheet_tab_name": "event_deadline_crunch"
+  },
+  "related_artifacts": [
+    "mf-tpl-021",
+    "mf-tpl-011",
+    "mf-tpl-007"
+  ]
+}

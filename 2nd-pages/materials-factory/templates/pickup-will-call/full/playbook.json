@@ -1,0 +1,49 @@
+{
+  "artifact": "mf-tpl-035",
+  "title": "Pickup / Will-Call Handoff",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Pickup / Will-Call Handoff for small-business job spine.",
+  "mindset": {
+    "principle": "Short scripts, log row, cross-route when heated or paid.",
+    "mistakes": [
+      {
+        "id": "no-log",
+        "label": "No log row",
+        "cost": "Ops blind"
+      }
+    ]
+  },
+  "decision_branches": [
+    {
+      "id": "pickup-ready",
+      "situation": "Branch 1",
+      "action": "pickup-ready"
+    },
+    {
+      "id": "pickup-hold-unpaid",
+      "situation": "Branch 2",
+      "action": "pickup-hold-unpaid"
+    },
+    {
+      "id": "pickup-no-show",
+      "situation": "Branch 3",
+      "action": "pickup-no-show"
+    },
+    {
+      "id": "pickup-complete",
+      "situation": "Branch 4",
+      "action": "pickup-complete"
+    }
+  ],
+  "tracking": {
+    "csv_header": "date,job_id,branch,resolution,owner",
+    "sheet_tab_name": "pickup_will_call"
+  },
+  "related_artifacts": [
+    "mf-tpl-007",
+    "mf-tpl-008",
+    "mf-tpl-013"
+  ]
+}

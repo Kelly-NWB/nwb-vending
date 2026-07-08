@@ -1,0 +1,26 @@
+{
+  "artifact": "mf-tpl-025",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "sub-send-spec",
+      "use_when": "sub-send-spec",
+      "body": "Sub [name]: job [id]. Spec attached. Need by [date]."
+    },
+    {
+      "id": "sub-chase",
+      "use_when": "sub-chase",
+      "body": "Chase sub [name] on [id]. Client date [date] at risk."
+    },
+    {
+      "id": "sub-reject-work",
+      "use_when": "sub-reject-work",
+      "body": "Sub work failed QC. Rework or replace by [date]."
+    },
+    {
+      "id": "sub-integrate",
+      "use_when": "sub-integrate",
+      "body": "Sub piece in. Final QC then mf-tpl-007."
+    }
+  ]
+}

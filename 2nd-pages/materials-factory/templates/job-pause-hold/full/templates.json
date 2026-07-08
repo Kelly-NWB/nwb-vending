@@ -1,0 +1,26 @@
+{
+  "artifact": "mf-tpl-030",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "pause-client-request",
+      "use_when": "pause-client-request",
+      "body": "Paused [job] per your request until [date]. Slot held [days] days."
+    },
+    {
+      "id": "pause-internal",
+      "use_when": "pause-internal",
+      "body": "Internal hold [job]: [reason]. Client update mf-tpl-013 if needed."
+    },
+    {
+      "id": "pause-resume",
+      "use_when": "pause-resume",
+      "body": "Resuming [job] [date]. Confirm still good to proceed."
+    },
+    {
+      "id": "pause-cancel",
+      "use_when": "pause-cancel",
+      "body": "Paused job cancelled. Archive per mf-tpl-015 if no reopen."
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "artifact": "mf-tpl-047",
+  "title": "Seasonal Capacity / Lead Time Notice",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Seasonal Capacity / Lead Time Notice for small-business job spine.",
+  "mindset": {
+    "principle": "Short scripts, log row, cross-route when heated or paid.",
+    "mistakes": [
+      {
+        "id": "no-log",
+        "label": "No log row",
+        "cost": "Ops blind"
+      }
+    ]
+  },
+  "decision_branches": [
+    {
+      "id": "capacity-busy",
+      "situation": "Branch 1",
+      "action": "capacity-busy"
+    },
+    {
+      "id": "capacity-honest-date",
+      "situation": "Branch 2",
+      "action": "capacity-honest-date"
+    },
+    {
+      "id": "capacity-waitlist",
+      "situation": "Branch 3",
+      "action": "capacity-waitlist"
+    },
+    {
+      "id": "capacity-opens",
+      "situation": "Branch 4",
+      "action": "capacity-opens"
+    }
+  ],
+  "tracking": {
+    "csv_header": "date,job_id,branch,resolution,owner",
+    "sheet_tab_name": "seasonal_capacity_notice"
+  },
+  "related_artifacts": [
+    "mf-tpl-006",
+    "mf-tpl-021",
+    "mf-tpl-033"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "artifact": "mf-tpl-017",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "handoff-floor",
+      "use_when": "handoff-floor",
+      "body": "JOB [id] TO FLOOR\nSpecs: ___\nShip: ___\nProof: approved Y/N\nOwner: ___"
+    },
+    {
+      "id": "handoff-rush",
+      "use_when": "handoff-rush",
+      "body": "RUSH [id]: run after [item] on press. No queue jumps."
+    },
+    {
+      "id": "handoff-hold-proof",
+      "use_when": "handoff-hold-proof",
+      "body": "HOLD production [id] until proof APPROVED."
+    },
+    {
+      "id": "handoff-complete",
+      "use_when": "handoff-complete",
+      "body": "Floor complete [id]. Ready mf-tpl-007 delivery path."
+    }
+  ]
+}

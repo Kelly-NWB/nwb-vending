@@ -1,0 +1,26 @@
+{
+  "artifact": "mf-tpl-045",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "retainer-proposal",
+      "use_when": "retainer-proposal",
+      "body": "Retainer option: [hours]/month at $[amt]. Scope: [bullets]."
+    },
+    {
+      "id": "retainer-monthly-touch",
+      "use_when": "retainer-monthly-touch",
+      "body": "Monthly check-in: open items, hours left [n], next priorities."
+    },
+    {
+      "id": "retainer-scope-creep",
+      "use_when": "retainer-scope-creep",
+      "body": "Outside retainer scope. CO mf-tpl-012 or project quote?"
+    },
+    {
+      "id": "retainer-renew",
+      "use_when": "retainer-renew",
+      "body": "Retainer renews [date]. Same terms or adjust?"
+    }
+  ]
+}

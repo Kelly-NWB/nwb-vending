@@ -1,0 +1,26 @@
+{
+  "artifact": "mf-tpl-049",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "permit-needed",
+      "use_when": "permit-needed",
+      "body": "Permit required for [install]. We submit or you pull? Timeline adds [days]."
+    },
+    {
+      "id": "permit-submitted",
+      "use_when": "permit-submitted",
+      "body": "Permit submitted [id]. Typical wait [days]."
+    },
+    {
+      "id": "permit-hold-job",
+      "use_when": "permit-hold-job",
+      "body": "Hold production/install until permit approved."
+    },
+    {
+      "id": "permit-approved",
+      "use_when": "permit-approved",
+      "body": "Permit approved. Install schedule mf-tpl-036 path."
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "artifact": "mf-tpl-052",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "storage-offer",
+      "use_when": "storage-offer",
+      "body": "Job complete. Store up to [days] free, then $[amt]/month."
+    },
+    {
+      "id": "storage-fee-remind",
+      "use_when": "storage-fee-remind",
+      "body": "Storage fee $[amt] due for [job]. Release date?"
+    },
+    {
+      "id": "storage-expire",
+      "use_when": "storage-expire",
+      "body": "Free storage ends [date]. Ship, pickup, or fee starts."
+    },
+    {
+      "id": "storage-release-ship",
+      "use_when": "storage-release-ship",
+      "body": "Releasing to ship [date]. Confirm address."
+    }
+  ]
+}

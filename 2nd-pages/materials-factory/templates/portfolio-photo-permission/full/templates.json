@@ -1,0 +1,26 @@
+{
+  "artifact": "mf-tpl-054",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "portfolio-ask",
+      "use_when": "portfolio-ask",
+      "body": "OK to share a photo of [job] on our site/social? No fee."
+    },
+    {
+      "id": "portfolio-yes",
+      "use_when": "portfolio-yes",
+      "body": "Thanks for permission. We will tag [handle] if provided."
+    },
+    {
+      "id": "portfolio-no",
+      "use_when": "portfolio-no",
+      "body": "No problem. We will not post [job]."
+    },
+    {
+      "id": "portfolio-credit-line",
+      "use_when": "portfolio-credit-line",
+      "body": "Posted with credit: [client] · [project]. Reply if change needed."
+    }
+  ]
+}

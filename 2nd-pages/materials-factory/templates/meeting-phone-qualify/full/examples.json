@@ -1,0 +1,63 @@
+{
+  "artifact": "mf-tpl-022",
+  "version": "1.0.0",
+  "examples": [
+    {
+      "id": "ex-1",
+      "context": "Vague email needs call.",
+      "branch": "phone-qualify",
+      "resolution": "Applied Meeting / Phone Qualify branch.",
+      "log_row": "2026-08-01,job-100,phone-qualify,ok,owner"
+    },
+    {
+      "id": "ex-2",
+      "context": "Calendar link sent.",
+      "branch": "meeting-book",
+      "resolution": "Applied Meeting / Phone Qualify branch.",
+      "log_row": "2026-08-02,job-101,meeting-book,ok,owner"
+    },
+    {
+      "id": "ex-3",
+      "context": "No-show on booked slot.",
+      "branch": "meeting-no-show",
+      "resolution": "Applied Meeting / Phone Qualify branch.",
+      "log_row": "2026-08-03,job-102,meeting-no-show,ok,owner"
+    },
+    {
+      "id": "ex-4",
+      "context": "Post-call summary email.",
+      "branch": "meeting-summary",
+      "resolution": "Applied Meeting / Phone Qualify branch.",
+      "log_row": "2026-08-04,job-103,meeting-summary,ok,owner"
+    },
+    {
+      "id": "ex-5",
+      "context": "Wrong number callback.",
+      "branch": "phone-qualify",
+      "resolution": "Applied Meeting / Phone Qualify branch.",
+      "log_row": "2026-08-05,job-104,phone-qualify,ok,owner"
+    },
+    {
+      "id": "ex-6",
+      "context": "Qualify budget on phone.",
+      "branch": "meeting-book",
+      "resolution": "Applied Meeting / Phone Qualify branch.",
+      "log_row": "2026-08-06,job-105,meeting-book,ok,owner"
+    },
+    {
+      "id": "ex-7",
+      "context": "Three-way with decision maker.",
+      "branch": "meeting-no-show",
+      "resolution": "Applied Meeting / Phone Qualify branch.",
+      "log_row": "2026-08-07,job-106,meeting-no-show,ok,owner"
+    },
+    {
+      "id": "ex-8",
+      "context": "Voicemail follow script.",
+      "branch": "meeting-summary",
+      "resolution": "Applied Meeting / Phone Qualify branch.",
+      "log_row": "2026-08-08,job-107,meeting-summary,ok,owner",
+      "cross_artifact": "mf-tpl-004"
+    }
+  ]
+}

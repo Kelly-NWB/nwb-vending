@@ -1,0 +1,49 @@
+{
+  "artifact": "mf-tpl-032",
+  "title": "Emergency After-Hours Reply",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Emergency After-Hours Reply for small-business job spine.",
+  "mindset": {
+    "principle": "Short scripts, log row, cross-route when heated or paid.",
+    "mistakes": [
+      {
+        "id": "no-log",
+        "label": "No log row",
+        "cost": "Ops blind"
+      }
+    ]
+  },
+  "decision_branches": [
+    {
+      "id": "after-hours-ack",
+      "situation": "Branch 1",
+      "action": "after-hours-ack"
+    },
+    {
+      "id": "after-hours-triage",
+      "situation": "Branch 2",
+      "action": "after-hours-triage"
+    },
+    {
+      "id": "after-hours-escalate",
+      "situation": "Branch 3",
+      "action": "after-hours-escalate"
+    },
+    {
+      "id": "after-hours-morning",
+      "situation": "Branch 4",
+      "action": "after-hours-morning"
+    }
+  ],
+  "tracking": {
+    "csv_header": "date,job_id,branch,resolution,owner",
+    "sheet_tab_name": "emergency_after_hours"
+  },
+  "related_artifacts": [
+    "mf-tpl-001",
+    "mf-tpl-013",
+    "mf-tpl-021"
+  ]
+}

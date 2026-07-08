@@ -1,0 +1,50 @@
+{
+  "artifact": "mf-tpl-021",
+  "title": "Rush Client Comms",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Rush Client Comms for small-business job spine.",
+  "mindset": {
+    "principle": "Short scripts, log row, cross-route when heated or paid.",
+    "mistakes": [
+      {
+        "id": "no-log",
+        "label": "No log row",
+        "cost": "Ops blind"
+      }
+    ]
+  },
+  "decision_branches": [
+    {
+      "id": "rush-confirm",
+      "situation": "Branch 1",
+      "action": "rush-confirm"
+    },
+    {
+      "id": "rush-slip",
+      "situation": "Branch 2",
+      "action": "rush-slip"
+    },
+    {
+      "id": "rush-proof-hard",
+      "situation": "Branch 3",
+      "action": "rush-proof-hard"
+    },
+    {
+      "id": "rush-fee-remind",
+      "situation": "Branch 4",
+      "action": "rush-fee-remind"
+    }
+  ],
+  "tracking": {
+    "csv_header": "date,job_id,branch,resolution,owner",
+    "sheet_tab_name": "rush_client_comms"
+  },
+  "related_artifacts": [
+    "mf-tpl-006",
+    "mf-tpl-010",
+    "mf-tpl-011",
+    "mf-tpl-013"
+  ]
+}

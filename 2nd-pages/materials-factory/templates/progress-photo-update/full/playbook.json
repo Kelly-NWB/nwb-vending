@@ -1,0 +1,49 @@
+{
+  "artifact": "mf-tpl-038",
+  "title": "Progress Photo Update (Mid-Job)",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Progress Photo Update (Mid-Job) for small-business job spine.",
+  "mindset": {
+    "principle": "Short scripts, log row, cross-route when heated or paid.",
+    "mistakes": [
+      {
+        "id": "no-log",
+        "label": "No log row",
+        "cost": "Ops blind"
+      }
+    ]
+  },
+  "decision_branches": [
+    {
+      "id": "photo-mid-run",
+      "situation": "Branch 1",
+      "action": "photo-mid-run"
+    },
+    {
+      "id": "photo-install-prep",
+      "situation": "Branch 2",
+      "action": "photo-install-prep"
+    },
+    {
+      "id": "photo-client-ask",
+      "situation": "Branch 3",
+      "action": "photo-client-ask"
+    },
+    {
+      "id": "photo-no-reply",
+      "situation": "Branch 4",
+      "action": "photo-no-reply"
+    }
+  ],
+  "tracking": {
+    "csv_header": "date,job_id,branch,resolution,owner",
+    "sheet_tab_name": "progress_photo_update"
+  },
+  "related_artifacts": [
+    "mf-tpl-013",
+    "mf-tpl-011",
+    "mf-tpl-017"
+  ]
+}

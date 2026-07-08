@@ -1,0 +1,26 @@
+{
+  "artifact": "mf-tpl-044",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "damage-report",
+      "use_when": "damage-report",
+      "body": "Sorry to hear [job] arrived damaged. Photos of box and item today?"
+    },
+    {
+      "id": "damage-photo-request",
+      "use_when": "damage-photo-request",
+      "body": "Need photos within 24h for carrier claim and replacement."
+    },
+    {
+      "id": "damage-replace-ship",
+      "use_when": "damage-replace-ship",
+      "body": "Replacement shipping [date]. Track follows."
+    },
+    {
+      "id": "damage-carrier-claim",
+      "use_when": "damage-carrier-claim",
+      "body": "Internal: carrier claim [tracking]. Client made whole."
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "artifact": "mf-tpl-036",
+  "title": "Install / On-Site Coordination",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Install / On-Site Coordination for small-business job spine.",
+  "mindset": {
+    "principle": "Short scripts, log row, cross-route when heated or paid.",
+    "mistakes": [
+      {
+        "id": "no-log",
+        "label": "No log row",
+        "cost": "Ops blind"
+      }
+    ]
+  },
+  "decision_branches": [
+    {
+      "id": "install-schedule",
+      "situation": "Branch 1",
+      "action": "install-schedule"
+    },
+    {
+      "id": "install-access",
+      "situation": "Branch 2",
+      "action": "install-access"
+    },
+    {
+      "id": "install-delay",
+      "situation": "Branch 3",
+      "action": "install-delay"
+    },
+    {
+      "id": "install-complete",
+      "situation": "Branch 4",
+      "action": "install-complete"
+    }
+  ],
+  "tracking": {
+    "csv_header": "date,job_id,branch,resolution,owner",
+    "sheet_tab_name": "install_on_site_coord"
+  },
+  "related_artifacts": [
+    "mf-tpl-007",
+    "mf-tpl-025",
+    "mf-tpl-013"
+  ]
+}

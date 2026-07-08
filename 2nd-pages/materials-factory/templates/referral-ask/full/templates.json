@@ -1,0 +1,26 @@
+{
+  "artifact": "mf-tpl-019",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "referral-happy",
+      "use_when": "referral-happy",
+      "body": "Thanks again. Know one other owner who needs [service]? Intro welcome."
+    },
+    {
+      "id": "referral-repeat",
+      "use_when": "referral-repeat",
+      "body": "Repeat client: referral optional short ask."
+    },
+    {
+      "id": "referral-decline",
+      "use_when": "referral-decline",
+      "body": "No referral ask this job (issue job)."
+    },
+    {
+      "id": "referral-follow",
+      "use_when": "referral-follow",
+      "body": "You mentioned [referral name]. May I reach out?"
+    }
+  ]
+}

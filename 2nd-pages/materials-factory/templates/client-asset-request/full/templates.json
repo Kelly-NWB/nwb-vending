@@ -1,0 +1,26 @@
+{
+  "artifact": "mf-tpl-034",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "asset-missing",
+      "use_when": "asset-missing",
+      "body": "Need [asset] for [job] to start proof. Upload or reply attach."
+    },
+    {
+      "id": "asset-wrong-format",
+      "use_when": "asset-wrong-format",
+      "body": "File needs [format/DPI]. Resend or we prep for fee $[amt]."
+    },
+    {
+      "id": "asset-late-chase",
+      "use_when": "asset-late-chase",
+      "body": "Chasing [asset] for [job]. Ship date moves if not in by [date]."
+    },
+    {
+      "id": "asset-received",
+      "use_when": "asset-received",
+      "body": "Assets received. Proof path mf-tpl-011 next."
+    }
+  ]
+}

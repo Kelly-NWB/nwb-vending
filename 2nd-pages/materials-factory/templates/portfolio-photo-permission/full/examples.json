@@ -1,0 +1,63 @@
+{
+  "artifact": "mf-tpl-054",
+  "version": "1.0.0",
+  "examples": [
+    {
+      "id": "ex-1",
+      "context": "Ask to use install photo.",
+      "branch": "portfolio-ask",
+      "resolution": "Applied Portfolio / Photo Permission Ask branch.",
+      "log_row": "2026-11-01,job-400,portfolio-ask,ok,owner"
+    },
+    {
+      "id": "ex-2",
+      "context": "Client said yes tagged.",
+      "branch": "portfolio-yes",
+      "resolution": "Applied Portfolio / Photo Permission Ask branch.",
+      "log_row": "2026-11-02,job-401,portfolio-yes,ok,owner"
+    },
+    {
+      "id": "ex-3",
+      "context": "Client declined no post.",
+      "branch": "portfolio-no",
+      "resolution": "Applied Portfolio / Photo Permission Ask branch.",
+      "log_row": "2026-11-03,job-402,portfolio-no,ok,owner"
+    },
+    {
+      "id": "ex-4",
+      "context": "Credit line on social.",
+      "branch": "portfolio-credit-line",
+      "resolution": "Applied Portfolio / Photo Permission Ask branch.",
+      "log_row": "2026-11-04,job-403,portfolio-credit-line,ok,owner"
+    },
+    {
+      "id": "ex-5",
+      "context": "Logo visible in shot.",
+      "branch": "portfolio-ask",
+      "resolution": "Applied Portfolio / Photo Permission Ask branch.",
+      "log_row": "2026-11-05,job-404,portfolio-ask,ok,owner"
+    },
+    {
+      "id": "ex-6",
+      "context": "Anonymize location request.",
+      "branch": "portfolio-yes",
+      "resolution": "Applied Portfolio / Photo Permission Ask branch.",
+      "log_row": "2026-11-06,job-405,portfolio-yes,ok,owner"
+    },
+    {
+      "id": "ex-7",
+      "context": "Case study later ask.",
+      "branch": "portfolio-no",
+      "resolution": "Applied Portfolio / Photo Permission Ask branch.",
+      "log_row": "2026-11-07,job-406,portfolio-no,ok,owner"
+    },
+    {
+      "id": "ex-8",
+      "context": "Skip ask on complaint job.",
+      "branch": "portfolio-credit-line",
+      "resolution": "Applied Portfolio / Photo Permission Ask branch.",
+      "log_row": "2026-11-08,job-407,portfolio-credit-line,ok,owner",
+      "cross_artifact": "mf-tpl-015"
+    }
+  ]
+}

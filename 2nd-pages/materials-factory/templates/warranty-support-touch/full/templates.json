@@ -1,0 +1,26 @@
+{
+  "artifact": "mf-tpl-020",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "support-question",
+      "use_when": "support-question",
+      "body": "Hi [name], tell me what you are seeing with [item]. Photo helps."
+    },
+    {
+      "id": "support-defect",
+      "use_when": "support-defect",
+      "body": "We stand behind work. Replace or fix by [date]."
+    },
+    {
+      "id": "support-out-of-scope",
+      "use_when": "support-out-of-scope",
+      "body": "That is outside warranty scope. Quote optional."
+    },
+    {
+      "id": "support-route-complaint",
+      "use_when": "support-route-complaint",
+      "body": "Route mf-tpl-001 if heated."
+    }
+  ]
+}

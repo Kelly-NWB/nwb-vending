@@ -1,0 +1,49 @@
+{
+  "artifact": "mf-tpl-052",
+  "title": "Finished Goods Storage Hold",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Finished Goods Storage Hold for small-business job spine.",
+  "mindset": {
+    "principle": "Short scripts, log row, cross-route when heated or paid.",
+    "mistakes": [
+      {
+        "id": "no-log",
+        "label": "No log row",
+        "cost": "Ops blind"
+      }
+    ]
+  },
+  "decision_branches": [
+    {
+      "id": "storage-offer",
+      "situation": "Branch 1",
+      "action": "storage-offer"
+    },
+    {
+      "id": "storage-fee-remind",
+      "situation": "Branch 2",
+      "action": "storage-fee-remind"
+    },
+    {
+      "id": "storage-expire",
+      "situation": "Branch 3",
+      "action": "storage-expire"
+    },
+    {
+      "id": "storage-release-ship",
+      "situation": "Branch 4",
+      "action": "storage-release-ship"
+    }
+  ],
+  "tracking": {
+    "csv_header": "date,job_id,branch,resolution,owner",
+    "sheet_tab_name": "finished_goods_storage"
+  },
+  "related_artifacts": [
+    "mf-tpl-007",
+    "mf-tpl-035",
+    "mf-tpl-008"
+  ]
+}

@@ -95,7 +95,7 @@ function fullIndexHtml(m) {
 }
 
 for (const m of MODULES) {
-  const srcDir = path.join(SRC, m.slug, 'full');
+  const srcDir = path.join(SRC, 'templates', m.slug, 'full');
   const dstDir = path.join(DST, m.slug, 'full');
   fs.mkdirSync(dstDir, { recursive: true });
   for (const f of FILES) {

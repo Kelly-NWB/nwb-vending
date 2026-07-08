@@ -1,0 +1,49 @@
+{
+  "artifact": "mf-tpl-033",
+  "title": "Multi-Job Priority Queue (Internal)",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Multi-Job Priority Queue (Internal) for small-business job spine.",
+  "mindset": {
+    "principle": "Short scripts, log row, cross-route when heated or paid.",
+    "mistakes": [
+      {
+        "id": "no-log",
+        "label": "No log row",
+        "cost": "Ops blind"
+      }
+    ]
+  },
+  "decision_branches": [
+    {
+      "id": "queue-reprioritize",
+      "situation": "Branch 1",
+      "action": "queue-reprioritize"
+    },
+    {
+      "id": "queue-capacity",
+      "situation": "Branch 2",
+      "action": "queue-capacity"
+    },
+    {
+      "id": "queue-rush-bump",
+      "situation": "Branch 3",
+      "action": "queue-rush-bump"
+    },
+    {
+      "id": "queue-daily-standup",
+      "situation": "Branch 4",
+      "action": "queue-daily-standup"
+    }
+  ],
+  "tracking": {
+    "csv_header": "date,job_id,branch,resolution,owner",
+    "sheet_tab_name": "job_priority_queue"
+  },
+  "related_artifacts": [
+    "mf-tpl-005",
+    "mf-tpl-017",
+    "mf-tpl-021"
+  ]
+}

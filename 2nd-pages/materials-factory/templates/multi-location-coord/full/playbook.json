@@ -1,0 +1,49 @@
+{
+  "artifact": "mf-tpl-048",
+  "title": "Multi-Location Client Coordination",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Multi-Location Client Coordination for small-business job spine.",
+  "mindset": {
+    "principle": "Short scripts, log row, cross-route when heated or paid.",
+    "mistakes": [
+      {
+        "id": "no-log",
+        "label": "No log row",
+        "cost": "Ops blind"
+      }
+    ]
+  },
+  "decision_branches": [
+    {
+      "id": "multi-quote-split",
+      "situation": "Branch 1",
+      "action": "multi-quote-split"
+    },
+    {
+      "id": "multi-ship-route",
+      "situation": "Branch 2",
+      "action": "multi-ship-route"
+    },
+    {
+      "id": "multi-one-invoice",
+      "situation": "Branch 3",
+      "action": "multi-one-invoice"
+    },
+    {
+      "id": "multi-contact-loop",
+      "situation": "Branch 4",
+      "action": "multi-contact-loop"
+    }
+  ],
+  "tracking": {
+    "csv_header": "date,job_id,branch,resolution,owner",
+    "sheet_tab_name": "multi_location_coord"
+  },
+  "related_artifacts": [
+    "mf-tpl-006",
+    "mf-tpl-007",
+    "mf-tpl-013"
+  ]
+}

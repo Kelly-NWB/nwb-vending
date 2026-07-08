@@ -1,0 +1,26 @@
+{
+  "artifact": "mf-tpl-027",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "onboard-welcome",
+      "use_when": "onboard-welcome",
+      "body": "Welcome [name]. Your PM is [contact]. Next: deposit and kickoff mf-tpl-010."
+    },
+    {
+      "id": "onboard-portal",
+      "use_when": "onboard-portal",
+      "body": "Portal link: [url]. Upload assets and approve proofs there."
+    },
+    {
+      "id": "onboard-expect",
+      "use_when": "onboard-expect",
+      "body": "What to expect: proof window, production days, one invoice path mf-tpl-008."
+    },
+    {
+      "id": "onboard-checkin",
+      "use_when": "onboard-checkin",
+      "body": "Quick check-in: any questions on process before we start?"
+    }
+  ]
+}

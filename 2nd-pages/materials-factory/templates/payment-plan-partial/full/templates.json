@@ -1,0 +1,26 @@
+{
+  "artifact": "mf-tpl-029",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "plan-offer",
+      "use_when": "plan-offer",
+      "body": "Payment plan: $[amt1] now, $[amt2] on [date]. Link: [url]."
+    },
+    {
+      "id": "plan-remind",
+      "use_when": "plan-remind",
+      "body": "Reminder: installment $[amt] due [date] for [job]."
+    },
+    {
+      "id": "plan-default",
+      "use_when": "plan-default",
+      "body": "Missed installment. Job on hold until caught up."
+    },
+    {
+      "id": "plan-paid-off",
+      "use_when": "plan-paid-off",
+      "body": "Plan complete. Balance $0. Ship/deliver per schedule."
+    }
+  ]
+}

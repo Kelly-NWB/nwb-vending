@@ -1,0 +1,26 @@
+{
+  "artifact": "mf-tpl-039",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "credit-small-issue",
+      "use_when": "credit-small-issue",
+      "body": "We applied $[amt] credit on [job] for [issue]. On next invoice."
+    },
+    {
+      "id": "credit-repeat-loyalty",
+      "use_when": "credit-repeat-loyalty",
+      "body": "Loyalty credit $[amt] on this order. Thanks for sticking with us."
+    },
+    {
+      "id": "credit-delay-apology",
+      "use_when": "credit-delay-apology",
+      "body": "Sorry for the delay. $[amt] courtesy credit on invoice."
+    },
+    {
+      "id": "credit-applied-invoice",
+      "use_when": "credit-applied-invoice",
+      "body": "Invoice reflects credit $[amt]. Balance $[new_bal]."
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "artifact": "mf-tpl-037",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "ship-label-sent",
+      "use_when": "ship-label-sent",
+      "body": "Shipped [job]. Track: [url] · carrier [name] · ETA [date]."
+    },
+    {
+      "id": "ship-in-transit",
+      "use_when": "ship-in-transit",
+      "body": "In transit. Still on track for [date]."
+    },
+    {
+      "id": "ship-delayed",
+      "use_when": "ship-delayed",
+      "body": "Carrier delay on [job]. New ETA [date]. We are watching it."
+    },
+    {
+      "id": "ship-delivered",
+      "use_when": "ship-delivered",
+      "body": "Delivered per carrier [time]. Confirm all good on receipt."
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "artifact": "mf-tpl-041",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "coi-request-in",
+      "use_when": "coi-request-in",
+      "body": "Send COI requirements: holder name, address, limits needed."
+    },
+    {
+      "id": "coi-send-cert",
+      "use_when": "coi-send-cert",
+      "body": "COI attached for [job]. Valid through [date]."
+    },
+    {
+      "id": "coi-additional-insured",
+      "use_when": "coi-additional-insured",
+      "body": "Updated COI with additional insured [name] attached."
+    },
+    {
+      "id": "coi-expired-renew",
+      "use_when": "coi-expired-renew",
+      "body": "Prior COI expired. Renewed cert attached."
+    }
+  ]
+}

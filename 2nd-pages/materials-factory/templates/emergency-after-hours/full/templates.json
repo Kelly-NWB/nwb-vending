@@ -1,0 +1,26 @@
+{
+  "artifact": "mf-tpl-032",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "after-hours-ack",
+      "use_when": "after-hours-ack",
+      "body": "Got your message. We are closed until [hours]. Urgent safety: call [emergency]."
+    },
+    {
+      "id": "after-hours-triage",
+      "use_when": "after-hours-triage",
+      "body": "Noted. We will address first business day. Not on-site tonight."
+    },
+    {
+      "id": "after-hours-escalate",
+      "use_when": "after-hours-escalate",
+      "body": "Escalating to on-call for [issue]. Expect call within [mins]."
+    },
+    {
+      "id": "after-hours-morning",
+      "use_when": "after-hours-morning",
+      "body": "Following up from last night: [plan]. Owner looped in."
+    }
+  ]
+}

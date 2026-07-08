@@ -1,0 +1,26 @@
+{
+  "artifact": "mf-tpl-051",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "contact-new-primary",
+      "use_when": "contact-new-primary",
+      "body": "Updating primary contact to [name] [email]. Confirm approvals."
+    },
+    {
+      "id": "contact-left-company",
+      "use_when": "contact-left-company",
+      "body": "[name] left. Who owns proofs and billing now?"
+    },
+    {
+      "id": "contact-handoff",
+      "use_when": "contact-handoff",
+      "body": "Handoff: [old] to [new] on [account]. Same job [id] continues."
+    },
+    {
+      "id": "contact-confirm-auth",
+      "use_when": "contact-confirm-auth",
+      "body": "Confirm you are authorized to approve spend on [job]."
+    }
+  ]
+}

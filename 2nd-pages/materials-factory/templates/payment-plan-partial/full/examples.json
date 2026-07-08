@@ -1,0 +1,63 @@
+{
+  "artifact": "mf-tpl-029",
+  "version": "1.0.0",
+  "examples": [
+    {
+      "id": "ex-1",
+      "context": "50/50 terms on large install.",
+      "branch": "plan-offer",
+      "resolution": "Applied Payment Plan / Partial Terms branch.",
+      "log_row": "2026-09-01,job-200,plan-offer,ok,owner"
+    },
+    {
+      "id": "ex-2",
+      "context": "Second installment due Friday.",
+      "branch": "plan-remind",
+      "resolution": "Applied Payment Plan / Partial Terms branch.",
+      "log_row": "2026-09-02,job-201,plan-remind,ok,owner"
+    },
+    {
+      "id": "ex-3",
+      "context": "Missed plan payment day 5.",
+      "branch": "plan-default",
+      "resolution": "Applied Payment Plan / Partial Terms branch.",
+      "log_row": "2026-09-03,job-202,plan-default,ok,owner"
+    },
+    {
+      "id": "ex-4",
+      "context": "Final plan payment received.",
+      "branch": "plan-paid-off",
+      "resolution": "Applied Payment Plan / Partial Terms branch.",
+      "log_row": "2026-09-04,job-203,plan-paid-off,ok,owner"
+    },
+    {
+      "id": "ex-5",
+      "context": "Client asked net-30 exception.",
+      "branch": "plan-offer",
+      "resolution": "Applied Payment Plan / Partial Terms branch.",
+      "log_row": "2026-09-05,job-204,plan-offer,ok,owner"
+    },
+    {
+      "id": "ex-6",
+      "context": "Partial pay before ship hold.",
+      "branch": "plan-remind",
+      "resolution": "Applied Payment Plan / Partial Terms branch.",
+      "log_row": "2026-09-06,job-205,plan-remind,ok,owner"
+    },
+    {
+      "id": "ex-7",
+      "context": "Plan default, pause job.",
+      "branch": "plan-default",
+      "resolution": "Applied Payment Plan / Partial Terms branch.",
+      "log_row": "2026-09-07,job-206,plan-default,ok,owner"
+    },
+    {
+      "id": "ex-8",
+      "context": "Stripe plan link sent.",
+      "branch": "plan-paid-off",
+      "resolution": "Applied Payment Plan / Partial Terms branch.",
+      "log_row": "2026-09-08,job-207,plan-paid-off,ok,owner",
+      "cross_artifact": "mf-tpl-008"
+    }
+  ]
+}

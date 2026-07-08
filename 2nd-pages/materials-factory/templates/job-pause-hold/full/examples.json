@@ -1,0 +1,63 @@
+{
+  "artifact": "mf-tpl-030",
+  "version": "1.0.0",
+  "examples": [
+    {
+      "id": "ex-1",
+      "context": "Client travel, pause 2 weeks.",
+      "branch": "pause-client-request",
+      "resolution": "Applied Job Pause / Client Hold branch.",
+      "log_row": "2026-09-01,job-200,pause-client-request,ok,owner"
+    },
+    {
+      "id": "ex-2",
+      "context": "Internal: wait on vendor plate.",
+      "branch": "pause-internal",
+      "resolution": "Applied Job Pause / Client Hold branch.",
+      "log_row": "2026-09-02,job-201,pause-internal,ok,owner"
+    },
+    {
+      "id": "ex-3",
+      "context": "Resume after hold lifted.",
+      "branch": "pause-resume",
+      "resolution": "Applied Job Pause / Client Hold branch.",
+      "log_row": "2026-09-03,job-202,pause-resume,ok,owner"
+    },
+    {
+      "id": "ex-4",
+      "context": "Cancel after long pause.",
+      "branch": "pause-cancel",
+      "resolution": "Applied Job Pause / Client Hold branch.",
+      "log_row": "2026-09-04,job-203,pause-cancel,ok,owner"
+    },
+    {
+      "id": "ex-5",
+      "context": "Pause mid-proof, slot freed.",
+      "branch": "pause-client-request",
+      "resolution": "Applied Job Pause / Client Hold branch.",
+      "log_row": "2026-09-05,job-204,pause-client-request,ok,owner"
+    },
+    {
+      "id": "ex-6",
+      "context": "Hold for CO approval.",
+      "branch": "pause-internal",
+      "resolution": "Applied Job Pause / Client Hold branch.",
+      "log_row": "2026-09-06,job-205,pause-internal,ok,owner"
+    },
+    {
+      "id": "ex-7",
+      "context": "Client budget freeze notice.",
+      "branch": "pause-resume",
+      "resolution": "Applied Job Pause / Client Hold branch.",
+      "log_row": "2026-09-07,job-206,pause-resume,ok,owner"
+    },
+    {
+      "id": "ex-8",
+      "context": "Ops weekly: paused jobs list.",
+      "branch": "pause-cancel",
+      "resolution": "Applied Job Pause / Client Hold branch.",
+      "log_row": "2026-09-08,job-207,pause-cancel,ok,owner",
+      "cross_artifact": "mf-tpl-013"
+    }
+  ]
+}

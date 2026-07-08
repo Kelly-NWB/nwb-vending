@@ -1,0 +1,63 @@
+{
+  "artifact": "mf-tpl-036",
+  "version": "1.0.0",
+  "examples": [
+    {
+      "id": "ex-1",
+      "context": "Install window Tuesday 8am.",
+      "branch": "install-schedule",
+      "resolution": "Applied Install / On-Site Coordination branch.",
+      "log_row": "2026-10-01,job-300,install-schedule,ok,owner"
+    },
+    {
+      "id": "ex-2",
+      "context": "Site access code and contact.",
+      "branch": "install-access",
+      "resolution": "Applied Install / On-Site Coordination branch.",
+      "log_row": "2026-10-02,job-301,install-access,ok,owner"
+    },
+    {
+      "id": "ex-3",
+      "context": "Rain delay outdoor install.",
+      "branch": "install-delay",
+      "resolution": "Applied Install / On-Site Coordination branch.",
+      "log_row": "2026-10-03,job-302,install-delay,ok,owner"
+    },
+    {
+      "id": "ex-4",
+      "context": "Install sign-off same day.",
+      "branch": "install-complete",
+      "resolution": "Applied Install / On-Site Coordination branch.",
+      "log_row": "2026-10-04,job-303,install-complete,ok,owner"
+    },
+    {
+      "id": "ex-5",
+      "context": "Lift rental coordination.",
+      "branch": "install-schedule",
+      "resolution": "Applied Install / On-Site Coordination branch.",
+      "log_row": "2026-10-05,job-304,install-schedule,ok,owner"
+    },
+    {
+      "id": "ex-6",
+      "context": "Client not on site, photo proof.",
+      "branch": "install-access",
+      "resolution": "Applied Install / On-Site Coordination branch.",
+      "log_row": "2026-10-06,job-305,install-access,ok,owner"
+    },
+    {
+      "id": "ex-7",
+      "context": "Sub installer no-show.",
+      "branch": "install-delay",
+      "resolution": "Applied Install / On-Site Coordination branch.",
+      "log_row": "2026-10-07,job-306,install-delay,ok,owner"
+    },
+    {
+      "id": "ex-8",
+      "context": "Route issue to mf-tpl-025.",
+      "branch": "install-complete",
+      "resolution": "Applied Install / On-Site Coordination branch.",
+      "log_row": "2026-10-08,job-307,install-complete,ok,owner",
+      "cross_artifact": "mf-tpl-007"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "artifact": "mf-tpl-038",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "photo-mid-run",
+      "use_when": "photo-mid-run",
+      "body": "Quick progress on [job]: [attach]. On track for [date]."
+    },
+    {
+      "id": "photo-install-prep",
+      "use_when": "photo-install-prep",
+      "body": "Install prep photo for [job]. Crew [date]."
+    },
+    {
+      "id": "photo-client-ask",
+      "use_when": "photo-client-ask",
+      "body": "Photo update as requested for [job]."
+    },
+    {
+      "id": "photo-no-reply",
+      "use_when": "photo-no-reply",
+      "body": "Sent progress photo [date]. Reply if questions."
+    }
+  ]
+}

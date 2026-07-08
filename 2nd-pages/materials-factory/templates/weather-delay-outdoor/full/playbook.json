@@ -1,0 +1,49 @@
+{
+  "artifact": "mf-tpl-050",
+  "title": "Weather Delay (Outdoor Work)",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Weather Delay (Outdoor Work) for small-business job spine.",
+  "mindset": {
+    "principle": "Short scripts, log row, cross-route when heated or paid.",
+    "mistakes": [
+      {
+        "id": "no-log",
+        "label": "No log row",
+        "cost": "Ops blind"
+      }
+    ]
+  },
+  "decision_branches": [
+    {
+      "id": "weather-rain",
+      "situation": "Branch 1",
+      "action": "weather-rain"
+    },
+    {
+      "id": "weather-wind",
+      "situation": "Branch 2",
+      "action": "weather-wind"
+    },
+    {
+      "id": "weather-reschedule",
+      "situation": "Branch 3",
+      "action": "weather-reschedule"
+    },
+    {
+      "id": "weather-safe-window",
+      "situation": "Branch 4",
+      "action": "weather-safe-window"
+    }
+  ],
+  "tracking": {
+    "csv_header": "date,job_id,branch,resolution,owner",
+    "sheet_tab_name": "weather_delay_outdoor"
+  },
+  "related_artifacts": [
+    "mf-tpl-036",
+    "mf-tpl-013",
+    "mf-tpl-021"
+  ]
+}

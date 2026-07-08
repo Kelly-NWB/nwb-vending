@@ -1,0 +1,63 @@
+{
+  "artifact": "mf-tpl-046",
+  "version": "1.0.0",
+  "examples": [
+    {
+      "id": "ex-1",
+      "context": "New GC wants Net 30.",
+      "branch": "terms-request",
+      "resolution": "Applied Net Terms / Credit Application branch.",
+      "log_row": "2026-11-01,job-400,terms-request,ok,owner"
+    },
+    {
+      "id": "ex-2",
+      "context": "Credit app approved.",
+      "branch": "terms-approved",
+      "resolution": "Applied Net Terms / Credit Application branch.",
+      "log_row": "2026-11-02,job-401,terms-approved,ok,owner"
+    },
+    {
+      "id": "ex-3",
+      "context": "Startup denied, prepay.",
+      "branch": "terms-denied",
+      "resolution": "Applied Net Terms / Credit Application branch.",
+      "log_row": "2026-11-03,job-402,terms-denied,ok,owner"
+    },
+    {
+      "id": "ex-4",
+      "context": "Net account 45 days overdue.",
+      "branch": "terms-overdue",
+      "resolution": "Applied Net Terms / Credit Application branch.",
+      "log_row": "2026-11-04,job-403,terms-overdue,ok,owner"
+    },
+    {
+      "id": "ex-5",
+      "context": "References checked internal.",
+      "branch": "terms-request",
+      "resolution": "Applied Net Terms / Credit Application branch.",
+      "log_row": "2026-11-05,job-404,terms-request,ok,owner"
+    },
+    {
+      "id": "ex-6",
+      "context": "Revise terms after slow pay.",
+      "branch": "terms-approved",
+      "resolution": "Applied Net Terms / Credit Application branch.",
+      "log_row": "2026-11-06,job-405,terms-approved,ok,owner"
+    },
+    {
+      "id": "ex-7",
+      "context": "PO required on net jobs.",
+      "branch": "terms-denied",
+      "resolution": "Applied Net Terms / Credit Application branch.",
+      "log_row": "2026-11-07,job-406,terms-denied,ok,owner"
+    },
+    {
+      "id": "ex-8",
+      "context": "Route collections mf-tpl-008.",
+      "branch": "terms-overdue",
+      "resolution": "Applied Net Terms / Credit Application branch.",
+      "log_row": "2026-11-08,job-407,terms-overdue,ok,owner",
+      "cross_artifact": "mf-tpl-008"
+    }
+  ]
+}

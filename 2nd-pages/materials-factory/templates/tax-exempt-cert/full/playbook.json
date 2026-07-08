@@ -1,0 +1,49 @@
+{
+  "artifact": "mf-tpl-055",
+  "title": "Tax Exempt Certificate Request",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Tax Exempt Certificate Request for small-business job spine.",
+  "mindset": {
+    "principle": "Short scripts, log row, cross-route when heated or paid.",
+    "mistakes": [
+      {
+        "id": "no-log",
+        "label": "No log row",
+        "cost": "Ops blind"
+      }
+    ]
+  },
+  "decision_branches": [
+    {
+      "id": "taxex-request",
+      "situation": "Branch 1",
+      "action": "taxex-request"
+    },
+    {
+      "id": "taxex-received",
+      "situation": "Branch 2",
+      "action": "taxex-received"
+    },
+    {
+      "id": "taxex-expired",
+      "situation": "Branch 3",
+      "action": "taxex-expired"
+    },
+    {
+      "id": "taxex-invoice-adjust",
+      "situation": "Branch 4",
+      "action": "taxex-invoice-adjust"
+    }
+  ],
+  "tracking": {
+    "csv_header": "date,job_id,branch,resolution,owner",
+    "sheet_tab_name": "tax_exempt_cert"
+  },
+  "related_artifacts": [
+    "mf-tpl-006",
+    "mf-tpl-008",
+    "mf-tpl-004"
+  ]
+}

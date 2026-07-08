@@ -1,0 +1,49 @@
+{
+  "artifact": "mf-tpl-020",
+  "title": "Warranty + Support First Touch",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Warranty + Support First Touch for small-business job spine.",
+  "mindset": {
+    "principle": "Short scripts, log row, cross-route when heated or paid.",
+    "mistakes": [
+      {
+        "id": "no-log",
+        "label": "No log row",
+        "cost": "Ops blind"
+      }
+    ]
+  },
+  "decision_branches": [
+    {
+      "id": "support-question",
+      "situation": "Branch 1",
+      "action": "support-question"
+    },
+    {
+      "id": "support-defect",
+      "situation": "Branch 2",
+      "action": "support-defect"
+    },
+    {
+      "id": "support-out-of-scope",
+      "situation": "Branch 3",
+      "action": "support-out-of-scope"
+    },
+    {
+      "id": "support-route-complaint",
+      "situation": "Branch 4",
+      "action": "support-route-complaint"
+    }
+  ],
+  "tracking": {
+    "csv_header": "date,job_id,branch,resolution,owner",
+    "sheet_tab_name": "warranty_support_touch"
+  },
+  "related_artifacts": [
+    "mf-tpl-015",
+    "mf-tpl-001",
+    "mf-tpl-013"
+  ]
+}

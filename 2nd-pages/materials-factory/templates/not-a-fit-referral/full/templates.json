@@ -1,0 +1,26 @@
+{
+  "artifact": "mf-tpl-023",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "refer-out-area",
+      "use_when": "refer-out-area",
+      "body": "Outside our area. Try [partner] at [contact]."
+    },
+    {
+      "id": "refer-out-scope",
+      "use_when": "refer-out-scope",
+      "body": "Not our craft. [partner] does this well."
+    },
+    {
+      "id": "refer-partner",
+      "use_when": "refer-partner",
+      "body": "We partner with [name] for [service]. OK to intro?"
+    },
+    {
+      "id": "refer-polite-close",
+      "use_when": "refer-polite-close",
+      "body": "Not a fit for us. Wishing you success on [project]."
+    }
+  ]
+}

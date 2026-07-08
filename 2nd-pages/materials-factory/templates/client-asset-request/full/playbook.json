@@ -1,0 +1,49 @@
+{
+  "artifact": "mf-tpl-034",
+  "title": "Client Asset / File Request",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Client Asset / File Request for small-business job spine.",
+  "mindset": {
+    "principle": "Short scripts, log row, cross-route when heated or paid.",
+    "mistakes": [
+      {
+        "id": "no-log",
+        "label": "No log row",
+        "cost": "Ops blind"
+      }
+    ]
+  },
+  "decision_branches": [
+    {
+      "id": "asset-missing",
+      "situation": "Branch 1",
+      "action": "asset-missing"
+    },
+    {
+      "id": "asset-wrong-format",
+      "situation": "Branch 2",
+      "action": "asset-wrong-format"
+    },
+    {
+      "id": "asset-late-chase",
+      "situation": "Branch 3",
+      "action": "asset-late-chase"
+    },
+    {
+      "id": "asset-received",
+      "situation": "Branch 4",
+      "action": "asset-received"
+    }
+  ],
+  "tracking": {
+    "csv_header": "date,job_id,branch,resolution,owner",
+    "sheet_tab_name": "client_asset_request"
+  },
+  "related_artifacts": [
+    "mf-tpl-004",
+    "mf-tpl-011",
+    "mf-tpl-010"
+  ]
+}

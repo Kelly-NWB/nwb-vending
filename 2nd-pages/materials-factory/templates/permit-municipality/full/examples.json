@@ -1,0 +1,63 @@
+{
+  "artifact": "mf-tpl-049",
+  "version": "1.0.0",
+  "examples": [
+    {
+      "id": "ex-1",
+      "context": "City sign permit required.",
+      "branch": "permit-needed",
+      "resolution": "Applied Permit / Municipality Coordination branch.",
+      "log_row": "2026-11-01,job-400,permit-needed,ok,owner"
+    },
+    {
+      "id": "ex-2",
+      "context": "Permit submitted waiting.",
+      "branch": "permit-submitted",
+      "resolution": "Applied Permit / Municipality Coordination branch.",
+      "log_row": "2026-11-02,job-401,permit-submitted,ok,owner"
+    },
+    {
+      "id": "ex-3",
+      "context": "Job hold until permit.",
+      "branch": "permit-hold-job",
+      "resolution": "Applied Permit / Municipality Coordination branch.",
+      "log_row": "2026-11-03,job-402,permit-hold-job,ok,owner"
+    },
+    {
+      "id": "ex-4",
+      "context": "Permit approved install go.",
+      "branch": "permit-approved",
+      "resolution": "Applied Permit / Municipality Coordination branch.",
+      "log_row": "2026-11-04,job-403,permit-approved,ok,owner"
+    },
+    {
+      "id": "ex-5",
+      "context": "Variance hearing delay.",
+      "branch": "permit-needed",
+      "resolution": "Applied Permit / Municipality Coordination branch.",
+      "log_row": "2026-11-05,job-404,permit-needed,ok,owner"
+    },
+    {
+      "id": "ex-6",
+      "context": "Client thought permit included.",
+      "branch": "permit-submitted",
+      "resolution": "Applied Permit / Municipality Coordination branch.",
+      "log_row": "2026-11-06,job-405,permit-submitted,ok,owner"
+    },
+    {
+      "id": "ex-7",
+      "context": "Expired permit renew.",
+      "branch": "permit-hold-job",
+      "resolution": "Applied Permit / Municipality Coordination branch.",
+      "log_row": "2026-11-07,job-406,permit-hold-job,ok,owner"
+    },
+    {
+      "id": "ex-8",
+      "context": "Inspector fail rework.",
+      "branch": "permit-approved",
+      "resolution": "Applied Permit / Municipality Coordination branch.",
+      "log_row": "2026-11-08,job-407,permit-approved,ok,owner",
+      "cross_artifact": "mf-tpl-010"
+    }
+  ]
+}

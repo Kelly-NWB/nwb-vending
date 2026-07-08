@@ -1,0 +1,63 @@
+{
+  "artifact": "mf-tpl-042",
+  "version": "1.0.0",
+  "examples": [
+    {
+      "id": "ex-1",
+      "context": "Round 1 layout feedback.",
+      "branch": "rev-round-1",
+      "resolution": "Applied Design Revision Loop (Pre-Proof) branch.",
+      "log_row": "2026-10-01,job-300,rev-round-1,ok,owner"
+    },
+    {
+      "id": "ex-2",
+      "context": "Round 2 cap reached, fee.",
+      "branch": "rev-round-2-cap",
+      "resolution": "Applied Design Revision Loop (Pre-Proof) branch.",
+      "log_row": "2026-10-02,job-301,rev-round-2-cap,ok,owner"
+    },
+    {
+      "id": "ex-3",
+      "context": "Client stalled 10 days on rev.",
+      "branch": "rev-client-stalled",
+      "resolution": "Applied Design Revision Loop (Pre-Proof) branch.",
+      "log_row": "2026-10-03,job-302,rev-client-stalled,ok,owner"
+    },
+    {
+      "id": "ex-4",
+      "context": "Approved, move to mf-tpl-011.",
+      "branch": "rev-approved-to-proof",
+      "resolution": "Applied Design Revision Loop (Pre-Proof) branch.",
+      "log_row": "2026-10-04,job-303,rev-approved-to-proof,ok,owner"
+    },
+    {
+      "id": "ex-5",
+      "context": "Conflicting feedback two contacts.",
+      "branch": "rev-round-1",
+      "resolution": "Applied Design Revision Loop (Pre-Proof) branch.",
+      "log_row": "2026-10-05,job-304,rev-round-1,ok,owner"
+    },
+    {
+      "id": "ex-6",
+      "context": "Brand color tweak only.",
+      "branch": "rev-round-2-cap",
+      "resolution": "Applied Design Revision Loop (Pre-Proof) branch.",
+      "log_row": "2026-10-06,job-305,rev-round-2-cap,ok,owner"
+    },
+    {
+      "id": "ex-7",
+      "context": "Major concept change, new quote.",
+      "branch": "rev-client-stalled",
+      "resolution": "Applied Design Revision Loop (Pre-Proof) branch.",
+      "log_row": "2026-10-07,job-306,rev-client-stalled,ok,owner"
+    },
+    {
+      "id": "ex-8",
+      "context": "Internal designer handoff note.",
+      "branch": "rev-approved-to-proof",
+      "resolution": "Applied Design Revision Loop (Pre-Proof) branch.",
+      "log_row": "2026-10-08,job-307,rev-approved-to-proof,ok,owner",
+      "cross_artifact": "mf-tpl-011"
+    }
+  ]
+}

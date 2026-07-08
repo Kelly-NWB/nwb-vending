@@ -1,0 +1,63 @@
+{
+  "artifact": "mf-tpl-043",
+  "version": "1.0.0",
+  "examples": [
+    {
+      "id": "ex-1",
+      "context": "Ship color swatch to client.",
+      "branch": "sample-ship-client",
+      "resolution": "Applied Physical Sample / Color Proof Approval branch.",
+      "log_row": "2026-10-01,job-300,sample-ship-client,ok,owner"
+    },
+    {
+      "id": "ex-2",
+      "context": "Written approve on sample.",
+      "branch": "sample-approve",
+      "resolution": "Applied Physical Sample / Color Proof Approval branch.",
+      "log_row": "2026-10-02,job-301,sample-approve,ok,owner"
+    },
+    {
+      "id": "ex-3",
+      "context": "Sample rejected, rematch.",
+      "branch": "sample-reject-rework",
+      "resolution": "Applied Physical Sample / Color Proof Approval branch.",
+      "log_row": "2026-10-03,job-302,sample-reject-rework,ok,owner"
+    },
+    {
+      "id": "ex-4",
+      "context": "Match approved sample on press.",
+      "branch": "sample-match-production",
+      "resolution": "Applied Physical Sample / Color Proof Approval branch.",
+      "log_row": "2026-10-04,job-303,sample-match-production,ok,owner"
+    },
+    {
+      "id": "ex-5",
+      "context": "Rush sample overnight fee.",
+      "branch": "sample-ship-client",
+      "resolution": "Applied Physical Sample / Color Proof Approval branch.",
+      "log_row": "2026-10-05,job-304,sample-ship-client,ok,owner"
+    },
+    {
+      "id": "ex-6",
+      "context": "Client keeps sample reference.",
+      "branch": "sample-approve",
+      "resolution": "Applied Physical Sample / Color Proof Approval branch.",
+      "log_row": "2026-10-06,job-305,sample-approve,ok,owner"
+    },
+    {
+      "id": "ex-7",
+      "context": "Sample vs digital proof conflict.",
+      "branch": "sample-reject-rework",
+      "resolution": "Applied Physical Sample / Color Proof Approval branch.",
+      "log_row": "2026-10-07,job-306,sample-reject-rework,ok,owner"
+    },
+    {
+      "id": "ex-8",
+      "context": "Sample OK, production release.",
+      "branch": "sample-match-production",
+      "resolution": "Applied Physical Sample / Color Proof Approval branch.",
+      "log_row": "2026-10-08,job-307,sample-match-production,ok,owner",
+      "cross_artifact": "mf-tpl-011"
+    }
+  ]
+}

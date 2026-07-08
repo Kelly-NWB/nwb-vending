@@ -1,0 +1,49 @@
+{
+  "artifact": "mf-tpl-029",
+  "title": "Payment Plan / Partial Terms",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Payment Plan / Partial Terms for small-business job spine.",
+  "mindset": {
+    "principle": "Short scripts, log row, cross-route when heated or paid.",
+    "mistakes": [
+      {
+        "id": "no-log",
+        "label": "No log row",
+        "cost": "Ops blind"
+      }
+    ]
+  },
+  "decision_branches": [
+    {
+      "id": "plan-offer",
+      "situation": "Branch 1",
+      "action": "plan-offer"
+    },
+    {
+      "id": "plan-remind",
+      "situation": "Branch 2",
+      "action": "plan-remind"
+    },
+    {
+      "id": "plan-default",
+      "situation": "Branch 3",
+      "action": "plan-default"
+    },
+    {
+      "id": "plan-paid-off",
+      "situation": "Branch 4",
+      "action": "plan-paid-off"
+    }
+  ],
+  "tracking": {
+    "csv_header": "date,job_id,branch,resolution,owner",
+    "sheet_tab_name": "payment_plan_partial"
+  },
+  "related_artifacts": [
+    "mf-tpl-008",
+    "mf-tpl-006",
+    "mf-tpl-016"
+  ]
+}

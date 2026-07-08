@@ -1,0 +1,63 @@
+{
+  "artifact": "mf-tpl-052",
+  "version": "1.0.0",
+  "examples": [
+    {
+      "id": "ex-1",
+      "context": "Job done client not ready.",
+      "branch": "storage-offer",
+      "resolution": "Applied Finished Goods Storage Hold branch.",
+      "log_row": "2026-11-01,job-400,storage-offer,ok,owner"
+    },
+    {
+      "id": "ex-2",
+      "context": "Storage fee month 2 remind.",
+      "branch": "storage-fee-remind",
+      "resolution": "Applied Finished Goods Storage Hold branch.",
+      "log_row": "2026-11-02,job-401,storage-fee-remind,ok,owner"
+    },
+    {
+      "id": "ex-3",
+      "context": "Free storage window ends.",
+      "branch": "storage-expire",
+      "resolution": "Applied Finished Goods Storage Hold branch.",
+      "log_row": "2026-11-03,job-402,storage-expire,ok,owner"
+    },
+    {
+      "id": "ex-4",
+      "context": "Release to ship or pickup.",
+      "branch": "storage-release-ship",
+      "resolution": "Applied Finished Goods Storage Hold branch.",
+      "log_row": "2026-11-04,job-403,storage-release-ship,ok,owner"
+    },
+    {
+      "id": "ex-5",
+      "context": "Warehouse space tight.",
+      "branch": "storage-offer",
+      "resolution": "Applied Finished Goods Storage Hold branch.",
+      "log_row": "2026-11-05,job-404,storage-offer,ok,owner"
+    },
+    {
+      "id": "ex-6",
+      "context": "Damaged in storage rare.",
+      "branch": "storage-fee-remind",
+      "resolution": "Applied Finished Goods Storage Hold branch.",
+      "log_row": "2026-11-06,job-405,storage-fee-remind,ok,owner"
+    },
+    {
+      "id": "ex-7",
+      "context": "Combine with mf-tpl-035 pickup.",
+      "branch": "storage-expire",
+      "resolution": "Applied Finished Goods Storage Hold branch.",
+      "log_row": "2026-11-07,job-406,storage-expire,ok,owner"
+    },
+    {
+      "id": "ex-8",
+      "context": "Hold until balance paid.",
+      "branch": "storage-release-ship",
+      "resolution": "Applied Finished Goods Storage Hold branch.",
+      "log_row": "2026-11-08,job-407,storage-release-ship,ok,owner",
+      "cross_artifact": "mf-tpl-007"
+    }
+  ]
+}

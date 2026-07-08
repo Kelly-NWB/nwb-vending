@@ -1,0 +1,63 @@
+{
+  "artifact": "mf-tpl-053",
+  "version": "1.0.0",
+  "examples": [
+    {
+      "id": "ex-1",
+      "context": "Booth graphics show Friday.",
+      "branch": "event-hard-date",
+      "resolution": "Applied Event / Trade Show Deadline branch.",
+      "log_row": "2026-11-01,job-400,event-hard-date,ok,owner"
+    },
+    {
+      "id": "ex-2",
+      "context": "Slip risk, client decide.",
+      "branch": "event-slip-risk",
+      "resolution": "Applied Event / Trade Show Deadline branch.",
+      "log_row": "2026-11-02,job-401,event-slip-risk,ok,owner"
+    },
+    {
+      "id": "ex-3",
+      "context": "Approved overtime internal.",
+      "branch": "event-all-nighter",
+      "resolution": "Applied Event / Trade Show Deadline branch.",
+      "log_row": "2026-11-03,job-402,event-all-nighter,ok,owner"
+    },
+    {
+      "id": "ex-4",
+      "context": "Delivered on time relief.",
+      "branch": "event-made-it",
+      "resolution": "Applied Event / Trade Show Deadline branch.",
+      "log_row": "2026-11-04,job-403,event-made-it,ok,owner"
+    },
+    {
+      "id": "ex-5",
+      "context": "Client late on assets.",
+      "branch": "event-hard-date",
+      "resolution": "Applied Event / Trade Show Deadline branch.",
+      "log_row": "2026-11-05,job-404,event-hard-date,ok,owner"
+    },
+    {
+      "id": "ex-6",
+      "context": "Courier last mile event.",
+      "branch": "event-slip-risk",
+      "resolution": "Applied Event / Trade Show Deadline branch.",
+      "log_row": "2026-11-06,job-405,event-slip-risk,ok,owner"
+    },
+    {
+      "id": "ex-7",
+      "context": "Partial ship to hotel.",
+      "branch": "event-all-nighter",
+      "resolution": "Applied Event / Trade Show Deadline branch.",
+      "log_row": "2026-11-07,job-406,event-all-nighter,ok,owner"
+    },
+    {
+      "id": "ex-8",
+      "context": "Post-event archive mf-tpl-015.",
+      "branch": "event-made-it",
+      "resolution": "Applied Event / Trade Show Deadline branch.",
+      "log_row": "2026-11-08,job-407,event-made-it,ok,owner",
+      "cross_artifact": "mf-tpl-021"
+    }
+  ]
+}

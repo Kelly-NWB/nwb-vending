@@ -1,0 +1,49 @@
+{
+  "artifact": "mf-tpl-018",
+  "title": "Lost Lead Archive",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Lost Lead Archive for small-business job spine.",
+  "mindset": {
+    "principle": "Short scripts, log row, cross-route when heated or paid.",
+    "mistakes": [
+      {
+        "id": "no-log",
+        "label": "No log row",
+        "cost": "Ops blind"
+      }
+    ]
+  },
+  "decision_branches": [
+    {
+      "id": "archive-ghost",
+      "situation": "Branch 1",
+      "action": "archive-ghost"
+    },
+    {
+      "id": "archive-price",
+      "situation": "Branch 2",
+      "action": "archive-price"
+    },
+    {
+      "id": "archive-timing",
+      "situation": "Branch 3",
+      "action": "archive-timing"
+    },
+    {
+      "id": "archive-won-elsewhere",
+      "situation": "Branch 4",
+      "action": "archive-won-elsewhere"
+    }
+  ],
+  "tracking": {
+    "csv_header": "date,job_id,branch,resolution,owner",
+    "sheet_tab_name": "lost_lead_archive"
+  },
+  "related_artifacts": [
+    "mf-tpl-004",
+    "mf-tpl-014",
+    "mf-tpl-006"
+  ]
+}

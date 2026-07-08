@@ -1,0 +1,49 @@
+{
+  "artifact": "mf-tpl-049",
+  "title": "Permit / Municipality Coordination",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Permit / Municipality Coordination for small-business job spine.",
+  "mindset": {
+    "principle": "Short scripts, log row, cross-route when heated or paid.",
+    "mistakes": [
+      {
+        "id": "no-log",
+        "label": "No log row",
+        "cost": "Ops blind"
+      }
+    ]
+  },
+  "decision_branches": [
+    {
+      "id": "permit-needed",
+      "situation": "Branch 1",
+      "action": "permit-needed"
+    },
+    {
+      "id": "permit-submitted",
+      "situation": "Branch 2",
+      "action": "permit-submitted"
+    },
+    {
+      "id": "permit-hold-job",
+      "situation": "Branch 3",
+      "action": "permit-hold-job"
+    },
+    {
+      "id": "permit-approved",
+      "situation": "Branch 4",
+      "action": "permit-approved"
+    }
+  ],
+  "tracking": {
+    "csv_header": "date,job_id,branch,resolution,owner",
+    "sheet_tab_name": "permit_municipality"
+  },
+  "related_artifacts": [
+    "mf-tpl-010",
+    "mf-tpl-036",
+    "mf-tpl-013"
+  ]
+}

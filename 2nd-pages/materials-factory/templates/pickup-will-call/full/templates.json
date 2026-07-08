@@ -1,0 +1,26 @@
+{
+  "artifact": "mf-tpl-035",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "pickup-ready",
+      "use_when": "pickup-ready",
+      "body": "Ready for pickup [job] at [address]. Hours [hours]. Bring ID."
+    },
+    {
+      "id": "pickup-hold-unpaid",
+      "use_when": "pickup-hold-unpaid",
+      "body": "Ready but balance $[amt] due before release."
+    },
+    {
+      "id": "pickup-no-show",
+      "use_when": "pickup-no-show",
+      "body": "Held pickup [days] days. Reschedule or ship option."
+    },
+    {
+      "id": "pickup-complete",
+      "use_when": "pickup-complete",
+      "body": "Picked up [job]. Signed [name] [time]. Close mf-tpl-015."
+    }
+  ]
+}

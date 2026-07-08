@@ -1,0 +1,26 @@
+{
+  "artifact": "mf-tpl-033",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "queue-reprioritize",
+      "use_when": "queue-reprioritize",
+      "body": "QUEUE [date]: 1.[job] 2.[job] 3.[job]. Reason: [note]."
+    },
+    {
+      "id": "queue-capacity",
+      "use_when": "queue-capacity",
+      "body": "At capacity until [date]. Honest slot for [job]: [date]."
+    },
+    {
+      "id": "queue-rush-bump",
+      "use_when": "queue-rush-bump",
+      "body": "Rush [job] bumped [other] by [days]. Client comms mf-tpl-021."
+    },
+    {
+      "id": "queue-daily-standup",
+      "use_when": "queue-daily-standup",
+      "body": "Standup: top 3 jobs, blockers, owners."
+    }
+  ]
+}

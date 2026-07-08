@@ -1,0 +1,50 @@
+{
+  "artifact": "mf-tpl-024",
+  "title": "Reorder Repeat Client",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Reorder Repeat Client for small-business job spine.",
+  "mindset": {
+    "principle": "Short scripts, log row, cross-route when heated or paid.",
+    "mistakes": [
+      {
+        "id": "no-log",
+        "label": "No log row",
+        "cost": "Ops blind"
+      }
+    ]
+  },
+  "decision_branches": [
+    {
+      "id": "reorder-same",
+      "situation": "Branch 1",
+      "action": "reorder-same"
+    },
+    {
+      "id": "reorder-tweak",
+      "situation": "Branch 2",
+      "action": "reorder-tweak"
+    },
+    {
+      "id": "reorder-expedite",
+      "situation": "Branch 3",
+      "action": "reorder-expedite"
+    },
+    {
+      "id": "reorder-quote-fast",
+      "situation": "Branch 4",
+      "action": "reorder-quote-fast"
+    }
+  ],
+  "tracking": {
+    "csv_header": "date,job_id,branch,resolution,owner",
+    "sheet_tab_name": "reorder_repeat_client"
+  },
+  "related_artifacts": [
+    "mf-tpl-004",
+    "mf-tpl-006",
+    "mf-tpl-010",
+    "mf-tpl-015"
+  ]
+}

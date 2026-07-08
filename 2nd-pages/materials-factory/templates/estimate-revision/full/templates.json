@@ -1,0 +1,26 @@
+{
+  "artifact": "mf-tpl-028",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "rev-scope-up",
+      "use_when": "rev-scope-up",
+      "body": "Revised quote [id]: added [scope]. New total $[amt]. Prior quote void."
+    },
+    {
+      "id": "rev-scope-down",
+      "use_when": "rev-scope-down",
+      "body": "Revised quote [id]: reduced scope. New total $[amt]."
+    },
+    {
+      "id": "rev-price-match",
+      "use_when": "rev-price-match",
+      "body": "We matched [detail] to stay competitive. Revised total $[amt]."
+    },
+    {
+      "id": "rev-expire-old",
+      "use_when": "rev-expire-old",
+      "body": "Prior quote expired [date]. Attached current pricing."
+    }
+  ]
+}

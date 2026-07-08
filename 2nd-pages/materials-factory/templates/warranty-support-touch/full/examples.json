@@ -1,0 +1,63 @@
+{
+  "artifact": "mf-tpl-020",
+  "version": "1.0.0",
+  "examples": [
+    {
+      "id": "ex-1",
+      "context": "How do I clean banner?",
+      "branch": "support-question",
+      "resolution": "Applied Warranty + Support First Touch branch.",
+      "log_row": "2026-08-01,job-100,support-question,ok,owner"
+    },
+    {
+      "id": "ex-2",
+      "context": "Peeling laminate corner.",
+      "branch": "support-defect",
+      "resolution": "Applied Warranty + Support First Touch branch.",
+      "log_row": "2026-08-02,job-101,support-defect,ok,owner"
+    },
+    {
+      "id": "ex-3",
+      "context": "Ask for free redesign.",
+      "branch": "support-out-of-scope",
+      "resolution": "Applied Warranty + Support First Touch branch.",
+      "log_row": "2026-08-03,job-102,support-out-of-scope,ok,owner"
+    },
+    {
+      "id": "ex-4",
+      "context": "Angry tone on defect.",
+      "branch": "support-route-complaint",
+      "resolution": "Applied Warranty + Support First Touch branch.",
+      "log_row": "2026-08-04,job-103,support-route-complaint,ok,owner"
+    },
+    {
+      "id": "ex-5",
+      "context": "Out of warranty install.",
+      "branch": "support-question",
+      "resolution": "Applied Warranty + Support First Touch branch.",
+      "log_row": "2026-08-05,job-104,support-question,ok,owner"
+    },
+    {
+      "id": "ex-6",
+      "context": "Photo request sent.",
+      "branch": "support-defect",
+      "resolution": "Applied Warranty + Support First Touch branch.",
+      "log_row": "2026-08-06,job-105,support-defect,ok,owner"
+    },
+    {
+      "id": "ex-7",
+      "context": "Replacement scheduled.",
+      "branch": "support-out-of-scope",
+      "resolution": "Applied Warranty + Support First Touch branch.",
+      "log_row": "2026-08-07,job-106,support-out-of-scope,ok,owner"
+    },
+    {
+      "id": "ex-8",
+      "context": "Route heated thread out.",
+      "branch": "support-route-complaint",
+      "resolution": "Applied Warranty + Support First Touch branch.",
+      "log_row": "2026-08-08,job-107,support-route-complaint,ok,owner",
+      "cross_artifact": "mf-tpl-015"
+    }
+  ]
+}

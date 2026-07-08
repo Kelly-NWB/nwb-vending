@@ -1,0 +1,63 @@
+{
+  "artifact": "mf-tpl-035",
+  "version": "1.0.0",
+  "examples": [
+    {
+      "id": "ex-1",
+      "context": "Will-call ready, hours posted.",
+      "branch": "pickup-ready",
+      "resolution": "Applied Pickup / Will-Call Handoff branch.",
+      "log_row": "2026-09-01,job-200,pickup-ready,ok,owner"
+    },
+    {
+      "id": "ex-2",
+      "context": "Hold pickup until balance paid.",
+      "branch": "pickup-hold-unpaid",
+      "resolution": "Applied Pickup / Will-Call Handoff branch.",
+      "log_row": "2026-09-02,job-201,pickup-hold-unpaid,ok,owner"
+    },
+    {
+      "id": "ex-3",
+      "context": "Client no-show on pickup day.",
+      "branch": "pickup-no-show",
+      "resolution": "Applied Pickup / Will-Call Handoff branch.",
+      "log_row": "2026-09-03,job-202,pickup-no-show,ok,owner"
+    },
+    {
+      "id": "ex-4",
+      "context": "Picked up, signed release.",
+      "branch": "pickup-complete",
+      "resolution": "Applied Pickup / Will-Call Handoff branch.",
+      "log_row": "2026-09-04,job-203,pickup-complete,ok,owner"
+    },
+    {
+      "id": "ex-5",
+      "context": "Third party pickup authorization.",
+      "branch": "pickup-ready",
+      "resolution": "Applied Pickup / Will-Call Handoff branch.",
+      "log_row": "2026-09-05,job-204,pickup-ready,ok,owner"
+    },
+    {
+      "id": "ex-6",
+      "context": "Fragile handling note at desk.",
+      "branch": "pickup-hold-unpaid",
+      "resolution": "Applied Pickup / Will-Call Handoff branch.",
+      "log_row": "2026-09-06,job-205,pickup-hold-unpaid,ok,owner"
+    },
+    {
+      "id": "ex-7",
+      "context": "Combine pickup with small CO.",
+      "branch": "pickup-no-show",
+      "resolution": "Applied Pickup / Will-Call Handoff branch.",
+      "log_row": "2026-09-07,job-206,pickup-no-show,ok,owner"
+    },
+    {
+      "id": "ex-8",
+      "context": "Route to mf-tpl-008 if unpaid.",
+      "branch": "pickup-complete",
+      "resolution": "Applied Pickup / Will-Call Handoff branch.",
+      "log_row": "2026-09-08,job-207,pickup-complete,ok,owner",
+      "cross_artifact": "mf-tpl-007"
+    }
+  ]
+}

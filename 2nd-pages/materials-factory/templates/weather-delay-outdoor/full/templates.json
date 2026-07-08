@@ -1,0 +1,26 @@
+{
+  "artifact": "mf-tpl-050",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "weather-rain",
+      "use_when": "weather-rain",
+      "body": "Rain delay on [job]. Reschedule [new_date]. Safety first."
+    },
+    {
+      "id": "weather-wind",
+      "use_when": "weather-wind",
+      "body": "Wind unsafe today. Next window [date]."
+    },
+    {
+      "id": "weather-reschedule",
+      "use_when": "weather-reschedule",
+      "body": "Outdoor work moved to [date]. Confirm works for site."
+    },
+    {
+      "id": "weather-safe-window",
+      "use_when": "weather-safe-window",
+      "body": "Weather clear. Crew on site [datetime]."
+    }
+  ]
+}

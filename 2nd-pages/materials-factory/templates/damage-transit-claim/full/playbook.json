@@ -1,0 +1,49 @@
+{
+  "artifact": "mf-tpl-044",
+  "title": "Damage in Transit Claim",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Damage in Transit Claim for small-business job spine.",
+  "mindset": {
+    "principle": "Short scripts, log row, cross-route when heated or paid.",
+    "mistakes": [
+      {
+        "id": "no-log",
+        "label": "No log row",
+        "cost": "Ops blind"
+      }
+    ]
+  },
+  "decision_branches": [
+    {
+      "id": "damage-report",
+      "situation": "Branch 1",
+      "action": "damage-report"
+    },
+    {
+      "id": "damage-photo-request",
+      "situation": "Branch 2",
+      "action": "damage-photo-request"
+    },
+    {
+      "id": "damage-replace-ship",
+      "situation": "Branch 3",
+      "action": "damage-replace-ship"
+    },
+    {
+      "id": "damage-carrier-claim",
+      "situation": "Branch 4",
+      "action": "damage-carrier-claim"
+    }
+  ],
+  "tracking": {
+    "csv_header": "date,job_id,branch,resolution,owner",
+    "sheet_tab_name": "damage_transit_claim"
+  },
+  "related_artifacts": [
+    "mf-tpl-007",
+    "mf-tpl-001",
+    "mf-tpl-009"
+  ]
+}

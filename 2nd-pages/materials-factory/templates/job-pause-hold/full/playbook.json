@@ -1,0 +1,49 @@
+{
+  "artifact": "mf-tpl-030",
+  "title": "Job Pause / Client Hold",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Job Pause / Client Hold for small-business job spine.",
+  "mindset": {
+    "principle": "Short scripts, log row, cross-route when heated or paid.",
+    "mistakes": [
+      {
+        "id": "no-log",
+        "label": "No log row",
+        "cost": "Ops blind"
+      }
+    ]
+  },
+  "decision_branches": [
+    {
+      "id": "pause-client-request",
+      "situation": "Branch 1",
+      "action": "pause-client-request"
+    },
+    {
+      "id": "pause-internal",
+      "situation": "Branch 2",
+      "action": "pause-internal"
+    },
+    {
+      "id": "pause-resume",
+      "situation": "Branch 3",
+      "action": "pause-resume"
+    },
+    {
+      "id": "pause-cancel",
+      "situation": "Branch 4",
+      "action": "pause-cancel"
+    }
+  ],
+  "tracking": {
+    "csv_header": "date,job_id,branch,resolution,owner",
+    "sheet_tab_name": "job_pause_hold"
+  },
+  "related_artifacts": [
+    "mf-tpl-013",
+    "mf-tpl-012",
+    "mf-tpl-010"
+  ]
+}

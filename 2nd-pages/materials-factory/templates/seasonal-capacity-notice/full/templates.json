@@ -1,0 +1,26 @@
+{
+  "artifact": "mf-tpl-047",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "capacity-busy",
+      "use_when": "capacity-busy",
+      "body": "Current lead time about [weeks] weeks. Quote shows realistic ship date."
+    },
+    {
+      "id": "capacity-honest-date",
+      "use_when": "capacity-honest-date",
+      "body": "Honest slot for [job]: [date]. Rush fee if sooner."
+    },
+    {
+      "id": "capacity-waitlist",
+      "use_when": "capacity-waitlist",
+      "body": "Waitlist for [month]. Notify if slot opens."
+    },
+    {
+      "id": "capacity-opens",
+      "use_when": "capacity-opens",
+      "body": "Slot opened [date]. First reply gets it."
+    }
+  ]
+}

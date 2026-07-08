@@ -1,0 +1,49 @@
+{
+  "artifact": "mf-tpl-017",
+  "title": "Production Handoff (Internal)",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Production Handoff (Internal) for small-business job spine.",
+  "mindset": {
+    "principle": "Short scripts, log row, cross-route when heated or paid.",
+    "mistakes": [
+      {
+        "id": "no-log",
+        "label": "No log row",
+        "cost": "Ops blind"
+      }
+    ]
+  },
+  "decision_branches": [
+    {
+      "id": "handoff-floor",
+      "situation": "Branch 1",
+      "action": "handoff-floor"
+    },
+    {
+      "id": "handoff-rush",
+      "situation": "Branch 2",
+      "action": "handoff-rush"
+    },
+    {
+      "id": "handoff-hold-proof",
+      "situation": "Branch 3",
+      "action": "handoff-hold-proof"
+    },
+    {
+      "id": "handoff-complete",
+      "situation": "Branch 4",
+      "action": "handoff-complete"
+    }
+  ],
+  "tracking": {
+    "csv_header": "date,job_id,branch,resolution,owner",
+    "sheet_tab_name": "production_handoff_internal"
+  },
+  "related_artifacts": [
+    "mf-tpl-010",
+    "mf-tpl-011",
+    "mf-tpl-007"
+  ]
+}

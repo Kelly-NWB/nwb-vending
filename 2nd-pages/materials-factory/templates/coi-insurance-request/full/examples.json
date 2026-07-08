@@ -1,0 +1,63 @@
+{
+  "artifact": "mf-tpl-041",
+  "version": "1.0.0",
+  "examples": [
+    {
+      "id": "ex-1",
+      "context": "GC needs COI before install.",
+      "branch": "coi-request-in",
+      "resolution": "Applied COI / Insurance Certificate Request branch.",
+      "log_row": "2026-10-01,job-300,coi-request-in,ok,owner"
+    },
+    {
+      "id": "ex-2",
+      "context": "Send cert same day PDF.",
+      "branch": "coi-send-cert",
+      "resolution": "Applied COI / Insurance Certificate Request branch.",
+      "log_row": "2026-10-02,job-301,coi-send-cert,ok,owner"
+    },
+    {
+      "id": "ex-3",
+      "context": "Additional insured endorsement.",
+      "branch": "coi-additional-insured",
+      "resolution": "Applied COI / Insurance Certificate Request branch.",
+      "log_row": "2026-10-03,job-302,coi-additional-insured,ok,owner"
+    },
+    {
+      "id": "ex-4",
+      "context": "Expired cert, renew request.",
+      "branch": "coi-expired-renew",
+      "resolution": "Applied COI / Insurance Certificate Request branch.",
+      "log_row": "2026-10-04,job-303,coi-expired-renew,ok,owner"
+    },
+    {
+      "id": "ex-5",
+      "context": "Wrong limits on cert.",
+      "branch": "coi-request-in",
+      "resolution": "Applied COI / Insurance Certificate Request branch.",
+      "log_row": "2026-10-05,job-304,coi-request-in,ok,owner"
+    },
+    {
+      "id": "ex-6",
+      "context": "Venue requires naming them.",
+      "branch": "coi-send-cert",
+      "resolution": "Applied COI / Insurance Certificate Request branch.",
+      "log_row": "2026-10-06,job-305,coi-send-cert,ok,owner"
+    },
+    {
+      "id": "ex-7",
+      "context": "Sub needs our COI copy.",
+      "branch": "coi-additional-insured",
+      "resolution": "Applied COI / Insurance Certificate Request branch.",
+      "log_row": "2026-10-07,job-306,coi-additional-insured,ok,owner"
+    },
+    {
+      "id": "ex-8",
+      "context": "COI tied to mf-tpl-010 kickoff.",
+      "branch": "coi-expired-renew",
+      "resolution": "Applied COI / Insurance Certificate Request branch.",
+      "log_row": "2026-10-08,job-307,coi-expired-renew,ok,owner",
+      "cross_artifact": "mf-tpl-004"
+    }
+  ]
+}

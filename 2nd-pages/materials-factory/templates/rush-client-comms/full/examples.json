@@ -1,0 +1,63 @@
+{
+  "artifact": "mf-tpl-021",
+  "version": "1.0.0",
+  "examples": [
+    {
+      "id": "ex-1",
+      "context": "Rush slot confirmed Monday.",
+      "branch": "rush-confirm",
+      "resolution": "Applied Rush Client Comms branch.",
+      "log_row": "2026-08-01,job-100,rush-confirm,ok,owner"
+    },
+    {
+      "id": "ex-2",
+      "context": "Rush slip new date.",
+      "branch": "rush-slip",
+      "resolution": "Applied Rush Client Comms branch.",
+      "log_row": "2026-08-02,job-101,rush-slip,ok,owner"
+    },
+    {
+      "id": "ex-3",
+      "context": "Hard proof window today.",
+      "branch": "rush-proof-hard",
+      "resolution": "Applied Rush Client Comms branch.",
+      "log_row": "2026-08-03,job-102,rush-proof-hard,ok,owner"
+    },
+    {
+      "id": "ex-4",
+      "context": "Rush fee on invoice remind.",
+      "branch": "rush-fee-remind",
+      "resolution": "Applied Rush Client Comms branch.",
+      "log_row": "2026-08-04,job-103,rush-fee-remind,ok,owner"
+    },
+    {
+      "id": "ex-5",
+      "context": "Client missed proof window.",
+      "branch": "rush-confirm",
+      "resolution": "Applied Rush Client Comms branch.",
+      "log_row": "2026-08-05,job-104,rush-confirm,ok,owner"
+    },
+    {
+      "id": "ex-6",
+      "context": "Courier rush ship note.",
+      "branch": "rush-slip",
+      "resolution": "Applied Rush Client Comms branch.",
+      "log_row": "2026-08-06,job-105,rush-slip,ok,owner"
+    },
+    {
+      "id": "ex-7",
+      "context": "Overtime approved internal.",
+      "branch": "rush-proof-hard",
+      "resolution": "Applied Rush Client Comms branch.",
+      "log_row": "2026-08-07,job-106,rush-proof-hard,ok,owner"
+    },
+    {
+      "id": "ex-8",
+      "context": "Rush cancelled client side.",
+      "branch": "rush-fee-remind",
+      "resolution": "Applied Rush Client Comms branch.",
+      "log_row": "2026-08-08,job-107,rush-fee-remind,ok,owner",
+      "cross_artifact": "mf-tpl-006"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "artifact": "mf-tpl-040",
+  "title": "Refund / Cancellation Policy",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Refund / Cancellation Policy for small-business job spine.",
+  "mindset": {
+    "principle": "Short scripts, log row, cross-route when heated or paid.",
+    "mistakes": [
+      {
+        "id": "no-log",
+        "label": "No log row",
+        "cost": "Ops blind"
+      }
+    ]
+  },
+  "decision_branches": [
+    {
+      "id": "cancel-before-prod",
+      "situation": "Branch 1",
+      "action": "cancel-before-prod"
+    },
+    {
+      "id": "cancel-mid-job",
+      "situation": "Branch 2",
+      "action": "cancel-mid-job"
+    },
+    {
+      "id": "refund-partial",
+      "situation": "Branch 3",
+      "action": "refund-partial"
+    },
+    {
+      "id": "refund-denied-policy",
+      "situation": "Branch 4",
+      "action": "refund-denied-policy"
+    }
+  ],
+  "tracking": {
+    "csv_header": "date,job_id,branch,resolution,owner",
+    "sheet_tab_name": "refund_cancellation"
+  },
+  "related_artifacts": [
+    "mf-tpl-008",
+    "mf-tpl-015",
+    "mf-tpl-030"
+  ]
+}

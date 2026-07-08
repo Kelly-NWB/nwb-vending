@@ -1,0 +1,49 @@
+{
+  "artifact": "mf-tpl-031",
+  "title": "Post-Delivery Survey (Light)",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Post-Delivery Survey (Light) for small-business job spine.",
+  "mindset": {
+    "principle": "Short scripts, log row, cross-route when heated or paid.",
+    "mistakes": [
+      {
+        "id": "no-log",
+        "label": "No log row",
+        "cost": "Ops blind"
+      }
+    ]
+  },
+  "decision_branches": [
+    {
+      "id": "survey-send",
+      "situation": "Branch 1",
+      "action": "survey-send"
+    },
+    {
+      "id": "survey-nudge",
+      "situation": "Branch 2",
+      "action": "survey-nudge"
+    },
+    {
+      "id": "survey-issue",
+      "situation": "Branch 3",
+      "action": "survey-issue"
+    },
+    {
+      "id": "survey-referral",
+      "situation": "Branch 4",
+      "action": "survey-referral"
+    }
+  ],
+  "tracking": {
+    "csv_header": "date,job_id,branch,resolution,owner",
+    "sheet_tab_name": "post_delivery_survey"
+  },
+  "related_artifacts": [
+    "mf-tpl-007",
+    "mf-tpl-015",
+    "mf-tpl-019"
+  ]
+}

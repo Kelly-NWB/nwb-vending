@@ -1,0 +1,63 @@
+{
+  "artifact": "mf-tpl-048",
+  "version": "1.0.0",
+  "examples": [
+    {
+      "id": "ex-1",
+      "context": "Five stores, one brand.",
+      "branch": "multi-quote-split",
+      "resolution": "Applied Multi-Location Client Coordination branch.",
+      "log_row": "2026-11-01,job-400,multi-quote-split,ok,owner"
+    },
+    {
+      "id": "ex-2",
+      "context": "Split ship per location.",
+      "branch": "multi-ship-route",
+      "resolution": "Applied Multi-Location Client Coordination branch.",
+      "log_row": "2026-11-02,job-401,multi-ship-route,ok,owner"
+    },
+    {
+      "id": "ex-3",
+      "context": "One invoice HQ billing.",
+      "branch": "multi-one-invoice",
+      "resolution": "Applied Multi-Location Client Coordination branch.",
+      "log_row": "2026-11-03,job-402,multi-one-invoice,ok,owner"
+    },
+    {
+      "id": "ex-4",
+      "context": "Store mgr loop on proof.",
+      "branch": "multi-contact-loop",
+      "resolution": "Applied Multi-Location Client Coordination branch.",
+      "log_row": "2026-11-04,job-403,multi-contact-loop,ok,owner"
+    },
+    {
+      "id": "ex-5",
+      "context": "Different install dates.",
+      "branch": "multi-quote-split",
+      "resolution": "Applied Multi-Location Client Coordination branch.",
+      "log_row": "2026-11-05,job-404,multi-quote-split,ok,owner"
+    },
+    {
+      "id": "ex-6",
+      "context": "Qty break across sites.",
+      "branch": "multi-ship-route",
+      "resolution": "Applied Multi-Location Client Coordination branch.",
+      "log_row": "2026-11-06,job-405,multi-ship-route,ok,owner"
+    },
+    {
+      "id": "ex-7",
+      "context": "Wrong store shipped fix.",
+      "branch": "multi-one-invoice",
+      "resolution": "Applied Multi-Location Client Coordination branch.",
+      "log_row": "2026-11-07,job-406,multi-one-invoice,ok,owner"
+    },
+    {
+      "id": "ex-8",
+      "context": "Central buyer only contact.",
+      "branch": "multi-contact-loop",
+      "resolution": "Applied Multi-Location Client Coordination branch.",
+      "log_row": "2026-11-08,job-407,multi-contact-loop,ok,owner",
+      "cross_artifact": "mf-tpl-006"
+    }
+  ]
+}

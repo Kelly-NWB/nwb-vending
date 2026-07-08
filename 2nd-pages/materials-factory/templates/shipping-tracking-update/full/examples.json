@@ -1,0 +1,63 @@
+{
+  "artifact": "mf-tpl-037",
+  "version": "1.0.0",
+  "examples": [
+    {
+      "id": "ex-1",
+      "context": "Tracking sent day of ship.",
+      "branch": "ship-label-sent",
+      "resolution": "Applied Shipping / Tracking Client Update branch.",
+      "log_row": "2026-10-01,job-300,ship-label-sent,ok,owner"
+    },
+    {
+      "id": "ex-2",
+      "context": "In transit, ETA Thursday.",
+      "branch": "ship-in-transit",
+      "resolution": "Applied Shipping / Tracking Client Update branch.",
+      "log_row": "2026-10-02,job-301,ship-in-transit,ok,owner"
+    },
+    {
+      "id": "ex-3",
+      "context": "Carrier delay weather.",
+      "branch": "ship-delayed",
+      "resolution": "Applied Shipping / Tracking Client Update branch.",
+      "log_row": "2026-10-03,job-302,ship-delayed,ok,owner"
+    },
+    {
+      "id": "ex-4",
+      "context": "Delivered, confirm receipt.",
+      "branch": "ship-delivered",
+      "resolution": "Applied Shipping / Tracking Client Update branch.",
+      "log_row": "2026-10-04,job-303,ship-delivered,ok,owner"
+    },
+    {
+      "id": "ex-5",
+      "context": "Wrong address on label.",
+      "branch": "ship-label-sent",
+      "resolution": "Applied Shipping / Tracking Client Update branch.",
+      "log_row": "2026-10-05,job-304,ship-label-sent,ok,owner"
+    },
+    {
+      "id": "ex-6",
+      "context": "Signature required missed.",
+      "branch": "ship-in-transit",
+      "resolution": "Applied Shipping / Tracking Client Update branch.",
+      "log_row": "2026-10-06,job-305,ship-in-transit,ok,owner"
+    },
+    {
+      "id": "ex-7",
+      "context": "Split shipment two boxes.",
+      "branch": "ship-delayed",
+      "resolution": "Applied Shipping / Tracking Client Update branch.",
+      "log_row": "2026-10-07,job-306,ship-delayed,ok,owner"
+    },
+    {
+      "id": "ex-8",
+      "context": "Hold ship until paid mf-tpl-008.",
+      "branch": "ship-delivered",
+      "resolution": "Applied Shipping / Tracking Client Update branch.",
+      "log_row": "2026-10-08,job-307,ship-delivered,ok,owner",
+      "cross_artifact": "mf-tpl-007"
+    }
+  ]
+}

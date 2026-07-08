@@ -1,0 +1,48 @@
+{
+  "artifact": "mf-tpl-023",
+  "title": "Not-a-Fit Referral",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Not-a-Fit Referral for small-business job spine.",
+  "mindset": {
+    "principle": "Short scripts, log row, cross-route when heated or paid.",
+    "mistakes": [
+      {
+        "id": "no-log",
+        "label": "No log row",
+        "cost": "Ops blind"
+      }
+    ]
+  },
+  "decision_branches": [
+    {
+      "id": "refer-out-area",
+      "situation": "Branch 1",
+      "action": "refer-out-area"
+    },
+    {
+      "id": "refer-out-scope",
+      "situation": "Branch 2",
+      "action": "refer-out-scope"
+    },
+    {
+      "id": "refer-partner",
+      "situation": "Branch 3",
+      "action": "refer-partner"
+    },
+    {
+      "id": "refer-polite-close",
+      "situation": "Branch 4",
+      "action": "refer-polite-close"
+    }
+  ],
+  "tracking": {
+    "csv_header": "date,job_id,branch,resolution,owner",
+    "sheet_tab_name": "not_a_fit_referral"
+  },
+  "related_artifacts": [
+    "mf-tpl-004",
+    "mf-tpl-006"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "artifact": "mf-tpl-022",
+  "title": "Meeting / Phone Qualify",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Meeting / Phone Qualify for small-business job spine.",
+  "mindset": {
+    "principle": "Short scripts, log row, cross-route when heated or paid.",
+    "mistakes": [
+      {
+        "id": "no-log",
+        "label": "No log row",
+        "cost": "Ops blind"
+      }
+    ]
+  },
+  "decision_branches": [
+    {
+      "id": "phone-qualify",
+      "situation": "Branch 1",
+      "action": "phone-qualify"
+    },
+    {
+      "id": "meeting-book",
+      "situation": "Branch 2",
+      "action": "meeting-book"
+    },
+    {
+      "id": "meeting-no-show",
+      "situation": "Branch 3",
+      "action": "meeting-no-show"
+    },
+    {
+      "id": "meeting-summary",
+      "situation": "Branch 4",
+      "action": "meeting-summary"
+    }
+  ],
+  "tracking": {
+    "csv_header": "date,job_id,branch,resolution,owner",
+    "sheet_tab_name": "meeting_phone_qualify"
+  },
+  "related_artifacts": [
+    "mf-tpl-004",
+    "mf-tpl-006"
+  ]
+}

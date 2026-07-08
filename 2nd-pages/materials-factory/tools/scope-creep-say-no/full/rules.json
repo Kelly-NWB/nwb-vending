@@ -1,0 +1,209 @@
+{
+  "artifact": "mf-tool-003",
+  "title": "Scope Creep / Say-No",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "tools",
+  "description": "Small-business boundary rubric when the ask grows: free tweak, fee, defer, re-quote, or no. Use after mf-tpl-004 intake or mid-job.",
+  "inputs": {
+    "request": { "type": "string", "required": false, "description": "What they asked for on top of agreed scope" },
+    "relationship": { "type": "enum", "required": true, "values": ["new_client", "repeat", "friend_family", "vip"] },
+    "contract_state": { "type": "enum", "required": true, "values": ["none", "quoted", "paid", "delivered"] },
+    "change_size": { "type": "enum", "required": true, "values": ["tiny", "medium", "large"] },
+    "who_asked": { "type": "enum", "required": true, "values": ["customer", "internal", "partner"] },
+    "deadline_pressure": { "type": "enum", "required": true, "values": ["none", "soft", "hard"] },
+    "margin_already": { "type": "enum", "required": true, "values": ["thin", "ok", "healthy"] },
+    "written_scope": { "type": "enum", "required": true, "values": ["yes", "partial", "no"] }
+  },
+  "decision_tree": {
+    "description": "Map for humans. Engine uses decision_rules by priority.",
+    "branches": [
+      { "if": "contract_state = delivered AND change_size = large", "then": "requote_new_job" },
+      { "if": "written_scope = no", "then": "freeze_and_document" },
+      { "if": "change_size = large", "then": "requote_before_work" },
+      { "if": "margin_already = thin AND change_size != tiny", "then": "fee_or_no" },
+      { "if": "deadline_pressure = hard AND change_size != tiny", "then": "fee_rush_or_decline" },
+      { "if": "friend_family AND change_size = medium", "then": "fee_or_trade" },
+      { "if": "change_size = tiny AND contract_state = paid", "then": "yes_courtesy_once" },
+      { "if": "change_size = medium", "then": "fee_required" },
+      { "if": "default", "then": "defer_phase_two" }
+    ]
+  },
+  "outcomes": {
+    "yes_courtesy_once": {
+      "label": "Yes once (courtesy)",
+      "title": "Tiny fix, absorb once, document",
+      "summary": "Goodwill tweak that does not change deliverable or deadline. Log it so second tweak becomes fee.",
+      "next_steps": [
+        "Do the tiny fix if under 15 minutes.",
+        "Reply: happy to help this once; future changes are quoted.",
+        "Log in scope log: courtesy_used Y."
+      ],
+      "do_not": "Make courtesy a pattern. Second medium ask same job = fee.",
+      "script_id": "script-courtesy-once"
+    },
+    "fee_required": {
+      "label": "Fee required",
+      "title": "Medium change = change order",
+      "summary": "Scope moved. Name price before work starts.",
+      "next_steps": [
+        "Send change-order line: what, hours/cost, new date.",
+        "No work until yes in writing (email OK).",
+        "Update quote or invoice."
+      ],
+      "do_not": "Start work while negotiating.",
+      "script_id": "script-fee-change-order"
+    },
+    "fee_rush_or_decline": {
+      "label": "Rush fee or decline",
+      "title": "Hard deadline plus extra scope",
+      "summary": "Rush surcharge or honest no. Pick one.",
+      "next_steps": [
+        "Quote rush fee + change fee separately.",
+        "If cannot hit date, offer new date without rush fee.",
+        "Decline if margin thin and risk high."
+      ],
+      "do_not": "Heroics that blow the calendar for other clients.",
+      "script_id": "script-rush-fee"
+    },
+    "fee_or_no": {
+      "label": "Fee or no",
+      "title": "Margin already thin",
+      "summary": "You are not obligated to lose money on scope creep.",
+      "next_steps": [
+        "State thin margin honestly (no guilt trip).",
+        "Offer paid change order or original scope only.",
+        "Walk away polite if they refuse both."
+      ],
+      "do_not": "Absorb medium/large work to avoid awkward chat.",
+      "script_id": "script-thin-margin"
+    },
+    "fee_or_trade": {
+      "label": "Fee or trade",
+      "title": "Friends and family still get clarity",
+      "summary": "Love them; still name cost or trade so resentment does not grow.",
+      "next_steps": [
+        "Same change-order script with warm tone.",
+        "Offer trade only if you actually want the trade.",
+        "Never trade into resentment."
+      ],
+      "do_not": "Silent yes then complain later.",
+      "script_id": "script-friend-fee"
+    },
+    "defer_phase_two": {
+      "label": "Defer to phase 2",
+      "title": "Good idea, wrong phase",
+      "summary": "Park add-on until v1 ships. Keeps focus and cash flow.",
+      "next_steps": [
+        "Acknowledge the idea.",
+        "Ship agreed scope first.",
+        "Quote phase 2 as separate line item with date."
+      ],
+      "do_not": "Bundle silently into current price.",
+      "script_id": "script-phase-two"
+    },
+    "requote_before_work": {
+      "label": "Re-quote before work",
+      "title": "Large change before delivery",
+      "summary": "Stop. New spec, new price, new date.",
+      "next_steps": [
+        "Pause production on changed pieces.",
+        "Written revised quote.",
+        "Customer sign-off on new scope."
+      ],
+      "do_not": "Keep cutting under old invoice.",
+      "script_id": "script-requote"
+    },
+    "requote_new_job": {
+      "label": "New job",
+      "title": "Delivered work plus new ask = new engagement",
+      "summary": "Past job is closed. This is a fresh intake.",
+      "next_steps": [
+        "Route mf-tpl-004 intake on new ask.",
+        "Do not call it a quick favor.",
+        "Quote as new job number."
+      ],
+      "do_not": "Free revision spiral on closed jobs.",
+      "cross_artifact": "mf-tpl-004",
+      "script_id": "script-new-job"
+    },
+    "freeze_and_document": {
+      "label": "Freeze and document",
+      "title": "No written scope yet",
+      "summary": "Stop verbal drift. Write what is in and out.",
+      "next_steps": [
+        "Email: here is what we agreed so far.",
+        "List in-scope and out-of-scope bullets.",
+        "No more work until reply confirms."
+      ],
+      "do_not": "Keep building while scope is fuzzy.",
+      "script_id": "script-freeze-scope"
+    },
+    "no_polite": {
+      "label": "No (polite)",
+      "title": "Out of capacity, ethics, or skill",
+      "summary": "Decline without drama. Refer if possible.",
+      "next_steps": [
+        "Short no with reason.",
+        "Refer alternate if you have one.",
+        "Do not leave thread open ambiguous."
+      ],
+      "do_not": "Slow ghost.",
+      "script_id": "script-no-polite"
+    },
+    "escalate_complaint": {
+      "label": "Escalate to complaint",
+      "title": "Scope talk turned into blame",
+      "summary": "If tone is refund, failure, or threat, switch playbooks.",
+      "next_steps": [
+        "Stop negotiating scope in anger.",
+        "mf-tpl-001 recovery path.",
+        "Owner on thread."
+      ],
+      "do_not": "Argue scope while they are nuclear.",
+      "cross_artifact": "mf-tpl-001",
+      "script_id": "script-pause-recovery"
+    }
+  },
+  "scripts": {
+    "script-courtesy-once": "Happy to adjust [tiny thing] this once. If we need more changes, I will send a quick change-order so timing and cost stay fair for both of us.",
+    "script-fee-change-order": "We can add [change]. That is outside the original scope. Change order: [work], [price], [date]. Reply yes and I will proceed.",
+    "script-rush-fee": "We can try [deadline] with a rush fee of [amount] plus the change. Without rush fee the realistic date is [date]. Which do you prefer?",
+    "script-thin-margin": "I want to be straight: we are tight on margin for this job. I can do [original scope] as quoted, or [change] as a paid add-on of [price]. I cannot absorb [change] for free.",
+    "script-friend-fee": "I can do this for you. Even for friends, I need [price or trade] so the shop stays healthy. Cool?",
+    "script-phase-two": "Great idea. Let us finish [v1] first (on track for [date]). I will quote [add-on] as phase 2 right after delivery.",
+    "script-requote": "This changes the spec enough that I need to re-quote before more work. Pausing on [affected part] until you approve revised scope: [summary].",
+    "script-new-job": "Happy to help with [new ask]. That is a new project from the one we delivered [date]. I will send intake questions and a fresh quote.",
+    "script-freeze-scope": "Before more work, let me write down what is in scope: [list]. Out of scope unless we add a change order: [list]. Reply confirm or edits.",
+    "script-no-polite": "Thank you for asking. This is not a fit for us on [reason]. [Optional referral.]",
+    "script-pause-recovery": "I want to fix how this felt for you. I am pausing scope talk so we can address [issue] first. [Owner] will follow up today."
+  },
+  "operator_lens": {
+    "new_client": "Set boundary early. Courtesy once max.",
+    "repeat": "Relationship worth clarity. Log every courtesy.",
+    "friend_family": "Warm tone, same rules.",
+    "vip": "Extra care, not free medium work."
+  },
+  "decision_rules": [
+    { "priority": 100, "when": { "contract_state": "delivered", "change_size": "large" }, "outcome": "requote_new_job" },
+    { "priority": 99, "when": { "written_scope": "no" }, "outcome": "freeze_and_document" },
+    { "priority": 98, "when": { "change_size": "large" }, "outcome": "requote_before_work" },
+    { "priority": 97, "when": { "margin_already": "thin", "change_size": "medium" }, "outcome": "fee_or_no" },
+    { "priority": 96, "when": { "margin_already": "thin", "change_size": "large" }, "outcome": "fee_or_no" },
+    { "priority": 95, "when": { "deadline_pressure": "hard", "change_size": "medium" }, "outcome": "fee_rush_or_decline" },
+    { "priority": 94, "when": { "deadline_pressure": "hard", "change_size": "large" }, "outcome": "fee_rush_or_decline" },
+    { "priority": 93, "when": { "relationship": "friend_family", "change_size": "medium" }, "outcome": "fee_or_trade" },
+    { "priority": 92, "when": { "relationship": "friend_family", "change_size": "large" }, "outcome": "fee_or_trade" },
+    { "priority": 91, "when": { "change_size": "tiny", "contract_state": "paid" }, "outcome": "yes_courtesy_once" },
+    { "priority": 90, "when": { "change_size": "tiny", "contract_state": "quoted" }, "outcome": "yes_courtesy_once" },
+    { "priority": 89, "when": { "change_size": "medium", "contract_state": "delivered" }, "outcome": "requote_new_job" },
+    { "priority": 88, "when": { "who_asked": "internal", "change_size": "medium" }, "outcome": "defer_phase_two" },
+    { "priority": 87, "when": { "change_size": "medium" }, "outcome": "fee_required" },
+    { "priority": 86, "when": { "contract_state": "none", "change_size": "large" }, "outcome": "freeze_and_document" }
+  ],
+  "default_outcome": "defer_phase_two",
+  "output_format": {
+    "summary_template": "SCOPE CREEP / SAY-NO · mf-tool-003\nRequest: {request}\nRelationship: {relationship}\nContract: {contract_state}\nChange size: {change_size}\nAsked by: {who_asked}\nDeadline pressure: {deadline_pressure}\nMargin: {margin_already}\nWritten scope: {written_scope}\n\nOUTCOME: {outcome_label}\n{outcome_title}\n\nScript:\n{script}\n\nNext steps:\n{next_steps_numbered}\n\nDo not: {do_not}\n\nOperator lens: {operator_lens}"
+  },
+  "related_artifacts": ["mf-tpl-004", "mf-tpl-001", "mf-tool-001", "mf-tool-002"]
+}

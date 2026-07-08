@@ -1,0 +1,103 @@
+{
+  "artifact": "mf-tool-002",
+  "version": "1.0.0",
+  "description": "Historical small-business scenarios. Validate rules.json before agents rely on one-shot reasoning.",
+  "examples": [
+    {
+      "id": "ex-complaint-draft",
+      "task": "Draft reply to angry customer email about late delivery",
+      "inputs": { "repeatability": "occasional", "judgment": "review", "stakes": "customer", "input_shape": "messy", "output_type": "draft", "volume": "low", "data_known": "yes" },
+      "outcome": "llm_assist",
+      "why": "Messy thread, customer stakes, need words not automation. Human edits tone and remedy before send.",
+      "operator_lens": "Use mf-tpl-001 framework after draft; never auto-send."
+    },
+    {
+      "id": "ex-weekly-owner-summary",
+      "task": "Summarize messy voice memos into weekly owner brief",
+      "inputs": { "repeatability": "occasional", "judgment": "review", "stakes": "internal", "input_shape": "messy", "output_type": "draft", "volume": "low", "data_known": "yes" },
+      "outcome": "llm_assist",
+      "why": "Internal draft, human checks facts. Not worth API pipeline at low volume.",
+      "operator_lens": "Save final brief as template section when sections stabilize."
+    },
+    {
+      "id": "ex-intake-ack",
+      "task": "Send same-day ack when web form submitted",
+      "inputs": { "repeatability": "daily", "judgment": "review", "stakes": "customer", "input_shape": "semi", "output_type": "draft", "volume": "medium", "data_known": "yes" },
+      "outcome": "template_first",
+      "why": "Same shape every time: thank you, what happens next, timeline. AI fills name and SKU only.",
+      "operator_lens": "Lock ack text once; spot-check 10 sends then consider slot-fill API."
+    },
+    {
+      "id": "ex-social-ideas",
+      "task": "Brainstorm social post angles for shop promo",
+      "inputs": { "repeatability": "occasional", "judgment": "review", "stakes": "internal", "input_shape": "messy", "output_type": "creative", "volume": "low", "data_known": "yes" },
+      "outcome": "llm_assist",
+      "why": "Creative brainstorm with human picking one voice-aligned post.",
+      "operator_lens": "Paste brand do/do-not list into prompt every time."
+    },
+    {
+      "id": "ex-invoice-categorize",
+      "task": "Tag bank CSV rows for accountant categories nightly",
+      "inputs": { "repeatability": "daily", "judgment": "none", "stakes": "money", "input_shape": "structured", "output_type": "action", "volume": "high", "data_known": "yes" },
+      "outcome": "llm_api",
+      "why": "Structured rows, no judgment per row, daily volume. Pipeline with error queue for odd rows.",
+      "operator_lens": "Human reviews exceptions bucket weekly; not every row."
+    },
+    {
+      "id": "ex-rejection-letter",
+      "task": "Write hiring rejection email after interview",
+      "inputs": { "repeatability": "occasional", "judgment": "every_time", "stakes": "customer", "input_shape": "messy", "output_type": "draft", "volume": "low", "data_known": "yes" },
+      "outcome": "human_only",
+      "why": "Person on the other end, reputation on the line. Human writes or heavily personalizes.",
+      "operator_lens": "AI outline in private notes only if helpful."
+    },
+    {
+      "id": "ex-phone-bot",
+      "task": "Let AI answer the main phone line during hours",
+      "inputs": { "repeatability": "daily", "judgment": "every_time", "stakes": "customer", "input_shape": "messy", "output_type": "action", "volume": "medium", "data_known": "yes" },
+      "outcome": "human_only",
+      "why": "Live judgment every call. Voicemail and callback beats bot for small shop trust.",
+      "operator_lens": "Template for hours and callback promise only."
+    },
+    {
+      "id": "ex-crm-export",
+      "task": "Pull new leads from inbox labels into Sheet each night",
+      "inputs": { "repeatability": "daily", "judgment": "none", "stakes": "internal", "input_shape": "structured", "output_type": "action", "volume": "medium", "data_known": "yes" },
+      "outcome": "llm_api",
+      "why": "Structured extract job. Script or API, not chat UI each night.",
+      "operator_lens": "mf-tool-001 if tempted to buy CRM before script exists."
+    },
+    {
+      "id": "ex-client-proposal",
+      "task": "Research competitor pricing and draft custom proposal for one prospect",
+      "inputs": { "repeatability": "once", "judgment": "review", "stakes": "customer", "input_shape": "messy", "output_type": "draft", "volume": "low", "data_known": "yes" },
+      "outcome": "agent_workflow",
+      "why": "Multi-step: gather sources, compare, draft sections. One prompt will miss or invent.",
+      "operator_lens": "Human approves numbers before PDF goes out."
+    },
+    {
+      "id": "ex-support-volume-unknown",
+      "task": "Not sure if we should AI triage support emails",
+      "inputs": { "repeatability": "occasional", "judgment": "review", "stakes": "customer", "input_shape": "messy", "output_type": "draft", "volume": "low", "data_known": "no" },
+      "outcome": "gather_data_first",
+      "why": "No count of emails, no failure cost logged. Count and classify 30 days first.",
+      "operator_lens": "Then re-run: likely llm_assist for drafts, not auto-triage."
+    },
+    {
+      "id": "ex-pricing-quote",
+      "task": "Decide discount for repeat client asking for custom bundle",
+      "inputs": { "repeatability": "once", "judgment": "review", "stakes": "money", "output_type": "decision", "volume": "low", "data_known": "yes" },
+      "outcome": "human_only",
+      "why": "Money decision. AI can list options; owner commits margin.",
+      "operator_lens": "Spreadsheet scenario math OK; AI does not send quote."
+    },
+    {
+      "id": "ex-quarterly-reminder",
+      "task": "Remind myself to export sales CSV for accountant",
+      "inputs": { "repeatability": "occasional", "judgment": "none", "stakes": "internal", "input_shape": "structured", "output_type": "action", "volume": "low", "data_known": "yes" },
+      "outcome": "not_ai",
+      "why": "Four times a year. Calendar alert beats any model.",
+      "operator_lens": "mf-tool-001 if someone suggests building an app for this."
+    }
+  ]
+}

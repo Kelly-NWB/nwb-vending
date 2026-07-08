@@ -63,6 +63,30 @@ const GATED_ROUTES: GatedRoute[] = [
     description: "Hiring Character Gauge interview pack (mf-tpl-003)",
     artifact: "mf-tpl-003",
   },
+  {
+    prefix: "/2nd-pages/materials-factory/tools/ai-task-fit/full",
+    price: "$0.35",
+    description: "AI Task Fit routing rubric (mf-tool-002)",
+    artifact: "mf-tool-002",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/tools/scope-creep-say-no/full",
+    price: "$0.35",
+    description: "Scope Creep / Say-No boundary rubric (mf-tool-003)",
+    artifact: "mf-tool-003",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/client-intake-playbook/full",
+    price: "$0.45",
+    description: "Client Intake Playbook agent pack (mf-tpl-004)",
+    artifact: "mf-tpl-004",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/weekly-ops-review/full",
+    price: "$0.45",
+    description: "Weekly 15-Min Ops Review agent pack (mf-tpl-005)",
+    artifact: "mf-tpl-005",
+  },
 ];
 
 function normalizePath(path: string): string {

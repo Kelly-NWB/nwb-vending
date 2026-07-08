@@ -1,0 +1,165 @@
+{
+  "artifact": "mf-tpl-005",
+  "version": "1.0.0",
+  "description": "10 worked weekly reviews. Soul in scenarios; playbook stays short.",
+  "examples": [
+    {
+      "id": "ex-solo-quiet-week",
+      "week_of": "2026-06-09",
+      "variant": "solo",
+      "context": "Solo custom print shop. Light inbox. Two jobs shipping.",
+      "block_hits": ["inbox_leads", "money", "jobs", "close"],
+      "filled": {
+        "followup_sent": "Dentist office proof reminder",
+        "money_flag": "ok",
+        "stuck_job": "none",
+        "one_fix": "Pin intake SLA note to monitor sticky",
+        "ignored_on_purpose": "SEO cold emails"
+      },
+      "log_row": "2026-06-09,solo,Dentist proof reminder,ok,none,intake SLA sticky,SEO emails,owner"
+    },
+    {
+      "id": "ex-team-sla-miss",
+      "week_of": "2026-06-16",
+      "variant": "small_team",
+      "context": "Four staff. Two form submits over 24h SLA.",
+      "block_hits": ["inbox_leads", "money", "jobs", "people", "close"],
+      "filled": {
+        "followup_sent": "Both late leads personal reply",
+        "money_flag": "ok",
+        "stuck_job": "Banner waiting client color",
+        "one_fix": "Assign Friday AM inbox owner",
+        "ignored_on_purpose": "New CRM demo"
+      },
+      "notes": "Route late leads through mf-tpl-004 first touch.",
+      "log_row": "2026-06-16,small_team,2 late leads,ok,banner color wait,Friday inbox owner,CRM demo,owner"
+    },
+    {
+      "id": "ex-complaint-in-inbox",
+      "week_of": "2026-06-23",
+      "variant": "small_team",
+      "context": "Angry email in queue mixed with leads.",
+      "block_hits": ["inbox_leads"],
+      "filled": {
+        "followup_sent": "none (complaint first)",
+        "money_flag": "ok",
+        "stuck_job": "none",
+        "one_fix": "Label inbox: COMPLAINT vs LEAD",
+        "ignored_on_purpose": "Vendor catalog"
+      },
+      "notes": "Complaint → mf-tpl-001 before any intake quote.",
+      "cross_artifact": "mf-tpl-001",
+      "log_row": "2026-06-23,small_team,complaint routed,ok,none,inbox labels,vendor catalog,owner"
+    },
+    {
+      "id": "ex-money-tight",
+      "week_of": "2026-06-30",
+      "variant": "solo",
+      "context": "Payroll Friday, two invoices still out.",
+      "block_hits": ["money", "jobs", "close"],
+      "filled": {
+        "followup_sent": "Chase Acme invoice",
+        "money_flag": "tight",
+        "stuck_job": "none",
+        "one_fix": "Send payment link at delivery not after",
+        "ignored_on_purpose": "Equipment browsing"
+      },
+      "log_row": "2026-06-30,solo,Acme invoice chase,tight,none,pay link at delivery,equipment,owner"
+    },
+    {
+      "id": "ex-scope-creep-flag",
+      "week_of": "2026-07-07",
+      "variant": "small_team",
+      "context": "Client asked for extra pages mid-job, no change order.",
+      "block_hits": ["jobs"],
+      "filled": {
+        "followup_sent": "none",
+        "money_flag": "ok",
+        "stuck_job": "Brochure extra pages",
+        "one_fix": "Send mf-tool-003 change order Monday",
+        "ignored_on_purpose": "Second location expansion talk"
+      },
+      "cross_artifact": "mf-tool-003",
+      "log_row": "2026-07-07,small_team,none,ok,brochure creep,change order Monday,expansion talk,owner"
+    },
+    {
+      "id": "ex-fire-week",
+      "week_of": "2026-07-14",
+      "variant": "bad_week",
+      "context": "Key staff out sick. Production behind.",
+      "block_hits": ["inbox_leads", "money"],
+      "filled": {
+        "followup_sent": "Only overdue SLA lead",
+        "money_flag": "tight",
+        "stuck_job": "deferred",
+        "one_fix": "Resume full ritual when staff back",
+        "ignored_on_purpose": "All non-urgent sales"
+      },
+      "notes": "Use bad-week-short template only.",
+      "log_row": "2026-07-14,bad_week,1 SLA only,tight,deferred,resume full ritual,non-urgent sales,owner"
+    },
+    {
+      "id": "ex-people-waiting",
+      "week_of": "2026-07-21",
+      "variant": "small_team",
+      "context": "Part-timer waiting schedule confirm.",
+      "block_hits": ["people", "close"],
+      "filled": {
+        "followup_sent": "Schedule confirm to Alex",
+        "money_flag": "ok",
+        "stuck_job": "none",
+        "one_fix": "Publish coverage calendar shared",
+        "ignored_on_purpose": "Hiring brainstorm"
+      },
+      "log_row": "2026-07-21,small_team,Alex schedule,ok,none,coverage calendar,hiring brainstorm,owner"
+    },
+    {
+      "id": "ex-solo-stuck-creative",
+      "week_of": "2026-07-28",
+      "variant": "solo",
+      "context": "One creative job stuck on client indecision.",
+      "block_hits": ["jobs", "inbox_leads", "close"],
+      "filled": {
+        "followup_sent": "Pick A or B by Friday client",
+        "money_flag": "ok",
+        "stuck_job": "Logo options",
+        "one_fix": "Two-option rule in intake template",
+        "ignored_on_purpose": "New portfolio rebuild"
+      },
+      "cross_artifact": "mf-tpl-004",
+      "log_row": "2026-07-28,solo,logo A/B deadline,ok,logo options,two-option rule,portfolio rebuild,owner"
+    },
+    {
+      "id": "ex-automate-temptation",
+      "week_of": "2026-08-04",
+      "variant": "small_team",
+      "context": "Owner wants AI inbox tool after rough week.",
+      "block_hits": ["close"],
+      "filled": {
+        "followup_sent": "n/a",
+        "money_flag": "ok",
+        "stuck_job": "none",
+        "one_fix": "Run mf-tool-001 before any AI inbox buy",
+        "ignored_on_purpose": "AI tool ads"
+      },
+      "cross_artifact": "mf-tool-001",
+      "log_row": "2026-08-04,small_team,n/a,ok,none,mf-tool-001 before SaaS,AI ads,owner"
+    },
+    {
+      "id": "ex-same-fix-repeat",
+      "week_of": "2026-08-11",
+      "variant": "small_team",
+      "context": "Third week same one_fix about SLA.",
+      "block_hits": ["inbox_leads", "close"],
+      "filled": {
+        "followup_sent": "routine",
+        "money_flag": "ok",
+        "stuck_job": "none",
+        "one_fix": "Actually assign inbox owner (not sticky note)",
+        "ignored_on_purpose": "Rebrand Pinterest"
+      },
+      "notes": "Monthly review: if one_fix repeats 3x, escalate to mf-tool-001 or hire help.",
+      "log_row": "2026-08-11,small_team,routine,ok,none,assign inbox owner not note,Pinterest,owner"
+    }
+  ]
+}

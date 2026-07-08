@@ -1,0 +1,103 @@
+{
+  "artifact": "mf-tool-003",
+  "version": "1.0.0",
+  "description": "12 historical scope-creep scenarios. Volume is intentional: agents calibrate on edge cases, not one hero example.",
+  "examples": [
+    {
+      "id": "ex-typo-one-word",
+      "request": "Change one word on approved flyer proof",
+      "inputs": { "relationship": "repeat", "contract_state": "paid", "change_size": "tiny", "who_asked": "customer", "deadline_pressure": "soft", "margin_already": "ok", "written_scope": "yes" },
+      "outcome": "yes_courtesy_once",
+      "why": "Under 15 minutes, scope locked, goodwill once.",
+      "operator_lens": "Log courtesy_used so next tweak is fee."
+    },
+    {
+      "id": "ex-extra-logo-color",
+      "request": "Add second brand color not in original brief",
+      "inputs": { "relationship": "new_client", "contract_state": "paid", "change_size": "medium", "who_asked": "customer", "deadline_pressure": "none", "margin_already": "ok", "written_scope": "yes" },
+      "outcome": "fee_required",
+      "why": "Medium visual change mid-job. Change order before pixels move.",
+      "operator_lens": "New client: firm boundary sets tone for whole relationship."
+    },
+    {
+      "id": "ex-cousin-extra-pages",
+      "request": "Cousin wants 4 more pages on family reunion book",
+      "inputs": { "relationship": "friend_family", "contract_state": "quoted", "change_size": "medium", "who_asked": "customer", "deadline_pressure": "soft", "margin_already": "ok", "written_scope": "partial" },
+      "outcome": "fee_or_trade",
+      "why": "Family still gets named price or honest trade.",
+      "operator_lens": "Warm script-friend-fee. No silent resentment."
+    },
+    {
+      "id": "ex-redesign-mid-job",
+      "request": "Scrap layout, start over with new style mid-project",
+      "inputs": { "relationship": "repeat", "contract_state": "paid", "change_size": "large", "who_asked": "customer", "deadline_pressure": "none", "margin_already": "ok", "written_scope": "yes" },
+      "outcome": "requote_before_work",
+      "why": "Large spec change. Pause and re-quote.",
+      "operator_lens": "Repeat client respects pause if you explain calendar impact."
+    },
+    {
+      "id": "ex-after-delivery-seo",
+      "request": "Now optimize the site you delivered last month",
+      "inputs": { "relationship": "repeat", "contract_state": "delivered", "change_size": "large", "who_asked": "customer", "deadline_pressure": "none", "margin_already": "healthy", "written_scope": "yes" },
+      "outcome": "requote_new_job",
+      "why": "Closed job. New intake and quote.",
+      "operator_lens": "Route mf-tpl-004 on new ask."
+    },
+    {
+      "id": "ex-verbal-only-scope",
+      "request": "Can you also handle printing while we talk at the counter?",
+      "inputs": { "relationship": "new_client", "contract_state": "none", "change_size": "medium", "who_asked": "customer", "deadline_pressure": "soft", "margin_already": "ok", "written_scope": "no" },
+      "outcome": "freeze_and_document",
+      "why": "No written scope. Freeze before more labor.",
+      "operator_lens": "Intake should have caught this; freeze now."
+    },
+    {
+      "id": "ex-thin-margin-add",
+      "request": "Add rush delivery on already-discounted job",
+      "inputs": { "relationship": "repeat", "contract_state": "paid", "change_size": "medium", "who_asked": "customer", "deadline_pressure": "hard", "margin_already": "thin", "written_scope": "yes" },
+      "outcome": "fee_or_no",
+      "why": "Thin margin cannot absorb medium rush. Fee or original scope only.",
+      "operator_lens": "fee_rush_or_decline also plausible; thin margin rule wins at 97."
+    },
+    {
+      "id": "ex-hard-deadline-banner",
+      "request": "Extra banner by tomorrow, original was business cards only",
+      "inputs": { "relationship": "new_client", "contract_state": "quoted", "change_size": "medium", "who_asked": "customer", "deadline_pressure": "hard", "margin_already": "healthy", "written_scope": "yes" },
+      "outcome": "fee_rush_or_decline",
+      "why": "Hard date plus new deliverable. Rush fee or later date.",
+      "operator_lens": "Healthy margin still needs calendar honesty."
+    },
+    {
+      "id": "ex-staff-sidebar",
+      "request": "Designer asks to add animations while client did not ask",
+      "inputs": { "relationship": "repeat", "contract_state": "paid", "change_size": "medium", "who_asked": "internal", "deadline_pressure": "none", "margin_already": "ok", "written_scope": "yes" },
+      "outcome": "defer_phase_two",
+      "why": "Internal gold-plating. Ship v1, quote phase 2 to client.",
+      "operator_lens": "Protect margin and deadline from internal creep."
+    },
+    {
+      "id": "ex-delivered-small-revision",
+      "request": "Tweak delivered PDF they lost on their end",
+      "inputs": { "relationship": "vip", "contract_state": "delivered", "change_size": "medium", "who_asked": "customer", "deadline_pressure": "soft", "margin_already": "healthy", "written_scope": "yes" },
+      "outcome": "requote_new_job",
+      "why": "Delivered + medium = new job line, even for VIP.",
+      "operator_lens": "VIP gets fast quote, not free rework."
+    },
+    {
+      "id": "ex-phase-two-feature",
+      "request": "Add online booking after we agreed on static site only",
+      "inputs": { "relationship": "repeat", "contract_state": "paid", "change_size": "large", "who_asked": "customer", "deadline_pressure": "none", "margin_already": "ok", "written_scope": "yes" },
+      "outcome": "requote_before_work",
+      "why": "Large add-on mid-build. Re-quote before build.",
+      "operator_lens": "defer_phase_two is wrong for large; requote wins."
+    },
+    {
+      "id": "ex-default-small-ask",
+      "request": "Maybe add stickers to the order, not sure yet",
+      "inputs": { "relationship": "new_client", "contract_state": "quoted", "change_size": "tiny", "who_asked": "customer", "deadline_pressure": "none", "margin_already": "ok", "written_scope": "partial" },
+      "outcome": "yes_courtesy_once",
+      "why": "Tiny exploratory ask on quoted job: clarify or courtesy if truly tiny.",
+      "operator_lens": "If stickers become full second SKU, re-run as medium."
+    }
+  ]
+}

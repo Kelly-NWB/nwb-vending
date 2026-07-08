@@ -1,0 +1,128 @@
+{
+  "artifact": "mf-tpl-005",
+  "title": "Weekly 15-Min Ops Review",
+  "version": "1.0.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Owner ritual for small business (solo to ~15 people): scan what matters, ignore noise, log one fix. Fifteen minutes, once a week.",
+  "scope": {
+    "team_size": "solo to 15",
+    "has_ops_manager": false,
+    "not_for": ["enterprise OKR dashboards", "daily standup replacement", "full bookkeeping close"]
+  },
+  "mindset": {
+    "principle": "Weekly beat daily panic. Scan, decide, log one fix, move on.",
+    "mistakes": [
+      { "id": "inbox-as-todo", "label": "Treat inbox as the task list", "cost": "Urgent eats important every week" },
+      { "id": "no-log", "label": "Review in head only", "cost": "Same fire every Friday" },
+      { "id": "hour-rabbit", "label": "Turn 15 minutes into 90", "cost": "Ritual dies, chaos returns" }
+    ],
+    "timer": {
+      "total_minutes": 15,
+      "hard_stop": true,
+      "overflow_rule": "Park overflow items on next_week_capture template; do not solve today"
+    }
+  },
+  "blocks": [
+    {
+      "id": "inbox_leads",
+      "label": "Inbox and leads",
+      "minutes": 3,
+      "scan": [
+        "Unanswered inquiries past SLA? (see mf-tpl-004)",
+        "Anything angry or refund tone? (route mf-tpl-001)",
+        "One follow-up to send today (name it)"
+      ],
+      "ignore": ["Newsletters", "vendor promos", "LinkedIn noise"],
+      "template_id": "block-inbox"
+    },
+    {
+      "id": "money",
+      "label": "Money snapshot",
+      "minutes": 3,
+      "scan": [
+        "Cash in bank vs bills due next 7 days (rough OK)",
+        "Unpaid invoices out or overdue in?",
+        "Any surprise charge to investigate?"
+      ],
+      "ignore": ["Full P&L", "Tax strategy", "New software to buy"],
+      "template_id": "block-money"
+    },
+    {
+      "id": "jobs",
+      "label": "Jobs in flight",
+      "minutes": 4,
+      "scan": [
+        "What ships this week? (max 3 names)",
+        "Any scope creep unpaid? (see mf-tool-003)",
+        "Stuck job: one unblock action"
+      ],
+      "ignore": ["Redesigning future products", "Maybe clients"],
+      "template_id": "block-jobs"
+    },
+    {
+      "id": "people",
+      "label": "People",
+      "minutes": 3,
+      "scan": [
+        "Anyone waiting on you for a yes/no?",
+        "Coverage gaps next 7 days?",
+        "One thank-you or correction to deliver"
+      ],
+      "ignore": ["Org chart fantasies", "Hiring unless intake open"],
+      "template_id": "block-people"
+    },
+    {
+      "id": "close",
+      "label": "Close and log",
+      "minutes": 2,
+      "scan": [
+        "One fix for next week (single sentence)",
+        "One thing to ignore on purpose",
+        "Next review date on calendar"
+      ],
+      "ignore": ["New initiatives without dropping something"],
+      "template_id": "block-close"
+    }
+  ],
+  "variants": [
+    {
+      "id": "solo",
+      "label": "Solo operator",
+      "skip_blocks": ["people"],
+      "redistribute_minutes": { "jobs": 5, "close": 3 }
+    },
+    {
+      "id": "small_team",
+      "label": "2-15 people",
+      "use_all_blocks": true
+    },
+    {
+      "id": "bad_week",
+      "label": "Fire week",
+      "rule": "Run inbox + money only (6 min). Full ritual when fire out."
+    }
+  ],
+  "tracking": {
+    "log_fields": [
+      { "field": "week_of", "why": "Monday date ISO" },
+      { "field": "variant", "why": "solo / small_team / bad_week" },
+      { "field": "followup_sent", "why": "Lead or client name" },
+      { "field": "money_flag", "why": "ok / tight / investigate" },
+      { "field": "stuck_job", "why": "Job name + unblock" },
+      { "field": "one_fix", "why": "Single process fix for next week" },
+      { "field": "ignored_on_purpose", "why": "What you chose not to touch" },
+      { "field": "owner", "why": "Who ran review" }
+    ],
+    "csv_header": "week_of,variant,followup_sent,money_flag,stuck_job,one_fix,ignored_on_purpose,owner",
+    "sheet_tab_name": "weekly_ops"
+  },
+  "automation_hooks": {
+    "mf-tpl-004": "Inbox block: intake SLA and qualify backlog",
+    "mf-tool-003": "Jobs block: unpaid scope creep flags",
+    "mf-tpl-001": "Inbox block: complaint_mask routes out of intake",
+    "mf-tool-002": "Optional: AI draft follow-up after human picks recipient",
+    "mf-tool-001": "If one_fix is buy software, run automate rubric first"
+  },
+  "related_artifacts": ["mf-tpl-004", "mf-tool-003", "mf-tpl-001", "mf-tool-002", "mf-tool-001"]
+}

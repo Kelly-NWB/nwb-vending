@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="x402:artifact" content="mf-tool-002">
+  <meta name="x402:full" content="true">
+  <meta name="x402:audience" content="agent">
+  <meta name="x402:primary" content="rules.json">
+  <title>mf-tool-002 full pack | agent artifacts</title>
+  <link rel="alternate" type="application/json" href="rules.json" title="rules">
+  <style>
+    body { margin: 0; padding: 1.25rem; font-family: ui-monospace, Consolas, monospace; background: #0c0c0e; color: #c8c8d0; line-height: 1.5; font-size: 13px; }
+    h1 { font-size: 1rem; color: #fff; margin: 0 0 0.25rem; }
+    .sub { color: #6e6e7a; margin-bottom: 1.25rem; }
+    a { color: #5eb3ff; }
+    pre { background: #141418; border: 1px solid #2a2a32; padding: 1rem; overflow-x: auto; }
+    ul { padding-left: 1.25rem; }
+  </style>
+</head>
+<body>
+  <h1>mf-tool-002 · AI Task Fit</h1>
+  <p class="sub">FULL PACK · x402 gated · agent-consumable</p>
+  <p><a href="../index.html">← Teaser</a> · <a href="../../../index.html">Catalog</a></p>
+  <p>Agents: fetch <a href="rules.json">rules.json</a>, <a href="examples.json">examples.json</a>, <a href="AGENT.md">AGENT.md</a>, <a href="OUTCOMES.md">OUTCOMES.md</a>.</p>
+  <ul>
+    <li><a href="rules.json">rules.json</a> · inputs, outcomes, decision_tree, rules</li>
+    <li><a href="examples.json">examples.json</a> · 12 worked scenarios</li>
+    <li><a href="AGENT.md">AGENT.md</a> · apply + mf-tool-001 chain</li>
+    <li><a href="engine.js">engine.js</a> · reference evaluator</li>
+  </ul>
+  <pre id="manifest"></pre>
+  <script type="application/json" id="manifest-data">
+{
+  "artifact": "mf-tool-002",
+  "audience": "agent",
+  "version": "1.0.0",
+  "files": ["rules.json", "examples.json", "AGENT.md", "OUTCOMES.md", "engine.js"],
+  "primary": "rules.json",
+  "apply": "infer inputs → priority rules → outcome → operator_lens",
+  "chains": ["mf-tool-001 if not_ai", "mf-tpl-001 if customer comms", "mf-train-001 if llm_api"],
+  "teaser": "../index.html"
+}
+  </script>
+  <script>
+    document.getElementById('manifest').textContent = document.getElementById('manifest-data').textContent.trim();
+  </script>
+</body>
+</html>

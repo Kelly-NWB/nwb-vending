@@ -1,0 +1,56 @@
+{
+  "artifact": "mf-tpl-005",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "ritual-open",
+      "use_when": "Start timer",
+      "body": "Weekly ops review · [week_of] · variant: [variant]\nTimer: 15 min. Phone face-down. One sheet only."
+    },
+    {
+      "id": "block-inbox",
+      "use_when": "Block 1 inbox and leads (3 min)",
+      "body": "INBOX (3 min)\n[ ] Past SLA reply? Name: ___ Action: ___\n[ ] Complaint tone? → mf-tpl-001 yes/no\n[ ] One follow-up today: ___\nIgnore: promos, newsletters"
+    },
+    {
+      "id": "block-money",
+      "use_when": "Block 2 money (3 min)",
+      "body": "MONEY (3 min)\n[ ] Bank vs 7-day bills: ok / tight / investigate\n[ ] Overdue owed to us: ___\n[ ] Overdue we owe: ___\n[ ] Surprise charge: ___\nIgnore: full P&L, new SaaS"
+    },
+    {
+      "id": "block-jobs",
+      "use_when": "Block 3 jobs in flight (4 min)",
+      "body": "JOBS (4 min)\nShips this week (max 3): 1) ___ 2) ___ 3) ___\n[ ] Scope creep unpaid? → mf-tool-003\nStuck job: ___ Unblock: ___\nIgnore: future product ideas"
+    },
+    {
+      "id": "block-people",
+      "use_when": "Block 4 people (3 min)",
+      "body": "PEOPLE (3 min)\n[ ] Waiting on my yes/no: ___\n[ ] Coverage gap 7 days: ___\n[ ] Thank-you or correction: ___\nIgnore: reorg daydreams"
+    },
+    {
+      "id": "block-close",
+      "use_when": "Block 5 close (2 min)",
+      "body": "CLOSE (2 min)\nOne fix next week: ___\nIgnore on purpose: ___\nNext review: [date] calendar set\nLog row written: Y/N"
+    },
+    {
+      "id": "next-week-capture",
+      "use_when": "Timer rang with items left",
+      "body": "PARKED (not this week)\n- ___\n- ___\nReview next Friday. Do not start today."
+    },
+    {
+      "id": "solo-short",
+      "use_when": "Solo variant: skip people block",
+      "body": "SOLO WEEKLY (15 min)\nInbox 3 · Money 3 · Jobs 5 · Close 4\nNo people block. You are the people."
+    },
+    {
+      "id": "bad-week-short",
+      "use_when": "Fire week: inbox + money only",
+      "body": "FIRE WEEK (6 min max)\nInbox SLA + complaint check only.\nMoney: tight or ok?\nFull ritual resumes when fire out."
+    },
+    {
+      "id": "log-row-reminder",
+      "use_when": "After review",
+      "body": "Paste into weekly_ops sheet:\nweek_of,variant,followup_sent,money_flag,stuck_job,one_fix,ignored_on_purpose,owner"
+    }
+  ]
+}

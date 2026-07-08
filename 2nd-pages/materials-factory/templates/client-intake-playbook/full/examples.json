@@ -1,0 +1,82 @@
+{
+  "artifact": "mf-tpl-004",
+  "version": "1.0.0",
+  "description": "Worked intake scenarios for small business. Historical patterns, not one-week anecdotes.",
+  "examples": [
+    {
+      "id": "ex-vague-custom-print",
+      "context": "Email: need something for our event, looks professional, no size or date",
+      "intake_type": "unclear",
+      "branch": "vague-scope",
+      "templates": ["first-touch-standard", "clarify-scope-3q"],
+      "resolution": "First touch + 3 questions. No quote.",
+      "log_row": "2026-06-12,email,website,unclear,vague-scope,custom event print unknown,,pending,wait on them,2026-06-14,owner"
+    },
+    {
+      "id": "ex-ready-flyer-specs",
+      "context": "Form: 11x17 flyer, 500 qty, July 20 deadline, file attached, payment ready",
+      "intake_type": "ready_to_buy",
+      "branch": "ready-to-quote",
+      "templates": ["first-touch-standard"],
+      "resolution": "Confirm receipt, human reviews file, quote + pay link in same thread within SLA",
+      "log_row": "2026-06-14,form,landing,ready_to_buy,ready-to-quote,11x17 500 by Jul 20,Y,complete,quote,2026-06-15,owner"
+    },
+    {
+      "id": "ex-dm-how-much",
+      "context": "Instagram DM: how much for logos?",
+      "intake_type": "new_lead",
+      "branch": "vague-scope",
+      "templates": ["first-touch-standard", "clarify-scope-3q"],
+      "resolution": "Do not drop price in DM. Clarify deliverable and usage.",
+      "notes": "Move to email when possible for paper trail.",
+      "log_row": "2026-06-18,dm,social,new_lead,vague-scope,logo price ask,Y,pending,wait on them,2026-06-20,owner"
+    },
+    {
+      "id": "ex-complaint-mask",
+      "context": "Email: you never sent the files I paid for last month",
+      "intake_type": "complaint_mask",
+      "branch": "complaint-mask",
+      "templates": [],
+      "resolution": "Route mf-tpl-001. Recovery before new sale.",
+      "cross_artifact": "mf-tpl-001",
+      "log_row": "2026-06-20,email,repeat,complaint_mask,complaint-mask,missing paid deliverable,N,pending,recovery,2026-06-20,owner"
+    },
+    {
+      "id": "ex-repeat-nudge",
+      "context": "Second email 6 hours later: anyone there???",
+      "intake_type": "repeat",
+      "branch": "repeat-inquiry",
+      "templates": ["repeat-we-replied"],
+      "resolution": "If first touch not sent yet: rush first-touch-standard instead of scolding",
+      "notes": "If truly no prior reply, apologize once and qualify.",
+      "log_row": "2026-06-22,email,website,repeat,repeat-inquiry,impatient follow-up,Y,pending,call offer,2026-06-23,owner"
+    },
+    {
+      "id": "ex-seo-spam",
+      "context": "Bulk email offering SEO and guest posts",
+      "intake_type": "spam",
+      "branch": "spam-filter",
+      "templates": [],
+      "resolution": "Archive. No reply.",
+      "log_row": "2026-06-25,email,inbound,spam,spam-filter,SEO pitch,N,declined,closed,,owner"
+    },
+    {
+      "id": "ex-rush-deadline",
+      "context": "Need 200 shirts in 48 hours for company picnic",
+      "intake_type": "new_lead",
+      "branch": "timeline-rush",
+      "templates": ["first-touch-rush", "defer-quote-24h"],
+      "resolution": "Honest feasibility check. Rush fee or decline.",
+      "log_row": "2026-07-01,email,referral,new_lead,timeline-rush,200 shirts 48h,Y,pending,quote or decline,2026-07-02,owner"
+    },
+    {
+      "id": "ex-out-of-area",
+      "context": "Request for on-site install 400 miles away",
+      "intake_type": "new_lead",
+      "branch": "not-a-fit",
+      "templates": ["not-a-fit-polite"],
+      "resolution": "Polite no with optional local referral",
+      "log_row": "2026-07-04,form,website,new_lead,not-a-fit,remote install request,Y,declined,closed,,owner"
+    }
+  ]
+}

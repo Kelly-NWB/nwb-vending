@@ -1,0 +1,56 @@
+{
+  "artifact": "mf-tpl-004",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "first-touch-standard",
+      "channel": "email_or_dm",
+      "use_when": "Default first reply within 24h",
+      "subject": "Re: your request",
+      "body": "Hi [Name],\n\nGot it: [one line restate their ask].\n\nNext step: [clarify questions / call / review specs] by [date].\n\nReply here if anything changes.\n\n[Your name]\n[Business]"
+    },
+    {
+      "id": "first-touch-rush",
+      "channel": "email_or_dm",
+      "use_when": "They named a tight deadline; you can respond today",
+      "subject": "Re: your timeline",
+      "body": "Hi [Name],\n\nI see you need this by [deadline]. I can confirm feasibility after [what you need from them] today.\n\nIf we cannot hit that date, I will say so plainly and offer the earliest real date.\n\n[Your name]"
+    },
+    {
+      "id": "clarify-scope-3q",
+      "channel": "email_or_dm",
+      "use_when": "Vague scope; need three facts before quote",
+      "body": "To route this right, can you reply with:\n1) What delivered item you need (be specific)\n2) Quantity or size\n3) Deadline (hard or flexible)\n\nOnce I have those, I will come back with next steps (not a guess price)."
+    },
+    {
+      "id": "clarify-budget-timeline",
+      "channel": "email_or_dm",
+      "use_when": "Scope partial; need budget band and date",
+      "body": "Thanks for the detail on [deliverable]. Two quick items:\n\n• Timeline: when do you need it?\n• Budget band: which tier fits? [list tiers if you have them, or say ballpark helps routing]\n\nThen I can tell you fit and timing honestly."
+    },
+    {
+      "id": "defer-quote-24h",
+      "channel": "email_or_dm",
+      "use_when": "You need internal review before pricing",
+      "body": "Hi [Name],\n\nI am reviewing [specs] against our queue. You will hear back by [date/time] with yes/no on timing and a clear quote or options.\n\nNo charge for this review step."
+    },
+    {
+      "id": "not-a-fit-polite",
+      "channel": "email_or_dm",
+      "use_when": "Outside capacity, area, or service",
+      "body": "Hi [Name],\n\nThank you for thinking of us. This one is not a fit for us because [brief reason: capacity / specialty / geography].\n\n[Optional referral: try X if you want Y.]\n\nWishing you the best with the project."
+    },
+    {
+      "id": "repeat-we-replied",
+      "channel": "email_or_dm",
+      "use_when": "They sent second message; you already answered",
+      "body": "Hi [Name],\n\nI sent a reply on [date] (subject: [subject]). Check spam if missing.\n\nShort version: [one line next step].\n\nHappy to jump on a call if easier: [phone or link]."
+    },
+    {
+      "id": "form-auto-body",
+      "channel": "form_success",
+      "use_when": "Success page or auto email after form submit",
+      "body": "Request received. We read every submission. Expect a personal reply within [SLA hours] business hours.\n\nWhat happens next: [one sentence process].\n\nUrgent? [contact path]."
+    }
+  ]
+}

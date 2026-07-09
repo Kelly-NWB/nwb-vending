@@ -1,0 +1,492 @@
+/* USA 250 · July 4 — full-site skin via CSS only (no copy edits per page) */
+html[data-theme="usa250"] {
+  --usa-navy: #0a1628;
+  --usa-navy-mid: #122a4a;
+  --usa-red: #b91c1c;
+  --usa-red-bright: #dc2626;
+  --usa-blue: #1d4ed8;
+  --usa-nwblue: #3d78c6;
+  --usa-cream: #f5f0e8;
+  --usa-gold: #e8c97a;
+  --usa-stripe: repeating-linear-gradient(
+    90deg,
+    #b91c1c 0,
+    #b91c1c 12px,
+    #f5f0e8 12px,
+    #f5f0e8 24px,
+    #1d4ed8 24px,
+    #1d4ed8 36px
+  );
+}
+
+/* —— Global —— */
+html[data-theme="usa250"] body {
+  color: #e8e4dc;
+  background:
+    radial-gradient(ellipse 80% 45% at 50% -5%, rgba(29, 78, 216, 0.18), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 100% 100%, rgba(185, 28, 28, 0.12), transparent 50%),
+    linear-gradient(180deg, var(--usa-navy) 0%, #060d18 100%);
+}
+
+html[data-theme="usa250"] body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: var(--usa-stripe);
+  z-index: 9998;
+  pointer-events: none;
+}
+
+html[data-theme="usa250"] footer {
+  color: #6b6560;
+}
+
+html[data-theme="usa250"] footer a:hover {
+  color: #fca5a5;
+}
+
+/* —— Home hero —— */
+html[data-theme="usa250"] .hero::before {
+  background: var(--usa-stripe);
+  height: 4px;
+}
+
+html[data-theme="usa250"] .hero-inset {
+  background: linear-gradient(155deg, #1d4ed8 0%, #7f1d1d 42%, var(--usa-navy-mid) 78%);
+  border-color: rgba(232, 201, 122, 0.45);
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 0 0 1px rgba(185, 28, 28, 0.25);
+}
+
+html[data-theme="usa250"] .hero h1 {
+  color: var(--usa-cream);
+}
+
+html[data-theme="usa250"] .hero-tagline,
+html[data-theme="usa250"] .hero-promise {
+  color: var(--usa-gold);
+}
+
+html[data-theme="usa250"] .hero-intro {
+  color: #b8b2ac;
+}
+
+html[data-theme="usa250"] .section-label {
+  color: var(--usa-cream);
+}
+
+html[data-theme="usa250"] .section-note {
+  color: #8a8580;
+}
+
+/* —— Panels & cards (home + landing) —— */
+html[data-theme="usa250"] .panel {
+  position: relative;
+  background:
+    linear-gradient(180deg, rgba(29, 78, 216, 0.12) 0%, transparent 30%),
+    linear-gradient(0deg, rgba(185, 28, 28, 0.1) 0%, transparent 28%),
+    linear-gradient(180deg, #121c2e 0%, var(--usa-navy) 100%);
+  border-color: rgba(232, 201, 122, 0.42);
+  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.5);
+}
+
+html[data-theme="usa250"] .panel::after {
+  content: "";
+  position: absolute;
+  top: 0.65rem;
+  right: 0.65rem;
+  width: 56px;
+  height: 56px;
+  background: url("assets/usa250-badge.png") center / contain no-repeat;
+  opacity: 0.22;
+  pointer-events: none;
+}
+
+html[data-theme="usa250"] .card {
+  background: rgba(10, 22, 40, 0.92);
+}
+
+html[data-theme="usa250"] .card-num {
+  color: #93c5fd;
+}
+
+html[data-theme="usa250"] .card.green .card-num {
+  color: #fca5a5;
+}
+
+html[data-theme="usa250"] .card.blue {
+  background:
+    linear-gradient(165deg, rgba(29, 78, 216, 0.55) 0%, rgba(18, 42, 74, 0.9) 55%),
+    var(--usa-navy);
+}
+
+html[data-theme="usa250"] .card.green {
+  background:
+    linear-gradient(345deg, rgba(185, 28, 28, 0.4) 0%, rgba(18, 42, 74, 0.92) 55%),
+    var(--usa-navy);
+}
+
+html[data-theme="usa250"] .card.blue h3 {
+  color: #bfdbfe;
+}
+
+html[data-theme="usa250"] .card h3 {
+  color: var(--usa-gold);
+}
+
+html[data-theme="usa250"] .card p,
+html[data-theme="usa250"] .card-sub {
+  color: #9a9590;
+}
+
+html[data-theme="usa250"] .card::before {
+  background: linear-gradient(135deg, #dc2626, #f5f0e8, #2563eb, var(--usa-gold));
+}
+
+html[data-theme="usa250"] .kuna-special,
+html[data-theme="usa250"] .card.blue .kuna-special,
+html[data-theme="usa250"] .card.green .kuna-special {
+  color: var(--usa-gold);
+}
+
+html[data-theme="usa250"] .card.green .card-special {
+  color: #fca5a5;
+}
+
+/* —— Buttons —— */
+html[data-theme="usa250"] .btn-primary,
+html[data-theme="usa250"] .card-link,
+html[data-theme="usa250"] .card.blue .card-link,
+html[data-theme="usa250"] .card.green .card-actions .card-link {
+  color: #fff;
+  background: linear-gradient(90deg, var(--usa-red-bright), var(--usa-blue));
+  box-shadow: 0 8px 24px rgba(185, 28, 28, 0.28);
+}
+
+html[data-theme="usa250"] .btn-kelly {
+  color: var(--usa-gold);
+  border-color: rgba(232, 201, 122, 0.65);
+  background: rgba(10, 22, 40, 0.92);
+}
+
+html[data-theme="usa250"] .btn-ghost,
+html[data-theme="usa250"] .btn-bio-audio {
+  color: var(--usa-gold);
+  border-color: rgba(232, 201, 122, 0.5);
+}
+
+/* —— America block (home) —— */
+html[data-theme="usa250"] .america-standalone {
+  box-shadow:
+    0 0 0 1px rgba(245, 240, 232, 0.18),
+    0 14px 44px rgba(185, 28, 28, 0.28),
+    0 14px 44px rgba(29, 78, 216, 0.22);
+}
+
+html[data-theme="usa250"] .america-standalone::before {
+  background: var(--usa-stripe);
+  opacity: 0.35;
+}
+
+html[data-theme="usa250"] .america-badge,
+html[data-theme="usa250"] .america-standalone h3,
+html[data-theme="usa250"] .america-sub,
+html[data-theme="usa250"] .america-special,
+html[data-theme="usa250"] .america-special-cta {
+  color: var(--usa-cream);
+}
+
+html[data-theme="usa250"] .card-link-america {
+  color: #fff;
+  background: linear-gradient(90deg, #dc2626, #1d4ed8, #dc2626);
+  background-size: 200% 100%;
+}
+
+html[data-theme="usa250"] .america-pledge {
+  border-color: rgba(29, 78, 216, 0.45);
+  background: rgba(10, 22, 40, 0.72);
+}
+
+html[data-theme="usa250"] .america-pledge:hover {
+  border-color: rgba(232, 201, 122, 0.55);
+  background: rgba(18, 42, 74, 0.85);
+}
+
+html[data-theme="usa250"] .america-pledge-title {
+  color: var(--usa-gold);
+}
+
+/* —— CTA card — swap lab photo for Kuna Super C when USA —— */
+html[data-theme="usa250"] .cta-card {
+  background:
+    linear-gradient(345deg, rgba(185, 28, 28, 0.15) 0%, rgba(29, 78, 216, 0.12) 55%, rgba(10, 22, 40, 0.2) 100%),
+    url("assets/kuna-superc.jpg") 50% 40% / cover no-repeat;
+}
+
+html[data-theme="usa250"] .cta-card::before {
+  background: linear-gradient(315deg, #dc2626, #f5f0e8, #2563eb);
+}
+
+html[data-theme="usa250"] .cta-card::after {
+  background: linear-gradient(
+    180deg,
+    rgba(10, 22, 40, 0.45) 0%,
+    rgba(10, 22, 40, 0.62) 55%,
+    rgba(10, 22, 40, 0.78) 100%
+  );
+}
+
+/* —— Landing headers —— */
+html[data-theme="usa250"] .landing-top {
+  position: relative;
+}
+
+html[data-theme="usa250"] .landing-badge {
+  color: var(--usa-gold);
+}
+
+html[data-theme="usa250"] .landing-top h1 {
+  color: var(--usa-cream);
+}
+
+html[data-theme="usa250"] .landing-tag {
+  color: #9a9590;
+}
+
+html[data-theme="usa250"] .back-link {
+  color: #6b6560;
+}
+
+html[data-theme="usa250"] .back-link:hover {
+  color: #fca5a5;
+}
+
+html[data-theme="usa250"] .landing-top.theme-gold .landing-badge,
+html[data-theme="usa250"] .landing-top.theme-blue .landing-badge,
+html[data-theme="usa250"] .landing-top.theme-green .landing-badge {
+  color: var(--usa-gold);
+}
+
+html[data-theme="usa250"] .landing-top::after {
+  content: "";
+  display: block;
+  width: min(280px, 70vw);
+  height: 3px;
+  margin: 0.85rem auto 0;
+  border-radius: 2px;
+  background: var(--usa-stripe);
+  opacity: 0.85;
+}
+
+/* —— Landing body copy —— */
+html[data-theme="usa250"] .landing-body p,
+html[data-theme="usa250"] .landing-list,
+html[data-theme="usa250"] .contact-focus,
+html[data-theme="usa250"] .landing-note,
+html[data-theme="usa250"] .landing-status {
+  color: #9a9590;
+}
+
+html[data-theme="usa250"] .landing-body a,
+html[data-theme="usa250"] .contact-email,
+html[data-theme="usa250"] .bio-close,
+html[data-theme="usa250"] .bio-x-link a:hover {
+  color: var(--usa-gold);
+}
+
+html[data-theme="usa250"] .landing-steps-title,
+html[data-theme="usa250"] .bio-lead {
+  color: var(--usa-cream);
+}
+
+html[data-theme="usa250"] .landing-list li::before {
+  color: #93c5fd;
+}
+
+html[data-theme="usa250"] .landing-list.green li::before {
+  color: #fca5a5;
+}
+
+/* —— Path cards —— */
+html[data-theme="usa250"] .path-card {
+  background: rgba(10, 22, 40, 0.9);
+  border-color: rgba(29, 78, 216, 0.2);
+}
+
+html[data-theme="usa250"] .path-card:hover {
+  border-color: rgba(185, 28, 28, 0.45);
+}
+
+html[data-theme="usa250"] .path-card h2 {
+  color: var(--usa-cream);
+}
+
+html[data-theme="usa250"] .path-card p {
+  color: #8a8580;
+}
+
+html[data-theme="usa250"] .path-card.blue .path-num {
+  color: #93c5fd;
+}
+
+html[data-theme="usa250"] .path-card.green .path-num {
+  color: #fca5a5;
+}
+
+html[data-theme="usa250"] .path-card.gold .path-num {
+  color: var(--usa-gold);
+}
+
+/* —— Bio (styling only — never copy) —— */
+html[data-theme="usa250"] .bio-turn {
+  border-top-color: rgba(185, 28, 28, 0.28);
+}
+
+html[data-theme="usa250"] .bio-audio-note {
+  color: #6b6560;
+}
+
+/* —— America 250 page —— */
+html[data-theme="usa250"] .offer-card {
+  background: rgba(10, 22, 40, 0.88);
+  border-color: rgba(29, 78, 216, 0.22);
+}
+
+html[data-theme="usa250"] .offer-card h3 {
+  color: var(--usa-cream);
+}
+
+html[data-theme="usa250"] .offer-card p,
+html[data-theme="usa250"] .offer-card .offer-includes {
+  color: #8a8580;
+}
+
+html[data-theme="usa250"] .offer-card .offer-price {
+  color: #fca5a5;
+}
+
+html[data-theme="usa250"] .request-note,
+html[data-theme="usa250"] .terms-block {
+  background: rgba(10, 22, 40, 0.65);
+  border-color: rgba(232, 201, 122, 0.28);
+  color: #9a9590;
+}
+
+html[data-theme="usa250"] .terms-block h2 {
+  color: var(--usa-cream);
+}
+
+html[data-theme="usa250"] .legend-aside {
+  border-color: rgba(29, 78, 216, 0.35);
+  background: rgba(29, 78, 216, 0.08);
+}
+
+html[data-theme="usa250"] .request-form input,
+html[data-theme="usa250"] .request-form select,
+html[data-theme="usa250"] .request-form textarea {
+  background: rgba(8, 12, 22, 0.95);
+  border-color: rgba(232, 201, 122, 0.35);
+  color: var(--usa-cream);
+}
+
+html[data-theme="usa250"] .request-form label {
+  color: #8a8580;
+}
+
+html[data-theme="usa250"] .form-success {
+  border-color: rgba(147, 197, 253, 0.35);
+  background: rgba(29, 78, 216, 0.1);
+}
+
+html[data-theme="usa250"] .form-success strong {
+  color: #93c5fd;
+}
+
+html[data-theme="usa250"] .thank-you {
+  border-color: rgba(185, 28, 28, 0.35);
+  background: rgba(185, 28, 28, 0.08);
+}
+
+html[data-theme="usa250"] .thank-you strong {
+  color: #fca5a5;
+}
+
+html[data-theme="usa250"] .request-note-accent {
+  color: var(--usa-gold);
+}
+
+/* —— Gallery (light touch — page already slaps) —— */
+html[data-theme="usa250"] .gallery-tab.is-active {
+  color: #fff;
+  background: linear-gradient(90deg, var(--usa-red-bright), var(--usa-blue));
+}
+
+html[data-theme="usa250"] .gallery-quote {
+  border-left-color: var(--usa-red-bright);
+}
+
+html[data-theme="usa250"] .gallery-tier-tag {
+  color: var(--usa-gold);
+}
+
+html[data-theme="usa250"] .gallery-tier-free {
+  color: #93c5fd;
+}
+
+html[data-theme="usa250"] .gallery-stage,
+html[data-theme="usa250"] .gallery-hero-frame {
+  border-color: rgba(232, 201, 122, 0.35);
+}
+
+html[data-theme="usa250"] .gallery-hero-frame {
+  box-shadow: 0 12px 36px rgba(185, 28, 28, 0.15);
+}
+
+html[data-theme="usa250"] .gallery-hero-caption-sub {
+  color: #fca5a5;
+}
+
+/* —— Page-specific panel watermarks —— */
+html[data-theme="usa250"][data-page="america-250"] .panel::after {
+  opacity: 0.35;
+  width: 72px;
+  height: 72px;
+}
+
+html[data-theme="usa250"][data-page="america-250"] .panel {
+  border-color: rgba(185, 28, 28, 0.35);
+}
+
+html[data-theme="usa250"][data-page="gallery"] .panel::after {
+  opacity: 0.16;
+}
+
+html[data-theme="usa250"][data-page="bio"] .panel::before {
+  content: "";
+  position: absolute;
+  bottom: 0.75rem;
+  left: 0.75rem;
+  width: 88px;
+  height: 88px;
+  background: url("assets/nwb-poster.png") center / contain no-repeat;
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+html[data-theme="usa250"][data-page="tell-my-story"] .landing-top::before,
+html[data-theme="usa250"][data-page="solve-for-x"] .landing-top::before {
+  content: "";
+  position: absolute;
+  top: 3.5rem;
+  right: 1rem;
+  width: 48px;
+  height: 48px;
+  background: url("assets/usa250-badge.png") center / contain no-repeat;
+  opacity: 0.2;
+  pointer-events: none;
+}

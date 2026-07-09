@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" data-sandbox-depth="2" data-page="lets-talk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact NWB Vending. Web, email, and X.">
+  <title>Let's Talk | NWB Vending</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../../../assets/landing.css">
+  <link rel="stylesheet" href="../../theme/sandbox-chrome.css">
+  <link rel="stylesheet" href="../../theme/usa250-theme.css">
+</head>
+<body>
+  <header class="landing-top theme-gold">
+    <a class="back-link" href="../../index.html">Back to the cave</a>
+    <img class="landing-logo" src="../../../../../assets/nwb-logo.png" alt="NWB Vending" width="120" height="120">
+    <img class="usa250-skin-badge" src="../../../../../assets/usa250-kaveman-button.png" alt="" width="140" height="140" aria-hidden="true">
+    <p class="landing-badge">Contact</p>
+    <h1>Let's Talk</h1>
+  </header>
+
+  <main class="container">
+    <div class="panel">
+      <div class="landing-body contact-channels">
+        <p>Web: <a href="https://NWB-Vending.com">NWB-Vending.com</a></p>
+        <p>Email: <span class="contact-email">NWBVending@gmail.com</span></p>
+        <p>X: <a href="https://x.com/NWBVending" target="_blank" rel="noopener noreferrer">@NWBVending</a></p>
+      </div>
+      <p class="contact-focus">Async first. Email or X. If a call makes sense, I'll reach out.</p>
+      <p class="contact-focus">Kuna Legends, locals, and veterans. That's my lane, and always has been.</p>
+      <div class="landing-actions">
+        <button type="button" class="btn-primary" id="copy-email">Copy email address</button>
+        <a class="btn-ghost" href="../../index.html">Back to the cave</a>
+      </div>
+    </div>
+    <footer><a href="https://NWB-Vending.com">NWB Vending</a> | Idahome | <a href="https://x.com/NWBVending" target="_blank" rel="noopener noreferrer">@NWBVending</a> | <a href="index.html">Message Anytime</a></footer>
+  </main>
+  <script>
+    document.getElementById("copy-email")?.addEventListener("click", function () {
+      var btn = this;
+      var address = "NWBVending@gmail.com";
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(address).then(function () {
+          btn.textContent = "Copied";
+          setTimeout(function () { btn.textContent = "Copy email address"; }, 2200);
+        });
+      } else {
+        window.prompt("Copy this email address:", address);
+      }
+    });
+  </script>
+  <script src="../../theme/theme-toggle.js" defer></script>
+</body>
+</html>

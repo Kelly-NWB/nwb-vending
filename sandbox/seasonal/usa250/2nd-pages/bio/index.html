@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" data-sandbox-depth="2" data-page="bio">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kaveman Kelly. Idaho born, Navy vet, 25 years in service and support. Practical tools for Kuna and Treasure Valley small business.">
+  <title>Kaveman Kelly | NWB Vending</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../../../../assets/landing.css">
+  <link rel="stylesheet" href="../../theme/sandbox-chrome.css">
+  <link rel="stylesheet" href="../../theme/usa250-theme.css">
+</head>
+<body>
+  <header class="landing-top theme-gold">
+    <a class="back-link" href="../../index.html">Back to the cave</a>
+    <img class="landing-logo" src="../../../../../assets/nwb-logo.png" alt="NWB Vending" width="120" height="120">
+    <img class="usa250-skin-badge" src="../../../../../assets/usa250-kaveman-button.png" alt="" width="140" height="140" aria-hidden="true">
+    <h1>Kaveman Kelly</h1>
+    <p class="landing-tag">Who I am, how I work, and why NWB Vending exists.</p>
+  </header>
+
+  <main class="container container-bio">
+    <div class="panel">
+      <div class="bio-duo">
+        <img class="bio-photo" src="../../../../../assets/kcround.png" alt="Kelly" width="150" height="150">
+        <img class="bio-mascot" src="../../../../../assets/kavemannobg.png" alt="Kaveman Kelly" width="170" height="170">
+      </div>
+      <p class="bio-x-link"><a href="https://x.com/NWBVending" target="_blank" rel="noopener noreferrer">@NWBVending</a></p>
+      <p class="bio-lead">WTF is a Kaveman Kelly?</p>
+      <div class="landing-body">
+        <p>Born and raised in Idaho. Kaveman, Class of '88. Navy vet (nukes). Then a career, knocking out a business degree from NNU along the way. Twenty-five years leading service and support organizations across Idaho and the PNW. I have built bridges and solved real problems my whole adult life. Burned a few along the way too, I suppose. It happens.</p>
+        <p>Always been able to write. Could not draw for shit. So I became a data guy. Grew up in Tech Support and then spent twenty-five years leading customer support and service orgs. An artist with no canvas or a dev who could not code. Then AI changed the whole thing. BOOM!!! Spent the last five years in the trenches, stacking new skills and sharpening old ones. Now I can build whatever you need: logos, visuals, productivity tools, training, the works. Try me.</p>
+        <div class="bio-audio">
+          <button type="button" class="btn-bio-audio" id="bio-audio-btn" aria-pressed="false">Hear it from me</button>
+          <audio id="bio-audio" src="../../../../../assets/bionwb.wav" preload="metadata"></audio>
+          <p class="bio-audio-note">My voice. My words. That's AI done right.</p>
+        </div>
+        <p>That is why NWB Vending exists. Practical solutions for small businesses right here in Kuna and the Treasure Valley. Signs, branding, efficiency tools, America 250 materials, and anything else that actually helps you win. No hype. No B.S. Just honest, local, GenX problem solving with an AI twist. A deadly combo.</p>
+        <p>The town I grew up in has grown up. So much change. And nestled in the heart of Kuna, Super C is still thriving. That damn little gas station is the hub of Kuna. Still there. Won't quit. The resiliency of... dare I say it... a Kaveman? Thriving on the edge of a valley, caught between desert and an urban explosion, riding float tubes down a creek that's about 85% sharp, lava rock kinda thriving, am I right?</p>
+        <p class="bio-turn">Thinking about all those years and Super C, the nostalgia hit hard. Inspiration hit. I made them some things. And here we are. If you have a Super C story, raise your hand. (on second thought, better not).</p>
+        <p>I see my beloved town burst with new business and new people. And it still felt like home. Idahome. Always will be. Ride-or-die.</p>
+        <p>Speaking of ride-or-die... thirty-five years married to my Idaho vixen (she's from Meridian though, shhhh). Two amazing kids. My folks still live in town and we're ten minutes away. That is not the footnote. That is the reason.</p>
+      </div>
+      <p class="bio-close">Enough about boring old me. It's bridge building time.</p>
+      <div class="landing-actions">
+        <a class="btn-primary" href="../how-to-start/index.html">How to Start</a>
+        <a class="btn-ghost" href="../lets-talk/index.html">Let's Talk</a>
+        <a class="btn-ghost landing-action-span" href="../america-250/gallery/index.html">Keep'n It Local</a>
+      </div>
+    </div>
+    <footer><a href="https://NWB-Vending.com">NWB Vending</a> | Idahome | <a href="../america-250/gallery/index.html">Keep'n It Local</a> | <a href="https://x.com/NWBVending" target="_blank" rel="noopener noreferrer">@NWBVending</a> | <a href="../lets-talk/index.html">Message Anytime</a></footer>
+  </main>
+  <script>
+    (function () {
+      var btn = document.getElementById("bio-audio-btn");
+      var audio = document.getElementById("bio-audio");
+      if (!btn || !audio) return;
+
+      btn.addEventListener("click", function () {
+        if (audio.paused) {
+          audio.play().then(function () {
+            btn.textContent = "Pause";
+            btn.setAttribute("aria-pressed", "true");
+          }).catch(function () {});
+        } else {
+          audio.pause();
+          btn.textContent = "Hear it from me";
+          btn.setAttribute("aria-pressed", "false");
+        }
+      });
+
+      audio.addEventListener("ended", function () {
+        btn.textContent = "Hear it from me";
+        btn.setAttribute("aria-pressed", "false");
+      });
+    })();
+  </script>
+  <script src="../../theme/theme-toggle.js" defer></script>
+</body>
+</html>

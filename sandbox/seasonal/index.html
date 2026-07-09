@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NWB Seasonal Sandbox</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Montserrat, system-ui, sans-serif;
+      background: #0a1628;
+      color: #e8e4dc;
+      line-height: 1.65;
+      padding: 1.5rem;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: repeating-linear-gradient(90deg, #b91c1c 0, #b91c1c 12px, #f5f0e8 12px, #f5f0e8 24px, #1d4ed8 24px, #1d4ed8 36px);
+    }
+    .wrap { max-width: 720px; margin: 0 auto; }
+    .tag {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #fca5a5;
+    }
+    h1 {
+      font-family: "Cormorant Garamond", serif;
+      color: #f5f0e8;
+      margin: 0.35rem 0 0.5rem;
+    }
+    .note { font-style: italic; color: #8a8580; font-size: 0.9rem; }
+    h2 {
+      font-family: "Cormorant Garamond", serif;
+      color: #e8c97a;
+      font-size: 1.25rem;
+      margin: 1.75rem 0 0.5rem;
+    }
+    .season-card {
+      display: block;
+      margin-top: 0.75rem;
+      padding: 1.15rem 1.25rem;
+      text-decoration: none;
+      color: inherit;
+      border-radius: 12px;
+      border: 1px solid rgba(232, 201, 122, 0.35);
+      background: linear-gradient(135deg, rgba(29, 78, 216, 0.15), rgba(185, 28, 28, 0.12));
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .season-card:hover {
+      border-color: rgba(232, 201, 122, 0.6);
+      transform: translateY(-1px);
+    }
+    .season-card strong {
+      display: block;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.35rem;
+      color: #f5f0e8;
+    }
+    .season-card span {
+      display: block;
+      margin-top: 0.35rem;
+      font-size: 0.85rem;
+      color: #9a9590;
+    }
+    a.back { color: #93c5fd; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; text-decoration: none; }
+    a.back:hover { color: #f5f0e8; }
+    ul { list-style: none; padding: 0; margin: 0.5rem 0 0; }
+    li { margin: 0.35rem 0; font-size: 0.85rem; color: #8a8580; }
+    code { font-size: 0.82rem; color: #6b6560; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <p class="tag">Internal · seasonal previews</p>
+    <h1>NWB-Vending Seasonal Sandbox</h1>
+    <p class="note">Full site mirrors with toggleable skins. Bio copy is never edited here — voice sync stays on live bio only.</p>
+    <p><a class="back" href="../index.html">← Design sandbox hub</a></p>
+
+    <h2>Live seasons</h2>
+    <a class="season-card" href="usa250/index.html">
+      <strong>USA 250 · July 4</strong>
+      <span>Full-site skin via CSS + bundled 250/NWB/Kuna assets. Sticky bar: <strong>Version of this site · Normie | USA</strong> on every page — no per-page editing.</span>
+    </a>
+
+    <h2>Rebuild</h2>
+    <ul>
+      <li><code>python sandbox/seasonal/build_usa250_sandbox.py</code></li>
+      <li>Pulls live HTML, rewires asset paths, injects theme — does not touch bio body text.</li>
+    </ul>
+  </div>
+</body>
+</html>

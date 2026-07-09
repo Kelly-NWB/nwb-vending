@@ -1,24 +1,39 @@
-NWB-Vending.com — how the site actually goes live
-=================================================
+NWB-Vending.com — WHAT ACTUALLY CHANGED (June 15, 2026)
+========================================================
 
-Your domain (NWB-Vending.com) runs on Cloudflare Workers.
-GitHub Pages (kelly-nwb.github.io/nwb-vending) is a preview — not the custom domain.
+YOU DID NOT CHANGE ANYTHING. HERE IS WHAT HAPPENED:
 
-ONE-TIME SETUP (Kelly, ~2 minutes — then Grok handles the rest)
----------------------------------------------------------------
-1. Cloudflare dashboard → My Profile → API Tokens → Create Token
-   Use template: "Edit Cloudflare Workers"
-2. Copy the token.
-3. GitHub → Kelly-NWB/nwb-vending → Settings → Secrets and variables → Actions
-   Add secret: CLOUDFLARE_API_TOKEN = (paste token)
-   Add secret: CLOUDFLARE_ACCOUNT_ID = (Cloudflare dashboard URL has it: dash.cloudflare.com/ACCOUNT_ID/...)
-4. Tell Grok: "deploy secrets are set"
+OLD PIPE (worked for months):
+  edit → git push main → GitHub Pages rebuilds → NWB-Vending.com updated
+  Every edit. Every push. Same pipe.
 
-AFTER THAT
-----------
-Grok pushes to main → GitHub Action deploys → NWB-Vending.com updates.
-No separate branch. No wrangler commands for Kelly.
+NEW PIPE (started today):
+  Cloudflare's GitHub bot linked your repo and added wrangler.jsonc
+  (commit 065c563, author: cloudflare-workers-and-pages[bot])
 
-TEMPORARY PREVIEW (always current after main push)
---------------------------------------------------
-https://kelly-nwb.github.io/nwb-vending/2nd-pages/america-250/gallery/
+  Now:
+  git push main  →  updates kelly-nwb.github.io/nwb-vending ONLY
+  NWB-Vending.com  →  reads Cloudflare Workers (separate deploy)
+
+  That is why preview and .com can show different text on the same day.
+
+WHY THE BOT FIRED:
+  Your domain DNS is on Cloudflare (normal). At some point the repo got
+  connected in Cloudflare Workers & Pages (dashboard or auto-config).
+  The bot commits wrangler.jsonc so Cloudflare serves the site — not GitHub.
+
+KELLY'S JOB: push28 when ready. Nothing else.
+
+AGENT'S JOB (every push28): see PUSH28-AGENT.md
+  push → verify BOTH urls → wrangler deploy if .com stale → verify again
+
+DEPLOY (July 2026 fix):
+  Removed broken GitHub Action "Deploy NWB-Vending.com" (no secrets → failure email every push).
+  NWB-Vending.com updates via Cloudflare Workers Git connection (wrangler.jsonc).
+  Agent verifies both URLs after push28 (node scripts/verify-both-urls.mjs).
+
+PREVIEW (always github after push):
+  https://kelly-nwb.github.io/nwb-vending/
+
+LIVE BRAND DOMAIN:
+  https://NWB-Vending.com/

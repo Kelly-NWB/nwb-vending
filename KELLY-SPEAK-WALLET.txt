@@ -1,0 +1,50 @@
+╔══════════════════════════════════════╗
+║  KELLY-SPEAK — WALLET CARD (crew)    ║
+║  Kelly_NWB · screen = truth          ║
+╚══════════════════════════════════════╝
+
+DEFAULT
+  left/right/up/down = KELLY'S MONITOR
+  not math class · not file-start · not object's own left
+
+ARROWS WIN
+  screen-right:   [ thing ] ---->
+  screen-left:    <---- [ thing ]
+  fuzzy? draw A/B · one flip · move on
+
+"THE OTHER LEFT"
+  1. flip that axis once
+  2. sprite wrong? check face vs movement
+  3. still wrong? ascii A/B — don't lecture
+
+KELLY SAYS → DO
+  hair / bump     tiny nudge (4–16px · 1 tile)
+  quick hitter    short · skimmable · today
+  pretty close    polish feel — don't restart
+  too hard        lower friction
+  no new code     talk only — zero repo changes
+  one more try    new approach — last one missed FEEL
+  don't care X    X out of scope THIS pass
+
+NAMES
+  Kelly_NWB = operator · NWB Vending = company · NWB = brand (not solo label)
+
+CREW DON'T
+  correct Kelly's words · 5 clarifying questions · coord sermon · she/her (he's Kelly)
+
+CREW DO
+  read SOUL + this · generous guess · confirm if destructive/public
+
+PIPELINE
+  SG brainstorm → GB build → GI imagine (assets)
+
+DEPLOY GATE (ironclad)
+  NO git push / publish / go-live without Kelly says so THIS session
+
+PROJECT WALLS
+  site = vending only · 250/MP3/games/pitches NEVER on site unless Kelly tasks it
+
+ONE LINE
+  Human + monitor, not compass. Flip on "other left". Arrows > semantics.
+
+Full doc: D:\GrokBuild\nwb\Org Structure\KELLY-SPEAK.md

@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en" data-sandbox-depth="0" data-page="home">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NWB Vending. Practical solutions for small business problems in Kuna, Idaho.">
+  <title>NWB Vending</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Montserrat, system-ui, sans-serif;
+      font-size: 1rem;
+      line-height: 1.65;
+      color: #e8e4dc;
+      background: #08080a;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; height: auto; }
+    a { color: inherit; }
+
+    .container {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    /* Concept 36 Final Blend */
+    :root {
+      --nwb-blue: rgba(61, 120, 198, 0.5);
+      --nwb-teal: rgba(38, 160, 125, 0.42);
+      --nwb-deep: rgba(18, 18, 26, 0.94);
+      --nwb-base: #0c0c12;
+      --nwb-blend-down: linear-gradient(165deg, var(--nwb-blue) 0%, var(--nwb-teal) 42%, var(--nwb-deep) 100%);
+      --nwb-blend-up: linear-gradient(345deg, var(--nwb-teal) 0%, var(--nwb-blue) 42%, var(--nwb-deep) 100%);
+      --nwb-frame: linear-gradient(135deg, #6ec0ff, #34d399, #e8c97a);
+    }
+
+    .hero {
+      padding: 0.35rem 1.5rem 3rem;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #9ca3af, #f5f0e8, #9ca3af, transparent);
+      z-index: 2;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 65% 50% at 50% 100%, rgba(201, 166, 107, 0.12), transparent);
+      pointer-events: none;
+    }
+
+    .hero-inset {
+      margin: 0 auto;
+      max-width: 920px;
+      padding: clamp(1.35rem, 3.5vw, 1.75rem) 2rem clamp(2.5rem, 6vw, 3rem);
+      border-radius: 20px;
+      background: linear-gradient(165deg, #3d6fc6 0%, #2a9a78 38%, #22222e 72%);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-brand {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(1rem, 4vw, 2rem);
+      flex-wrap: wrap;
+    }
+
+    .hero-logo,
+    .hero-kaveman {
+      display: block;
+      width: min(150px, 38vw);
+      height: auto;
+    }
+
+    .hero-logo {
+      filter: drop-shadow(0 10px 30px rgba(94, 179, 255, 0.3));
+    }
+
+    .hero-kaveman {
+      filter: drop-shadow(0 10px 28px rgba(201, 166, 107, 0.35));
+    }
+
+    .hero h1 {
+      margin: 0.5rem 0 0.5rem;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2.25rem, 7vw, 3.2rem);
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      line-height: 1.1;
+      color: #f5f0e8;
+    }
+
+    .hero-tagline {
+      margin: 0;
+      font-size: 0.72rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: #e8c97a;
+    }
+
+    .hero-copy {
+      margin: 1.5rem auto 0;
+      max-width: 34rem;
+      width: 100%;
+      text-align: left;
+    }
+
+    .hero-intro {
+      margin: 0;
+      font-size: 1.02rem;
+      line-height: 1.75;
+      color: #9a9590;
+    }
+
+    .hero-promise {
+      margin: 0.75rem 0 0;
+      font-size: 1.02rem;
+      font-weight: 700;
+      line-height: 1.65;
+      text-align: center;
+      color: #e8c97a;
+    }
+
+    .hero-actions {
+      margin-top: 2.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 5.5rem;
+    }
+
+    .btn-kelly {
+      padding: 0.75rem 1.5rem;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #e8c97a;
+      background: #08080a;
+      border: 1px solid #c9a66b;
+      border-radius: 8px;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(201, 166, 107, 0.2);
+    }
+
+    .btn-primary {
+      padding: 0.75rem 1.5rem;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #08080a;
+      background: linear-gradient(90deg, #3b82f6, #22c55e);
+      border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(59, 130, 246, 0.25);
+    }
+
+    .btn-ghost {
+      padding: 0.75rem 1.35rem;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #e8c97a;
+      border: 1px solid rgba(201, 166, 107, 0.45);
+      border-radius: 8px;
+    }
+
+    .main {
+      margin-top: -2.75rem;
+      padding-bottom: 3rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .panel {
+      background:
+        linear-gradient(180deg, rgba(61, 120, 198, 0.1) 0%, transparent 28%),
+        linear-gradient(0deg, rgba(38, 160, 125, 0.08) 0%, transparent 32%),
+        linear-gradient(180deg, #14141c 0%, #0c0c10 100%);
+      border: 1px solid rgba(201, 166, 107, 0.35);
+      border-radius: 16px;
+      padding: clamp(1.75rem, 4vw, 2.5rem) clamp(1.25rem, 3vw, 2rem);
+      box-shadow: 0 24px 55px rgba(0, 0, 0, 0.5);
+    }
+
+    .section-label {
+      margin: 0 0 0.35rem;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: #f5f0e8;
+      text-align: center;
+    }
+
+    .section-note {
+      margin: 0 0 1.75rem;
+      text-align: center;
+      font-size: 0.88rem;
+      color: #6b6560;
+    }
+
+    .duo {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.1rem;
+      align-items: stretch;
+    }
+
+    .duo .card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .duo .card-sub {
+      flex: 1;
+      margin-bottom: 0.7rem;
+      padding: 0 0.15rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 720px) {
+      .duo { grid-template-columns: 1fr; }
+    }
+
+    .card {
+      padding: 1.6rem;
+      position: relative;
+      background: #0c0c12;
+      border-radius: 8px;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 8px;
+      padding: 1px;
+      background: var(--nwb-frame);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    .card.blue {
+      background: var(--nwb-blend-down), var(--nwb-base);
+    }
+
+    .card.green {
+      background: var(--nwb-blend-up), var(--nwb-base);
+    }
+
+    .card-num {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #5eb3ff;
+      margin-bottom: 0.45rem;
+    }
+
+    .card.green .card-num { color: #4ade80; }
+
+    .card h3 {
+      margin: 0 0 0.5rem;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.45rem;
+      color: #e8c97a;
+    }
+
+    .card.blue h3 {
+      text-align: center;
+      font-size: 1.6rem;
+      color: #8ec5ff;
+    }
+
+    .card-sub {
+      text-align: center;
+      font-style: italic;
+      color: #8a8580;
+      margin: 0 0 0.7rem;
+      font-size: 0.9rem;
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #9a9590;
+      line-height: 1.55;
+    }
+
+    .card-lbl {
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #6ee7a0;
+      margin-bottom: 0.3rem;
+    }
+
+    .card-link {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 8px;
+      color: #08080a;
+      background: linear-gradient(90deg, #3b82f6, #22c55e);
+      box-shadow: 0 8px 24px rgba(59, 130, 246, 0.25);
+    }
+
+    .card.blue .card-actions,
+    .card.green .card-actions {
+      margin-top: 1.5rem;
+      text-align: center;
+    }
+
+    .card.blue .kuna-special,
+    .card.green .kuna-special,
+    .card.green .card-special {
+      margin: 0 0 1.15rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      line-height: 1.45;
+    }
+
+    .card.blue .kuna-special,
+    .card.green .kuna-special { color: #e8c97a; }
+    .card.green .card-special { color: #6ee7a0; }
+
+    .card.blue .card-link,
+    .card.green .card-actions .card-link {
+      margin-top: 0;
+    }
+
+    .card-link-solve {
+      letter-spacing: 0.12em;
+    }
+
+    .solve-x {
+      font-family: inherit;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 1em;
+      line-height: inherit;
+      color: inherit;
+      vertical-align: baseline;
+    }
+
+    .america {
+      margin-top: 1.15rem;
+      padding: 2.2rem 1.5rem;
+      text-align: center;
+      border-radius: 12px;
+      border: 1px solid #e8c97a;
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(6, 95, 70, 0.25));
+    }
+
+    .america-standalone {
+      position: relative;
+      margin-top: 1.1rem;
+      margin-bottom: 0;
+      width: 100%;
+      padding: 1.85rem clamp(1rem, 2.5vw, 1.5rem) 1.75rem;
+      text-align: center;
+      border-radius: 10px;
+      border: 2px solid transparent;
+      background: transparent;
+      box-shadow:
+        0 0 0 1px rgba(245, 240, 232, 0.12),
+        0 12px 40px rgba(185, 28, 28, 0.18),
+        0 12px 40px rgba(29, 78, 216, 0.15);
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .america-body {
+      position: relative;
+      z-index: 3;
+    }
+
+    .america-pledge {
+      position: relative;
+      z-index: 3;
+      display: block;
+      margin: 1.35rem auto 0;
+      max-width: 32rem;
+      padding: 0.85rem 1rem 0.9rem;
+      text-decoration: none;
+      text-align: center;
+      border-radius: 8px;
+      border: 1px solid rgba(201, 166, 107, 0.35);
+      border-top: 2px solid rgba(185, 28, 28, 0.55);
+      background: linear-gradient(180deg, rgba(30, 58, 95, 0.55) 0%, rgba(12, 12, 18, 0.72) 100%);
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .america-pledge:hover {
+      border-color: rgba(232, 201, 122, 0.55);
+      background: linear-gradient(180deg, rgba(30, 58, 95, 0.68) 0%, rgba(12, 12, 18, 0.82) 100%);
+    }
+
+    .america-pledge-title {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #f0d998;
+    }
+
+    .america-pledge-copy {
+      display: block;
+      margin-top: 0.45rem;
+      font-size: 0.92rem;
+      font-weight: 500;
+      line-height: 1.55;
+      color: #d4cfc7;
+    }
+
+    .america-pledge-promise {
+      display: block;
+      margin-top: 0.4rem;
+      font-size: 0.92rem;
+      font-weight: 600;
+      line-height: 1.45;
+      color: #f5f0e8;
+    }
+
+    .america-pledge-fine {
+      display: block;
+      margin-top: 0.55rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #fecaca;
+    }
+
+    .america-pledge-fine .pledge-star {
+      color: #f0d998;
+      letter-spacing: 0.05em;
+    }
+
+    .america-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: url("../../../assets/bgtest2.png?v=2") center / cover no-repeat;
+      pointer-events: none;
+    }
+
+    .america-bg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(160deg, rgba(10, 10, 16, 0.72) 0%, rgba(10, 10, 16, 0.82) 55%, rgba(10, 10, 16, 0.88) 100%),
+        linear-gradient(160deg, rgba(185, 28, 28, 0.18) 0%, rgba(29, 78, 216, 0.22) 48%, rgba(185, 28, 28, 0.14) 100%);
+    }
+
+    .america-standalone::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      border-radius: 8px;
+      padding: 2px;
+      background: linear-gradient(90deg, #dc2626, #f5f0e8, #2563eb, #f5f0e8, #dc2626);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+      opacity: 0.85;
+    }
+
+    .america-standalone::after {
+      content: "★  ★  ★  ★  ★";
+      position: absolute;
+      top: 0.55rem;
+      left: 0;
+      right: 0;
+      z-index: 1;
+      font-size: 0.55rem;
+      letter-spacing: 0.55em;
+      color: rgba(245, 240, 232, 0.18);
+      pointer-events: none;
+    }
+
+    .america-standalone .card-num {
+      position: relative;
+      z-index: 3;
+      display: block;
+      color: #f5c5c5;
+    }
+
+    .america-standalone h3 {
+      position: relative;
+      z-index: 3;
+      font-size: clamp(1.65rem, 4vw, 1.95rem);
+      letter-spacing: 0.04em;
+    }
+
+    .card.green h3 {
+      text-align: center;
+      font-size: 1.6rem;
+      color: #6ee7a0;
+    }
+
+    .card.green .card-body {
+      text-align: center;
+      margin-top: 0.15rem;
+    }
+
+    .america-badge {
+      position: relative;
+      z-index: 3;
+      margin: 0 0 0.35rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #f5f0e8;
+    }
+
+    .america h3 {
+      margin: 0.35rem 0 0.65rem;
+      font-family: "Cormorant Garamond", serif;
+      color: #f5f0e8;
+    }
+
+    .america-sub {
+      position: relative;
+      z-index: 3;
+      margin: 0 auto 0.75rem;
+      max-width: 32rem;
+      font-style: italic;
+      font-size: 0.92rem;
+      color: #b8b2ac;
+      line-height: 1.6;
+    }
+
+    .america-special {
+      position: relative;
+      z-index: 3;
+      margin: 1.35rem auto 0.4rem;
+      max-width: 32rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #fecaca;
+      line-height: 1.45;
+    }
+
+    .america-special-cta {
+      position: relative;
+      z-index: 3;
+      margin: 0.65rem auto 1rem;
+      max-width: 32rem;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #fecaca;
+      line-height: 1.45;
+    }
+
+    .america-actions {
+      position: relative;
+      z-index: 3;
+      margin-top: 0.15rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.65rem;
+    }
+
+    .america-actions .card-link {
+      margin-top: 0;
+    }
+
+    .card-link-gallery {
+      color: #fecaca;
+      background: transparent;
+      border: 1px solid rgba(254, 202, 202, 0.45);
+      box-shadow: none;
+    }
+
+    .card-link-america {
+      background: linear-gradient(90deg, #dc2626, #e8c97a, #2563eb);
+      color: #08080a;
+      box-shadow: 0 8px 26px rgba(220, 38, 38, 0.3);
+    }
+
+    .card-price {
+      margin-top: 1rem;
+      padding-top: 0.85rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      text-align: center;
+    }
+
+    .card.green .card-price {
+      text-align: left;
+    }
+
+    .card-price .amount {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.25rem;
+      color: #f5f0e8;
+    }
+
+    .card-price .amount.quote {
+      font-family: Montserrat, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .america-price {
+      margin-top: 1.25rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .america-price .amount {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.35rem;
+      color: #f5f0e8;
+    }
+
+    .america-price .amount.quote {
+      font-family: Montserrat, sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .rate-note {
+      margin: 0.4rem 0 0;
+      font-size: 0.75rem;
+      color: #6b6560;
+    }
+
+    .cta-card {
+      margin-top: 1.1rem;
+      width: 100%;
+      padding: 1.85rem clamp(1.25rem, 3vw, 1.75rem) 1.75rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      background:
+        linear-gradient(345deg, rgba(201, 166, 107, 0.02) 0%, rgba(38, 160, 125, 0.02) 42%, rgba(61, 120, 198, 0.01) 100%),
+        url("../../../assets/lab4.jpg?v=5") 18% 28% / cover no-repeat;
+      box-shadow: inset 0 1px 0 rgba(201, 166, 107, 0.12);
+    }
+
+    .cta-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 8px;
+      background: linear-gradient(
+        180deg,
+        rgba(8, 8, 10, 0.28) 0%,
+        rgba(8, 8, 10, 0.52) 55%,
+        rgba(8, 8, 10, 0.68) 100%
+      );
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .cta-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-card::before {
+      background: linear-gradient(315deg, #e8c97a, #34d399, #6ec0ff);
+    }
+
+    .cta-card .card-num,
+    .cta-card h3,
+    .cta-card .cta-lead,
+    .cta-card .cta-note {
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9), 0 2px 10px rgba(0, 0, 0, 0.55);
+    }
+
+    .cta-card .card-num {
+      color: #f0d998;
+    }
+
+    .cta-card h3 {
+      margin: 0 0 0.5rem;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.6rem;
+      color: #f5f0e8;
+      text-align: center;
+    }
+
+    .cta-card .cta-lead {
+      margin: 0 auto 0.7rem;
+      max-width: 28rem;
+      font-size: 0.9rem;
+      font-weight: 700;
+      font-style: italic;
+      color: #f5f0e8;
+      line-height: 1.5;
+    }
+
+    .cta-card .card-actions {
+      margin-top: 1.5rem;
+      text-align: center;
+    }
+
+    .cta-card .cta-note {
+      margin: 0 0 1.15rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #f0d998;
+      line-height: 1.45;
+    }
+
+    .cta-card .card-actions .btn-kelly {
+      margin-top: 0;
+    }
+
+    footer {
+      margin-top: 1.5rem;
+      padding: 1.25rem 0 2rem;
+      text-align: center;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #4a4845;
+    }
+
+    footer a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #e8c97a;
+    }
+
+  </style>
+  <link rel="stylesheet" href="theme/sandbox-chrome.css">
+  <link rel="stylesheet" href="theme/usa250-theme.css">
+</head>
+<body>
+  <header class="hero" id="top">
+    <div class="hero-inset">
+      <div class="hero-brand">
+        <img class="hero-logo" src="../../../assets/nwb-logo.png" alt="NWB Vending" width="150" height="150">
+        <img class="hero-kaveman" src="../../../assets/kavemannobg.png?v=2" alt="AI Kaveman" width="150" height="150">
+      </div>
+      <h1>NWB VENDING</h1>
+        <img class="usa250-skin-hero" src="theme/assets/usa250-button.png" alt="" width="120" height="120" aria-hidden="true">
+      <p class="hero-tagline">Practical solutions for small business problems</p>
+      <div class="hero-copy">
+        <p class="hero-intro">
+          I help small businesses in Kuna and beyond solve real headaches with straightforward practical tools. No hype. Built with AI and delivered Kaveman style.
+        </p>
+        <p class="hero-promise">Honest, local and actually useful.</p>
+      </div>
+      <div class="hero-actions">
+        <a class="btn-kelly" href="2nd-pages/bio/index.html">Kaveman Kelly</a>
+        <a class="btn-primary" href="2nd-pages/how-to-start/index.html">How to Start</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <div class="panel" id="work">
+        <h2 class="section-label">Not Your Granny's Vending Company</h2>
+        <p class="section-note">NWB Vending delivers solutions, not soft drinks. Pick your lane below.</p>
+
+        <div class="duo">
+          <article class="card blue">
+            <span class="card-num">01</span>
+            <h3>Kaveman Style</h3>
+            <p class="card-sub">Been here 30 years, or 30 minutes... I can help you shine.</p>
+            <p class="card-sub">One piece, or Go Kaveman Heavy, let's dress your business for success. Local face, local voice, local pride. Built when you need it.</p>
+            <div class="card-actions">
+              <p class="kuna-special">Kuna Legends &amp; Vets: priority and special consideration.</p>
+              <a class="card-link" href="2nd-pages/tell-my-story/index.html">Get the Club</a>
+            </div>
+          </article>
+          <article class="card green">
+            <span class="card-num">02</span>
+            <h3>Problem Solver</h3>
+            <p class="card-sub">I know how the big guys operate. Now I use xAI to build tools that help small businesses like yours win.</p>
+            <p class="card-sub">Practical AI tools and systems that solve real small business problems fast, affordable, and built for you.</p>
+            <div class="card-actions">
+              <p class="kuna-special">Real Problems. Real Fixes. Real Fast.</p>
+              <a class="card-link card-link-solve" href="2nd-pages/solve-for-x/index.html" aria-label="Solve for x">Solve For <span class="solve-x">X</span></a>
+            </div>
+          </article>
+        </div>
+
+        <section class="america america-standalone" aria-labelledby="america-teaser">
+          <div class="america-bg" aria-hidden="true"></div>
+          <div class="america-body">
+            <span class="card-num">03</span>
+            <p class="america-badge" id="america-teaser">★ USA Quick Hits ★</p>
+            <h3>Star-Spangled Shop Stuff</h3>
+            <p class="america-sub">America's 250th is coming. Slap some red, white, and blue on your business before the fireworks and festivities. Patriotic, hometown proud, on-demand.</p>
+            <p class="america-special">Flyers, Logos, Artwork, or Just Feeling Patriotic.</p>
+            <p class="america-special-cta">If it needs a 250 upgrade, I got you!</p>
+            <div class="america-actions">
+              <a class="card-link card-link-america" href="2nd-pages/america-250/index.html">Red, White &amp; You</a>
+              <a class="card-link card-link-gallery" href="2nd-pages/america-250/gallery/index.html">Keep'n It Local</a>
+            </div>
+            <a class="america-pledge" href="2nd-pages/lets-talk/index.html" aria-label="Kelly_NWB Pledge">
+              <span class="america-pledge-title">Kelly_NWB Pledge</span>
+              <span class="america-pledge-copy">You showed up when it counted. I show up for you.</span>
+              <span class="america-pledge-promise">We'll make it work.</span>
+              <span class="america-pledge-fine"><span class="pledge-star" aria-hidden="true">★★</span> Thank You For Your Service <span class="pledge-star" aria-hidden="true">★★</span></span>
+            </a>
+          </div>
+        </section>
+
+        <section class="card cta-card" id="start">
+          <span class="card-num">04</span>
+          <h3>Ready When You Are</h3>
+          <p class="cta-lead">Something broken? Something brewing? Good. That is usually where we start.</p>
+          <div class="card-actions">
+            <p class="cta-note">Where we end... is up to you!</p>
+            <a class="btn-kelly" href="2nd-pages/lets-talk/index.html">Ping Kelly_NWB</a>
+          </div>
+        </section>
+      </div>
+
+      <footer><a href="https://NWB-Vending.com">NWB Vending</a> | Idahome | <a href="https://x.com/NWBVending" target="_blank" rel="noopener noreferrer">@NWBVending</a> | <a href="2nd-pages/lets-talk/index.html">Message Anytime</a></footer>
+    </div>
+  </main>
+  <script src="theme/theme-toggle.js" defer></script>
+</body>
+</html>

@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tpl-021",
   "title": "Rush Client Comms",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "audience": "agent",
   "section": "templates",
   "description": "Rush Client Comms for small-business job spine.",
@@ -46,5 +46,15 @@
     "mf-tpl-010",
     "mf-tpl-011",
     "mf-tpl-013"
-  ]
+  ],
+  "agent_signal": {
+    "use_when": "Rush fee and hard proof windows",
+    "decision_criteria": [
+      "Honest slip beats silent miss",
+      "Spine anchor: fetch with or after mf-tpl-013."
+    ],
+    "operator_context": "Treasure Valley small shop: keep scripts short; log every branch.",
+    "spine_anchor": "mf-tpl-013",
+    "cluster": "active_job"
+  }
 }

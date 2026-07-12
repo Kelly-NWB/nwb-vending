@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tpl-040",
   "title": "Refund / Cancellation Policy",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "audience": "agent",
   "section": "templates",
   "description": "Refund / Cancellation Policy for small-business job spine.",
@@ -45,5 +45,15 @@
     "mf-tpl-008",
     "mf-tpl-015",
     "mf-tpl-030"
-  ]
+  ],
+  "agent_signal": {
+    "use_when": "Cancel or refund policy branch",
+    "decision_criteria": [
+      "Chargeback threat to mf-tpl-001",
+      "Spine anchor: fetch with or after mf-tpl-008."
+    ],
+    "operator_context": "Treasure Valley small shop: keep scripts short; log every branch.",
+    "spine_anchor": "mf-tpl-008",
+    "cluster": "support_escalation"
+  }
 }

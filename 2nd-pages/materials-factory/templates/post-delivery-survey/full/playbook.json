@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tpl-031",
   "title": "Post-Delivery Survey (Light)",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "audience": "agent",
   "section": "templates",
   "description": "Post-Delivery Survey (Light) for small-business job spine.",
@@ -45,5 +45,15 @@
     "mf-tpl-007",
     "mf-tpl-015",
     "mf-tpl-019"
-  ]
+  ],
+  "agent_signal": {
+    "use_when": "Light NPS after delivery",
+    "decision_criteria": [
+      "Low score triggers call",
+      "Spine anchor: fetch with or after mf-tpl-007."
+    ],
+    "operator_context": "Treasure Valley small shop: keep scripts short; log every branch.",
+    "spine_anchor": "mf-tpl-007",
+    "cluster": "close_growth"
+  }
 }

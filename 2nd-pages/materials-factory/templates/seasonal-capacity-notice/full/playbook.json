@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tpl-047",
   "title": "Seasonal Capacity / Lead Time Notice",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "audience": "agent",
   "section": "templates",
   "description": "Seasonal Capacity / Lead Time Notice for small-business job spine.",
@@ -45,5 +45,15 @@
     "mf-tpl-006",
     "mf-tpl-021",
     "mf-tpl-033"
-  ]
+  ],
+  "agent_signal": {
+    "use_when": "Honest lead time on quote",
+    "decision_criteria": [
+      "Waitlist when at capacity",
+      "Spine anchor: fetch with or after mf-tpl-006."
+    ],
+    "operator_context": "Treasure Valley small shop: keep scripts short; log every branch.",
+    "spine_anchor": "mf-tpl-006",
+    "cluster": "quote_accept"
+  }
 }

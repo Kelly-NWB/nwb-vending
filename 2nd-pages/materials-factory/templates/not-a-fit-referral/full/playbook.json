@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tpl-023",
   "title": "Not-a-Fit Referral",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "audience": "agent",
   "section": "templates",
   "description": "Not-a-Fit Referral for small-business job spine.",
@@ -44,5 +44,15 @@
   "related_artifacts": [
     "mf-tpl-004",
     "mf-tpl-006"
-  ]
+  ],
+  "agent_signal": {
+    "use_when": "Wrong fit: refer out polite",
+    "decision_criteria": [
+      "Archive after refer",
+      "Spine anchor: fetch with or after mf-tpl-004."
+    ],
+    "operator_context": "Treasure Valley small shop: keep scripts short; log every branch.",
+    "spine_anchor": "mf-tpl-004",
+    "cluster": "client_account"
+  }
 }

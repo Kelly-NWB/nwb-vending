@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tpl-049",
   "title": "Permit / Municipality Coordination",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "audience": "agent",
   "section": "templates",
   "description": "Permit / Municipality Coordination for small-business job spine.",
@@ -45,5 +45,15 @@
     "mf-tpl-010",
     "mf-tpl-036",
     "mf-tpl-013"
-  ]
+  ],
+  "agent_signal": {
+    "use_when": "Permit hold before install",
+    "decision_criteria": [
+      "City sign rules Idaho vary by municipality",
+      "Spine anchor: fetch with or after mf-tpl-036."
+    ],
+    "operator_context": "Treasure Valley small shop: keep scripts short; log every branch.",
+    "spine_anchor": "mf-tpl-036",
+    "cluster": "active_job"
+  }
 }

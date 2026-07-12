@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tpl-030",
   "title": "Job Pause / Client Hold",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "audience": "agent",
   "section": "templates",
   "description": "Job Pause / Client Hold for small-business job spine.",
@@ -45,5 +45,15 @@
     "mf-tpl-013",
     "mf-tpl-012",
     "mf-tpl-010"
-  ]
+  ],
+  "agent_signal": {
+    "use_when": "Client or internal pause",
+    "decision_criteria": [
+      "Resume or cancel explicit",
+      "Spine anchor: fetch with or after mf-tpl-013."
+    ],
+    "operator_context": "Treasure Valley small shop: keep scripts short; log every branch.",
+    "spine_anchor": "mf-tpl-013",
+    "cluster": "active_job"
+  }
 }

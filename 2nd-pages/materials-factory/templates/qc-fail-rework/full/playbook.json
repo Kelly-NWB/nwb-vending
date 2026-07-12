@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tpl-026",
   "title": "QC Fail / Rework (Internal)",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "audience": "agent",
   "section": "templates",
   "description": "QC Fail / Rework (Internal) for small-business job spine.",
@@ -46,5 +46,15 @@
     "mf-tpl-011",
     "mf-tpl-013",
     "mf-tpl-007"
-  ]
+  ],
+  "agent_signal": {
+    "use_when": "Internal QC fail before ship",
+    "decision_criteria": [
+      "Re-QC before mf-tpl-007",
+      "Spine anchor: fetch with or after mf-tpl-017."
+    ],
+    "operator_context": "Treasure Valley small shop: keep scripts short; log every branch.",
+    "spine_anchor": "mf-tpl-017",
+    "cluster": "kickoff_production"
+  }
 }

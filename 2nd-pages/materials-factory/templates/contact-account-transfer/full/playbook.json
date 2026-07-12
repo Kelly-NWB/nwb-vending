@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tpl-051",
   "title": "Client Contact / Account Transfer",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "audience": "agent",
   "section": "templates",
   "description": "Client Contact / Account Transfer for small-business job spine.",
@@ -45,5 +45,15 @@
     "mf-tpl-004",
     "mf-tpl-027",
     "mf-tpl-013"
-  ]
+  ],
+  "agent_signal": {
+    "use_when": "Contact left company",
+    "decision_criteria": [
+      "Confirm approver before proof",
+      "Spine anchor: fetch with or after mf-tpl-004."
+    ],
+    "operator_context": "Treasure Valley small shop: keep scripts short; log every branch.",
+    "spine_anchor": "mf-tpl-004",
+    "cluster": "client_account"
+  }
 }

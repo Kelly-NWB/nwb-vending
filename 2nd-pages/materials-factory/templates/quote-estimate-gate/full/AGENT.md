@@ -49,3 +49,9 @@ Templates: [ids]
 Amount: [if sent]
 Log: [csv row]
 ```
+## Agent signal (v1.1)
+
+- **Use when:** Scope is clear enough to price: custom quote or estimate gate before send.
+- **Decision criteria:** No blind pricing on fab/install without qty and deliverable. Deposit terms stated on same send as quote.
+- **Operator context:** Treasure Valley GCs often need COI and permit notes on quote; flag install add-ons early.
+

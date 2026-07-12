@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tpl-052",
   "title": "Finished Goods Storage Hold",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "audience": "agent",
   "section": "templates",
   "description": "Finished Goods Storage Hold for small-business job spine.",
@@ -45,5 +45,15 @@
     "mf-tpl-007",
     "mf-tpl-035",
     "mf-tpl-008"
-  ]
+  ],
+  "agent_signal": {
+    "use_when": "Finished goods storage hold",
+    "decision_criteria": [
+      "Fee after free window",
+      "Spine anchor: fetch with or after mf-tpl-007."
+    ],
+    "operator_context": "Treasure Valley small shop: keep scripts short; log every branch.",
+    "spine_anchor": "mf-tpl-007",
+    "cluster": "delivery_install"
+  }
 }

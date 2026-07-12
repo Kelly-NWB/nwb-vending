@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tpl-027",
   "title": "Client Onboarding (First Job)",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "audience": "agent",
   "section": "templates",
   "description": "Client Onboarding (First Job) for small-business job spine.",
@@ -45,5 +45,15 @@
     "mf-tpl-010",
     "mf-tpl-004",
     "mf-tpl-013"
-  ]
+  ],
+  "agent_signal": {
+    "use_when": "First job, not repeat",
+    "decision_criteria": [
+      "Set expectations before mf-tpl-010",
+      "Spine anchor: fetch with or after mf-tpl-010."
+    ],
+    "operator_context": "Treasure Valley small shop: keep scripts short; log every branch.",
+    "spine_anchor": "mf-tpl-010",
+    "cluster": "client_account"
+  }
 }

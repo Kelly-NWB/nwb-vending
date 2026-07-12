@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tpl-018",
   "title": "Lost Lead Archive",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "audience": "agent",
   "section": "templates",
   "description": "Lost Lead Archive for small-business job spine.",
@@ -45,5 +45,15 @@
     "mf-tpl-004",
     "mf-tpl-014",
     "mf-tpl-006"
-  ]
+  ],
+  "agent_signal": {
+    "use_when": "Lead dead: ghost, price, timing",
+    "decision_criteria": [
+      "Log loss reason for ops review",
+      "Spine anchor: fetch with or after mf-tpl-014."
+    ],
+    "operator_context": "Treasure Valley small shop: keep scripts short; log every branch.",
+    "spine_anchor": "mf-tpl-014",
+    "cluster": "close_growth"
+  }
 }

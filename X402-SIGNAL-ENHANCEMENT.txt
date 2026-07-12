@@ -1,0 +1,253 @@
+X402 agent signal enhancement 2026-07-12
+Artifacts touched: 58 tools+templates (mf-train-001 excluded)
+Live: nwb-vending/2nd-pages/materials-factory
+Staging sync: 402 Biz/templates + tools
+
+Schema added per pack:
+  agent_signal { use_when, decision_criteria, operator_context, spine_anchor?, cluster? }
+  version bump 1.0.0 -> 1.1.0 where applicable
+  related_artifacts: spine_anchor prepended when missing
+  AGENT.md: Agent signal (v1.1) section
+
+Manifest:
+  job_spine.extension_clusters (8 groups)
+  job_spine.extension_index (40 extension rows)
+  entries[]: description, tags, use_when, spine_anchor, cluster, spine_role
+
+Unchanged: teasers, examples.json, templates.json, x402 gates, prices
+
+Modified file count: 233
+
+- 2nd-pages/materials-factory/templates/complaint-recovery-playbook/full/playbook.json
+- 2nd-pages/materials-factory/templates/complaint-recovery-playbook/full/AGENT.md
+- 402 Biz/templates/complaint-recovery-playbook/full/playbook.json
+- 402 Biz/templates/complaint-recovery-playbook/full/AGENT.md
+- 2nd-pages/materials-factory/templates/employee-onboarding-kit/full/playbook.json
+- 2nd-pages/materials-factory/templates/employee-onboarding-kit/full/AGENT.md
+- 402 Biz/templates/employee-onboarding-kit/full/playbook.json
+- 402 Biz/templates/employee-onboarding-kit/full/AGENT.md
+- 2nd-pages/materials-factory/templates/hiring-character-gauge/full/playbook.json
+- 2nd-pages/materials-factory/templates/hiring-character-gauge/full/AGENT.md
+- 402 Biz/templates/hiring-character-gauge/full/playbook.json
+- 402 Biz/templates/hiring-character-gauge/full/AGENT.md
+- 2nd-pages/materials-factory/templates/client-intake-playbook/full/playbook.json
+- 2nd-pages/materials-factory/templates/client-intake-playbook/full/AGENT.md
+- 402 Biz/templates/client-intake-playbook/full/playbook.json
+- 402 Biz/templates/client-intake-playbook/full/AGENT.md
+- 2nd-pages/materials-factory/templates/weekly-ops-review/full/playbook.json
+- 2nd-pages/materials-factory/templates/weekly-ops-review/full/AGENT.md
+- 402 Biz/templates/weekly-ops-review/full/playbook.json
+- 402 Biz/templates/weekly-ops-review/full/AGENT.md
+- 2nd-pages/materials-factory/templates/quote-estimate-gate/full/playbook.json
+- 2nd-pages/materials-factory/templates/quote-estimate-gate/full/AGENT.md
+- 402 Biz/templates/quote-estimate-gate/full/playbook.json
+- 402 Biz/templates/quote-estimate-gate/full/AGENT.md
+- 2nd-pages/materials-factory/templates/delivery-handoff/full/playbook.json
+- 2nd-pages/materials-factory/templates/delivery-handoff/full/AGENT.md
+- 402 Biz/templates/delivery-handoff/full/playbook.json
+- 402 Biz/templates/delivery-handoff/full/AGENT.md
+- 2nd-pages/materials-factory/templates/invoice-payment-chase/full/playbook.json
+- 2nd-pages/materials-factory/templates/invoice-payment-chase/full/AGENT.md
+- 402 Biz/templates/invoice-payment-chase/full/playbook.json
+- 402 Biz/templates/invoice-payment-chase/full/AGENT.md
+- 2nd-pages/materials-factory/templates/vendor-issue/full/playbook.json
+- 2nd-pages/materials-factory/templates/vendor-issue/full/AGENT.md
+- 402 Biz/templates/vendor-issue/full/playbook.json
+- 402 Biz/templates/vendor-issue/full/AGENT.md
+- 2nd-pages/materials-factory/templates/project-kickoff/full/playbook.json
+- 2nd-pages/materials-factory/templates/project-kickoff/full/AGENT.md
+- 402 Biz/templates/project-kickoff/full/playbook.json
+- 402 Biz/templates/project-kickoff/full/AGENT.md
+- 2nd-pages/materials-factory/templates/proof-approval-gate/full/playbook.json
+- 2nd-pages/materials-factory/templates/proof-approval-gate/full/AGENT.md
+- 402 Biz/templates/proof-approval-gate/full/playbook.json
+- 402 Biz/templates/proof-approval-gate/full/AGENT.md
+- 2nd-pages/materials-factory/templates/change-order-mid-job/full/playbook.json
+- 2nd-pages/materials-factory/templates/change-order-mid-job/full/AGENT.md
+- 402 Biz/templates/change-order-mid-job/full/playbook.json
+- 402 Biz/templates/change-order-mid-job/full/AGENT.md
+- 2nd-pages/materials-factory/templates/client-status-update/full/playbook.json
+- 2nd-pages/materials-factory/templates/client-status-update/full/AGENT.md
+- 402 Biz/templates/client-status-update/full/playbook.json
+- 402 Biz/templates/client-status-update/full/AGENT.md
+- 2nd-pages/materials-factory/templates/quote-follow-up/full/playbook.json
+- 2nd-pages/materials-factory/templates/quote-follow-up/full/AGENT.md
+- 402 Biz/templates/quote-follow-up/full/playbook.json
+- 402 Biz/templates/quote-follow-up/full/AGENT.md
+- 2nd-pages/materials-factory/templates/job-close-archive/full/playbook.json
+- 2nd-pages/materials-factory/templates/job-close-archive/full/AGENT.md
+- 402 Biz/templates/job-close-archive/full/playbook.json
+- 402 Biz/templates/job-close-archive/full/AGENT.md
+- 2nd-pages/materials-factory/templates/deposit-reminder/full/playbook.json
+- 2nd-pages/materials-factory/templates/deposit-reminder/full/AGENT.md
+- 402 Biz/templates/deposit-reminder/full/playbook.json
+- 402 Biz/templates/deposit-reminder/full/AGENT.md
+- 2nd-pages/materials-factory/templates/production-handoff-internal/full/playbook.json
+- 2nd-pages/materials-factory/templates/production-handoff-internal/full/AGENT.md
+- 402 Biz/templates/production-handoff-internal/full/playbook.json
+- 402 Biz/templates/production-handoff-internal/full/AGENT.md
+- 2nd-pages/materials-factory/templates/lost-lead-archive/full/playbook.json
+- 2nd-pages/materials-factory/templates/lost-lead-archive/full/AGENT.md
+- 402 Biz/templates/lost-lead-archive/full/playbook.json
+- 402 Biz/templates/lost-lead-archive/full/AGENT.md
+- 2nd-pages/materials-factory/templates/referral-ask/full/playbook.json
+- 2nd-pages/materials-factory/templates/referral-ask/full/AGENT.md
+- 402 Biz/templates/referral-ask/full/playbook.json
+- 402 Biz/templates/referral-ask/full/AGENT.md
+- 2nd-pages/materials-factory/templates/warranty-support-touch/full/playbook.json
+- 2nd-pages/materials-factory/templates/warranty-support-touch/full/AGENT.md
+- 402 Biz/templates/warranty-support-touch/full/playbook.json
+- 402 Biz/templates/warranty-support-touch/full/AGENT.md
+- 2nd-pages/materials-factory/templates/rush-client-comms/full/playbook.json
+- 2nd-pages/materials-factory/templates/rush-client-comms/full/AGENT.md
+- 402 Biz/templates/rush-client-comms/full/playbook.json
+- 402 Biz/templates/rush-client-comms/full/AGENT.md
+- 2nd-pages/materials-factory/templates/meeting-phone-qualify/full/playbook.json
+- 2nd-pages/materials-factory/templates/meeting-phone-qualify/full/AGENT.md
+- 402 Biz/templates/meeting-phone-qualify/full/playbook.json
+- 402 Biz/templates/meeting-phone-qualify/full/AGENT.md
+- 2nd-pages/materials-factory/templates/not-a-fit-referral/full/playbook.json
+- 2nd-pages/materials-factory/templates/not-a-fit-referral/full/AGENT.md
+- 402 Biz/templates/not-a-fit-referral/full/playbook.json
+- 402 Biz/templates/not-a-fit-referral/full/AGENT.md
+- 2nd-pages/materials-factory/templates/reorder-repeat-client/full/playbook.json
+- 2nd-pages/materials-factory/templates/reorder-repeat-client/full/AGENT.md
+- 402 Biz/templates/reorder-repeat-client/full/playbook.json
+- 402 Biz/templates/reorder-repeat-client/full/AGENT.md
+- 2nd-pages/materials-factory/templates/subcontractor-handoff/full/playbook.json
+- 2nd-pages/materials-factory/templates/subcontractor-handoff/full/AGENT.md
+- 402 Biz/templates/subcontractor-handoff/full/playbook.json
+- 402 Biz/templates/subcontractor-handoff/full/AGENT.md
+- 2nd-pages/materials-factory/templates/qc-fail-rework/full/playbook.json
+- 2nd-pages/materials-factory/templates/qc-fail-rework/full/AGENT.md
+- 402 Biz/templates/qc-fail-rework/full/playbook.json
+- 402 Biz/templates/qc-fail-rework/full/AGENT.md
+- 2nd-pages/materials-factory/templates/client-onboarding-first/full/playbook.json
+- 2nd-pages/materials-factory/templates/client-onboarding-first/full/AGENT.md
+- 402 Biz/templates/client-onboarding-first/full/playbook.json
+- 402 Biz/templates/client-onboarding-first/full/AGENT.md
+- 2nd-pages/materials-factory/templates/estimate-revision/full/playbook.json
+- 2nd-pages/materials-factory/templates/estimate-revision/full/AGENT.md
+- 402 Biz/templates/estimate-revision/full/playbook.json
+- 402 Biz/templates/estimate-revision/full/AGENT.md
+- 2nd-pages/materials-factory/templates/payment-plan-partial/full/playbook.json
+- 2nd-pages/materials-factory/templates/payment-plan-partial/full/AGENT.md
+- 402 Biz/templates/payment-plan-partial/full/playbook.json
+- 402 Biz/templates/payment-plan-partial/full/AGENT.md
+- 2nd-pages/materials-factory/templates/job-pause-hold/full/playbook.json
+- 2nd-pages/materials-factory/templates/job-pause-hold/full/AGENT.md
+- 402 Biz/templates/job-pause-hold/full/playbook.json
+- 402 Biz/templates/job-pause-hold/full/AGENT.md
+- 2nd-pages/materials-factory/templates/post-delivery-survey/full/playbook.json
+- 2nd-pages/materials-factory/templates/post-delivery-survey/full/AGENT.md
+- 402 Biz/templates/post-delivery-survey/full/playbook.json
+- 402 Biz/templates/post-delivery-survey/full/AGENT.md
+- 2nd-pages/materials-factory/templates/emergency-after-hours/full/playbook.json
+- 2nd-pages/materials-factory/templates/emergency-after-hours/full/AGENT.md
+- 402 Biz/templates/emergency-after-hours/full/playbook.json
+- 402 Biz/templates/emergency-after-hours/full/AGENT.md
+- 2nd-pages/materials-factory/templates/job-priority-queue/full/playbook.json
+- 2nd-pages/materials-factory/templates/job-priority-queue/full/AGENT.md
+- 402 Biz/templates/job-priority-queue/full/playbook.json
+- 402 Biz/templates/job-priority-queue/full/AGENT.md
+- 2nd-pages/materials-factory/templates/client-asset-request/full/playbook.json
+- 2nd-pages/materials-factory/templates/client-asset-request/full/AGENT.md
+- 402 Biz/templates/client-asset-request/full/playbook.json
+- 402 Biz/templates/client-asset-request/full/AGENT.md
+- 2nd-pages/materials-factory/templates/pickup-will-call/full/playbook.json
+- 2nd-pages/materials-factory/templates/pickup-will-call/full/AGENT.md
+- 402 Biz/templates/pickup-will-call/full/playbook.json
+- 402 Biz/templates/pickup-will-call/full/AGENT.md
+- 2nd-pages/materials-factory/templates/install-on-site-coord/full/playbook.json
+- 2nd-pages/materials-factory/templates/install-on-site-coord/full/AGENT.md
+- 402 Biz/templates/install-on-site-coord/full/playbook.json
+- 402 Biz/templates/install-on-site-coord/full/AGENT.md
+- 2nd-pages/materials-factory/templates/shipping-tracking-update/full/playbook.json
+- 2nd-pages/materials-factory/templates/shipping-tracking-update/full/AGENT.md
+- 402 Biz/templates/shipping-tracking-update/full/playbook.json
+- 402 Biz/templates/shipping-tracking-update/full/AGENT.md
+- 2nd-pages/materials-factory/templates/progress-photo-update/full/playbook.json
+- 2nd-pages/materials-factory/templates/progress-photo-update/full/AGENT.md
+- 402 Biz/templates/progress-photo-update/full/playbook.json
+- 402 Biz/templates/progress-photo-update/full/AGENT.md
+- 2nd-pages/materials-factory/templates/goodwill-credit/full/playbook.json
+- 2nd-pages/materials-factory/templates/goodwill-credit/full/AGENT.md
+- 402 Biz/templates/goodwill-credit/full/playbook.json
+- 402 Biz/templates/goodwill-credit/full/AGENT.md
+- 2nd-pages/materials-factory/templates/refund-cancellation/full/playbook.json
+- 2nd-pages/materials-factory/templates/refund-cancellation/full/AGENT.md
+- 402 Biz/templates/refund-cancellation/full/playbook.json
+- 402 Biz/templates/refund-cancellation/full/AGENT.md
+- 2nd-pages/materials-factory/templates/coi-insurance-request/full/playbook.json
+- 2nd-pages/materials-factory/templates/coi-insurance-request/full/AGENT.md
+- 402 Biz/templates/coi-insurance-request/full/playbook.json
+- 402 Biz/templates/coi-insurance-request/full/AGENT.md
+- 2nd-pages/materials-factory/templates/design-revision-loop/full/playbook.json
+- 2nd-pages/materials-factory/templates/design-revision-loop/full/AGENT.md
+- 402 Biz/templates/design-revision-loop/full/playbook.json
+- 402 Biz/templates/design-revision-loop/full/AGENT.md
+- 2nd-pages/materials-factory/templates/physical-sample-proof/full/playbook.json
+- 2nd-pages/materials-factory/templates/physical-sample-proof/full/AGENT.md
+- 402 Biz/templates/physical-sample-proof/full/playbook.json
+- 402 Biz/templates/physical-sample-proof/full/AGENT.md
+- 2nd-pages/materials-factory/templates/damage-transit-claim/full/playbook.json
+- 2nd-pages/materials-factory/templates/damage-transit-claim/full/AGENT.md
+- 402 Biz/templates/damage-transit-claim/full/playbook.json
+- 402 Biz/templates/damage-transit-claim/full/AGENT.md
+- 2nd-pages/materials-factory/templates/retainer-ongoing/full/playbook.json
+- 2nd-pages/materials-factory/templates/retainer-ongoing/full/AGENT.md
+- 402 Biz/templates/retainer-ongoing/full/playbook.json
+- 402 Biz/templates/retainer-ongoing/full/AGENT.md
+- 2nd-pages/materials-factory/templates/net-terms-credit-app/full/playbook.json
+- 2nd-pages/materials-factory/templates/net-terms-credit-app/full/AGENT.md
+- 402 Biz/templates/net-terms-credit-app/full/playbook.json
+- 402 Biz/templates/net-terms-credit-app/full/AGENT.md
+- 2nd-pages/materials-factory/templates/seasonal-capacity-notice/full/playbook.json
+- 2nd-pages/materials-factory/templates/seasonal-capacity-notice/full/AGENT.md
+- 402 Biz/templates/seasonal-capacity-notice/full/playbook.json
+- 402 Biz/templates/seasonal-capacity-notice/full/AGENT.md
+- 2nd-pages/materials-factory/templates/multi-location-coord/full/playbook.json
+- 2nd-pages/materials-factory/templates/multi-location-coord/full/AGENT.md
+- 402 Biz/templates/multi-location-coord/full/playbook.json
+- 402 Biz/templates/multi-location-coord/full/AGENT.md
+- 2nd-pages/materials-factory/templates/permit-municipality/full/playbook.json
+- 2nd-pages/materials-factory/templates/permit-municipality/full/AGENT.md
+- 402 Biz/templates/permit-municipality/full/playbook.json
+- 402 Biz/templates/permit-municipality/full/AGENT.md
+- 2nd-pages/materials-factory/templates/weather-delay-outdoor/full/playbook.json
+- 2nd-pages/materials-factory/templates/weather-delay-outdoor/full/AGENT.md
+- 402 Biz/templates/weather-delay-outdoor/full/playbook.json
+- 402 Biz/templates/weather-delay-outdoor/full/AGENT.md
+- 2nd-pages/materials-factory/templates/contact-account-transfer/full/playbook.json
+- 2nd-pages/materials-factory/templates/contact-account-transfer/full/AGENT.md
+- 402 Biz/templates/contact-account-transfer/full/playbook.json
+- 402 Biz/templates/contact-account-transfer/full/AGENT.md
+- 2nd-pages/materials-factory/templates/finished-goods-storage/full/playbook.json
+- 2nd-pages/materials-factory/templates/finished-goods-storage/full/AGENT.md
+- 402 Biz/templates/finished-goods-storage/full/playbook.json
+- 402 Biz/templates/finished-goods-storage/full/AGENT.md
+- 2nd-pages/materials-factory/templates/event-deadline-crunch/full/playbook.json
+- 2nd-pages/materials-factory/templates/event-deadline-crunch/full/AGENT.md
+- 402 Biz/templates/event-deadline-crunch/full/playbook.json
+- 402 Biz/templates/event-deadline-crunch/full/AGENT.md
+- 2nd-pages/materials-factory/templates/portfolio-photo-permission/full/playbook.json
+- 2nd-pages/materials-factory/templates/portfolio-photo-permission/full/AGENT.md
+- 402 Biz/templates/portfolio-photo-permission/full/playbook.json
+- 402 Biz/templates/portfolio-photo-permission/full/AGENT.md
+- 2nd-pages/materials-factory/templates/tax-exempt-cert/full/playbook.json
+- 2nd-pages/materials-factory/templates/tax-exempt-cert/full/AGENT.md
+- 402 Biz/templates/tax-exempt-cert/full/playbook.json
+- 402 Biz/templates/tax-exempt-cert/full/AGENT.md
+- 2nd-pages/materials-factory/tools/should-i-automate/full/rules.json
+- 2nd-pages/materials-factory/tools/should-i-automate/full/AGENT.md
+- 402 Biz/tools/should-i-automate/full/rules.json
+- 402 Biz/tools/should-i-automate/full/AGENT.md
+- 2nd-pages/materials-factory/tools/ai-task-fit/full/rules.json
+- 2nd-pages/materials-factory/tools/ai-task-fit/full/AGENT.md
+- 402 Biz/tools/ai-task-fit/full/rules.json
+- 402 Biz/tools/ai-task-fit/full/AGENT.md
+- 2nd-pages/materials-factory/tools/scope-creep-say-no/full/rules.json
+- 2nd-pages/materials-factory/tools/scope-creep-say-no/full/AGENT.md
+- 402 Biz/tools/scope-creep-say-no/full/rules.json
+- 402 Biz/tools/scope-creep-say-no/full/AGENT.md
+- 2nd-pages/materials-factory/catalog-manifest.json

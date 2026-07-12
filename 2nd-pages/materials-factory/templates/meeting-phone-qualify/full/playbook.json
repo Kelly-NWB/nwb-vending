@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tpl-022",
   "title": "Meeting / Phone Qualify",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "audience": "agent",
   "section": "templates",
   "description": "Meeting / Phone Qualify for small-business job spine.",
@@ -44,5 +44,15 @@
   "related_artifacts": [
     "mf-tpl-004",
     "mf-tpl-006"
-  ]
+  ],
+  "agent_signal": {
+    "use_when": "Vague lead needs phone qualify",
+    "decision_criteria": [
+      "Book or summary before mf-tpl-006",
+      "Spine anchor: fetch with or after mf-tpl-004."
+    ],
+    "operator_context": "Treasure Valley small shop: keep scripts short; log every branch.",
+    "spine_anchor": "mf-tpl-004",
+    "cluster": "quote_accept"
+  }
 }

@@ -42,3 +42,9 @@ Teaser (`../index.html`) includes one worked example only. Full pack is this fol
 ## Version
 
 rules.json `version` field. Breaking changes bump minor.
+## Agent signal (v1.1)
+
+- **Use when:** Operator asks whether to buy software, automate a task, or keep a manual habit.
+- **Decision criteria:** Frequency and written SOP beat gut feel. Customer-facing judgment stays human until stakes are low and process is written.
+- **Operator context:** Treasure Valley: one-location shops often automate reporting before empathy-heavy comms.
+

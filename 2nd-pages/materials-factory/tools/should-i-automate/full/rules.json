@@ -6,22 +6,112 @@
   "section": "tools",
   "description": "Vending and small-business automation decision rubric. Apply rules to inputs; do not present as a click-through quiz to end users.",
   "inputs": {
-    "idea": { "type": "string", "required": false, "description": "What the operator is considering automating" },
-    "category": { "type": "enum", "required": true, "values": ["ops", "comms", "data", "inventory", "staff", "other"] },
-    "freq": { "type": "enum", "required": true, "values": ["daily", "weekly", "monthly", "rare"] },
-    "people": { "type": "enum", "required": true, "values": ["one", "twofive", "sixplus"] },
-    "written": { "type": "enum", "required": true, "values": ["yes", "partial", "no"] },
-    "judgment": { "type": "enum", "required": true, "values": ["always", "sometimes", "rarely"] },
-    "stakes": { "type": "enum", "required": true, "values": ["annoyance", "customer", "money", "safety"] },
-    "data": { "type": "enum", "required": true, "values": ["yes", "rough", "no", "guess"] }
+    "idea": {
+      "type": "string",
+      "required": false,
+      "description": "What the operator is considering automating"
+    },
+    "category": {
+      "type": "enum",
+      "required": true,
+      "values": [
+        "ops",
+        "comms",
+        "data",
+        "inventory",
+        "staff",
+        "other"
+      ]
+    },
+    "freq": {
+      "type": "enum",
+      "required": true,
+      "values": [
+        "daily",
+        "weekly",
+        "monthly",
+        "rare"
+      ]
+    },
+    "people": {
+      "type": "enum",
+      "required": true,
+      "values": [
+        "one",
+        "twofive",
+        "sixplus"
+      ]
+    },
+    "written": {
+      "type": "enum",
+      "required": true,
+      "values": [
+        "yes",
+        "partial",
+        "no"
+      ]
+    },
+    "judgment": {
+      "type": "enum",
+      "required": true,
+      "values": [
+        "always",
+        "sometimes",
+        "rarely"
+      ]
+    },
+    "stakes": {
+      "type": "enum",
+      "required": true,
+      "values": [
+        "annoyance",
+        "customer",
+        "money",
+        "safety"
+      ]
+    },
+    "data": {
+      "type": "enum",
+      "required": true,
+      "values": [
+        "yes",
+        "rough",
+        "no",
+        "guess"
+      ]
+    }
   },
   "categories": [
-    { "id": "ops", "label": "Operations & routes", "example": "Route notes, machine visit logs, opening checklists" },
-    { "id": "comms", "label": "Customer communication", "example": "Complaint replies, order updates, review responses" },
-    { "id": "data", "label": "Data & reporting", "example": "Per-machine sales pulls, weekly owner dashboard" },
-    { "id": "inventory", "label": "Inventory & ordering", "example": "Restock lists, par levels, vendor POs" },
-    { "id": "staff", "label": "Staff & scheduling", "example": "Shift swaps, training checklists, handoff notes" },
-    { "id": "other", "label": "Other", "example": "Anything else tempted to software-ify" }
+    {
+      "id": "ops",
+      "label": "Operations & routes",
+      "example": "Route notes, machine visit logs, opening checklists"
+    },
+    {
+      "id": "comms",
+      "label": "Customer communication",
+      "example": "Complaint replies, order updates, review responses"
+    },
+    {
+      "id": "data",
+      "label": "Data & reporting",
+      "example": "Per-machine sales pulls, weekly owner dashboard"
+    },
+    {
+      "id": "inventory",
+      "label": "Inventory & ordering",
+      "example": "Restock lists, par levels, vendor POs"
+    },
+    {
+      "id": "staff",
+      "label": "Staff & scheduling",
+      "example": "Shift swaps, training checklists, handoff notes"
+    },
+    {
+      "id": "other",
+      "label": "Other",
+      "example": "Anything else tempted to software-ify"
+    }
   ],
   "outcomes": {
     "manual_ok": {
@@ -113,51 +203,363 @@
     "other": "Vending ops rarely need net-new software. They need shared visibility."
   },
   "decision_rules": [
-    { "priority": 100, "when": { "data": "guess" }, "outcome": "gather_data" },
-    { "priority": 99, "when": { "judgment": "always" }, "outcome": "dont_automate" },
-    { "priority": 98, "when": { "judgment": "sometimes", "category": "comms" }, "outcome": "dont_automate" },
-    { "priority": 97, "when": { "judgment": "sometimes", "stakes": "customer" }, "outcome": "dont_automate" },
-    { "priority": 96, "when": { "judgment": "sometimes", "stakes": "safety" }, "outcome": "dont_automate" },
-    { "priority": 95, "when": { "written": "no" }, "outcome": "template" },
-    { "priority": 94, "when": { "freq": "rare", "stakes": "annoyance" }, "outcome": "manual_ok" },
-    { "priority": 93, "when": { "data": "no" }, "outcome": "gather_data" },
-    { "priority": 92, "when": { "category": "comms", "judgment": "always" }, "outcome": "dont_automate" },
-    { "priority": 91, "when": { "category": "comms", "judgment": "sometimes" }, "outcome": "template" },
-    { "priority": 90, "when": { "category": "comms", "judgment": "rarely", "written": "yes", "data": "yes" }, "outcome": "simple_tool" },
-    { "priority": 89, "when": { "category": "comms", "judgment": "rarely" }, "outcome": "template" },
-    { "priority": 88, "when": { "category": "other", "freq": "daily", "people": "sixplus", "written": "yes", "data": "yes" }, "outcome": "build" },
-    { "priority": 87, "when": { "category": "ops", "freq": "rare", "people": "one" }, "outcome": "manual_ok" },
-    { "priority": 86, "when": { "category": "ops", "people": "one", "freq": "weekly" }, "outcome": "template" },
-    { "priority": 85, "when": { "category": "ops", "people": "one", "freq": "monthly" }, "outcome": "template" },
-    { "priority": 84, "when": { "category": "ops", "freq": "daily", "written": "yes", "people": "twofive" }, "outcome": "spreadsheet" },
-    { "priority": 83, "when": { "category": "ops", "freq": "daily", "written": "yes", "people": "sixplus" }, "outcome": "spreadsheet" },
-    { "priority": 82, "when": { "category": "ops" }, "outcome": "spreadsheet" },
-    { "priority": 81, "when": { "category": "inventory", "freq": "daily", "people": "sixplus", "written": "yes" }, "outcome": "simple_tool" },
-    { "priority": 80, "when": { "category": "inventory", "freq": "weekly", "people": "twofive" }, "outcome": "spreadsheet" },
-    { "priority": 79, "when": { "category": "inventory" }, "outcome": "spreadsheet" },
-    { "priority": 78, "when": { "category": "data", "freq": "daily", "people": "sixplus" }, "outcome": "build" },
-    { "priority": 77, "when": { "category": "data", "freq": "rare" }, "outcome": "spreadsheet" },
-    { "priority": 76, "when": { "category": "data", "freq": "monthly" }, "outcome": "spreadsheet" },
-    { "priority": 75, "when": { "category": "data", "people": "one" }, "outcome": "spreadsheet" },
-    { "priority": 74, "when": { "category": "data" }, "outcome": "simple_tool" },
-    { "priority": 73, "when": { "category": "staff", "judgment": "sometimes" }, "outcome": "template" },
-    { "priority": 72, "when": { "category": "staff", "people": "sixplus" }, "outcome": "simple_tool" },
-    { "priority": 71, "when": { "category": "staff" }, "outcome": "spreadsheet" },
-    { "priority": 70, "when": { "freq": "daily", "people": "twofive", "written": "yes", "stakes": "money" }, "outcome": "simple_tool" },
-    { "priority": 69, "when": { "freq": "daily", "people": "sixplus", "written": "yes", "stakes": "money" }, "outcome": "simple_tool" },
-    { "priority": 68, "when": { "freq": "daily", "people": "twofive", "written": "yes", "stakes": "safety" }, "outcome": "simple_tool" },
-    { "priority": 68, "when": { "freq": "daily", "written": "yes", "people": "twofive" }, "outcome": "spreadsheet" },
-    { "priority": 67, "when": { "freq": "daily", "written": "yes", "people": "sixplus" }, "outcome": "spreadsheet" },
-    { "priority": 66, "when": { "freq": "weekly", "people": "twofive" }, "outcome": "spreadsheet" },
-    { "priority": 65, "when": { "freq": "weekly", "people": "sixplus" }, "outcome": "spreadsheet" },
-    { "priority": 64, "when": { "freq": "monthly", "people": "one" }, "outcome": "manual_ok" },
-    { "priority": 63, "when": { "written": "partial" }, "outcome": "template" },
-    { "priority": 62, "when": { "stakes": "annoyance", "freq": "monthly" }, "outcome": "manual_ok" },
-    { "priority": 61, "when": { "stakes": "annoyance", "freq": "rare" }, "outcome": "manual_ok" }
+    {
+      "priority": 100,
+      "when": {
+        "data": "guess"
+      },
+      "outcome": "gather_data"
+    },
+    {
+      "priority": 99,
+      "when": {
+        "judgment": "always"
+      },
+      "outcome": "dont_automate"
+    },
+    {
+      "priority": 98,
+      "when": {
+        "judgment": "sometimes",
+        "category": "comms"
+      },
+      "outcome": "dont_automate"
+    },
+    {
+      "priority": 97,
+      "when": {
+        "judgment": "sometimes",
+        "stakes": "customer"
+      },
+      "outcome": "dont_automate"
+    },
+    {
+      "priority": 96,
+      "when": {
+        "judgment": "sometimes",
+        "stakes": "safety"
+      },
+      "outcome": "dont_automate"
+    },
+    {
+      "priority": 95,
+      "when": {
+        "written": "no"
+      },
+      "outcome": "template"
+    },
+    {
+      "priority": 94,
+      "when": {
+        "freq": "rare",
+        "stakes": "annoyance"
+      },
+      "outcome": "manual_ok"
+    },
+    {
+      "priority": 93,
+      "when": {
+        "data": "no"
+      },
+      "outcome": "gather_data"
+    },
+    {
+      "priority": 92,
+      "when": {
+        "category": "comms",
+        "judgment": "always"
+      },
+      "outcome": "dont_automate"
+    },
+    {
+      "priority": 91,
+      "when": {
+        "category": "comms",
+        "judgment": "sometimes"
+      },
+      "outcome": "template"
+    },
+    {
+      "priority": 90,
+      "when": {
+        "category": "comms",
+        "judgment": "rarely",
+        "written": "yes",
+        "data": "yes"
+      },
+      "outcome": "simple_tool"
+    },
+    {
+      "priority": 89,
+      "when": {
+        "category": "comms",
+        "judgment": "rarely"
+      },
+      "outcome": "template"
+    },
+    {
+      "priority": 88,
+      "when": {
+        "category": "other",
+        "freq": "daily",
+        "people": "sixplus",
+        "written": "yes",
+        "data": "yes"
+      },
+      "outcome": "build"
+    },
+    {
+      "priority": 87,
+      "when": {
+        "category": "ops",
+        "freq": "rare",
+        "people": "one"
+      },
+      "outcome": "manual_ok"
+    },
+    {
+      "priority": 86,
+      "when": {
+        "category": "ops",
+        "people": "one",
+        "freq": "weekly"
+      },
+      "outcome": "template"
+    },
+    {
+      "priority": 85,
+      "when": {
+        "category": "ops",
+        "people": "one",
+        "freq": "monthly"
+      },
+      "outcome": "template"
+    },
+    {
+      "priority": 84,
+      "when": {
+        "category": "ops",
+        "freq": "daily",
+        "written": "yes",
+        "people": "twofive"
+      },
+      "outcome": "spreadsheet"
+    },
+    {
+      "priority": 83,
+      "when": {
+        "category": "ops",
+        "freq": "daily",
+        "written": "yes",
+        "people": "sixplus"
+      },
+      "outcome": "spreadsheet"
+    },
+    {
+      "priority": 82,
+      "when": {
+        "category": "ops"
+      },
+      "outcome": "spreadsheet"
+    },
+    {
+      "priority": 81,
+      "when": {
+        "category": "inventory",
+        "freq": "daily",
+        "people": "sixplus",
+        "written": "yes"
+      },
+      "outcome": "simple_tool"
+    },
+    {
+      "priority": 80,
+      "when": {
+        "category": "inventory",
+        "freq": "weekly",
+        "people": "twofive"
+      },
+      "outcome": "spreadsheet"
+    },
+    {
+      "priority": 79,
+      "when": {
+        "category": "inventory"
+      },
+      "outcome": "spreadsheet"
+    },
+    {
+      "priority": 78,
+      "when": {
+        "category": "data",
+        "freq": "daily",
+        "people": "sixplus"
+      },
+      "outcome": "build"
+    },
+    {
+      "priority": 77,
+      "when": {
+        "category": "data",
+        "freq": "rare"
+      },
+      "outcome": "spreadsheet"
+    },
+    {
+      "priority": 76,
+      "when": {
+        "category": "data",
+        "freq": "monthly"
+      },
+      "outcome": "spreadsheet"
+    },
+    {
+      "priority": 75,
+      "when": {
+        "category": "data",
+        "people": "one"
+      },
+      "outcome": "spreadsheet"
+    },
+    {
+      "priority": 74,
+      "when": {
+        "category": "data"
+      },
+      "outcome": "simple_tool"
+    },
+    {
+      "priority": 73,
+      "when": {
+        "category": "staff",
+        "judgment": "sometimes"
+      },
+      "outcome": "template"
+    },
+    {
+      "priority": 72,
+      "when": {
+        "category": "staff",
+        "people": "sixplus"
+      },
+      "outcome": "simple_tool"
+    },
+    {
+      "priority": 71,
+      "when": {
+        "category": "staff"
+      },
+      "outcome": "spreadsheet"
+    },
+    {
+      "priority": 70,
+      "when": {
+        "freq": "daily",
+        "people": "twofive",
+        "written": "yes",
+        "stakes": "money"
+      },
+      "outcome": "simple_tool"
+    },
+    {
+      "priority": 69,
+      "when": {
+        "freq": "daily",
+        "people": "sixplus",
+        "written": "yes",
+        "stakes": "money"
+      },
+      "outcome": "simple_tool"
+    },
+    {
+      "priority": 68,
+      "when": {
+        "freq": "daily",
+        "people": "twofive",
+        "written": "yes",
+        "stakes": "safety"
+      },
+      "outcome": "simple_tool"
+    },
+    {
+      "priority": 68,
+      "when": {
+        "freq": "daily",
+        "written": "yes",
+        "people": "twofive"
+      },
+      "outcome": "spreadsheet"
+    },
+    {
+      "priority": 67,
+      "when": {
+        "freq": "daily",
+        "written": "yes",
+        "people": "sixplus"
+      },
+      "outcome": "spreadsheet"
+    },
+    {
+      "priority": 66,
+      "when": {
+        "freq": "weekly",
+        "people": "twofive"
+      },
+      "outcome": "spreadsheet"
+    },
+    {
+      "priority": 65,
+      "when": {
+        "freq": "weekly",
+        "people": "sixplus"
+      },
+      "outcome": "spreadsheet"
+    },
+    {
+      "priority": 64,
+      "when": {
+        "freq": "monthly",
+        "people": "one"
+      },
+      "outcome": "manual_ok"
+    },
+    {
+      "priority": 63,
+      "when": {
+        "written": "partial"
+      },
+      "outcome": "template"
+    },
+    {
+      "priority": 62,
+      "when": {
+        "stakes": "annoyance",
+        "freq": "monthly"
+      },
+      "outcome": "manual_ok"
+    },
+    {
+      "priority": 61,
+      "when": {
+        "stakes": "annoyance",
+        "freq": "rare"
+      },
+      "outcome": "manual_ok"
+    }
   ],
   "default_outcome": "template",
   "output_format": {
     "summary_template": "SHOULD I AUTOMATE THIS? · mf-tool-001\nIdea: {idea}\nCategory: {category_label}\nFrequency: {freq}\nPeople/week: {people}\nWritten process: {written}\nHuman judgment: {judgment}\nIf skipped once: {stakes}\n90-day data: {data}\n\nOUTCOME: {outcome_label}\n{outcome_title}\n\nNext steps:\n{next_steps_numbered}\n\nDo not: {do_not}\n\nVending lens: {vending_lens}"
   },
-  "related_artifacts": ["mf-tpl-001"]
+  "related_artifacts": [
+    "mf-tpl-001"
+  ],
+  "agent_signal": {
+    "use_when": "Operator asks whether to buy software, automate a task, or keep a manual habit.",
+    "decision_criteria": [
+      "Frequency and written SOP beat gut feel.",
+      "Customer-facing judgment stays human until stakes are low and process is written."
+    ],
+    "operator_context": "Treasure Valley: one-location shops often automate reporting before empathy-heavy comms."
+  }
 }

@@ -1,14 +1,18 @@
 {
   "artifact": "mf-tpl-003",
   "title": "Hiring Character Gauge",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "audience": "agent",
   "section": "templates",
   "description": "Interview questions, rules, and scoring for small business hires (2-15 people). Resume is secondary except technical roles. Three finisher questions reveal character and retention fit.",
   "scope": {
     "team_size": "2-15",
     "focus": "SMB and vending ops",
-    "not_for": ["enterprise ATS workflows", "executive search", "legal compliance programs"]
+    "not_for": [
+      "enterprise ATS workflows",
+      "executive search",
+      "legal compliance programs"
+    ]
   },
   "rules": [
     "Same core questions for every candidate in the same role. No improvisation.",
@@ -27,24 +31,75 @@
   ],
   "process": {
     "steps": [
-      { "id": "screen", "label": "5-min phone or message", "goal": "Availability, pay range alignment, basic fit" },
-      { "id": "interview", "label": "30-45 min in person or video", "goal": "Core questions + three finishers + notes" },
-      { "id": "score", "label": "Scorecard within 1 hour", "goal": "hire / pass / maybe + why" },
-      { "id": "reference", "label": "One reference if hire", "goal": "Confirm reliability, not gossip" }
+      {
+        "id": "screen",
+        "label": "5-min phone or message",
+        "goal": "Availability, pay range alignment, basic fit"
+      },
+      {
+        "id": "interview",
+        "label": "30-45 min in person or video",
+        "goal": "Core questions + three finishers + notes"
+      },
+      {
+        "id": "score",
+        "label": "Scorecard within 1 hour",
+        "goal": "hire / pass / maybe + why"
+      },
+      {
+        "id": "reference",
+        "label": "One reference if hire",
+        "goal": "Confirm reliability, not gossip"
+      }
     ]
   },
   "role_types": [
-    { "id": "non_technical", "label": "Non-technical (default)", "technical_gate": false },
-    { "id": "route_ops", "label": "Route / field ops", "technical_gate": false },
-    { "id": "customer_facing", "label": "Customer-facing", "technical_gate": false },
-    { "id": "technical", "label": "Technical / specialist", "technical_gate": true }
+    {
+      "id": "non_technical",
+      "label": "Non-technical (default)",
+      "technical_gate": false
+    },
+    {
+      "id": "route_ops",
+      "label": "Route / field ops",
+      "technical_gate": false
+    },
+    {
+      "id": "customer_facing",
+      "label": "Customer-facing",
+      "technical_gate": false
+    },
+    {
+      "id": "technical",
+      "label": "Technical / specialist",
+      "technical_gate": true
+    }
   ],
   "finisher_questions": {
     "required": true,
-    "order": ["three_adjectives", "last_book", "define_success"],
+    "order": [
+      "three_adjectives",
+      "last_book",
+      "define_success"
+    ],
     "note": "Always ask all three in order. Score using scoring.json."
   },
-  "decision_outcomes": ["hire", "pass", "maybe"],
+  "decision_outcomes": [
+    "hire",
+    "pass",
+    "maybe"
+  ],
   "maybe_rule": "Maybe expires in 48 hours. Second interview or pass. SMB cannot sit on maybes.",
-  "related_artifacts": ["mf-tpl-002", "mf-tpl-001"]
+  "related_artifacts": [
+    "mf-tpl-002",
+    "mf-tpl-001"
+  ],
+  "agent_signal": {
+    "use_when": "Interview finishers and hire/pass decision on character, not just skills.",
+    "decision_criteria": [
+      "Three finisher questions never skipped.",
+      "Weak finishers on high-trust roles default pass."
+    ],
+    "operator_context": "Treasure Valley hires often via referral; finishers still filter culture fit before mf-tpl-002."
+  }
 }

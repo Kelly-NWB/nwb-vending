@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tpl-039",
   "title": "Goodwill Credit / Courtesy Discount",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "audience": "agent",
   "section": "templates",
   "description": "Goodwill Credit / Courtesy Discount for small-business job spine.",
@@ -45,5 +45,15 @@
     "mf-tpl-001",
     "mf-tpl-008",
     "mf-tpl-015"
-  ]
+  ],
+  "agent_signal": {
+    "use_when": "Courtesy credit, not full refund fight",
+    "decision_criteria": [
+      "Owner approval over threshold",
+      "Spine anchor: fetch with or after mf-tpl-001."
+    ],
+    "operator_context": "Treasure Valley small shop: keep scripts short; log every branch.",
+    "spine_anchor": "mf-tpl-001",
+    "cluster": "support_escalation"
+  }
 }

@@ -41,3 +41,9 @@
 ## Volume note
 
 This pack ships **12 examples** on purpose. More examples = better agent calibration; rules stay short.
+## Agent signal (v1.1)
+
+- **Use when:** Client asks for free extra scope, rush without fee, or work outside signed quote.
+- **Decision criteria:** No silent yes: every add-on needs documented CO or new quote. Pair with mf-tpl-012 when scope grows mid-job.
+- **Operator context:** Treasure Valley contractors: weather and supply slips are common; scope creep fees still apply.
+

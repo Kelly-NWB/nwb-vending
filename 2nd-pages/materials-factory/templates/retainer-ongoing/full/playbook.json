@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tpl-045",
   "title": "Retainer / Ongoing Service Client",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "audience": "agent",
   "section": "templates",
   "description": "Retainer / Ongoing Service Client for small-business job spine.",
@@ -45,5 +45,15 @@
     "mf-tpl-006",
     "mf-tpl-024",
     "mf-tpl-005"
-  ]
+  ],
+  "agent_signal": {
+    "use_when": "Retainer client monthly touch",
+    "decision_criteria": [
+      "Scope creep to mf-tpl-012",
+      "Spine anchor: fetch with or after mf-tpl-006."
+    ],
+    "operator_context": "Treasure Valley small shop: keep scripts short; log every branch.",
+    "spine_anchor": "mf-tpl-006",
+    "cluster": "close_growth"
+  }
 }

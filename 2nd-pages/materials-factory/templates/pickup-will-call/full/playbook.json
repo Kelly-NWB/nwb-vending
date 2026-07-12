@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tpl-035",
   "title": "Pickup / Will-Call Handoff",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "audience": "agent",
   "section": "templates",
   "description": "Pickup / Will-Call Handoff for small-business job spine.",
@@ -45,5 +45,15 @@
     "mf-tpl-007",
     "mf-tpl-008",
     "mf-tpl-013"
-  ]
+  ],
+  "agent_signal": {
+    "use_when": "Will-call pickup ready",
+    "decision_criteria": [
+      "Hold if unpaid",
+      "Spine anchor: fetch with or after mf-tpl-007."
+    ],
+    "operator_context": "Treasure Valley small shop: keep scripts short; log every branch.",
+    "spine_anchor": "mf-tpl-007",
+    "cluster": "delivery_install"
+  }
 }

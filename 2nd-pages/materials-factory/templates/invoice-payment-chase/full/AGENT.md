@@ -6,3 +6,9 @@
 4. Log every touch.
 
 Output: `INVOICE · mf-tpl-008 · [state] · [branch] · Log: [row]`
+## Agent signal (v1.1)
+
+- **Use when:** Invoice sent: chase calendar day 3, 7, 14 and partial payment states.
+- **Decision criteria:** Tone escalates on calendar, not mood. Net terms accounts use mf-tpl-046 branch before harsh chase.
+- **Operator context:** Treasure Valley mix of Stripe and check; log payment method on every touch.
+

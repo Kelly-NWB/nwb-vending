@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tpl-046",
   "title": "Net Terms / Credit Application",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "audience": "agent",
   "section": "templates",
   "description": "Net Terms / Credit Application for small-business job spine.",
@@ -45,5 +45,15 @@
     "mf-tpl-008",
     "mf-tpl-006",
     "mf-tpl-004"
-  ]
+  ],
+  "agent_signal": {
+    "use_when": "Net terms application",
+    "decision_criteria": [
+      "Hold new work if overdue",
+      "Spine anchor: fetch with or after mf-tpl-008."
+    ],
+    "operator_context": "Treasure Valley small shop: keep scripts short; log every branch.",
+    "spine_anchor": "mf-tpl-008",
+    "cluster": "quote_accept"
+  }
 }

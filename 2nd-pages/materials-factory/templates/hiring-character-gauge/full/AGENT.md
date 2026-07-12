@@ -46,3 +46,9 @@ Scorecard: [filled template fields]
 
 - mf-tpl-002: onboarding after hire
 - mf-tpl-001: customer-facing hire should pass complaint mindset in role question
+## Agent signal (v1.1)
+
+- **Use when:** Interview finishers and hire/pass decision on character, not just skills.
+- **Decision criteria:** Three finisher questions never skipped. Weak finishers on high-trust roles default pass.
+- **Operator context:** Treasure Valley hires often via referral; finishers still filter culture fit before mf-tpl-002.
+

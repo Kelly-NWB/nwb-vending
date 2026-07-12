@@ -44,3 +44,9 @@ Cross-artifacts used: [ids if any]
 ## Not a substitute for
 
 Daily production management, month-end books, or HRIS.
+## Agent signal (v1.1)
+
+- **Use when:** Weekly owner or lead ops ritual: money, queue, people, one improvement.
+- **Decision criteria:** Hard 15-minute stop; variants for solo vs small team. Money block pairs with mf-tpl-008 chase status.
+- **Operator context:** Idaho seasonal swings: use capacity variant when spring install backlog hits.
+

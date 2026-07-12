@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tpl-028",
   "title": "Estimate Revision / Change Quote",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "audience": "agent",
   "section": "templates",
   "description": "Estimate Revision / Change Quote for small-business job spine.",
@@ -45,5 +45,15 @@
     "mf-tpl-006",
     "mf-tpl-012",
     "mf-tpl-014"
-  ]
+  ],
+  "agent_signal": {
+    "use_when": "Revise quote scope or price",
+    "decision_criteria": [
+      "Void prior quote on send",
+      "Spine anchor: fetch with or after mf-tpl-006."
+    ],
+    "operator_context": "Treasure Valley small shop: keep scripts short; log every branch.",
+    "spine_anchor": "mf-tpl-006",
+    "cluster": "quote_accept"
+  }
 }

@@ -1,44 +1,123 @@
 {
   "artifact": "mf-tpl-013",
   "title": "Client Status Update",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "audience": "agent",
   "section": "templates",
   "description": "Proactive where-we-are message. Reduces where is it panic. Use on stuck jobs from mf-tpl-005.",
   "mindset": {
     "principle": "Short update beats silence. Name date, blockers, next step.",
     "mistakes": [
-      { "id": "over-promise", "label": "New date without checking floor", "cost": "Second apology tour" },
-      { "id": "blame-vendor", "label": "Vendor excuse only", "cost": "You own the client relationship" },
-      { "id": "essay", "label": "Three-page update", "cost": "Client skims, still calls" }
+      {
+        "id": "over-promise",
+        "label": "New date without checking floor",
+        "cost": "Second apology tour"
+      },
+      {
+        "id": "blame-vendor",
+        "label": "Vendor excuse only",
+        "cost": "You own the client relationship"
+      },
+      {
+        "id": "essay",
+        "label": "Three-page update",
+        "cost": "Client skims, still calls"
+      }
     ],
     "framework": {
       "steps": [
-        { "id": "status", "action": "On track / delayed / waiting on you" },
-        { "id": "date", "action": "Current ship target" },
-        { "id": "ask", "action": "One clear client action if any" },
-        { "id": "send", "action": "Under 8 sentences" },
-        { "id": "log", "action": "Touch logged on job" }
+        {
+          "id": "status",
+          "action": "On track / delayed / waiting on you"
+        },
+        {
+          "id": "date",
+          "action": "Current ship target"
+        },
+        {
+          "id": "ask",
+          "action": "One clear client action if any"
+        },
+        {
+          "id": "send",
+          "action": "Under 8 sentences"
+        },
+        {
+          "id": "log",
+          "action": "Touch logged on job"
+        }
       ]
     }
   },
   "status_types": [
-    { "id": "on_track", "label": "On schedule" },
-    { "id": "delayed", "label": "Behind, new date" },
-    { "id": "waiting_client", "label": "Blocked on proof or info" },
-    { "id": "in_production", "label": "Running now" }
+    {
+      "id": "on_track",
+      "label": "On schedule"
+    },
+    {
+      "id": "delayed",
+      "label": "Behind, new date"
+    },
+    {
+      "id": "waiting_client",
+      "label": "Blocked on proof or info"
+    },
+    {
+      "id": "in_production",
+      "label": "Running now"
+    }
   ],
   "decision_branches": [
-    { "id": "update-on-track", "situation": "Normal progress", "action": "status-on-track" },
-    { "id": "update-delay", "situation": "Date slipped", "action": "status-delay-honest" },
-    { "id": "update-waiting", "situation": "Need client input", "action": "status-waiting-client" },
-    { "id": "update-production", "situation": "Started run", "action": "status-in-production" },
-    { "id": "update-weekly", "situation": "Long job, weekly ping", "action": "status-weekly-brief" },
-    { "id": "update-escalate", "situation": "Angry tone incoming", "action": "status-before-complaint", "cross_artifact": "mf-tpl-001" }
+    {
+      "id": "update-on-track",
+      "situation": "Normal progress",
+      "action": "status-on-track"
+    },
+    {
+      "id": "update-delay",
+      "situation": "Date slipped",
+      "action": "status-delay-honest"
+    },
+    {
+      "id": "update-waiting",
+      "situation": "Need client input",
+      "action": "status-waiting-client"
+    },
+    {
+      "id": "update-production",
+      "situation": "Started run",
+      "action": "status-in-production"
+    },
+    {
+      "id": "update-weekly",
+      "situation": "Long job, weekly ping",
+      "action": "status-weekly-brief"
+    },
+    {
+      "id": "update-escalate",
+      "situation": "Angry tone incoming",
+      "action": "status-before-complaint",
+      "cross_artifact": "mf-tpl-001"
+    }
   ],
   "tracking": {
     "csv_header": "date,job_id,status_type,branch,ship_target,client_action,owner",
     "sheet_tab_name": "client_updates"
   },
-  "related_artifacts": ["mf-tpl-005", "mf-tpl-010", "mf-tpl-011", "mf-tpl-001", "mf-tpl-009"]
+  "related_artifacts": [
+    "mf-tpl-005",
+    "mf-tpl-010",
+    "mf-tpl-011",
+    "mf-tpl-001",
+    "mf-tpl-009"
+  ],
+  "agent_signal": {
+    "use_when": "Proactive where-we-are update: on track, slip, waiting on client, waiting on vendor.",
+    "decision_criteria": [
+      "Short, dated, honest; no essay.",
+      "Slip links mf-tpl-009 or mf-tpl-021 as needed."
+    ],
+    "operator_context": "Treasure Valley clients appreciate plain dates over vague soon.",
+    "spine_role": "chain"
+  }
 }

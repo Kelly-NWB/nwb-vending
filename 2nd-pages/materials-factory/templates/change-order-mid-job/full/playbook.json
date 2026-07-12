@@ -1,44 +1,122 @@
 {
   "artifact": "mf-tpl-012",
   "title": "Change Order Mid-Job",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "audience": "agent",
   "section": "templates",
   "description": "Scope grew after accept: document, price delta, written OK before extra work. Script pack for mf-tool-003 outcomes.",
   "mindset": {
     "principle": "Change order is a mini quote on a running job. No verbal yes.",
     "mistakes": [
-      { "id": "free-tweak-stack", "label": "Stack free tweaks", "cost": "Job goes red" },
-      { "id": "work-first", "label": "Do extra then invoice", "cost": "Client refuses to pay" },
-      { "id": "no-pause", "label": "Keep production on old scope while negotiating", "cost": "Scrap and rework" }
+      {
+        "id": "free-tweak-stack",
+        "label": "Stack free tweaks",
+        "cost": "Job goes red"
+      },
+      {
+        "id": "work-first",
+        "label": "Do extra then invoice",
+        "cost": "Client refuses to pay"
+      },
+      {
+        "id": "no-pause",
+        "label": "Keep production on old scope while negotiating",
+        "cost": "Scrap and rework"
+      }
     ],
     "framework": {
       "steps": [
-        { "id": "freeze", "action": "Pause affected work" },
-        { "id": "document", "action": "Was quoted vs now asked" },
-        { "id": "price", "action": "Delta + time impact" },
-        { "id": "send", "action": "Change order template" },
-        { "id": "log", "action": "CO number tied to job_id" }
+        {
+          "id": "freeze",
+          "action": "Pause affected work"
+        },
+        {
+          "id": "document",
+          "action": "Was quoted vs now asked"
+        },
+        {
+          "id": "price",
+          "action": "Delta + time impact"
+        },
+        {
+          "id": "send",
+          "action": "Change order template"
+        },
+        {
+          "id": "log",
+          "action": "CO number tied to job_id"
+        }
       ]
     }
   },
   "change_types": [
-    { "id": "add_qty", "label": "More quantity" },
-    { "id": "add_item", "label": "New item on job" },
-    { "id": "spec_shift", "label": "Different spec" },
-    { "id": "rush_pull", "label": "Pull in deadline" }
+    {
+      "id": "add_qty",
+      "label": "More quantity"
+    },
+    {
+      "id": "add_item",
+      "label": "New item on job"
+    },
+    {
+      "id": "spec_shift",
+      "label": "Different spec"
+    },
+    {
+      "id": "rush_pull",
+      "label": "Pull in deadline"
+    }
   ],
   "decision_branches": [
-    { "id": "co-standard", "situation": "Paid change, clear delta", "action": "change-order-standard" },
-    { "id": "co-courtesy-once", "situation": "Tiny first tweak, policy allows once", "action": "change-order-courtesy" },
-    { "id": "co-defer", "situation": "After delivery or phase 2", "action": "change-order-defer" },
-    { "id": "co-decline", "situation": "Cannot do or bad margin", "action": "change-order-decline" },
-    { "id": "co-accepted", "situation": "Client signed CO", "action": "change-order-accepted" },
-    { "id": "co-dispute", "situation": "Client says included", "action": "change-order-scope-remind", "cross_artifact": "mf-tpl-006" }
+    {
+      "id": "co-standard",
+      "situation": "Paid change, clear delta",
+      "action": "change-order-standard"
+    },
+    {
+      "id": "co-courtesy-once",
+      "situation": "Tiny first tweak, policy allows once",
+      "action": "change-order-courtesy"
+    },
+    {
+      "id": "co-defer",
+      "situation": "After delivery or phase 2",
+      "action": "change-order-defer"
+    },
+    {
+      "id": "co-decline",
+      "situation": "Cannot do or bad margin",
+      "action": "change-order-decline"
+    },
+    {
+      "id": "co-accepted",
+      "situation": "Client signed CO",
+      "action": "change-order-accepted"
+    },
+    {
+      "id": "co-dispute",
+      "situation": "Client says included",
+      "action": "change-order-scope-remind",
+      "cross_artifact": "mf-tpl-006"
+    }
   ],
   "tracking": {
     "csv_header": "date,job_id,co_id,change_type,branch,delta_amount,accepted_y,n,owner",
     "sheet_tab_name": "change_orders"
   },
-  "related_artifacts": ["mf-tool-003", "mf-tpl-006", "mf-tpl-010", "mf-tpl-007"]
+  "related_artifacts": [
+    "mf-tool-003",
+    "mf-tpl-006",
+    "mf-tpl-010",
+    "mf-tpl-007"
+  ],
+  "agent_signal": {
+    "use_when": "Scope grows after quote: freeze, document, CO, client accept.",
+    "decision_criteria": [
+      "Pair mf-tool-003 for say-no on unpaid extras.",
+      "No floor change without signed CO or email accept."
+    ],
+    "operator_context": "Small shops: CO can be short email plus price line; still log row.",
+    "spine_role": "chain"
+  }
 }

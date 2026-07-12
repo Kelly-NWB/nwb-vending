@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tpl-054",
   "title": "Portfolio / Photo Permission Ask",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "audience": "agent",
   "section": "templates",
   "description": "Portfolio / Photo Permission Ask for small-business job spine.",
@@ -45,5 +45,15 @@
     "mf-tpl-015",
     "mf-tpl-019",
     "mf-tpl-007"
-  ]
+  ],
+  "agent_signal": {
+    "use_when": "Portfolio photo permission",
+    "decision_criteria": [
+      "Skip on complaint jobs",
+      "Spine anchor: fetch with or after mf-tpl-015."
+    ],
+    "operator_context": "Treasure Valley small shop: keep scripts short; log every branch.",
+    "spine_anchor": "mf-tpl-015",
+    "cluster": "close_growth"
+  }
 }

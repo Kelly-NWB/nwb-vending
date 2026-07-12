@@ -1,51 +1,135 @@
 {
   "artifact": "mf-tpl-004",
   "title": "Client Intake Playbook",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "audience": "agent",
   "section": "templates",
   "description": "First touch through qualify for small business: form, email, DM, or call. Triage before quote. Not complaint recovery (see mf-tpl-001).",
   "mindset": {
     "principle": "Intake is qualify and schedule, not close on first contact.",
     "mistakes": [
-      { "id": "quote-blind", "label": "Quote before scope is clear", "cost": "Margin bleed and rework" },
-      { "id": "ghost-slow", "label": "Slow first touch", "cost": "Lead goes cold or posts publicly" },
-      { "id": "complaint-miss", "label": "Treat anger as a new lead", "cost": "Customer feels ignored; use mf-tpl-001" }
+      {
+        "id": "quote-blind",
+        "label": "Quote before scope is clear",
+        "cost": "Margin bleed and rework"
+      },
+      {
+        "id": "ghost-slow",
+        "label": "Slow first touch",
+        "cost": "Lead goes cold or posts publicly"
+      },
+      {
+        "id": "complaint-miss",
+        "label": "Treat anger as a new lead",
+        "cost": "Customer feels ignored; use mf-tpl-001"
+      }
     ],
     "framework": {
       "name": "Intake flow",
       "steps": [
-        { "id": "capture", "action": "Record channel, time, source, raw ask" },
-        { "id": "classify", "action": "Pick intake_type and branch" },
-        { "id": "first_touch", "action": "Short reply: received, next step, no quote yet unless ready branch" },
-        { "id": "qualify", "action": "Ask missing fields or send quote path" },
-        { "id": "log", "action": "Log row + owner + follow-up date" }
+        {
+          "id": "capture",
+          "action": "Record channel, time, source, raw ask"
+        },
+        {
+          "id": "classify",
+          "action": "Pick intake_type and branch"
+        },
+        {
+          "id": "first_touch",
+          "action": "Short reply: received, next step, no quote yet unless ready branch"
+        },
+        {
+          "id": "qualify",
+          "action": "Ask missing fields or send quote path"
+        },
+        {
+          "id": "log",
+          "action": "Log row + owner + follow-up date"
+        }
       ]
     }
   },
   "intake_types": [
-    { "id": "new_lead", "label": "New inquiry", "signal": "First contact, neutral or curious tone" },
-    { "id": "ready_to_buy", "label": "Ready to buy", "signal": "Specs, quantity, deadline, payment mention" },
-    { "id": "repeat", "label": "Repeat contact", "signal": "Same thread, prior reply sent" },
-    { "id": "complaint_mask", "label": "Complaint disguised as intake", "signal": "Failure, refund, angry about past work" },
-    { "id": "spam", "label": "Spam or irrelevant", "signal": "SEO pitch, unrelated bulk, obvious bot" },
-    { "id": "unclear", "label": "Unclear", "signal": "One line, no scope, emoji only" }
+    {
+      "id": "new_lead",
+      "label": "New inquiry",
+      "signal": "First contact, neutral or curious tone"
+    },
+    {
+      "id": "ready_to_buy",
+      "label": "Ready to buy",
+      "signal": "Specs, quantity, deadline, payment mention"
+    },
+    {
+      "id": "repeat",
+      "label": "Repeat contact",
+      "signal": "Same thread, prior reply sent"
+    },
+    {
+      "id": "complaint_mask",
+      "label": "Complaint disguised as intake",
+      "signal": "Failure, refund, angry about past work"
+    },
+    {
+      "id": "spam",
+      "label": "Spam or irrelevant",
+      "signal": "SEO pitch, unrelated bulk, obvious bot"
+    },
+    {
+      "id": "unclear",
+      "label": "Unclear",
+      "signal": "One line, no scope, emoji only"
+    }
   ],
   "process": {
     "overview": "Same five steps for email, form, DM, SMS. First touch within SLA; quote only on ready branch or after qualify.",
     "steps": [
-      { "id": 1, "name": "Capture", "goal": "Nothing lost in inbox chaos", "minutes": "1" },
-      { "id": 2, "name": "Classify", "goal": "intake_type + branch", "minutes": "2" },
-      { "id": 3, "name": "First touch", "goal": "Human saw it; next step named", "minutes": "5" },
-      { "id": 4, "name": "Qualify", "goal": "Scope, timeline, budget band", "minutes": "5-15" },
-      { "id": 5, "name": "Log", "goal": "Row + follow-up date", "minutes": "2" }
+      {
+        "id": 1,
+        "name": "Capture",
+        "goal": "Nothing lost in inbox chaos",
+        "minutes": "1"
+      },
+      {
+        "id": 2,
+        "name": "Classify",
+        "goal": "intake_type + branch",
+        "minutes": "2"
+      },
+      {
+        "id": 3,
+        "name": "First touch",
+        "goal": "Human saw it; next step named",
+        "minutes": "5"
+      },
+      {
+        "id": 4,
+        "name": "Qualify",
+        "goal": "Scope, timeline, budget band",
+        "minutes": "5-15"
+      },
+      {
+        "id": 5,
+        "name": "Log",
+        "goal": "Row + follow-up date",
+        "minutes": "2"
+      }
     ],
     "sla": {
       "first_touch_hours": 24,
       "business_hours_boost": "Same day if received before 2pm local and you are open",
       "rush_note": "Rush template only if you can actually deliver; otherwise defer with date"
     },
-    "template_ids": ["first-touch-standard", "first-touch-rush", "clarify-scope-3q", "clarify-budget-timeline", "defer-quote-24h", "not-a-fit-polite", "repeat-we-replied"]
+    "template_ids": [
+      "first-touch-standard",
+      "first-touch-rush",
+      "clarify-scope-3q",
+      "clarify-budget-timeline",
+      "defer-quote-24h",
+      "not-a-fit-polite",
+      "repeat-we-replied"
+    ]
   },
   "decision_branches": [
     {
@@ -99,26 +183,77 @@
     }
   ],
   "qualify_fields": [
-    { "field": "deliverable", "question": "What exactly do you need delivered? (file, print, service visit)" },
-    { "field": "quantity", "question": "How many / what size / which locations?" },
-    { "field": "deadline", "question": "When do you need it? Hard deadline or flexible?" },
-    { "field": "budget_band", "question": "Ballpark budget or tier? (helps us route)" },
-    { "field": "decision_maker", "question": "Who approves spend and final proof?" },
-    { "field": "reference", "question": "Examples you like? (link or describe)" }
+    {
+      "field": "deliverable",
+      "question": "What exactly do you need delivered? (file, print, service visit)"
+    },
+    {
+      "field": "quantity",
+      "question": "How many / what size / which locations?"
+    },
+    {
+      "field": "deadline",
+      "question": "When do you need it? Hard deadline or flexible?"
+    },
+    {
+      "field": "budget_band",
+      "question": "Ballpark budget or tier? (helps us route)"
+    },
+    {
+      "field": "decision_maker",
+      "question": "Who approves spend and final proof?"
+    },
+    {
+      "field": "reference",
+      "question": "Examples you like? (link or describe)"
+    }
   ],
   "tracking": {
     "log_fields": [
-      { "field": "date", "why": "When inquiry arrived" },
-      { "field": "channel", "why": "form / email / dm / phone / sms" },
-      { "field": "source", "why": "Campaign, referral, walk-in, unknown" },
-      { "field": "intake_type", "why": "new_lead / ready_to_buy / repeat / complaint_mask / spam / unclear" },
-      { "field": "branch", "why": "decision_branch id" },
-      { "field": "ask_summary", "why": "One line what they want" },
-      { "field": "first_touch_sent", "why": "Y/N + datetime" },
-      { "field": "qualify_status", "why": "pending / complete / declined" },
-      { "field": "next_action", "why": "quote / call / wait on them / closed" },
-      { "field": "followup_date", "why": "When you check again" },
-      { "field": "owner", "why": "Who owns thread" }
+      {
+        "field": "date",
+        "why": "When inquiry arrived"
+      },
+      {
+        "field": "channel",
+        "why": "form / email / dm / phone / sms"
+      },
+      {
+        "field": "source",
+        "why": "Campaign, referral, walk-in, unknown"
+      },
+      {
+        "field": "intake_type",
+        "why": "new_lead / ready_to_buy / repeat / complaint_mask / spam / unclear"
+      },
+      {
+        "field": "branch",
+        "why": "decision_branch id"
+      },
+      {
+        "field": "ask_summary",
+        "why": "One line what they want"
+      },
+      {
+        "field": "first_touch_sent",
+        "why": "Y/N + datetime"
+      },
+      {
+        "field": "qualify_status",
+        "why": "pending / complete / declined"
+      },
+      {
+        "field": "next_action",
+        "why": "quote / call / wait on them / closed"
+      },
+      {
+        "field": "followup_date",
+        "why": "When you check again"
+      },
+      {
+        "field": "owner",
+        "why": "Who owns thread"
+      }
     ],
     "csv_header": "date,channel,source,intake_type,branch,ask_summary,first_touch_sent,qualify_status,next_action,followup_date,owner",
     "weekly_review": [
@@ -131,9 +266,35 @@
   },
   "cheat_sheet": {
     "quick_ref": "Capture · Classify · First touch · Qualify · Log",
-    "never": ["price before scope", "ghost 48h", "argue on intake thread"],
-    "always": ["name next step with date", "one owner per lead", "log before end of day"],
-    "escalate_to_complaint": ["refund", "you promised", "never received", "angry about past job"]
+    "never": [
+      "price before scope",
+      "ghost 48h",
+      "argue on intake thread"
+    ],
+    "always": [
+      "name next step with date",
+      "one owner per lead",
+      "log before end of day"
+    ],
+    "escalate_to_complaint": [
+      "refund",
+      "you promised",
+      "never received",
+      "angry about past job"
+    ]
   },
-  "related_artifacts": ["mf-tpl-001", "mf-tool-002", "mf-tool-001"]
+  "related_artifacts": [
+    "mf-tpl-001",
+    "mf-tool-002",
+    "mf-tool-001"
+  ],
+  "agent_signal": {
+    "use_when": "First contact from unknown lead: form, email, DM, or call. Not complaint recovery.",
+    "decision_criteria": [
+      "Classify before quote; ready_to_buy still gets qualify.",
+      "Complaint_mask routes mf-tpl-001."
+    ],
+    "operator_context": "Treasure Valley leads often mix Facebook DM and phone; same SLA, same log row.",
+    "spine_role": "chain_start"
+  }
 }

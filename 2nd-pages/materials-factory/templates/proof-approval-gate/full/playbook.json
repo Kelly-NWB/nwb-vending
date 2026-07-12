@@ -1,44 +1,122 @@
 {
   "artifact": "mf-tpl-011",
   "title": "Proof + Client Approval Gate",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "audience": "agent",
   "section": "templates",
   "description": "Before production: send proof, capture written approval, block print on silence. After mf-tpl-010 kickoff.",
   "mindset": {
     "principle": "No production without written OK on proof. Silence is not approval.",
     "mistakes": [
-      { "id": "verbal-ok", "label": "Start on phone OK", "cost": "He said / she said at delivery" },
-      { "id": "endless-rounds", "label": "Unlimited revisions unnamed", "cost": "Margin dies on round 6" },
-      { "id": "tiny-proof", "label": "Proof missing key detail", "cost": "Full rerun cost" }
+      {
+        "id": "verbal-ok",
+        "label": "Start on phone OK",
+        "cost": "He said / she said at delivery"
+      },
+      {
+        "id": "endless-rounds",
+        "label": "Unlimited revisions unnamed",
+        "cost": "Margin dies on round 6"
+      },
+      {
+        "id": "tiny-proof",
+        "label": "Proof missing key detail",
+        "cost": "Full rerun cost"
+      }
     ],
     "framework": {
       "steps": [
-        { "id": "send", "action": "Proof with what to check listed" },
-        { "id": "deadline", "action": "Reply-by date moves ship date" },
-        { "id": "capture", "action": "Written APPROVED or numbered changes" },
-        { "id": "block", "action": "Hold production until approval logged" },
-        { "id": "log", "action": "Round, approver, timestamp" }
+        {
+          "id": "send",
+          "action": "Proof with what to check listed"
+        },
+        {
+          "id": "deadline",
+          "action": "Reply-by date moves ship date"
+        },
+        {
+          "id": "capture",
+          "action": "Written APPROVED or numbered changes"
+        },
+        {
+          "id": "block",
+          "action": "Hold production until approval logged"
+        },
+        {
+          "id": "log",
+          "action": "Round, approver, timestamp"
+        }
       ]
     }
   },
   "proof_types": [
-    { "id": "visual", "label": "Layout, print, signage mockup" },
-    { "id": "copy", "label": "Text-only proof" },
-    { "id": "color", "label": "Color-critical job" },
-    { "id": "final", "label": "Final pre-run signoff" }
+    {
+      "id": "visual",
+      "label": "Layout, print, signage mockup"
+    },
+    {
+      "id": "copy",
+      "label": "Text-only proof"
+    },
+    {
+      "id": "color",
+      "label": "Color-critical job"
+    },
+    {
+      "id": "final",
+      "label": "Final pre-run signoff"
+    }
   ],
   "decision_branches": [
-    { "id": "proof-send", "situation": "First proof ready", "action": "proof-send-standard" },
-    { "id": "changes-minor", "situation": "Typos or small tweaks", "action": "proof-changes-minor" },
-    { "id": "changes-major", "situation": "Layout or scope shift on proof", "action": "proof-changes-major", "cross_artifact": "mf-tool-003" },
-    { "id": "approved", "situation": "Written APPROVED", "action": "proof-approved-release" },
-    { "id": "silent-hold", "situation": "Past reply-by, no answer", "action": "proof-silent-hold" },
-    { "id": "rush-proof", "situation": "Rush job proof window", "action": "proof-rush-window" }
+    {
+      "id": "proof-send",
+      "situation": "First proof ready",
+      "action": "proof-send-standard"
+    },
+    {
+      "id": "changes-minor",
+      "situation": "Typos or small tweaks",
+      "action": "proof-changes-minor"
+    },
+    {
+      "id": "changes-major",
+      "situation": "Layout or scope shift on proof",
+      "action": "proof-changes-major",
+      "cross_artifact": "mf-tool-003"
+    },
+    {
+      "id": "approved",
+      "situation": "Written APPROVED",
+      "action": "proof-approved-release"
+    },
+    {
+      "id": "silent-hold",
+      "situation": "Past reply-by, no answer",
+      "action": "proof-silent-hold"
+    },
+    {
+      "id": "rush-proof",
+      "situation": "Rush job proof window",
+      "action": "proof-rush-window"
+    }
   ],
   "tracking": {
     "csv_header": "date,job_id,proof_round,proof_type,branch,approved_y,n,approver,ship_hold_until,owner",
     "sheet_tab_name": "proofs"
   },
-  "related_artifacts": ["mf-tpl-010", "mf-tpl-007", "mf-tool-003", "mf-tpl-005"]
+  "related_artifacts": [
+    "mf-tpl-010",
+    "mf-tpl-007",
+    "mf-tool-003",
+    "mf-tpl-005"
+  ],
+  "agent_signal": {
+    "use_when": "Proof round sent: require written APPROVED before production release.",
+    "decision_criteria": [
+      "Silence is not approval.",
+      "Color critical jobs may require mf-tpl-043 sample branch."
+    ],
+    "operator_context": "Idaho sun and laminate: call out exterior fade risk on proof for south-facing signage.",
+    "spine_role": "chain"
+  }
 }

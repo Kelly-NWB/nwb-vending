@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tpl-025",
   "title": "Subcontractor Handoff",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "audience": "agent",
   "section": "templates",
   "description": "Subcontractor Handoff for small-business job spine.",
@@ -45,5 +45,15 @@
     "mf-tpl-010",
     "mf-tpl-013",
     "mf-tpl-009"
-  ]
+  ],
+  "agent_signal": {
+    "use_when": "Sub late or QC fail",
+    "decision_criteria": [
+      "Client sees our PM only",
+      "Spine anchor: fetch with or after mf-tpl-009."
+    ],
+    "operator_context": "Treasure Valley small shop: keep scripts short; log every branch.",
+    "spine_anchor": "mf-tpl-009",
+    "cluster": "active_job"
+  }
 }

@@ -9,7 +9,7 @@
   "audience": "agent",
   "entry_count": 59,
   "job_spine": {
-    "description": "Small-business job lifecycle. Fetch in order when wiring a shop workflow.",
+    "description": "Small-business job lifecycle for Treasure Valley-style ops. Fetch chain in order; attach extensions by anchor.",
     "chain": [
       "mf-tpl-004",
       "mf-tpl-006",
@@ -71,6 +71,346 @@
       "mf-tpl-053",
       "mf-tpl-054",
       "mf-tpl-055"
+    ],
+    "extension_clusters": [
+      {
+        "id": "quote_accept",
+        "label": "Quote accepted, pre-production",
+        "anchor": "mf-tpl-006",
+        "artifacts": [
+          "mf-tpl-016",
+          "mf-tpl-022",
+          "mf-tpl-028",
+          "mf-tpl-029",
+          "mf-tpl-046",
+          "mf-tpl-047",
+          "mf-tpl-055"
+        ]
+      },
+      {
+        "id": "kickoff_production",
+        "label": "Kickoff and floor",
+        "anchor": "mf-tpl-010",
+        "artifacts": [
+          "mf-tpl-017",
+          "mf-tpl-026",
+          "mf-tpl-033",
+          "mf-tpl-034",
+          "mf-tpl-042",
+          "mf-tpl-043"
+        ]
+      },
+      {
+        "id": "active_job",
+        "label": "Job in flight",
+        "anchor": "mf-tpl-013",
+        "artifacts": [
+          "mf-tpl-021",
+          "mf-tpl-030",
+          "mf-tpl-038",
+          "mf-tpl-025",
+          "mf-tpl-041",
+          "mf-tpl-049"
+        ]
+      },
+      {
+        "id": "delivery_install",
+        "label": "Delivery and install",
+        "anchor": "mf-tpl-007",
+        "artifacts": [
+          "mf-tpl-035",
+          "mf-tpl-036",
+          "mf-tpl-037",
+          "mf-tpl-050",
+          "mf-tpl-052"
+        ]
+      },
+      {
+        "id": "close_growth",
+        "label": "Close and growth",
+        "anchor": "mf-tpl-015",
+        "artifacts": [
+          "mf-tpl-018",
+          "mf-tpl-019",
+          "mf-tpl-031",
+          "mf-tpl-054",
+          "mf-tpl-024",
+          "mf-tpl-045"
+        ]
+      },
+      {
+        "id": "support_escalation",
+        "label": "Support and escalation",
+        "anchor": "mf-tpl-001",
+        "artifacts": [
+          "mf-tpl-020",
+          "mf-tpl-032",
+          "mf-tpl-044",
+          "mf-tpl-040",
+          "mf-tpl-039"
+        ]
+      },
+      {
+        "id": "client_account",
+        "label": "Client and account",
+        "anchor": "mf-tpl-004",
+        "artifacts": [
+          "mf-tpl-023",
+          "mf-tpl-027",
+          "mf-tpl-051",
+          "mf-tpl-048"
+        ]
+      },
+      {
+        "id": "events_terms",
+        "label": "Events and hard deadlines",
+        "anchor": "mf-tpl-021",
+        "artifacts": [
+          "mf-tpl-053"
+        ]
+      }
+    ],
+    "extension_index": [
+      {
+        "id": "mf-tpl-016",
+        "anchor": "mf-tpl-010",
+        "cluster": "quote_accept",
+        "fetch_when": "Deposit missing after accept"
+      },
+      {
+        "id": "mf-tpl-017",
+        "anchor": "mf-tpl-011",
+        "cluster": "kickoff_production",
+        "fetch_when": "Proof approved, hand to floor"
+      },
+      {
+        "id": "mf-tpl-018",
+        "anchor": "mf-tpl-014",
+        "cluster": "close_growth",
+        "fetch_when": "Lead dead: ghost, price, timing"
+      },
+      {
+        "id": "mf-tpl-019",
+        "anchor": "mf-tpl-015",
+        "cluster": "close_growth",
+        "fetch_when": "Happy close, light referral ask"
+      },
+      {
+        "id": "mf-tpl-020",
+        "anchor": "mf-tpl-001",
+        "cluster": "support_escalation",
+        "fetch_when": "Support question, not full complaint"
+      },
+      {
+        "id": "mf-tpl-021",
+        "anchor": "mf-tpl-013",
+        "cluster": "active_job",
+        "fetch_when": "Rush fee and hard proof windows"
+      },
+      {
+        "id": "mf-tpl-022",
+        "anchor": "mf-tpl-004",
+        "cluster": "quote_accept",
+        "fetch_when": "Vague lead needs phone qualify"
+      },
+      {
+        "id": "mf-tpl-023",
+        "anchor": "mf-tpl-004",
+        "cluster": "client_account",
+        "fetch_when": "Wrong fit: refer out polite"
+      },
+      {
+        "id": "mf-tpl-024",
+        "anchor": "mf-tpl-006",
+        "cluster": "close_growth",
+        "fetch_when": "Repeat client reorder path"
+      },
+      {
+        "id": "mf-tpl-025",
+        "anchor": "mf-tpl-009",
+        "cluster": "active_job",
+        "fetch_when": "Sub late or QC fail"
+      },
+      {
+        "id": "mf-tpl-026",
+        "anchor": "mf-tpl-017",
+        "cluster": "kickoff_production",
+        "fetch_when": "Internal QC fail before ship"
+      },
+      {
+        "id": "mf-tpl-027",
+        "anchor": "mf-tpl-010",
+        "cluster": "client_account",
+        "fetch_when": "First job, not repeat"
+      },
+      {
+        "id": "mf-tpl-028",
+        "anchor": "mf-tpl-006",
+        "cluster": "quote_accept",
+        "fetch_when": "Revise quote scope or price"
+      },
+      {
+        "id": "mf-tpl-029",
+        "anchor": "mf-tpl-008",
+        "cluster": "quote_accept",
+        "fetch_when": "Partial payment plan"
+      },
+      {
+        "id": "mf-tpl-030",
+        "anchor": "mf-tpl-013",
+        "cluster": "active_job",
+        "fetch_when": "Client or internal pause"
+      },
+      {
+        "id": "mf-tpl-031",
+        "anchor": "mf-tpl-007",
+        "cluster": "close_growth",
+        "fetch_when": "Light NPS after delivery"
+      },
+      {
+        "id": "mf-tpl-032",
+        "anchor": "mf-tpl-001",
+        "cluster": "support_escalation",
+        "fetch_when": "After-hours message triage"
+      },
+      {
+        "id": "mf-tpl-033",
+        "anchor": "mf-tpl-005",
+        "cluster": "kickoff_production",
+        "fetch_when": "Reprioritize queue internal"
+      },
+      {
+        "id": "mf-tpl-034",
+        "anchor": "mf-tpl-011",
+        "cluster": "kickoff_production",
+        "fetch_when": "Missing logo or file"
+      },
+      {
+        "id": "mf-tpl-035",
+        "anchor": "mf-tpl-007",
+        "cluster": "delivery_install",
+        "fetch_when": "Will-call pickup ready"
+      },
+      {
+        "id": "mf-tpl-036",
+        "anchor": "mf-tpl-007",
+        "cluster": "delivery_install",
+        "fetch_when": "Install schedule and access"
+      },
+      {
+        "id": "mf-tpl-037",
+        "anchor": "mf-tpl-007",
+        "cluster": "delivery_install",
+        "fetch_when": "Tracking and carrier delay"
+      },
+      {
+        "id": "mf-tpl-038",
+        "anchor": "mf-tpl-013",
+        "cluster": "active_job",
+        "fetch_when": "Mid-job photo for anxious client"
+      },
+      {
+        "id": "mf-tpl-039",
+        "anchor": "mf-tpl-001",
+        "cluster": "support_escalation",
+        "fetch_when": "Courtesy credit, not full refund fight"
+      },
+      {
+        "id": "mf-tpl-040",
+        "anchor": "mf-tpl-008",
+        "cluster": "support_escalation",
+        "fetch_when": "Cancel or refund policy branch"
+      },
+      {
+        "id": "mf-tpl-041",
+        "anchor": "mf-tpl-010",
+        "cluster": "active_job",
+        "fetch_when": "COI before install"
+      },
+      {
+        "id": "mf-tpl-042",
+        "anchor": "mf-tpl-011",
+        "cluster": "kickoff_production",
+        "fetch_when": "Design rev before proof"
+      },
+      {
+        "id": "mf-tpl-043",
+        "anchor": "mf-tpl-011",
+        "cluster": "kickoff_production",
+        "fetch_when": "Physical sample approve"
+      },
+      {
+        "id": "mf-tpl-044",
+        "anchor": "mf-tpl-007",
+        "cluster": "support_escalation",
+        "fetch_when": "Damage in transit"
+      },
+      {
+        "id": "mf-tpl-045",
+        "anchor": "mf-tpl-006",
+        "cluster": "close_growth",
+        "fetch_when": "Retainer client monthly touch"
+      },
+      {
+        "id": "mf-tpl-046",
+        "anchor": "mf-tpl-008",
+        "cluster": "quote_accept",
+        "fetch_when": "Net terms application"
+      },
+      {
+        "id": "mf-tpl-047",
+        "anchor": "mf-tpl-006",
+        "cluster": "quote_accept",
+        "fetch_when": "Honest lead time on quote"
+      },
+      {
+        "id": "mf-tpl-048",
+        "anchor": "mf-tpl-007",
+        "cluster": "client_account",
+        "fetch_when": "Multi-site one brand"
+      },
+      {
+        "id": "mf-tpl-049",
+        "anchor": "mf-tpl-036",
+        "cluster": "active_job",
+        "fetch_when": "Permit hold before install"
+      },
+      {
+        "id": "mf-tpl-050",
+        "anchor": "mf-tpl-036",
+        "cluster": "delivery_install",
+        "fetch_when": "Outdoor install weather delay"
+      },
+      {
+        "id": "mf-tpl-051",
+        "anchor": "mf-tpl-004",
+        "cluster": "client_account",
+        "fetch_when": "Contact left company"
+      },
+      {
+        "id": "mf-tpl-052",
+        "anchor": "mf-tpl-007",
+        "cluster": "delivery_install",
+        "fetch_when": "Finished goods storage hold"
+      },
+      {
+        "id": "mf-tpl-053",
+        "anchor": "mf-tpl-021",
+        "cluster": "events_terms",
+        "fetch_when": "Hard event or trade show date"
+      },
+      {
+        "id": "mf-tpl-054",
+        "anchor": "mf-tpl-015",
+        "cluster": "close_growth",
+        "fetch_when": "Portfolio photo permission"
+      },
+      {
+        "id": "mf-tpl-055",
+        "anchor": "mf-tpl-006",
+        "cluster": "quote_accept",
+        "fetch_when": "Tax exempt cert on file"
+      }
     ]
   },
   "entries": [
@@ -90,7 +430,15 @@
       "price": "$0.35",
       "teaser": "tools/should-i-automate/",
       "full": "tools/should-i-automate/full/",
-      "primary": "rules.json"
+      "primary": "rules.json",
+      "description": "Deterministic rubric: should this task stay manual, use a template, gather data, or automate? Built for ops-heavy small business.",
+      "tags": [
+        "automation",
+        "decision-rubric",
+        "small-business",
+        "vending"
+      ],
+      "use_when": "Operator asks whether to buy software, automate a task, or keep a manual habit."
     },
     {
       "id": "mf-tool-002",
@@ -99,7 +447,14 @@
       "price": "$0.35",
       "teaser": "tools/ai-task-fit/",
       "full": "tools/ai-task-fit/full/",
-      "primary": "rules.json"
+      "primary": "rules.json",
+      "description": "Route tasks to AI draft, human-only, or template path. Pairs with job spine comms packs.",
+      "tags": [
+        "ai-routing",
+        "task-fit",
+        "human-in-loop"
+      ],
+      "use_when": "Deciding if AI should draft, classify, or stay out of a task entirely."
     },
     {
       "id": "mf-tool-003",
@@ -108,7 +463,14 @@
       "price": "$0.35",
       "teaser": "tools/scope-creep-say-no/",
       "full": "tools/scope-creep-say-no/full/",
-      "primary": "rules.json"
+      "primary": "rules.json",
+      "description": "Say-no and CO routing rubric for scope creep. Cross-links mf-tpl-012 and quote gate.",
+      "tags": [
+        "scope",
+        "boundaries",
+        "change-order"
+      ],
+      "use_when": "Client asks for free extra scope, rush without fee, or work outside signed quote."
     },
     {
       "id": "mf-tpl-001",
@@ -117,7 +479,15 @@
       "price": "$0.45",
       "teaser": "templates/complaint-recovery-playbook/",
       "full": "templates/complaint-recovery-playbook/full/",
-      "primary": "playbook.json"
+      "primary": "playbook.json",
+      "description": "Complaint recovery spine route: severity branches, templates, log rows. Use before treating anger as new intake.",
+      "tags": [
+        "complaint",
+        "recovery",
+        "reputation"
+      ],
+      "use_when": "Existing customer is angry, threatening reviews, or reporting a failure on delivered work.",
+      "spine_role": "complaint_route"
     },
     {
       "id": "mf-tpl-002",
@@ -126,7 +496,14 @@
       "price": "$0.45",
       "teaser": "templates/employee-onboarding-kit/",
       "full": "templates/employee-onboarding-kit/full/",
-      "primary": "playbook.json"
+      "primary": "playbook.json",
+      "description": "Rapid onboarding by role: templates, buddy, Day 7/30 checkpoints. HR adjacent to job spine.",
+      "tags": [
+        "hiring",
+        "onboarding",
+        "hr"
+      ],
+      "use_when": "New hire Day 0 through Day 30 for floor, driver, or office role."
     },
     {
       "id": "mf-tpl-003",
@@ -135,7 +512,14 @@
       "price": "$0.45",
       "teaser": "templates/hiring-character-gauge/",
       "full": "templates/hiring-character-gauge/full/",
-      "primary": "playbook.json"
+      "primary": "playbook.json",
+      "description": "Three-question character gauge with scored examples. Routes hires to mf-tpl-002 onboarding.",
+      "tags": [
+        "hiring",
+        "interview",
+        "character"
+      ],
+      "use_when": "Interview finishers and hire/pass decision on character, not just skills."
     },
     {
       "id": "mf-tpl-004",
@@ -145,7 +529,15 @@
       "teaser": "templates/client-intake-playbook/",
       "full": "templates/client-intake-playbook/full/",
       "primary": "playbook.json",
-      "apply": "classify → first touch → qualify → log"
+      "apply": "classify → first touch → qualify → log",
+      "description": "Job spine entry: classify intake, first touch within SLA, qualify before mf-tpl-006 quote.",
+      "tags": [
+        "intake",
+        "lead",
+        "qualify"
+      ],
+      "use_when": "First contact from unknown lead: form, email, DM, or call. Not complaint recovery.",
+      "spine_role": "chain_start"
     },
     {
       "id": "mf-tpl-005",
@@ -154,7 +546,15 @@
       "price": "$0.45",
       "teaser": "templates/weekly-ops-review/",
       "full": "templates/weekly-ops-review/full/",
-      "primary": "playbook.json"
+      "primary": "playbook.json",
+      "description": "15-minute ops overlay for spine. Five blocks, variants, cross-links payment and queue packs.",
+      "tags": [
+        "ops",
+        "weekly-review",
+        "overlay"
+      ],
+      "use_when": "Weekly owner or lead ops ritual: money, queue, people, one improvement.",
+      "spine_role": "ops_overlay"
     },
     {
       "id": "mf-tpl-006",
@@ -164,7 +564,15 @@
       "teaser": "templates/quote-estimate-gate/",
       "full": "templates/quote-estimate-gate/full/",
       "primary": "playbook.json",
-      "apply": "gate → branch → quote + terms"
+      "apply": "gate → branch → quote + terms",
+      "description": "Quote gate: branches for rush, repeat, partial scope. Chains from mf-tpl-004 intake.",
+      "tags": [
+        "quote",
+        "estimate",
+        "pricing"
+      ],
+      "use_when": "Scope is clear enough to price: custom quote or estimate gate before send.",
+      "spine_role": "chain"
     },
     {
       "id": "mf-tpl-007",
@@ -173,7 +581,15 @@
       "price": "$0.45",
       "teaser": "templates/delivery-handoff/",
       "full": "templates/delivery-handoff/full/",
-      "primary": "playbook.json"
+      "primary": "playbook.json",
+      "description": "Delivery and handoff templates with unpaid hold and issue branches. Precedes mf-tpl-015 close.",
+      "tags": [
+        "delivery",
+        "handoff",
+        "fulfillment"
+      ],
+      "use_when": "Job ready to leave shop: notify, handoff, confirm receipt, unpaid hold.",
+      "spine_role": "chain"
     },
     {
       "id": "mf-tpl-008",
@@ -182,7 +598,15 @@
       "price": "$0.45",
       "teaser": "templates/invoice-payment-chase/",
       "full": "templates/invoice-payment-chase/full/",
-      "primary": "playbook.json"
+      "primary": "playbook.json",
+      "description": "Invoice and payment chase sequence. Pairs mf-tpl-005 money block and mf-tpl-029 plans.",
+      "tags": [
+        "invoice",
+        "payment",
+        "collections"
+      ],
+      "use_when": "Invoice sent: chase calendar day 3, 7, 14 and partial payment states.",
+      "spine_role": "chain"
     },
     {
       "id": "mf-tpl-009",
@@ -191,7 +615,15 @@
       "price": "$0.45",
       "teaser": "templates/vendor-issue/",
       "full": "templates/vendor-issue/full/",
-      "primary": "playbook.json"
+      "primary": "playbook.json",
+      "description": "Vendor issue playbook with client delay scripts. Mid-spine between production and delivery.",
+      "tags": [
+        "vendor",
+        "supply",
+        "delay"
+      ],
+      "use_when": "Vendor late, wrong, short, or damaged: internal chase plus honest client plan.",
+      "spine_role": "chain"
     },
     {
       "id": "mf-tpl-010",
@@ -200,7 +632,15 @@
       "price": "$0.45",
       "teaser": "templates/project-kickoff/",
       "full": "templates/project-kickoff/full/",
-      "primary": "playbook.json"
+      "primary": "playbook.json",
+      "description": "Post-accept kickoff checklist. Bridges quote win to proof and production handoffs.",
+      "tags": [
+        "kickoff",
+        "deposit",
+        "schedule"
+      ],
+      "use_when": "Quote accepted: deposit, schedule, proof path, kickoff email.",
+      "spine_role": "chain"
     },
     {
       "id": "mf-tpl-011",
@@ -209,7 +649,15 @@
       "price": "$0.45",
       "teaser": "templates/proof-approval-gate/",
       "full": "templates/proof-approval-gate/full/",
-      "primary": "playbook.json"
+      "primary": "playbook.json",
+      "description": "Proof approval gate with written approval rule. Release trigger for floor and mf-tpl-017.",
+      "tags": [
+        "proof",
+        "approval",
+        "production-gate"
+      ],
+      "use_when": "Proof round sent: require written APPROVED before production release.",
+      "spine_role": "chain"
     },
     {
       "id": "mf-tpl-012",
@@ -218,7 +666,15 @@
       "price": "$0.45",
       "teaser": "templates/change-order-mid-job/",
       "full": "templates/change-order-mid-job/full/",
-      "primary": "playbook.json"
+      "primary": "playbook.json",
+      "description": "Change order mid-job scripts. Works with mf-tool-003 and mf-tpl-013 updates.",
+      "tags": [
+        "change-order",
+        "scope",
+        "mid-job"
+      ],
+      "use_when": "Scope grows after quote: freeze, document, CO, client accept.",
+      "spine_role": "chain"
     },
     {
       "id": "mf-tpl-013",
@@ -227,7 +683,15 @@
       "price": "$0.45",
       "teaser": "templates/client-status-update/",
       "full": "templates/client-status-update/full/",
-      "primary": "playbook.json"
+      "primary": "playbook.json",
+      "description": "Client status update templates. Spine glue during active jobs.",
+      "tags": [
+        "status",
+        "update",
+        "comms"
+      ],
+      "use_when": "Proactive where-we-are update: on track, slip, waiting on client, waiting on vendor.",
+      "spine_role": "chain"
     },
     {
       "id": "mf-tpl-014",
@@ -236,7 +700,15 @@
       "price": "$0.45",
       "teaser": "templates/quote-follow-up/",
       "full": "templates/quote-follow-up/full/",
-      "primary": "playbook.json"
+      "primary": "playbook.json",
+      "description": "Quote follow-up sequence between mf-tpl-006 send and mf-tpl-010 accept.",
+      "tags": [
+        "quote-follow-up",
+        "nudge",
+        "pipeline"
+      ],
+      "use_when": "Quote sent, no reply: nudge, expire, requote, win/loss.",
+      "spine_role": "chain"
     },
     {
       "id": "mf-tpl-015",
@@ -245,7 +717,15 @@
       "price": "$0.45",
       "teaser": "templates/job-close-archive/",
       "full": "templates/job-close-archive/full/",
-      "primary": "playbook.json"
+      "primary": "playbook.json",
+      "description": "Job close and archive checklist. Spine terminal node before growth extensions.",
+      "tags": [
+        "close",
+        "archive",
+        "job-end"
+      ],
+      "use_when": "Paid and delivered: archive, internal close, optional review ask.",
+      "spine_role": "chain_end"
     },
     {
       "id": "mf-tpl-016",
@@ -255,7 +735,15 @@
       "teaser": "templates/deposit-reminder/",
       "full": "templates/deposit-reminder/full/",
       "primary": "playbook.json",
-      "apply": "branch → template → log row"
+      "apply": "branch → template → log row",
+      "description": "Deposit missing after accept. Extension on mf-tpl-010. Deterministic branches and templates.",
+      "tags": [
+        "job-spine-extension",
+        "quote_accept"
+      ],
+      "use_when": "Deposit missing after accept",
+      "spine_anchor": "mf-tpl-010",
+      "cluster": "quote_accept"
     },
     {
       "id": "mf-tpl-017",
@@ -265,7 +753,15 @@
       "teaser": "templates/production-handoff-internal/",
       "full": "templates/production-handoff-internal/full/",
       "primary": "playbook.json",
-      "apply": "branch → template → log row"
+      "apply": "branch → template → log row",
+      "description": "Proof approved, hand to floor. Extension on mf-tpl-011. Deterministic branches and templates.",
+      "tags": [
+        "job-spine-extension",
+        "kickoff_production"
+      ],
+      "use_when": "Proof approved, hand to floor",
+      "spine_anchor": "mf-tpl-011",
+      "cluster": "kickoff_production"
     },
     {
       "id": "mf-tpl-018",
@@ -275,7 +771,15 @@
       "teaser": "templates/lost-lead-archive/",
       "full": "templates/lost-lead-archive/full/",
       "primary": "playbook.json",
-      "apply": "branch → template → log row"
+      "apply": "branch → template → log row",
+      "description": "Lead dead: ghost, price, timing. Extension on mf-tpl-014. Deterministic branches and templates.",
+      "tags": [
+        "job-spine-extension",
+        "close_growth"
+      ],
+      "use_when": "Lead dead: ghost, price, timing",
+      "spine_anchor": "mf-tpl-014",
+      "cluster": "close_growth"
     },
     {
       "id": "mf-tpl-019",
@@ -285,7 +789,15 @@
       "teaser": "templates/referral-ask/",
       "full": "templates/referral-ask/full/",
       "primary": "playbook.json",
-      "apply": "branch → template → log row"
+      "apply": "branch → template → log row",
+      "description": "Happy close, light referral ask. Extension on mf-tpl-015. Deterministic branches and templates.",
+      "tags": [
+        "job-spine-extension",
+        "close_growth"
+      ],
+      "use_when": "Happy close, light referral ask",
+      "spine_anchor": "mf-tpl-015",
+      "cluster": "close_growth"
     },
     {
       "id": "mf-tpl-020",
@@ -295,7 +807,15 @@
       "teaser": "templates/warranty-support-touch/",
       "full": "templates/warranty-support-touch/full/",
       "primary": "playbook.json",
-      "apply": "branch → template → log row"
+      "apply": "branch → template → log row",
+      "description": "Support question, not full complaint. Extension on mf-tpl-001. Deterministic branches and templates.",
+      "tags": [
+        "job-spine-extension",
+        "support_escalation"
+      ],
+      "use_when": "Support question, not full complaint",
+      "spine_anchor": "mf-tpl-001",
+      "cluster": "support_escalation"
     },
     {
       "id": "mf-tpl-021",
@@ -305,7 +825,15 @@
       "teaser": "templates/rush-client-comms/",
       "full": "templates/rush-client-comms/full/",
       "primary": "playbook.json",
-      "apply": "branch → template → log row"
+      "apply": "branch → template → log row",
+      "description": "Rush fee and hard proof windows. Extension on mf-tpl-013. Deterministic branches and templates.",
+      "tags": [
+        "job-spine-extension",
+        "active_job"
+      ],
+      "use_when": "Rush fee and hard proof windows",
+      "spine_anchor": "mf-tpl-013",
+      "cluster": "active_job"
     },
     {
       "id": "mf-tpl-022",
@@ -315,7 +843,15 @@
       "teaser": "templates/meeting-phone-qualify/",
       "full": "templates/meeting-phone-qualify/full/",
       "primary": "playbook.json",
-      "apply": "branch → template → log row"
+      "apply": "branch → template → log row",
+      "description": "Vague lead needs phone qualify. Extension on mf-tpl-004. Deterministic branches and templates.",
+      "tags": [
+        "job-spine-extension",
+        "quote_accept"
+      ],
+      "use_when": "Vague lead needs phone qualify",
+      "spine_anchor": "mf-tpl-004",
+      "cluster": "quote_accept"
     },
     {
       "id": "mf-tpl-023",
@@ -325,7 +861,15 @@
       "teaser": "templates/not-a-fit-referral/",
       "full": "templates/not-a-fit-referral/full/",
       "primary": "playbook.json",
-      "apply": "branch → template → log row"
+      "apply": "branch → template → log row",
+      "description": "Wrong fit: refer out polite. Extension on mf-tpl-004. Deterministic branches and templates.",
+      "tags": [
+        "job-spine-extension",
+        "client_account"
+      ],
+      "use_when": "Wrong fit: refer out polite",
+      "spine_anchor": "mf-tpl-004",
+      "cluster": "client_account"
     },
     {
       "id": "mf-tpl-024",
@@ -335,7 +879,15 @@
       "teaser": "templates/reorder-repeat-client/",
       "full": "templates/reorder-repeat-client/full/",
       "primary": "playbook.json",
-      "apply": "branch → template → log row"
+      "apply": "branch → template → log row",
+      "description": "Repeat client reorder path. Extension on mf-tpl-006. Deterministic branches and templates.",
+      "tags": [
+        "job-spine-extension",
+        "close_growth"
+      ],
+      "use_when": "Repeat client reorder path",
+      "spine_anchor": "mf-tpl-006",
+      "cluster": "close_growth"
     },
     {
       "id": "mf-tpl-025",
@@ -345,7 +897,15 @@
       "teaser": "templates/subcontractor-handoff/",
       "full": "templates/subcontractor-handoff/full/",
       "primary": "playbook.json",
-      "apply": "branch → template → log row"
+      "apply": "branch → template → log row",
+      "description": "Sub late or QC fail. Extension on mf-tpl-009. Deterministic branches and templates.",
+      "tags": [
+        "job-spine-extension",
+        "active_job"
+      ],
+      "use_when": "Sub late or QC fail",
+      "spine_anchor": "mf-tpl-009",
+      "cluster": "active_job"
     },
     {
       "id": "mf-tpl-026",
@@ -355,7 +915,15 @@
       "teaser": "templates/qc-fail-rework/",
       "full": "templates/qc-fail-rework/full/",
       "primary": "playbook.json",
-      "apply": "branch → template → log row"
+      "apply": "branch → template → log row",
+      "description": "Internal QC fail before ship. Extension on mf-tpl-017. Deterministic branches and templates.",
+      "tags": [
+        "job-spine-extension",
+        "kickoff_production"
+      ],
+      "use_when": "Internal QC fail before ship",
+      "spine_anchor": "mf-tpl-017",
+      "cluster": "kickoff_production"
     },
     {
       "id": "mf-tpl-027",
@@ -365,7 +933,15 @@
       "teaser": "templates/client-onboarding-first/",
       "full": "templates/client-onboarding-first/full/",
       "primary": "playbook.json",
-      "apply": "branch → template → log row"
+      "apply": "branch → template → log row",
+      "description": "First job, not repeat. Extension on mf-tpl-010. Deterministic branches and templates.",
+      "tags": [
+        "job-spine-extension",
+        "client_account"
+      ],
+      "use_when": "First job, not repeat",
+      "spine_anchor": "mf-tpl-010",
+      "cluster": "client_account"
     },
     {
       "id": "mf-tpl-028",
@@ -375,7 +951,15 @@
       "teaser": "templates/estimate-revision/",
       "full": "templates/estimate-revision/full/",
       "primary": "playbook.json",
-      "apply": "branch → template → log row"
+      "apply": "branch → template → log row",
+      "description": "Revise quote scope or price. Extension on mf-tpl-006. Deterministic branches and templates.",
+      "tags": [
+        "job-spine-extension",
+        "quote_accept"
+      ],
+      "use_when": "Revise quote scope or price",
+      "spine_anchor": "mf-tpl-006",
+      "cluster": "quote_accept"
     },
     {
       "id": "mf-tpl-029",
@@ -385,7 +969,15 @@
       "teaser": "templates/payment-plan-partial/",
       "full": "templates/payment-plan-partial/full/",
       "primary": "playbook.json",
-      "apply": "branch → template → log row"
+      "apply": "branch → template → log row",
+      "description": "Partial payment plan. Extension on mf-tpl-008. Deterministic branches and templates.",
+      "tags": [
+        "job-spine-extension",
+        "quote_accept"
+      ],
+      "use_when": "Partial payment plan",
+      "spine_anchor": "mf-tpl-008",
+      "cluster": "quote_accept"
     },
     {
       "id": "mf-tpl-030",
@@ -395,7 +987,15 @@
       "teaser": "templates/job-pause-hold/",
       "full": "templates/job-pause-hold/full/",
       "primary": "playbook.json",
-      "apply": "branch → template → log row"
+      "apply": "branch → template → log row",
+      "description": "Client or internal pause. Extension on mf-tpl-013. Deterministic branches and templates.",
+      "tags": [
+        "job-spine-extension",
+        "active_job"
+      ],
+      "use_when": "Client or internal pause",
+      "spine_anchor": "mf-tpl-013",
+      "cluster": "active_job"
     },
     {
       "id": "mf-tpl-031",
@@ -405,7 +1005,15 @@
       "teaser": "templates/post-delivery-survey/",
       "full": "templates/post-delivery-survey/full/",
       "primary": "playbook.json",
-      "apply": "branch → template → log row"
+      "apply": "branch → template → log row",
+      "description": "Light NPS after delivery. Extension on mf-tpl-007. Deterministic branches and templates.",
+      "tags": [
+        "job-spine-extension",
+        "close_growth"
+      ],
+      "use_when": "Light NPS after delivery",
+      "spine_anchor": "mf-tpl-007",
+      "cluster": "close_growth"
     },
     {
       "id": "mf-tpl-032",
@@ -415,7 +1023,15 @@
       "teaser": "templates/emergency-after-hours/",
       "full": "templates/emergency-after-hours/full/",
       "primary": "playbook.json",
-      "apply": "branch → template → log row"
+      "apply": "branch → template → log row",
+      "description": "After-hours message triage. Extension on mf-tpl-001. Deterministic branches and templates.",
+      "tags": [
+        "job-spine-extension",
+        "support_escalation"
+      ],
+      "use_when": "After-hours message triage",
+      "spine_anchor": "mf-tpl-001",
+      "cluster": "support_escalation"
     },
     {
       "id": "mf-tpl-033",
@@ -425,7 +1041,15 @@
       "teaser": "templates/job-priority-queue/",
       "full": "templates/job-priority-queue/full/",
       "primary": "playbook.json",
-      "apply": "branch → template → log row"
+      "apply": "branch → template → log row",
+      "description": "Reprioritize queue internal. Extension on mf-tpl-005. Deterministic branches and templates.",
+      "tags": [
+        "job-spine-extension",
+        "kickoff_production"
+      ],
+      "use_when": "Reprioritize queue internal",
+      "spine_anchor": "mf-tpl-005",
+      "cluster": "kickoff_production"
     },
     {
       "id": "mf-tpl-034",
@@ -435,7 +1059,15 @@
       "teaser": "templates/client-asset-request/",
       "full": "templates/client-asset-request/full/",
       "primary": "playbook.json",
-      "apply": "branch → template → log row"
+      "apply": "branch → template → log row",
+      "description": "Missing logo or file. Extension on mf-tpl-011. Deterministic branches and templates.",
+      "tags": [
+        "job-spine-extension",
+        "kickoff_production"
+      ],
+      "use_when": "Missing logo or file",
+      "spine_anchor": "mf-tpl-011",
+      "cluster": "kickoff_production"
     },
     {
       "id": "mf-tpl-035",
@@ -445,7 +1077,15 @@
       "teaser": "templates/pickup-will-call/",
       "full": "templates/pickup-will-call/full/",
       "primary": "playbook.json",
-      "apply": "branch → template → log row"
+      "apply": "branch → template → log row",
+      "description": "Will-call pickup ready. Extension on mf-tpl-007. Deterministic branches and templates.",
+      "tags": [
+        "job-spine-extension",
+        "delivery_install"
+      ],
+      "use_when": "Will-call pickup ready",
+      "spine_anchor": "mf-tpl-007",
+      "cluster": "delivery_install"
     },
     {
       "id": "mf-tpl-036",
@@ -455,7 +1095,15 @@
       "teaser": "templates/install-on-site-coord/",
       "full": "templates/install-on-site-coord/full/",
       "primary": "playbook.json",
-      "apply": "branch → template → log row"
+      "apply": "branch → template → log row",
+      "description": "Install schedule and access. Extension on mf-tpl-007. Deterministic branches and templates.",
+      "tags": [
+        "job-spine-extension",
+        "delivery_install"
+      ],
+      "use_when": "Install schedule and access",
+      "spine_anchor": "mf-tpl-007",
+      "cluster": "delivery_install"
     },
     {
       "id": "mf-tpl-037",
@@ -465,7 +1113,15 @@
       "teaser": "templates/shipping-tracking-update/",
       "full": "templates/shipping-tracking-update/full/",
       "primary": "playbook.json",
-      "apply": "branch → template → log row"
+      "apply": "branch → template → log row",
+      "description": "Tracking and carrier delay. Extension on mf-tpl-007. Deterministic branches and templates.",
+      "tags": [
+        "job-spine-extension",
+        "delivery_install"
+      ],
+      "use_when": "Tracking and carrier delay",
+      "spine_anchor": "mf-tpl-007",
+      "cluster": "delivery_install"
     },
     {
       "id": "mf-tpl-038",
@@ -475,7 +1131,15 @@
       "teaser": "templates/progress-photo-update/",
       "full": "templates/progress-photo-update/full/",
       "primary": "playbook.json",
-      "apply": "branch → template → log row"
+      "apply": "branch → template → log row",
+      "description": "Mid-job photo for anxious client. Extension on mf-tpl-013. Deterministic branches and templates.",
+      "tags": [
+        "job-spine-extension",
+        "active_job"
+      ],
+      "use_when": "Mid-job photo for anxious client",
+      "spine_anchor": "mf-tpl-013",
+      "cluster": "active_job"
     },
     {
       "id": "mf-tpl-039",
@@ -485,7 +1149,15 @@
       "teaser": "templates/goodwill-credit/",
       "full": "templates/goodwill-credit/full/",
       "primary": "playbook.json",
-      "apply": "branch → template → log row"
+      "apply": "branch → template → log row",
+      "description": "Courtesy credit, not full refund fight. Extension on mf-tpl-001. Deterministic branches and templates.",
+      "tags": [
+        "job-spine-extension",
+        "support_escalation"
+      ],
+      "use_when": "Courtesy credit, not full refund fight",
+      "spine_anchor": "mf-tpl-001",
+      "cluster": "support_escalation"
     },
     {
       "id": "mf-tpl-040",
@@ -495,7 +1167,15 @@
       "teaser": "templates/refund-cancellation/",
       "full": "templates/refund-cancellation/full/",
       "primary": "playbook.json",
-      "apply": "branch → template → log row"
+      "apply": "branch → template → log row",
+      "description": "Cancel or refund policy branch. Extension on mf-tpl-008. Deterministic branches and templates.",
+      "tags": [
+        "job-spine-extension",
+        "support_escalation"
+      ],
+      "use_when": "Cancel or refund policy branch",
+      "spine_anchor": "mf-tpl-008",
+      "cluster": "support_escalation"
     },
     {
       "id": "mf-tpl-041",
@@ -505,7 +1185,15 @@
       "teaser": "templates/coi-insurance-request/",
       "full": "templates/coi-insurance-request/full/",
       "primary": "playbook.json",
-      "apply": "branch → template → log row"
+      "apply": "branch → template → log row",
+      "description": "COI before install. Extension on mf-tpl-010. Deterministic branches and templates.",
+      "tags": [
+        "job-spine-extension",
+        "active_job"
+      ],
+      "use_when": "COI before install",
+      "spine_anchor": "mf-tpl-010",
+      "cluster": "active_job"
     },
     {
       "id": "mf-tpl-042",
@@ -515,7 +1203,15 @@
       "teaser": "templates/design-revision-loop/",
       "full": "templates/design-revision-loop/full/",
       "primary": "playbook.json",
-      "apply": "branch → template → log row"
+      "apply": "branch → template → log row",
+      "description": "Design rev before proof. Extension on mf-tpl-011. Deterministic branches and templates.",
+      "tags": [
+        "job-spine-extension",
+        "kickoff_production"
+      ],
+      "use_when": "Design rev before proof",
+      "spine_anchor": "mf-tpl-011",
+      "cluster": "kickoff_production"
     },
     {
       "id": "mf-tpl-043",
@@ -525,7 +1221,15 @@
       "teaser": "templates/physical-sample-proof/",
       "full": "templates/physical-sample-proof/full/",
       "primary": "playbook.json",
-      "apply": "branch → template → log row"
+      "apply": "branch → template → log row",
+      "description": "Physical sample approve. Extension on mf-tpl-011. Deterministic branches and templates.",
+      "tags": [
+        "job-spine-extension",
+        "kickoff_production"
+      ],
+      "use_when": "Physical sample approve",
+      "spine_anchor": "mf-tpl-011",
+      "cluster": "kickoff_production"
     },
     {
       "id": "mf-tpl-044",
@@ -535,7 +1239,15 @@
       "teaser": "templates/damage-transit-claim/",
       "full": "templates/damage-transit-claim/full/",
       "primary": "playbook.json",
-      "apply": "branch → template → log row"
+      "apply": "branch → template → log row",
+      "description": "Damage in transit. Extension on mf-tpl-007. Deterministic branches and templates.",
+      "tags": [
+        "job-spine-extension",
+        "support_escalation"
+      ],
+      "use_when": "Damage in transit",
+      "spine_anchor": "mf-tpl-007",
+      "cluster": "support_escalation"
     },
     {
       "id": "mf-tpl-045",
@@ -545,7 +1257,15 @@
       "teaser": "templates/retainer-ongoing/",
       "full": "templates/retainer-ongoing/full/",
       "primary": "playbook.json",
-      "apply": "branch → template → log row"
+      "apply": "branch → template → log row",
+      "description": "Retainer client monthly touch. Extension on mf-tpl-006. Deterministic branches and templates.",
+      "tags": [
+        "job-spine-extension",
+        "close_growth"
+      ],
+      "use_when": "Retainer client monthly touch",
+      "spine_anchor": "mf-tpl-006",
+      "cluster": "close_growth"
     },
     {
       "id": "mf-tpl-046",
@@ -555,7 +1275,15 @@
       "teaser": "templates/net-terms-credit-app/",
       "full": "templates/net-terms-credit-app/full/",
       "primary": "playbook.json",
-      "apply": "branch → template → log row"
+      "apply": "branch → template → log row",
+      "description": "Net terms application. Extension on mf-tpl-008. Deterministic branches and templates.",
+      "tags": [
+        "job-spine-extension",
+        "quote_accept"
+      ],
+      "use_when": "Net terms application",
+      "spine_anchor": "mf-tpl-008",
+      "cluster": "quote_accept"
     },
     {
       "id": "mf-tpl-047",
@@ -565,7 +1293,15 @@
       "teaser": "templates/seasonal-capacity-notice/",
       "full": "templates/seasonal-capacity-notice/full/",
       "primary": "playbook.json",
-      "apply": "branch → template → log row"
+      "apply": "branch → template → log row",
+      "description": "Honest lead time on quote. Extension on mf-tpl-006. Deterministic branches and templates.",
+      "tags": [
+        "job-spine-extension",
+        "quote_accept"
+      ],
+      "use_when": "Honest lead time on quote",
+      "spine_anchor": "mf-tpl-006",
+      "cluster": "quote_accept"
     },
     {
       "id": "mf-tpl-048",
@@ -575,7 +1311,15 @@
       "teaser": "templates/multi-location-coord/",
       "full": "templates/multi-location-coord/full/",
       "primary": "playbook.json",
-      "apply": "branch → template → log row"
+      "apply": "branch → template → log row",
+      "description": "Multi-site one brand. Extension on mf-tpl-007. Deterministic branches and templates.",
+      "tags": [
+        "job-spine-extension",
+        "client_account"
+      ],
+      "use_when": "Multi-site one brand",
+      "spine_anchor": "mf-tpl-007",
+      "cluster": "client_account"
     },
     {
       "id": "mf-tpl-049",
@@ -585,7 +1329,15 @@
       "teaser": "templates/permit-municipality/",
       "full": "templates/permit-municipality/full/",
       "primary": "playbook.json",
-      "apply": "branch → template → log row"
+      "apply": "branch → template → log row",
+      "description": "Permit hold before install. Extension on mf-tpl-036. Deterministic branches and templates.",
+      "tags": [
+        "job-spine-extension",
+        "active_job"
+      ],
+      "use_when": "Permit hold before install",
+      "spine_anchor": "mf-tpl-036",
+      "cluster": "active_job"
     },
     {
       "id": "mf-tpl-050",
@@ -595,7 +1347,15 @@
       "teaser": "templates/weather-delay-outdoor/",
       "full": "templates/weather-delay-outdoor/full/",
       "primary": "playbook.json",
-      "apply": "branch → template → log row"
+      "apply": "branch → template → log row",
+      "description": "Outdoor install weather delay. Extension on mf-tpl-036. Deterministic branches and templates.",
+      "tags": [
+        "job-spine-extension",
+        "delivery_install"
+      ],
+      "use_when": "Outdoor install weather delay",
+      "spine_anchor": "mf-tpl-036",
+      "cluster": "delivery_install"
     },
     {
       "id": "mf-tpl-051",
@@ -605,7 +1365,15 @@
       "teaser": "templates/contact-account-transfer/",
       "full": "templates/contact-account-transfer/full/",
       "primary": "playbook.json",
-      "apply": "branch → template → log row"
+      "apply": "branch → template → log row",
+      "description": "Contact left company. Extension on mf-tpl-004. Deterministic branches and templates.",
+      "tags": [
+        "job-spine-extension",
+        "client_account"
+      ],
+      "use_when": "Contact left company",
+      "spine_anchor": "mf-tpl-004",
+      "cluster": "client_account"
     },
     {
       "id": "mf-tpl-052",
@@ -615,7 +1383,15 @@
       "teaser": "templates/finished-goods-storage/",
       "full": "templates/finished-goods-storage/full/",
       "primary": "playbook.json",
-      "apply": "branch → template → log row"
+      "apply": "branch → template → log row",
+      "description": "Finished goods storage hold. Extension on mf-tpl-007. Deterministic branches and templates.",
+      "tags": [
+        "job-spine-extension",
+        "delivery_install"
+      ],
+      "use_when": "Finished goods storage hold",
+      "spine_anchor": "mf-tpl-007",
+      "cluster": "delivery_install"
     },
     {
       "id": "mf-tpl-053",
@@ -625,7 +1401,15 @@
       "teaser": "templates/event-deadline-crunch/",
       "full": "templates/event-deadline-crunch/full/",
       "primary": "playbook.json",
-      "apply": "branch → template → log row"
+      "apply": "branch → template → log row",
+      "description": "Hard event or trade show date. Extension on mf-tpl-021. Deterministic branches and templates.",
+      "tags": [
+        "job-spine-extension",
+        "events_terms"
+      ],
+      "use_when": "Hard event or trade show date",
+      "spine_anchor": "mf-tpl-021",
+      "cluster": "events_terms"
     },
     {
       "id": "mf-tpl-054",
@@ -635,7 +1419,15 @@
       "teaser": "templates/portfolio-photo-permission/",
       "full": "templates/portfolio-photo-permission/full/",
       "primary": "playbook.json",
-      "apply": "branch → template → log row"
+      "apply": "branch → template → log row",
+      "description": "Portfolio photo permission. Extension on mf-tpl-015. Deterministic branches and templates.",
+      "tags": [
+        "job-spine-extension",
+        "close_growth"
+      ],
+      "use_when": "Portfolio photo permission",
+      "spine_anchor": "mf-tpl-015",
+      "cluster": "close_growth"
     },
     {
       "id": "mf-tpl-055",
@@ -645,7 +1437,15 @@
       "teaser": "templates/tax-exempt-cert/",
       "full": "templates/tax-exempt-cert/full/",
       "primary": "playbook.json",
-      "apply": "branch → template → log row"
+      "apply": "branch → template → log row",
+      "description": "Tax exempt cert on file. Extension on mf-tpl-006. Deterministic branches and templates.",
+      "tags": [
+        "job-spine-extension",
+        "quote_accept"
+      ],
+      "use_when": "Tax exempt cert on file",
+      "spine_anchor": "mf-tpl-006",
+      "cluster": "quote_accept"
     }
   ]
 }

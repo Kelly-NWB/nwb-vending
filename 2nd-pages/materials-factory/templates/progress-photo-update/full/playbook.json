@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tpl-038",
   "title": "Progress Photo Update (Mid-Job)",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "audience": "agent",
   "section": "templates",
   "description": "Progress Photo Update (Mid-Job) for small-business job spine.",
@@ -45,5 +45,15 @@
     "mf-tpl-013",
     "mf-tpl-011",
     "mf-tpl-017"
-  ]
+  ],
+  "agent_signal": {
+    "use_when": "Mid-job photo for anxious client",
+    "decision_criteria": [
+      "Do not leak other jobs",
+      "Spine anchor: fetch with or after mf-tpl-013."
+    ],
+    "operator_context": "Treasure Valley small shop: keep scripts short; log every branch.",
+    "spine_anchor": "mf-tpl-013",
+    "cluster": "active_job"
+  }
 }

@@ -6,3 +6,9 @@
 4. Log csv row. Mark closed when confirmed.
 
 Output: `DELIVERY · mf-tpl-007 · [branch] · Log: [row]`
+## Agent signal (v1.1)
+
+- **Use when:** Job ready to leave shop: notify, handoff, confirm receipt, unpaid hold.
+- **Decision criteria:** Unpaid balance blocks release unless written exception. Issue same day gets honest plan, not silence.
+- **Operator context:** Idaho winter: note freeze handling on vinyl and pickup hours on short winter days.
+

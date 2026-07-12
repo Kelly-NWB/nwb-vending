@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tpl-029",
   "title": "Payment Plan / Partial Terms",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "audience": "agent",
   "section": "templates",
   "description": "Payment Plan / Partial Terms for small-business job spine.",
@@ -45,5 +45,15 @@
     "mf-tpl-008",
     "mf-tpl-006",
     "mf-tpl-016"
-  ]
+  ],
+  "agent_signal": {
+    "use_when": "Partial payment plan",
+    "decision_criteria": [
+      "Default pauses job",
+      "Spine anchor: fetch with or after mf-tpl-008."
+    ],
+    "operator_context": "Treasure Valley small shop: keep scripts short; log every branch.",
+    "spine_anchor": "mf-tpl-008",
+    "cluster": "quote_accept"
+  }
 }

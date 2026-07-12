@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tpl-033",
   "title": "Multi-Job Priority Queue (Internal)",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "audience": "agent",
   "section": "templates",
   "description": "Multi-Job Priority Queue (Internal) for small-business job spine.",
@@ -45,5 +45,15 @@
     "mf-tpl-005",
     "mf-tpl-017",
     "mf-tpl-021"
-  ]
+  ],
+  "agent_signal": {
+    "use_when": "Reprioritize queue internal",
+    "decision_criteria": [
+      "Honest capacity date to client via mf-tpl-013",
+      "Spine anchor: fetch with or after mf-tpl-005."
+    ],
+    "operator_context": "Treasure Valley small shop: keep scripts short; log every branch.",
+    "spine_anchor": "mf-tpl-005",
+    "cluster": "kickoff_production"
+  }
 }

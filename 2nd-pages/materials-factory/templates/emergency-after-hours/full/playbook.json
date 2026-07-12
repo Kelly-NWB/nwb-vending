@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tpl-032",
   "title": "Emergency After-Hours Reply",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "audience": "agent",
   "section": "templates",
   "description": "Emergency After-Hours Reply for small-business job spine.",
@@ -45,5 +45,15 @@
     "mf-tpl-001",
     "mf-tpl-013",
     "mf-tpl-021"
-  ]
+  ],
+  "agent_signal": {
+    "use_when": "After-hours message triage",
+    "decision_criteria": [
+      "True emergency only on-call",
+      "Spine anchor: fetch with or after mf-tpl-001."
+    ],
+    "operator_context": "Treasure Valley small shop: keep scripts short; log every branch.",
+    "spine_anchor": "mf-tpl-001",
+    "cluster": "support_escalation"
+  }
 }

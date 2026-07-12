@@ -1,36 +1,146 @@
 {
   "artifact": "mf-tool-002",
   "title": "AI Task Fit",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "audience": "agent",
   "section": "tools",
   "description": "Small-business task routing: when AI should draft, run on API, stay human, or use a template first. Complements mf-tool-001 (software/automation), not replace it.",
   "inputs": {
-    "task": { "type": "string", "required": false, "description": "What the operator wants done" },
-    "repeatability": { "type": "enum", "required": true, "values": ["once", "occasional", "daily"] },
-    "judgment": { "type": "enum", "required": true, "values": ["none", "review", "every_time"] },
-    "stakes": { "type": "enum", "required": true, "values": ["internal", "customer", "money", "legal"] },
-    "input_shape": { "type": "enum", "required": true, "values": ["messy", "semi", "structured"] },
-    "output_type": { "type": "enum", "required": true, "values": ["draft", "decision", "action", "creative"] },
-    "volume": { "type": "enum", "required": true, "values": ["low", "medium", "high"] },
-    "data_known": { "type": "enum", "required": true, "values": ["yes", "rough", "no"] }
+    "task": {
+      "type": "string",
+      "required": false,
+      "description": "What the operator wants done"
+    },
+    "repeatability": {
+      "type": "enum",
+      "required": true,
+      "values": [
+        "once",
+        "occasional",
+        "daily"
+      ]
+    },
+    "judgment": {
+      "type": "enum",
+      "required": true,
+      "values": [
+        "none",
+        "review",
+        "every_time"
+      ]
+    },
+    "stakes": {
+      "type": "enum",
+      "required": true,
+      "values": [
+        "internal",
+        "customer",
+        "money",
+        "legal"
+      ]
+    },
+    "input_shape": {
+      "type": "enum",
+      "required": true,
+      "values": [
+        "messy",
+        "semi",
+        "structured"
+      ]
+    },
+    "output_type": {
+      "type": "enum",
+      "required": true,
+      "values": [
+        "draft",
+        "decision",
+        "action",
+        "creative"
+      ]
+    },
+    "volume": {
+      "type": "enum",
+      "required": true,
+      "values": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "data_known": {
+      "type": "enum",
+      "required": true,
+      "values": [
+        "yes",
+        "rough",
+        "no"
+      ]
+    }
   },
   "decision_tree": {
     "description": "Human-readable map. Engine uses decision_rules by priority.",
     "root": "Describe the task and fill inputs",
     "branches": [
-      { "if": "judgment = every_time", "then": "human_only", "note": "Relationship, liability, or taste calls every time" },
-      { "if": "stakes = legal", "then": "human_only", "note": "Get professional review; AI can research only with human sign-off" },
-      { "if": "data_known = no", "then": "gather_data_first", "note": "Log volume and failure cost 30-90 days" },
-      { "if": "output_type = decision AND stakes in (customer, money)", "then": "human_only", "note": "AI may summarize options; human decides" },
-      { "if": "repeatability = daily AND input_shape = structured AND judgment = none AND volume = high", "then": "llm_api", "note": "Stable pipeline; see mf-train-001" },
-      { "if": "repeatability = daily AND input_shape = structured AND judgment = none", "then": "llm_api", "note": "Cron or webhook job" },
-      { "if": "output_type = creative AND judgment = review AND repeatability = once", "then": "agent_workflow", "note": "Multi-step research then draft" },
-      { "if": "repeatability = daily AND input_shape = semi AND output_type = draft AND stakes = customer", "then": "template_first", "note": "Fixed ack shape; AI fills slots only" },
-      { "if": "judgment = review AND output_type = draft", "then": "llm_assist", "note": "AI drafts; human reviews and sends" },
-      { "if": "judgment = review AND output_type = creative", "then": "llm_assist", "note": "Brainstorm with human curator" },
-      { "if": "judgment = none AND output_type = action AND volume = low", "then": "not_ai", "note": "Sheet, checklist, or mf-tool-001 first" },
-      { "if": "default", "then": "llm_assist", "note": "Draft with human review unless rules above matched" }
+      {
+        "if": "judgment = every_time",
+        "then": "human_only",
+        "note": "Relationship, liability, or taste calls every time"
+      },
+      {
+        "if": "stakes = legal",
+        "then": "human_only",
+        "note": "Get professional review; AI can research only with human sign-off"
+      },
+      {
+        "if": "data_known = no",
+        "then": "gather_data_first",
+        "note": "Log volume and failure cost 30-90 days"
+      },
+      {
+        "if": "output_type = decision AND stakes in (customer, money)",
+        "then": "human_only",
+        "note": "AI may summarize options; human decides"
+      },
+      {
+        "if": "repeatability = daily AND input_shape = structured AND judgment = none AND volume = high",
+        "then": "llm_api",
+        "note": "Stable pipeline; see mf-train-001"
+      },
+      {
+        "if": "repeatability = daily AND input_shape = structured AND judgment = none",
+        "then": "llm_api",
+        "note": "Cron or webhook job"
+      },
+      {
+        "if": "output_type = creative AND judgment = review AND repeatability = once",
+        "then": "agent_workflow",
+        "note": "Multi-step research then draft"
+      },
+      {
+        "if": "repeatability = daily AND input_shape = semi AND output_type = draft AND stakes = customer",
+        "then": "template_first",
+        "note": "Fixed ack shape; AI fills slots only"
+      },
+      {
+        "if": "judgment = review AND output_type = draft",
+        "then": "llm_assist",
+        "note": "AI drafts; human reviews and sends"
+      },
+      {
+        "if": "judgment = review AND output_type = creative",
+        "then": "llm_assist",
+        "note": "Brainstorm with human curator"
+      },
+      {
+        "if": "judgment = none AND output_type = action AND volume = low",
+        "then": "not_ai",
+        "note": "Sheet, checklist, or mf-tool-001 first"
+      },
+      {
+        "if": "default",
+        "then": "llm_assist",
+        "note": "Draft with human review unless rules above matched"
+      }
     ]
   },
   "outcomes": {
@@ -126,30 +236,200 @@
     "internal": "Notes, summaries, brainstorming. More AI freedom with review."
   },
   "decision_rules": [
-    { "priority": 100, "when": { "judgment": "every_time" }, "outcome": "human_only" },
-    { "priority": 99, "when": { "stakes": "legal" }, "outcome": "human_only" },
-    { "priority": 98, "when": { "data_known": "no" }, "outcome": "gather_data_first" },
-    { "priority": 97, "when": { "output_type": "decision", "stakes": "customer" }, "outcome": "human_only" },
-    { "priority": 96, "when": { "output_type": "decision", "stakes": "money" }, "outcome": "human_only" },
-    { "priority": 95, "when": { "output_type": "decision" }, "outcome": "human_only" },
-    { "priority": 94, "when": { "repeatability": "daily", "input_shape": "structured", "judgment": "none", "volume": "high" }, "outcome": "llm_api" },
-    { "priority": 93, "when": { "repeatability": "daily", "input_shape": "structured", "judgment": "none", "output_type": "action" }, "outcome": "llm_api" },
-    { "priority": 92, "when": { "repeatability": "daily", "input_shape": "structured", "judgment": "none" }, "outcome": "llm_api" },
-    { "priority": 91, "when": { "repeatability": "once", "input_shape": "messy", "output_type": "draft", "judgment": "review", "stakes": "customer" }, "outcome": "agent_workflow" },
-    { "priority": 90, "when": { "repeatability": "once", "output_type": "creative", "judgment": "review" }, "outcome": "agent_workflow" },
-    { "priority": 89, "when": { "repeatability": "daily", "input_shape": "semi", "output_type": "draft", "stakes": "customer" }, "outcome": "template_first" },
-    { "priority": 88, "when": { "repeatability": "daily", "input_shape": "structured", "output_type": "draft", "stakes": "customer", "judgment": "review" }, "outcome": "template_first" },
-    { "priority": 87, "when": { "judgment": "none", "output_type": "action", "volume": "low", "repeatability": "occasional" }, "outcome": "not_ai" },
-    { "priority": 86, "when": { "judgment": "none", "output_type": "action", "volume": "low" }, "outcome": "not_ai" },
-    { "priority": 85, "when": { "judgment": "review", "output_type": "creative" }, "outcome": "llm_assist" },
-    { "priority": 84, "when": { "judgment": "review", "output_type": "draft", "stakes": "customer" }, "outcome": "llm_assist" },
-    { "priority": 83, "when": { "judgment": "review", "output_type": "draft" }, "outcome": "llm_assist" },
-    { "priority": 82, "when": { "judgment": "review", "output_type": "action", "input_shape": "structured", "volume": "high" }, "outcome": "llm_api" },
-    { "priority": 81, "when": { "input_shape": "structured", "judgment": "none", "volume": "medium", "repeatability": "daily" }, "outcome": "llm_api" }
+    {
+      "priority": 100,
+      "when": {
+        "judgment": "every_time"
+      },
+      "outcome": "human_only"
+    },
+    {
+      "priority": 99,
+      "when": {
+        "stakes": "legal"
+      },
+      "outcome": "human_only"
+    },
+    {
+      "priority": 98,
+      "when": {
+        "data_known": "no"
+      },
+      "outcome": "gather_data_first"
+    },
+    {
+      "priority": 97,
+      "when": {
+        "output_type": "decision",
+        "stakes": "customer"
+      },
+      "outcome": "human_only"
+    },
+    {
+      "priority": 96,
+      "when": {
+        "output_type": "decision",
+        "stakes": "money"
+      },
+      "outcome": "human_only"
+    },
+    {
+      "priority": 95,
+      "when": {
+        "output_type": "decision"
+      },
+      "outcome": "human_only"
+    },
+    {
+      "priority": 94,
+      "when": {
+        "repeatability": "daily",
+        "input_shape": "structured",
+        "judgment": "none",
+        "volume": "high"
+      },
+      "outcome": "llm_api"
+    },
+    {
+      "priority": 93,
+      "when": {
+        "repeatability": "daily",
+        "input_shape": "structured",
+        "judgment": "none",
+        "output_type": "action"
+      },
+      "outcome": "llm_api"
+    },
+    {
+      "priority": 92,
+      "when": {
+        "repeatability": "daily",
+        "input_shape": "structured",
+        "judgment": "none"
+      },
+      "outcome": "llm_api"
+    },
+    {
+      "priority": 91,
+      "when": {
+        "repeatability": "once",
+        "input_shape": "messy",
+        "output_type": "draft",
+        "judgment": "review",
+        "stakes": "customer"
+      },
+      "outcome": "agent_workflow"
+    },
+    {
+      "priority": 90,
+      "when": {
+        "repeatability": "once",
+        "output_type": "creative",
+        "judgment": "review"
+      },
+      "outcome": "agent_workflow"
+    },
+    {
+      "priority": 89,
+      "when": {
+        "repeatability": "daily",
+        "input_shape": "semi",
+        "output_type": "draft",
+        "stakes": "customer"
+      },
+      "outcome": "template_first"
+    },
+    {
+      "priority": 88,
+      "when": {
+        "repeatability": "daily",
+        "input_shape": "structured",
+        "output_type": "draft",
+        "stakes": "customer",
+        "judgment": "review"
+      },
+      "outcome": "template_first"
+    },
+    {
+      "priority": 87,
+      "when": {
+        "judgment": "none",
+        "output_type": "action",
+        "volume": "low",
+        "repeatability": "occasional"
+      },
+      "outcome": "not_ai"
+    },
+    {
+      "priority": 86,
+      "when": {
+        "judgment": "none",
+        "output_type": "action",
+        "volume": "low"
+      },
+      "outcome": "not_ai"
+    },
+    {
+      "priority": 85,
+      "when": {
+        "judgment": "review",
+        "output_type": "creative"
+      },
+      "outcome": "llm_assist"
+    },
+    {
+      "priority": 84,
+      "when": {
+        "judgment": "review",
+        "output_type": "draft",
+        "stakes": "customer"
+      },
+      "outcome": "llm_assist"
+    },
+    {
+      "priority": 83,
+      "when": {
+        "judgment": "review",
+        "output_type": "draft"
+      },
+      "outcome": "llm_assist"
+    },
+    {
+      "priority": 82,
+      "when": {
+        "judgment": "review",
+        "output_type": "action",
+        "input_shape": "structured",
+        "volume": "high"
+      },
+      "outcome": "llm_api"
+    },
+    {
+      "priority": 81,
+      "when": {
+        "input_shape": "structured",
+        "judgment": "none",
+        "volume": "medium",
+        "repeatability": "daily"
+      },
+      "outcome": "llm_api"
+    }
   ],
   "default_outcome": "llm_assist",
   "output_format": {
     "summary_template": "AI TASK FIT · mf-tool-002\nTask: {task}\nRepeatability: {repeatability}\nJudgment: {judgment}\nStakes: {stakes}\nInput shape: {input_shape}\nOutput needed: {output_type}\nVolume: {volume}\nData known: {data_known}\n\nOUTCOME: {outcome_label}\n{outcome_title}\n\n{outcome_summary}\n\nNext steps:\n{next_steps_numbered}\n\nDo not: {do_not}\n\nOperator lens: {operator_lens}"
   },
-  "related_artifacts": ["mf-tool-001", "mf-train-001", "mf-tpl-001"]
+  "related_artifacts": [
+    "mf-tool-001",
+    "mf-train-001",
+    "mf-tpl-001"
+  ],
+  "agent_signal": {
+    "use_when": "Deciding if AI should draft, classify, or stay out of a task entirely.",
+    "decision_criteria": [
+      "AI drafts only when a human approves before send or spend.",
+      "Route heated or high-stakes threads to human plus mf-tpl-001."
+    ],
+    "operator_context": "Idaho shops: AI OK for first-draft status emails; not for pricing promises or install dates without owner review."
+  }
 }

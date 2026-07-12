@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tpl-017",
   "title": "Production Handoff (Internal)",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "audience": "agent",
   "section": "templates",
   "description": "Production Handoff (Internal) for small-business job spine.",
@@ -45,5 +45,15 @@
     "mf-tpl-010",
     "mf-tpl-011",
     "mf-tpl-007"
-  ]
+  ],
+  "agent_signal": {
+    "use_when": "Proof approved, hand to floor",
+    "decision_criteria": [
+      "Traveler owner named before run",
+      "Spine anchor: fetch with or after mf-tpl-011."
+    ],
+    "operator_context": "Treasure Valley small shop: keep scripts short; log every branch.",
+    "spine_anchor": "mf-tpl-011",
+    "cluster": "kickoff_production"
+  }
 }

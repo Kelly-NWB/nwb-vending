@@ -48,9 +48,11 @@ Resolution: [specific action + date]
 Log: [csv row]
 Follow-up: [date + channel]
 ```
-## Agent signal (v1.1)
+## Agent signal (v1.2)
 
 - **Use when:** Existing customer is angry, threatening reviews, or reporting a failure on delivered work.
+- **Not for:** New lead intake (mf-tpl-004) or light warranty FAQ (mf-tpl-020).
+- **Pairs with:** mf-tool-001, mf-tool-003
+- **Trigger phrases:** "Existing customer is angry, threatening reviews, or reporting a failure on delivered work."; "Need playbook: Customer Complaint Recovery Playbook"
 - **Decision criteria:** Acknowledge before explain. Written reply same day when possible. Severity sets refund vs fix vs route; log every touch.
-- **Operator context:** Local reputation spreads fast in Treasure Valley; one public review can outrank years of word-of-mouth.
 

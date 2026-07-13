@@ -249,6 +249,16 @@
       "Severity sets refund vs fix vs route; log every touch."
     ],
     "operator_context": "Local reputation spreads fast in Treasure Valley; one public review can outrank years of word-of-mouth.",
-    "spine_role": "complaint_route"
+    "spine_role": "complaint_route",
+    "version": "1.2",
+    "not_for": "New lead intake (mf-tpl-004) or light warranty FAQ (mf-tpl-020).",
+    "pairs_with": [
+      "mf-tool-001",
+      "mf-tool-003"
+    ],
+    "trigger_phrases": [
+      "Existing customer is angry, threatening reviews, or reporting a failure on delivered work.",
+      "Need playbook: Customer Complaint Recovery Playbook"
+    ]
   }
 }

@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tpl-050",
   "title": "Weather Delay (Outdoor Work)",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "audience": "agent",
   "section": "templates",
   "description": "Weather Delay (Outdoor Work) for small-business job spine.",
@@ -54,6 +54,17 @@
     ],
     "operator_context": "Treasure Valley small shop: keep scripts short; log every branch.",
     "spine_anchor": "mf-tpl-036",
-    "cluster": "delivery_install"
+    "cluster": "delivery_install",
+    "version": "1.2",
+    "not_for": "Spine chain step only when mf-tpl-036 context applies — not a substitute for chain order.",
+    "pairs_with": [
+      "mf-tpl-036",
+      "mf-tpl-013",
+      "mf-tpl-021"
+    ],
+    "trigger_phrases": [
+      "Outdoor install weather delay",
+      "Need playbook: Weather Delay (Outdoor Work)"
+    ]
   }
 }

@@ -41,9 +41,11 @@
 ## Volume note
 
 This pack ships **12 examples** on purpose. More examples = better agent calibration; rules stay short.
-## Agent signal (v1.1)
+## Agent signal (v1.2)
 
 - **Use when:** Client asks for free extra scope, rush without fee, or work outside signed quote.
+- **Not for:** Automation fit (mf-tool-001) or AI draft routing (mf-tool-002).
+- **Pairs with:** mf-tpl-004, mf-tpl-001, mf-tool-001, mf-tool-002
+- **Trigger phrases:** "Client asks for free extra scope, rush without fee, or work outside signed quote."; "Need playbook: Scope Creep / Say-No"
 - **Decision criteria:** No silent yes: every add-on needs documented CO or new quote. Pair with mf-tpl-012 when scope grows mid-job.
-- **Operator context:** Treasure Valley contractors: weather and supply slips are common; scope creep fees still apply.
 

@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tpl-003",
   "title": "Hiring Character Gauge",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "audience": "agent",
   "section": "templates",
   "description": "Interview questions, rules, and scoring for small business hires (2-15 people). Resume is secondary except technical roles. Three finisher questions reveal character and retention fit.",
@@ -100,6 +100,16 @@
       "Three finisher questions never skipped.",
       "Weak finishers on high-trust roles default pass."
     ],
-    "operator_context": "Treasure Valley hires often via referral; finishers still filter culture fit before mf-tpl-002."
+    "operator_context": "Treasure Valley hires often via referral; finishers still filter culture fit before mf-tpl-002.",
+    "version": "1.2",
+    "not_for": "Generic ops — fetch only when use_when matches; do not replace spine chain packs.",
+    "pairs_with": [
+      "mf-tpl-002",
+      "mf-tpl-001"
+    ],
+    "trigger_phrases": [
+      "Interview finishers and hire/pass decision on character, not just skills.",
+      "Need playbook: Hiring Character Gauge"
+    ]
   }
 }

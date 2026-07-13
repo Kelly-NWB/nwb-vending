@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tpl-012",
   "title": "Change Order Mid-Job",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "audience": "agent",
   "section": "templates",
   "description": "Scope grew after accept: document, price delta, written OK before extra work. Script pack for mf-tool-003 outcomes.",
@@ -117,6 +117,20 @@
       "No floor change without signed CO or email accept."
     ],
     "operator_context": "Small shops: CO can be short email plus price line; still log row.",
-    "spine_role": "chain"
+    "spine_role": "chain",
+    "version": "1.2",
+    "not_for": "Initial quote only — use when scope grows after accept.",
+    "pairs_with": [
+      "mf-tool-003",
+      "mf-tpl-006",
+      "mf-tpl-010",
+      "mf-tpl-007",
+      "mf-tpl-011",
+      "mf-tpl-013"
+    ],
+    "trigger_phrases": [
+      "Scope grows after quote: freeze, document, CO, client accept.",
+      "Need playbook: Change Order Mid-Job"
+    ]
   }
 }

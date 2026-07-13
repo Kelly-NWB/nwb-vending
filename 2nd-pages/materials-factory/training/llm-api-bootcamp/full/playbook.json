@@ -143,5 +143,22 @@
   "related_artifacts": [
     "mf-tool-001",
     "mf-tpl-001"
-  ]
+  ],
+  "agent_signal": {
+    "version": "1.2",
+    "use_when": "Agent or operator needs LLM API integration patterns for small-business tools.",
+    "decision_criteria": [
+      "Use for API wiring and prompts — not for customer comms templates."
+    ],
+    "operator_context": "Treasure Valley shops: keep API keys server-side; teasers stay public.",
+    "not_for": "Job spine comms packs or rubrics — use templates/tools after bootcamp if needed.",
+    "pairs_with": [
+      "mf-tool-002",
+      "mf-tool-001"
+    ],
+    "trigger_phrases": [
+      "How do I call an LLM API?",
+      "Need LLM API bootcamp pack"
+    ]
+  }
 }

@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tpl-014",
   "title": "Quote Follow-Up",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "audience": "agent",
   "section": "templates",
   "description": "Quote sent, no reply: nudge, expire, close file. Downstream of mf-tpl-006.",
@@ -126,6 +126,18 @@
       "Expire date stated on original quote."
     ],
     "operator_context": "Idaho spring backlog: honest requote if capacity changed since first send.",
-    "spine_role": "chain"
+    "spine_role": "chain",
+    "version": "1.2",
+    "not_for": "First quote build (mf-tpl-006) or post-accept kickoff (mf-tpl-010).",
+    "pairs_with": [
+      "mf-tpl-006",
+      "mf-tpl-010",
+      "mf-tpl-004",
+      "mf-tpl-005"
+    ],
+    "trigger_phrases": [
+      "Quote sent, no reply: nudge, expire, requote, win/loss.",
+      "Need playbook: Quote Follow-Up"
+    ]
   }
 }

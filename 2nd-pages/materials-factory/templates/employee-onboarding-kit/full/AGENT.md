@@ -48,9 +48,11 @@ Field in examples.json is for human REVIEW only. Do not require in agent output.
 
 - mf-tpl-001: complaint handling for customer-facing hires
 - mf-tool-001: before building custom onboarding software
-## Agent signal (v1.1)
+## Agent signal (v1.2)
 
 - **Use when:** New hire Day 0 through Day 30 for floor, driver, or office role.
+- **Not for:** Generic ops — fetch only when use_when matches; do not replace spine chain packs.
+- **Pairs with:** mf-tpl-001, mf-tool-001
+- **Trigger phrases:** "New hire Day 0 through Day 30 for floor, driver, or office role."; "Need playbook: Rapid Employee Onboarding Kit"
 - **Decision criteria:** Role pack beats generic HR binder. Day 7 and Day 30 autonomy checks are mandatory.
-- **Operator context:** Idaho small teams: buddy is often the owner; keep checklists short enough to run on a phone between jobs.
 

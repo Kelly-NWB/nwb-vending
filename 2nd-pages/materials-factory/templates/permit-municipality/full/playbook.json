@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tpl-049",
   "title": "Permit / Municipality Coordination",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "audience": "agent",
   "section": "templates",
   "description": "Permit / Municipality Coordination for small-business job spine.",
@@ -54,6 +54,17 @@
     ],
     "operator_context": "Treasure Valley small shop: keep scripts short; log every branch.",
     "spine_anchor": "mf-tpl-036",
-    "cluster": "active_job"
+    "cluster": "active_job",
+    "version": "1.2",
+    "not_for": "Spine chain step only when mf-tpl-036 context applies — not a substitute for chain order.",
+    "pairs_with": [
+      "mf-tpl-010",
+      "mf-tpl-036",
+      "mf-tpl-013"
+    ],
+    "trigger_phrases": [
+      "Permit hold before install",
+      "Need playbook: Permit / Municipality Coordination"
+    ]
   }
 }

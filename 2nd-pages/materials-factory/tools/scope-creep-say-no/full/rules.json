@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tool-003",
   "title": "Scope Creep / Say-No",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "audience": "agent",
   "section": "tools",
   "description": "Small-business boundary rubric when the ask grows: free tweak, fee, defer, re-quote, or no. Use after mf-tpl-004 intake or mid-job.",
@@ -408,6 +408,18 @@
       "No silent yes: every add-on needs documented CO or new quote.",
       "Pair with mf-tpl-012 when scope grows mid-job."
     ],
-    "operator_context": "Treasure Valley contractors: weather and supply slips are common; scope creep fees still apply."
+    "operator_context": "Treasure Valley contractors: weather and supply slips are common; scope creep fees still apply.",
+    "version": "1.2",
+    "not_for": "Automation fit (mf-tool-001) or AI draft routing (mf-tool-002).",
+    "pairs_with": [
+      "mf-tpl-004",
+      "mf-tpl-001",
+      "mf-tool-001",
+      "mf-tool-002"
+    ],
+    "trigger_phrases": [
+      "Client asks for free extra scope, rush without fee, or work outside signed quote.",
+      "Need playbook: Scope Creep / Say-No"
+    ]
   }
 }

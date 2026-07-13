@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tpl-031",
   "title": "Post-Delivery Survey (Light)",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "audience": "agent",
   "section": "templates",
   "description": "Post-Delivery Survey (Light) for small-business job spine.",
@@ -54,6 +54,17 @@
     ],
     "operator_context": "Treasure Valley small shop: keep scripts short; log every branch.",
     "spine_anchor": "mf-tpl-007",
-    "cluster": "close_growth"
+    "cluster": "close_growth",
+    "version": "1.2",
+    "not_for": "Spine chain step only when mf-tpl-007 context applies — not a substitute for chain order.",
+    "pairs_with": [
+      "mf-tpl-007",
+      "mf-tpl-015",
+      "mf-tpl-019"
+    ],
+    "trigger_phrases": [
+      "Light NPS after delivery",
+      "Need playbook: Post-Delivery Survey (Light)"
+    ]
   }
 }

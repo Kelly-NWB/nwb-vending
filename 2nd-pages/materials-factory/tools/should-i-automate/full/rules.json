@@ -560,6 +560,16 @@
       "Frequency and written SOP beat gut feel.",
       "Customer-facing judgment stays human until stakes are low and process is written."
     ],
-    "operator_context": "Treasure Valley: one-location shops often automate reporting before empathy-heavy comms."
+    "operator_context": "Treasure Valley: one-location shops often automate reporting before empathy-heavy comms.",
+    "version": "1.2",
+    "not_for": "Routing a specific email draft (mf-tool-002) or saying no to scope creep (mf-tool-003).",
+    "pairs_with": [
+      "mf-tpl-001",
+      "mf-tpl-004"
+    ],
+    "trigger_phrases": [
+      "Operator asks whether to buy software, automate a task, or keep a manual habit.",
+      "Need playbook: Should I Automate This?"
+    ]
   }
 }

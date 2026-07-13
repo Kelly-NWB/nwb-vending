@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tpl-018",
   "title": "Lost Lead Archive",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "audience": "agent",
   "section": "templates",
   "description": "Lost Lead Archive for small-business job spine.",
@@ -54,6 +54,17 @@
     ],
     "operator_context": "Treasure Valley small shop: keep scripts short; log every branch.",
     "spine_anchor": "mf-tpl-014",
-    "cluster": "close_growth"
+    "cluster": "close_growth",
+    "version": "1.2",
+    "not_for": "Spine chain step only when mf-tpl-014 context applies — not a substitute for chain order.",
+    "pairs_with": [
+      "mf-tpl-004",
+      "mf-tpl-014",
+      "mf-tpl-006"
+    ],
+    "trigger_phrases": [
+      "Lead dead: ghost, price, timing",
+      "Need playbook: Lost Lead Archive"
+    ]
   }
 }

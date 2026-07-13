@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tpl-005",
   "title": "Weekly 15-Min Ops Review",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "audience": "agent",
   "section": "templates",
   "description": "Owner ritual for small business (solo to ~15 people): scan what matters, ignore noise, log one fix. Fifteen minutes, once a week.",
@@ -199,6 +199,19 @@
       "Money block pairs with mf-tpl-008 chase status."
     ],
     "operator_context": "Idaho seasonal swings: use capacity variant when spring install backlog hits.",
-    "spine_role": "ops_overlay"
+    "spine_role": "ops_overlay",
+    "version": "1.2",
+    "not_for": "Single client thread — use spine packs for one job.",
+    "pairs_with": [
+      "mf-tpl-004",
+      "mf-tool-003",
+      "mf-tpl-001",
+      "mf-tool-002",
+      "mf-tool-001"
+    ],
+    "trigger_phrases": [
+      "Weekly owner or lead ops ritual: money, queue, people, one improvement.",
+      "Need playbook: Weekly 15-Min Ops Review"
+    ]
   }
 }

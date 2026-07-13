@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tpl-016",
   "title": "Deposit Reminder",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "audience": "agent",
   "section": "templates",
   "description": "Quote accepted, deposit not in: remind on calendar without starting production. Between mf-tpl-006/014 and mf-tpl-010.",
@@ -56,6 +56,18 @@
     ],
     "operator_context": "Treasure Valley small shop: keep scripts short; log every branch.",
     "spine_anchor": "mf-tpl-010",
-    "cluster": "quote_accept"
+    "cluster": "quote_accept",
+    "version": "1.2",
+    "not_for": "Spine chain step only when mf-tpl-010 context applies — not a substitute for chain order.",
+    "pairs_with": [
+      "mf-tpl-006",
+      "mf-tpl-014",
+      "mf-tpl-010",
+      "mf-tpl-008"
+    ],
+    "trigger_phrases": [
+      "Deposit missing after accept",
+      "Need playbook: Deposit Reminder"
+    ]
   }
 }

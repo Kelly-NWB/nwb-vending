@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tpl-009",
   "title": "Vendor Issue Playbook",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "audience": "agent",
   "section": "templates",
   "description": "Supplier late, wrong, short, or damaged: document, chase vendor, protect client job. Ops shelf for small shops.",
@@ -124,6 +124,18 @@
       "Client delay uses mf-tpl-013 status language."
     ],
     "operator_context": "Regional suppliers: Boise run common; build vendor slip into honest dates for install jobs.",
-    "spine_role": "chain"
+    "spine_role": "chain",
+    "version": "1.2",
+    "not_for": "Generic ops — fetch only when use_when matches; do not replace spine chain packs.",
+    "pairs_with": [
+      "mf-tpl-005",
+      "mf-tpl-007",
+      "mf-tpl-006",
+      "mf-tpl-013"
+    ],
+    "trigger_phrases": [
+      "Vendor late, wrong, short, or damaged: internal chase plus honest client plan.",
+      "Need playbook: Vendor Issue Playbook"
+    ]
   }
 }

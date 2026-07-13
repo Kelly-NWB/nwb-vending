@@ -421,7 +421,17 @@
       "price": "$0.08",
       "teaser": "training/llm-api-bootcamp/",
       "full": "training/llm-api-bootcamp/full/",
-      "primary": "playbook.json"
+      "primary": "playbook.json",
+      "not_for": "Job spine comms packs or rubrics — use templates/tools after bootcamp if needed.",
+      "pairs_with": [
+        "mf-tool-002",
+        "mf-tool-001"
+      ],
+      "trigger_phrases": [
+        "How do I call an LLM API?",
+        "Need LLM API bootcamp pack"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tool-001",
@@ -438,7 +448,17 @@
         "small-business",
         "vending"
       ],
-      "use_when": "Operator asks whether to buy software, automate a task, or keep a manual habit."
+      "use_when": "Operator asks whether to buy software, automate a task, or keep a manual habit.",
+      "not_for": "Routing a specific email draft (mf-tool-002) or saying no to scope creep (mf-tool-003).",
+      "pairs_with": [
+        "mf-tpl-001",
+        "mf-tpl-004"
+      ],
+      "trigger_phrases": [
+        "Operator asks whether to buy software, automate a task, or keep a manual habit.",
+        "Need playbook: Should I Automate This?"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tool-002",
@@ -454,7 +474,19 @@
         "task-fit",
         "human-in-loop"
       ],
-      "use_when": "Deciding if AI should draft, classify, or stay out of a task entirely."
+      "use_when": "Deciding if AI should draft, classify, or stay out of a task entirely.",
+      "not_for": "Buy/build automation decision (mf-tool-001) or CO boundary (mf-tool-003).",
+      "pairs_with": [
+        "mf-tool-001",
+        "mf-train-001",
+        "mf-tpl-001",
+        "mf-tpl-004"
+      ],
+      "trigger_phrases": [
+        "Deciding if AI should draft, classify, or stay out of a task entirely.",
+        "Need playbook: AI Task Fit"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tool-003",
@@ -470,7 +502,19 @@
         "boundaries",
         "change-order"
       ],
-      "use_when": "Client asks for free extra scope, rush without fee, or work outside signed quote."
+      "use_when": "Client asks for free extra scope, rush without fee, or work outside signed quote.",
+      "not_for": "Automation fit (mf-tool-001) or AI draft routing (mf-tool-002).",
+      "pairs_with": [
+        "mf-tpl-004",
+        "mf-tpl-001",
+        "mf-tool-001",
+        "mf-tool-002"
+      ],
+      "trigger_phrases": [
+        "Client asks for free extra scope, rush without fee, or work outside signed quote.",
+        "Need playbook: Scope Creep / Say-No"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-001",
@@ -487,7 +531,17 @@
         "reputation"
       ],
       "use_when": "Existing customer is angry, threatening reviews, or reporting a failure on delivered work.",
-      "spine_role": "complaint_route"
+      "spine_role": "complaint_route",
+      "not_for": "New lead intake (mf-tpl-004) or light warranty FAQ (mf-tpl-020).",
+      "pairs_with": [
+        "mf-tool-001",
+        "mf-tool-003"
+      ],
+      "trigger_phrases": [
+        "Existing customer is angry, threatening reviews, or reporting a failure on delivered work.",
+        "Need playbook: Customer Complaint Recovery Playbook"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-002",
@@ -503,7 +557,17 @@
         "onboarding",
         "hr"
       ],
-      "use_when": "New hire Day 0 through Day 30 for floor, driver, or office role."
+      "use_when": "New hire Day 0 through Day 30 for floor, driver, or office role.",
+      "not_for": "Generic ops — fetch only when use_when matches; do not replace spine chain packs.",
+      "pairs_with": [
+        "mf-tpl-001",
+        "mf-tool-001"
+      ],
+      "trigger_phrases": [
+        "New hire Day 0 through Day 30 for floor, driver, or office role.",
+        "Need playbook: Rapid Employee Onboarding Kit"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-003",
@@ -519,7 +583,17 @@
         "interview",
         "character"
       ],
-      "use_when": "Interview finishers and hire/pass decision on character, not just skills."
+      "use_when": "Interview finishers and hire/pass decision on character, not just skills.",
+      "not_for": "Generic ops — fetch only when use_when matches; do not replace spine chain packs.",
+      "pairs_with": [
+        "mf-tpl-002",
+        "mf-tpl-001"
+      ],
+      "trigger_phrases": [
+        "Interview finishers and hire/pass decision on character, not just skills.",
+        "Need playbook: Hiring Character Gauge"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-004",
@@ -537,7 +611,20 @@
         "qualify"
       ],
       "use_when": "First contact from unknown lead: form, email, DM, or call. Not complaint recovery.",
-      "spine_role": "chain_start"
+      "spine_role": "chain_start",
+      "not_for": "Angry existing customer (mf-tpl-001) or sending a quote (mf-tpl-006).",
+      "pairs_with": [
+        "mf-tpl-001",
+        "mf-tool-002",
+        "mf-tool-001",
+        "mf-tpl-006",
+        "mf-tpl-005"
+      ],
+      "trigger_phrases": [
+        "First contact from unknown lead: form, email, DM, or call. Not complaint recovery.",
+        "Need playbook: Client Intake Playbook"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-005",
@@ -554,7 +641,20 @@
         "overlay"
       ],
       "use_when": "Weekly owner or lead ops ritual: money, queue, people, one improvement.",
-      "spine_role": "ops_overlay"
+      "spine_role": "ops_overlay",
+      "not_for": "Single client thread — use spine packs for one job.",
+      "pairs_with": [
+        "mf-tpl-004",
+        "mf-tool-003",
+        "mf-tpl-001",
+        "mf-tool-002",
+        "mf-tool-001"
+      ],
+      "trigger_phrases": [
+        "Weekly owner or lead ops ritual: money, queue, people, one improvement.",
+        "Need playbook: Weekly 15-Min Ops Review"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-006",
@@ -572,7 +672,21 @@
         "pricing"
       ],
       "use_when": "Scope is clear enough to price: custom quote or estimate gate before send.",
-      "spine_role": "chain"
+      "spine_role": "chain",
+      "not_for": "Following up silent quote (mf-tpl-014) or revising sent quote (mf-tpl-028).",
+      "pairs_with": [
+        "mf-tpl-004",
+        "mf-tpl-010",
+        "mf-tpl-007",
+        "mf-tpl-008",
+        "mf-tool-003",
+        "mf-tpl-001"
+      ],
+      "trigger_phrases": [
+        "Scope is clear enough to price: custom quote or estimate gate before send.",
+        "Need playbook: Quote / Estimate Gate"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-007",
@@ -589,7 +703,21 @@
         "fulfillment"
       ],
       "use_when": "Job ready to leave shop: notify, handoff, confirm receipt, unpaid hold.",
-      "spine_role": "chain"
+      "spine_role": "chain",
+      "not_for": "Generic ops — fetch only when use_when matches; do not replace spine chain packs.",
+      "pairs_with": [
+        "mf-tpl-006",
+        "mf-tpl-008",
+        "mf-tpl-001",
+        "mf-tool-003",
+        "mf-tpl-005",
+        "mf-tpl-009"
+      ],
+      "trigger_phrases": [
+        "Job ready to leave shop: notify, handoff, confirm receipt, unpaid hold.",
+        "Need playbook: Delivery + Handoff"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-008",
@@ -606,7 +734,20 @@
         "collections"
       ],
       "use_when": "Invoice sent: chase calendar day 3, 7, 14 and partial payment states.",
-      "spine_role": "chain"
+      "spine_role": "chain",
+      "not_for": "Generic ops — fetch only when use_when matches; do not replace spine chain packs.",
+      "pairs_with": [
+        "mf-tpl-006",
+        "mf-tpl-007",
+        "mf-tpl-005",
+        "mf-tpl-001",
+        "mf-tpl-015"
+      ],
+      "trigger_phrases": [
+        "Invoice sent: chase calendar day 3, 7, 14 and partial payment states.",
+        "Need playbook: Invoice + Payment Chase"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-009",
@@ -623,7 +764,19 @@
         "delay"
       ],
       "use_when": "Vendor late, wrong, short, or damaged: internal chase plus honest client plan.",
-      "spine_role": "chain"
+      "spine_role": "chain",
+      "not_for": "Generic ops — fetch only when use_when matches; do not replace spine chain packs.",
+      "pairs_with": [
+        "mf-tpl-005",
+        "mf-tpl-007",
+        "mf-tpl-006",
+        "mf-tpl-013"
+      ],
+      "trigger_phrases": [
+        "Vendor late, wrong, short, or damaged: internal chase plus honest client plan.",
+        "Need playbook: Vendor Issue Playbook"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-010",
@@ -640,7 +793,21 @@
         "schedule"
       ],
       "use_when": "Quote accepted: deposit, schedule, proof path, kickoff email.",
-      "spine_role": "chain"
+      "spine_role": "chain",
+      "not_for": "Pre-accept quote work (mf-tpl-006) or proof round (mf-tpl-011).",
+      "pairs_with": [
+        "mf-tpl-006",
+        "mf-tpl-008",
+        "mf-tpl-007",
+        "mf-tool-003",
+        "mf-tpl-005",
+        "mf-tpl-014"
+      ],
+      "trigger_phrases": [
+        "Quote accepted: deposit, schedule, proof path, kickoff email.",
+        "Need playbook: Project Kickoff Checklist"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-011",
@@ -657,7 +824,20 @@
         "production-gate"
       ],
       "use_when": "Proof round sent: require written APPROVED before production release.",
-      "spine_role": "chain"
+      "spine_role": "chain",
+      "not_for": "Design loop before proof (mf-tpl-042) or physical sample (mf-tpl-043).",
+      "pairs_with": [
+        "mf-tpl-010",
+        "mf-tpl-007",
+        "mf-tool-003",
+        "mf-tpl-005",
+        "mf-tpl-012"
+      ],
+      "trigger_phrases": [
+        "Proof round sent: require written APPROVED before production release.",
+        "Need playbook: Proof + Client Approval Gate"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-012",
@@ -674,7 +854,21 @@
         "mid-job"
       ],
       "use_when": "Scope grows after quote: freeze, document, CO, client accept.",
-      "spine_role": "chain"
+      "spine_role": "chain",
+      "not_for": "Initial quote only — use when scope grows after accept.",
+      "pairs_with": [
+        "mf-tool-003",
+        "mf-tpl-006",
+        "mf-tpl-010",
+        "mf-tpl-007",
+        "mf-tpl-011",
+        "mf-tpl-013"
+      ],
+      "trigger_phrases": [
+        "Scope grows after quote: freeze, document, CO, client accept.",
+        "Need playbook: Change Order Mid-Job"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-013",
@@ -691,7 +885,21 @@
         "comms"
       ],
       "use_when": "Proactive where-we-are update: on track, slip, waiting on client, waiting on vendor.",
-      "spine_role": "chain"
+      "spine_role": "chain",
+      "not_for": "Complaint recovery (mf-tpl-001) — status updates assume active job in good faith.",
+      "pairs_with": [
+        "mf-tpl-005",
+        "mf-tpl-010",
+        "mf-tpl-011",
+        "mf-tpl-001",
+        "mf-tpl-009",
+        "mf-tpl-012"
+      ],
+      "trigger_phrases": [
+        "Proactive where-we-are update: on track, slip, waiting on client, waiting on vendor.",
+        "Need playbook: Client Status Update"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-014",
@@ -708,7 +916,19 @@
         "pipeline"
       ],
       "use_when": "Quote sent, no reply: nudge, expire, requote, win/loss.",
-      "spine_role": "chain"
+      "spine_role": "chain",
+      "not_for": "First quote build (mf-tpl-006) or post-accept kickoff (mf-tpl-010).",
+      "pairs_with": [
+        "mf-tpl-006",
+        "mf-tpl-010",
+        "mf-tpl-004",
+        "mf-tpl-005"
+      ],
+      "trigger_phrases": [
+        "Quote sent, no reply: nudge, expire, requote, win/loss.",
+        "Need playbook: Quote Follow-Up"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-015",
@@ -725,7 +945,19 @@
         "job-end"
       ],
       "use_when": "Paid and delivered: archive, internal close, optional review ask.",
-      "spine_role": "chain_end"
+      "spine_role": "chain_end",
+      "not_for": "Generic ops — fetch only when use_when matches; do not replace spine chain packs.",
+      "pairs_with": [
+        "mf-tpl-007",
+        "mf-tpl-008",
+        "mf-tpl-005",
+        "mf-tpl-006"
+      ],
+      "trigger_phrases": [
+        "Paid and delivered: archive, internal close, optional review ask.",
+        "Need playbook: Job Close + Archive"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-016",
@@ -743,7 +975,19 @@
       ],
       "use_when": "Deposit missing after accept",
       "spine_anchor": "mf-tpl-010",
-      "cluster": "quote_accept"
+      "cluster": "quote_accept",
+      "not_for": "Spine chain step only when mf-tpl-010 context applies — not a substitute for chain order.",
+      "pairs_with": [
+        "mf-tpl-006",
+        "mf-tpl-014",
+        "mf-tpl-010",
+        "mf-tpl-008"
+      ],
+      "trigger_phrases": [
+        "Deposit missing after accept",
+        "Need playbook: Deposit Reminder"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-017",
@@ -761,7 +1005,18 @@
       ],
       "use_when": "Proof approved, hand to floor",
       "spine_anchor": "mf-tpl-011",
-      "cluster": "kickoff_production"
+      "cluster": "kickoff_production",
+      "not_for": "Spine chain step only when mf-tpl-011 context applies — not a substitute for chain order.",
+      "pairs_with": [
+        "mf-tpl-010",
+        "mf-tpl-011",
+        "mf-tpl-007"
+      ],
+      "trigger_phrases": [
+        "Proof approved, hand to floor",
+        "Need playbook: Production Handoff (Internal)"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-018",
@@ -779,7 +1034,18 @@
       ],
       "use_when": "Lead dead: ghost, price, timing",
       "spine_anchor": "mf-tpl-014",
-      "cluster": "close_growth"
+      "cluster": "close_growth",
+      "not_for": "Spine chain step only when mf-tpl-014 context applies — not a substitute for chain order.",
+      "pairs_with": [
+        "mf-tpl-004",
+        "mf-tpl-014",
+        "mf-tpl-006"
+      ],
+      "trigger_phrases": [
+        "Lead dead: ghost, price, timing",
+        "Need playbook: Lost Lead Archive"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-019",
@@ -797,7 +1063,18 @@
       ],
       "use_when": "Happy close, light referral ask",
       "spine_anchor": "mf-tpl-015",
-      "cluster": "close_growth"
+      "cluster": "close_growth",
+      "not_for": "Spine chain step only when mf-tpl-015 context applies — not a substitute for chain order.",
+      "pairs_with": [
+        "mf-tpl-015",
+        "mf-tpl-007",
+        "mf-tpl-001"
+      ],
+      "trigger_phrases": [
+        "Happy close, light referral ask",
+        "Need playbook: Referral Ask"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-020",
@@ -815,7 +1092,18 @@
       ],
       "use_when": "Support question, not full complaint",
       "spine_anchor": "mf-tpl-001",
-      "cluster": "support_escalation"
+      "cluster": "support_escalation",
+      "not_for": "Full complaint recovery (mf-tpl-001) — heated or reputation threat.",
+      "pairs_with": [
+        "mf-tpl-015",
+        "mf-tpl-001",
+        "mf-tpl-013"
+      ],
+      "trigger_phrases": [
+        "Support question, not full complaint",
+        "Need playbook: Warranty + Support First Touch"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-021",
@@ -833,7 +1121,19 @@
       ],
       "use_when": "Rush fee and hard proof windows",
       "spine_anchor": "mf-tpl-013",
-      "cluster": "active_job"
+      "cluster": "active_job",
+      "not_for": "Spine chain step only when mf-tpl-013 context applies — not a substitute for chain order.",
+      "pairs_with": [
+        "mf-tpl-006",
+        "mf-tpl-010",
+        "mf-tpl-011",
+        "mf-tpl-013"
+      ],
+      "trigger_phrases": [
+        "Rush fee and hard proof windows",
+        "Need playbook: Rush Client Comms"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-022",
@@ -851,7 +1151,17 @@
       ],
       "use_when": "Vague lead needs phone qualify",
       "spine_anchor": "mf-tpl-004",
-      "cluster": "quote_accept"
+      "cluster": "quote_accept",
+      "not_for": "Spine chain step only when mf-tpl-004 context applies — not a substitute for chain order.",
+      "pairs_with": [
+        "mf-tpl-004",
+        "mf-tpl-006"
+      ],
+      "trigger_phrases": [
+        "Vague lead needs phone qualify",
+        "Need playbook: Meeting / Phone Qualify"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-023",
@@ -869,7 +1179,17 @@
       ],
       "use_when": "Wrong fit: refer out polite",
       "spine_anchor": "mf-tpl-004",
-      "cluster": "client_account"
+      "cluster": "client_account",
+      "not_for": "Spine chain step only when mf-tpl-004 context applies — not a substitute for chain order.",
+      "pairs_with": [
+        "mf-tpl-004",
+        "mf-tpl-006"
+      ],
+      "trigger_phrases": [
+        "Wrong fit: refer out polite",
+        "Need playbook: Not-a-Fit Referral"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-024",
@@ -887,7 +1207,19 @@
       ],
       "use_when": "Repeat client reorder path",
       "spine_anchor": "mf-tpl-006",
-      "cluster": "close_growth"
+      "cluster": "close_growth",
+      "not_for": "Spine chain step only when mf-tpl-006 context applies — not a substitute for chain order.",
+      "pairs_with": [
+        "mf-tpl-004",
+        "mf-tpl-006",
+        "mf-tpl-010",
+        "mf-tpl-015"
+      ],
+      "trigger_phrases": [
+        "Repeat client reorder path",
+        "Need playbook: Reorder Repeat Client"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-025",
@@ -905,7 +1237,18 @@
       ],
       "use_when": "Sub late or QC fail",
       "spine_anchor": "mf-tpl-009",
-      "cluster": "active_job"
+      "cluster": "active_job",
+      "not_for": "Spine chain step only when mf-tpl-009 context applies — not a substitute for chain order.",
+      "pairs_with": [
+        "mf-tpl-010",
+        "mf-tpl-013",
+        "mf-tpl-009"
+      ],
+      "trigger_phrases": [
+        "Sub late or QC fail",
+        "Need playbook: Subcontractor Handoff"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-026",
@@ -923,7 +1266,19 @@
       ],
       "use_when": "Internal QC fail before ship",
       "spine_anchor": "mf-tpl-017",
-      "cluster": "kickoff_production"
+      "cluster": "kickoff_production",
+      "not_for": "Spine chain step only when mf-tpl-017 context applies — not a substitute for chain order.",
+      "pairs_with": [
+        "mf-tpl-017",
+        "mf-tpl-011",
+        "mf-tpl-013",
+        "mf-tpl-007"
+      ],
+      "trigger_phrases": [
+        "Internal QC fail before ship",
+        "Need playbook: QC Fail / Rework (Internal)"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-027",
@@ -941,7 +1296,18 @@
       ],
       "use_when": "First job, not repeat",
       "spine_anchor": "mf-tpl-010",
-      "cluster": "client_account"
+      "cluster": "client_account",
+      "not_for": "Spine chain step only when mf-tpl-010 context applies — not a substitute for chain order.",
+      "pairs_with": [
+        "mf-tpl-010",
+        "mf-tpl-004",
+        "mf-tpl-013"
+      ],
+      "trigger_phrases": [
+        "First job, not repeat",
+        "Need playbook: Client Onboarding (First Job)"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-028",
@@ -959,7 +1325,18 @@
       ],
       "use_when": "Revise quote scope or price",
       "spine_anchor": "mf-tpl-006",
-      "cluster": "quote_accept"
+      "cluster": "quote_accept",
+      "not_for": "Spine chain step only when mf-tpl-006 context applies — not a substitute for chain order.",
+      "pairs_with": [
+        "mf-tpl-006",
+        "mf-tpl-012",
+        "mf-tpl-014"
+      ],
+      "trigger_phrases": [
+        "Revise quote scope or price",
+        "Need playbook: Estimate Revision / Change Quote"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-029",
@@ -977,7 +1354,18 @@
       ],
       "use_when": "Partial payment plan",
       "spine_anchor": "mf-tpl-008",
-      "cluster": "quote_accept"
+      "cluster": "quote_accept",
+      "not_for": "Spine chain step only when mf-tpl-008 context applies — not a substitute for chain order.",
+      "pairs_with": [
+        "mf-tpl-008",
+        "mf-tpl-006",
+        "mf-tpl-016"
+      ],
+      "trigger_phrases": [
+        "Partial payment plan",
+        "Need playbook: Payment Plan / Partial Terms"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-030",
@@ -995,7 +1383,18 @@
       ],
       "use_when": "Client or internal pause",
       "spine_anchor": "mf-tpl-013",
-      "cluster": "active_job"
+      "cluster": "active_job",
+      "not_for": "Spine chain step only when mf-tpl-013 context applies — not a substitute for chain order.",
+      "pairs_with": [
+        "mf-tpl-013",
+        "mf-tpl-012",
+        "mf-tpl-010"
+      ],
+      "trigger_phrases": [
+        "Client or internal pause",
+        "Need playbook: Job Pause / Client Hold"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-031",
@@ -1013,7 +1412,18 @@
       ],
       "use_when": "Light NPS after delivery",
       "spine_anchor": "mf-tpl-007",
-      "cluster": "close_growth"
+      "cluster": "close_growth",
+      "not_for": "Spine chain step only when mf-tpl-007 context applies — not a substitute for chain order.",
+      "pairs_with": [
+        "mf-tpl-007",
+        "mf-tpl-015",
+        "mf-tpl-019"
+      ],
+      "trigger_phrases": [
+        "Light NPS after delivery",
+        "Need playbook: Post-Delivery Survey (Light)"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-032",
@@ -1031,7 +1441,18 @@
       ],
       "use_when": "After-hours message triage",
       "spine_anchor": "mf-tpl-001",
-      "cluster": "support_escalation"
+      "cluster": "support_escalation",
+      "not_for": "Spine chain step only when mf-tpl-001 context applies — not a substitute for chain order.",
+      "pairs_with": [
+        "mf-tpl-001",
+        "mf-tpl-013",
+        "mf-tpl-021"
+      ],
+      "trigger_phrases": [
+        "After-hours message triage",
+        "Need playbook: Emergency After-Hours Reply"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-033",
@@ -1049,7 +1470,18 @@
       ],
       "use_when": "Reprioritize queue internal",
       "spine_anchor": "mf-tpl-005",
-      "cluster": "kickoff_production"
+      "cluster": "kickoff_production",
+      "not_for": "Spine chain step only when mf-tpl-005 context applies — not a substitute for chain order.",
+      "pairs_with": [
+        "mf-tpl-005",
+        "mf-tpl-017",
+        "mf-tpl-021"
+      ],
+      "trigger_phrases": [
+        "Reprioritize queue internal",
+        "Need playbook: Multi-Job Priority Queue (Internal)"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-034",
@@ -1067,7 +1499,18 @@
       ],
       "use_when": "Missing logo or file",
       "spine_anchor": "mf-tpl-011",
-      "cluster": "kickoff_production"
+      "cluster": "kickoff_production",
+      "not_for": "Spine chain step only when mf-tpl-011 context applies — not a substitute for chain order.",
+      "pairs_with": [
+        "mf-tpl-004",
+        "mf-tpl-011",
+        "mf-tpl-010"
+      ],
+      "trigger_phrases": [
+        "Missing logo or file",
+        "Need playbook: Client Asset / File Request"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-035",
@@ -1085,7 +1528,18 @@
       ],
       "use_when": "Will-call pickup ready",
       "spine_anchor": "mf-tpl-007",
-      "cluster": "delivery_install"
+      "cluster": "delivery_install",
+      "not_for": "Spine chain step only when mf-tpl-007 context applies — not a substitute for chain order.",
+      "pairs_with": [
+        "mf-tpl-007",
+        "mf-tpl-008",
+        "mf-tpl-013"
+      ],
+      "trigger_phrases": [
+        "Will-call pickup ready",
+        "Need playbook: Pickup / Will-Call Handoff"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-036",
@@ -1103,7 +1557,18 @@
       ],
       "use_when": "Install schedule and access",
       "spine_anchor": "mf-tpl-007",
-      "cluster": "delivery_install"
+      "cluster": "delivery_install",
+      "not_for": "Spine chain step only when mf-tpl-007 context applies — not a substitute for chain order.",
+      "pairs_with": [
+        "mf-tpl-007",
+        "mf-tpl-025",
+        "mf-tpl-013"
+      ],
+      "trigger_phrases": [
+        "Install schedule and access",
+        "Need playbook: Install / On-Site Coordination"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-037",
@@ -1121,7 +1586,18 @@
       ],
       "use_when": "Tracking and carrier delay",
       "spine_anchor": "mf-tpl-007",
-      "cluster": "delivery_install"
+      "cluster": "delivery_install",
+      "not_for": "Spine chain step only when mf-tpl-007 context applies — not a substitute for chain order.",
+      "pairs_with": [
+        "mf-tpl-007",
+        "mf-tpl-013",
+        "mf-tpl-008"
+      ],
+      "trigger_phrases": [
+        "Tracking and carrier delay",
+        "Need playbook: Shipping / Tracking Client Update"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-038",
@@ -1139,7 +1615,18 @@
       ],
       "use_when": "Mid-job photo for anxious client",
       "spine_anchor": "mf-tpl-013",
-      "cluster": "active_job"
+      "cluster": "active_job",
+      "not_for": "Spine chain step only when mf-tpl-013 context applies — not a substitute for chain order.",
+      "pairs_with": [
+        "mf-tpl-013",
+        "mf-tpl-011",
+        "mf-tpl-017"
+      ],
+      "trigger_phrases": [
+        "Mid-job photo for anxious client",
+        "Need playbook: Progress Photo Update (Mid-Job)"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-039",
@@ -1157,7 +1644,18 @@
       ],
       "use_when": "Courtesy credit, not full refund fight",
       "spine_anchor": "mf-tpl-001",
-      "cluster": "support_escalation"
+      "cluster": "support_escalation",
+      "not_for": "Spine chain step only when mf-tpl-001 context applies — not a substitute for chain order.",
+      "pairs_with": [
+        "mf-tpl-001",
+        "mf-tpl-008",
+        "mf-tpl-015"
+      ],
+      "trigger_phrases": [
+        "Courtesy credit, not full refund fight",
+        "Need playbook: Goodwill Credit / Courtesy Discount"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-040",
@@ -1175,7 +1673,18 @@
       ],
       "use_when": "Cancel or refund policy branch",
       "spine_anchor": "mf-tpl-008",
-      "cluster": "support_escalation"
+      "cluster": "support_escalation",
+      "not_for": "Spine chain step only when mf-tpl-008 context applies — not a substitute for chain order.",
+      "pairs_with": [
+        "mf-tpl-008",
+        "mf-tpl-015",
+        "mf-tpl-030"
+      ],
+      "trigger_phrases": [
+        "Cancel or refund policy branch",
+        "Need playbook: Refund / Cancellation Policy"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-041",
@@ -1193,7 +1702,18 @@
       ],
       "use_when": "COI before install",
       "spine_anchor": "mf-tpl-010",
-      "cluster": "active_job"
+      "cluster": "active_job",
+      "not_for": "Spine chain step only when mf-tpl-010 context applies — not a substitute for chain order.",
+      "pairs_with": [
+        "mf-tpl-004",
+        "mf-tpl-010",
+        "mf-tpl-025"
+      ],
+      "trigger_phrases": [
+        "COI before install",
+        "Need playbook: COI / Insurance Certificate Request"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-042",
@@ -1211,7 +1731,18 @@
       ],
       "use_when": "Design rev before proof",
       "spine_anchor": "mf-tpl-011",
-      "cluster": "kickoff_production"
+      "cluster": "kickoff_production",
+      "not_for": "Spine chain step only when mf-tpl-011 context applies — not a substitute for chain order.",
+      "pairs_with": [
+        "mf-tpl-011",
+        "mf-tpl-034",
+        "mf-tpl-012"
+      ],
+      "trigger_phrases": [
+        "Design rev before proof",
+        "Need playbook: Design Revision Loop (Pre-Proof)"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-043",
@@ -1229,7 +1760,18 @@
       ],
       "use_when": "Physical sample approve",
       "spine_anchor": "mf-tpl-011",
-      "cluster": "kickoff_production"
+      "cluster": "kickoff_production",
+      "not_for": "Spine chain step only when mf-tpl-011 context applies — not a substitute for chain order.",
+      "pairs_with": [
+        "mf-tpl-011",
+        "mf-tpl-017",
+        "mf-tpl-007"
+      ],
+      "trigger_phrases": [
+        "Physical sample approve",
+        "Need playbook: Physical Sample / Color Proof Approval"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-044",
@@ -1247,7 +1789,18 @@
       ],
       "use_when": "Damage in transit",
       "spine_anchor": "mf-tpl-007",
-      "cluster": "support_escalation"
+      "cluster": "support_escalation",
+      "not_for": "Spine chain step only when mf-tpl-007 context applies — not a substitute for chain order.",
+      "pairs_with": [
+        "mf-tpl-007",
+        "mf-tpl-001",
+        "mf-tpl-009"
+      ],
+      "trigger_phrases": [
+        "Damage in transit",
+        "Need playbook: Damage in Transit Claim"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-045",
@@ -1265,7 +1818,18 @@
       ],
       "use_when": "Retainer client monthly touch",
       "spine_anchor": "mf-tpl-006",
-      "cluster": "close_growth"
+      "cluster": "close_growth",
+      "not_for": "Spine chain step only when mf-tpl-006 context applies — not a substitute for chain order.",
+      "pairs_with": [
+        "mf-tpl-006",
+        "mf-tpl-024",
+        "mf-tpl-005"
+      ],
+      "trigger_phrases": [
+        "Retainer client monthly touch",
+        "Need playbook: Retainer / Ongoing Service Client"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-046",
@@ -1283,7 +1847,18 @@
       ],
       "use_when": "Net terms application",
       "spine_anchor": "mf-tpl-008",
-      "cluster": "quote_accept"
+      "cluster": "quote_accept",
+      "not_for": "Spine chain step only when mf-tpl-008 context applies — not a substitute for chain order.",
+      "pairs_with": [
+        "mf-tpl-008",
+        "mf-tpl-006",
+        "mf-tpl-004"
+      ],
+      "trigger_phrases": [
+        "Net terms application",
+        "Need playbook: Net Terms / Credit Application"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-047",
@@ -1301,7 +1876,18 @@
       ],
       "use_when": "Honest lead time on quote",
       "spine_anchor": "mf-tpl-006",
-      "cluster": "quote_accept"
+      "cluster": "quote_accept",
+      "not_for": "Spine chain step only when mf-tpl-006 context applies — not a substitute for chain order.",
+      "pairs_with": [
+        "mf-tpl-006",
+        "mf-tpl-021",
+        "mf-tpl-033"
+      ],
+      "trigger_phrases": [
+        "Honest lead time on quote",
+        "Need playbook: Seasonal Capacity / Lead Time Notice"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-048",
@@ -1319,7 +1905,18 @@
       ],
       "use_when": "Multi-site one brand",
       "spine_anchor": "mf-tpl-007",
-      "cluster": "client_account"
+      "cluster": "client_account",
+      "not_for": "Spine chain step only when mf-tpl-007 context applies — not a substitute for chain order.",
+      "pairs_with": [
+        "mf-tpl-006",
+        "mf-tpl-007",
+        "mf-tpl-013"
+      ],
+      "trigger_phrases": [
+        "Multi-site one brand",
+        "Need playbook: Multi-Location Client Coordination"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-049",
@@ -1337,7 +1934,18 @@
       ],
       "use_when": "Permit hold before install",
       "spine_anchor": "mf-tpl-036",
-      "cluster": "active_job"
+      "cluster": "active_job",
+      "not_for": "Spine chain step only when mf-tpl-036 context applies — not a substitute for chain order.",
+      "pairs_with": [
+        "mf-tpl-010",
+        "mf-tpl-036",
+        "mf-tpl-013"
+      ],
+      "trigger_phrases": [
+        "Permit hold before install",
+        "Need playbook: Permit / Municipality Coordination"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-050",
@@ -1355,7 +1963,18 @@
       ],
       "use_when": "Outdoor install weather delay",
       "spine_anchor": "mf-tpl-036",
-      "cluster": "delivery_install"
+      "cluster": "delivery_install",
+      "not_for": "Spine chain step only when mf-tpl-036 context applies — not a substitute for chain order.",
+      "pairs_with": [
+        "mf-tpl-036",
+        "mf-tpl-013",
+        "mf-tpl-021"
+      ],
+      "trigger_phrases": [
+        "Outdoor install weather delay",
+        "Need playbook: Weather Delay (Outdoor Work)"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-051",
@@ -1373,7 +1992,18 @@
       ],
       "use_when": "Contact left company",
       "spine_anchor": "mf-tpl-004",
-      "cluster": "client_account"
+      "cluster": "client_account",
+      "not_for": "Spine chain step only when mf-tpl-004 context applies — not a substitute for chain order.",
+      "pairs_with": [
+        "mf-tpl-004",
+        "mf-tpl-027",
+        "mf-tpl-013"
+      ],
+      "trigger_phrases": [
+        "Contact left company",
+        "Need playbook: Client Contact / Account Transfer"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-052",
@@ -1391,7 +2021,18 @@
       ],
       "use_when": "Finished goods storage hold",
       "spine_anchor": "mf-tpl-007",
-      "cluster": "delivery_install"
+      "cluster": "delivery_install",
+      "not_for": "Spine chain step only when mf-tpl-007 context applies — not a substitute for chain order.",
+      "pairs_with": [
+        "mf-tpl-007",
+        "mf-tpl-035",
+        "mf-tpl-008"
+      ],
+      "trigger_phrases": [
+        "Finished goods storage hold",
+        "Need playbook: Finished Goods Storage Hold"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-053",
@@ -1409,7 +2050,18 @@
       ],
       "use_when": "Hard event or trade show date",
       "spine_anchor": "mf-tpl-021",
-      "cluster": "events_terms"
+      "cluster": "events_terms",
+      "not_for": "Spine chain step only when mf-tpl-021 context applies — not a substitute for chain order.",
+      "pairs_with": [
+        "mf-tpl-021",
+        "mf-tpl-011",
+        "mf-tpl-007"
+      ],
+      "trigger_phrases": [
+        "Hard event or trade show date",
+        "Need playbook: Event / Trade Show Deadline"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-054",
@@ -1427,7 +2079,18 @@
       ],
       "use_when": "Portfolio photo permission",
       "spine_anchor": "mf-tpl-015",
-      "cluster": "close_growth"
+      "cluster": "close_growth",
+      "not_for": "Spine chain step only when mf-tpl-015 context applies — not a substitute for chain order.",
+      "pairs_with": [
+        "mf-tpl-015",
+        "mf-tpl-019",
+        "mf-tpl-007"
+      ],
+      "trigger_phrases": [
+        "Portfolio photo permission",
+        "Need playbook: Portfolio / Photo Permission Ask"
+      ],
+      "agent_signal_version": "1.2"
     },
     {
       "id": "mf-tpl-055",
@@ -1445,7 +2108,19 @@
       ],
       "use_when": "Tax exempt cert on file",
       "spine_anchor": "mf-tpl-006",
-      "cluster": "quote_accept"
+      "cluster": "quote_accept",
+      "not_for": "Spine chain step only when mf-tpl-006 context applies — not a substitute for chain order.",
+      "pairs_with": [
+        "mf-tpl-006",
+        "mf-tpl-008",
+        "mf-tpl-004"
+      ],
+      "trigger_phrases": [
+        "Tax exempt cert on file",
+        "Need playbook: Tax Exempt Certificate Request"
+      ],
+      "agent_signal_version": "1.2"
     }
-  ]
+  ],
+  "agent_signal_schema": "1.2"
 }

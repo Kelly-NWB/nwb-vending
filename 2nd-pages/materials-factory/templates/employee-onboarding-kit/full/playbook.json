@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tpl-002",
   "title": "Rapid Employee Onboarding Kit",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "audience": "agent",
   "section": "templates",
   "description": "7/30-day onboarding for small teams (2-15 people) with no HR department. Vending and shop ops forward. Checklists, scripts, tracking.",
@@ -169,6 +169,16 @@
       "Role pack beats generic HR binder.",
       "Day 7 and Day 30 autonomy checks are mandatory."
     ],
-    "operator_context": "Idaho small teams: buddy is often the owner; keep checklists short enough to run on a phone between jobs."
+    "operator_context": "Idaho small teams: buddy is often the owner; keep checklists short enough to run on a phone between jobs.",
+    "version": "1.2",
+    "not_for": "Generic ops — fetch only when use_when matches; do not replace spine chain packs.",
+    "pairs_with": [
+      "mf-tpl-001",
+      "mf-tool-001"
+    ],
+    "trigger_phrases": [
+      "New hire Day 0 through Day 30 for floor, driver, or office role.",
+      "Need playbook: Rapid Employee Onboarding Kit"
+    ]
   }
 }

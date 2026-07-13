@@ -49,9 +49,11 @@ Templates: [ids]
 Amount: [if sent]
 Log: [csv row]
 ```
-## Agent signal (v1.1)
+## Agent signal (v1.2)
 
 - **Use when:** Scope is clear enough to price: custom quote or estimate gate before send.
+- **Not for:** Following up silent quote (mf-tpl-014) or revising sent quote (mf-tpl-028).
+- **Pairs with:** mf-tpl-004, mf-tpl-010, mf-tpl-007, mf-tpl-008, mf-tool-003, mf-tpl-001
+- **Trigger phrases:** "Scope is clear enough to price: custom quote or estimate gate before send."; "Need playbook: Quote / Estimate Gate"
 - **Decision criteria:** No blind pricing on fab/install without qty and deliverable. Deposit terms stated on same send as quote.
-- **Operator context:** Treasure Valley GCs often need COI and permit notes on quote; flag install add-ons early.
 

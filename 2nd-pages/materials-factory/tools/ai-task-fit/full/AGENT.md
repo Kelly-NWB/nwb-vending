@@ -49,9 +49,11 @@ Chain: `not_ai` or `template_first` here may send operator to mf-tool-001 next.
 ## Teaser vs full
 
 Teaser (`../index.html`) = one worked example. Full pack = this folder after x402 unlock.
-## Agent signal (v1.1)
+## Agent signal (v1.2)
 
 - **Use when:** Deciding if AI should draft, classify, or stay out of a task entirely.
+- **Not for:** Buy/build automation decision (mf-tool-001) or CO boundary (mf-tool-003).
+- **Pairs with:** mf-tool-001, mf-train-001, mf-tpl-001, mf-tpl-004
+- **Trigger phrases:** "Deciding if AI should draft, classify, or stay out of a task entirely."; "Need playbook: AI Task Fit"
 - **Decision criteria:** AI drafts only when a human approves before send or spend. Route heated or high-stakes threads to human plus mf-tpl-001.
-- **Operator context:** Idaho shops: AI OK for first-draft status emails; not for pricing promises or install dates without owner review.
 

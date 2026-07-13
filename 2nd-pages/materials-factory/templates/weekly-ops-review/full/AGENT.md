@@ -44,9 +44,11 @@ Cross-artifacts used: [ids if any]
 ## Not a substitute for
 
 Daily production management, month-end books, or HRIS.
-## Agent signal (v1.1)
+## Agent signal (v1.2)
 
 - **Use when:** Weekly owner or lead ops ritual: money, queue, people, one improvement.
+- **Not for:** Single client thread — use spine packs for one job.
+- **Pairs with:** mf-tpl-004, mf-tool-003, mf-tpl-001, mf-tool-002, mf-tool-001
+- **Trigger phrases:** "Weekly owner or lead ops ritual: money, queue, people, one improvement."; "Need playbook: Weekly 15-Min Ops Review"
 - **Decision criteria:** Hard 15-minute stop; variants for solo vs small team. Money block pairs with mf-tpl-008 chase status.
-- **Operator context:** Idaho seasonal swings: use capacity variant when spring install backlog hits.
 

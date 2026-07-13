@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tpl-006",
   "title": "Quote / Estimate Gate",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "audience": "agent",
   "section": "templates",
   "description": "After intake qualify: gate before any custom price leaves the building. Checklist, branches, scripts. Chains from mf-tpl-004 ready-to-quote.",
@@ -264,6 +264,20 @@
       "Deposit terms stated on same send as quote."
     ],
     "operator_context": "Treasure Valley GCs often need COI and permit notes on quote; flag install add-ons early.",
-    "spine_role": "chain"
+    "spine_role": "chain",
+    "version": "1.2",
+    "not_for": "Following up silent quote (mf-tpl-014) or revising sent quote (mf-tpl-028).",
+    "pairs_with": [
+      "mf-tpl-004",
+      "mf-tpl-010",
+      "mf-tpl-007",
+      "mf-tpl-008",
+      "mf-tool-003",
+      "mf-tpl-001"
+    ],
+    "trigger_phrases": [
+      "Scope is clear enough to price: custom quote or estimate gate before send.",
+      "Need playbook: Quote / Estimate Gate"
+    ]
   }
 }

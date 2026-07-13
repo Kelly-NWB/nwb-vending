@@ -6,9 +6,11 @@
 4. Log vendor score after resolve.
 
 Output: `VENDOR · mf-tpl-009 · [issue_type] · Log: [row]`
-## Agent signal (v1.1)
+## Agent signal (v1.2)
 
 - **Use when:** Vendor late, wrong, short, or damaged: internal chase plus honest client plan.
+- **Not for:** Generic ops — fetch only when use_when matches; do not replace spine chain packs.
+- **Pairs with:** mf-tpl-005, mf-tpl-007, mf-tpl-006, mf-tpl-013
+- **Trigger phrases:** "Vendor late, wrong, short, or damaged: internal chase plus honest client plan."; "Need playbook: Vendor Issue Playbook"
 - **Decision criteria:** Vendor touch logged before client promise. Client delay uses mf-tpl-013 status language.
-- **Operator context:** Regional suppliers: Boise run common; build vendor slip into honest dates for install jobs.
 

@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tpl-010",
   "title": "Project Kickoff Checklist",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "audience": "agent",
   "section": "templates",
   "description": "Quote accepted: deposit, schedule, proof path, owner assigned. Between mf-tpl-006 accept and production start.",
@@ -124,6 +124,20 @@
       "Kickoff email names proof gate mf-tpl-011."
     ],
     "operator_context": "Treasure Valley fair season: confirm event hard dates on kickoff when job ties to booth or parade.",
-    "spine_role": "chain"
+    "spine_role": "chain",
+    "version": "1.2",
+    "not_for": "Pre-accept quote work (mf-tpl-006) or proof round (mf-tpl-011).",
+    "pairs_with": [
+      "mf-tpl-006",
+      "mf-tpl-008",
+      "mf-tpl-007",
+      "mf-tool-003",
+      "mf-tpl-005",
+      "mf-tpl-014"
+    ],
+    "trigger_phrases": [
+      "Quote accepted: deposit, schedule, proof path, kickoff email.",
+      "Need playbook: Project Kickoff Checklist"
+    ]
   }
 }

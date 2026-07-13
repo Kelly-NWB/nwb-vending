@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tpl-037",
   "title": "Shipping / Tracking Client Update",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "audience": "agent",
   "section": "templates",
   "description": "Shipping / Tracking Client Update for small-business job spine.",
@@ -54,6 +54,17 @@
     ],
     "operator_context": "Treasure Valley small shop: keep scripts short; log every branch.",
     "spine_anchor": "mf-tpl-007",
-    "cluster": "delivery_install"
+    "cluster": "delivery_install",
+    "version": "1.2",
+    "not_for": "Spine chain step only when mf-tpl-007 context applies — not a substitute for chain order.",
+    "pairs_with": [
+      "mf-tpl-007",
+      "mf-tpl-013",
+      "mf-tpl-008"
+    ],
+    "trigger_phrases": [
+      "Tracking and carrier delay",
+      "Need playbook: Shipping / Tracking Client Update"
+    ]
   }
 }

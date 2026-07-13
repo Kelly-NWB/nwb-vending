@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tpl-004",
   "title": "Client Intake Playbook",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "audience": "agent",
   "section": "templates",
   "description": "First touch through qualify for small business: form, email, DM, or call. Triage before quote. Not complaint recovery (see mf-tpl-001).",
@@ -295,6 +295,19 @@
       "Complaint_mask routes mf-tpl-001."
     ],
     "operator_context": "Treasure Valley leads often mix Facebook DM and phone; same SLA, same log row.",
-    "spine_role": "chain_start"
+    "spine_role": "chain_start",
+    "version": "1.2",
+    "not_for": "Angry existing customer (mf-tpl-001) or sending a quote (mf-tpl-006).",
+    "pairs_with": [
+      "mf-tpl-001",
+      "mf-tool-002",
+      "mf-tool-001",
+      "mf-tpl-006",
+      "mf-tpl-005"
+    ],
+    "trigger_phrases": [
+      "First contact from unknown lead: form, email, DM, or call. Not complaint recovery.",
+      "Need playbook: Client Intake Playbook"
+    ]
   }
 }

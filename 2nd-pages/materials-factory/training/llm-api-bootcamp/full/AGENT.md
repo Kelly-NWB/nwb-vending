@@ -44,3 +44,11 @@ Teaser (`../index.html`) has Module 1 opener only. Full pack is this folder afte
 ## Version
 
 `playbook.json` `version` field. v2.0.0 = agent-pack JSON (replaces interactive HTML app).
+## Agent signal (v1.2)
+
+- **Use when:** Agent or operator needs LLM API integration patterns for small-business tools.
+- **Not for:** Job spine comms packs or rubrics — use templates/tools after bootcamp if needed.
+- **Pairs with:** mf-tool-002, mf-tool-001
+- **Trigger phrases:** "How do I call an LLM API?"; "Need LLM API bootcamp pack"
+- **Decision criteria:** Use for API wiring and prompts — not for customer comms templates.
+

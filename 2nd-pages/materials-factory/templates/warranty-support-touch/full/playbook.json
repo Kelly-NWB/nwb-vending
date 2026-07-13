@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tpl-020",
   "title": "Warranty + Support First Touch",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "audience": "agent",
   "section": "templates",
   "description": "Warranty + Support First Touch for small-business job spine.",
@@ -54,6 +54,17 @@
     ],
     "operator_context": "Treasure Valley small shop: keep scripts short; log every branch.",
     "spine_anchor": "mf-tpl-001",
-    "cluster": "support_escalation"
+    "cluster": "support_escalation",
+    "version": "1.2",
+    "not_for": "Full complaint recovery (mf-tpl-001) — heated or reputation threat.",
+    "pairs_with": [
+      "mf-tpl-015",
+      "mf-tpl-001",
+      "mf-tpl-013"
+    ],
+    "trigger_phrases": [
+      "Support question, not full complaint",
+      "Need playbook: Warranty + Support First Touch"
+    ]
   }
 }

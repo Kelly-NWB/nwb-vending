@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tpl-011",
   "title": "Proof + Client Approval Gate",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "audience": "agent",
   "section": "templates",
   "description": "Before production: send proof, capture written approval, block print on silence. After mf-tpl-010 kickoff.",
@@ -117,6 +117,19 @@
       "Color critical jobs may require mf-tpl-043 sample branch."
     ],
     "operator_context": "Idaho sun and laminate: call out exterior fade risk on proof for south-facing signage.",
-    "spine_role": "chain"
+    "spine_role": "chain",
+    "version": "1.2",
+    "not_for": "Design loop before proof (mf-tpl-042) or physical sample (mf-tpl-043).",
+    "pairs_with": [
+      "mf-tpl-010",
+      "mf-tpl-007",
+      "mf-tool-003",
+      "mf-tpl-005",
+      "mf-tpl-012"
+    ],
+    "trigger_phrases": [
+      "Proof round sent: require written APPROVED before production release.",
+      "Need playbook: Proof + Client Approval Gate"
+    ]
   }
 }

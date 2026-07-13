@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tpl-013",
   "title": "Client Status Update",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "audience": "agent",
   "section": "templates",
   "description": "Proactive where-we-are message. Reduces where is it panic. Use on stuck jobs from mf-tpl-005.",
@@ -118,6 +118,20 @@
       "Slip links mf-tpl-009 or mf-tpl-021 as needed."
     ],
     "operator_context": "Treasure Valley clients appreciate plain dates over vague soon.",
-    "spine_role": "chain"
+    "spine_role": "chain",
+    "version": "1.2",
+    "not_for": "Complaint recovery (mf-tpl-001) — status updates assume active job in good faith.",
+    "pairs_with": [
+      "mf-tpl-005",
+      "mf-tpl-010",
+      "mf-tpl-011",
+      "mf-tpl-001",
+      "mf-tpl-009",
+      "mf-tpl-012"
+    ],
+    "trigger_phrases": [
+      "Proactive where-we-are update: on track, slip, waiting on client, waiting on vendor.",
+      "Need playbook: Client Status Update"
+    ]
   }
 }

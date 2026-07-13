@@ -47,9 +47,11 @@ First touch: [Y/N + datetime]
 Next: [qualify / quote / wait / closed]
 Log: [csv row]
 ```
-## Agent signal (v1.1)
+## Agent signal (v1.2)
 
 - **Use when:** First contact from unknown lead: form, email, DM, or call. Not complaint recovery.
+- **Not for:** Angry existing customer (mf-tpl-001) or sending a quote (mf-tpl-006).
+- **Pairs with:** mf-tpl-001, mf-tool-002, mf-tool-001, mf-tpl-006, mf-tpl-005
+- **Trigger phrases:** "First contact from unknown lead: form, email, DM, or call. Not complaint recovery."; "Need playbook: Client Intake Playbook"
 - **Decision criteria:** Classify before quote; ready_to_buy still gets qualify. Complaint_mask routes mf-tpl-001.
-- **Operator context:** Treasure Valley leads often mix Facebook DM and phone; same SLA, same log row.
 

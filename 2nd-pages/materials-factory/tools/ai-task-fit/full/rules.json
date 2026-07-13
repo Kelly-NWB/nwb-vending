@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tool-002",
   "title": "AI Task Fit",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "audience": "agent",
   "section": "tools",
   "description": "Small-business task routing: when AI should draft, run on API, stay human, or use a template first. Complements mf-tool-001 (software/automation), not replace it.",
@@ -430,6 +430,18 @@
       "AI drafts only when a human approves before send or spend.",
       "Route heated or high-stakes threads to human plus mf-tpl-001."
     ],
-    "operator_context": "Idaho shops: AI OK for first-draft status emails; not for pricing promises or install dates without owner review."
+    "operator_context": "Idaho shops: AI OK for first-draft status emails; not for pricing promises or install dates without owner review.",
+    "version": "1.2",
+    "not_for": "Buy/build automation decision (mf-tool-001) or CO boundary (mf-tool-003).",
+    "pairs_with": [
+      "mf-tool-001",
+      "mf-train-001",
+      "mf-tpl-001",
+      "mf-tpl-004"
+    ],
+    "trigger_phrases": [
+      "Deciding if AI should draft, classify, or stay out of a task entirely.",
+      "Need playbook: AI Task Fit"
+    ]
   }
 }

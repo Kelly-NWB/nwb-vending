@@ -1,0 +1,76 @@
+NWB-Vending x402 — setup note for future Grok
+============================================
+Updated: 2026-07-13
+
+WHAT THIS IS
+  Materials Factory = agent side hustle on NWB-Vending.com
+  59 SKUs: 1 train + 3 tools + 55 templates
+  Protocol: x402 on Base mainnet, USDC micropayments
+
+MONEY FLOW (do not confuse these)
+  PAY_TO (seller): 0x53799D42E72E3d41625006d310A55EC486DA5213 → Coinbase receive
+  Buyer: any wallet with USDC on Base (agents, test wallets) — NOT stored in repo
+
+PRICES (pennies)
+  Tools (mf-tool-001..003):     $0.05
+  Train + templates:            $0.08
+
+INFRA
+  Live host:     https://NWB-Vending.com
+  Preview:       https://kelly-nwb.github.io/nwb-vending/
+  Worker:        Cloudflare nwb-vending (gates all */full/* paths)
+  Facilitator:   https://api.cdp.coinbase.com/platform/v2/x402 (CDP — required for mainnet)
+  NOT x402.org/facilitator on mainnet (testnet only)
+
+CLOUDFLARE WORKER SECRETS (required for paid unlock)
+  CDP_API_KEY_ID
+  CDP_API_KEY_SECRET
+  FACILITATOR_URL = https://api.cdp.coinbase.com/platform/v2/x402
+  NETWORK = base
+  PAY_TO = 0x53799D42E72E3d41625006d310A55EC486DA5213
+
+KEY PATHS
+  Worker gates:     worker/index.ts (GATED_ROUTES)
+  Catalog:          2nd-pages/materials-factory/catalog-manifest.json
+  Health:           /__x402/health
+  Staging mirror:   D:\GrokBuild\Experiments\402 Biz\templates|tools
+
+SCRIPTS (run these — do not wing it)
+  node scripts/test-x402-pipe.mjs          → 402 gate + health (no wallet)
+  node scripts/test-x402-unlock.mjs        → full paid unlock (needs EVM_PRIVATE_KEY)
+  node scripts/verify-both-urls.mjs        → preview vs .com in sync
+  node scripts/tighten-x402-v12.mjs        → agent_signal v1.2 on packs
+  node scripts/enhance-x402-signal.mjs     → agent_signal v1.1 base (rerun after manifest edits)
+  node scripts/cut-prices.mjs              → penny pricing sweep
+
+CHECK / BALANCE (before claiming "done")
+  1. test-x402-pipe.mjs → ALL PASS
+  2. After worker/env change → redeploy Cloudflare, rerun pipe
+  3. After content change → spot-check one gated URL still returns 402 unpaid
+  4. Paid path proved 2026-07-13: mf-tool-001 $0.05, tx 0x8845dd2d... on Base
+  5. Do NOT change NETWORK without matching facilitator
+  6. Do NOT put CDP secrets or private keys in git
+  7. push28 only when Kelly confirms; verify-both-urls after push
+
+INVENTORY SIGNAL (agent discovery)
+  v1.1: use_when, decision_criteria, operator_context on full packs
+  v1.2: + not_for, pairs_with, trigger_phrases (tighten-x402-v12.mjs)
+  Manifest: job_spine chain, extension_clusters, extension_index
+
+SESSION WINS (2026-07-13)
+  - Pipe tested: 402 gate, manifest public, CDP settlement live
+  - Prices cut to pennies; worker + manifest + teasers synced
+  - CDP facilitator wired on worker (JWT auth when secrets set)
+  - First real sale: Should I Automate rules.json for $0.05 USDC
+  - test-x402-unlock.mjs buyer script (viem wallet client)
+  - Removed broken Cloudflare GitHub Action (email spam)
+  - agent_signal v1.2 tighten pass
+
+NEXT (not done here)
+  - Marketplace listing: x402scan, CDP Bazaar discovery
+  - Optional: wrangler.jsonc FACILITATOR_URL sync with dashboard (cosmetic)
+
+FOR FUTURE GROK
+  Read this file first. Run test-x402-pipe.mjs before and after x402 changes.
+  Seller wallet = Coinbase PAY_TO. Buyer wallet = ephemeral test only.
+  Tighten existing SKUs; do not add inventory unless Kelly asks.

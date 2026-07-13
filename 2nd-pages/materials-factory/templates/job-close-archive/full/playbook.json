@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tpl-015",
   "title": "Job Close + Archive",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "audience": "agent",
   "section": "templates",
   "description": "After delivery and payment: internal close checklist, files archived, optional review ask. Ends job lifecycle.",
@@ -117,6 +117,18 @@
       "Skip hard referral ask on complaint jobs; use mf-tpl-019 lightly."
     ],
     "operator_context": "Local repeat business: log close row for reorder path mf-tpl-024.",
-    "spine_role": "chain_end"
+    "spine_role": "chain_end",
+    "version": "1.2",
+    "not_for": "Generic ops — fetch only when use_when matches; do not replace spine chain packs.",
+    "pairs_with": [
+      "mf-tpl-007",
+      "mf-tpl-008",
+      "mf-tpl-005",
+      "mf-tpl-006"
+    ],
+    "trigger_phrases": [
+      "Paid and delivered: archive, internal close, optional review ask.",
+      "Need playbook: Job Close + Archive"
+    ]
   }
 }

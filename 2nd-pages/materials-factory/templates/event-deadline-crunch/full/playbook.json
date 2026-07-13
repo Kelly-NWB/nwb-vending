@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tpl-053",
   "title": "Event / Trade Show Deadline",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "audience": "agent",
   "section": "templates",
   "description": "Event / Trade Show Deadline for small-business job spine.",
@@ -54,6 +54,17 @@
     ],
     "operator_context": "Treasure Valley small shop: keep scripts short; log every branch.",
     "spine_anchor": "mf-tpl-021",
-    "cluster": "events_terms"
+    "cluster": "events_terms",
+    "version": "1.2",
+    "not_for": "Spine chain step only when mf-tpl-021 context applies — not a substitute for chain order.",
+    "pairs_with": [
+      "mf-tpl-021",
+      "mf-tpl-011",
+      "mf-tpl-007"
+    ],
+    "trigger_phrases": [
+      "Hard event or trade show date",
+      "Need playbook: Event / Trade Show Deadline"
+    ]
   }
 }

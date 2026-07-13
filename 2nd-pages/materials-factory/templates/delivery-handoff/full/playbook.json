@@ -1,7 +1,7 @@
 {
   "artifact": "mf-tpl-007",
   "title": "Delivery + Handoff",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "audience": "agent",
   "section": "templates",
   "description": "Job done: confirm delivery, handoff assets, close loop, log. After production, before archive.",
@@ -125,6 +125,20 @@
       "Issue same day gets honest plan, not silence."
     ],
     "operator_context": "Idaho winter: note freeze handling on vinyl and pickup hours on short winter days.",
-    "spine_role": "chain"
+    "spine_role": "chain",
+    "version": "1.2",
+    "not_for": "Generic ops — fetch only when use_when matches; do not replace spine chain packs.",
+    "pairs_with": [
+      "mf-tpl-006",
+      "mf-tpl-008",
+      "mf-tpl-001",
+      "mf-tool-003",
+      "mf-tpl-005",
+      "mf-tpl-009"
+    ],
+    "trigger_phrases": [
+      "Job ready to leave shop: notify, handoff, confirm receipt, unpaid hold.",
+      "Need playbook: Delivery + Handoff"
+    ]
   }
 }

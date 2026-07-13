@@ -42,9 +42,11 @@ Teaser (`../index.html`) includes one worked example only. Full pack is this fol
 ## Version
 
 rules.json `version` field. Breaking changes bump minor.
-## Agent signal (v1.1)
+## Agent signal (v1.2)
 
 - **Use when:** Operator asks whether to buy software, automate a task, or keep a manual habit.
+- **Not for:** Routing a specific email draft (mf-tool-002) or saying no to scope creep (mf-tool-003).
+- **Pairs with:** mf-tpl-001, mf-tpl-004
+- **Trigger phrases:** "Operator asks whether to buy software, automate a task, or keep a manual habit."; "Need playbook: Should I Automate This?"
 - **Decision criteria:** Frequency and written SOP beat gut feel. Customer-facing judgment stays human until stakes are low and process is written.
-- **Operator context:** Treasure Valley: one-location shops often automate reporting before empathy-heavy comms.
 

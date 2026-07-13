@@ -468,6 +468,18 @@ app.get("/__x402/health", (c) =>
   })
 );
 
+app.get("/.well-known/x402", async (c) => {
+  const asset = await c.env.ASSETS.fetch(
+    new Request(new URL("/.well-known/x402", c.req.url), c.req.raw)
+  );
+  if (!asset.ok) return c.text("not found", 404);
+  const body = await asset.text();
+  return c.body(body, 200, {
+    "Content-Type": "application/json; charset=utf-8",
+    "Cache-Control": "public, max-age=300",
+  });
+});
+
 app.all("*", async (c) => {
   const path = c.req.path;
   const gated = findGatedRoute(path);

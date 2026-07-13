@@ -1,9 +1,13 @@
+import { generateJwt } from "@coinbase/cdp-sdk/auth";
 import { Hono } from "hono";
 import { paymentMiddleware, type RoutesConfig } from "x402-hono";
+import type { FacilitatorConfig } from "x402/types";
 
 export interface Env {
   ASSETS: Fetcher;
   PAY_TO: string;
+  CDP_API_KEY_ID?: string;
+  CDP_API_KEY_SECRET?: string;
   NETWORK:
     | "base-sepolia"
     | "base"
@@ -416,6 +420,38 @@ function paymentRoutes(path: string, route: GatedRoute, network: Env["NETWORK"])
   return routes;
 }
 
+const CDP_FACILITATOR_HOST = "api.cdp.coinbase.com";
+const CDP_FACILITATOR_PATH = "/platform/v2/x402";
+
+function buildFacilitator(env: Env): FacilitatorConfig {
+  const defaultUrl = "https://x402.org/facilitator";
+  const url = (env.FACILITATOR_URL ?? defaultUrl) as `${string}://${string}`;
+
+  if (!env.CDP_API_KEY_ID || !env.CDP_API_KEY_SECRET) {
+    return { url };
+  }
+
+  const auth = async (method: "GET" | "POST", path: string) => {
+    const token = await generateJwt({
+      apiKeyId: env.CDP_API_KEY_ID!,
+      apiKeySecret: env.CDP_API_KEY_SECRET!,
+      requestMethod: method,
+      requestHost: CDP_FACILITATOR_HOST,
+      requestPath: `${CDP_FACILITATOR_PATH}${path}`,
+    });
+    return { Authorization: `Bearer ${token}` };
+  };
+
+  return {
+    url,
+    createAuthHeaders: async () => ({
+      verify: await auth("POST", "/verify"),
+      settle: await auth("POST", "/settle"),
+      supported: await auth("GET", "/supported"),
+    }),
+  };
+}
+
 const app = new Hono<{ Bindings: Env }>();
 
 app.get("/__x402/health", (c) =>
@@ -440,9 +476,7 @@ app.all("*", async (c) => {
     return c.env.ASSETS.fetch(c.req.raw);
   }
 
-  const facilitatorUrl = (c.env.FACILITATOR_URL ??
-    "https://x402.org/facilitator") as `${string}://${string}`;
-  const facilitator = { url: facilitatorUrl };
+  const facilitator = buildFacilitator(c.env);
 
   const routePath = normalizePath(path);
   const payMw = paymentMiddleware(

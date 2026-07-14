@@ -1,7 +1,9 @@
 import { generateJwt } from "@coinbase/cdp-sdk/auth";
-import { Hono } from "hono";
-import { paymentMiddleware, type RoutesConfig } from "x402-hono";
-import type { FacilitatorConfig } from "x402/types";
+import { HTTPFacilitatorClient, type RoutesConfig } from "@x402/core/server";
+import type { Network } from "@x402/core/types";
+import { ExactEvmScheme } from "@x402/evm/exact/server";
+import { paymentMiddleware, x402ResourceServer } from "@x402/hono";
+import { Hono, type MiddlewareHandler } from "hono";
 
 export interface Env {
   ASSETS: Fetcher;
@@ -393,27 +395,34 @@ const GATED_ROUTES: GatedRoute[] = [
   },
 ];
 
-function normalizePath(path: string): string {
-  if (path.length > 1) return path.replace(/\/+$/, "");
-  return path;
+const NETWORK_CAIP2: Partial<Record<Env["NETWORK"], string>> = {
+  base: "eip155:8453",
+  "base-sepolia": "eip155:84532",
+};
+
+function toCaip2Network(network: Env["NETWORK"]): Network {
+  return (NETWORK_CAIP2[network] ?? "eip155:8453") as Network;
 }
 
-function findGatedRoute(path: string): GatedRoute | undefined {
-  const p = normalizePath(path);
-  return GATED_ROUTES.find(
-    (r) => p === r.prefix || p.startsWith(r.prefix + "/")
-  );
-}
-
-function paymentRoutes(path: string, route: GatedRoute, network: Env["NETWORK"]): RoutesConfig {
-  const normalized = normalizePath(path);
+function buildRoutesConfig(
+  payTo: string,
+  network: Env["NETWORK"]
+): RoutesConfig {
+  const caip2 = toCaip2Network(network);
   const routes: RoutesConfig = {};
 
-  for (const key of [normalized, normalized + "/", path]) {
-    routes[key] = {
-      price: route.price,
-      network,
-      config: { description: route.description },
+  for (const route of GATED_ROUTES) {
+    const pattern = `GET ${route.prefix}/*`;
+    routes[pattern] = {
+      accepts: {
+        scheme: "exact",
+        price: route.price,
+        network: caip2,
+        payTo: payTo as `0x${string}`,
+        maxTimeoutSeconds: 300,
+      },
+      description: route.description,
+      mimeType: "application/json",
     };
   }
 
@@ -439,7 +448,7 @@ function facilitatorDiagnostics(env: Env) {
   };
 }
 
-function buildFacilitator(env: Env): FacilitatorConfig {
+function buildFacilitatorClient(env: Env): HTTPFacilitatorClient {
   const hasCdpAuth = !!(env.CDP_API_KEY_ID && env.CDP_API_KEY_SECRET);
   const url = (
     hasCdpAuth
@@ -448,7 +457,7 @@ function buildFacilitator(env: Env): FacilitatorConfig {
   ) as `${string}://${string}`;
 
   if (!hasCdpAuth) {
-    return { url };
+    return new HTTPFacilitatorClient({ url });
   }
 
   const auth = async (method: "GET" | "POST", path: string) => {
@@ -462,14 +471,36 @@ function buildFacilitator(env: Env): FacilitatorConfig {
     return { Authorization: `Bearer ${token}` };
   };
 
-  return {
+  return new HTTPFacilitatorClient({
     url,
     createAuthHeaders: async () => ({
       verify: await auth("POST", "/verify"),
       settle: await auth("POST", "/settle"),
       supported: await auth("GET", "/supported"),
     }),
-  };
+  });
+}
+
+let cachedPaymentMw: MiddlewareHandler | null = null;
+let cachedPaymentKey: string | null = null;
+
+function getPaymentMiddleware(env: Env): MiddlewareHandler {
+  const key = `${env.PAY_TO}:${env.NETWORK}:${env.CDP_API_KEY_ID ? "cdp" : "test"}`;
+  if (cachedPaymentMw && cachedPaymentKey === key) {
+    return cachedPaymentMw;
+  }
+
+  const caip2 = toCaip2Network(env.NETWORK);
+  const facilitator = buildFacilitatorClient(env);
+  const resourceServer = new x402ResourceServer(facilitator).register(
+    caip2,
+    new ExactEvmScheme()
+  );
+  const routes = buildRoutesConfig(env.PAY_TO, env.NETWORK);
+
+  cachedPaymentMw = paymentMiddleware(routes, resourceServer);
+  cachedPaymentKey = key;
+  return cachedPaymentMw;
 }
 
 const app = new Hono<{ Bindings: Env }>();
@@ -514,31 +545,34 @@ app.get("/openapi.json", async (c) => {
   });
 });
 
-app.all("*", async (c) => {
-  const path = c.req.path;
-  const gated = findGatedRoute(path);
-
-  if (!gated) {
-    return c.env.ASSETS.fetch(c.req.raw);
-  }
-
-  const facilitator = buildFacilitator(c.env);
-
-  const routePath = normalizePath(path);
-  const payMw = paymentMiddleware(
-    c.env.PAY_TO as `0x${string}`,
-    paymentRoutes(routePath, gated, c.env.NETWORK),
-    facilitator
+app.get("/favicon.ico", async (c) => {
+  const asset = await c.env.ASSETS.fetch(
+    new Request(new URL("/favicon.ico", c.req.url), c.req.raw)
   );
-
-  const result = await payMw(c, async () => {
-    /* payment verified — serve static asset below */
+  if (!asset.ok) {
+    const fallback = await c.env.ASSETS.fetch(
+      new Request(new URL("/assets/kcround.png", c.req.url), c.req.raw)
+    );
+    if (!fallback.ok) return c.text("not found", 404);
+    const body = await fallback.arrayBuffer();
+    return c.body(body, 200, {
+      "Content-Type": "image/png",
+      "Cache-Control": "public, max-age=86400",
+    });
+  }
+  const body = await asset.arrayBuffer();
+  const type = asset.headers.get("Content-Type") ?? "image/x-icon";
+  return c.body(body, 200, {
+    "Content-Type": type,
+    "Cache-Control": "public, max-age=86400",
   });
+});
 
-  if (result) return result;
-  if (c.res && c.res.status >= 400) return c.res;
-
-  return c.env.ASSETS.fetch(c.req.raw);
+app.all("*", async (c) => {
+  const payMw = getPaymentMiddleware(c.env);
+  return payMw(c, async () => {
+    c.res = await c.env.ASSETS.fetch(c.req.raw);
+  });
 });
 
 export default app;

@@ -12,11 +12,15 @@
 import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { wrapFetchWithPayment } from "x402-fetch";
-import { decodeXPaymentResponse } from "x402/shared";
+import {
+  wrapFetchWithPaymentFromConfig,
+  decodePaymentResponseHeader,
+} from "@x402/fetch";
+import { ExactEvmScheme } from "@x402/evm";
 import { createPublicClient, createWalletClient, formatUnits, http } from "viem";
 import { base } from "viem/chains";
 import { privateKeyToAccount } from "viem/accounts";
+import { exitClean } from "./exit-clean.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const MANIFEST = join(
@@ -117,7 +121,7 @@ if (onlyId) {
   targets = targets.filter((t) => t.id === onlyId);
   if (!targets.length) {
     console.error(`No entry for --only ${onlyId}`);
-    process.exit(1);
+    exitClean(1);
   }
 }
 
@@ -135,7 +139,7 @@ if (DRY_RUN) {
   for (const t of targets) {
     console.log(`  ${t.id}  ${t.price}  ${t.url}`);
   }
-  process.exit(0);
+  exitClean(0);
 }
 
 const pk = process.env.EVM_PRIVATE_KEY;
@@ -146,7 +150,7 @@ Missing EVM_PRIVATE_KEY. Set in terminal only (never in chat):
   $env:EVM_PRIVATE_KEY="0x..."
   node scripts/bulk-x402-index.mjs --skip mf-tool-001
 `);
-  process.exit(1);
+  exitClean(1);
 }
 
 let account;
@@ -154,7 +158,7 @@ try {
   account = privateKeyToAccount(normalizePrivateKey(pk));
 } catch (e) {
   console.error("Bad EVM_PRIVATE_KEY:", e.message);
-  process.exit(1);
+  exitClean(1);
 }
 
 const walletClient = createWalletClient({
@@ -162,7 +166,14 @@ const walletClient = createWalletClient({
   chain: base,
   transport: http(),
 });
-const fetchWithPay = wrapFetchWithPayment(fetch, walletClient, MAX_PAY_ATOMIC);
+const fetchWithPay = wrapFetchWithPaymentFromConfig(fetch, {
+  schemes: [
+    {
+      network: "eip155:8453",
+      client: new ExactEvmScheme(account),
+    },
+  ],
+});
 
 const bal = await usdcBalance(account.address);
 console.log(`  wallet:    ${account.address}`);
@@ -174,7 +185,7 @@ if (account.address.toLowerCase() !== EXPECTED_WALLET.toLowerCase()) {
 
 if (bal.raw < BigInt(Math.ceil(est * 1_000_000))) {
   console.error(`FAIL: need ~$${est.toFixed(2)} USDC, have $${bal.formatted}`);
-  process.exit(1);
+  exitClean(1);
 }
 
 console.log();
@@ -193,11 +204,14 @@ for (let i = 0; i < targets.length; i++) {
 
     if (res.status === 200) {
       const payHdr =
-        res.headers.get("x-payment-response") ||
-        res.headers.get("X-PAYMENT-RESPONSE");
+        res.headers.get("payment-response") ||
+        res.headers.get("PAYMENT-RESPONSE");
       if (VERBOSE && payHdr) {
         try {
-          console.log("\n  settled:", JSON.stringify(decodeXPaymentResponse(payHdr)));
+          console.log(
+            "\n  settled:",
+            JSON.stringify(decodePaymentResponseHeader(payHdr))
+          );
         } catch {
           /* ignore */
         }
@@ -233,7 +247,7 @@ If every buy fails:
      with X402_URL set to the failing pack URL.
   3. Re-run with --only <id> --verbose and read the error line above.
 `);
-  process.exit(1);
+  exitClean(1);
 }
 
 console.log(`

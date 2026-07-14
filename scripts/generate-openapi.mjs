@@ -79,6 +79,10 @@ const spec = {
     version: "1.2.0",
     description:
       "x402 agent inventory: training, tools, and template packs for small-business ops.",
+    contact: {
+      name: "NWB Vending",
+      email: "NWBVending@gmail.com",
+    },
     "x-guidance":
       "Discover packs via catalog-manifest.json. Each GET path returns a paid JSON artifact after x402 USDC payment on Base. Start with catalog-manifest.json (public) for routing; fetch primary JSON files listed here when use_when matches.",
   },

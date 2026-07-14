@@ -551,7 +551,7 @@ app.get("/favicon.ico", async (c) => {
   );
   if (!asset.ok) {
     const fallback = await c.env.ASSETS.fetch(
-      new Request(new URL("/assets/kcround.png", c.req.url), c.req.raw)
+      new Request(new URL("/assets/nwb-logo.png", c.req.url), c.req.raw)
     );
     if (!fallback.ok) return c.text("not found", 404);
     const body = await fallback.arrayBuffer();

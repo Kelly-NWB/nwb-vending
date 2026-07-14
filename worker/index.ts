@@ -595,7 +595,13 @@ async function serveNwbFavicon(c: {
   body: (body: ArrayBuffer, status: number, headers: Record<string, string>) => Response;
   text: (body: string, status: number) => Response;
 }) {
-  for (const path of ["/favicon.png", "/favicon.ico", "/assets/nwb-logo.png"]) {
+  for (const path of [
+    "/favicon-32.png",
+    "/favicon-16.png",
+    "/favicon.png",
+    "/favicon.ico",
+    "/assets/nwb-logo.png",
+  ]) {
     const asset = await c.env.ASSETS.fetch(
       new Request(new URL(path, c.req.url), c.req.raw)
     );

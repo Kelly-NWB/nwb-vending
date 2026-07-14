@@ -7,7 +7,8 @@ Kelly says **push28** / **go live** = permission to `git push origin main`.
 1. `git push origin main`
 2. Wait ~60s
 3. `node scripts/verify-both-urls.mjs /2nd-pages/materials-factory/ mf-tpl-055` (or snippet from the edit)
-4. `node scripts/check-github-actions.mjs` — if FAIL, tell Kelly immediately (do not say "it's live")
+4. `node scripts/verify-x402-v2-live.mjs` — must end with `LIGHTS_OUT: PASS` (x402scan v2 gate)
+5. `node scripts/check-github-actions.mjs` — if FAIL, tell Kelly immediately (do not say "it's live")
 5. If verify FAILS → Cloudflare dashboard deploy or `npx.cmd wrangler login` + `npx.cmd wrangler deploy`
 
 **Never tell Kelly "it's live" after push alone.** Two URLs:

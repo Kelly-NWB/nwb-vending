@@ -1,6 +1,7 @@
 import { generateJwt } from "@coinbase/cdp-sdk/auth";
 import { HTTPFacilitatorClient, type RoutesConfig } from "@x402/core/server";
 import type { Network } from "@x402/core/types";
+import { declareDiscoveryExtension } from "@x402/extensions/bazaar";
 import { ExactEvmScheme } from "@x402/evm/exact/server";
 import { paymentMiddleware, x402ResourceServer } from "@x402/hono";
 import { Hono, type MiddlewareHandler } from "hono";
@@ -447,6 +448,25 @@ function buildRoutesConfig(
       },
       description: route.description,
       mimeType: "application/json",
+      extensions: declareDiscoveryExtension({
+        input: { pack_id: route.artifact },
+        inputSchema: {
+          properties: {
+            pack_id: {
+              type: "string",
+              const: route.artifact,
+              description: "Materials Factory catalog pack id",
+            },
+          },
+        },
+        output: {
+          example: {
+            artifact: route.artifact,
+            audience: "agent",
+            version: "2.0.0",
+          },
+        },
+      }),
     };
   }
 

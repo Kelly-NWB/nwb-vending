@@ -108,6 +108,22 @@ try {
       if (String(decoded.error || "").toLowerCase().includes("x-payment")) {
         fail("v1-leak", "v1 X-PAYMENT error text in payment-required payload");
       }
+      const bazaarInput =
+        decoded.extensions?.bazaar?.schema?.properties?.input?.properties
+          ?.queryParams;
+      if (!bazaarInput) {
+        fail("bazaar-input-schema", "missing extensions.bazaar input queryParams");
+      } else {
+        pass("bazaar-input-schema");
+      }
+      const bazaarOutput =
+        decoded.extensions?.bazaar?.schema?.properties?.output?.properties
+          ?.example;
+      if (!bazaarOutput) {
+        fail("bazaar-output-schema", "missing extensions.bazaar output example");
+      } else {
+        pass("bazaar-output-schema");
+      }
     } catch (e) {
       fail("payment-required-header", `decode error: ${e.message}`);
     }

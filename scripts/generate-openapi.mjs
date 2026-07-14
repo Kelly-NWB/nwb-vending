@@ -51,10 +51,17 @@ for (const e of manifest.entries) {
       },
       parameters: [
         {
-          name: "Accept",
-          in: "header",
+          name: "pack_id",
+          in: "query",
           required: false,
-          schema: { type: "string", default: "application/json" },
+          description:
+            "Catalog pack id (informational). Primary artifact is returned from the path after x402 payment.",
+          schema: {
+            type: "string",
+            enum: [e.id],
+            default: e.id,
+          },
+          example: e.id,
         },
       ],
       responses: {
@@ -62,7 +69,17 @@ for (const e of manifest.entries) {
           description: "Paid agent pack JSON",
           content: {
             "application/json": {
-              schema: { type: "object", additionalProperties: true },
+              schema: {
+                type: "object",
+                properties: {
+                  artifact: { type: "string" },
+                  title: { type: "string" },
+                  version: { type: "string" },
+                  audience: { type: "string", enum: ["agent"] },
+                },
+                required: ["artifact", "title", "audience"],
+                additionalProperties: true,
+              },
             },
           },
         },
@@ -76,7 +93,7 @@ const spec = {
   openapi: "3.1.0",
   info: {
     title: "NWB Vending Materials Factory",
-    version: "1.2.0",
+    version: "1.3.0",
     description:
       "x402 agent inventory: training, tools, and template packs for small-business ops.",
     contact: {

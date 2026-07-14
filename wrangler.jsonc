@@ -17,6 +17,6 @@
   "vars": {
     "PAY_TO": "0x53799D42E72E3d41625006d310A55EC486DA5213",
     "NETWORK": "base",
-    "FACILITATOR_URL": "https://x402.org/facilitator"
+    "FACILITATOR_URL": "https://api.cdp.coinbase.com/platform/v2/x402"
   }
 }

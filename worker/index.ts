@@ -420,14 +420,34 @@ function paymentRoutes(path: string, route: GatedRoute, network: Env["NETWORK"])
   return routes;
 }
 
+const CDP_FACILITATOR_URL = "https://api.cdp.coinbase.com/platform/v2/x402";
 const CDP_FACILITATOR_HOST = "api.cdp.coinbase.com";
 const CDP_FACILITATOR_PATH = "/platform/v2/x402";
+const TESTNET_FACILITATOR_URL = "https://x402.org/facilitator";
+
+function facilitatorDiagnostics(env: Env) {
+  const hasCdpAuth = !!(env.CDP_API_KEY_ID && env.CDP_API_KEY_SECRET);
+  const configuredUrl = env.FACILITATOR_URL ?? TESTNET_FACILITATOR_URL;
+  const effectiveUrl = hasCdpAuth ? CDP_FACILITATOR_URL : configuredUrl;
+  return {
+    cdp_auth: hasCdpAuth,
+    facilitator_url: effectiveUrl,
+    mainnet_ready:
+      hasCdpAuth &&
+      env.NETWORK === "base" &&
+      effectiveUrl.includes("api.cdp.coinbase.com"),
+  };
+}
 
 function buildFacilitator(env: Env): FacilitatorConfig {
-  const defaultUrl = "https://x402.org/facilitator";
-  const url = (env.FACILITATOR_URL ?? defaultUrl) as `${string}://${string}`;
+  const hasCdpAuth = !!(env.CDP_API_KEY_ID && env.CDP_API_KEY_SECRET);
+  const url = (
+    hasCdpAuth
+      ? CDP_FACILITATOR_URL
+      : (env.FACILITATOR_URL ?? TESTNET_FACILITATOR_URL)
+  ) as `${string}://${string}`;
 
-  if (!env.CDP_API_KEY_ID || !env.CDP_API_KEY_SECRET) {
+  if (!hasCdpAuth) {
     return { url };
   }
 
@@ -454,19 +474,21 @@ function buildFacilitator(env: Env): FacilitatorConfig {
 
 const app = new Hono<{ Bindings: Env }>();
 
-app.get("/__x402/health", (c) =>
-  c.json({
+app.get("/__x402/health", (c) => {
+  const fac = facilitatorDiagnostics(c.env);
+  return c.json({
     ok: true,
     service: "nwb-vending",
     network: c.env.NETWORK,
+    ...fac,
     gated_routes: GATED_ROUTES.map((r) => ({
       prefix: r.prefix,
       price: r.price,
       artifact: r.artifact,
     })),
     pay_to_suffix: c.env.PAY_TO?.slice(-6) ?? null,
-  })
-);
+  });
+});
 
 app.get("/.well-known/x402", async (c) => {
   const asset = await c.env.ASSETS.fetch(

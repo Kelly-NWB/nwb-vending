@@ -1,0 +1,2912 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "NWB Vending Materials Factory",
+    "version": "1.2.0",
+    "description": "x402 agent inventory: training, tools, and template packs for small-business ops.",
+    "x-guidance": "Discover packs via catalog-manifest.json. Each GET path returns a paid JSON artifact after x402 USDC payment on Base. Start with catalog-manifest.json (public) for routing; fetch primary JSON files listed here when use_when matches."
+  },
+  "servers": [
+    {
+      "url": "https://nwb-vending.com"
+    }
+  ],
+  "x-discovery": {
+    "ownershipProofs": [
+      "0x53799D42E72E3d41625006d310A55EC486DA5213"
+    ]
+  },
+  "paths": {
+    "/2nd-pages/materials-factory/training/llm-api-bootcamp/full/playbook.json": {
+      "get": {
+        "operationId": "mf-train-001",
+        "summary": "LLM API Bootcamp",
+        "description": "Materials Factory training pack mf-train-001. Paid JSON for agents.",
+        "tags": [
+          "training"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/tools/should-i-automate/full/rules.json": {
+      "get": {
+        "operationId": "mf-tool-001",
+        "summary": "Should I Automate This?",
+        "description": "Deterministic rubric: should this task stay manual, use a template, gather data, or automate? Built for ops-heavy small business.",
+        "tags": [
+          "tools"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.05"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/tools/ai-task-fit/full/rules.json": {
+      "get": {
+        "operationId": "mf-tool-002",
+        "summary": "AI Task Fit",
+        "description": "Route tasks to AI draft, human-only, or template path. Pairs with job spine comms packs.",
+        "tags": [
+          "tools"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.05"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/tools/scope-creep-say-no/full/rules.json": {
+      "get": {
+        "operationId": "mf-tool-003",
+        "summary": "Scope Creep / Say-No",
+        "description": "Say-no and CO routing rubric for scope creep. Cross-links mf-tpl-012 and quote gate.",
+        "tags": [
+          "tools"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.05"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/complaint-recovery-playbook/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-001",
+        "summary": "Customer Complaint Recovery",
+        "description": "Complaint recovery spine route: severity branches, templates, log rows. Use before treating anger as new intake.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/employee-onboarding-kit/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-002",
+        "summary": "Rapid Employee Onboarding",
+        "description": "Rapid onboarding by role: templates, buddy, Day 7/30 checkpoints. HR adjacent to job spine.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/hiring-character-gauge/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-003",
+        "summary": "Hiring Character Gauge",
+        "description": "Three-question character gauge with scored examples. Routes hires to mf-tpl-002 onboarding.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/client-intake-playbook/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-004",
+        "summary": "Client Intake Playbook",
+        "description": "Job spine entry: classify intake, first touch within SLA, qualify before mf-tpl-006 quote.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/weekly-ops-review/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-005",
+        "summary": "Weekly 15-Min Ops Review",
+        "description": "15-minute ops overlay for spine. Five blocks, variants, cross-links payment and queue packs.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/quote-estimate-gate/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-006",
+        "summary": "Quote / Estimate Gate",
+        "description": "Quote gate: branches for rush, repeat, partial scope. Chains from mf-tpl-004 intake.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/delivery-handoff/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-007",
+        "summary": "Delivery + Handoff",
+        "description": "Delivery and handoff templates with unpaid hold and issue branches. Precedes mf-tpl-015 close.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/invoice-payment-chase/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-008",
+        "summary": "Invoice + Payment Chase",
+        "description": "Invoice and payment chase sequence. Pairs mf-tpl-005 money block and mf-tpl-029 plans.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/vendor-issue/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-009",
+        "summary": "Vendor Issue Playbook",
+        "description": "Vendor issue playbook with client delay scripts. Mid-spine between production and delivery.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/project-kickoff/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-010",
+        "summary": "Project Kickoff Checklist",
+        "description": "Post-accept kickoff checklist. Bridges quote win to proof and production handoffs.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/proof-approval-gate/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-011",
+        "summary": "Proof + Client Approval Gate",
+        "description": "Proof approval gate with written approval rule. Release trigger for floor and mf-tpl-017.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/change-order-mid-job/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-012",
+        "summary": "Change Order Mid-Job",
+        "description": "Change order mid-job scripts. Works with mf-tool-003 and mf-tpl-013 updates.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/client-status-update/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-013",
+        "summary": "Client Status Update",
+        "description": "Client status update templates. Spine glue during active jobs.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/quote-follow-up/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-014",
+        "summary": "Quote Follow-Up",
+        "description": "Quote follow-up sequence between mf-tpl-006 send and mf-tpl-010 accept.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/job-close-archive/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-015",
+        "summary": "Job Close + Archive",
+        "description": "Job close and archive checklist. Spine terminal node before growth extensions.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/deposit-reminder/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-016",
+        "summary": "Deposit Reminder",
+        "description": "Deposit missing after accept. Extension on mf-tpl-010. Deterministic branches and templates.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/production-handoff-internal/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-017",
+        "summary": "Production Handoff (Internal)",
+        "description": "Proof approved, hand to floor. Extension on mf-tpl-011. Deterministic branches and templates.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/lost-lead-archive/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-018",
+        "summary": "Lost Lead Archive",
+        "description": "Lead dead: ghost, price, timing. Extension on mf-tpl-014. Deterministic branches and templates.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/referral-ask/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-019",
+        "summary": "Referral Ask",
+        "description": "Happy close, light referral ask. Extension on mf-tpl-015. Deterministic branches and templates.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/warranty-support-touch/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-020",
+        "summary": "Warranty + Support First Touch",
+        "description": "Support question, not full complaint. Extension on mf-tpl-001. Deterministic branches and templates.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/rush-client-comms/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-021",
+        "summary": "Rush Client Comms",
+        "description": "Rush fee and hard proof windows. Extension on mf-tpl-013. Deterministic branches and templates.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/meeting-phone-qualify/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-022",
+        "summary": "Meeting / Phone Qualify",
+        "description": "Vague lead needs phone qualify. Extension on mf-tpl-004. Deterministic branches and templates.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/not-a-fit-referral/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-023",
+        "summary": "Not-a-Fit Referral",
+        "description": "Wrong fit: refer out polite. Extension on mf-tpl-004. Deterministic branches and templates.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/reorder-repeat-client/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-024",
+        "summary": "Reorder Repeat Client",
+        "description": "Repeat client reorder path. Extension on mf-tpl-006. Deterministic branches and templates.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/subcontractor-handoff/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-025",
+        "summary": "Subcontractor Handoff",
+        "description": "Sub late or QC fail. Extension on mf-tpl-009. Deterministic branches and templates.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/qc-fail-rework/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-026",
+        "summary": "QC Fail / Rework (Internal)",
+        "description": "Internal QC fail before ship. Extension on mf-tpl-017. Deterministic branches and templates.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/client-onboarding-first/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-027",
+        "summary": "Client Onboarding (First Job)",
+        "description": "First job, not repeat. Extension on mf-tpl-010. Deterministic branches and templates.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/estimate-revision/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-028",
+        "summary": "Estimate Revision / Change Quote",
+        "description": "Revise quote scope or price. Extension on mf-tpl-006. Deterministic branches and templates.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/payment-plan-partial/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-029",
+        "summary": "Payment Plan / Partial Terms",
+        "description": "Partial payment plan. Extension on mf-tpl-008. Deterministic branches and templates.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/job-pause-hold/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-030",
+        "summary": "Job Pause / Client Hold",
+        "description": "Client or internal pause. Extension on mf-tpl-013. Deterministic branches and templates.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/post-delivery-survey/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-031",
+        "summary": "Post-Delivery Survey (Light)",
+        "description": "Light NPS after delivery. Extension on mf-tpl-007. Deterministic branches and templates.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/emergency-after-hours/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-032",
+        "summary": "Emergency After-Hours Reply",
+        "description": "After-hours message triage. Extension on mf-tpl-001. Deterministic branches and templates.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/job-priority-queue/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-033",
+        "summary": "Multi-Job Priority Queue (Internal)",
+        "description": "Reprioritize queue internal. Extension on mf-tpl-005. Deterministic branches and templates.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/client-asset-request/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-034",
+        "summary": "Client Asset / File Request",
+        "description": "Missing logo or file. Extension on mf-tpl-011. Deterministic branches and templates.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/pickup-will-call/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-035",
+        "summary": "Pickup / Will-Call Handoff",
+        "description": "Will-call pickup ready. Extension on mf-tpl-007. Deterministic branches and templates.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/install-on-site-coord/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-036",
+        "summary": "Install / On-Site Coordination",
+        "description": "Install schedule and access. Extension on mf-tpl-007. Deterministic branches and templates.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/shipping-tracking-update/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-037",
+        "summary": "Shipping / Tracking Client Update",
+        "description": "Tracking and carrier delay. Extension on mf-tpl-007. Deterministic branches and templates.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/progress-photo-update/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-038",
+        "summary": "Progress Photo Update (Mid-Job)",
+        "description": "Mid-job photo for anxious client. Extension on mf-tpl-013. Deterministic branches and templates.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/goodwill-credit/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-039",
+        "summary": "Goodwill Credit / Courtesy Discount",
+        "description": "Courtesy credit, not full refund fight. Extension on mf-tpl-001. Deterministic branches and templates.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/refund-cancellation/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-040",
+        "summary": "Refund / Cancellation Policy",
+        "description": "Cancel or refund policy branch. Extension on mf-tpl-008. Deterministic branches and templates.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/coi-insurance-request/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-041",
+        "summary": "COI / Insurance Certificate Request",
+        "description": "COI before install. Extension on mf-tpl-010. Deterministic branches and templates.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/design-revision-loop/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-042",
+        "summary": "Design Revision Loop (Pre-Proof)",
+        "description": "Design rev before proof. Extension on mf-tpl-011. Deterministic branches and templates.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/physical-sample-proof/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-043",
+        "summary": "Physical Sample / Color Proof Approval",
+        "description": "Physical sample approve. Extension on mf-tpl-011. Deterministic branches and templates.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/damage-transit-claim/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-044",
+        "summary": "Damage in Transit Claim",
+        "description": "Damage in transit. Extension on mf-tpl-007. Deterministic branches and templates.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/retainer-ongoing/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-045",
+        "summary": "Retainer / Ongoing Service Client",
+        "description": "Retainer client monthly touch. Extension on mf-tpl-006. Deterministic branches and templates.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/net-terms-credit-app/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-046",
+        "summary": "Net Terms / Credit Application",
+        "description": "Net terms application. Extension on mf-tpl-008. Deterministic branches and templates.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/seasonal-capacity-notice/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-047",
+        "summary": "Seasonal Capacity / Lead Time Notice",
+        "description": "Honest lead time on quote. Extension on mf-tpl-006. Deterministic branches and templates.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/multi-location-coord/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-048",
+        "summary": "Multi-Location Client Coordination",
+        "description": "Multi-site one brand. Extension on mf-tpl-007. Deterministic branches and templates.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/permit-municipality/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-049",
+        "summary": "Permit / Municipality Coordination",
+        "description": "Permit hold before install. Extension on mf-tpl-036. Deterministic branches and templates.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/weather-delay-outdoor/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-050",
+        "summary": "Weather Delay (Outdoor Work)",
+        "description": "Outdoor install weather delay. Extension on mf-tpl-036. Deterministic branches and templates.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/contact-account-transfer/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-051",
+        "summary": "Client Contact / Account Transfer",
+        "description": "Contact left company. Extension on mf-tpl-004. Deterministic branches and templates.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/finished-goods-storage/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-052",
+        "summary": "Finished Goods Storage Hold",
+        "description": "Finished goods storage hold. Extension on mf-tpl-007. Deterministic branches and templates.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/event-deadline-crunch/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-053",
+        "summary": "Event / Trade Show Deadline",
+        "description": "Hard event or trade show date. Extension on mf-tpl-021. Deterministic branches and templates.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/portfolio-photo-permission/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-054",
+        "summary": "Portfolio / Photo Permission Ask",
+        "description": "Portfolio photo permission. Extension on mf-tpl-015. Deterministic branches and templates.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/tax-exempt-cert/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-055",
+        "summary": "Tax Exempt Certificate Request",
+        "description": "Tax exempt cert on file. Extension on mf-tpl-006. Deterministic branches and templates.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    }
+  }
+}

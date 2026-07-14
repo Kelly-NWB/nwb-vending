@@ -9,6 +9,11 @@ const HOST = (process.env.X402_HOST || "https://nwb-vending.com").replace(/\/+$/
 const PROBE =
   process.env.X402_PROBE_URL ||
   `${HOST}/2nd-pages/materials-factory/tools/should-i-automate/full/rules.json`;
+const HEAD_PROBES = [
+  `${HOST}/2nd-pages/materials-factory/training/llm-api-bootcamp/full/playbook.json`,
+  `${HOST}/2nd-pages/materials-factory/templates/shipping-tracking-update/full/playbook.json`,
+  `${HOST}/2nd-pages/materials-factory/templates/progress-photo-update/full/playbook.json`,
+];
 const CACHE_BUST = `v=${Date.now()}`;
 
 const checks = [];
@@ -112,6 +117,24 @@ try {
     fail("v1-body", "response body still contains x402Version:1");
   } else {
     pass("no-v1-body");
+  }
+
+  for (const url of HEAD_PROBES) {
+    const slug = url.split("/").slice(-3, -1).join("/");
+    const headRes = await fetch(url, {
+      method: "HEAD",
+      signal: AbortSignal.timeout(TIMEOUT_MS),
+    });
+    const headPay =
+      headRes.headers.get("payment-required") ||
+      headRes.headers.get("PAYMENT-REQUIRED");
+    if (headRes.status !== 402) {
+      fail(`head-402:${slug}`, `got ${headRes.status}`);
+    } else if (!headPay) {
+      fail(`head-pay:${slug}`, "missing PAYMENT-REQUIRED");
+    } else {
+      pass(`head-402:${slug}`);
+    }
   }
 } catch (e) {
   fail("runtime", e.message || String(e));

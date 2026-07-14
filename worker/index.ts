@@ -404,6 +404,29 @@ function toCaip2Network(network: Env["NETWORK"]): Network {
   return (NETWORK_CAIP2[network] ?? "eip155:8453") as Network;
 }
 
+function normalizePath(path: string): string {
+  if (path.length > 1) return path.replace(/\/+$/, "");
+  return path;
+}
+
+function isGatedPath(path: string): boolean {
+  const p = normalizePath(path);
+  return GATED_ROUTES.some(
+    (r) => p === r.prefix || p.startsWith(r.prefix + "/")
+  );
+}
+
+function withNoStore(res: Response): Response {
+  const headers = new Headers(res.headers);
+  headers.set("Cache-Control", "private, no-store, no-cache, must-revalidate");
+  headers.set("CDN-Cache-Control", "no-store");
+  return new Response(res.body, {
+    status: res.status,
+    statusText: res.statusText,
+    headers,
+  });
+}
+
 function buildRoutesConfig(
   payTo: string,
   network: Env["NETWORK"]
@@ -412,7 +435,8 @@ function buildRoutesConfig(
   const routes: RoutesConfig = {};
 
   for (const route of GATED_ROUTES) {
-    const pattern = `GET ${route.prefix}/*`;
+    // All methods (GET, HEAD, etc.) — HEAD was bypassing paywall and serving cached 200.
+    const pattern = `* ${route.prefix}/*`;
     routes[pattern] = {
       accepts: {
         scheme: "exact",
@@ -569,10 +593,16 @@ app.get("/favicon.ico", async (c) => {
 });
 
 app.all("*", async (c) => {
+  const gated = isGatedPath(c.req.path);
   const payMw = getPaymentMiddleware(c.env);
-  return payMw(c, async () => {
-    c.res = await c.env.ASSETS.fetch(c.req.raw);
+  const out = await payMw(c, async () => {
+    const asset = await c.env.ASSETS.fetch(c.req.raw);
+    c.res = gated ? withNoStore(asset) : asset;
   });
+  if (gated && c.res) {
+    c.res = withNoStore(c.res);
+  }
+  return out;
 });
 
 export default app;

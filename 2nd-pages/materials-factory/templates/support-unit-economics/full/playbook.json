@@ -1,0 +1,93 @@
+{
+  "artifact": "mf-tpl-065",
+  "title": "Support Unit Economics Playbook",
+  "version": "1.2.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Roll labor burden into cost per support event: calls, emails, RMAs. Use for budget, QBR, and backbone argument.",
+  "mindset": {
+    "principle": "Backend support is structure. Unit cost makes the backbone visible.",
+    "mistakes": [
+      {
+        "id": "headcount-only",
+        "label": "Budget debate on FTE only",
+        "cost": "Miss channel shift from phone to email"
+      },
+      {
+        "id": "revenue-ignore",
+        "label": "Cut support without segment margin context",
+        "cost": "Save pennies, lose high-margin accounts"
+      }
+    ]
+  },
+  "event_types": [
+    {
+      "id": "inbound-call",
+      "label": "Inbound phone"
+    },
+    {
+      "id": "outbound-call",
+      "label": "Outbound phone"
+    },
+    {
+      "id": "email",
+      "label": "Email ticket"
+    },
+    {
+      "id": "rma",
+      "label": "RMA or return event"
+    },
+    {
+      "id": "chat",
+      "label": "Chat or async channel"
+    }
+  ],
+  "decision_branches": [
+    {
+      "id": "unit-cost-build",
+      "situation": "No cost per event model",
+      "action": "build-unit-table"
+    },
+    {
+      "id": "channel-shift",
+      "situation": "Email volume up, calls flat",
+      "action": "channel-mix-review"
+    },
+    {
+      "id": "budget-defense",
+      "situation": "Headcount cut proposed",
+      "action": "backbone-brief"
+    }
+  ],
+  "tracking": {
+    "csv_header": "period,event_type,volume,labor_cost,unit_cost,notes",
+    "sheet_tab_name": "support_unit_economics"
+  },
+  "related_artifacts": [
+    "mf-tpl-066",
+    "mf-tpl-005",
+    "mf-tpl-061",
+    "mf-tpl-067"
+  ],
+  "agent_signal": {
+    "use_when": "Budget or CFO review on support cost. Channel mix shifting. Need cost per call/email/RMA not FTE vibes.",
+    "decision_criteria": [
+      "Unit cost = labor burden / event volume per period.",
+      "Track channels separately.",
+      "Pair with forecast variance for volume denominator."
+    ],
+    "operator_context": "Unit economics wins backbone argument in budget fights.",
+    "version": "1.2",
+    "not_for": "Generic ops: fetch only when use_when matches; do not replace spine chain packs.",
+    "pairs_with": [
+      "mf-tpl-066",
+      "mf-tpl-005",
+      "mf-tpl-061",
+      "mf-tpl-067"
+    ],
+    "trigger_phrases": [
+      "Budget or CFO review on support cost. Channel mix shifting. Need cost per call/email/RMA not FTE vibes.",
+      "Need playbook: Support Unit Economics Playbook"
+    ]
+  }
+}

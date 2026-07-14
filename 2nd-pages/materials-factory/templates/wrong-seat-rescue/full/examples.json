@@ -1,0 +1,96 @@
+{
+  "artifact": "mf-tpl-056",
+  "version": "1.0.0",
+  "description": "Wrong seat rescue scenarios: mismatch, cross-pool move, SMB translations, false discipline, failed test.",
+  "examples": [
+    {
+      "id": "ex-technical-queue-rescue",
+      "context": "Tier-1 support hire late and flat on password resets. Fast on complex escalations when pulled in unofficially.",
+      "branch": "cross-pool-transfer",
+      "observation_days": 4,
+      "test_assignment": "Own one tier-3 escalation through resolution with customer update",
+      "test_result": "pass",
+      "new_seat": "Escalation and integration queue",
+      "resolution": "Top performer within weeks. Wrong seat, not lazy.",
+      "log_row": "2026-07-14,E-104,cross-pool-transfer,4,pass,escalation-queue,rescued,owner"
+    },
+    {
+      "id": "ex-print-proof-move",
+      "context": "Print shop: sharp pro slow on order entry, fast on complex proof fixes",
+      "branch": "full-reassign",
+      "observation_days": 3,
+      "test_assignment": "Rush multi-panel proof with client revision loop",
+      "test_result": "pass",
+      "new_seat": "Prepress / complex proofs",
+      "resolution": "Moved off data entry. On-time proof turnaround improved.",
+      "log_row": "2026-07-15,E-221,full-reassign,3,pass,prepress,rescued,owner"
+    },
+    {
+      "id": "ex-vending-telemetry",
+      "context": "Route filler only restocking snacks, fixes Dex export scripts on break",
+      "branch": "full-reassign",
+      "observation_days": 5,
+      "test_assignment": "Diagnose MDB error on problem machine with log capture",
+      "test_result": "pass",
+      "new_seat": "Telemetry and repair triage half-days",
+      "resolution": "Kept some route work, added technical block. Lateness stopped.",
+      "log_row": "2026-07-16,E-088,full-reassign,5,pass,telemetry-split,rescued,owner"
+    },
+    {
+      "id": "ex-discipline-not-mismatch",
+      "context": "Counter hire flat on easy and hard shifts, avoids accountability",
+      "branch": "discipline-path",
+      "observation_days": 4,
+      "test_assignment": "Own opening checklist plus one complaint call",
+      "test_result": "fail",
+      "new_seat": "n/a",
+      "resolution": "Documented coaching then exit. Not a wrong-seat case.",
+      "log_row": "2026-07-17,E-302,discipline-path,4,fail,n/a,exit,owner"
+    },
+    {
+      "id": "ex-test-failed-honest",
+      "context": "Office admin bored on filing, wanted client project work, test project missed deadline",
+      "branch": "reassign-failed",
+      "observation_days": 3,
+      "test_assignment": "Coordinate small install with vendor callbacks",
+      "test_result": "fail",
+      "new_seat": "n/a",
+      "resolution": "Honest fit talk. Moved to part-time filing with clean reference.",
+      "log_row": "2026-07-18,E-155,reassign-failed,3,fail,n/a,clean-exit,owner"
+    },
+    {
+      "id": "ex-cafe-register-to-ops",
+      "context": "Barista who codes bored on register, rebuilt broken scheduling sheet unofficially",
+      "branch": "test-challenge",
+      "observation_days": 3,
+      "test_assignment": "Fix vendor order spreadsheet and train one peer",
+      "test_result": "pass",
+      "new_seat": "Light ops / scheduling support 10 hrs/week",
+      "resolution": "Still some counter shifts. Energy returned.",
+      "log_row": "2026-07-19,E-044,test-challenge,3,pass,ops-split,rescued,owner"
+    },
+    {
+      "id": "ex-peer-asks-you",
+      "context": "Another lead asks you to take their failing tech and fix behavior",
+      "branch": "mismatch-suspected",
+      "observation_days": 0,
+      "test_assignment": "pending",
+      "test_result": "pending",
+      "new_seat": "pending",
+      "resolution": "Intake only. Observation scheduled. No write-up agreed yet.",
+      "log_row": "2026-07-20,E-901,mismatch-suspected,0,pending,pending,observe,owner",
+      "templates_used": ["peer-intake"]
+    },
+    {
+      "id": "ex-thirty-day-win",
+      "context": "After successful prepress move, 30-day check",
+      "branch": "full-reassign",
+      "observation_days": 30,
+      "test_result": "pass",
+      "new_seat": "Prepress / complex proofs",
+      "resolution": "Metrics green. Peer pull high. Celebrate.",
+      "log_row": "2026-08-15,E-221,full-reassign,30,pass,prepress,keep-seat,owner",
+      "templates_used": ["thirty-day-check", "new-seat-metrics"]
+    }
+  ]
+}

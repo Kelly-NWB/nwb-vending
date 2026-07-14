@@ -1,0 +1,26 @@
+{
+  "artifact": "mf-tpl-063",
+  "version": "1.2.0",
+  "templates": [
+    {
+      "id": "weekly-segment-row",
+      "use_when": "start-segment-log",
+      "body": "VOLUME BY SEGMENT · Week _______\nSegment: _______________\nOffered: ___  Answered: ___  Abandoned: ___  Abandon %: ___\nNotes: _______________"
+    },
+    {
+      "id": "mix-shift-memo",
+      "use_when": "segment-variance",
+      "body": "MIX SHIFT MEMO\nWeek: _______  Author: _______________\n\nSegment moving: _______________  Delta vs 4-wk avg: ___%\nLikely cause: _______________\nStaffing action: _______________"
+    },
+    {
+      "id": "segment-abandon-review",
+      "use_when": "abandon-spike",
+      "body": "SEGMENT ABANDON REVIEW\nSegment: _______________  Week: _______\n\nAbandon %: ___  Prior 4-wk avg: ___\nConcurrent staffing: ___  ASA: ___\nAction: _______________"
+    },
+    {
+      "id": "rollup-to-correlation",
+      "use_when": "start-segment-log",
+      "body": "ROLLUP TO OPS CORRELATION\nCopy company totals to mf-tpl-061 weekly row after segment rows validated."
+    }
+  ]
+}

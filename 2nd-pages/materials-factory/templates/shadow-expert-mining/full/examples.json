@@ -1,0 +1,71 @@
+{
+  "artifact": "mf-tpl-059",
+  "version": "1.0.0",
+  "description": "Shadow expert: metric mismatch, hub confirmed, question sprint, backlog, role adjust.",
+  "examples": [
+    {
+      "id": "ex-tier2-unofficial-hub",
+      "context": "Structured support floor. One tech red on availability, green on resolution time and quality. Peers line up at cube.",
+      "branch": "shadow-hub-confirmed",
+      "templates_used": ["metric-mismatch-hold", "observation-log", "reframe-conversation"],
+      "resolution": "Reframed as SME hub. Question sprint started. No discipline.",
+      "log_row": "2026-07-20,E-301,shadow-hub-confirmed,3,0,pending,owner"
+    },
+    {
+      "id": "ex-sprint-three-themes",
+      "context": "One week capture: same VPN error, same form ID, same approval loop",
+      "branch": "build-from-themes",
+      "templates_used": ["question-capture-sheet", "backlog-ticket"],
+      "resolution": "Three backlog items: FAQ, tool rubric, training slice. Expert credited.",
+      "log_row": "2026-07-28,E-301,mine-repeat-questions,3,3,backlog,owner"
+    },
+    {
+      "id": "ex-office-hours-metric-exempt",
+      "context": "Leadership approves two daily office-hour blocks off phone queue",
+      "branch": "formalize-hub",
+      "templates_used": ["role-adjustment-proposal", "team-announce-office-hours"],
+      "resolution": "Availability metric exempt during blocks. Hub formalized.",
+      "log_row": "2026-08-05,E-301,formalize-hub,3,3,office-hours,owner"
+    },
+    {
+      "id": "ex-print-shop-estimator",
+      "context": "Estimator bad on quote turnaround metric, peers ask prepress fixes all day",
+      "branch": "shadow-hub-confirmed",
+      "templates_used": ["reframe-conversation", "question-capture-sheet"],
+      "resolution": "Themes became template pack candidates for repeat client proofs.",
+      "log_row": "2026-08-08,E-112,shadow-hub-confirmed,2,2,backlog,owner"
+    },
+    {
+      "id": "ex-vending-route-tech",
+      "context": "Route tech low on stops-per-hour, high on machine diagnostics helps",
+      "branch": "formalize-hub",
+      "templates_used": ["role-adjustment-proposal"],
+      "resolution": "Half-day telemetry SME role. Route split adjusted.",
+      "log_row": "2026-08-10,E-088,formalize-hub,1,1,role-split,owner"
+    },
+    {
+      "id": "ex-false-alarm-avoidance",
+      "context": "Low availability, no peer queue, long breaks observed",
+      "branch": "actually-underperforming",
+      "templates_used": ["standard-performance"],
+      "resolution": "Not shadow expert. Standard coaching path.",
+      "log_row": "2026-08-12,E-205,actually-underperforming,0,0,coaching,owner"
+    },
+    {
+      "id": "ex-wrong-seat-overlap",
+      "context": "Expert bored on phone work but loves helping",
+      "branch": "shadow-hub-confirmed",
+      "templates_used": ["reframe-conversation"],
+      "resolution": "Also evaluate mf-tpl-056 for seat fit after hub formalized.",
+      "log_row": "2026-08-14,E-301,shadow-hub-confirmed,2,1,both-paths,owner"
+    },
+    {
+      "id": "ex-materials-factory-meta",
+      "context": "Repeat questions from sprint match Materials Factory gap list",
+      "branch": "build-from-themes",
+      "templates_used": ["backlog-ticket"],
+      "resolution": "Internal: new mf-tpl candidate from theme rank #1.",
+      "log_row": "2026-08-15,E-301,build-from-themes,5,1,catalog-gap,owner"
+    }
+  ]
+}

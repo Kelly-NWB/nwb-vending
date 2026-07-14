@@ -1,0 +1,26 @@
+{
+  "artifact": "mf-tpl-066",
+  "version": "1.2.0",
+  "templates": [
+    {
+      "id": "assumption-registry",
+      "use_when": "build-forecast",
+      "body": "FORECAST ASSUMPTION REGISTRY\nQueue: _______________\n\nAssumption: _______________  Value: ___  Source: _______________\nOwner: _______________  Review date: _______"
+    },
+    {
+      "id": "variance-memo",
+      "use_when": "variance-review",
+      "body": "FORECAST VARIANCE MEMO\nWeek: _______  Queue: _______________\nForecast: ___  Actual: ___  Variance: ___%\n\nLikely assumption broken: _______________\nFix: _______________"
+    },
+    {
+      "id": "staffing-schedule-patch",
+      "use_when": "schedule-adjust",
+      "body": "STAFFING SCHEDULE PATCH\nQueue: _______________  Effective: _______\n\nChange: _______________\nLinked assumption update: _______________\nASA goal check in 2 weeks: _______"
+    },
+    {
+      "id": "forecast-summary-row",
+      "use_when": "build-forecast",
+      "body": "FORECAST SUMMARY ROW\nPeriod: _______  Queue: _______________\nForecast calls: ___  Staff hours planned: ___  AHT assumption: ___"
+    }
+  ]
+}

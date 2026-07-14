@@ -1,0 +1,217 @@
+{
+  "artifact": "mf-tpl-056",
+  "title": "Wrong Seat Rescue Playbook",
+  "version": "1.2.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Rescue talented people stuck in the wrong seat. Watch before discipline. Test on hard work, reassign, set new metrics. Not a PIP for boredom.",
+  "mindset": {
+    "principle": "Wrong seat looks like bad employee. Watch before you punish.",
+    "mistakes": [
+      {
+        "id": "write-up-first",
+        "label": "Discipline path before observation",
+        "cost": "You lose a strong person and train the team to hide boredom"
+      },
+      {
+        "id": "charm-test",
+        "label": "One good day after a pep talk",
+        "cost": "Temporary spike, seat unchanged, relapse in a week"
+      },
+      {
+        "id": "dump-work",
+        "label": "Move without a test assignment",
+        "cost": "New seat fails, you cannot tell mismatch from overload"
+      },
+      {
+        "id": "public-shame",
+        "label": "Team-visible demotion or joke",
+        "cost": "Trust gone even if reassignment works"
+      }
+    ]
+  },
+  "scope": {
+    "team_size": "2-30",
+    "focus": "SMB ops, support queues, shop floor vs office, technical vs repetitive work",
+    "not_for": [
+      "enterprise HR legal programs",
+      "union grievance processes",
+      "immediate safety or theft terminations",
+      "performance issues with clear policy violations and no skill mismatch signal"
+    ]
+  },
+  "mismatch_signals": [
+    "Fast on hard unofficial help, slow or sloppy on assigned easy work",
+    "Lights up when given one complex task, flat on repetitive volume",
+    "Late or checked out on boring shifts, on time when interesting work appears",
+    "Resume or past role shows technical depth, current seat is entry-level repetition",
+    "Peers ask them for help on hard problems outside their title"
+  ],
+  "discipline_signals": [
+    "Equal disengagement on easy and hard work",
+    "Avoidance of any accountability, not just boring tasks",
+    "Policy violations independent of task type",
+    "Test challenge failed with no effort or curiosity",
+    "Observation window shows pattern across multiple managers and seats"
+  ],
+  "observation_window": {
+    "days": "3-5",
+    "rules": [
+      "No write-up during observation unless safety or theft",
+      "Log daily: task type, energy, speed, unofficial help, attendance",
+      "Sit with them at least one full shift or equivalent if possible",
+      "Talk to one peer who works adjacent, not gossip chain"
+    ],
+    "fields": [
+      "date",
+      "task_type",
+      "complexity",
+      "energy",
+      "speed",
+      "unofficial_help",
+      "attendance_note"
+    ]
+  },
+  "decision_branches": [
+    {
+      "id": "mismatch-suspected",
+      "situation": "Manager says not working out but skill depth or spark visible",
+      "action": "start-observation"
+    },
+    {
+      "id": "observation-confirmed",
+      "situation": "3-5 days show bored-in-wrong-seat pattern",
+      "action": "private-convo-bored"
+    },
+    {
+      "id": "test-challenge",
+      "situation": "They accept private conversation, willing to try",
+      "action": "assign-one-hard-task"
+    },
+    {
+      "id": "full-reassign",
+      "situation": "Test challenge succeeded within agreed window",
+      "action": "move-seat-new-metrics"
+    },
+    {
+      "id": "cross-pool-transfer",
+      "situation": "Another team or queue owns the better seat",
+      "action": "manager-handoff-transfer"
+    },
+    {
+      "id": "reassign-failed",
+      "situation": "Test challenge failed with effort visible but fit wrong",
+      "action": "honest-exit-or-alt-seat"
+    },
+    {
+      "id": "discipline-path",
+      "situation": "Observation shows discipline pattern not mismatch",
+      "action": "document-and-exit-or-pip"
+    }
+  ],
+  "process": {
+    "steps": [
+      {
+        "id": 1,
+        "name": "Receive",
+        "goal": "Peer or lead brings problem. Do not agree to write-up yet.",
+        "minutes": "10-15"
+      },
+      {
+        "id": 2,
+        "name": "Observe",
+        "goal": "3-5 day log. Sit with them. Classify mismatch vs discipline.",
+        "minutes": "spread"
+      },
+      {
+        "id": 3,
+        "name": "Private conversation",
+        "goal": "Name boredom or mismatch with specific examples.",
+        "minutes": "20-30"
+      },
+      {
+        "id": 4,
+        "name": "Test assignment",
+        "goal": "One real hard task, clear deadline, defined done.",
+        "minutes": "1-5 days"
+      },
+      {
+        "id": 5,
+        "name": "Reassign or exit",
+        "goal": "Full move with new metrics, or honest failed-fit talk.",
+        "minutes": "30-60"
+      },
+      {
+        "id": 6,
+        "name": "30-day check",
+        "goal": "New seat metrics review. Adjust or celebrate.",
+        "minutes": "15"
+      }
+    ]
+  },
+  "challenge_ramp": {
+    "test_assignment_rules": [
+      "One task only. Real customer or real job, not homework.",
+      "Deadline stated in writing.",
+      "Observer available for unblock, not rescue.",
+      "Success = quality + on-time + they want more."
+    ],
+    "new_seat_metrics": [
+      "First-response quality on hard work",
+      "On-time rate in new queue",
+      "Peer pull: do others ask them for help",
+      "Owner check: would you staff this seat again"
+    ],
+    "smb_translations": [
+      {
+        "id": "support-to-technical",
+        "from": "Basic customer calls and password resets",
+        "to": "Complex troubleshooting, integrations, or key accounts"
+      },
+      {
+        "id": "counter-to-ops",
+        "from": "Register and repetitive front counter",
+        "to": "Scheduling, vendor coordination, or inventory systems"
+      },
+      {
+        "id": "route-to-telemetry",
+        "from": "Snack restock only",
+        "to": "Machine diagnostics, Dex, telemetry, repair triage"
+      },
+      {
+        "id": "order-entry-to-proof",
+        "from": "Data entry and simple orders",
+        "to": "Complex proofs, estimates, or production planning"
+      }
+    ]
+  },
+  "tracking": {
+    "csv_header": "date,employee_id,branch,observation_days,test_result,new_seat,resolution,owner",
+    "sheet_tab_name": "wrong_seat_rescue"
+  },
+  "related_artifacts": [
+    "mf-tpl-003",
+    "mf-tpl-002",
+    "mf-tpl-005"
+  ],
+  "agent_signal": {
+    "use_when": "Team member looks like underperformer but may be bored in wrong seat. Manager asks fix behavior before write-up.",
+    "decision_criteria": [
+      "Observe 3-5 days before discipline unless safety or theft.",
+      "Test one hard assignment before full reassignment.",
+      "If test fails across easy and hard work, route discipline-path not another move."
+    ],
+    "operator_context": "Treasure Valley shops: one sharp person stuck on dumb work costs you twice. Cross-pool handoff beats public demotion.",
+    "version": "1.2",
+    "not_for": "Generic ops — fetch only when use_when matches; do not replace spine chain packs.",
+    "pairs_with": [
+      "mf-tpl-003",
+      "mf-tpl-002",
+      "mf-tpl-005"
+    ],
+    "trigger_phrases": [
+      "Team member looks like underperformer but may be bored in wrong seat. Manager asks fix behavior before write-up.",
+      "Need playbook: Wrong Seat Rescue Playbook"
+    ]
+  }
+}

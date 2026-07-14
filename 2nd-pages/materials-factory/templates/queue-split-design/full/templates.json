@@ -1,0 +1,31 @@
+{
+  "artifact": "mf-tpl-062",
+  "version": "1.2.0",
+  "templates": [
+    {
+      "id": "split-registry-row",
+      "use_when": "inventory-splits",
+      "body": "SPLIT REGISTRY ROW\nSplit/Skill ID: ___  Queue: _______________\nPrimary DID: _______________  ASA goal: ___  Priority (1=highest): ___\nGroup: _______________  Hours: _______________\nAfter hours: [ ] closed  [ ] voicemail  [ ] page  [ ] outsource"
+    },
+    {
+      "id": "priority-rebalance-memo",
+      "use_when": "split-redesign",
+      "body": "PRIORITY REBALANCE\nDate: _______  Owner: _______________\n\nProblem: _______________\nSplits affected: _______________\nNew priority order: _______________\nASA goal changes: _______________\nFloor comms date: _______"
+    },
+    {
+      "id": "routing-desk-card",
+      "use_when": "inventory-splits",
+      "body": "ROUTING DESK CARD (post at station)\n\nIf caller is: _______________ → Split ___ (Priority ___)\nIf caller is: _______________ → Split ___ (Priority ___)\nEscalation: _______________"
+    },
+    {
+      "id": "after-hours-rule",
+      "use_when": "after-hours-gap",
+      "body": "AFTER-HOURS RULE\nSplit: _______________\n\nBehavior: _______________\nCustomer message: _______________\nMetric: abandon after-hours tracked separately: Y/N"
+    },
+    {
+      "id": "new-split-checklist",
+      "use_when": "new-product-line",
+      "body": "NEW SPLIT CHECKLIST\nProduct/service: _______________\n\n[ ] Split ID assigned\n[ ] ASA goal set\n[ ] Priority vs peer splits\n[ ] Hours and overflow\n[ ] Added to forecast model"
+    }
+  ]
+}

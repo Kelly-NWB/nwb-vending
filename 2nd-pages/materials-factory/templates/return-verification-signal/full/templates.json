@@ -1,0 +1,46 @@
+{
+  "artifact": "mf-tpl-060",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "return-log-row",
+      "use_when": "start-tracking",
+      "body": "RETURN VERIFICATION LOG\nReturn ID: _______________  SKU/Job: _______________  Date in: _______________\nSupport intake summary: _______________\nVerification tech: _______________  Protocol: _______________\nOutcome: [ ] confirmed-fail  [ ] NDF  [ ] pass-after-return  [ ] inconclusive\nNotes: _______________"
+    },
+    {
+      "id": "weekly-ndf-review",
+      "use_when": "ndf-spike",
+      "body": "WEEKLY NDF REVIEW · Week of _______\n\nNDF count: ___  Confirmed fail: ___  Return volume: ___\nTop SKU/job NDF: _______________\nTop support intake theme: _______________\n\nAction: [ ] cross-train sprint  [ ] intake checklist update  [ ] customer education"
+    },
+    {
+      "id": "metric-proof-pull",
+      "use_when": "support-dinged",
+      "body": "METRIC DISPUTE PACKET\nEmployee: _______________  Metric: _______________\n\nAttached: return log rows + verification protocol + outcome codes.\nRule: ding only when record shows fair test, not opinion."
+    },
+    {
+      "id": "cross-train-assign",
+      "use_when": "cross-train-sprint",
+      "body": "CROSS-TRAIN SPRINT\nWeek: _______________\n\nSupport → verification bench: [names] [date]\nVerification → support intake shadow: [names] [date]\nFocus SKU/job: _______________\nSuccess: NDF trend down 4 weeks or intake checklist shipped."
+    },
+    {
+      "id": "protocol-review",
+      "use_when": "test-dinged",
+      "body": "VERIFICATION PROTOCOL REVIEW\nSKU/job: _______________  Escaped defect ID: _______________\n\nGap in protocol: _______________\nRevision owner: _______________  Effective date: _______________"
+    },
+    {
+      "id": "qbr-health-one-pager",
+      "use_when": "enterprise-qbr",
+      "body": "CUSTOMER HEALTH CHECK (data-backed)\nAccount: _______________  Period: _______________\n\nReturns: ___  Confirmed fail %: ___  NDF %: ___\nMessage: We verify returns. Real failures are reproduced. NDF is tracked and drives training.\nHardware/service validity: supported by verification log, not smoke."
+    },
+    {
+      "id": "smoke-rebuttal",
+      "use_when": "smoke-check",
+      "body": "CREDIBILITY RESPONSE\n\n\"We log every return outcome: confirmed fail vs no-defect-found. Support metrics tie to verification records. Happy to walk your team through last quarter stats in QBR.\""
+    },
+    {
+      "id": "intake-checklist-add",
+      "use_when": "ndf-spike",
+      "body": "INTAKE CHECKLIST UPDATE (from NDF theme)\nSKU/job: _______________\nAdd before RMA/return authorized:\n1. _______________\n2. _______________\nOwner: support lead  Effective: _______________"
+    }
+  ]
+}

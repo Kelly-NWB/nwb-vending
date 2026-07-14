@@ -1,0 +1,31 @@
+{
+  "artifact": "mf-tpl-067",
+  "version": "1.2.0",
+  "templates": [
+    {
+      "id": "bridge-signal-row",
+      "use_when": "pattern-detected",
+      "body": "BRIDGE SIGNAL ROW\nID: _______________  Date: _______\nField pattern: _______________\nFrequency (30d): ___  Customer tier impact: _______________\nSupport evidence: _______________"
+    },
+    {
+      "id": "engineering-handoff",
+      "use_when": "signal-escalation",
+      "body": "ENGINEERING HANDOFF\nSignal ID: _______________\n\nRepro steps: _______________\nLogs/samples: _______________\nSuggested priority: _______________\nSupport bridge owner: _______________"
+    },
+    {
+      "id": "verify-close-loop",
+      "use_when": "fix-shipped",
+      "body": "VERIFY CLOSE LOOP\nFix ID: _______________  Ship date: _______\n\nBench result: _______________\nReturn sample retest: _______________\nSupport comms ready: Y/N  QBR note: Y/N"
+    },
+    {
+      "id": "backbone-risk-memo",
+      "use_when": "volume-consumer-drift",
+      "body": "BACKBONE RISK MEMO (internal)\n\nObservation: _______________\nField signal ignored: _______________\nMargin/quality risk: _______________\nAsk leadership: _______________"
+    },
+    {
+      "id": "field-to-spec-translate",
+      "use_when": "signal-escalation",
+      "body": "FIELD TO SPEC TRANSLATE\nCustomer words: _______________\nEngineering spec line: _______________\nAcceptance test: _______________"
+    }
+  ]
+}

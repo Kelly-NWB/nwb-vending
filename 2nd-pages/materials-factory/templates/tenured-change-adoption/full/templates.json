@@ -1,0 +1,46 @@
+{
+  "artifact": "mf-tpl-058",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "change-announce",
+      "use_when": "resistance-suspected",
+      "body": "PROCESS CHANGE · [Business]\nOld way: _______________\nNew way: _______________\nStart date: _______________\nWhy now (one paragraph): _______________\n\nNext: structured engagement assignment for tenured staff (see change-engagement-assign)."
+    },
+    {
+      "id": "change-engagement-assign",
+      "use_when": "assign-reflection",
+      "body": "CHANGE ENGAGEMENT ASSIGNMENT\nEmployee: _______________  Due: _______________\n\n1. Read assigned short change reflection (paid work time: ___ hours).\n2. Written report (1-2 pages): What changed for you? What is hard? What would help?\n3. Present to: [ ] supervisor 1:1  [ ] team (10-15 min)\n\nSubmit report by due date. Schedule presentation within 3 days after."
+    },
+    {
+      "id": "private-refusal-chat",
+      "use_when": "refusal-initial",
+      "body": "PRIVATE 1:1 (not in team meeting)\n\n\"This is not optional busywork. The process is changing on [date]. The assignment is how we make sure your experience counts and we fix what we can before go-live.\n\nI need your report and a short presentation. If there is a real blocker, put it in writing. If the answer is only 'I don't want to,' we need to talk about fit and next steps.\"\n\nDocument: agreed Y/N  follow-up date: _______"
+    },
+    {
+      "id": "report-received",
+      "use_when": "report-complete",
+      "body": "REPORT LOG\nEmployee: _______________  Submitted: _______________\nPresentation: 1:1 / team  Date: _______________\n\nActionable blockers from report:\n1. _______________\n2. _______________\n\nVeteran peer-trainer candidate (Y/N): ___"
+    },
+    {
+      "id": "veteran-peer-trainer",
+      "use_when": "rollout-ramp-with-veteran-ally",
+      "body": "PEER TRAINER ASK\n\n\"Your report showed you understand the new flow. I want you to pair with [name] for two shifts on [process]. You keep tribal knowledge; we get adoption. Extra: [recognition/hours].\""
+    },
+    {
+      "id": "underground-old-way",
+      "use_when": "continued-underground",
+      "body": "OBSERVATION NOTE\nEmployee: _______________  Date: _______________\nOfficial process followed (Y/N): ___\nOld workaround observed (Y/N): ___\nEvidence: _______________\n\nNext: second 1:1 → HR path if repeat."
+    },
+    {
+      "id": "hr-escalation",
+      "use_when": "hard-refusal",
+      "body": "HR ESCALATION PACKET\nEmployee: _______________\nChange: _______________\nEngagement assigned: Y  Refusal date: _______________\n1:1 documented: Y\nReports submitted: N\n\nRequest: HR-aligned next step per handbook."
+    },
+    {
+      "id": "thirty-day-check",
+      "use_when": "30-day review",
+      "body": "30-DAY CHANGE CHECK\nProcess: _______________\nVeteran staff on new way (Y/N): ___\nOld workaround still seen (Y/N): ___\nAdjust training / escalate: _______________"
+    }
+  ]
+}

@@ -4504,6 +4504,918 @@
           }
         }
       }
+    },
+    "/2nd-pages/materials-factory/templates/wrong-seat-rescue/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-056",
+        "summary": "Wrong Seat Rescue Playbook",
+        "description": "Rescue bored performers stuck in the wrong seat. Observe, test hard work, reassign. Not discipline-first.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "pack_id",
+            "in": "query",
+            "required": false,
+            "description": "Catalog pack id (informational). Primary artifact is returned from the path after x402 payment.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "mf-tpl-056"
+              ],
+              "default": "mf-tpl-056"
+            },
+            "example": "mf-tpl-056"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "artifact": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    },
+                    "audience": {
+                      "type": "string",
+                      "enum": [
+                        "agent"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "artifact",
+                    "title",
+                    "audience"
+                  ],
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/workplace-department-map/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-057",
+        "summary": "Workplace Department Map",
+        "description": "Route frontline issues to finance, HR, or shipping. Minimum inputs, avoid lists, manager-speak decode.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "pack_id",
+            "in": "query",
+            "required": false,
+            "description": "Catalog pack id (informational). Primary artifact is returned from the path after x402 payment.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "mf-tpl-057"
+              ],
+              "default": "mf-tpl-057"
+            },
+            "example": "mf-tpl-057"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "artifact": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    },
+                    "audience": {
+                      "type": "string",
+                      "enum": [
+                        "agent"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "artifact",
+                    "title",
+                    "audience"
+                  ],
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/tenured-change-adoption/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-058",
+        "summary": "Tenured Change Adoption Playbook",
+        "description": "Structured reflection and report for longtime staff resisting process change. Not cold mandate.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "pack_id",
+            "in": "query",
+            "required": false,
+            "description": "Catalog pack id (informational). Primary artifact is returned from the path after x402 payment.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "mf-tpl-058"
+              ],
+              "default": "mf-tpl-058"
+            },
+            "example": "mf-tpl-058"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "artifact": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    },
+                    "audience": {
+                      "type": "string",
+                      "enum": [
+                        "agent"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "artifact",
+                    "title",
+                    "audience"
+                  ],
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/shadow-expert-mining/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-059",
+        "summary": "Shadow Expert Mining Playbook",
+        "description": "Unofficial help-desk hubs punished by availability metrics. Mine repeat questions into tools and training.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "pack_id",
+            "in": "query",
+            "required": false,
+            "description": "Catalog pack id (informational). Primary artifact is returned from the path after x402 payment.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "mf-tpl-059"
+              ],
+              "default": "mf-tpl-059"
+            },
+            "example": "mf-tpl-059"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "artifact": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    },
+                    "audience": {
+                      "type": "string",
+                      "enum": [
+                        "agent"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "artifact",
+                    "title",
+                    "audience"
+                  ],
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/return-verification-signal/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-060",
+        "summary": "Return Verification Signal Playbook",
+        "description": "NDF and return outcomes drive cross-training and fair metrics. QBR health check with verification data.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "pack_id",
+            "in": "query",
+            "required": false,
+            "description": "Catalog pack id (informational). Primary artifact is returned from the path after x402 payment.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "mf-tpl-060"
+              ],
+              "default": "mf-tpl-060"
+            },
+            "example": "mf-tpl-060"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "artifact": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    },
+                    "audience": {
+                      "type": "string",
+                      "enum": [
+                        "agent"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "artifact",
+                    "title",
+                    "audience"
+                  ],
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/support-ops-correlation/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-061",
+        "summary": "Support Ops Correlation Playbook",
+        "description": "Support ops and CSAT move together. Leadership dings on one KPI. QBR needs ops proof beyond surveys.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "pack_id",
+            "in": "query",
+            "required": false,
+            "description": "Catalog pack id (informational). Primary artifact is returned from the path after x402 payment.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "mf-tpl-061"
+              ],
+              "default": "mf-tpl-061"
+            },
+            "example": "mf-tpl-061"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "artifact": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    },
+                    "audience": {
+                      "type": "string",
+                      "enum": [
+                        "agent"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "artifact",
+                    "title",
+                    "audience"
+                  ],
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/queue-split-design/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-062",
+        "summary": "Queue Split Design Playbook",
+        "description": "Call routing is tribal knowledge. Mixed tiers in one queue. ASA goals undocumented or wrong.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "pack_id",
+            "in": "query",
+            "required": false,
+            "description": "Catalog pack id (informational). Primary artifact is returned from the path after x402 payment.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "mf-tpl-062"
+              ],
+              "default": "mf-tpl-062"
+            },
+            "example": "mf-tpl-062"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "artifact": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    },
+                    "audience": {
+                      "type": "string",
+                      "enum": [
+                        "agent"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "artifact",
+                    "title",
+                    "audience"
+                  ],
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/volume-split-tracker/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-063",
+        "summary": "Volume Split Tracker Playbook",
+        "description": "Call volume debated without segment split. Mix shift suspected. Forecast needs actuals by queue fami",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "pack_id",
+            "in": "query",
+            "required": false,
+            "description": "Catalog pack id (informational). Primary artifact is returned from the path after x402 payment.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "mf-tpl-063"
+              ],
+              "default": "mf-tpl-063"
+            },
+            "example": "mf-tpl-063"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "artifact": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    },
+                    "audience": {
+                      "type": "string",
+                      "enum": [
+                        "agent"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "artifact",
+                    "title",
+                    "audience"
+                  ],
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/understaffing-impact-log/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-064",
+        "summary": "Understaffing Impact Log Playbook",
+        "description": "Headcount dropped and ASA/abandon moved. Someone got dinged without week context. Need fair metric p",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "pack_id",
+            "in": "query",
+            "required": false,
+            "description": "Catalog pack id (informational). Primary artifact is returned from the path after x402 payment.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "mf-tpl-064"
+              ],
+              "default": "mf-tpl-064"
+            },
+            "example": "mf-tpl-064"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "artifact": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    },
+                    "audience": {
+                      "type": "string",
+                      "enum": [
+                        "agent"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "artifact",
+                    "title",
+                    "audience"
+                  ],
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/support-unit-economics/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-065",
+        "summary": "Support Unit Economics Playbook",
+        "description": "Budget or CFO review on support cost. Channel mix shifting. Need cost per call/email/RMA not FTE vib",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "pack_id",
+            "in": "query",
+            "required": false,
+            "description": "Catalog pack id (informational). Primary artifact is returned from the path after x402 payment.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "mf-tpl-065"
+              ],
+              "default": "mf-tpl-065"
+            },
+            "example": "mf-tpl-065"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "artifact": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    },
+                    "audience": {
+                      "type": "string",
+                      "enum": [
+                        "agent"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "artifact",
+                    "title",
+                    "audience"
+                  ],
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/call-forecast-variance/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-066",
+        "summary": "Call Forecast Variance Playbook",
+        "description": "Call forecast exists but actuals diverge. Overtime or ASA miss tied to one queue. Assumptions not do",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "pack_id",
+            "in": "query",
+            "required": false,
+            "description": "Catalog pack id (informational). Primary artifact is returned from the path after x402 payment.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "mf-tpl-066"
+              ],
+              "default": "mf-tpl-066"
+            },
+            "example": "mf-tpl-066"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "artifact": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    },
+                    "audience": {
+                      "type": "string",
+                      "enum": [
+                        "agent"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "artifact",
+                    "title",
+                    "audience"
+                  ],
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/rd-support-bridge/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-067",
+        "summary": "R&D Support Bridge Playbook",
+        "description": "Support sees field pattern engineering lacks. Bridge role between support and R&D. Verify loop after",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "pack_id",
+            "in": "query",
+            "required": false,
+            "description": "Catalog pack id (informational). Primary artifact is returned from the path after x402 payment.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "mf-tpl-067"
+              ],
+              "default": "mf-tpl-067"
+            },
+            "example": "mf-tpl-067"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "artifact": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    },
+                    "audience": {
+                      "type": "string",
+                      "enum": [
+                        "agent"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "artifact",
+                    "title",
+                    "audience"
+                  ],
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
     }
   }
 }

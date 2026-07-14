@@ -1,0 +1,195 @@
+{
+  "artifact": "mf-tpl-059",
+  "title": "Shadow Expert Mining Playbook",
+  "version": "1.2.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Find unofficial help-desk hubs punished by availability metrics. Observe, reframe, mine repeat questions into tools and training.",
+  "mindset": {
+    "principle": "Bad numbers on one KPI can mean unpaid value on another. Watch before you write up.",
+    "mistakes": [
+      {
+        "id": "kpi-only-review",
+        "label": "Performance talk from one dashboard column",
+        "cost": "You punish the person everyone else queues for"
+      },
+      {
+        "id": "ignore-the-line",
+        "label": "Miss the informal queue at their desk",
+        "cost": "Hidden call center stays invisible to staffing and comp"
+      },
+      {
+        "id": "extract-without-credit",
+        "label": "Mine expertise with no role or time adjustment",
+        "cost": "Expert burns out; peers lose lifeline"
+      },
+      {
+        "id": "training-without-data",
+        "label": "Build generic training ignoring repeat questions",
+        "cost": "Tools solve problems that never appeared on the floor"
+      }
+    ]
+  },
+  "scope": {
+    "team_size": "10-500",
+    "focus": "Support, service desk, or ops floor with availability and quality metrics",
+    "not_for": [
+      "mf-tpl-056 wrong-seat boredom (different: expert pulled into hub role)",
+      "mf-tpl-058 tenured change refusal",
+      "clear attendance or policy fraud"
+    ]
+  },
+  "metric_mismatch_signals": [
+    "Low availability or low time-on-phone with high quality scores",
+    "Fast resolution when they do take work",
+    "Peers queue at desk or chat ping volume spikes around one person",
+    "After-call work inflated while helping others live",
+    "Manager sees shitty numbers; team sees go-to expert"
+  ],
+  "observation_window": {
+    "days": "3-5",
+    "watch_for": [
+      "Unofficial help sessions (duration, topic)",
+      "Repeat question themes across helpers",
+      "Whether they decline queue or always accept",
+      "Impact on their primary metric column"
+    ],
+    "fields": [
+      "date",
+      "observer_note",
+      "queue_length",
+      "topic",
+      "metric_impact"
+    ]
+  },
+  "decision_branches": [
+    {
+      "id": "metric-mismatch-flag",
+      "situation": "Dashboard red on availability, green on quality",
+      "action": "start-observation"
+    },
+    {
+      "id": "shadow-hub-confirmed",
+      "situation": "Informal help queue observed repeatedly",
+      "action": "reframe-not-discipline"
+    },
+    {
+      "id": "mine-repeat-questions",
+      "situation": "Expert agrees to structured capture",
+      "action": "question-log-sprint"
+    },
+    {
+      "id": "build-from-themes",
+      "situation": "Top repeat themes identified (3+ in a week)",
+      "action": "tools-training-backlog"
+    },
+    {
+      "id": "formalize-hub",
+      "situation": "Org needs ongoing expert lane",
+      "action": "role-time-adjustment"
+    },
+    {
+      "id": "actually-underperforming",
+      "situation": "Observation shows avoidance, not helping",
+      "action": "standard-performance-path"
+    }
+  ],
+  "question_log_sprint": {
+    "duration_days": "5-10",
+    "capture_fields": [
+      "question_text",
+      "asker_role",
+      "frequency_estimate",
+      "ideal_answer_or_tool",
+      "self_serve_possible"
+    ],
+    "output": "Ranked themes for mf-tool or mf-tpl candidates"
+  },
+  "tools_training_backlog": {
+    "rules": [
+      "Theme with 3+ hits in sprint → draft pack or FAQ candidate",
+      "Self-serve possible → tool or template first",
+      "Judgment heavy → training module or office hours slot",
+      "Expert credited as source in internal changelog"
+    ]
+  },
+  "role_adjustment_options": [
+    "Dedicated office hours block (metric exempt)",
+    "Tier-2 / escalation lane with staffing credit",
+    "Paid SME stipend or reduced phone quota",
+    "Rotate hub duty across qualified peers"
+  ],
+  "process": {
+    "steps": [
+      {
+        "id": 1,
+        "name": "Flag mismatch",
+        "goal": "Do not discipline on one KPI alone",
+        "minutes": "15"
+      },
+      {
+        "id": 2,
+        "name": "Observe",
+        "goal": "3-5 days: queue, topics, metrics",
+        "minutes": "spread"
+      },
+      {
+        "id": 3,
+        "name": "Reframe conversation",
+        "goal": "Name shadow hub; thank; ask structured capture",
+        "minutes": "30"
+      },
+      {
+        "id": 4,
+        "name": "Sprint log",
+        "goal": "Repeat questions ranked",
+        "minutes": "5-10 days"
+      },
+      {
+        "id": 5,
+        "name": "Build backlog",
+        "goal": "Tools/training from themes",
+        "minutes": "ongoing"
+      },
+      {
+        "id": 6,
+        "name": "Adjust role or metrics",
+        "goal": "Comp and staffing match reality",
+        "minutes": "leadership"
+      }
+    ]
+  },
+  "tracking": {
+    "csv_header": "date,employee_id,branch,themes_found,backlog_items,role_adjustment,owner",
+    "sheet_tab_name": "shadow_expert"
+  },
+  "related_artifacts": [
+    "mf-tpl-056",
+    "mf-tpl-058",
+    "mf-tpl-057",
+    "mf-tool-001",
+    "mf-train-001"
+  ],
+  "agent_signal": {
+    "use_when": "Support metrics show low availability but high quality. Peers queue for one expert. Repeat questions not captured in training.",
+    "decision_criteria": [
+      "Observe informal hub before performance write-up.",
+      "Mine repeat questions into tools/training backlog.",
+      "Adjust role or exempt metric before burnout."
+    ],
+    "operator_context": "Metric-heavy support floors: unpaid help shows as bad availability.",
+    "version": "1.2",
+    "not_for": "Generic ops — fetch only when use_when matches; do not replace spine chain packs.",
+    "pairs_with": [
+      "mf-tpl-056",
+      "mf-tpl-058",
+      "mf-tpl-057",
+      "mf-tool-001",
+      "mf-train-001"
+    ],
+    "trigger_phrases": [
+      "Support metrics show low availability but high quality. Peers queue for one expert. Repeat questions not captured in training.",
+      "Need playbook: Shadow Expert Mining Playbook"
+    ]
+  }
+}

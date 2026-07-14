@@ -1,0 +1,49 @@
+{
+  "artifact": "mf-tpl-061",
+  "version": "1.2.0",
+  "description": "Correlate staff, calls, ASA, abandon, and survey scores weekly. Publish conclusions before metrics bite.",
+  "examples": [
+    {
+      "id": "ex-asa-answer-drop",
+      "context": "ASA climbed two months. Answer survey slipped. Training blamed.",
+      "branch": "correlation-readout",
+      "templates_used": [
+        "correlation-matrix-readout",
+        "csat-driver-narrative"
+      ],
+      "resolution": "Matrix showed ASA-abandon bundle. Staffing restored; answer score recovered.",
+      "log_row": "2026-Wk18,29,2050,2.4,0.12,4.68,4.71,4.75,4.88,4.52"
+    },
+    {
+      "id": "ex-staff-cut-blocked",
+      "context": "Finance proposed 4 FTE cut on support floor.",
+      "branch": "staff-cut-review",
+      "templates_used": [
+        "staff-cut-review",
+        "weekly-ops-row"
+      ],
+      "resolution": "Eight-week chain cited. Phased cut instead of cliff.",
+      "log_row": "2026-Wk22,review,-4FTE,asa-risk,blocked-cliff,owner"
+    },
+    {
+      "id": "ex-enterprise-ops-qbr",
+      "context": "Enterprise customer questioned support capacity claims.",
+      "branch": "enterprise-qbr",
+      "templates_used": [
+        "qbr-ops-correlation-slide"
+      ],
+      "resolution": "Ops correlation slide shipped. Renewal stayed on track.",
+      "log_row": "2026-Q2,QBR-LGE,ops-proof,asa-aban-csat,accepted"
+    },
+    {
+      "id": "ex-print-shop-csat",
+      "context": "Print shop rush season. Callback volume up. CSAT wobble.",
+      "branch": "start-matrix",
+      "templates_used": [
+        "weekly-ops-row"
+      ],
+      "resolution": "Weekly row habit started. Rush staffing tied to abandon, not guilt.",
+      "log_row": "2026-Wk08,6,420,0.8,0.04,4.6,4.7,4.8,4.9,4.5"
+    }
+  ]
+}

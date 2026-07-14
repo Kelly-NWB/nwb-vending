@@ -1,0 +1,29 @@
+{
+  "artifact": "mf-tpl-066",
+  "version": "1.2.0",
+  "description": "Document call assumptions, forecast by queue, compare actuals weekly, adjust staffing schedule. Variance before overtime.",
+  "examples": [
+    {
+      "id": "ex-server-miss",
+      "context": "Server queue actuals 22% over forecast. Overtime spike.",
+      "branch": "variance-review",
+      "templates_used": [
+        "variance-memo",
+        "assumption-registry"
+      ],
+      "resolution": "Ship-rate assumption updated. Schedule patched.",
+      "log_row": "2026-Wk24,server,420,512,22%,ship-rate"
+    },
+    {
+      "id": "ex-vending-ramp",
+      "context": "New product ramp. Consumer queue underestimated.",
+      "branch": "schedule-adjust",
+      "templates_used": [
+        "staffing-schedule-patch",
+        "forecast-summary-row"
+      ],
+      "resolution": "Temp staff added. Ramp assumption logged.",
+      "log_row": "2026-Wk08,consumer,1800,2100,17%,new-sku"
+    }
+  ]
+}

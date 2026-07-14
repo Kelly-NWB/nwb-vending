@@ -1,0 +1,202 @@
+{
+  "artifact": "mf-tpl-060",
+  "title": "Return Verification Signal Playbook",
+  "version": "1.2.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Track returned units or jobs: real failure vs no-fault-found. Cross-train support and verification. Use data for fair metrics and customer health reviews.",
+  "mindset": {
+    "principle": "Returns tell the truth about support and test. NDF is signal, not embarrassment.",
+    "mistakes": [
+      {
+        "id": "blame-support-only",
+        "label": "Ding support without verification loop",
+        "cost": "Techs game returns; test lane never improves"
+      },
+      {
+        "id": "blame-test-only",
+        "label": "Assume bench is perfect",
+        "cost": "Support stops trusting process; fights every metric"
+      },
+      {
+        "id": "hide-ndf",
+        "label": "Bury no-fault-found rate",
+        "cost": "Miss cross-training opportunity and customer trust story"
+      },
+      {
+        "id": "qbr-without-data",
+        "label": "Enterprise review with slides and no return stats",
+        "cost": "Customer assumes you blow smoke on hardware or service validity"
+      }
+    ]
+  },
+  "scope": {
+    "team_size": "10-500",
+    "focus": "Support plus verification or QA on physical or redo returns",
+    "verticals": [
+      "hardware RMA",
+      "field service parts return",
+      "print shop redo jobs",
+      "vending repair returns",
+      "install callback verification"
+    ],
+    "not_for": [
+      "pure software SaaS with no return artifact",
+      "mf-tpl-059 shadow expert (different problem)"
+    ]
+  },
+  "return_outcomes": [
+    {
+      "id": "confirmed-fail",
+      "label": "Defect reproduced on verification",
+      "meaning": "Support diagnosis validated or caught in test"
+    },
+    {
+      "id": "ndf",
+      "label": "No defect found (NDF)",
+      "meaning": "Return did not reproduce; training or customer education gap"
+    },
+    {
+      "id": "pass-after-return",
+      "label": "Passes verification after customer claimed fail",
+      "meaning": "Possible misuse, environment, or support miss"
+    },
+    {
+      "id": "inconclusive",
+      "label": "Cannot reproduce in window",
+      "meaning": "Extend test protocol or escalate engineering"
+    }
+  ],
+  "metrics_fairness": {
+    "rule": "When support or test gets dinged on return metrics, show the verification record that triggered the ding.",
+    "fields": [
+      "return_id",
+      "support_tech",
+      "verification_tech",
+      "test_protocol_id",
+      "outcome",
+      "timestamp"
+    ],
+    "why": "The minute people get scored, they demand proof the test scored them fairly. Publish the loop."
+  },
+  "cross_training_program": {
+    "support_to_verification": [
+      "Support rides verification bench half-day monthly",
+      "See NDF cases support thought were obvious fails",
+      "Learn test steps that prove defect"
+    ],
+    "verification_to_support": [
+      "Verification listens to intake calls on high-NDF SKUs",
+      "Learn what customer said vs what bench sees",
+      "Tighten intake checklist"
+    ],
+    "expected_result": "Both areas improve: fewer false returns, faster real fails, lower NDF blame fights"
+  },
+  "decision_branches": [
+    {
+      "id": "start-tracking",
+      "situation": "Returns happen but outcomes not logged",
+      "action": "enable-return-log"
+    },
+    {
+      "id": "ndf-spike",
+      "situation": "NDF rate rises on SKU or tech",
+      "action": "cross-train-sprint"
+    },
+    {
+      "id": "support-dinged",
+      "situation": "Support metric hit from return data",
+      "action": "show-verification-proof"
+    },
+    {
+      "id": "test-dinged",
+      "situation": "Verification misses escaped defect",
+      "action": "protocol-review"
+    },
+    {
+      "id": "enterprise-qbr",
+      "situation": "Large customer quarterly review",
+      "action": "health-check-deck"
+    },
+    {
+      "id": "smoke-check",
+      "situation": "Customer doubts your diagnosis credibility",
+      "action": "ndf-and-fail-transparency"
+    }
+  ],
+  "qbr_health_check": {
+    "data_slices": [
+      "Return volume trend",
+      "Confirmed fail rate",
+      "NDF rate (honest, not hidden)",
+      "Mean time to verification",
+      "Top SKUs by NDF (training target)"
+    ],
+    "customer_message": "Hardware or service validity backed by verification data. We distinguish real failure from no-fault-found. Support is not blowing smoke."
+  },
+  "process": {
+    "steps": [
+      {
+        "id": 1,
+        "name": "Log every return",
+        "goal": "Outcome code on close",
+        "minutes": "per return"
+      },
+      {
+        "id": 2,
+        "name": "Weekly NDF review",
+        "goal": "Themes, not witch hunts",
+        "minutes": "30"
+      },
+      {
+        "id": 3,
+        "name": "Cross-train rotation",
+        "goal": "Support and verification swap context",
+        "minutes": "monthly"
+      },
+      {
+        "id": 4,
+        "name": "Metric dispute",
+        "goal": "Pull verification record first",
+        "minutes": "15"
+      },
+      {
+        "id": 5,
+        "name": "QBR pack",
+        "goal": "Health check slides from live data",
+        "minutes": "prep"
+      }
+    ]
+  },
+  "tracking": {
+    "csv_header": "date,return_id,sku_or_job,support_id,verify_id,outcome,ndf,protocol_id,owner",
+    "sheet_tab_name": "return_verification"
+  },
+  "related_artifacts": [
+    "mf-tpl-059",
+    "mf-tpl-001",
+    "mf-tpl-020",
+    "mf-tpl-005"
+  ],
+  "agent_signal": {
+    "use_when": "Returned parts or jobs need verification. NDF rate matters. Support and test blame each other. Enterprise customer wants health proof.",
+    "decision_criteria": [
+      "Log outcome on every return before metric ding.",
+      "Cross-train when NDF spikes.",
+      "QBR uses verification stats not narrative only."
+    ],
+    "operator_context": "Returns separate real failure from no-fault-found. Data wins QBR trust.",
+    "version": "1.2",
+    "not_for": "Generic ops — fetch only when use_when matches; do not replace spine chain packs.",
+    "pairs_with": [
+      "mf-tpl-059",
+      "mf-tpl-001",
+      "mf-tpl-020",
+      "mf-tpl-005"
+    ],
+    "trigger_phrases": [
+      "Returned parts or jobs need verification. NDF rate matters. Support and test blame each other. Enterprise customer wants health proof.",
+      "Need playbook: Return Verification Signal Playbook"
+    ]
+  }
+}

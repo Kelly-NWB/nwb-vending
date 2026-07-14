@@ -1,0 +1,78 @@
+{
+  "artifact": "mf-tpl-066",
+  "title": "Call Forecast Variance Playbook",
+  "version": "1.2.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Document call assumptions, forecast by queue, compare actuals weekly, adjust staffing schedule. Variance before overtime.",
+  "mindset": {
+    "principle": "Forecast is a hypothesis. Variance review is the scientific method.",
+    "mistakes": [
+      {
+        "id": "forecast-once",
+        "label": "Annual forecast never reconciled",
+        "cost": "Overtime surprises; ASA breaks in one queue only"
+      },
+      {
+        "id": "assumptions-hidden",
+        "label": "Calls per ship or install not written",
+        "cost": "No one knows what to fix when actuals miss"
+      }
+    ]
+  },
+  "assumption_types": [
+    "calls_per_unit_shipped",
+    "calls_per_install",
+    "seasonality_factor",
+    "new_product_ramp",
+    "channel_mix"
+  ],
+  "decision_branches": [
+    {
+      "id": "build-forecast",
+      "situation": "No written forecast model",
+      "action": "assumption-registry"
+    },
+    {
+      "id": "variance-review",
+      "situation": "Actuals diverge from forecast",
+      "action": "variance-memo"
+    },
+    {
+      "id": "schedule-adjust",
+      "situation": "Sustained positive variance",
+      "action": "staffing-schedule-patch"
+    }
+  ],
+  "tracking": {
+    "csv_header": "fiscal_week,queue,forecast_calls,actual_calls,variance_pct,assumption_note",
+    "sheet_tab_name": "forecast_variance"
+  },
+  "related_artifacts": [
+    "mf-tpl-062",
+    "mf-tpl-063",
+    "mf-tpl-065",
+    "mf-tpl-064"
+  ],
+  "agent_signal": {
+    "use_when": "Call forecast exists but actuals diverge. Overtime or ASA miss tied to one queue. Assumptions not documented.",
+    "decision_criteria": [
+      "Write assumptions before forecast numbers.",
+      "Weekly variance by queue, not company total only.",
+      "Patch staffing schedule when variance sustains 4+ weeks."
+    ],
+    "operator_context": "Variance review connects queue map and volume actuals to schedules.",
+    "version": "1.2",
+    "not_for": "Generic ops: fetch only when use_when matches; do not replace spine chain packs.",
+    "pairs_with": [
+      "mf-tpl-062",
+      "mf-tpl-063",
+      "mf-tpl-065",
+      "mf-tpl-064"
+    ],
+    "trigger_phrases": [
+      "Call forecast exists but actuals diverge. Overtime or ASA miss tied to one queue. Assumptions not documented.",
+      "Need playbook: Call Forecast Variance Playbook"
+    ]
+  }
+}

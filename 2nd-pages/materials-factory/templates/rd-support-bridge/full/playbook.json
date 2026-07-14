@@ -1,0 +1,83 @@
+{
+  "artifact": "mf-tpl-067",
+  "title": "R&D Support Bridge Playbook",
+  "version": "1.2.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Structured loop: support captures field signal, engineering specs fix, verification closes loop. Bridge role connects backend support to product.",
+  "mindset": {
+    "principle": "Backend support is the backbone. Engineering without field signal builds the wrong thing confidently.",
+    "mistakes": [
+      {
+        "id": "ticket-black-hole",
+        "label": "Support tickets never reach engineering taxonomy",
+        "cost": "Repeat failures; support blamed for smoke"
+      },
+      {
+        "id": "throw-over-wall",
+        "label": "Handoff without repro or frequency",
+        "cost": "Engineering cannot prioritize; bridge burns out"
+      },
+      {
+        "id": "no-verify-close",
+        "label": "Fix ships without support verification",
+        "cost": "Regression hits field again; trust dies"
+      }
+    ]
+  },
+  "bridge_roles": [
+    "capture field pattern not one-off anecdote",
+    "quantify frequency and customer tier impact",
+    "translate support language to engineering spec",
+    "verify fix on bench and on representative returns"
+  ],
+  "decision_branches": [
+    {
+      "id": "pattern-detected",
+      "situation": "Repeat field issue not in known defects",
+      "action": "bridge-signal-row"
+    },
+    {
+      "id": "signal-escalation",
+      "situation": "High tier customer or safety angle",
+      "action": "engineering-handoff"
+    },
+    {
+      "id": "fix-shipped",
+      "situation": "Engineering released fix",
+      "action": "verify-close-loop"
+    },
+    {
+      "id": "volume-consumer-drift",
+      "situation": "Org chases volume over margin quality",
+      "action": "backbone-risk-memo"
+    }
+  ],
+  "related_artifacts": [
+    "mf-tpl-059",
+    "mf-tpl-060",
+    "mf-tpl-061",
+    "mf-tpl-065"
+  ],
+  "agent_signal": {
+    "use_when": "Support sees field pattern engineering lacks. Bridge role between support and R&D. Verify loop after fix ships.",
+    "decision_criteria": [
+      "Log pattern with frequency before escalation.",
+      "Handoff includes repro and customer tier impact.",
+      "Close loop with verification, not announcement email."
+    ],
+    "operator_context": "Bridge role prevents product drift when org chases volume over quality backbone.",
+    "version": "1.2",
+    "not_for": "Generic ops: fetch only when use_when matches; do not replace spine chain packs.",
+    "pairs_with": [
+      "mf-tpl-059",
+      "mf-tpl-060",
+      "mf-tpl-061",
+      "mf-tpl-065"
+    ],
+    "trigger_phrases": [
+      "Support sees field pattern engineering lacks. Bridge role between support and R&D. Verify loop after fix ships.",
+      "Need playbook: R&D Support Bridge Playbook"
+    ]
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "artifact": "mf-tpl-056",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "peer-intake",
+      "use_when": "Another manager brings you a failing employee",
+      "body": "WRONG SEAT INTAKE · [Business]\nFrom manager: _______________  Employee: _______________  Date: _______\n\nStated problem:\n_____________________________________________\n\nTheir read (discipline vs bored):\n_____________________________________________\n\nMy answer today: observe first · write-up later only if discipline signals\nObservation window end: _______  Owner: _______"
+    },
+    {
+      "id": "observe-log",
+      "use_when": "Daily during 3-5 day observation",
+      "body": "OBSERVATION LOG · Day ___ of ___\nEmployee: _______________\n\nTask type / complexity: _______________________\nEnergy (flat / ok / lit up): ___________________\nSpeed vs peers on this task type: ______________\nUnofficial help on hard stuff (Y/N + note): ____\nAttendance / tardy note: ______________________\n\nMismatch signal today (Y/N): ___________________\nDiscipline signal today (Y/N): _________________"
+    },
+    {
+      "id": "private-convo-bored",
+      "use_when": "Observation confirms wrong-seat pattern",
+      "body": "PRIVATE CONVERSATION (in person, not Slack pile-on)\n\n\"I sat with you this week. I do not think you are lazy. I think you are bored in a seat that is too simple for what you can do.\n\nExamples I saw: [specific task vs spark task].\n\nI want to try one hard assignment before any write-up. If it works, we move you. If it does not, we talk honestly about fit.\n\nAre you willing to try?\""
+    },
+    {
+      "id": "test-assignment-brief",
+      "use_when": "test-challenge branch",
+      "body": "TEST ASSIGNMENT · one only\nEmployee: _______________  Due: _______________\n\nTask (real work, not homework):\n_____________________________________________\n\nDone means:\n_____________________________________________\n\nUnblock contact: _______________  Observer notes due: _______________\n\nSuccess criteria: quality + on-time + they ask for more hard work"
+    },
+    {
+      "id": "manager-handoff-transfer",
+      "use_when": "cross-pool-transfer branch",
+      "body": "CROSS-TEAM HANDOFF\n\nTo receiving manager: _______________\nEmployee: _______________\n\nWhy move: bored in [old seat], spark on [hard work type].\nTest result: _______________\nNew seat start date: _______________\nSuccess metrics for first 30 days: _______________\n\nOld manager stops public criticism. New manager owns onboarding week 1."
+    },
+    {
+      "id": "full-move-announce",
+      "use_when": "full-reassign branch, minimal team comms",
+      "body": "TEAM NOTE (short, no diagnosis)\n\n\"[Name] is moving to [new queue/role] starting [date] to focus on [hard work type]. Route [work type] to them there. Questions to [manager].\""
+    },
+    {
+      "id": "new-seat-metrics",
+      "use_when": "After full reassignment",
+      "body": "NEW SEAT METRICS · 30 days\nEmployee: _______________  New seat: _______________\n\nHard-work quality (1-5): ___\nOn-time rate: ___\nPeer pull (asks for their help): Y/N\nOwner would staff this seat again: Y/N\n\nAdjust seat / celebrate / escalate: _______________"
+    },
+    {
+      "id": "reassign-failed",
+      "use_when": "Test failed but effort was visible",
+      "body": "HONEST FIT CONVERSATION\n\n\"We tried the hard assignment. It did not land. That does not make you a bad person. It means this seat and the test seat are not the right match.\n\nOptions we owe you: [alternate seat if real] / [clean exit with reference focus on strengths] / [documented discipline path if signals were mixed].\n\nWhat do you want to do next?\""
+    },
+    {
+      "id": "discipline-path",
+      "use_when": "discipline-path branch after observation",
+      "body": "DISCIPLINE PATH (mismatch ruled out)\n\nDocument: dates, policy, witnesses, prior coaching.\n\n\"This is not a boredom issue. The pattern is the same on easy and hard work. Here is what has to change by [date] or we part ways.\"\n\nNext step: PIP / exit per local practice. Legal review if unsure."
+    },
+    {
+      "id": "thirty-day-check",
+      "use_when": "30 days after successful reassignment",
+      "body": "30-DAY CHECK · Wrong Seat Rescue\nEmployee: _______________\n\nStill lit up on hard work (Y/N): _______________\nRegression to old seat habits (Y/N): _______________\nCustomer/peer feedback: _______________\n\nDecision: keep / adjust metrics / manager coaching needed"
+    }
+  ]
+}

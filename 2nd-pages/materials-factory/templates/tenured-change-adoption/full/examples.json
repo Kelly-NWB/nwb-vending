@@ -1,0 +1,71 @@
+{
+  "artifact": "mf-tpl-058",
+  "version": "1.0.0",
+  "description": "Tenured change adoption: assignment, refusal chat, completion, underground workaround, peer trainer.",
+  "examples": [
+    {
+      "id": "ex-registration-desk-rollout",
+      "context": "State parks style desk: new online permit step. Two 20-year clerks push back on every meeting.",
+      "branch": "assign-reflection",
+      "templates_used": ["change-announce", "change-engagement-assign"],
+      "resolution": "Paid read time plus report assigned to all veterans. Deadline two weeks.",
+      "log_row": "2026-07-20,E-201,resistance-suspected,Y,team,N,assigned,owner"
+    },
+    {
+      "id": "ex-initial-refusal-then-apology",
+      "context": "Senior clerk refuses assignment at first. Supervisor 1:1 explains engagement is required.",
+      "branch": "agreed-after-chat",
+      "templates_used": ["private-refusal-chat", "change-engagement-assign"],
+      "resolution": "Agreed next day. Report submitted on time. Later thanked supervisor for structure.",
+      "log_row": "2026-07-22,E-188,refusal-initial,Y,1:1,N,completed,owner"
+    },
+    {
+      "id": "ex-report-unlocks-peer-trainer",
+      "context": "Veteran report names three real form gaps. Team presentation 1:1.",
+      "branch": "report-complete",
+      "templates_used": ["report-received", "veteran-peer-trainer"],
+      "resolution": "Form fixes shipped. Veteran trains two shifts. Adoption improves.",
+      "log_row": "2026-07-28,E-201,report-complete,Y,1:1,N,peer-trainer,owner"
+    },
+    {
+      "id": "ex-print-shop-spreadsheet",
+      "context": "Small print shop moves from paper job bag to shared board. Estimator with 15 years resists.",
+      "branch": "assign-reflection",
+      "templates_used": ["change-engagement-assign"],
+      "resolution": "Report reveals fear of losing status as memory keeper. Board tweaked with legacy fields.",
+      "log_row": "2026-08-01,E-044,resistance-suspected,Y,1:1,N,adopted,owner"
+    },
+    {
+      "id": "ex-underground-workaround",
+      "context": "Report done but veteran still uses private spreadsheet parallel to system",
+      "branch": "continued-underground",
+      "templates_used": ["underground-old-way", "private-refusal-chat"],
+      "resolution": "Second 1:1. Spreadsheet retired or role adjusted.",
+      "log_row": "2026-08-10,E-188,continued-underground,Y,1:1,N,watch,owner"
+    },
+    {
+      "id": "ex-hard-refusal-hr",
+      "context": "Will not read, will not report after documented chats",
+      "branch": "hard-refusal",
+      "templates_used": ["hr-escalation"],
+      "resolution": "HR path per handbook. Not a wrong-seat case.",
+      "log_row": "2026-08-12,E-099,hard-refusal,N,none,Y,hr-path,owner"
+    },
+    {
+      "id": "ex-not-wrong-seat",
+      "context": "Staff energetic but confused on new software. Hired two years ago.",
+      "branch": "not_this_pattern",
+      "templates_used": [],
+      "resolution": "Route training onboarding, not mf-tpl-058. See mf-tpl-002.",
+      "log_row": "2026-08-14,E-055,skip,N,n/a,N,mf-tpl-002,owner"
+    },
+    {
+      "id": "ex-thirty-day-win",
+      "context": "30 days after permit desk rollout",
+      "branch": "report-complete",
+      "templates_used": ["thirty-day-check"],
+      "resolution": "No old workaround observed. Veterans on new flow.",
+      "log_row": "2026-09-01,E-201,report-complete,Y,team,N,stable,owner"
+    }
+  ]
+}

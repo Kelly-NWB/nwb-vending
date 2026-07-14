@@ -1,0 +1,29 @@
+{
+  "artifact": "mf-tpl-064",
+  "version": "1.2.0",
+  "description": "When headcount drops, log ASA, abandon, and percent answered with plain annotations. Fair metrics demand context.",
+  "examples": [
+    {
+      "id": "ex-down-three",
+      "context": "Three staff out. ASA past two minutes. Team lead dinged.",
+      "branch": "metric-ding-dispute",
+      "templates_used": [
+        "impact-proof-packet",
+        "understaffing-week-row"
+      ],
+      "resolution": "Ding adjusted. Log now required on down-N weeks.",
+      "log_row": "2026-06-12,02:08,1957,279,0.875,down-3-ts"
+    },
+    {
+      "id": "ex-holiday",
+      "context": "Holiday week skeleton crew.",
+      "branch": "holiday-skeleton",
+      "templates_used": [
+        "tag-and-notify",
+        "understaffing-week-row"
+      ],
+      "resolution": "Metrics tagged upfront. No surprise exec review.",
+      "log_row": "2026-Wk29,00:54,1689,102,0.943,holiday-skeleton"
+    }
+  ]
+}

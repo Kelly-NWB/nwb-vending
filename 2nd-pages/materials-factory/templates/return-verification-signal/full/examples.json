@@ -1,0 +1,71 @@
+{
+  "artifact": "mf-tpl-060",
+  "version": "1.0.0",
+  "description": "Return verification: NDF tracking, cross-train, metric proof, QBR health check.",
+  "examples": [
+    {
+      "id": "ex-hardware-ndf-cross-train",
+      "context": "Support org tracks returned units. High NDF on one product line. Support and test blame each other.",
+      "branch": "cross-train-sprint",
+      "templates_used": ["weekly-ndf-review", "cross-train-assign"],
+      "resolution": "Monthly swap. NDF down in 6 weeks. Intake checklist updated.",
+      "log_row": "2026-07-01,R-4400,SKU-12A,S-101,V-204,ndf,Y,P-12,owner"
+    },
+    {
+      "id": "ex-support-dinged-with-proof",
+      "context": "Support tech flagged for excessive NDF returns",
+      "branch": "support-dinged",
+      "templates_used": ["metric-proof-pull", "return-log-row"],
+      "resolution": "Records showed fair verification. Ding adjusted. Protocol cited.",
+      "log_row": "2026-07-08,R-4411,SKU-12A,S-101,V-204,ndf,Y,P-12,adjusted"
+    },
+    {
+      "id": "ex-enterprise-qbr",
+      "context": "Large account quarterly review. Customer doubts field diagnosis quality.",
+      "branch": "enterprise-qbr",
+      "templates_used": ["qbr-health-one-pager", "smoke-rebuttal"],
+      "resolution": "Presented fail vs NDF trends. Renewal confidence up.",
+      "log_row": "2026-07-15,QBR-ACME,portfolio,na,na,mixed,N,na,owner"
+    },
+    {
+      "id": "ex-print-shop-redo",
+      "context": "Print shop client claims bad banners. Shop re-runs job. Often no defect on re-inspection.",
+      "branch": "ndf-spike",
+      "templates_used": ["return-log-row", "intake-checklist-add"],
+      "resolution": "NDF logged as redo-no-fault. Added install environment questions on intake.",
+      "log_row": "2026-07-18,J-882,banners,S-04,V-01,pass-after-return,Y,visual-qc,owner"
+    },
+    {
+      "id": "ex-vending-parts-return",
+      "context": "Vending tech returns control boards. Bench confirms fail half the time.",
+      "branch": "start-tracking",
+      "templates_used": ["return-log-row"],
+      "resolution": "Tracking started. Confirmed fail rate guides training priority.",
+      "log_row": "2026-07-20,R-901,MDB-3,S-22,V-08,confirmed-fail,N,bench-3,owner"
+    },
+    {
+      "id": "ex-escaped-defect",
+      "context": "Customer fail escaped verification last month",
+      "branch": "test-dinged",
+      "templates_used": ["protocol-review"],
+      "resolution": "Protocol step added. Verification lane accountable with record.",
+      "log_row": "2026-07-22,R-915,SKU-9C,S-88,V-204,confirmed-fail,N,P-09-rev2,owner"
+    },
+    {
+      "id": "ex-pairs-shadow-expert",
+      "context": "High NDF plus one support expert everyone queues for",
+      "branch": "ndf-spike",
+      "templates_used": ["weekly-ndf-review"],
+      "resolution": "Run mf-tpl-059 for hub. mf-tpl-060 for return truth. Both lanes.",
+      "log_row": "2026-07-25,R-series,mixed,S-301,V-204,ndf,Y,P-12,both-packs"
+    },
+    {
+      "id": "ex-warranty-touch",
+      "context": "Warranty return after mf-tpl-020 touch",
+      "branch": "confirmed-fail",
+      "templates_used": ["return-log-row"],
+      "resolution": "Verified fail links back to warranty playbook. Customer update honest.",
+      "log_row": "2026-08-01,R-1001,unit-7,S-12,V-08,confirmed-fail,N,bench-3,owner"
+    }
+  ]
+}

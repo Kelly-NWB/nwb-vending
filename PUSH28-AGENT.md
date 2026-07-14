@@ -2,6 +2,10 @@
 
 Kelly says **push28** / **go live** = permission to `git push origin main`.
 
+## Before push28, agent MUST:
+
+0. `node scripts/audit-mf-before-push.mjs` — must end with `AUDIT: PASS` (no sloppy meta, manifest/worker/openapi in sync)
+
 ## After every push28, agent MUST:
 
 1. `git push origin main`

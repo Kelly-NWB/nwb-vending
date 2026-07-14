@@ -1,0 +1,28 @@
+{
+  "artifact": "mf-tpl-063",
+  "version": "1.2.0",
+  "description": "Track call offered, answered, abandoned per segment and fiscal week. Surface mix shifts before staffing debates.",
+  "examples": [
+    {
+      "id": "ex-mix-shift",
+      "context": "Total calls flat. High-priority segment up 18%.",
+      "branch": "segment-variance",
+      "templates_used": [
+        "mix-shift-memo",
+        "weekly-segment-row"
+      ],
+      "resolution": "Staff moved to priority split. Abandon down.",
+      "log_row": "2026-Wk14,seg-a,1750,1565,185,0.106"
+    },
+    {
+      "id": "ex-print-season",
+      "context": "Print shop support line seasonal spike on install callbacks.",
+      "branch": "abandon-spike",
+      "templates_used": [
+        "segment-abandon-review"
+      ],
+      "resolution": "Temp hours extension on one segment only.",
+      "log_row": "2026-Wk06,install-cb,880,790,90,0.102"
+    }
+  ]
+}

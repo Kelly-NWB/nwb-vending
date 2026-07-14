@@ -1,0 +1,115 @@
+{
+  "artifact": "mf-tpl-062",
+  "title": "Queue Split Design Playbook",
+  "version": "1.2.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Document every split/skill: queue name, ASA goal, priority, group, hours. Route before you forecast.",
+  "mindset": {
+    "principle": "Backend support is structure. Queues are the skeleton.",
+    "mistakes": [
+      {
+        "id": "one-queue-all",
+        "label": "Single queue for mixed customer tiers",
+        "cost": "High-margin accounts wait with low-priority noise"
+      },
+      {
+        "id": "priority-unwritten",
+        "label": "Priority only in supervisor heads",
+        "cost": "New hires mis-route; ASA goals become fiction"
+      },
+      {
+        "id": "hours-mismatch",
+        "label": "After-hours promise without split rule",
+        "cost": "Abandon spikes; CSAT hits answer survey first"
+      }
+    ]
+  },
+  "split_fields": [
+    "split_skill_id",
+    "queue_label",
+    "primary_did",
+    "asa_goal",
+    "priority_level",
+    "owning_group",
+    "hours_of_operation",
+    "after_hours_behavior"
+  ],
+  "decision_branches": [
+    {
+      "id": "inventory-splits",
+      "situation": "Splits exist but undocumented",
+      "action": "split-registry"
+    },
+    {
+      "id": "split-redesign",
+      "situation": "Tier mixing causes SLA miss",
+      "action": "priority-rebalance"
+    },
+    {
+      "id": "new-product-line",
+      "situation": "New SKU or service needs route",
+      "action": "add-split-row"
+    },
+    {
+      "id": "after-hours-gap",
+      "situation": "Calls after close with no path",
+      "action": "after-hours-rule"
+    }
+  ],
+  "process": {
+    "steps": [
+      {
+        "id": 1,
+        "name": "Export live splits",
+        "goal": "Match telephony reality",
+        "minutes": "30"
+      },
+      {
+        "id": 2,
+        "name": "Fill registry",
+        "goal": "One row per split",
+        "minutes": "60"
+      },
+      {
+        "id": 3,
+        "name": "Validate ASA goals",
+        "goal": "Goals match capacity plan",
+        "minutes": "30"
+      },
+      {
+        "id": 4,
+        "name": "Publish to floor",
+        "goal": "Routing card at desk",
+        "minutes": "15"
+      }
+    ]
+  },
+  "related_artifacts": [
+    "mf-tpl-063",
+    "mf-tpl-066",
+    "mf-tpl-061",
+    "mf-tpl-005"
+  ],
+  "agent_signal": {
+    "use_when": "Call routing is tribal knowledge. Mixed tiers in one queue. ASA goals undocumented or wrong.",
+    "decision_criteria": [
+      "One registry row per split before forecast work.",
+      "Priority and ASA goal on every row.",
+      "After-hours behavior explicit, not implied."
+    ],
+    "operator_context": "Queue map is prerequisite for volume tracking and staffing math.",
+    "version": "1.2",
+    "not_for": "Generic ops: fetch only when use_when matches; do not replace spine chain packs.",
+    "pairs_with": [
+      "mf-tpl-063",
+      "mf-tpl-066",
+      "mf-tpl-061",
+      "mf-tpl-005"
+    ],
+    "trigger_phrases": [
+      "Call routing is tribal knowledge. Mixed tiers in one queue. ASA goals undocumented or wrong.",
+      "Need playbook: Queue Split Design Playbook"
+    ]
+  }
+}

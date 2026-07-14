@@ -1,0 +1,183 @@
+{
+  "artifact": "mf-tpl-058",
+  "title": "Tenured Change Adoption Playbook",
+  "version": "1.2.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Adopt new process with longtime staff who know the old way and resist change. Structured reflection and report, not cold mandate.",
+  "mindset": {
+    "principle": "Tenured resistance is often identity, not laziness. Force engagement, not silence.",
+    "mistakes": [
+      {
+        "id": "announce-and-run",
+        "label": "Announce new process with no adoption path",
+        "cost": "Underground old way continues; public compliance, private sabotage"
+      },
+      {
+        "id": "shame-veterans",
+        "label": "Frame veterans as obstacles in team meetings",
+        "cost": "Alliance against you; they have the tribal knowledge you need"
+      },
+      {
+        "id": "skip-documentation",
+        "label": "Verbal agreement only",
+        "cost": "No proof of engagement when complaint escalates"
+      },
+      {
+        "id": "one-size-deadline",
+        "label": "Same day flip with no ramp",
+        "cost": "Panic and performative refusal"
+      }
+    ]
+  },
+  "scope": {
+    "team_size": "5-200",
+    "focus": "Ops lead, supervisor, or agent supporting process change with longtime clerical or counter staff",
+    "not_for": [
+      "legal termination without HR",
+      "union grievance steps",
+      "safety violations that need immediate stop-work"
+    ]
+  },
+  "resistance_signals": [
+    "We always did it this way",
+    "Complaints about every new step but no proposed alternative",
+    "Deep process knowledge paired with refusal to try new workflow",
+    "Peer deference: others wait to see if veteran accepts change",
+    "Works the old workaround after official rollout"
+  ],
+  "not_this_pattern": [
+    "Wrong seat boredom (see mf-tpl-056)",
+    "Clear policy violation or theft",
+    "New hire confusion without tenure identity"
+  ],
+  "adoption_program": {
+    "name": "Structured change engagement",
+    "steps": [
+      {
+        "id": "assign-reflection",
+        "label": "Assign short change-read + written report",
+        "detail": "Paid work time. Short book or brief on adapting to change. Written report required."
+      },
+      {
+        "id": "presentation-choice",
+        "label": "Present to lead or team",
+        "detail": "Their choice: 1:1 with supervisor or brief team share. 10-15 minutes max."
+      },
+      {
+        "id": "deadline",
+        "label": "Fixed deadline",
+        "detail": "One to two weeks typical for read + report. Date on calendar."
+      },
+      {
+        "id": "document",
+        "label": "File outcome",
+        "detail": "Report saved. Attendance noted. Refusal path documented if needed."
+      }
+    ],
+    "why_it_works": "Veterans must articulate the change in their own words. Resistance becomes visible and workable instead of ambient complaining."
+  },
+  "decision_branches": [
+    {
+      "id": "resistance-suspected",
+      "situation": "Rollout meeting met with veteran pushback",
+      "action": "assign-reflection"
+    },
+    {
+      "id": "refusal-initial",
+      "situation": "Staff declines assignment",
+      "action": "private-refusal-chat"
+    },
+    {
+      "id": "agreed-after-chat",
+      "situation": "Agrees after 1:1 on why engagement is required",
+      "action": "assign-reflection-with-deadline"
+    },
+    {
+      "id": "report-complete",
+      "situation": "Report submitted and presentation done",
+      "action": "rollout-ramp-with-veteran-ally"
+    },
+    {
+      "id": "continued-underground",
+      "situation": "Complies on paper, old way persists",
+      "action": "observe-and-escalate-hr"
+    },
+    {
+      "id": "hard-refusal",
+      "situation": "Will not engage after documented chat",
+      "action": "hr-documented-path"
+    }
+  ],
+  "process": {
+    "steps": [
+      {
+        "id": 1,
+        "name": "Name the change",
+        "goal": "One page: old way, new way, start date, why",
+        "minutes": "30 prep"
+      },
+      {
+        "id": 2,
+        "name": "Assign engagement",
+        "goal": "Reflection read + report + presentation choice",
+        "minutes": "10 per person"
+      },
+      {
+        "id": 3,
+        "name": "Handle refusal",
+        "goal": "Private chat; agree or document",
+        "minutes": "20-30"
+      },
+      {
+        "id": 4,
+        "name": "Collect reports",
+        "goal": "File and skim for blockers you can fix",
+        "minutes": "spread"
+      },
+      {
+        "id": 5,
+        "name": "Ramp",
+        "goal": "Veteran as peer trainer if report shows buy-in",
+        "minutes": "ongoing"
+      },
+      {
+        "id": 6,
+        "name": "30-day check",
+        "goal": "Old workaround audit",
+        "minutes": "15"
+      }
+    ]
+  },
+  "tracking": {
+    "csv_header": "date,employee_id,branch,report_submitted,presentation_to,refusal,resolution,owner",
+    "sheet_tab_name": "tenured_change"
+  },
+  "related_artifacts": [
+    "mf-tpl-056",
+    "mf-tpl-005",
+    "mf-tpl-002",
+    "mf-tool-001"
+  ],
+  "agent_signal": {
+    "use_when": "Longtime staff resist new process or system. Know old way cold. Complain without engaging.",
+    "decision_criteria": [
+      "Do not shame veterans in group settings.",
+      "Reflection report plus presentation before bad faith assumption.",
+      "Document refusal before escalation."
+    ],
+    "operator_context": "Registration and counter desks: veterans hold process memory. Engage before escalate.",
+    "version": "1.2",
+    "not_for": "Generic ops — fetch only when use_when matches; do not replace spine chain packs.",
+    "pairs_with": [
+      "mf-tpl-056",
+      "mf-tpl-005",
+      "mf-tpl-002",
+      "mf-tool-001"
+    ],
+    "trigger_phrases": [
+      "Longtime staff resist new process or system. Know old way cold. Complain without engaging.",
+      "Need playbook: Tenured Change Adoption Playbook"
+    ]
+  }
+}

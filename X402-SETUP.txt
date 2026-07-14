@@ -1,4 +1,4 @@
-NWB-Vending x402 — setup note for future Grok
+NWB-Vending x402: setup note for future Grok
 ============================================
 Updated: 2026-07-13
 
@@ -9,7 +9,7 @@ WHAT THIS IS
 
 MONEY FLOW (do not confuse these)
   PAY_TO (seller): 0x53799D42E72E3d41625006d310A55EC486DA5213 → Coinbase receive
-  Buyer: any wallet with USDC on Base (agents, test wallets) — NOT stored in repo
+  Buyer: any wallet with USDC on Base (agents, test wallets). NOT stored in repo.
 
 PRICES (pennies)
   Tools (mf-tool-001..003):     $0.05
@@ -19,7 +19,7 @@ INFRA
   Live host:     https://NWB-Vending.com
   Preview:       https://kelly-nwb.github.io/nwb-vending/
   Worker:        Cloudflare nwb-vending (gates all */full/* paths)
-  Facilitator:   https://api.cdp.coinbase.com/platform/v2/x402 (CDP — required for mainnet)
+  Facilitator:   https://api.cdp.coinbase.com/platform/v2/x402 (CDP, required for mainnet)
   NOT x402.org/facilitator on mainnet (testnet only)
 
 CLOUDFLARE WORKER SECRETS (required for paid unlock)
@@ -35,7 +35,7 @@ KEY PATHS
   Health:           /__x402/health
   Staging mirror:   D:\GrokBuild\Experiments\402 Biz\templates|tools
 
-SCRIPTS (run these — do not wing it)
+SCRIPTS (run these; do not wing it)
   node scripts/test-x402-pipe.mjs          → 402 gate + health (no wallet)
   node scripts/test-x402-unlock.mjs        → full paid unlock (needs EVM_PRIVATE_KEY)
   node scripts/verify-both-urls.mjs        → preview vs .com in sync

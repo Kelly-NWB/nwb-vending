@@ -1,0 +1,39 @@
+{
+  "artifact": "mf-tpl-067",
+  "version": "1.2.0",
+  "description": "Structured loop: support captures field signal, engineering specs fix, verification closes loop. Bridge role connects backend support to product.",
+  "examples": [
+    {
+      "id": "ex-thermal-pattern",
+      "context": "Support saw thermal fail pattern. Engineering backlog ignored it.",
+      "branch": "signal-escalation",
+      "templates_used": [
+        "bridge-signal-row",
+        "engineering-handoff"
+      ],
+      "resolution": "Prioritized fix. Verification closed loop.",
+      "log_row": "2026-04,BR-102,thermal,12-cases,eng-p2,fixed"
+    },
+    {
+      "id": "ex-return-verify",
+      "context": "Fix shipped for storage controller. Returns continued.",
+      "branch": "fix-shipped",
+      "templates_used": [
+        "verify-close-loop"
+      ],
+      "resolution": "Retest found incomplete firmware. Second fix verified.",
+      "log_row": "2026-06,FIX-88,retest-fail,FW-2,verified"
+    },
+    {
+      "id": "ex-shadow-bridge",
+      "context": "Shadow expert held tribal knowledge. No engineering taxonomy.",
+      "branch": "pattern-detected",
+      "templates_used": [
+        "bridge-signal-row",
+        "field-to-spec-translate"
+      ],
+      "resolution": "Paired mf-tpl-059 mining with bridge log. KB article shipped.",
+      "log_row": "2026-05,BR-201,tribal-kb,59+67,shipped"
+    }
+  ]
+}

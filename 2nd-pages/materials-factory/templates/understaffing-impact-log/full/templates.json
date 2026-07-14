@@ -1,0 +1,26 @@
+{
+  "artifact": "mf-tpl-064",
+  "version": "1.2.0",
+  "templates": [
+    {
+      "id": "understaffing-week-row",
+      "use_when": "headcount-drop",
+      "body": "UNDERSTAFFING WEEK ROW\nWeek starting: _______\nASA: ___  ACD calls: ___  Abandon calls: ___  % Answered: ___\nAnnotation: _______________ (e.g. down-3-staff, holiday)\nOwner: _______________"
+    },
+    {
+      "id": "tag-and-notify",
+      "use_when": "holiday-skeleton",
+      "body": "SKELETON CREW NOTICE\nWeek: _______  Expected staffing: ___  Actual: ___\n\nMetrics expectation: ASA may exceed goal. Tagged in log.\nLeads notified: Y/N  Date: _______"
+    },
+    {
+      "id": "annotation-review",
+      "use_when": "asa-spike",
+      "body": "ASA SPIKE REVIEW\nWeek: _______\n\nStaffing vs plan: _______________\nVolume vs plan: _______________\nAnnotation chosen: _______________\nCorrective action: _______________"
+    },
+    {
+      "id": "impact-proof-packet",
+      "use_when": "metric-ding-dispute",
+      "body": "IMPACT PROOF PACKET\nEmployee: _______________  Metric: _______________  Week: _______\n\nAttach: understaffing week row + annotation tag.\nRecommendation: [ ] adjust ding  [ ] uphold with record"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "artifact": "mf-tpl-062",
+  "version": "1.2.0",
+  "description": "Document every split/skill: queue name, ASA goal, priority, group, hours. Route before you forecast.",
+  "examples": [
+    {
+      "id": "ex-tier-mix",
+      "context": "Enterprise accounts queued with consumer calls. SLA misses.",
+      "branch": "split-redesign",
+      "templates_used": [
+        "priority-rebalance-memo",
+        "split-registry-row"
+      ],
+      "resolution": "Dedicated enterprise split at priority 1. ASA recovered.",
+      "log_row": "split-3,enterprise,2:00,1,CS,6-5MF,closed"
+    },
+    {
+      "id": "ex-vending-route",
+      "context": "Vending operator line shared with parts desk.",
+      "branch": "add-split-row",
+      "templates_used": [
+        "new-split-checklist",
+        "routing-desk-card"
+      ],
+      "resolution": "New split for field ops. Forecast tab added.",
+      "log_row": "split-12,field-ops,3:00,2,CS,extended"
+    },
+    {
+      "id": "ex-after-hours",
+      "context": "Abandon spike nights and weekends.",
+      "branch": "after-hours-gap",
+      "templates_used": [
+        "after-hours-rule"
+      ],
+      "resolution": "Closed with callback promise. After-hours metric split out.",
+      "log_row": "split-2,consumer,closed,vm-callback,tracked"
+    }
+  ]
+}

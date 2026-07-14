@@ -1,0 +1,26 @@
+{
+  "artifact": "mf-tpl-065",
+  "version": "1.2.0",
+  "templates": [
+    {
+      "id": "build-unit-table",
+      "use_when": "unit-cost-build",
+      "body": "UNIT ECONOMICS TABLE · Period _______\n\nInbound calls: ___  Outbound: ___  Emails: ___  RMAs: ___\nLabor burden ($): _______________\nCost per inbound call: ___  per email: ___  per RMA: ___\nNotes: _______________"
+    },
+    {
+      "id": "channel-mix-review",
+      "use_when": "channel-shift",
+      "body": "CHANNEL MIX REVIEW\nPeriod: _______\n\nCall volume Δ: ___%  Email volume Δ: ___%\nUnit cost impact: _______________\nAction: _______________"
+    },
+    {
+      "id": "backbone-brief",
+      "use_when": "budget-defense",
+      "body": "SUPPORT BACKBONE BRIEF (for finance)\n\nUnit costs attached. High-touch segment cost per event: ___\nCut risk: _______________\nAsk: _______________"
+    },
+    {
+      "id": "labor-burden-row",
+      "use_when": "unit-cost-build",
+      "body": "LABOR BURDEN ROW\nPeriod: _______  Source: payroll + burden rate\nTotal support labor: $_______________\nExcludes: trainers/managers [ ] Y [ ] N"
+    }
+  ]
+}

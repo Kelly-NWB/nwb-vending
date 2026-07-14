@@ -1,0 +1,46 @@
+{
+  "artifact": "mf-tpl-059",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "metric-mismatch-hold",
+      "use_when": "metric-mismatch-flag",
+      "body": "METRIC REVIEW HOLD\nEmployee: _______________  KPI flagged: availability / time-on-task\nOther KPIs: quality ___  resolution ___  CSAT ___\n\nAction: observation 3-5 days before performance conversation.\nNo write-up until shadow-hub rule checked."
+    },
+    {
+      "id": "observation-log",
+      "use_when": "start-observation",
+      "body": "SHADOW HUB OBSERVATION · Day ___\nExpert: _______________\n\nInformal queue observed (Y/N)  Approx length: ___\nTopics: _______________\nTheir primary metric during window: _______________\nPeer quote (optional): _______________"
+    },
+    {
+      "id": "reframe-conversation",
+      "use_when": "shadow-hub-confirmed",
+      "body": "1:1 REFRAME (not discipline)\n\n\"Your availability metric looks bad. I watched your week. You are running a help desk for the row. Quality scores make sense now.\n\nThat work matters but it is invisible on the dashboard and unfair to you. I want to log repeat questions with you and fix staffing or metrics. Will you do a one-week question capture sprint?\""
+    },
+    {
+      "id": "question-capture-sheet",
+      "use_when": "question-log-sprint",
+      "body": "REPEAT QUESTION LOG · Week of _______\nExpert: _______________\n\n| Question (short) | Asker role | Count est | Self-serve? | Tool/train idea |\n|------------------|------------|-----------|-------------|-----------------|\n|                  |            |           | Y/N         |                 |\n\nTop 3 themes Friday: 1 ___ 2 ___ 3 ___"
+    },
+    {
+      "id": "backlog-ticket",
+      "use_when": "build-from-themes",
+      "body": "TOOLS/TRAINING BACKLOG\nTheme: _______________  Hits: ___  Source expert: _______________\n\nDeliverable: [ ] mf-tool candidate  [ ] template  [ ] training slice  [ ] FAQ\nOwner: _______________  Target date: _______________\nCredit expert in changelog: Y"
+    },
+    {
+      "id": "role-adjustment-proposal",
+      "use_when": "formalize-hub",
+      "body": "ROLE / METRIC ADJUSTMENT PROPOSAL\nExpert: _______________\n\nOption: [ ] office hours block  [ ] tier-2 lane  [ ] reduced phone quota  [ ] SME stipend  [ ] rotate hub\nMetric exemption: _______________\nStaffing impact: _______________\nLead approval: _______________"
+    },
+    {
+      "id": "standard-performance",
+      "use_when": "actually-underperforming",
+      "body": "STANDARD PERFORMANCE PATH\nObservation found no shadow hub. Low availability = avoidance.\n\nNext: documented coaching per handbook. Not mf-tpl-059 path."
+    },
+    {
+      "id": "team-announce-office-hours",
+      "use_when": "formalize-hub",
+      "body": "TEAM NOTE\n\n\"[Name] holds official office hours [blocks] for [topic tier]. Queue there first before side pings. Helps metrics match reality.\""
+    }
+  ]
+}

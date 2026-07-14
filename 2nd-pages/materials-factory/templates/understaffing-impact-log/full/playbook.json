@@ -1,0 +1,83 @@
+{
+  "artifact": "mf-tpl-064",
+  "title": "Understaffing Impact Log Playbook",
+  "version": "1.2.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "When headcount drops, log ASA, abandon, and percent answered with plain annotations. Fair metrics demand context.",
+  "mindset": {
+    "principle": "The minute people get dinged, they want proof the test dinged them fairly. Annotate the week.",
+    "mistakes": [
+      {
+        "id": "raw-metrics-only",
+        "label": "Report ASA without staffing context",
+        "cost": "False dings; floor stops trusting data"
+      },
+      {
+        "id": "blame-techs",
+        "label": "Explain spike as attitude not staffing",
+        "cost": "Miss fixable capacity issue"
+      }
+    ]
+  },
+  "annotation_tags": [
+    "down-N-staff",
+    "holiday-skeleton",
+    "training-class",
+    "system-outage",
+    "volume-surge"
+  ],
+  "decision_branches": [
+    {
+      "id": "headcount-drop",
+      "situation": "Scheduled staffing below plan",
+      "action": "understaffing-week-row"
+    },
+    {
+      "id": "holiday-skeleton",
+      "situation": "Holiday or skeleton crew",
+      "action": "tag-and-notify"
+    },
+    {
+      "id": "asa-spike",
+      "situation": "ASA crosses goal without obvious cause",
+      "action": "annotation-review"
+    },
+    {
+      "id": "metric-ding-dispute",
+      "situation": "Individual ding during known understaff week",
+      "action": "impact-proof-packet"
+    }
+  ],
+  "tracking": {
+    "csv_header": "week_start,asa,acd_calls,abn_calls,pct_answered,annotation,owner",
+    "sheet_tab_name": "understaffing_log"
+  },
+  "related_artifacts": [
+    "mf-tpl-061",
+    "mf-tpl-063",
+    "mf-tpl-066",
+    "mf-tpl-005"
+  ],
+  "agent_signal": {
+    "use_when": "Headcount dropped and ASA/abandon moved. Someone got dinged without week context. Need fair metric proof.",
+    "decision_criteria": [
+      "Annotate every week staffing is below plan.",
+      "Attach impact log before individual dings stand.",
+      "Pair with correlation pack for leadership narrative."
+    ],
+    "operator_context": "Understaffing log is the fairness layer on raw ACD stats.",
+    "version": "1.2",
+    "not_for": "Generic ops: fetch only when use_when matches; do not replace spine chain packs.",
+    "pairs_with": [
+      "mf-tpl-061",
+      "mf-tpl-063",
+      "mf-tpl-066",
+      "mf-tpl-005"
+    ],
+    "trigger_phrases": [
+      "Headcount dropped and ASA/abandon moved. Someone got dinged without week context. Need fair metric proof.",
+      "Need playbook: Understaffing Impact Log Playbook"
+    ]
+  }
+}

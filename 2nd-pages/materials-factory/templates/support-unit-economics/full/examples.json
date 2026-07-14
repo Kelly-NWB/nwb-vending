@@ -1,0 +1,28 @@
+{
+  "artifact": "mf-tpl-065",
+  "version": "1.2.0",
+  "description": "Roll labor burden into cost per support event: calls, emails, RMAs. Use for budget, QBR, and backbone argument.",
+  "examples": [
+    {
+      "id": "ex-cfo-review",
+      "context": "CFO challenged support growth without event denominator.",
+      "branch": "unit-cost-build",
+      "templates_used": [
+        "build-unit-table",
+        "labor-burden-row"
+      ],
+      "resolution": "Unit table in budget deck. Headcount held.",
+      "log_row": "2026-Q3,18200,4200,890,319176,17.5"
+    },
+    {
+      "id": "ex-email-shift",
+      "context": "Email volume up 40%. Calls flat. Staff flat.",
+      "branch": "channel-shift",
+      "templates_used": [
+        "channel-mix-review"
+      ],
+      "resolution": "Email cost per event lower; shifted hiring to async specialists.",
+      "log_row": "2026-H1,email+40%,calls-flat,cpu-down"
+    }
+  ]
+}

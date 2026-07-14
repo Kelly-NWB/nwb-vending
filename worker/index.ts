@@ -394,6 +394,78 @@ const GATED_ROUTES: GatedRoute[] = [
     description: "Tax Exempt Certificate Request agent pack (mf-tpl-055)",
     artifact: "mf-tpl-055",
   },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/wrong-seat-rescue/full",
+    price: "$0.08",
+    description: "Wrong Seat Rescue Playbook agent pack (mf-tpl-056)",
+    artifact: "mf-tpl-056",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/workplace-department-map/full",
+    price: "$0.08",
+    description: "Workplace Department Map agent pack (mf-tpl-057)",
+    artifact: "mf-tpl-057",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/tenured-change-adoption/full",
+    price: "$0.08",
+    description: "Tenured Change Adoption Playbook agent pack (mf-tpl-058)",
+    artifact: "mf-tpl-058",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/shadow-expert-mining/full",
+    price: "$0.08",
+    description: "Shadow Expert Mining Playbook agent pack (mf-tpl-059)",
+    artifact: "mf-tpl-059",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/return-verification-signal/full",
+    price: "$0.08",
+    description: "Return Verification Signal Playbook agent pack (mf-tpl-060)",
+    artifact: "mf-tpl-060",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/support-ops-correlation/full",
+    price: "$0.08",
+    description: "Support Ops Correlation Playbook agent pack (mf-tpl-061)",
+    artifact: "mf-tpl-061",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/queue-split-design/full",
+    price: "$0.08",
+    description: "Queue Split Design Playbook agent pack (mf-tpl-062)",
+    artifact: "mf-tpl-062",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/volume-split-tracker/full",
+    price: "$0.08",
+    description: "Volume Split Tracker Playbook agent pack (mf-tpl-063)",
+    artifact: "mf-tpl-063",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/understaffing-impact-log/full",
+    price: "$0.08",
+    description: "Understaffing Impact Log Playbook agent pack (mf-tpl-064)",
+    artifact: "mf-tpl-064",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/support-unit-economics/full",
+    price: "$0.08",
+    description: "Support Unit Economics Playbook agent pack (mf-tpl-065)",
+    artifact: "mf-tpl-065",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/call-forecast-variance/full",
+    price: "$0.08",
+    description: "Call Forecast Variance Playbook agent pack (mf-tpl-066)",
+    artifact: "mf-tpl-066",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/rd-support-bridge/full",
+    price: "$0.08",
+    description: "R&D Support Bridge Playbook agent pack (mf-tpl-067)",
+    artifact: "mf-tpl-067",
+  },
 ];
 
 const NETWORK_CAIP2: Partial<Record<Env["NETWORK"], string>> = {

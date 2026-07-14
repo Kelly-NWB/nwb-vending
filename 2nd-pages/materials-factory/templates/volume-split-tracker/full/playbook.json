@@ -1,0 +1,85 @@
+{
+  "artifact": "mf-tpl-063",
+  "title": "Volume Split Tracker Playbook",
+  "version": "1.2.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Track call offered, answered, abandoned per segment and fiscal week. Surface mix shifts before staffing debates.",
+  "mindset": {
+    "principle": "Aggregate volume lies. Segments tell the truth.",
+    "mistakes": [
+      {
+        "id": "total-only",
+        "label": "Report company-wide calls only",
+        "cost": "Miss segment surge that breaks one ASA goal"
+      },
+      {
+        "id": "abandon-as-afterthought",
+        "label": "Track answered, ignore abandoned",
+        "cost": "Understate load; staffing math wrong"
+      }
+    ]
+  },
+  "segments": [
+    {
+      "id": "seg-a",
+      "label": "High-priority segment (rename to your tier)"
+    },
+    {
+      "id": "seg-b",
+      "label": "Standard segment"
+    },
+    {
+      "id": "seg-c",
+      "label": "Optional third segment (partner, field, etc.)"
+    }
+  ],
+  "decision_branches": [
+    {
+      "id": "start-segment-log",
+      "situation": "Volume reported as one number",
+      "action": "weekly-segment-row"
+    },
+    {
+      "id": "segment-variance",
+      "situation": "Total flat but one segment moves",
+      "action": "mix-shift-memo"
+    },
+    {
+      "id": "abandon-spike",
+      "situation": "Abandon up on one segment",
+      "action": "segment-abandon-review"
+    }
+  ],
+  "tracking": {
+    "csv_header": "fiscal_week,segment,offered,answered,abandoned,aban_rate,notes",
+    "sheet_tab_name": "volume_by_segment"
+  },
+  "related_artifacts": [
+    "mf-tpl-062",
+    "mf-tpl-061",
+    "mf-tpl-066",
+    "mf-tpl-064"
+  ],
+  "agent_signal": {
+    "use_when": "Call volume debated without segment split. Mix shift suspected. Forecast needs actuals by queue family.",
+    "decision_criteria": [
+      "Log offered, answered, abandoned per segment weekly.",
+      "Flag mix shift when one segment moves >10% vs 4-week avg.",
+      "Feed actuals into forecast variance pack."
+    ],
+    "operator_context": "Segment truth prevents wrong staffing on the wrong queue.",
+    "version": "1.2",
+    "not_for": "Generic ops: fetch only when use_when matches; do not replace spine chain packs.",
+    "pairs_with": [
+      "mf-tpl-062",
+      "mf-tpl-061",
+      "mf-tpl-066",
+      "mf-tpl-064"
+    ],
+    "trigger_phrases": [
+      "Call volume debated without segment split. Mix shift suspected. Forecast needs actuals by queue family.",
+      "Need playbook: Volume Split Tracker Playbook"
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "artifact": "mf-tpl-057",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "finance-request",
+      "use_when": "route-finance",
+      "body": "FINANCE REQUEST · [Business]\nJob/PO: _______________  Amount: _______________  Date: _______________\nVendor/customer: _______________\nPurpose (one line): _______________\nAttachment: receipt / invoice / quote (Y/N)\n\nAsk: what GL/approval/code is required before we proceed?"
+    },
+    {
+      "id": "finance-followup",
+      "use_when": "finance waiting on you",
+      "body": "Following up finance ticket [id]. Attached: [receipt/PO]. Ready for your code or approval step. No rush on vibes; need your checklist item: _______________"
+    },
+    {
+      "id": "hr-written-ask",
+      "use_when": "route-hr",
+      "body": "HR REQUEST (written only)\nEmployee/id: _______________  Topic: _______________  Dates: _______________\n\nQuestion: _______________\n\nNot a vent session. Requesting form, policy cite, or next step per handbook."
+    },
+    {
+      "id": "hr-boundary",
+      "use_when": "HR asks casual gossip",
+      "body": "I want to keep this professional and documented. Happy to stick to facts on [topic] in writing. If you need a formal report I can file one."
+    },
+    {
+      "id": "shipping-truth-check",
+      "use_when": "route-shipping",
+      "body": "DOCK CHECK · Job/SO: _______________  SKU/desc: _______________\n\nWhat do you see on the floor for this? Inbound ETA? Outbound ready date?\n\nI will not tell the customer a date until you confirm."
+    },
+    {
+      "id": "shipping-ally-thanks",
+      "use_when": "after shipping saves a date",
+      "body": "Thanks for the floor truth on [job]. Customer updated with your confirmed date only. Flag me if inbound slips."
+    },
+    {
+      "id": "slogan-clarify",
+      "use_when": "decode-slogan",
+      "body": "Quick clarify on [low hanging fruit / teamwork / priority]: which single task, owner, and due date should I execute first? I want it logged so we are aligned."
+    },
+    {
+      "id": "multi-lane-note",
+      "use_when": "multi-lane",
+      "body": "TWO-LANE ISSUE\n1) Shipping: floor status for [job] — need truth before customer reply.\n2) Finance: [invoice/payment] — need code/approval with receipt attached.\n\nOrder: dock confirm first, then AR/AP step."
+    },
+    {
+      "id": "log-row-helper",
+      "use_when": "any branch",
+      "body": "LOG: date,job_id,lane,branch,template_id,resolution,owner"
+    }
+  ]
+}

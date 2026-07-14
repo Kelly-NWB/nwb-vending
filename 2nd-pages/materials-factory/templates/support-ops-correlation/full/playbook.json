@@ -1,0 +1,174 @@
+{
+  "artifact": "mf-tpl-061",
+  "title": "Support Ops Correlation Playbook",
+  "version": "1.2.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Correlate staff, calls, ASA, abandon, and survey scores weekly. Publish conclusions before metrics bite.",
+  "mindset": {
+    "principle": "Correlation is not causation, but it beats hallway blame. Write what the matrix says.",
+    "mistakes": [
+      {
+        "id": "ding-without-matrix",
+        "label": "Ding a team on one KPI without weekly context",
+        "cost": "Techs demand proof; trust in metrics dies"
+      },
+      {
+        "id": "hide-abandon-asa",
+        "label": "Track CSAT only, ignore ASA and abandon",
+        "cost": "Miss the lever that moves answer scores"
+      },
+      {
+        "id": "qbr-vibes",
+        "label": "QBR with slides and no ops correlation",
+        "cost": "Customer assumes you manage by narrative"
+      }
+    ]
+  },
+  "metrics_tracked": [
+    {
+      "id": "staff",
+      "label": "Staffed headcount"
+    },
+    {
+      "id": "calls",
+      "label": "Call volume"
+    },
+    {
+      "id": "asa",
+      "label": "Average speed of answer"
+    },
+    {
+      "id": "aban",
+      "label": "Abandon rate"
+    },
+    {
+      "id": "over",
+      "label": "Overall survey"
+    },
+    {
+      "id": "ans",
+      "label": "Answered on time survey"
+    },
+    {
+      "id": "know",
+      "label": "Knowledge survey"
+    },
+    {
+      "id": "pro",
+      "label": "Professionalism survey"
+    },
+    {
+      "id": "sat",
+      "label": "Resolution satisfaction survey"
+    }
+  ],
+  "correlation_insights": [
+    {
+      "id": "staff-calls",
+      "pattern": "Strong positive staff vs calls",
+      "meaning": "Staffing tracks volume; validate before cutting heads"
+    },
+    {
+      "id": "asa-aban",
+      "pattern": "Very strong positive ASA vs abandon",
+      "meaning": "Speed and abandon move together; fix both or neither"
+    },
+    {
+      "id": "asa-ans",
+      "pattern": "Moderate negative ASA vs answer survey",
+      "meaning": "Slower answer hurts on-time perception even when resolved"
+    },
+    {
+      "id": "ans-bundle",
+      "pattern": "Answer survey pulls other survey scores",
+      "meaning": "Overall is least dragged by answer alone; train holistically"
+    }
+  ],
+  "decision_branches": [
+    {
+      "id": "start-matrix",
+      "situation": "Ops and CSAT tracked separately",
+      "action": "enable-weekly-row"
+    },
+    {
+      "id": "correlation-readout",
+      "situation": "Leadership wants cause of CSAT move",
+      "action": "publish-matrix-narrative"
+    },
+    {
+      "id": "staff-cut-review",
+      "situation": "Headcount reduction proposed",
+      "action": "pull-staff-asa-aban-chain"
+    },
+    {
+      "id": "enterprise-qbr",
+      "situation": "Large account ops review",
+      "action": "qbr-ops-correlation-slide"
+    },
+    {
+      "id": "metric-dispute",
+      "situation": "Team disputes ding",
+      "action": "week-context-packet"
+    }
+  ],
+  "process": {
+    "steps": [
+      {
+        "id": 1,
+        "name": "Log weekly ops row",
+        "goal": "One row per fiscal week",
+        "minutes": "15"
+      },
+      {
+        "id": 2,
+        "name": "Refresh correlation matrix",
+        "goal": "Rolling window, not one bad week",
+        "minutes": "30"
+      },
+      {
+        "id": 3,
+        "name": "Write conclusions",
+        "goal": "Plain language in narrative block",
+        "minutes": "20"
+      },
+      {
+        "id": 4,
+        "name": "Share before dings",
+        "goal": "Matrix visible to leads",
+        "minutes": "ongoing"
+      }
+    ]
+  },
+  "tracking": {
+    "csv_header": "fiscal_week,staff,calls,asa,aban,over,ans,know,pro,sat,narrative_owner",
+    "sheet_tab_name": "ops_correlation"
+  },
+  "related_artifacts": [
+    "mf-tpl-064",
+    "mf-tpl-063",
+    "mf-tpl-005",
+    "mf-tpl-065"
+  ],
+  "agent_signal": {
+    "use_when": "Support ops and CSAT move together. Leadership dings on one KPI. QBR needs ops proof beyond surveys.",
+    "decision_criteria": [
+      "Log weekly ops row before individual metric dings.",
+      "Publish correlation conclusions in plain language.",
+      "Pair ASA and abandon in staffing debates."
+    ],
+    "operator_context": "Metric-heavy support orgs: matrix deflects blame wars and anchors QBR ops story.",
+    "version": "1.2",
+    "not_for": "Generic ops: fetch only when use_when matches; do not replace spine chain packs.",
+    "pairs_with": [
+      "mf-tpl-064",
+      "mf-tpl-063",
+      "mf-tpl-005",
+      "mf-tpl-065"
+    ],
+    "trigger_phrases": [
+      "Support ops and CSAT move together. Leadership dings on one KPI. QBR needs ops proof beyond surveys.",
+      "Need playbook: Support Ops Correlation Playbook"
+    ]
+  }
+}

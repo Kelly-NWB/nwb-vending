@@ -1,0 +1,79 @@
+{
+  "artifact": "mf-tpl-057",
+  "version": "1.0.0",
+  "description": "Department routing examples: finance, HR, shipping, slogan decode, multi-lane.",
+  "examples": [
+    {
+      "id": "ex-finance-approve-spend",
+      "context": "Shop needs rush vendor payment for job materials",
+      "branch": "route-finance",
+      "lane": "finance",
+      "templates_used": ["finance-request"],
+      "resolution": "Finance approved with PO and receipt; no verbal OK.",
+      "log_row": "2026-07-20,job-510,finance,route-finance,finance-request,approved,owner"
+    },
+    {
+      "id": "ex-hr-benefits-form",
+      "context": "New hire asks agent to ping HR for insurance activation",
+      "branch": "route-hr",
+      "lane": "hr",
+      "templates_used": ["hr-written-ask"],
+      "resolution": "Form sent; no personal details in thread.",
+      "log_row": "2026-07-21,E-019,hr,route-hr,hr-written-ask,form-sent,owner"
+    },
+    {
+      "id": "ex-hr-gossip-boundary",
+      "context": "HR admin asks who started fight on floor",
+      "branch": "route-hr",
+      "lane": "hr",
+      "templates_used": ["hr-boundary"],
+      "resolution": "Declined gossip; offered written incident facts only if required.",
+      "log_row": "2026-07-22,E-044,hr,route-hr,hr-boundary,boundary-held,owner"
+    },
+    {
+      "id": "ex-shipping-customer-date",
+      "context": "Customer DM asking ship date; system shows in stock",
+      "branch": "route-shipping",
+      "lane": "shipping_receiving",
+      "templates_used": ["shipping-truth-check", "shipping-ally-thanks"],
+      "resolution": "Dock said pallet staged Friday; customer told Friday only.",
+      "log_row": "2026-07-23,job-882,shipping_receiving,route-shipping,shipping-truth-check,date-confirmed,owner"
+    },
+    {
+      "id": "ex-shipping-inbound-slip",
+      "context": "Production waiting on inbound vinyl roll",
+      "branch": "route-shipping",
+      "lane": "shipping_receiving",
+      "templates_used": ["shipping-truth-check"],
+      "resolution": "Receiving showed vendor short ship; production replanned before promise.",
+      "log_row": "2026-07-24,job-901,shipping_receiving,route-shipping,shipping-truth-check,inbound-slip,owner"
+    },
+    {
+      "id": "ex-slogan-low-hanging",
+      "context": "Manager email: grab low hanging fruit this week",
+      "branch": "decode-slogan",
+      "lane": "manager_speak_decode",
+      "templates_used": ["slogan-clarify"],
+      "resolution": "Got ranked list: job-440 proof, job-441 chase payment.",
+      "log_row": "2026-07-25,ops-week,manager_speak_decode,decode-slogan,slogan-clarify,tasks-listed,owner"
+    },
+    {
+      "id": "ex-slogan-teamwork-scope",
+      "context": "Client wants free layout revision; manager says teamwork",
+      "branch": "decode-slogan",
+      "lane": "manager_speak_decode",
+      "templates_used": ["slogan-clarify"],
+      "resolution": "Clarified CO required; routed mf-tool-003 for scope boundary.",
+      "log_row": "2026-07-26,job-120,manager_speak_decode,decode-slogan,slogan-clarify,co-required,owner"
+    },
+    {
+      "id": "ex-multi-lane-ship-unpaid",
+      "context": "Customer wants pickup today; balance unpaid",
+      "branch": "multi-lane",
+      "lane": "shipping_receiving+finance",
+      "templates_used": ["multi-lane-note", "shipping-truth-check", "finance-request"],
+      "resolution": "Dock ready; finance hold until partial paid; customer told both facts.",
+      "log_row": "2026-07-27,job-333,multi-lane,multi-lane,multi-lane-note,hold-until-paid,owner"
+    }
+  ]
+}

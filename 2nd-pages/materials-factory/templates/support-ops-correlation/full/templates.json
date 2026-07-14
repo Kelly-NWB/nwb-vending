@@ -1,0 +1,36 @@
+{
+  "artifact": "mf-tpl-061",
+  "version": "1.2.0",
+  "templates": [
+    {
+      "id": "weekly-ops-row",
+      "use_when": "start-matrix",
+      "body": "WEEKLY OPS ROW\nFiscal week: _______  Staff: ___  Calls: ___\nASA: ___  Abandon %: ___\nOverall: ___  Answer: ___  Knowledge: ___  Professional: ___  Resolution: ___\nOwner: _______________"
+    },
+    {
+      "id": "correlation-matrix-readout",
+      "use_when": "correlation-readout",
+      "body": "CORRELATION READOUT · Period: _______\n\nStrong patterns this window:\n1. _______________ (r≈___)\n2. _______________ (r≈___)\n\nPlain conclusion: _______________\nAction owner: _______________  Due: _______"
+    },
+    {
+      "id": "csat-driver-narrative",
+      "use_when": "correlation-readout",
+      "body": "CSAT DRIVER NARRATIVE\n\nIf ASA rises: expect abandon to rise; answer survey may fall.\nIf staff falls: watch ASA-abandon chain before blaming training.\nOverall survey: least tied to answer alone; do not over-index one item."
+    },
+    {
+      "id": "staff-cut-review",
+      "use_when": "staff-cut-review",
+      "body": "STAFF CUT IMPACT REVIEW\nProposed cut: ___ FTE  Effective: _______\n\nLast 8 weeks: staff vs ASA vs abandon trend attached.\nCSAT at risk lanes: _______________\nDecision: [ ] proceed  [ ] phase  [ ] reject"
+    },
+    {
+      "id": "qbr-ops-correlation-slide",
+      "use_when": "enterprise-qbr",
+      "body": "QBR OPS SLICE (data-backed)\nAccount: _______________  Period: _______________\n\nOps trend: ASA ___  Abandon ___  CSAT overall ___\nMessage: We manage support with correlated ops metrics, not anecdotes."
+    },
+    {
+      "id": "week-context-packet",
+      "use_when": "metric-dispute",
+      "body": "METRIC DISPUTE · WEEK CONTEXT\nEmployee/team: _______________  Metric: _______________\n\nAttach: fiscal week row + matrix excerpt + written conclusion.\nRule: no ding without weekly context on file."
+    }
+  ]
+}

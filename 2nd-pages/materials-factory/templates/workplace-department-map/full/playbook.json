@@ -1,0 +1,270 @@
+{
+  "artifact": "mf-tpl-057",
+  "title": "Workplace Department Map",
+  "version": "1.2.0",
+  "audience": "agent",
+  "section": "templates",
+  "description": "Frontline routing for finance, HR, and shipping/receiving. Who owns what, how to approach, what to document, when to escalate. SMB and light corporate.",
+  "mindset": {
+    "principle": "Departments are lanes, not enemies. Route with respect and paper trail.",
+    "mistakes": [
+      {
+        "id": "vent-to-hr",
+        "label": "Treat HR like a friend",
+        "cost": "Personnel file entry you did not intend"
+      },
+      {
+        "id": "vague-finance",
+        "label": "Ask finance to approve vibes",
+        "cost": "Delays and hard no until you bring codes and dates"
+      },
+      {
+        "id": "skip-warehouse",
+        "label": "Promise customer dates without dock truth",
+        "cost": "Broken promise; shipping knew first"
+      },
+      {
+        "id": "mirror-buzzwords",
+        "label": "Repeat manager slogans without specifics",
+        "cost": "You own ambiguity they created"
+      }
+    ]
+  },
+  "scope": {
+    "team_size": "5-500",
+    "focus": "Frontline operator or agent supporting ops, intake, scheduling, customer comms",
+    "not_for": [
+      "enterprise compliance programs",
+      "legal advice",
+      "union grievance procedure"
+    ]
+  },
+  "routing_overview": {
+    "steps": [
+      {
+        "id": 1,
+        "name": "Classify lane",
+        "goal": "money/docs | people/file | physical move"
+      },
+      {
+        "id": 2,
+        "name": "Gather minimum",
+        "goal": "Use department minimum_inputs before ping"
+      },
+      {
+        "id": 3,
+        "name": "Written touch",
+        "goal": "Email or ticket, not hallway gossip"
+      },
+      {
+        "id": 4,
+        "name": "Log",
+        "goal": "csv row for operator trace"
+      }
+    ]
+  },
+  "departments": [
+    {
+      "id": "finance",
+      "labels": [
+        "accounting",
+        "AP",
+        "AR",
+        "bookkeeper",
+        "controller"
+      ],
+      "role": "Pay bills, keep books, enforce black-and-white on spend and recognition",
+      "signals": [
+        "Question involves payment, invoice, tax, GL, budget approval",
+        "Someone needs a number on the books before action"
+      ],
+      "approach": [
+        "Professional, brief, no jokes on first pass",
+        "Bring receipt, date, amount, job or PO, purpose",
+        "Ask what form or code they need"
+      ],
+      "avoid": [
+        "Hand-wavy urgency without paperwork",
+        "Rounding or guessing numbers",
+        "Arguing policy in the hallway"
+      ],
+      "minimum_inputs": [
+        "job_id or PO",
+        "amount",
+        "date",
+        "vendor or customer",
+        "attachment or receipt"
+      ],
+      "pairs_with_artifacts": [
+        "mf-tpl-008",
+        "mf-tpl-006",
+        "mf-tpl-055"
+      ]
+    },
+    {
+      "id": "hr",
+      "labels": [
+        "human resources",
+        "people ops",
+        "payroll admin"
+      ],
+      "role": "Payroll, benefits, hire/term paperwork, personnel issues",
+      "signals": [
+        "Pay rate, benefits, onboarding forms, policy question, conflict report",
+        "Someone wears multiple hats including phones and payroll"
+      ],
+      "approach": [
+        "Assume personnel file exists for what you say",
+        "Written request for forms and policy cites",
+        "Mind your business; facts only"
+      ],
+      "avoid": [
+        "Venting about coworkers or managers",
+        "Oversharing medical or personal drama",
+        "Verbal-only promises on schedule or pay"
+      ],
+      "multiple_hats_warning": "When HR also answers phones and payroll, scope creep into mom-mode: document more, share less.",
+      "minimum_inputs": [
+        "employee name or id",
+        "date range",
+        "form name or policy topic",
+        "written question"
+      ],
+      "pairs_with_artifacts": [
+        "mf-tpl-002",
+        "mf-tpl-003",
+        "mf-tpl-056"
+      ]
+    },
+    {
+      "id": "shipping_receiving",
+      "labels": [
+        "warehouse",
+        "dock",
+        "fulfillment",
+        "receiving",
+        "shipping"
+      ],
+      "role": "Physical in/out, warehouse truth, often knows exceptions before management",
+      "signals": [
+        "Where is the pallet, box, job shipment, inbound vendor load",
+        "Customer asking ship date or proof of delivery",
+        "Inventory mismatch between system and floor"
+      ],
+      "approach": [
+        "Respect the work; they move weight and time",
+        "Ask what they see, not what the spreadsheet hopes",
+        "Build ally relationship before you need a favor"
+      ],
+      "avoid": [
+        "Promising customer ship without dock confirm",
+        "Bypassing them to impress a customer",
+        "Treating back-of-building as lesser"
+      ],
+      "minimum_inputs": [
+        "job_id or SO",
+        "sku or description",
+        "carrier or vendor if inbound",
+        "needed-by date as request not promise"
+      ],
+      "pairs_with_artifacts": [
+        "mf-tpl-007",
+        "mf-tpl-037",
+        "mf-tpl-035"
+      ]
+    }
+  ],
+  "manager_speak_decode": {
+    "description": "Vague corporate phrases. Decode to required action; do not mirror without specifics.",
+    "phrases": [
+      {
+        "id": "low-hanging-fruit",
+        "phrase": "low hanging fruit",
+        "likely_meaning": "They want easy win listed; ask which task and deadline",
+        "agent_action": "Request ranked list with owners and dates"
+      },
+      {
+        "id": "under-the-bus",
+        "phrase": "throw under the bus",
+        "likely_meaning": "Blame shift coming; protect with written trail",
+        "agent_action": "Log decision, cc relevant parties, save artifacts"
+      },
+      {
+        "id": "kool-aid",
+        "phrase": "drink the Kool-Aid",
+        "likely_meaning": "Culture pressure; compliance expected",
+        "agent_action": "Get explicit written scope; do not agree verbally to fuzzy goals"
+      },
+      {
+        "id": "teamwork",
+        "phrase": "teamwork",
+        "likely_meaning": "Unpaid scope expansion",
+        "agent_action": "Clarify tradeoff; route scope creep to mf-tool-003"
+      },
+      {
+        "id": "pound-sand",
+        "phrase": "go pound sand",
+        "likely_meaning": "Dismissal; disengage or escalate via proper lane",
+        "agent_action": "Route to owner or HR only if policy issue; do not argue in thread"
+      }
+    ]
+  },
+  "decision_branches": [
+    {
+      "id": "route-finance",
+      "situation": "Money, invoice, tax, budget",
+      "action": "finance"
+    },
+    {
+      "id": "route-hr",
+      "situation": "People, payroll, policy, hire/term",
+      "action": "hr"
+    },
+    {
+      "id": "route-shipping",
+      "situation": "Physical move, stock truth, ship date",
+      "action": "shipping_receiving"
+    },
+    {
+      "id": "decode-slogan",
+      "situation": "Manager message is slogan-heavy",
+      "action": "manager_speak_decode"
+    },
+    {
+      "id": "multi-lane",
+      "situation": "Customer date plus unpaid invoice",
+      "action": "shipping_receiving then finance in order"
+    }
+  ],
+  "tracking": {
+    "csv_header": "date,job_id,lane,branch,template_id,resolution,owner",
+    "sheet_tab_name": "department_map"
+  },
+  "related_artifacts": [
+    "mf-tpl-007",
+    "mf-tpl-008",
+    "mf-tpl-002",
+    "mf-tool-003"
+  ],
+  "agent_signal": {
+    "use_when": "Operator or agent must route a workplace issue to finance, HR, or shipping/receiving without stepping on landmines.",
+    "decision_criteria": [
+      "Classify lane before customer/exec reply.",
+      "HR and finance get written minimum_inputs.",
+      "Shipping truth before customer ship promise."
+    ],
+    "operator_context": "Treasure Valley shops: titles blur on small teams; route by function not org chart fantasy.",
+    "version": "1.2",
+    "not_for": "Generic ops — fetch only when use_when matches; do not replace spine chain packs.",
+    "pairs_with": [
+      "mf-tpl-007",
+      "mf-tpl-008",
+      "mf-tpl-002",
+      "mf-tool-003"
+    ],
+    "trigger_phrases": [
+      "Operator or agent must route a workplace issue to finance, HR, or shipping/receiving without stepping on landmines.",
+      "Need playbook: Workplace Department Map"
+    ]
+  }
+}

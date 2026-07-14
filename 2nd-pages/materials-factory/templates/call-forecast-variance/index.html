@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="mf-tpl-066 teaser. Assumptions to forecast to actual variance to staffing schedule by queue. Capacity skeleton, not 31-tab chaos.">
+  <meta name="x402:artifact" content="mf-tpl-066">
+  <meta name="x402:teaser" content="true">
+  <meta name="x402:audience" content="agent">
+  <title>Call Forecast Variance Playbook (teaser) | Materials Factory</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="hdr">
+      <h1>Call Forecast Variance Playbook</h1>
+      <p class="sub">ENTRY: mf-tpl-066 · SECTION: templates · agent audience</p>
+      <p class="mission">Assumptions to forecast to actual variance to staffing schedule by queue. Capacity skeleton, not 31-tab chaos.</p>
+    </header>
+    <section class="block">
+      <h2>Free worked example</h2>
+      <pre class="meta">{
+  "context": "Forecast missed actual by 22% on server queue. Overtime surprise.",
+  "branch": "variance-review",
+  "resolution": "Assumption row updated. Schedule aligned in two weeks.",
+  "log_row": "2026-Wk24,queue-server,forecast-420,actual-512,var-22%,assumption-ship-rate"
+}</pre>
+    </section>
+    <section class="block">
+      <h2>Full pack (x402)</h2>
+      <ul class="module-list">
+        <li>Forecast assumption registry</li>
+        <li>Weekly forecast vs actual by queue</li>
+        <li>Staffing schedule tie-in</li>
+      </ul>
+      <dl class="kv">
+        <dt>FULL (x402)</dt>
+        <dd><a href="full/">templates/call-forecast-variance/full/</a></dd>
+        <dt>PRICE</dt>
+        <dd class="status-ready">$0.08 · USDC on Base</dd>
+        <dt>PAIRS</dt>
+        <dd><a href="../queue-split-design/">mf-tpl-062</a> · <a href="../volume-split-tracker/">mf-tpl-063</a> · <a href="../support-unit-economics/">mf-tpl-065</a></dd>
+      </dl>
+    </section>
+    <footer class="foot"><a href="../../index.html">← Materials Factory catalog</a></footer>
+  </div>
+</body>
+</html>

@@ -1,5 +1,5 @@
-X402 agent signal enhancement 2026-07-12
-Artifacts touched: 58 tools+templates (mf-train-001 excluded)
+X402 agent signal enhancement 2026-07-14
+Artifacts touched: 70 tools+templates (mf-train-001 excluded)
 Live: nwb-vending/2nd-pages/materials-factory
 Staging sync: 402 Biz/templates + tools
 
@@ -16,7 +16,7 @@ Manifest:
 
 Unchanged: teasers, examples.json, templates.json, x402 gates, prices
 
-Modified file count: 233
+Modified file count: 257
 
 - 2nd-pages/materials-factory/templates/complaint-recovery-playbook/full/playbook.json
 - 2nd-pages/materials-factory/templates/complaint-recovery-playbook/full/AGENT.md
@@ -238,6 +238,30 @@ Modified file count: 233
 - 2nd-pages/materials-factory/templates/tax-exempt-cert/full/AGENT.md
 - 402 Biz/templates/tax-exempt-cert/full/playbook.json
 - 402 Biz/templates/tax-exempt-cert/full/AGENT.md
+- 2nd-pages/materials-factory/templates/wrong-seat-rescue/full/playbook.json
+- 2nd-pages/materials-factory/templates/wrong-seat-rescue/full/AGENT.md
+- 2nd-pages/materials-factory/templates/workplace-department-map/full/playbook.json
+- 2nd-pages/materials-factory/templates/workplace-department-map/full/AGENT.md
+- 2nd-pages/materials-factory/templates/tenured-change-adoption/full/playbook.json
+- 2nd-pages/materials-factory/templates/tenured-change-adoption/full/AGENT.md
+- 2nd-pages/materials-factory/templates/shadow-expert-mining/full/playbook.json
+- 2nd-pages/materials-factory/templates/shadow-expert-mining/full/AGENT.md
+- 2nd-pages/materials-factory/templates/return-verification-signal/full/playbook.json
+- 2nd-pages/materials-factory/templates/return-verification-signal/full/AGENT.md
+- 2nd-pages/materials-factory/templates/support-ops-correlation/full/playbook.json
+- 2nd-pages/materials-factory/templates/support-ops-correlation/full/AGENT.md
+- 2nd-pages/materials-factory/templates/queue-split-design/full/playbook.json
+- 2nd-pages/materials-factory/templates/queue-split-design/full/AGENT.md
+- 2nd-pages/materials-factory/templates/volume-split-tracker/full/playbook.json
+- 2nd-pages/materials-factory/templates/volume-split-tracker/full/AGENT.md
+- 2nd-pages/materials-factory/templates/understaffing-impact-log/full/playbook.json
+- 2nd-pages/materials-factory/templates/understaffing-impact-log/full/AGENT.md
+- 2nd-pages/materials-factory/templates/support-unit-economics/full/playbook.json
+- 2nd-pages/materials-factory/templates/support-unit-economics/full/AGENT.md
+- 2nd-pages/materials-factory/templates/call-forecast-variance/full/playbook.json
+- 2nd-pages/materials-factory/templates/call-forecast-variance/full/AGENT.md
+- 2nd-pages/materials-factory/templates/rd-support-bridge/full/playbook.json
+- 2nd-pages/materials-factory/templates/rd-support-bridge/full/AGENT.md
 - 2nd-pages/materials-factory/tools/should-i-automate/full/rules.json
 - 2nd-pages/materials-factory/tools/should-i-automate/full/AGENT.md
 - 402 Biz/tools/should-i-automate/full/rules.json

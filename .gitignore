@@ -21,6 +21,8 @@ LOCAL-HANDOFF.txt
 !.dev.vars.example
 .env*
 !.env.example
+!.env.buyer.example
+.env.buyer
 
 # wrangler files
 .wrangler
@@ -28,6 +30,8 @@ LOCAL-HANDOFF.txt
 !.dev.vars.example
 .env*
 !.env.example
+!.env.buyer.example
+.env.buyer
 
 # Worker deps
 node_modules/

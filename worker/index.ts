@@ -569,28 +569,29 @@ app.get("/openapi.json", async (c) => {
   });
 });
 
-app.get("/favicon.ico", async (c) => {
-  const asset = await c.env.ASSETS.fetch(
-    new Request(new URL("/favicon.ico", c.req.url), c.req.raw)
-  );
-  if (!asset.ok) {
-    const fallback = await c.env.ASSETS.fetch(
-      new Request(new URL("/assets/nwb-logo.png", c.req.url), c.req.raw)
+async function serveNwbFavicon(c: {
+  env: Env;
+  req: { url: string; raw: Request };
+  body: (body: ArrayBuffer, status: number, headers: Record<string, string>) => Response;
+  text: (body: string, status: number) => Response;
+}) {
+  for (const path of ["/favicon.png", "/favicon.ico", "/assets/nwb-logo.png"]) {
+    const asset = await c.env.ASSETS.fetch(
+      new Request(new URL(path, c.req.url), c.req.raw)
     );
-    if (!fallback.ok) return c.text("not found", 404);
-    const body = await fallback.arrayBuffer();
-    return c.body(body, 200, {
-      "Content-Type": "image/png",
-      "Cache-Control": "public, max-age=86400",
-    });
+    if (asset.ok) {
+      const body = await asset.arrayBuffer();
+      return c.body(body, 200, {
+        "Content-Type": "image/png",
+        "Cache-Control": "public, max-age=86400",
+      });
+    }
   }
-  const body = await asset.arrayBuffer();
-  const type = asset.headers.get("Content-Type") ?? "image/x-icon";
-  return c.body(body, 200, {
-    "Content-Type": type,
-    "Cache-Control": "public, max-age=86400",
-  });
-});
+  return c.text("not found", 404);
+}
+
+app.get("/favicon.ico", async (c) => serveNwbFavicon(c));
+app.get("/favicon.png", async (c) => serveNwbFavicon(c));
 
 app.all("*", async (c) => {
   const gated = isGatedPath(c.req.path);

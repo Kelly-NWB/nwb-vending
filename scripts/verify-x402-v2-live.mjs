@@ -28,8 +28,10 @@ function decodePaymentRequired(header) {
   return JSON.parse(json);
 }
 
+const TIMEOUT_MS = 40000;
+
 async function fetchText(url, init = {}) {
-  const res = await fetch(url, { ...init, signal: AbortSignal.timeout(25000) });
+  const res = await fetch(url, { ...init, signal: AbortSignal.timeout(TIMEOUT_MS) });
   const text = await res.text();
   return { res, text };
 }
@@ -65,7 +67,7 @@ try {
 
   const faviconRes = await fetch(`${HOST}/favicon.ico`, {
     method: "HEAD",
-    signal: AbortSignal.timeout(25000),
+    signal: AbortSignal.timeout(TIMEOUT_MS),
   });
   if (!faviconRes.ok) fail("favicon", `status ${faviconRes.status}`);
   else pass("favicon", faviconRes.headers.get("content-type") || "ok");
@@ -74,7 +76,7 @@ try {
   const probeRes = await fetch(probeUrl, {
     method: "GET",
     headers: { "Cache-Control": "no-cache", Pragma: "no-cache" },
-    signal: AbortSignal.timeout(25000),
+    signal: AbortSignal.timeout(TIMEOUT_MS),
   });
   const probeBody = await probeRes.text();
   const payHdr =
@@ -121,7 +123,7 @@ if (failed.length) {
   console.error(`LIGHTS_OUT: FAIL (${failed.length} check(s))`);
   for (const f of failed) console.error(`  - ${f.name}: ${f.detail}`);
   exitClean(1);
+} else {
+  console.log("LIGHTS_OUT: PASS — safe to retry x402scan Add Server");
+  exitClean(0);
 }
-
-console.log("LIGHTS_OUT: PASS — safe to retry x402scan Add Server");
-exitClean(0);

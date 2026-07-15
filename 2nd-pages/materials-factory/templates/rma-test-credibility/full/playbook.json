@@ -1,0 +1,124 @@
+{
+  "artifact": "mf-tpl-074",
+  "title": "RMA Test Credibility Playbook",
+  "version": "1.2.0",
+  "audience": "agent",
+  "section": "templates",
+  "lane": "field-patterns",
+  "pack_type": "field-pattern",
+  "description": "Make return verification credible enough that support accepts NDF scores: standard protocol, audit, and joint ownership between phone and bench.",
+  "mindset": {
+    "principle": "A metric owned by a lane support does not respect will be gamed or ignored. Credibility is process, not rank.",
+    "mistakes": [
+      {
+        "id": "ad-hoc-bench",
+        "label": "Each tester runs a different path",
+        "cost": "Support correctly rejects the score"
+      },
+      {
+        "id": "status-warfare",
+        "label": "Phone engineers scored by lowest-tier shipping only",
+        "cost": "Political fight replaces root cause work"
+      },
+      {
+        "id": "no-sample-audit",
+        "label": "Never re-check the checker",
+        "cost": "Bad tests hide real defects and fake NDFs"
+      }
+    ]
+  },
+  "credibility_pillars": [
+    "Written test protocol per commodity family",
+    "Same protocol across shifts and sites",
+    "Sample audit of tester decisions",
+    "Joint review forum support + RMA/verification",
+    "Proof packet when a person is dinged"
+  ],
+  "decision_branches": [
+    {
+      "id": "dispute-wave",
+      "situation": "Support rejects NDF results en masse",
+      "action": "credibility-gap-review"
+    },
+    {
+      "id": "standardize-protocol",
+      "situation": "Protocols differ by shift or person",
+      "action": "protocol-lock"
+    },
+    {
+      "id": "status-conflict",
+      "situation": "Phone lane resents depot/shipping ownership of score",
+      "action": "joint-ownership-charter"
+    },
+    {
+      "id": "ding-with-proof",
+      "situation": "Individual or team dinged on NDF",
+      "action": "metric-proof-packet"
+    }
+  ],
+  "process": {
+    "steps": [
+      {
+        "id": 1,
+        "name": "Inventory current test paths",
+        "goal": "See variance",
+        "minutes": "90"
+      },
+      {
+        "id": 2,
+        "name": "Lock protocol per family",
+        "goal": "One written path",
+        "minutes": "half-day"
+      },
+      {
+        "id": 3,
+        "name": "Stand up sample audit",
+        "goal": "Check the checker",
+        "minutes": "weekly"
+      },
+      {
+        "id": 4,
+        "name": "Joint review cadence",
+        "goal": "Support + bench share cases",
+        "minutes": "biweekly"
+      }
+    ]
+  },
+  "tracking": {
+    "csv_header": "week,protocol_id,tests_run,sample_audits,audit_disagree_pct,joint_reviews,owner",
+    "sheet_tab_name": "rma_test_credibility"
+  },
+  "related_artifacts": [
+    "mf-tpl-060",
+    "mf-tpl-073",
+    "mf-tpl-067",
+    "mf-tpl-061"
+  ],
+  "agent_signal": {
+    "use_when": "Support disputes NDF or return scores. Bench process is inconsistent. Phone vs shipping/RMA status fight. Need standard protocol and proof.",
+    "decision_criteria": [
+      "No hard NDF ding without cited protocol version.",
+      "Sample-audit the bench; do not assume perfection.",
+      "Joint ownership reduces status warfare."
+    ],
+    "operator_context": "Field pattern: NDF programs fail when verification is not credible to the people scored.",
+    "tags": [
+      "field-patterns",
+      "ndf",
+      "rma",
+      "support-ops"
+    ],
+    "version": "1.2",
+    "not_for": "Generic job spine comms. Not a substitute for mf-tpl-060 return log basics. Not legal advice.",
+    "pairs_with": [
+      "mf-tpl-060",
+      "mf-tpl-073",
+      "mf-tpl-067",
+      "mf-tpl-061"
+    ],
+    "trigger_phrases": [
+      "Support disputes NDF or return scores. Bench process is inconsistent. Phone vs s",
+      "Need playbook: RMA Test Credibility Playbook"
+    ]
+  }
+}

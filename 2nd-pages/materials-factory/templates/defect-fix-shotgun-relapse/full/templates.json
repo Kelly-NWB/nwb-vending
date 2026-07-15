@@ -1,0 +1,31 @@
+{
+  "artifact": "mf-tpl-077",
+  "version": "1.2.0",
+  "templates": [
+    {
+      "id": "real-defect-investigation",
+      "use_when": "techs-right",
+      "body": "REAL DEFECT INVESTIGATION\nFamily: _______________  Date: _______\n\nFloor signal: _______________\nNDF vs field fail notes: _______________\nTest method gaps: _______________\nSample plan: _______________\nOwner: _______________"
+    },
+    {
+      "id": "vendor-evidence-pack",
+      "use_when": "vendor-fight",
+      "body": "VENDOR EVIDENCE PACK\nVendor: _______________  Family: _______________\n\nFail signatures: _______________\nYour protocol ID: _______________\nUnits/lots: _______________\nAsk: acknowledge / replace / rework\nDeadline: _______"
+    },
+    {
+      "id": "shotgun-control-rules",
+      "use_when": "post-fix-relapse",
+      "body": "SHOTGUN CONTROL RULES\nFamily: _______________  Effective: _______\n\nWhen free replace is allowed: _______________\nWhen kit required: _______________\nWhen troubleshooting gate required: _______________\nMetric watch (2 wk): outbound ___  NDF ___  callbacks ___"
+    },
+    {
+      "id": "fru-kit-design",
+      "use_when": "awkward-swap",
+      "body": "FRU KIT DESIGN\nProblem swap: _______________ (e.g. orphan memory)\n\nKit name: _______________\nContents: _______________\nWhen to ship kit vs single: _______________\nOnsite notes for customer: _______________\nOwner: _______________"
+    },
+    {
+      "id": "line-replace-comms",
+      "use_when": "vendor-fight",
+      "body": "LINE REPLACE COMMS (INTERNAL)\nFamily: _______________\nWhat was wrong: _______________\nWhat we fixed: _______________\nWhat NOT to do now: unlimited shotgun without gate\nNew rule ref: _______________"
+    }
+  ]
+}

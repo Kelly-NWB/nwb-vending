@@ -496,6 +496,42 @@ const GATED_ROUTES: GatedRoute[] = [
     description: "Post-Judgment Dead Debtor Playbook agent pack (mf-tpl-072)",
     artifact: "mf-tpl-072",
   },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/ndf-metric-gaming/full",
+    price: "$0.08",
+    description: "NDF Metric Gaming Playbook agent pack (mf-tpl-073)",
+    artifact: "mf-tpl-073",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/rma-test-credibility/full",
+    price: "$0.08",
+    description: "RMA Test Credibility Playbook agent pack (mf-tpl-074)",
+    artifact: "mf-tpl-074",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/account-ndf-healthcheck/full",
+    price: "$0.08",
+    description: "Account NDF Healthcheck Playbook agent pack (mf-tpl-075)",
+    artifact: "mf-tpl-075",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/site-process-discovery/full",
+    price: "$0.08",
+    description: "Site Process Discovery Playbook agent pack (mf-tpl-076)",
+    artifact: "mf-tpl-076",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/defect-fix-shotgun-relapse/full",
+    price: "$0.08",
+    description: "Defect Fix Shotgun Relapse Playbook agent pack (mf-tpl-077)",
+    artifact: "mf-tpl-077",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/support-incentive-steering/full",
+    price: "$0.08",
+    description: "Support Incentive Steering Playbook agent pack (mf-tpl-078)",
+    artifact: "mf-tpl-078",
+  },
 ];
 
 const NETWORK_CAIP2: Partial<Record<Env["NETWORK"], string>> = {

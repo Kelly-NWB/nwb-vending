@@ -1,0 +1,41 @@
+{
+  "artifact": "mf-tpl-076",
+  "version": "1.2.0",
+  "description": "Run a site process discovery before blaming hardware or support: observe, earn trust, match bench results to local process, present root cause to decision makers.",
+  "examples": [
+    {
+      "id": "ex-update-storm",
+      "context": "Mass client update pushed mid-day. Reboots, crashes, drives declared dead. Replacements spiked.",
+      "branch": "site-observation",
+      "templates_used": [
+        "site-observation",
+        "process-match-worksheet",
+        "hw-vs-sw-checklist"
+      ],
+      "resolution": "Bench-good drives. Root cause: update + write damage path. Change update window and replace criteria.",
+      "log_row": "2026-W22,update-storm,bench-good,process,ok"
+    },
+    {
+      "id": "ex-hard-power",
+      "context": "EOD habit: kill power strip instead of clean shutdown. Boot failures blamed on disks.",
+      "branch": "bench-good-field-bad",
+      "templates_used": [
+        "process-match-worksheet",
+        "exec-root-cause-brief"
+      ],
+      "resolution": "Shutdown standard rewritten. False disk RMA rate fell.",
+      "log_row": "2026-W23,hard-power,policy,ndf-down"
+    },
+    {
+      "id": "ex-exec-room",
+      "context": "Leadership wanted vendor pound-the-table meeting.",
+      "branch": "exec-brief",
+      "templates_used": [
+        "exec-root-cause-brief",
+        "trust-day-plan"
+      ],
+      "resolution": "Presented process root cause with bench data. Joint fix plan; relationship held.",
+      "log_row": "2026-W24,exec-brief,joint-plan,held"
+    }
+  ]
+}

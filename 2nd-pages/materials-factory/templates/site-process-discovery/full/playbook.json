@@ -1,0 +1,135 @@
+{
+  "artifact": "mf-tpl-076",
+  "title": "Site Process Discovery Playbook",
+  "version": "1.2.0",
+  "audience": "agent",
+  "section": "templates",
+  "lane": "field-patterns",
+  "pack_type": "field-pattern",
+  "description": "Run a site process discovery before blaming hardware or support: observe, earn trust, match bench results to local process, present root cause to decision makers.",
+  "mindset": {
+    "principle": "Data without floor context loses. Floor without data is anecdote. Do both, in that order when politics are hot.",
+    "mistakes": [
+      {
+        "id": "slides-first",
+        "label": "Present NDF charts before watching their process",
+        "cost": "They reject the data; you miss the real cause"
+      },
+      {
+        "id": "hw-default",
+        "label": "Treat every field failure as parts failure",
+        "cost": "Replace loops, vendor fights, customer still broken"
+      },
+      {
+        "id": "shame-room",
+        "label": "Publicly embarrass local techs without a fix path",
+        "cost": "You win the room and lose the account"
+      }
+    ]
+  },
+  "common_false_hw_patterns": [
+    {
+      "id": "forced-mass-update",
+      "label": "Mass software push reboots fleets; OS corruption looks like disk fail"
+    },
+    {
+      "id": "hard-power-cut",
+      "label": "Power strip or breaker used as shutdown; write damage / boot failure"
+    },
+    {
+      "id": "wrong-part-swap",
+      "label": "Identical units on bench; wrong unit returned"
+    },
+    {
+      "id": "env-power",
+      "label": "Power quality, heat, dust misread as intermittent HW"
+    }
+  ],
+  "decision_branches": [
+    {
+      "id": "hot-account",
+      "situation": "High-visibility fail claims; blame on vendor or support",
+      "action": "site-observation"
+    },
+    {
+      "id": "bench-good-field-bad",
+      "situation": "Returns test good; field still replaces",
+      "action": "process-match-worksheet"
+    },
+    {
+      "id": "exec-brief",
+      "situation": "Need leadership decision on process change",
+      "action": "exec-root-cause-brief"
+    },
+    {
+      "id": "local-ally",
+      "situation": "Local IT cooperative but central IT hostile process",
+      "action": "trust-day-plan"
+    }
+  ],
+  "process": {
+    "steps": [
+      {
+        "id": 1,
+        "name": "Prep: pull account NDF and top SKUs",
+        "goal": "Know what to look for",
+        "minutes": "60"
+      },
+      {
+        "id": 2,
+        "name": "Observe a full work cycle",
+        "goal": "Shutdown, update, replace habits",
+        "minutes": "half-day+"
+      },
+      {
+        "id": 3,
+        "name": "Match observations to bench results",
+        "goal": "HW vs process/OS",
+        "minutes": "60"
+      },
+      {
+        "id": 4,
+        "name": "Brief decision makers with fix path",
+        "goal": "Change process, not just parts policy",
+        "minutes": "45"
+      }
+    ]
+  },
+  "tracking": {
+    "csv_header": "visit_date,account,observations,bench_summary,root_cause_class,actions,owner",
+    "sheet_tab_name": "site_process_discovery"
+  },
+  "related_artifacts": [
+    "mf-tpl-075",
+    "mf-tpl-060",
+    "mf-tpl-067",
+    "mf-tpl-001"
+  ],
+  "agent_signal": {
+    "use_when": "Account blames hardware at scale. Returns often NDF. Need site visit pattern: observe process before exec data meeting.",
+    "decision_criteria": [
+      "Observe before the confrontation deck.",
+      "Classify root cause: HW vs process vs OS/env.",
+      "Present fix path, not only blame."
+    ],
+    "operator_context": "Field pattern: many institutional false HW storms are local process (updates, power, swaps) plus good bench data.",
+    "tags": [
+      "field-patterns",
+      "ndf",
+      "site-visit",
+      "root-cause"
+    ],
+    "version": "1.2",
+    "not_for": "Generic job spine comms. Not a substitute for mf-tpl-060 return log basics. Not legal advice.",
+    "pairs_with": [
+      "mf-tpl-075",
+      "mf-tpl-060",
+      "mf-tpl-067",
+      "mf-tpl-001"
+    ],
+    "trigger_phrases": [
+      "Account blames hardware at scale. Returns often NDF. Need site visit pattern: ob",
+      "Need playbook: Site Process Discovery Playbook"
+    ]
+  }
+}

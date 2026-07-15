@@ -1,0 +1,135 @@
+{
+  "artifact": "mf-tpl-077",
+  "title": "Defect Fix Shotgun Relapse Playbook",
+  "version": "1.2.0",
+  "audience": "agent",
+  "section": "templates",
+  "lane": "field-patterns",
+  "pack_type": "field-pattern",
+  "description": "Handle real defects that drive high NDF complaints: investigate, force vendor truth, replace the line, then govern the free-parts relapse and customer install pain.",
+  "mindset": {
+    "principle": "Sometimes the floor is right and the scoreboard is lying because the part and the test are bad. Fix that first. Then redesign incentives so victory does not become shotgun season.",
+    "mistakes": [
+      {
+        "id": "coach-over-investigate",
+        "label": "Train techs harder while vendor line is defective",
+        "cost": "Trust destroyed; real failures continue"
+      },
+      {
+        "id": "ignore-test-gap",
+        "label": "Leave a weak test that cannot catch the real fail",
+        "cost": "NDF and confirmed-fail both wrong"
+      },
+      {
+        "id": "open-bar-after-fix",
+        "label": "After line replace, leave unlimited free that SKU",
+        "cost": "Shotgun returns; customers hurt on awkward swaps"
+      }
+    ]
+  },
+  "phases": [
+    {
+      "id": "listen",
+      "label": "Floor complaint + NDF spike on one family"
+    },
+    {
+      "id": "investigate",
+      "label": "Test method, sample, vendor data, field repro"
+    },
+    {
+      "id": "force-truth",
+      "label": "Vendor acknowledge; replace or rework population"
+    },
+    {
+      "id": "govern-relapse",
+      "label": "Kit rules, not unlimited orphan FRUs"
+    }
+  ],
+  "decision_branches": [
+    {
+      "id": "techs-right",
+      "situation": "High NDF complaints but field evidence of real intermittents",
+      "action": "real-defect-investigation"
+    },
+    {
+      "id": "vendor-fight",
+      "situation": "Vendor denies; your test weak or disputed",
+      "action": "vendor-evidence-pack"
+    },
+    {
+      "id": "post-fix-relapse",
+      "situation": "After line fix, outbound of that part explodes",
+      "action": "shotgun-control-rules"
+    },
+    {
+      "id": "awkward-swap",
+      "situation": "Part is free but painful for end users to install",
+      "action": "fru-kit-design"
+    }
+  ],
+  "process": {
+    "steps": [
+      {
+        "id": 1,
+        "name": "Treat floor signal as hypothesis",
+        "goal": "Do not coach-first",
+        "minutes": "immediate"
+      },
+      {
+        "id": 2,
+        "name": "Stress test method and samples",
+        "goal": "Catch flighty fails",
+        "minutes": "days"
+      },
+      {
+        "id": 3,
+        "name": "Vendor close with evidence",
+        "goal": "Acknowledge + replace path",
+        "minutes": "ongoing"
+      },
+      {
+        "id": 4,
+        "name": "Install post-fix outbound rules/kits",
+        "goal": "Block shotgun relapse",
+        "minutes": "before announce free"
+      }
+    ]
+  },
+  "tracking": {
+    "csv_header": "week,family,ndf_pct,field_fail_signal,vendor_status,outbound_qty,kit_required_y_n,owner",
+    "sheet_tab_name": "defect_fix_shotgun"
+  },
+  "related_artifacts": [
+    "mf-tpl-073",
+    "mf-tpl-074",
+    "mf-tpl-078",
+    "mf-tpl-067"
+  ],
+  "agent_signal": {
+    "use_when": "High NDF or floor revolt on one commodity. Suspect real defect and weak test. After a line fix, free-parts shotgun returns. Need kit or rules.",
+    "decision_criteria": [
+      "Investigate before pure coaching when one family dominates complaints.",
+      "Close vendor with evidence; improve test if needed.",
+      "Before declaring free replace, set kit/rules to block relapse."
+    ],
+    "operator_context": "Field pattern: win the real defect war, then immediately redesign incentives or shotgun season starts.",
+    "tags": [
+      "field-patterns",
+      "ndf",
+      "vendor",
+      "fru-kits"
+    ],
+    "version": "1.2",
+    "not_for": "Generic job spine comms. Not a substitute for mf-tpl-060 return log basics. Not legal advice.",
+    "pairs_with": [
+      "mf-tpl-073",
+      "mf-tpl-074",
+      "mf-tpl-078",
+      "mf-tpl-067"
+    ],
+    "trigger_phrases": [
+      "High NDF or floor revolt on one commodity. Suspect real defect and weak test. Af",
+      "Need playbook: Defect Fix Shotgun Relapse Playbook"
+    ]
+  }
+}

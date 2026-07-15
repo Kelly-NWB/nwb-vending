@@ -7,7 +7,7 @@
   "network": "base",
   "health": "/__x402/health",
   "audience": "agent",
-  "entry_count": 76,
+  "entry_count": 82,
   "job_spine": {
     "description": "Small-business job lifecycle for Treasure Valley-style ops. Fetch chain in order; attach extensions by anchor.",
     "chain": [
@@ -2625,13 +2625,206 @@
       ],
       "agent_signal_version": "1.2",
       "disclaimer": "Documentation and organizational patterns from field experience. Not legal advice."
+    },
+    {
+      "id": "mf-tpl-073",
+      "section": "templates",
+      "lane": "field-patterns",
+      "pack_type": "field-pattern",
+      "title": "NDF Metric Gaming Playbook",
+      "price": "$0.08",
+      "teaser": "templates/ndf-metric-gaming/",
+      "full": "templates/ndf-metric-gaming/full/",
+      "primary": "playbook.json",
+      "apply": "branch → template → log",
+      "description": "When NDF tracking starts, support routes around the scoreboard. Find untested or auto-credit SKUs and close the game.",
+      "tags": [
+        "field-patterns",
+        "ndf",
+        "incentives",
+        "support-ops"
+      ],
+      "use_when": "NDF scoring started and outbound mix shifted to certain SKUs. Suspect untested or auto-credit paths. Need to close gaming without pure blame.",
+      "not_for": "Generic job spine comms. Not a substitute for mf-tpl-060 return log basics. Not legal advice.",
+      "pairs_with": [
+        "mf-tpl-060",
+        "mf-tpl-074",
+        "mf-tpl-078",
+        "mf-tpl-065"
+      ],
+      "trigger_phrases": [
+        "NDF scoring started and outbound mix shifted to certain SKUs. Suspect untested o",
+        "Need playbook: NDF Metric Gaming Playbook"
+      ],
+      "agent_signal_version": "1.2"
+    },
+    {
+      "id": "mf-tpl-074",
+      "section": "templates",
+      "lane": "field-patterns",
+      "pack_type": "field-pattern",
+      "title": "RMA Test Credibility Playbook",
+      "price": "$0.08",
+      "teaser": "templates/rma-test-credibility/",
+      "full": "templates/rma-test-credibility/full/",
+      "primary": "playbook.json",
+      "apply": "branch → template → log",
+      "description": "Support will not trust NDF scores if the back-end test is weak or run by a lower-status lane. Standardize the bench so the metric can stand.",
+      "tags": [
+        "field-patterns",
+        "ndf",
+        "rma",
+        "support-ops"
+      ],
+      "use_when": "Support disputes NDF or return scores. Bench process is inconsistent. Phone vs shipping/RMA status fight. Need standard protocol and proof.",
+      "not_for": "Generic job spine comms. Not a substitute for mf-tpl-060 return log basics. Not legal advice.",
+      "pairs_with": [
+        "mf-tpl-060",
+        "mf-tpl-073",
+        "mf-tpl-067",
+        "mf-tpl-061"
+      ],
+      "trigger_phrases": [
+        "Support disputes NDF or return scores. Bench process is inconsistent. Phone vs s",
+        "Need playbook: RMA Test Credibility Playbook"
+      ],
+      "agent_signal_version": "1.2"
+    },
+    {
+      "id": "mf-tpl-075",
+      "section": "templates",
+      "lane": "field-patterns",
+      "pack_type": "field-pattern",
+      "title": "Account NDF Healthcheck Playbook",
+      "price": "$0.08",
+      "teaser": "templates/account-ndf-healthcheck/",
+      "full": "templates/account-ndf-healthcheck/full/",
+      "primary": "playbook.json",
+      "apply": "branch → template → log",
+      "description": "Turn internal NDF into customer-facing account health: share their return pattern, push back on part-swap theater, productize monthly report",
+      "tags": [
+        "field-patterns",
+        "ndf",
+        "enterprise",
+        "support-ops"
+      ],
+      "use_when": "Large or VIP account burns parts with high NDF. Need pushback with their data. Want monthly healthcheck sales can carry.",
+      "not_for": "Generic job spine comms. Not a substitute for mf-tpl-060 return log basics. Not legal advice.",
+      "pairs_with": [
+        "mf-tpl-060",
+        "mf-tpl-067",
+        "mf-tpl-001",
+        "mf-tpl-020"
+      ],
+      "trigger_phrases": [
+        "Large or VIP account burns parts with high NDF. Need pushback with their data. W",
+        "Need playbook: Account NDF Healthcheck Playbook"
+      ],
+      "agent_signal_version": "1.2"
+    },
+    {
+      "id": "mf-tpl-076",
+      "section": "templates",
+      "lane": "field-patterns",
+      "pack_type": "field-pattern",
+      "title": "Site Process Discovery Playbook",
+      "price": "$0.08",
+      "teaser": "templates/site-process-discovery/",
+      "full": "templates/site-process-discovery/full/",
+      "primary": "playbook.json",
+      "apply": "branch → template → log",
+      "description": "Before the big data meeting, watch their process. Customer-caused failures often look like hardware until you see the floor.",
+      "tags": [
+        "field-patterns",
+        "ndf",
+        "site-visit",
+        "root-cause"
+      ],
+      "use_when": "Account blames hardware at scale. Returns often NDF. Need site visit pattern: observe process before exec data meeting.",
+      "not_for": "Generic job spine comms. Not a substitute for mf-tpl-060 return log basics. Not legal advice.",
+      "pairs_with": [
+        "mf-tpl-075",
+        "mf-tpl-060",
+        "mf-tpl-067",
+        "mf-tpl-001"
+      ],
+      "trigger_phrases": [
+        "Account blames hardware at scale. Returns often NDF. Need site visit pattern: ob",
+        "Need playbook: Site Process Discovery Playbook"
+      ],
+      "agent_signal_version": "1.2"
+    },
+    {
+      "id": "mf-tpl-077",
+      "section": "templates",
+      "lane": "field-patterns",
+      "pack_type": "field-pattern",
+      "title": "Defect Fix Shotgun Relapse Playbook",
+      "price": "$0.08",
+      "teaser": "templates/defect-fix-shotgun-relapse/",
+      "full": "templates/defect-fix-shotgun-relapse/full/",
+      "primary": "playbook.json",
+      "apply": "branch → template → log",
+      "description": "When NDF was right to scream: real bad commodity, weak test, vendor pressure. Fix the line, then stop the free-parts shotgun that follows.",
+      "tags": [
+        "field-patterns",
+        "ndf",
+        "vendor",
+        "fru-kits"
+      ],
+      "use_when": "High NDF or floor revolt on one commodity. Suspect real defect and weak test. After a line fix, free-parts shotgun returns. Need kit or rules.",
+      "not_for": "Generic job spine comms. Not a substitute for mf-tpl-060 return log basics. Not legal advice.",
+      "pairs_with": [
+        "mf-tpl-073",
+        "mf-tpl-074",
+        "mf-tpl-078",
+        "mf-tpl-067"
+      ],
+      "trigger_phrases": [
+        "High NDF or floor revolt on one commodity. Suspect real defect and weak test. Af",
+        "Need playbook: Defect Fix Shotgun Relapse Playbook"
+      ],
+      "agent_signal_version": "1.2"
+    },
+    {
+      "id": "mf-tpl-078",
+      "section": "templates",
+      "lane": "field-patterns",
+      "pack_type": "field-pattern",
+      "title": "Support Incentive Steering Playbook",
+      "price": "$0.08",
+      "teaser": "templates/support-incentive-steering/",
+      "full": "templates/support-incentive-steering/full/",
+      "primary": "playbook.json",
+      "apply": "branch → template → log",
+      "description": "Support follows incentives. Design measures, free parts, kits, and scoreboards so the crowd moves toward real fixes, not games.",
+      "tags": [
+        "field-patterns",
+        "incentives",
+        "support-ops",
+        "ndf"
+      ],
+      "use_when": "Launching or fixing support metrics (including NDF). Floor behavior keeps sliding. Need incentive design and game pre-mortem, not only more training.",
+      "not_for": "Generic job spine comms. Not a substitute for mf-tpl-060 return log basics. Not legal advice.",
+      "pairs_with": [
+        "mf-tpl-073",
+        "mf-tpl-077",
+        "mf-tpl-060",
+        "mf-tpl-061"
+      ],
+      "trigger_phrases": [
+        "Launching or fixing support metrics (including NDF). Floor behavior keeps slidin",
+        "Need playbook: Support Incentive Steering Playbook"
+      ],
+      "agent_signal_version": "1.2"
     }
   ],
   "agent_signal_schema": "1.2",
   "pack_lanes": {
     "job_spine": "Small-business job lifecycle templates and tools",
     "support_backbone": "Support ops metrics, queues, forecast (061-067)",
-    "field_patterns": "Field patterns from real work: people ops, returns, bridge, workplace exit. Not legal advice.",
-    "workplace_exit": "Severance and benefits documentation patterns (068-072). Bonus aisle."
+    "field_patterns": "Field patterns from real work: people ops, returns, NDF incentives, site process, workplace exit. Not legal advice.",
+    "workplace_exit": "Severance and benefits documentation patterns (068-072). Bonus aisle.",
+    "ndf_cluster": "NDF and support incentive patterns (073-078). Complements 060."
   }
 }

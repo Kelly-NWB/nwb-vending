@@ -1,0 +1,31 @@
+{
+  "artifact": "mf-tpl-078",
+  "version": "1.2.0",
+  "templates": [
+    {
+      "id": "incentive-design",
+      "use_when": "new-metric",
+      "body": "INCENTIVE DESIGN SHEET\nChange: _______________  Effective: _______\n\nIntended behavior: _______________\nLevers used: measure / free parts / kits / proof / status\nPaired metric (anti-game): _______________\nOwner: _______________"
+    },
+    {
+      "id": "game-premortem",
+      "use_when": "pre-mortem",
+      "body": "GAME PRE-MORTEM\nMetric/policy: _______________\n\nHow will a smart tech hit the number without the outcome we want?\n1. _______________\n2. _______________\n3. _______________\nHole closes: _______________\nGo-live gate: all holes have an owner"
+    },
+    {
+      "id": "behavior-shift-review",
+      "use_when": "unexpected-behavior",
+      "body": "BEHAVIOR SHIFT REVIEW\nWeek: _______\nWhat changed in policy/metric: _______________\nWhat the floor did: _______________\nIncentive read: _______________\nSystem fix (not pep talk): _______________"
+    },
+    {
+      "id": "lever-change-plan",
+      "use_when": "steer-fix",
+      "body": "LEVER CHANGE PLAN\nDesired crowd move: _______________\n\nIncrease friction on: _______________\nDecrease friction on: _______________\nKit or bundle: _______________\nScoreboard change: _______________\nReview in 14 days: _______________"
+    },
+    {
+      "id": "paired-scoreboard-row",
+      "use_when": "new-metric",
+      "body": "PAIRED SCOREBOARD ROW\nPeriod: _______\nPrimary metric: _______________  Value: ___\nPaired metric (cost/quality/callback): _______________  Value: ___\nNarrative: _______________"
+    }
+  ]
+}

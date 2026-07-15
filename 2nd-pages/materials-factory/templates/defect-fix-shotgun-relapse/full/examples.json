@@ -1,0 +1,40 @@
+{
+  "artifact": "mf-tpl-077",
+  "version": "1.2.0",
+  "description": "Handle real defects that drive high NDF complaints: investigate, force vendor truth, replace the line, then govern the free-parts relapse and customer install pain.",
+  "examples": [
+    {
+      "id": "ex-flighty-memory",
+      "context": "Memory intermittent in field. Back-end test weak. Vendor contested. NDF looked like tech failure; was not.",
+      "branch": "techs-right",
+      "templates_used": [
+        "real-defect-investigation",
+        "vendor-evidence-pack"
+      ],
+      "resolution": "Vendor acknowledged. Population replaced. Test method upgraded.",
+      "log_row": "2026-W28,MEM,vendor-ack,line-replace,test-up"
+    },
+    {
+      "id": "ex-shotgun-after-win",
+      "context": "After memory line fix, techs sent memory on nearly every ticket because it was free and trusted.",
+      "branch": "post-fix-relapse",
+      "templates_used": [
+        "shotgun-control-rules",
+        "fru-kit-design"
+      ],
+      "resolution": "CPU/memory/fan kit for onsite path. Orphan sticks restricted. Callbacks from bad swaps down.",
+      "log_row": "2026-W32,MEM-kit,orphan-off,callbacks-down"
+    },
+    {
+      "id": "ex-print-consumable",
+      "context": "Bad batch of media. Shop blamed operators. Then free media became default on every complaint.",
+      "branch": "post-fix-relapse",
+      "templates_used": [
+        "real-defect-investigation",
+        "shotgun-control-rules"
+      ],
+      "resolution": "Batch replaced. Free media required photo gate after week two.",
+      "log_row": "2026-W40,media-batch,replace,gate-on"
+    }
+  ]
+}

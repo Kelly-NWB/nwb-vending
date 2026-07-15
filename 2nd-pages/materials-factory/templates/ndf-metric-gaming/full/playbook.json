@@ -1,0 +1,135 @@
+{
+  "artifact": "mf-tpl-073",
+  "title": "NDF Metric Gaming Playbook",
+  "version": "1.2.0",
+  "audience": "agent",
+  "section": "templates",
+  "lane": "field-patterns",
+  "pack_type": "field-pattern",
+  "description": "Detect and close metric gaming after NDF (no-defect-found) tracking: techs route replacements through SKUs that skip test or auto-credit.",
+  "mindset": {
+    "principle": "The minute a metric scores people, rational techs find the hole. Design the scoreboard or they will design the workaround.",
+    "mistakes": [
+      {
+        "id": "score-without-coverage",
+        "label": "Publish NDF by tech without mapping which SKUs are tested",
+        "cost": "Volume shifts to untested parts; metric looks better while waste rises"
+      },
+      {
+        "id": "blame-only",
+        "label": "Punish techs for gaming without fixing the hole",
+        "cost": "New hole appears next week; trust dies"
+      },
+      {
+        "id": "all-parts-free",
+        "label": "Leave auto-credit or no-test paths open on notorious SKUs",
+        "cost": "When in doubt, throw the free part becomes culture"
+      }
+    ]
+  },
+  "gaming_signals": [
+    {
+      "id": "sku-mix-shift",
+      "label": "Outbound mix shifts to SKUs known not to hit NDF bench"
+    },
+    {
+      "id": "ndf-down-waste-up",
+      "label": "NDF rate improves while parts cost or RMA volume climbs"
+    },
+    {
+      "id": "floor-lore",
+      "label": "Floor talk names a SKU as safe to send"
+    },
+    {
+      "id": "back-end-skip",
+      "label": "RMA or depot skips test and ships to vendor for credit"
+    }
+  ],
+  "decision_branches": [
+    {
+      "id": "start-coverage-map",
+      "situation": "NDF tracking exists but test coverage by SKU is unknown",
+      "action": "sku-test-coverage-map"
+    },
+    {
+      "id": "untested-sku-route",
+      "situation": "One SKU volume spikes after NDF scoring starts",
+      "action": "close-untested-path"
+    },
+    {
+      "id": "auto-credit-hole",
+      "situation": "Back end auto-credits a commodity without test",
+      "action": "must-test-policy"
+    },
+    {
+      "id": "floor-lore-confirm",
+      "situation": "Techs describe a safe part to throw",
+      "action": "lore-to-data-check"
+    }
+  ],
+  "process": {
+    "steps": [
+      {
+        "id": 1,
+        "name": "Map test coverage by SKU family",
+        "goal": "Know what hits the bench vs skips",
+        "minutes": "60"
+      },
+      {
+        "id": 2,
+        "name": "Compare outbound mix pre/post NDF score",
+        "goal": "Find shift to untested paths",
+        "minutes": "45"
+      },
+      {
+        "id": 3,
+        "name": "Close holes (must-test or remove auto-credit)",
+        "goal": "Same rules for all high-volume FRUs",
+        "minutes": "ongoing"
+      },
+      {
+        "id": 4,
+        "name": "Re-measure NDF and parts cost together",
+        "goal": "Metric and waste move in the open",
+        "minutes": "weekly"
+      }
+    ]
+  },
+  "tracking": {
+    "csv_header": "week,sku_family,outbound_qty,tested_qty,skip_or_auto_credit_qty,ndf_pct,notes,owner",
+    "sheet_tab_name": "ndf_metric_gaming"
+  },
+  "related_artifacts": [
+    "mf-tpl-060",
+    "mf-tpl-074",
+    "mf-tpl-078",
+    "mf-tpl-065"
+  ],
+  "agent_signal": {
+    "use_when": "NDF scoring started and outbound mix shifted to certain SKUs. Suspect untested or auto-credit paths. Need to close gaming without pure blame.",
+    "decision_criteria": [
+      "Map test coverage before scoring individuals hard.",
+      "Treat untested/auto-credit SKUs as scoreboard holes.",
+      "Pair NDF % with parts cost so green metrics cannot hide waste."
+    ],
+    "operator_context": "Field pattern: support always follows incentives. Measure creates the next game unless coverage is designed.",
+    "tags": [
+      "field-patterns",
+      "ndf",
+      "incentives",
+      "support-ops"
+    ],
+    "version": "1.2",
+    "not_for": "Generic job spine comms. Not a substitute for mf-tpl-060 return log basics. Not legal advice.",
+    "pairs_with": [
+      "mf-tpl-060",
+      "mf-tpl-074",
+      "mf-tpl-078",
+      "mf-tpl-065"
+    ],
+    "trigger_phrases": [
+      "NDF scoring started and outbound mix shifted to certain SKUs. Suspect untested o",
+      "Need playbook: NDF Metric Gaming Playbook"
+    ]
+  }
+}

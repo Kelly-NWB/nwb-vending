@@ -1,0 +1,31 @@
+{
+  "artifact": "mf-tpl-074",
+  "version": "1.2.0",
+  "templates": [
+    {
+      "id": "credibility-gap-review",
+      "use_when": "dispute-wave",
+      "body": "CREDIBILITY GAP REVIEW\nDate: _______\n\nTop dispute themes: _______________\nProtocol variance found: _______________\nStatus issue (who scores whom): _______________\nActions: _______________\nOwner: _______________"
+    },
+    {
+      "id": "protocol-lock",
+      "use_when": "standardize-protocol",
+      "body": "PROTOCOL LOCK\nFamily: _______________  Protocol ID: _______  Rev: ___\n\nSteps (ordered): _______________\nPass/fail criteria: _______________\nEquipment required: _______________\nEffective date: _______  Train-by date: _______"
+    },
+    {
+      "id": "joint-ownership-charter",
+      "use_when": "status-conflict",
+      "body": "JOINT OWNERSHIP CHARTER\nSupport lead: _______________  Bench/RMA lead: _______________\n\nShared forum: cadence ___  Attendees: _______________\nWho can change protocol: _______________\nHow dings are appealed: _______________"
+    },
+    {
+      "id": "metric-proof-packet",
+      "use_when": "ding-with-proof",
+      "body": "METRIC PROOF PACKET\nPerson/team: _______________  Period: _______\n\nReturn IDs: _______________\nProtocol ID/rev: _______________\nTester: _______________  Outcome: _______________\nSample audit on these? Y/N\nDecision: [ ] uphold  [ ] adjust  [ ] retest"
+    },
+    {
+      "id": "sample-audit-row",
+      "use_when": "standardize-protocol",
+      "body": "SAMPLE AUDIT ROW\nWeek: _______  Original tester: _______________  Auditor: _______________\nReturn ID: _______  Agree Y/N  Notes: _______________"
+    }
+  ]
+}

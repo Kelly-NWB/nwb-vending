@@ -1,0 +1,50 @@
+{
+  "artifact": "mf-tpl-073",
+  "version": "1.2.0",
+  "description": "Detect and close metric gaming after NDF (no-defect-found) tracking: techs route replacements through SKUs that skip test or auto-credit.",
+  "examples": [
+    {
+      "id": "ex-pws-untested",
+      "context": "After NDF scoring, power-supply outbound climbed. Bench rarely saw them; vendor credit path was open.",
+      "branch": "untested-sku-route",
+      "templates_used": [
+        "close-untested-path",
+        "must-test-policy"
+      ],
+      "resolution": "Must-test on that family. Shotgun slowed. NDF and cost read together in weekly ops.",
+      "log_row": "2026-W12,PWS-fam,must-test,closed-auto-credit,ok"
+    },
+    {
+      "id": "ex-coverage-map-first",
+      "context": "Leadership wanted NDF leaderboard by tech. Coverage map did not exist.",
+      "branch": "start-coverage-map",
+      "templates_used": [
+        "sku-test-coverage-map"
+      ],
+      "resolution": "Map first. Three commodity holes found. Leaderboard delayed until holes closed.",
+      "log_row": "2026-W08,coverage-map,3-holes,leaderboard-held"
+    },
+    {
+      "id": "ex-print-redo-skip",
+      "context": "Print shop tracked redo NDF. One finish type never re-inspected; techs always re-ran that finish.",
+      "branch": "floor-lore-confirm",
+      "templates_used": [
+        "lore-to-data-check",
+        "close-untested-path"
+      ],
+      "resolution": "Mandatory re-inspect on that finish. Redo rate honest again.",
+      "log_row": "2026-W15,finish-X,reinspect-on,redo-down"
+    },
+    {
+      "id": "ex-vending-board",
+      "context": "Vending control boards returned without bench test when depot was busy.",
+      "branch": "auto-credit-hole",
+      "templates_used": [
+        "must-test-policy",
+        "gaming-week-row"
+      ],
+      "resolution": "Busy is not a skip reason. Sample audit weekly.",
+      "log_row": "2026-W20,MDB,must-test,audit-weekly"
+    }
+  ]
+}

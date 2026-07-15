@@ -1,0 +1,139 @@
+{
+  "artifact": "mf-tpl-078",
+  "title": "Support Incentive Steering Playbook",
+  "version": "1.2.0",
+  "audience": "agent",
+  "section": "templates",
+  "lane": "field-patterns",
+  "pack_type": "field-pattern",
+  "description": "Design and audit support incentives: what gets measured, what is free, what is kitted, and how the floor will move. Steering model for NDF and related ops metrics.",
+  "mindset": {
+    "principle": "Tech support will go in any direction the incentives point. If you can drive a crowd one way, you are responsible for where the road goes.",
+    "mistakes": [
+      {
+        "id": "single-metric-cult",
+        "label": "One score to rule the floor",
+        "cost": "Everything else is sacrificed to the number"
+      },
+      {
+        "id": "surprise-workaround",
+        "label": "Ship a metric with no game pre-mortem",
+        "cost": "You learn the hole from production waste"
+      },
+      {
+        "id": "punish-rationality",
+        "label": "Call people unethical for following the scoreboard you built",
+        "cost": "Culture war; no system learning"
+      }
+    ]
+  },
+  "lever_types": [
+    {
+      "id": "measure",
+      "label": "What is scored (NDF, AHT, CSAT, cost)"
+    },
+    {
+      "id": "free_parts",
+      "label": "What can be shipped without friction"
+    },
+    {
+      "id": "kits",
+      "label": "What ships as a designed bundle"
+    },
+    {
+      "id": "proof",
+      "label": "What evidence is required before ding or credit"
+    },
+    {
+      "id": "status",
+      "label": "Who owns the score and who is scored"
+    }
+  ],
+  "decision_branches": [
+    {
+      "id": "new-metric",
+      "situation": "About to launch or tighten a support metric",
+      "action": "incentive-design"
+    },
+    {
+      "id": "unexpected-behavior",
+      "situation": "Floor behavior shifted after a policy or metric change",
+      "action": "behavior-shift-review"
+    },
+    {
+      "id": "steer-fix",
+      "situation": "Need the crowd to stop shotgun or start real troubleshoot",
+      "action": "lever-change-plan"
+    },
+    {
+      "id": "pre-mortem",
+      "situation": "Design review before go-live",
+      "action": "game-premortem"
+    }
+  ],
+  "process": {
+    "steps": [
+      {
+        "id": 1,
+        "name": "Name the behavior you want",
+        "goal": "Real fix, not vanity number",
+        "minutes": "30"
+      },
+      {
+        "id": 2,
+        "name": "Map levers (measure, free, kit, proof, status)",
+        "goal": "See the steering wheel",
+        "minutes": "45"
+      },
+      {
+        "id": 3,
+        "name": "Pre-mortem the games",
+        "goal": "Close holes on paper first",
+        "minutes": "45"
+      },
+      {
+        "id": 4,
+        "name": "Pair metrics and review in 2 weeks",
+        "goal": "Catch relapse early",
+        "minutes": "ongoing"
+      }
+    ]
+  },
+  "tracking": {
+    "csv_header": "date,change_type,intended_behavior,predicted_game,paired_metric,review_date,owner",
+    "sheet_tab_name": "support_incentive_steering"
+  },
+  "related_artifacts": [
+    "mf-tpl-073",
+    "mf-tpl-077",
+    "mf-tpl-060",
+    "mf-tpl-061"
+  ],
+  "agent_signal": {
+    "use_when": "Launching or fixing support metrics (including NDF). Floor behavior keeps sliding. Need incentive design and game pre-mortem, not only more training.",
+    "decision_criteria": [
+      "Every metric change gets a game pre-mortem.",
+      "Pair outcome metrics with cost or quality so one number cannot be gamed alone.",
+      "Treat workarounds as system feedback, not moral failure."
+    ],
+    "operator_context": "Field pattern thesis pack: incentives steer support. Use with NDF gaming, kits, and credibility packs.",
+    "tags": [
+      "field-patterns",
+      "incentives",
+      "support-ops",
+      "ndf"
+    ],
+    "version": "1.2",
+    "not_for": "Generic job spine comms. Not a substitute for mf-tpl-060 return log basics. Not legal advice.",
+    "pairs_with": [
+      "mf-tpl-073",
+      "mf-tpl-077",
+      "mf-tpl-060",
+      "mf-tpl-061"
+    ],
+    "trigger_phrases": [
+      "Launching or fixing support metrics (including NDF). Floor behavior keeps slidin",
+      "Need playbook: Support Incentive Steering Playbook"
+    ]
+  }
+}

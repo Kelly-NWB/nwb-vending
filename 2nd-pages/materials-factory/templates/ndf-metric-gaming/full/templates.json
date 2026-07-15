@@ -1,0 +1,31 @@
+{
+  "artifact": "mf-tpl-073",
+  "version": "1.2.0",
+  "templates": [
+    {
+      "id": "sku-test-coverage-map",
+      "use_when": "start-coverage-map",
+      "body": "SKU TEST COVERAGE MAP\nPeriod: _______\n\nSKU family | Hits bench Y/N | Auto-credit Y/N | Owner path\n___________ | ___ | ___ | _______________\n___________ | ___ | ___ | _______________\n\nHoles (skip test or free credit): _______________\nOwner: _______________"
+    },
+    {
+      "id": "close-untested-path",
+      "use_when": "untested-sku-route",
+      "body": "CLOSE UNTESTED PATH\nSKU: _______________  Date: _______\n\nSignal: volume shift / lore / cost\nCurrent path: [ ] bench  [ ] skip  [ ] auto-credit vendor\nChange: _______________\nEffective: _______  Comms to floor: Y/N\nSuccess metric (2 wk): NDF ___  Parts cost ___  Outbound mix ___"
+    },
+    {
+      "id": "must-test-policy",
+      "use_when": "auto-credit-hole",
+      "body": "MUST-TEST POLICY ROW\nCommodity: _______________\n\nOld rule: _______________\nNew rule: all returns in family hit protocol ___ before credit/restock\nExceptions (written): _______________\nRMA owner sign-off: _______________"
+    },
+    {
+      "id": "lore-to-data-check",
+      "use_when": "floor-lore-confirm",
+      "body": "FLOOR LORE TO DATA\nLore heard: _______________\nSKU named: _______________\n\nLast 8 weeks outbound: ___  Tested: ___  NDF if tested: ___\nConclusion: [ ] hole real  [ ] lore only  [ ] real defect (see mf-tpl-077)\nAction: _______________"
+    },
+    {
+      "id": "gaming-week-row",
+      "use_when": "untested-sku-route",
+      "body": "GAMING WATCH ROW\nWeek: _______  SKU: _______________\nOutbound: ___  Tested: ___  Skip/auto: ___  NDF%: ___\nNotes: _______________"
+    }
+  ]
+}

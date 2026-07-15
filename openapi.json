@@ -5421,7 +5421,7 @@
       "get": {
         "operationId": "mf-tpl-068",
         "summary": "Severance Agreement Trail Playbook",
-        "description": "Severance offered then payments stop or reduce. Need dated document chain. Not sure what was promised vs paid.",
+        "description": "Severance agreement trail: dates and docs when payments stop. Not legal advice.",
         "tags": [
           "templates"
         ],
@@ -5497,7 +5497,7 @@
       "get": {
         "operationId": "mf-tpl-069",
         "summary": "Severance Payment Log Playbook",
-        "description": "Severance installments promised but partial pay or stop. Need owed balance on paper.",
+        "description": "Severance payment log: promised vs paid vs owed. Not legal advice.",
         "tags": [
           "templates"
         ],
@@ -5573,7 +5573,7 @@
       "get": {
         "operationId": "mf-tpl-070",
         "summary": "ERISA Evidence Binder Playbook",
-        "description": "Employee benefits or severance plan dispute. Need organized evidence for lawyer or plan appeal. Not DIY lawsuit pack.",
+        "description": "ERISA evidence binder tabs and timeline. Organization only, not legal advice.",
         "tags": [
           "templates"
         ],
@@ -5649,7 +5649,7 @@
       "get": {
         "operationId": "mf-tpl-071",
         "summary": "Bankruptcy Employee Creditor Playbook",
-        "description": "Dead or bankrupt employer. Severance or judgment owed. Proof of claim deadline approaching.",
+        "description": "Bankruptcy proof of claim prep for employee severance creditor. Not legal advice.",
         "tags": [
           "templates"
         ],
@@ -5725,7 +5725,7 @@
       "get": {
         "operationId": "mf-tpl-072",
         "summary": "Post-Judgment Dead Debtor Playbook",
-        "description": "Judgment won but employer bankrupt or insolvent. Writ or costs docs in play. Need organized trail.",
+        "description": "Post-judgment dead debtor: writ, costs, closure trail. Not legal advice.",
         "tags": [
           "templates"
         ],
@@ -5755,6 +5755,462 @@
               "default": "mf-tpl-072"
             },
             "example": "mf-tpl-072"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "artifact": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    },
+                    "audience": {
+                      "type": "string",
+                      "enum": [
+                        "agent"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "artifact",
+                    "title",
+                    "audience"
+                  ],
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/ndf-metric-gaming/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-073",
+        "summary": "NDF Metric Gaming Playbook",
+        "description": "When NDF tracking starts, support routes around the scoreboard. Find untested or auto-credit SKUs and close the game.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "pack_id",
+            "in": "query",
+            "required": false,
+            "description": "Catalog pack id (informational). Primary artifact is returned from the path after x402 payment.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "mf-tpl-073"
+              ],
+              "default": "mf-tpl-073"
+            },
+            "example": "mf-tpl-073"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "artifact": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    },
+                    "audience": {
+                      "type": "string",
+                      "enum": [
+                        "agent"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "artifact",
+                    "title",
+                    "audience"
+                  ],
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/rma-test-credibility/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-074",
+        "summary": "RMA Test Credibility Playbook",
+        "description": "Support will not trust NDF scores if the back-end test is weak or run by a lower-status lane. Standardize the bench so the metric can stand.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "pack_id",
+            "in": "query",
+            "required": false,
+            "description": "Catalog pack id (informational). Primary artifact is returned from the path after x402 payment.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "mf-tpl-074"
+              ],
+              "default": "mf-tpl-074"
+            },
+            "example": "mf-tpl-074"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "artifact": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    },
+                    "audience": {
+                      "type": "string",
+                      "enum": [
+                        "agent"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "artifact",
+                    "title",
+                    "audience"
+                  ],
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/account-ndf-healthcheck/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-075",
+        "summary": "Account NDF Healthcheck Playbook",
+        "description": "Turn internal NDF into customer-facing account health: share their return pattern, push back on part-swap theater, productize monthly report",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "pack_id",
+            "in": "query",
+            "required": false,
+            "description": "Catalog pack id (informational). Primary artifact is returned from the path after x402 payment.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "mf-tpl-075"
+              ],
+              "default": "mf-tpl-075"
+            },
+            "example": "mf-tpl-075"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "artifact": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    },
+                    "audience": {
+                      "type": "string",
+                      "enum": [
+                        "agent"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "artifact",
+                    "title",
+                    "audience"
+                  ],
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/site-process-discovery/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-076",
+        "summary": "Site Process Discovery Playbook",
+        "description": "Before the big data meeting, watch their process. Customer-caused failures often look like hardware until you see the floor.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "pack_id",
+            "in": "query",
+            "required": false,
+            "description": "Catalog pack id (informational). Primary artifact is returned from the path after x402 payment.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "mf-tpl-076"
+              ],
+              "default": "mf-tpl-076"
+            },
+            "example": "mf-tpl-076"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "artifact": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    },
+                    "audience": {
+                      "type": "string",
+                      "enum": [
+                        "agent"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "artifact",
+                    "title",
+                    "audience"
+                  ],
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/defect-fix-shotgun-relapse/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-077",
+        "summary": "Defect Fix Shotgun Relapse Playbook",
+        "description": "When NDF was right to scream: real bad commodity, weak test, vendor pressure. Fix the line, then stop the free-parts shotgun that follows.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "pack_id",
+            "in": "query",
+            "required": false,
+            "description": "Catalog pack id (informational). Primary artifact is returned from the path after x402 payment.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "mf-tpl-077"
+              ],
+              "default": "mf-tpl-077"
+            },
+            "example": "mf-tpl-077"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "artifact": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    },
+                    "audience": {
+                      "type": "string",
+                      "enum": [
+                        "agent"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "artifact",
+                    "title",
+                    "audience"
+                  ],
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/support-incentive-steering/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-078",
+        "summary": "Support Incentive Steering Playbook",
+        "description": "Support follows incentives. Design measures, free parts, kits, and scoreboards so the crowd moves toward real fixes, not games.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "pack_id",
+            "in": "query",
+            "required": false,
+            "description": "Catalog pack id (informational). Primary artifact is returned from the path after x402 payment.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "mf-tpl-078"
+              ],
+              "default": "mf-tpl-078"
+            },
+            "example": "mf-tpl-078"
           }
         ],
         "responses": {

@@ -1,0 +1,31 @@
+{
+  "artifact": "mf-tpl-075",
+  "version": "1.2.0",
+  "templates": [
+    {
+      "id": "account-data-pushback",
+      "use_when": "vip-part-swap",
+      "body": "ACCOUNT NDF PUSHBACK PREP\nAccount: _______________  Period: _______\n\nReturns: ___  Confirmed fail: ___  NDF: ___  NDF%: ___\nPattern (sites/users/SKUs): _______________\nAsk of customer: _______________\nOffer from us: _______________\nSales ally: _______________  Meeting date: _______"
+    },
+    {
+      "id": "monthly-healthcheck-template",
+      "use_when": "build-monthly",
+      "body": "MONTHLY NDF HEALTHCHECK\nAccount: _______________  Month: _______\n\n1) Outcome mix (fail / NDF / other): ___\n2) Top families: _______________\n3) What improved vs last month: _______________\n4) Open joint actions: _______________\n5) Next review: _______\n\nTone: health, not gotcha."
+    },
+    {
+      "id": "sales-enable-brief",
+      "use_when": "sales-carry",
+      "body": "SALES ENABLE BRIEF (NDF HEALTH)\nAccount: _______________\n\nOne sentence: _______________\nChart to show: _______________\nDo not say: _______________\nAsk for: _______________\nSupport backup on call: Y/N"
+    },
+    {
+      "id": "evidence-first-script",
+      "use_when": "customer-genius",
+      "body": "EVIDENCE-FIRST SCRIPT\n\nWe tested returned units under protocol ___. Outcome mix: ___.\nWe are not saying your team is wrong on every case.\nWe are saying pattern X points to process/environment/SW as often as HW.\nProposed next step: _______________"
+    },
+    {
+      "id": "account-health-row",
+      "use_when": "build-monthly",
+      "body": "ACCOUNT HEALTH ROW\nPeriod: _______  Account: _______________\nReturns: ___  Fail: ___  NDF: ___  NDF%: ___\nOwner: _______________  Report sent: Y/N"
+    }
+  ]
+}

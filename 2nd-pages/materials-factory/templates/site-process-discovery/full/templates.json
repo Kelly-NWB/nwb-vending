@@ -1,0 +1,31 @@
+{
+  "artifact": "mf-tpl-076",
+  "version": "1.2.0",
+  "templates": [
+    {
+      "id": "site-observation",
+      "use_when": "hot-account",
+      "body": "SITE OBSERVATION LOG\nAccount/site: _______________  Date: _______\n\nWatch blocks: boot / work / update / EOD shutdown / replace path\nWhat they do: _______________\nWhat they say the failure is: _______________\nArtifacts (screens, tickets): _______________\nAllies on site: _______________"
+    },
+    {
+      "id": "process-match-worksheet",
+      "use_when": "bench-good-field-bad",
+      "body": "PROCESS MATCH WORKSHEET\n\nBench outcome on returns: _______________\nField replace trigger: _______________\nProcess that can create same symptom without bad silicon: _______________\nEvidence link: _______________\nClass: [ ] HW  [ ] process  [ ] OS/update  [ ] env  [ ] mixed"
+    },
+    {
+      "id": "exec-root-cause-brief",
+      "use_when": "exec-brief",
+      "body": "EXEC ROOT CAUSE BRIEF\nAccount: _______________  Date: _______\n\nClaimed problem: _______________\nWhat we measured (bench): _______________\nWhat we saw (site): _______________\nRoot cause class: _______________\nAsk of leadership: _______________\nWhat we will change on our side: _______________"
+    },
+    {
+      "id": "trust-day-plan",
+      "use_when": "local-ally",
+      "body": "TRUST DAY PLAN\nSite: _______________\n\nMorning: observe with local team (no slides)\nMid: shared lunch / informal debrief\nAfter: confirm facts before exec room\nDo not: surprise local staff in front of their boss without a path"
+    },
+    {
+      "id": "hw-vs-sw-checklist",
+      "use_when": "bench-good-field-bad",
+      "body": "HW VS PROCESS/OS CHECK\n[ ] Unit passes hardware protocol\n[ ] Failure appears after update/reboot storm\n[ ] Failure appears after hard power loss\n[ ] Imaging/reimage clears without new silicon\n[ ] Same SKU fails only at this site/process\nNotes: _______________"
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "artifact": "mf-tpl-075",
+  "title": "Account NDF Healthcheck Playbook",
+  "version": "1.2.0",
+  "audience": "agent",
+  "section": "templates",
+  "lane": "field-patterns",
+  "pack_type": "field-pattern",
+  "description": "Build account-level NDF healthchecks for large customers: data pack, careful pushback when they part-swap, and proactive monthly reports via sales.",
+  "mindset": {
+    "principle": "VIP silence is expensive. Their own return data is the adult conversation, not a blame slide.",
+    "mistakes": [
+      {
+        "id": "open-spigot",
+        "label": "Always ship parts for important accounts with no pattern review",
+        "cost": "Problem shifts (HW vs SW vs vendor); nobody fixed"
+      },
+      {
+        "id": "gotcha-meeting",
+        "label": "Surprise the customer with NDF shaming",
+        "cost": "Relationship damage; data ignored"
+      },
+      {
+        "id": "support-only-silo",
+        "label": "Keep NDF internal; sales never carries health story",
+        "cost": "Renewal narrative stays vibe-based"
+      }
+    ]
+  },
+  "healthcheck_slices": [
+    "confirmed_fail_vs_ndf_rate",
+    "top_sku_families",
+    "repeat_site_or_user_patterns",
+    "time_to_troubleshoot_vs_immediate_replace",
+    "open_actions_both_sides"
+  ],
+  "decision_branches": [
+    {
+      "id": "vip-part-swap",
+      "situation": "Important account high volume, high NDF, low real fix rate",
+      "action": "account-data-pushback"
+    },
+    {
+      "id": "build-monthly",
+      "situation": "Large accounts get no proactive return health story",
+      "action": "monthly-healthcheck-template"
+    },
+    {
+      "id": "sales-carry",
+      "situation": "Support has data; sales owns relationship",
+      "action": "sales-enable-brief"
+    },
+    {
+      "id": "customer-genius",
+      "situation": "Customer IT insists diagnosis is always hardware",
+      "action": "evidence-first-script"
+    }
+  ],
+  "process": {
+    "steps": [
+      {
+        "id": 1,
+        "name": "Roll account return outcomes",
+        "goal": "Fail vs NDF vs inconclusive",
+        "minutes": "45"
+      },
+      {
+        "id": 2,
+        "name": "Draft health one-pager",
+        "goal": "Facts + joint actions",
+        "minutes": "30"
+      },
+      {
+        "id": 3,
+        "name": "Align sales before send",
+        "goal": "No surprise attack",
+        "minutes": "20"
+      },
+      {
+        "id": 4,
+        "name": "Review actions next cycle",
+        "goal": "Close loop",
+        "minutes": "monthly"
+      }
+    ]
+  },
+  "tracking": {
+    "csv_header": "period,account_id,returns,confirmed_fail,ndf,ndf_pct,top_family,actions_open,owner",
+    "sheet_tab_name": "account_ndf_health"
+  },
+  "related_artifacts": [
+    "mf-tpl-060",
+    "mf-tpl-067",
+    "mf-tpl-001",
+    "mf-tpl-020"
+  ],
+  "agent_signal": {
+    "use_when": "Large or VIP account burns parts with high NDF. Need pushback with their data. Want monthly healthcheck sales can carry.",
+    "decision_criteria": [
+      "Account rollup before confrontation.",
+      "Sales aligned before customer sees the pack.",
+      "Actions are joint (their process + your support rules)."
+    ],
+    "operator_context": "Field pattern: enterprise part-swap theater ends when account NDF is shared calmly and repeatedly.",
+    "tags": [
+      "field-patterns",
+      "ndf",
+      "enterprise",
+      "support-ops"
+    ],
+    "version": "1.2",
+    "not_for": "Generic job spine comms. Not a substitute for mf-tpl-060 return log basics. Not legal advice.",
+    "pairs_with": [
+      "mf-tpl-060",
+      "mf-tpl-067",
+      "mf-tpl-001",
+      "mf-tpl-020"
+    ],
+    "trigger_phrases": [
+      "Large or VIP account burns parts with high NDF. Need pushback with their data. W",
+      "Need playbook: Account NDF Healthcheck Playbook"
+    ]
+  }
+}

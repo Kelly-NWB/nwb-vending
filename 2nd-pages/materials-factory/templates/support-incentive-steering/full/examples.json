@@ -1,0 +1,51 @@
+{
+  "artifact": "mf-tpl-078",
+  "version": "1.2.0",
+  "description": "Design and audit support incentives: what gets measured, what is free, what is kitted, and how the floor will move. Steering model for NDF and related ops metrics.",
+  "examples": [
+    {
+      "id": "ex-ndf-only",
+      "context": "Org scored NDF only. Parts cost climbed via untested SKUs.",
+      "branch": "pre-mortem",
+      "templates_used": [
+        "game-premortem",
+        "paired-scoreboard-row"
+      ],
+      "resolution": "Paired NDF with parts cost and coverage map. Game shrank.",
+      "log_row": "2026-W12,ndf+cost,coverage,ok"
+    },
+    {
+      "id": "ex-cult-steering",
+      "context": "Lead could move the floor with one policy email. No pre-mortem; chaos each quarter.",
+      "branch": "incentive-design",
+      "templates_used": [
+        "incentive-design",
+        "game-premortem"
+      ],
+      "resolution": "Design sheet required before metric changes. Fewer thrash cycles.",
+      "log_row": "2026-Q3,design-gate,thrash-down"
+    },
+    {
+      "id": "ex-kit-steer",
+      "context": "Wanted less orphan memory shotgun after line fix.",
+      "branch": "steer-fix",
+      "templates_used": [
+        "lever-change-plan",
+        "behavior-shift-review"
+      ],
+      "resolution": "Kit required for that path. Behavior followed the kit rule.",
+      "log_row": "2026-W32,kit-lever,shotgun-down"
+    },
+    {
+      "id": "ex-small-shop",
+      "context": "Five-person shop. Owner yelled about redo rate; staff avoided logging redos.",
+      "branch": "unexpected-behavior",
+      "templates_used": [
+        "behavior-shift-review",
+        "paired-scoreboard-row"
+      ],
+      "resolution": "Logged redos without blame week; paired with cause codes. Data returned.",
+      "log_row": "2026-W05,no-blame-log,data-back"
+    }
+  ]
+}

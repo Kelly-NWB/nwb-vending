@@ -1,0 +1,40 @@
+{
+  "artifact": "mf-tpl-074",
+  "version": "1.2.0",
+  "description": "Make return verification credible enough that support accepts NDF scores: standard protocol, audit, and joint ownership between phone and bench.",
+  "examples": [
+    {
+      "id": "ex-shipping-owned-ndf",
+      "context": "RMA sat under shipping. Phone techs rejected every NDF. Protocols differed by shift.",
+      "branch": "standardize-protocol",
+      "templates_used": [
+        "protocol-lock",
+        "joint-ownership-charter"
+      ],
+      "resolution": "Locked protocols and biweekly joint review. Dispute rate fell.",
+      "log_row": "2026-W10,prot-v2,joint-biweekly,disputes-down"
+    },
+    {
+      "id": "ex-ding-proof",
+      "context": "Tech dinged on high NDF. No protocol citation on file.",
+      "branch": "ding-with-proof",
+      "templates_used": [
+        "metric-proof-packet",
+        "sample-audit-row"
+      ],
+      "resolution": "Ding held only on audited cases. Process fixed for rest.",
+      "log_row": "2026-W14,ding-partial,audit-3,adjust-2"
+    },
+    {
+      "id": "ex-vending-bench",
+      "context": "Field techs and depot argued over control board fails.",
+      "branch": "dispute-wave",
+      "templates_used": [
+        "credibility-gap-review",
+        "protocol-lock"
+      ],
+      "resolution": "Shared protocol photo steps. Argument moved to data.",
+      "log_row": "2026-W18,MDB-prot,photos,ok"
+    }
+  ]
+}

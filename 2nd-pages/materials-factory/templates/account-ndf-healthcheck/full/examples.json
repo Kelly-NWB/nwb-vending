@@ -1,0 +1,40 @@
+{
+  "artifact": "mf-tpl-075",
+  "version": "1.2.0",
+  "description": "Build account-level NDF healthchecks for large customers: data pack, careful pushback when they part-swap, and proactive monthly reports via sales.",
+  "examples": [
+    {
+      "id": "ex-large-it-swap",
+      "context": "Large commercial IT swapped parts on sight. Support volume high. Confirmed fail rate low on returns.",
+      "branch": "account-data-pushback",
+      "templates_used": [
+        "account-data-pushback",
+        "evidence-first-script"
+      ],
+      "resolution": "Joint troubleshooting standard agreed. Parts volume down; real fails clearer.",
+      "log_row": "2026-Q2,ACCT-A,ndf-high,joint-std,ok"
+    },
+    {
+      "id": "ex-monthly-productized",
+      "context": "Support had NDF; sales only heard complaints at renewal.",
+      "branch": "sales-carry",
+      "templates_used": [
+        "sales-enable-brief",
+        "monthly-healthcheck-template"
+      ],
+      "resolution": "Monthly healthcheck on top accounts. Renewal narrative included ops proof.",
+      "log_row": "2026-Q3,top-12,monthly-hc,sales-owned"
+    },
+    {
+      "id": "ex-gov-adjacent-scrubbed",
+      "context": "Institutional account with strong on-site techs. High HDD replace claims. Lab mostly NDF.",
+      "branch": "customer-genius",
+      "templates_used": [
+        "evidence-first-script",
+        "account-data-pushback"
+      ],
+      "resolution": "Data meeting after site process review (see mf-tpl-076). Customer process changes landed.",
+      "log_row": "2026-W22,INST-1,site+data,process-fix"
+    }
+  ]
+}

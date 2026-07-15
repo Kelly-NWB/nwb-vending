@@ -76,7 +76,13 @@
     "https://NWB-Vending.com/2nd-pages/materials-factory/templates/severance-payment-log/full/playbook.json",
     "https://NWB-Vending.com/2nd-pages/materials-factory/templates/erisa-evidence-binder/full/playbook.json",
     "https://NWB-Vending.com/2nd-pages/materials-factory/templates/bankruptcy-employee-creditor/full/playbook.json",
-    "https://NWB-Vending.com/2nd-pages/materials-factory/templates/post-judgment-dead-debtor/full/playbook.json"
+    "https://NWB-Vending.com/2nd-pages/materials-factory/templates/post-judgment-dead-debtor/full/playbook.json",
+    "https://NWB-Vending.com/2nd-pages/materials-factory/templates/ndf-metric-gaming/full/playbook.json",
+    "https://NWB-Vending.com/2nd-pages/materials-factory/templates/rma-test-credibility/full/playbook.json",
+    "https://NWB-Vending.com/2nd-pages/materials-factory/templates/account-ndf-healthcheck/full/playbook.json",
+    "https://NWB-Vending.com/2nd-pages/materials-factory/templates/site-process-discovery/full/playbook.json",
+    "https://NWB-Vending.com/2nd-pages/materials-factory/templates/defect-fix-shotgun-relapse/full/playbook.json",
+    "https://NWB-Vending.com/2nd-pages/materials-factory/templates/support-incentive-steering/full/playbook.json"
   ],
   "ownershipProofs": [
     "0x53799D42E72E3d41625006d310A55EC486DA5213"

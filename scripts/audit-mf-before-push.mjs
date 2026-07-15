@@ -69,6 +69,18 @@ if (manifest.entry_count !== entries.length) {
   );
 }
 
+const indexHtml = readFileSync(join(MF, "index.html"), "utf8");
+const indexCountMatch = indexHtml.match(
+  /(\d+)\s+entries\s+·\s+<a href="catalog-manifest\.json">/
+);
+if (!indexCountMatch) {
+  fail("index.html: could not parse header entry count");
+} else if (Number(indexCountMatch[1]) !== manifest.entry_count) {
+  fail(
+    `index.html: header says ${indexCountMatch[1]} entries but manifest entry_count=${manifest.entry_count}`
+  );
+}
+
 const workerSrc = readFileSync(WORKER, "utf8");
 
 for (const e of entries) {

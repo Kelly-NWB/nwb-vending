@@ -1,0 +1,41 @@
+{
+  "artifact": "mf-tpl-083",
+  "version": "1.2.0",
+  "description": "Redesign high-volume support hiring interviews: roundtable flow, time-box, screen for learning and personality when domain tech is trainable, stop process theater that freezes the pipeline.",
+  "examples": [
+    {
+      "id": "ex-300-seats",
+      "context": "Company building call center. ~300 reps. Roundtables stuck on call-center process detail. Insurance support: tech teachable.",
+      "branch": "redesign-screen",
+      "templates_used": [
+        "throughput-diagnosis",
+        "screen-first-script",
+        "roundtable-timebox"
+      ],
+      "resolution": "Personality and learning first. Throughput recovered. Without redesign, hiring would still be running years later.",
+      "log_row": "wave-1,300,screen-first,minutes-down,ok"
+    },
+    {
+      "id": "ex-book-signal",
+      "context": "Panel argued book question was soft. Pass group showed stronger ramp curiosity in training.",
+      "branch": "redesign-screen",
+      "templates_used": [
+        "screen-first-script",
+        "week-one-audit"
+      ],
+      "resolution": "Kept learning signal. Soft does not mean useless.",
+      "log_row": "wave-2,learning-signal,kept,ramp-ok"
+    },
+    {
+      "id": "ex-bar-drift",
+      "context": "Two interviewers yes almost everyone; one yes almost none.",
+      "branch": "bar-drift",
+      "templates_used": [
+        "scorecard-lock",
+        "roundtable-timebox"
+      ],
+      "resolution": "Three must-haves locked. Calibration meeting. Variance down.",
+      "log_row": "wave-3,scorecard,variance-down"
+    }
+  ]
+}

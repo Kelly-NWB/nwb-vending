@@ -82,7 +82,21 @@
     "https://NWB-Vending.com/2nd-pages/materials-factory/templates/account-ndf-healthcheck/full/playbook.json",
     "https://NWB-Vending.com/2nd-pages/materials-factory/templates/site-process-discovery/full/playbook.json",
     "https://NWB-Vending.com/2nd-pages/materials-factory/templates/defect-fix-shotgun-relapse/full/playbook.json",
-    "https://NWB-Vending.com/2nd-pages/materials-factory/templates/support-incentive-steering/full/playbook.json"
+    "https://NWB-Vending.com/2nd-pages/materials-factory/templates/support-incentive-steering/full/playbook.json",
+    "https://NWB-Vending.com/2nd-pages/materials-factory/templates/failure-cohort-truth/full/playbook.json",
+    "https://NWB-Vending.com/2nd-pages/materials-factory/templates/solution-fit-handoff/full/playbook.json",
+    "https://NWB-Vending.com/2nd-pages/materials-factory/templates/metrics-that-matter-qbr/full/playbook.json",
+    "https://NWB-Vending.com/2nd-pages/materials-factory/templates/sales-support-incident-bridge/full/playbook.json",
+    "https://NWB-Vending.com/2nd-pages/materials-factory/templates/high-volume-interview-redesign/full/playbook.json",
+    "https://NWB-Vending.com/2nd-pages/materials-factory/templates/floor-morale-task-force/full/playbook.json",
+    "https://NWB-Vending.com/2nd-pages/materials-factory/templates/pie-weekly-bridge/full/playbook.json",
+    "https://NWB-Vending.com/2nd-pages/materials-factory/templates/support-oncall-design/full/playbook.json",
+    "https://NWB-Vending.com/2nd-pages/materials-factory/templates/named-account-support/full/playbook.json",
+    "https://NWB-Vending.com/2nd-pages/materials-factory/templates/escalation-engineer-ladder/full/playbook.json",
+    "https://NWB-Vending.com/2nd-pages/materials-factory/templates/preventable-ticket-kill/full/playbook.json",
+    "https://NWB-Vending.com/2nd-pages/materials-factory/templates/support-knowledge-repo/full/playbook.json",
+    "https://NWB-Vending.com/2nd-pages/materials-factory/templates/team-showcase-speaking/full/playbook.json",
+    "https://NWB-Vending.com/2nd-pages/materials-factory/templates/customer-learning-program/full/playbook.json"
   ],
   "ownershipProofs": [
     "0x53799D42E72E3d41625006d310A55EC486DA5213"

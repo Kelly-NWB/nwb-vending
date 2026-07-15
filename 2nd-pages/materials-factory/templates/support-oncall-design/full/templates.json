@@ -1,0 +1,31 @@
+{
+  "artifact": "mf-tpl-086",
+  "version": "1.2.0",
+  "templates": [
+    {
+      "id": "comp-differential",
+      "use_when": "bitter-rotation",
+      "body": "ON-CALL COMP DIFFERENTIAL\nRole/tier: _______________\n\nWhat they get that off-rotation does not: _______________\n(pay / time / other visible treatment)\nHow it is paid/credited: _______________\nPublished where: _______________\nEffective: _______  Owner: _______________"
+    },
+    {
+      "id": "tier-responsibility-matrix",
+      "use_when": "tier-lock",
+      "body": "AFTER-HOURS TIER MATRIX\nTier | Owns | Does not own | Page only if\nL1 / intake | filter, how-to, known scripts | deep eng | _______________\nL2 | product break/fix mid | pure FAQ | _______________\nL3 / specialist | rare / complex | how-tos | _______________\n\nWrong-tier hit = process bug, not hero night"
+    },
+    {
+      "id": "after-hours-path-lock",
+      "use_when": "path-chaos",
+      "body": "AFTER-HOURS PATH LOCK\nCustomer/sales contacts: _______________\nStep 1 intake: _______________\nStep 2 if X then page: _______________\nStep 3 specialist only if: _______________\nAck SLA: ___ min  Update cadence: ___\nWritten doc link/owner: _______________"
+    },
+    {
+      "id": "bypass-policy",
+      "use_when": "sales-bypass",
+      "body": "BYPASS POLICY\nWho may not direct-page specialists: _______________\nException (true Sev1 only): _______________\nWhat happens if bypassed: _______________\nComms to sales: date _______  Owner: _______________"
+    },
+    {
+      "id": "monthly-page-review",
+      "use_when": "tier-lock",
+      "body": "MONTHLY PAGE REVIEW\nPeriod: _______\nPages: ___  Wrong tier: ___  How-to on specialist: ___\nFix: _______________\nComp policy still fair? Y/N"
+    }
+  ]
+}

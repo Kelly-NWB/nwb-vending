@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="mf-tpl-079 teaser. When sales panics on high fail rates, cut the data by age, ship date, and warranty left before the room explodes. Real f">
+  <meta name="x402:artifact" content="mf-tpl-079">
+  <meta name="x402:teaser" content="true">
+  <meta name="x402:audience" content="agent">
+  <title>Failure Cohort Truth Playbook (teaser) | Materials Factory</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="hdr">
+      <h1>Failure Cohort Truth Playbook</h1>
+      <p class="sub">ENTRY: mf-tpl-079 · SECTION: templates · lane: field-patterns · agent audience</p>
+      <p class="mission">When sales panics on high fail rates, cut the data by age, ship date, and warranty left before the room explodes. Real fails on EOL gear are not the same story as new product failure.</p>
+    </header>
+    <section class="block">
+      <h2>Free worked example</h2>
+      <pre class="meta">{
+  "context": "Sales and SE in support office. Customer says drives fail too often. Aggregate rate looks terrible.",
+  "branch": "cohort-cut",
+  "resolution": "Fails concentrated on aged in-fleet units near end of warranty. New shippers clean. Firmware path with manufacturer. Narrative corrected.",
+  "log_row": "2026-W40,ACCT-E,fail-high,EOL-cohort,new-ok,fw-fix"
+}</pre>
+    </section>
+    <section class="block">
+      <h2>Full pack (x402)</h2>
+      <ul class="module-list">
+        <li>Cohort cut: age, ship/manuf date, warranty remaining</li>
+        <li>Cherry-pick detection when sales calms the customer with incomplete data</li>
+        <li>Vendor fix path without false product panic</li>
+      </ul>
+      <dl class="kv">
+        <dt>FULL (x402)</dt>
+        <dd><a href="full/">templates/failure-cohort-truth/full/</a></dd>
+        <dt>PRICE</dt>
+        <dd class="status-ready">$0.08 · USDC on Base</dd>
+        <dt>PAIRS</dt>
+        <dd><a href="../account-ndf-healthcheck/">mf-tpl-075</a> · <a href="../rd-support-bridge/">mf-tpl-067</a> · <a href="../return-verification-signal/">mf-tpl-060</a> · <a href="../sales-support-incident-bridge/">mf-tpl-082</a></dd>
+      </dl>
+    </section>
+    <footer class="foot"><a href="../../index.html">← Materials Factory catalog</a></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+{
+  "artifact": "mf-tpl-090",
+  "version": "1.2.0",
+  "description": "Launch a support-engineer-owned knowledge repo (how-tos, help docs, preemptive fixes), distribute via sales when ready, and enforce content integrity so technical contributors cannot scrape third-party work and rebrand it as company IP.",
+  "examples": [
+    {
+      "id": "ex-unreal-repo",
+      "context": "Challenged support engineers to build how-to repo for preemptive solve. They delivered depth. Sales and marketing pushed it. Huge.",
+      "branch": "stand-up-repo",
+      "templates_used": [
+        "repo-charter",
+        "sales-enable-pack"
+      ],
+      "resolution": "Customers and sales got a real asset. Call deflection up on covered topics.",
+      "log_row": "repo-launch,sales-push,huge,ok"
+    },
+    {
+      "id": "ex-scrape-rebrand",
+      "context": "Escalation: engineer scraped code/docs and rebranded word-for-word as company content. Original author and company both hit.",
+      "branch": "integrity-breach",
+      "templates_used": [
+        "integrity-incident",
+        "contribution-gate"
+      ],
+      "resolution": "Content removed. Contribution attestation and review required. Program continued under gate.",
+      "log_row": "plagiarism,takedown,gate-on,program-kept"
+    },
+    {
+      "id": "ex-trust-verify",
+      "context": "High-output technical contributors; leadership assumed ethics matched skill.",
+      "branch": "trust-but-verify",
+      "templates_used": [
+        "contribution-gate",
+        "sample-audit-row"
+      ],
+      "resolution": "Sample audit permanent. Skill no longer substitutes for origin check.",
+      "log_row": "sample-audit,standing,ok"
+    }
+  ]
+}

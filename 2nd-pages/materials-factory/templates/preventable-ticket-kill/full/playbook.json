@@ -1,0 +1,135 @@
+{
+  "artifact": "mf-tpl-089",
+  "title": "Preventable Ticket Kill Playbook",
+  "version": "1.2.0",
+  "audience": "agent",
+  "section": "templates",
+  "lane": "field-patterns",
+  "pack_type": "field-pattern",
+  "description": "Kill preventable support demand: identify recurring call classes caused by missing info or process, fix upstream (welcome pack, docs, packaging, defaults), and set simple human contact patterns that reduce friction.",
+  "mindset": {
+    "principle": "The goal is solving problems before they become them. If almost every customer calls for the same thing, the system is wrong, not the customer.",
+    "mistakes": [
+      {
+        "id": "train-only",
+        "label": "Train agents harder on a preventable class",
+        "cost": "Volume stays; cost stays; pride down"
+      },
+      {
+        "id": "hide-defaults",
+        "label": "Ship systems without obvious access info",
+        "cost": "Guaranteed day-one calls"
+      },
+      {
+        "id": "rando-voice",
+        "label": "Anonymous phone open with no place or identity",
+        "cost": "Customer assumes offshore chaos even when not"
+      }
+    ]
+  },
+  "kill_types": [
+    {
+      "id": "in-box",
+      "label": "Welcome pack / insert with access and first steps"
+    },
+    {
+      "id": "default-access",
+      "label": "Document factory credentials and reset path"
+    },
+    {
+      "id": "voice-trust",
+      "label": "Phone open: thanks + who/where so not a rando"
+    },
+    {
+      "id": "ship-docs",
+      "label": "First-boot or install sheet for top fail asks"
+    }
+  ],
+  "decision_branches": [
+    {
+      "id": "kill-pattern",
+      "situation": "Same ticket class on nearly every new ship or install",
+      "action": "volume-class-hunt"
+    },
+    {
+      "id": "inbox-fix",
+      "situation": "Missing info that belongs in the box or welcome",
+      "action": "welcome-pack-spec"
+    },
+    {
+      "id": "voice",
+      "situation": "Need faster trust on live answer",
+      "action": "open-line-script"
+    },
+    {
+      "id": "measure",
+      "situation": "Prove the kill worked",
+      "action": "class-volume-before-after"
+    }
+  ],
+  "process": {
+    "steps": [
+      {
+        "id": 1,
+        "name": "Hunt top preventable classes",
+        "goal": "Volume x obviousness",
+        "minutes": "60"
+      },
+      {
+        "id": 2,
+        "name": "Design upstream fix",
+        "goal": "Box, doc, default, not only KB for agents",
+        "minutes": "half-day"
+      },
+      {
+        "id": 3,
+        "name": "Ship and train",
+        "goal": "Ops and packaging aligned",
+        "minutes": "varies"
+      },
+      {
+        "id": 4,
+        "name": "Measure before/after",
+        "goal": "Kill or iterate",
+        "minutes": "monthly"
+      }
+    ]
+  },
+  "tracking": {
+    "csv_header": "class_id,description,volume_before,volume_after,fix_type,ship_date,owner",
+    "sheet_tab_name": "preventable_ticket_kill"
+  },
+  "related_artifacts": [
+    "mf-tpl-020",
+    "mf-tpl-027",
+    "mf-tpl-065",
+    "mf-tpl-081"
+  ],
+  "agent_signal": {
+    "use_when": "High volume of preventable tickets (e.g. every ship calls for password). Need welcome pack or upstream kill. Phone open that signals real location/team.",
+    "decision_criteria": [
+      "If almost everyone calls, fix the system not the script alone.",
+      "Prefer in-box and defaults over more agent training.",
+      "Measure class volume before and after."
+    ],
+    "operator_context": "Field pattern: factory admin password calls killed by welcome pack; human open with location builds trust.",
+    "tags": [
+      "field-patterns",
+      "deflection",
+      "onboarding",
+      "support-ops"
+    ],
+    "version": "1.2",
+    "not_for": "Generic job spine only. Not HR legal advice on titles/pay.",
+    "pairs_with": [
+      "mf-tpl-020",
+      "mf-tpl-027",
+      "mf-tpl-065",
+      "mf-tpl-081"
+    ],
+    "trigger_phrases": [
+      "High volume of preventable tickets (e.g. every ship calls for password). Need we",
+      "Need playbook: Preventable Ticket Kill Playbook"
+    ]
+  }
+}

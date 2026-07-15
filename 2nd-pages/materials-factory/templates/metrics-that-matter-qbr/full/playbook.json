@@ -1,0 +1,139 @@
+{
+  "artifact": "mf-tpl-081",
+  "title": "Metrics That Matter QBR Playbook",
+  "version": "1.2.0",
+  "audience": "agent",
+  "section": "templates",
+  "lane": "field-patterns",
+  "pack_type": "field-pattern",
+  "description": "Run Metrics That Matter QBRs: the few back-end measures customers feel. Answer access, timeliness, true fix rate versus parts shotgun, and satisfaction. Position every account as important, not only logos.",
+  "mindset": {
+    "principle": "Customers care about the phone and the fix. Ship-rate theater and sales fluff do not survive a real QBR.",
+    "mistakes": [
+      {
+        "id": "fluff-deck",
+        "label": "QBR is logos, roadmap, and no ops numbers",
+        "cost": "Customer assumes you hide performance"
+      },
+      {
+        "id": "hide-shotgun",
+        "label": "Show ticket close rate but not parts-without-fix",
+        "cost": "They feel churn even when SLA is green"
+      },
+      {
+        "id": "only-big-fish",
+        "label": "Real metrics only for top logos",
+        "cost": "Everyone else gets neglect; brand dies in the middle"
+      }
+    ]
+  },
+  "metrics_that_matter": [
+    {
+      "id": "answered",
+      "label": "When you called, did we answer?",
+      "notes": "Offer rate / abandon context"
+    },
+    {
+      "id": "on_time",
+      "label": "Did we answer on time?",
+      "notes": "ASA or service-level vs goal"
+    },
+    {
+      "id": "fixed",
+      "label": "Did we fix the problem?",
+      "notes": "True resolution vs parts shotgun / reopen"
+    },
+    {
+      "id": "satisfied",
+      "label": "Customer sat survey",
+      "notes": "Overall + resolution item if available"
+    }
+  ],
+  "decision_branches": [
+    {
+      "id": "mtm-qbr",
+      "situation": "Scheduled customer or segment QBR",
+      "action": "mtm-scorecard"
+    },
+    {
+      "id": "shotgun-readout",
+      "situation": "Parts volume high relative to confirmed fixes",
+      "action": "fix-vs-shotgun-slide"
+    },
+    {
+      "id": "mid-market-care",
+      "situation": "Non-logo account still strategic or vocal",
+      "action": "same-care-standard"
+    },
+    {
+      "id": "metric-dispute",
+      "situation": "Customer challenges a number",
+      "action": "definition-footnote"
+    }
+  ],
+  "process": {
+    "steps": [
+      {
+        "id": 1,
+        "name": "Pull MTM four for the period",
+        "goal": "Answer, time, fix, sat",
+        "minutes": "45"
+      },
+      {
+        "id": 2,
+        "name": "Add fix-vs-shotgun cut",
+        "goal": "Honesty on parts",
+        "minutes": "30"
+      },
+      {
+        "id": 3,
+        "name": "Plain-language narrative",
+        "goal": "What improved, what we own",
+        "minutes": "30"
+      },
+      {
+        "id": 4,
+        "name": "Actions both sides",
+        "goal": "Not a monologue",
+        "minutes": "15"
+      }
+    ]
+  },
+  "tracking": {
+    "csv_header": "period,account_or_segment,answered_pct,on_time_pct,fix_rate,shotgun_index,csat,owner",
+    "sheet_tab_name": "metrics_that_matter_qbr"
+  },
+  "related_artifacts": [
+    "mf-tpl-061",
+    "mf-tpl-075",
+    "mf-tpl-060",
+    "mf-tpl-005"
+  ],
+  "agent_signal": {
+    "use_when": "Customer QBR needs back-end metrics not sales fluff. Need answered/on-time/fixed/CSAT and fix-vs-shotgun. Same standard for non-logo accounts.",
+    "decision_criteria": [
+      "Lead with four metrics that matter.",
+      "Show fix quality, not only close volume.",
+      "Apply the same scorecard pattern beyond top logos."
+    ],
+    "operator_context": "Field pattern: Metrics That Matter preso for QBRs. Big fish in a little pond standard for every account.",
+    "tags": [
+      "field-patterns",
+      "qbr",
+      "csat",
+      "support-ops"
+    ],
+    "version": "1.2",
+    "not_for": "Generic job spine. Not NDF program design (see 073-078). Not legal advice.",
+    "pairs_with": [
+      "mf-tpl-061",
+      "mf-tpl-075",
+      "mf-tpl-060",
+      "mf-tpl-005"
+    ],
+    "trigger_phrases": [
+      "Customer QBR needs back-end metrics not sales fluff. Need answered/on-time/fixed",
+      "Need playbook: Metrics That Matter QBR Playbook"
+    ]
+  }
+}

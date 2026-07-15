@@ -1,0 +1,36 @@
+{
+  "artifact": "mf-tpl-085",
+  "version": "1.2.0",
+  "templates": [
+    {
+      "id": "stand-up-pie",
+      "use_when": "toxic-punt",
+      "body": "PIE STAND-UP CHARTER\nPIE = Problems, Incidents, Escalations\n\nEng lead: _______________  Support lead: _______________\nCadence: weekly  Length: 60 min\nEqual airtime rule: Y\nOut of scope this hour: _______________\nFirst date: _______"
+    },
+    {
+      "id": "pie-agenda",
+      "use_when": "toxic-punt",
+      "body": "PIE AGENDA (60)\n0-5: parking lot / wins\n5-20: PROBLEMS (active work both sides)\n20-35: INCIDENTS (what worked / what failed this week)\n35-55: ESCALATIONS (prioritize, assign, deep dive 1-2)\n55-60: decisions + owners\nScribe: _______________"
+    },
+    {
+      "id": "escalation-definition-lock",
+      "use_when": "esc-flood",
+      "body": "ESCALATION DEFINITION LOCK\nMay escalate when: _______________\nMust not escalate when: _______________\nRequired packet before eng: repro / impact / what support tried\nBypass only if: safety / data loss / logo down\nEffective: _______"
+    },
+    {
+      "id": "escalation-source-audit",
+      "use_when": "sales-abuse",
+      "body": "ESCALATION SOURCE AUDIT\nPeriod: _______\n\nEsc ID | True tech gap | Training gap | Sales/SE cover | Other\n_______ | | | |\n\n% sales-cover: ___\nAction on people/process (system first): _______________\nDirector path if founder/sales leadership is the source: _______________"
+    },
+    {
+      "id": "knowledge-return-path",
+      "use_when": "basics-loop",
+      "body": "KNOWLEDGE RETURN PATH\nRepeat question: _______________\nEng time spent: ___\nNew KB / training item: _______________\nSupport owner: _______________  Due: _______\nEscalation of this topic blocked after: _______"
+    },
+    {
+      "id": "pie-decision-log",
+      "use_when": "toxic-punt",
+      "body": "PIE DECISION LOG\nWeek: _______\nDecision: _______________\nOwner: _______________  Due: _______\nRelated esc/problem IDs: _______________"
+    }
+  ]
+}

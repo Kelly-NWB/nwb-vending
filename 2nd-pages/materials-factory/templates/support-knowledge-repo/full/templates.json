@@ -1,0 +1,31 @@
+{
+  "artifact": "mf-tpl-090",
+  "version": "1.2.0",
+  "templates": [
+    {
+      "id": "repo-charter",
+      "use_when": "stand-up-repo",
+      "body": "SUPPORT KNOWLEDGE REPO CHARTER\nMission: solve problems before the call\nOwners (support eng leads): _______________\nIn scope: how-tos, help docs, known fixes\nOut of scope: scraped third-party copy, secrets, customer PII\nSuccess metric: _______________\nDate: _______"
+    },
+    {
+      "id": "contribution-gate",
+      "use_when": "trust-but-verify",
+      "body": "CONTRIBUTION GATE\nBefore publish, author attests:\n[ ] Original or properly licensed\n[ ] Source listed if adapted\n[ ] No word-for-word third-party scrape\n[ ] No secrets/PII\nReviewer: _______________  Sample rate: ___%\nBlock merge without attestation: Y"
+    },
+    {
+      "id": "sales-enable-pack",
+      "use_when": "go-to-market",
+      "body": "SALES ENABLE PACK (KB)\nRepo URL / pack: _______________\nWhen to give customers: _______________\nWhat not to promise: _______________\nIntegrity status (gate passed): Y/N\nMarketing one-liner: _______________"
+    },
+    {
+      "id": "integrity-incident",
+      "use_when": "integrity-breach",
+      "body": "INTEGRITY INCIDENT\nDate found: _______  Article/IDs: _______________\nOriginal source (if known): _______________\nAction: [ ] takedown  [ ] rewrite original  [ ] notify counsel if needed\nAuthor handling (HR/process): _______________\nGate fix so it cannot repeat: _______________\nRepo program: [ ] continue with gate  [ ] pause  [ ] narrow scope"
+    },
+    {
+      "id": "sample-audit-row",
+      "use_when": "trust-but-verify",
+      "body": "KB SAMPLE AUDIT ROW\nWeek: _______  Articles sampled: ___\nPass: ___  Flag: ___  Takedown: ___\nNotes: _______________"
+    }
+  ]
+}

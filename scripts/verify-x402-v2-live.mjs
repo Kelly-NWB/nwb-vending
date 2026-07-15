@@ -54,7 +54,7 @@ try {
   } else {
     const health = JSON.parse(healthText);
     const routeCount = health.gated_routes?.length ?? 0;
-    if (routeCount !== 82) fail("health", `expected 82 gated routes, got ${routeCount}`);
+    if (routeCount !== 96) fail("health", `expected 96 gated routes, got ${routeCount}`);
     else pass("health", `${routeCount} gated routes, mainnet_ready=${health.mainnet_ready}`);
   }
 

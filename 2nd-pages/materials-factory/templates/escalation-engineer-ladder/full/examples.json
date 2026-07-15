@@ -1,0 +1,38 @@
+{
+  "artifact": "mf-tpl-088",
+  "version": "1.2.0",
+  "description": "Build a cohesive support engineering ladder: entry support engineers and escalation engineers as one family. Counter stigma, give customers a credible next level, and teach when they want the wrong thing.",
+  "examples": [
+    {
+      "id": "ex-ee-title",
+      "context": "Top support needed a real next title. Customers wanted next level. Stigma on support.",
+      "branch": "ladder-design",
+      "templates_used": [
+        "rung-definitions",
+        "ladder-comms"
+      ],
+      "resolution": "Support engineer into escalation engineer track. Same family. Pride and clarity up.",
+      "log_row": "SE-EE-ladder,live,ok"
+    },
+    {
+      "id": "ex-teach-not-no",
+      "context": "Customer demanded wrong escalated path. Raw no would enrage.",
+      "branch": "customer-next-level",
+      "templates_used": [
+        "teach-path-script"
+      ],
+      "resolution": "Engineer taught correct path. Customer felt handled; issue resolved without politics.",
+      "log_row": "teach-path,no-politics,ok"
+    },
+    {
+      "id": "ex-feed-loop",
+      "context": "Same class always hit escalation eng.",
+      "branch": "feed-gap",
+      "templates_used": [
+        "return-learning"
+      ],
+      "resolution": "KB to line. Escalation volume on that theme dropped.",
+      "log_row": "return-kb,esc-down"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "artifact": "mf-tpl-079",
+  "version": "1.2.0",
+  "description": "Cut failure and NDF data into honest cohorts before enterprise panic: population age, ship date, warranty window, new vs installed base. Stop cherry-picked aggregates from driving the wrong fix and dumping cost on support.",
+  "examples": [
+    {
+      "id": "ex-eol-drives",
+      "context": "Customer felt drives failed too often. Aggregate high. Dig showed aged in-DC units near end of warranty; new drives clean.",
+      "branch": "cohort-cut",
+      "templates_used": [
+        "panic-room-intake",
+        "cohort-cut",
+        "population-split-table"
+      ],
+      "resolution": "Manufacturer firmware for affected population. Narrative fixed. Sales still wanted it faster; data held.",
+      "log_row": "2026-W40,EOL-cohort,new-ok,fw,narrative-ok"
+    },
+    {
+      "id": "ex-cherry-sales",
+      "context": "Sales deck used worst site only to justify emergency replace tone.",
+      "branch": "narrative-correct",
+      "templates_used": [
+        "truth-narrative-one-pager",
+        "cohort-cut"
+      ],
+      "resolution": "Full-account cohort table replaced deck slide. Cost and support load re-estimated honestly.",
+      "log_row": "2026-W41,cherry-caught,full-cut,ok"
+    },
+    {
+      "id": "ex-print-fleet",
+      "context": "Print shop claimed all printers failing. Old generation in field; new installs fine.",
+      "branch": "eol-vs-new",
+      "templates_used": [
+        "population-split-table"
+      ],
+      "resolution": "Lifecycle replace plan for old gen only. Stopped blanket panic.",
+      "log_row": "2026-W12,print-genA,eol,plan"
+    }
+  ]
+}

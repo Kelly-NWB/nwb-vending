@@ -1,0 +1,31 @@
+{
+  "artifact": "mf-tpl-092",
+  "version": "1.2.0",
+  "templates": [
+    {
+      "id": "program-charter",
+      "use_when": "stand-up-u",
+      "body": "CUSTOMER LEARNING PROGRAM CHARTER\nName (internal, original): _______________\nTracks (max 5): 1 ___ 2 ___ 3 ___\nOwner support: _______________  Owner sales enable: _______________\nOut of scope: huge LMS, copied brand slogans\nLaunch date: _______"
+    },
+    {
+      "id": "warranty-human-card",
+      "use_when": "warranty-revamp",
+      "body": "WARRANTY HUMAN CARD\nCovered (plain): _______________\nNot covered (plain): _______________\nHow to open a case: _______________\nWhat to have ready: _______________\nLegal PDF link (authority): _______________\nReviewed by: ops ___  counsel/policy ___  Date: _______"
+    },
+    {
+      "id": "track-outline",
+      "use_when": "stand-up-u",
+      "body": "TRACK OUTLINE\nTrack: _______________  Minutes to complete: ___\nOutcomes: _______________\nWhen to call support instead: _______________\nLink/asset: _______________"
+    },
+    {
+      "id": "sales-hand-pack",
+      "use_when": "sales-distro",
+      "body": "SALES HAND PACK\nWhat to send/leave: _______________\nWhen in cycle (ship / QBR / new logo): _______________\nTalk track (3 lines): _______________\nDo not promise: _______________\nFeedback channel to support: _______________"
+    },
+    {
+      "id": "deflection-readout",
+      "use_when": "prove",
+      "body": "DEFLECTION READOUT\nPeriod: _______\nBasics ticket class volume before/after: ___ / ___\nWarranty confusion tickets: ___\nComplex CSAT: ___\nSales sends: ___\nKeep / cut / expand tracks: _______________"
+    }
+  ]
+}

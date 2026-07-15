@@ -1,0 +1,135 @@
+{
+  "artifact": "mf-tpl-082",
+  "title": "Sales Support Incident Bridge Playbook",
+  "version": "1.2.0",
+  "audience": "agent",
+  "section": "templates",
+  "lane": "field-patterns",
+  "pack_type": "field-pattern",
+  "description": "Run sales-support incident bridges without endless politics: who owns customer narrative, who owns dig, when vendor joins, how blame is handled after a fix, and how weekly bridges end.",
+  "mindset": {
+    "principle": "Sales vs support is old. Under logo heat it gets loud. Process beats personality: evidence, roles, exit criteria.",
+    "mistakes": [
+      {
+        "id": "endless-bridge",
+        "label": "Weekly vendor call with no exit criteria",
+        "cost": "Support becomes permanent glue for a bad sale or bad cohort story"
+      },
+      {
+        "id": "blame-after-save",
+        "label": "After fix, score-settle on who was slow",
+        "cost": "Next incident starts with distrust"
+      },
+      {
+        "id": "narrative-without-dig",
+        "label": "Sales commits a story before support finishes cohort or fit dig",
+        "cost": "Company pays twice: wrong promise and cleanup"
+      }
+    ]
+  },
+  "roles": [
+    {
+      "id": "sales",
+      "label": "Customer relationship and commercial path"
+    },
+    {
+      "id": "se",
+      "label": "Sold design and technical promises"
+    },
+    {
+      "id": "support",
+      "label": "Evidence dig, ops metrics, incident execution"
+    },
+    {
+      "id": "vendor-bridge",
+      "label": "Upstream fix only with samples and asks"
+    }
+  ],
+  "decision_branches": [
+    {
+      "id": "incident-open",
+      "situation": "Cross-functional fire on an account",
+      "action": "incident-room-charter"
+    },
+    {
+      "id": "vendor-weekly",
+      "situation": "Standing call with upstream vendor",
+      "action": "bridge-cadence-exit"
+    },
+    {
+      "id": "post-fix-blame",
+      "situation": "Fixed but sales blames support speed or vice versa",
+      "action": "after-action-no-blood"
+    },
+    {
+      "id": "narrative-risk",
+      "situation": "Someone will tell the customer today",
+      "action": "joint-narrative-lock"
+    }
+  ],
+  "process": {
+    "steps": [
+      {
+        "id": 1,
+        "name": "Charter the room",
+        "goal": "Roles and decision rights",
+        "minutes": "20"
+      },
+      {
+        "id": 2,
+        "name": "Evidence before customer story",
+        "goal": "Cohort or fit dig linked",
+        "minutes": "varies"
+      },
+      {
+        "id": 3,
+        "name": "Vendor bridge only with ask",
+        "goal": "Samples, not venting",
+        "minutes": "standing"
+      },
+      {
+        "id": 4,
+        "name": "Close with after-action",
+        "goal": "No blood; system fixes",
+        "minutes": "30"
+      }
+    ]
+  },
+  "tracking": {
+    "csv_header": "incident_id,account,opened,owners,vendor_bridge_y_n,exit_criteria,closed,notes",
+    "sheet_tab_name": "sales_support_incident_bridge"
+  },
+  "related_artifacts": [
+    "mf-tpl-079",
+    "mf-tpl-080",
+    "mf-tpl-067",
+    "mf-tpl-001"
+  ],
+  "agent_signal": {
+    "use_when": "Sales and support in conflict on a hot account. Weekly vendor bridges with no end. Blame after a save. Need roles, evidence order, exit criteria.",
+    "decision_criteria": [
+      "Charter roles before the shout.",
+      "No customer narrative without dig pointer (cohort or fit).",
+      "Every standing bridge has exit criteria."
+    ],
+    "operator_context": "Field pattern: sales vs support beast. Amplified on large accounts. Time-box heroics.",
+    "tags": [
+      "field-patterns",
+      "sales-support",
+      "escalation",
+      "vendor"
+    ],
+    "version": "1.2",
+    "not_for": "Generic job spine. Not NDF program design (see 073-078). Not legal advice.",
+    "pairs_with": [
+      "mf-tpl-079",
+      "mf-tpl-080",
+      "mf-tpl-067",
+      "mf-tpl-001"
+    ],
+    "trigger_phrases": [
+      "Sales and support in conflict on a hot account. Weekly vendor bridges with no en",
+      "Need playbook: Sales Support Incident Bridge Playbook"
+    ]
+  }
+}

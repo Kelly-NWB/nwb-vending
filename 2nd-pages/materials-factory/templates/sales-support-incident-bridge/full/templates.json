@@ -1,0 +1,31 @@
+{
+  "artifact": "mf-tpl-082",
+  "version": "1.2.0",
+  "templates": [
+    {
+      "id": "incident-room-charter",
+      "use_when": "incident-open",
+      "body": "INCIDENT ROOM CHARTER\nAccount: _______________  ID: _______\n\nSales owns: _______________\nSE owns: _______________\nSupport owns: _______________\nDecision maker: _______________\nCustomer comms approver: _______________\nNext checkpoint: _______"
+    },
+    {
+      "id": "bridge-cadence-exit",
+      "use_when": "vendor-weekly",
+      "body": "VENDOR BRIDGE CADENCE\nVendor: _______________  Cadence: weekly / biweekly\n\nPurpose (one line): _______________\nExit criteria: _______________\nSamples/asks this week: _______________\nKill date if unmet: _______\nSupport owner: _______________"
+    },
+    {
+      "id": "after-action-no-blood",
+      "use_when": "post-fix-blame",
+      "body": "AFTER ACTION (NO BLOOD)\nIncident: _______________\n\nWhat worked: _______________\nSystem gap (not person): _______________\nChange to process/metric/handoff: _______________\nExplicit: no score-settling on speed theater"
+    },
+    {
+      "id": "joint-narrative-lock",
+      "use_when": "narrative-risk",
+      "body": "JOINT NARRATIVE LOCK\nWhat we will say: _______________\nWhat we will not say: _______________\nData pointer (cohort/fit/MTM): _______________\nSpeaker: _______________  Backup: _______________"
+    },
+    {
+      "id": "evidence-before-story",
+      "use_when": "incident-open",
+      "body": "EVIDENCE BEFORE STORY\nClaim: _______________\nDig required: [ ] cohort truth  [ ] fit gap  [ ] MTM  [ ] other\nPack link/ID: _______________\nEarliest honest customer update: _______"
+    }
+  ]
+}

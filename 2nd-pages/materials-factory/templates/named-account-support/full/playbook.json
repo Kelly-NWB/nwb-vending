@@ -1,0 +1,131 @@
+{
+  "artifact": "mf-tpl-087",
+  "title": "Named Account Support Playbook",
+  "version": "1.2.0",
+  "audience": "agent",
+  "section": "templates",
+  "lane": "field-patterns",
+  "pack_type": "field-pattern",
+  "description": "Design named-account support: agents permanently or primarily tied to account sets (service account manager style), with a model for commercial pods and large single-segment pools.",
+  "mindset": {
+    "principle": "Random queue is fair to the ACD and cruel to the relationship. Named ownership is how commercial accounts stop re-explaining every week.",
+    "mistakes": [
+      {
+        "id": "pure-random",
+        "label": "Every call any agent for strategic accounts",
+        "cost": "No memory; sales loses trust; repeat diagnosis"
+      },
+      {
+        "id": "one-hero",
+        "label": "One person owns everything; no bench",
+        "cost": "Bus factor; burnout; vacation collapses service"
+      },
+      {
+        "id": "silo-forever",
+        "label": "Pods never share patterns",
+        "cost": "Same bug fixed five ways; no product signal"
+      }
+    ]
+  },
+  "models": [
+    {
+      "id": "commercial-pod",
+      "label": "Small set of agents wholly tied to a set of commercial accounts"
+    },
+    {
+      "id": "segment-pool",
+      "label": "One large segment (e.g. institutional) as one named pool / group"
+    },
+    {
+      "id": "hybrid",
+      "label": "Named primary with overflow rules to trained backup"
+    }
+  ],
+  "decision_branches": [
+    {
+      "id": "stand-up-pod",
+      "situation": "Strategic accounts need continuity",
+      "action": "account-agent-map"
+    },
+    {
+      "id": "segment-pool",
+      "situation": "One huge segment behaves like one account",
+      "action": "segment-pool-charter"
+    },
+    {
+      "id": "bus-factor",
+      "situation": "Only one person knows the account",
+      "action": "bench-and-notes"
+    },
+    {
+      "id": "overflow",
+      "situation": "Pod overloaded or offline",
+      "action": "overflow-rules"
+    }
+  ],
+  "process": {
+    "steps": [
+      {
+        "id": 1,
+        "name": "List accounts that need named ownership",
+        "goal": "Not everyone; strategic set",
+        "minutes": "60"
+      },
+      {
+        "id": 2,
+        "name": "Map agents to sets; publish to sales",
+        "goal": "Who to call is known",
+        "minutes": "half-day"
+      },
+      {
+        "id": 3,
+        "name": "Bench + shared notes",
+        "goal": "No single hero",
+        "minutes": "ongoing"
+      },
+      {
+        "id": 4,
+        "name": "Pattern share across pods",
+        "goal": "Product and process signal",
+        "minutes": "weekly"
+      }
+    ]
+  },
+  "tracking": {
+    "csv_header": "account_set,primary_agents,backup,open_tickets,repeat_contact_rate,notes,owner",
+    "sheet_tab_name": "named_account_support"
+  },
+  "related_artifacts": [
+    "mf-tpl-062",
+    "mf-tpl-075",
+    "mf-tpl-081",
+    "mf-tpl-020"
+  ],
+  "agent_signal": {
+    "use_when": "Need service-account or named-agent support for commercial or strategic accounts. Random queue failing relationship. Large segment as one dedicated pool.",
+    "decision_criteria": [
+      "Map agents to account sets, not only skills.",
+      "Always bench and notes; never one hero.",
+      "Share patterns across pods so structure does not silo learning."
+    ],
+    "operator_context": "Field pattern: SAM-style commercial pods; large gov/institutional as one big named group.",
+    "tags": [
+      "field-patterns",
+      "account-support",
+      "structure",
+      "support-ops"
+    ],
+    "version": "1.2",
+    "not_for": "Generic job spine only. Not HR legal advice on titles/pay.",
+    "pairs_with": [
+      "mf-tpl-062",
+      "mf-tpl-075",
+      "mf-tpl-081",
+      "mf-tpl-020"
+    ],
+    "trigger_phrases": [
+      "Need service-account or named-agent support for commercial or strategic accounts",
+      "Need playbook: Named Account Support Playbook"
+    ]
+  }
+}

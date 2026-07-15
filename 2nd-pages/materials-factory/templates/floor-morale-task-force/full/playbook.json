@@ -1,0 +1,133 @@
+{
+  "artifact": "mf-tpl-084",
+  "title": "Floor Morale Task Force Playbook",
+  "version": "1.2.0",
+  "audience": "agent",
+  "section": "templates",
+  "lane": "field-patterns",
+  "pack_type": "field-pattern",
+  "description": "Stand up a floor morale task force owned by individual contributors on the phones: multi-department reps, weekly meet, idea funnel, leadership sponsorship (budget and willingness to look silly), expansion when other groups want in.",
+  "mindset": {
+    "principle": "For the people, by the people. Leads do not brainstorm fun for the floor. The floor does. Leadership pays and participates.",
+    "mistakes": [
+      {
+        "id": "lead-owned-fun",
+        "label": "Supervisors or HR own the fun calendar alone",
+        "cost": "Feels mandatory and fake; energy stays flat"
+      },
+      {
+        "id": "no-sponsor",
+        "label": "Ideas with zero budget or leadership skin in the game",
+        "cost": "Dies after one potluck"
+      },
+      {
+        "id": "metrics-only-culture",
+        "label": "Only scoreboards, never release valve",
+        "cost": "Burnout; quality and attendance drift"
+      }
+    ]
+  },
+  "design_rules": [
+    "Members are phone or queue ICs, not the lead layer",
+    "At least several departments or queues represented",
+    "Weekly short meeting with a simple idea log",
+    "Leadership sponsor: budget + public participation",
+    "Optional link to goals (dare, chair prize) without turning into only a KPI club",
+    "Invite other groups when they ask in"
+  ],
+  "idea_catalog_examples": [
+    "Potluck or shared meal days",
+    "Fundraisers for simple floor treats",
+    "Leader dare if a public goal hits (skin in the game)",
+    "Best-stats temporary perk (e.g. symbolic chair or parking)",
+    "Open-floor games (e.g. email or call bingo in a fishbowl center)",
+    "Whatever the reps invent next"
+  ],
+  "decision_branches": [
+    {
+      "id": "dead-air",
+      "situation": "Floor energy visibly gone",
+      "action": "stand-up-force"
+    },
+    {
+      "id": "idea-drought",
+      "situation": "Force exists but no fresh ideas",
+      "action": "idea-funnel-week"
+    },
+    {
+      "id": "sponsor-needed",
+      "situation": "Ideas need money or leader dare",
+      "action": "sponsor-brief"
+    },
+    {
+      "id": "spread",
+      "situation": "Other departments want in",
+      "action": "expansion-charter"
+    }
+  ],
+  "process": {
+    "steps": [
+      {
+        "id": 1,
+        "name": "Name the problem out loud",
+        "goal": "Dead air is real",
+        "minutes": "15"
+      },
+      {
+        "id": 2,
+        "name": "Pick IC reps across teams",
+        "goal": "Not the usual lead meeting",
+        "minutes": "half-day"
+      },
+      {
+        "id": 3,
+        "name": "Weekly meet + idea log",
+        "goal": "They invent; you unblock",
+        "minutes": "30/week"
+      },
+      {
+        "id": 4,
+        "name": "Sponsor stunts and invite spread",
+        "goal": "Skin in the game; open the circle",
+        "minutes": "ongoing"
+      }
+    ]
+  },
+  "tracking": {
+    "csv_header": "week,members,ideas_new,events_run,sponsor_actions,other_depts,notes,owner",
+    "sheet_tab_name": "floor_morale_task_force"
+  },
+  "related_artifacts": [
+    "mf-tpl-005",
+    "mf-tpl-061",
+    "mf-tpl-078",
+    "mf-tpl-057"
+  ],
+  "agent_signal": {
+    "use_when": "Support or call-center floor morale is dead. Need rep-owned task force not HR theater. Multi-department ICs, weekly ideas, leadership sponsor.",
+    "decision_criteria": [
+      "Members are phone people, not supervisors.",
+      "Leadership sponsors budget and public participation.",
+      "Allow expansion when other groups send reps."
+    ],
+    "operator_context": "Field pattern: employee activities style task force. For the people, by the people. Metrics still matter; dead air kills them over time.",
+    "tags": [
+      "field-patterns",
+      "morale",
+      "call-center",
+      "people-ops"
+    ],
+    "version": "1.2",
+    "not_for": "Generic job spine. Not legal/HR compliance advice.",
+    "pairs_with": [
+      "mf-tpl-005",
+      "mf-tpl-061",
+      "mf-tpl-078",
+      "mf-tpl-057"
+    ],
+    "trigger_phrases": [
+      "Support or call-center floor morale is dead. Need rep-owned task force not HR th",
+      "Need playbook: Floor Morale Task Force Playbook"
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "artifact": "mf-tpl-092",
+  "version": "1.2.0",
+  "description": "Design a customer learning program (short tracks, not a real school) tied to a clear warranty experience: what is covered, how to get help, how to self-serve basics. Enable sales to distribute. Measure deflection and satisfaction on real issues.",
+  "examples": [
+    {
+      "id": "ex-u-plus-warranty",
+      "context": "Org revamped warranty story and stood up light customer learning tracks. Sales handed materials. Support saw fewer basics.",
+      "branch": "stand-up-u",
+      "templates_used": [
+        "program-charter",
+        "warranty-human-card",
+        "sales-hand-pack"
+      ],
+      "resolution": "Customers self-served common care steps. Phone time shifted to real issues.",
+      "log_row": "cust-u,warranty-card,sales,basics-down"
+    },
+    {
+      "id": "ex-no-bloat",
+      "context": "Proposal for 40-hour LMS. Team would never finish.",
+      "branch": "stand-up-u",
+      "templates_used": [
+        "program-charter",
+        "track-outline"
+      ],
+      "resolution": "Three short tracks only. Completion and use higher.",
+      "log_row": "3-tracks,no-lms-bloat,ok"
+    },
+    {
+      "id": "ex-measure",
+      "context": "Leadership asked if education spend mattered.",
+      "branch": "prove",
+      "templates_used": [
+        "deflection-readout"
+      ],
+      "resolution": "Before/after basics volume plus complex CSAT. Program kept.",
+      "log_row": "readout,prove,kept"
+    }
+  ]
+}

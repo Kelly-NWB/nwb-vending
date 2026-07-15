@@ -1,0 +1,39 @@
+{
+  "artifact": "mf-tpl-087",
+  "version": "1.2.0",
+  "description": "Design named-account support: agents permanently or primarily tied to account sets (service account manager style), with a model for commercial pods and large single-segment pools.",
+  "examples": [
+    {
+      "id": "ex-commercial-sam",
+      "context": "Commercial accounts needed continuity. Built agent sets wholly tied to account groups.",
+      "branch": "stand-up-pod",
+      "templates_used": [
+        "account-agent-map",
+        "bench-and-notes"
+      ],
+      "resolution": "Named ownership. Sales knew who to pull. Repeat context down.",
+      "log_row": "SAM,commercial-pods,map-live,ok"
+    },
+    {
+      "id": "ex-segment-pool",
+      "context": "Large institutional segment behaved like one relationship; dedicated group owned it.",
+      "branch": "segment-pool",
+      "templates_used": [
+        "segment-pool-charter"
+      ],
+      "resolution": "One pool, clear intake. Treated as named structure not random queue.",
+      "log_row": "segment-pool,charter,ok"
+    },
+    {
+      "id": "ex-hero-risk",
+      "context": "One agent held all tribal knowledge for top accounts.",
+      "branch": "bus-factor",
+      "templates_used": [
+        "bench-and-notes",
+        "overflow-rules"
+      ],
+      "resolution": "Bench trained; notes living. Vacation no longer an outage.",
+      "log_row": "bench,notes,bus-factor-down"
+    }
+  ]
+}

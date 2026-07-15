@@ -1,0 +1,136 @@
+{
+  "artifact": "mf-tpl-091",
+  "title": "Team Showcase Speaking Playbook",
+  "version": "1.2.0",
+  "audience": "agent",
+  "section": "templates",
+  "lane": "field-patterns",
+  "pack_type": "field-pattern",
+  "description": "Run a team showcase series: each person presents a short interest topic with slides to the team. Primary goals are connection and low-stakes public speaking practice for support staff who are strong on phone and weak in rooms.",
+  "mindset": {
+    "principle": "Most tech support nerds will talk on the phone all day and freeze in person. Safe stage time on something they care about builds the muscle for sales and customers without a fake corporate toastmasters vibe.",
+    "mistakes": [
+      {
+        "id": "only-work-topics",
+        "label": "Force only job metrics presentations",
+        "cost": "Anxiety up; no real knowing each other; feels like a review"
+      },
+      {
+        "id": "grade-harsh",
+        "label": "Score like a contest or roast bad talks",
+        "cost": "Introverts shut down; series dies"
+      },
+      {
+        "id": "no-transfer",
+        "label": "Never connect practice to sales/customer rooms",
+        "cost": "Fun club only; leadership value unclear"
+      },
+      {
+        "id": "optional-forever",
+        "label": "Always optional so only extroverts go",
+        "cost": "People who need reps never get them"
+      }
+    ]
+  },
+  "dual_goals": [
+    {
+      "id": "know",
+      "label": "Learn people beyond tickets (hobbies, life texture, not trauma dump required)"
+    },
+    {
+      "id": "speak",
+      "label": "Reps: slides, voice in a room, time-box, Q&A"
+    },
+    {
+      "id": "transfer",
+      "label": "Same skills used with sales, customers, cross-team"
+    }
+  ],
+  "decision_branches": [
+    {
+      "id": "run-series",
+      "situation": "Team needs bond + speaking practice",
+      "action": "series-charter"
+    },
+    {
+      "id": "topic-help",
+      "situation": "Someone stuck on what to present",
+      "action": "topic-menu"
+    },
+    {
+      "id": "anxiety",
+      "situation": "Phone-strong person dreads the room",
+      "action": "safety-rails"
+    },
+    {
+      "id": "transfer",
+      "situation": "Need proof it helps the business",
+      "action": "transfer-checklist"
+    }
+  ],
+  "process": {
+    "steps": [
+      {
+        "id": 1,
+        "name": "Charter series and time-box",
+        "goal": "Cadence, length, audience = team",
+        "minutes": "30"
+      },
+      {
+        "id": 2,
+        "name": "Schedule rotation",
+        "goal": "Everyone gets a slot",
+        "minutes": "30"
+      },
+      {
+        "id": 3,
+        "name": "Light coach before talk",
+        "goal": "Deck basics, not perfection",
+        "minutes": "15/person"
+      },
+      {
+        "id": 4,
+        "name": "Run + thank + optional one tip",
+        "goal": "Safety then growth",
+        "minutes": "per session"
+      }
+    ]
+  },
+  "tracking": {
+    "csv_header": "date,speaker,topic_type,minutes,completed_y_n,follow_up_tip,notes,owner",
+    "sheet_tab_name": "team_showcase_speaking"
+  },
+  "related_artifacts": [
+    "mf-tpl-084",
+    "mf-tpl-088",
+    "mf-tpl-083",
+    "mf-tpl-003"
+  ],
+  "agent_signal": {
+    "use_when": "Support team strong on phone, weak in person. Need bond plus public speaking/slide reps. Leadership program not a roast or performance review.",
+    "decision_criteria": [
+      "Interest topics allowed; not only work metrics.",
+      "Psychological safety over scoring.",
+      "Explicit transfer to sales/customer speaking later."
+    ],
+    "operator_context": "Field pattern: class presentations on interests (conductor, everyday life, life stories). Dual purpose: know each other + speaking muscle.",
+    "tags": [
+      "field-patterns",
+      "leadership",
+      "speaking",
+      "team"
+    ],
+    "version": "1.2",
+    "not_for": "Performance review system or mandatory toastmasters clone.",
+    "pairs_with": [
+      "mf-tpl-084",
+      "mf-tpl-088",
+      "mf-tpl-083",
+      "mf-tpl-003"
+    ],
+    "trigger_phrases": [
+      "Support team strong on phone, weak in person. Need bond plus public speaking/sli",
+      "Need playbook: Team Showcase Speaking Playbook"
+    ]
+  }
+}

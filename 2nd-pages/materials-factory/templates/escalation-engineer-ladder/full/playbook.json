@@ -1,0 +1,136 @@
+{
+  "artifact": "mf-tpl-088",
+  "title": "Escalation Engineer Ladder Playbook",
+  "version": "1.2.0",
+  "audience": "agent",
+  "section": "templates",
+  "lane": "field-patterns",
+  "pack_type": "field-pattern",
+  "description": "Build a cohesive support engineering ladder: entry support engineers and escalation engineers as one family. Counter stigma, give customers a credible next level, and teach when they want the wrong thing.",
+  "mindset": {
+    "principle": "Customers often want the wrong next level. Saying no makes them mad. An engineer who teaches makes them feel special and still steers the path.",
+    "mistakes": [
+      {
+        "id": "no-ladder",
+        "label": "Only generic support title forever",
+        "cost": "Top talent leaves; customers assume all support sucks"
+      },
+      {
+        "id": "fake-title",
+        "label": "Title change with no skill or scope change",
+        "cost": "Credibility dies; eng laughs; customers not fooled long"
+      },
+      {
+        "id": "raw-no",
+        "label": "Tell customer they want the wrong thing with no teach",
+        "cost": "Pissed customer; escalates politically"
+      },
+      {
+        "id": "silo-tiers",
+        "label": "Escalation eng never feeds learning back to base support",
+        "cost": "Same issues escalate forever"
+      }
+    ]
+  },
+  "ladder_rungs": [
+    {
+      "id": "support-engineer",
+      "label": "Strong tech support with engineering posture and standards"
+    },
+    {
+      "id": "escalation-engineer",
+      "label": "Top notch; complex, multi-system, customer-critical next level"
+    },
+    {
+      "id": "feed-loop",
+      "label": "Same group culture; escalations teach the line below"
+    }
+  ],
+  "decision_branches": [
+    {
+      "id": "ladder-design",
+      "situation": "Need titles and scope for advanced support",
+      "action": "rung-definitions"
+    },
+    {
+      "id": "customer-next-level",
+      "situation": "Customer demands engineer / next tier",
+      "action": "teach-path-script"
+    },
+    {
+      "id": "stigma",
+      "situation": "Support brand is weak internally or externally",
+      "action": "ladder-comms"
+    },
+    {
+      "id": "feed-gap",
+      "situation": "Same issues always escalate",
+      "action": "return-learning"
+    }
+  ],
+  "process": {
+    "steps": [
+      {
+        "id": 1,
+        "name": "Define rungs and promotion evidence",
+        "goal": "Real scope, not sticker",
+        "minutes": "half-day"
+      },
+      {
+        "id": 2,
+        "name": "Publish customer-facing next-level story",
+        "goal": "What escalation eng means",
+        "minutes": "60"
+      },
+      {
+        "id": 3,
+        "name": "Teach-path for wrong asks",
+        "goal": "Special feeling, correct path",
+        "minutes": "ongoing"
+      },
+      {
+        "id": 4,
+        "name": "Feed learning back to line",
+        "goal": "Escalation volume healthy",
+        "minutes": "weekly"
+      }
+    ]
+  },
+  "tracking": {
+    "csv_header": "period,se_count,ee_count,esc_volume,esc_avoided_by_teach,return_kb_items,notes,owner",
+    "sheet_tab_name": "escalation_engineer_ladder"
+  },
+  "related_artifacts": [
+    "mf-tpl-085",
+    "mf-tpl-086",
+    "mf-tpl-083",
+    "mf-tpl-087"
+  ],
+  "agent_signal": {
+    "use_when": "Need support engineer / escalation engineer career ladder. Customers demand next level. Support stigma. Teach path when they want the wrong thing.",
+    "decision_criteria": [
+      "Titles match real scope and skill.",
+      "Escalation eng and support eng feed each other.",
+      "Wrong customer ask gets teach, not raw no."
+    ],
+    "operator_context": "Field pattern: cohesive support structure; stigma counter; customer feels special with engineer teach.",
+    "tags": [
+      "field-patterns",
+      "career-ladder",
+      "escalation",
+      "support-ops"
+    ],
+    "version": "1.2",
+    "not_for": "Generic job spine only. Not HR legal advice on titles/pay.",
+    "pairs_with": [
+      "mf-tpl-085",
+      "mf-tpl-086",
+      "mf-tpl-083",
+      "mf-tpl-087"
+    ],
+    "trigger_phrases": [
+      "Need support engineer / escalation engineer career ladder. Customers demand next",
+      "Need playbook: Escalation Engineer Ladder Playbook"
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "artifact": "mf-tpl-080",
+  "version": "1.2.0",
+  "description": "Catch and repair solution fit gaps when sales/SE design does not match actual customer use: oversell, undersell, or fine when it is not. Structure handoff so support is not the unpaid redesign team.",
+  "examples": [
+    {
+      "id": "ex-oversell-capacity",
+      "context": "Solution sold for light use. Production load much higher. Support held weekly vendor calls to keep service up.",
+      "branch": "fit-gap-found",
+      "templates_used": [
+        "use-case-gap-log",
+        "scope-truth-memo"
+      ],
+      "resolution": "Capacity path corrected commercially. Vendor bridge became time-boxed with exit criteria.",
+      "log_row": "2026-Q3,oversell,capacity,path-fix"
+    },
+    {
+      "id": "ex-undersell",
+      "context": "Account bought thin SKU. SE said fine. Missing features hit day two.",
+      "branch": "undersell",
+      "templates_used": [
+        "upsell-or-redesign-path",
+        "assumption-register"
+      ],
+      "resolution": "Documented gap. Commercial add approved. Support stopped custom hacks.",
+      "log_row": "2026-Q1,undersell,add-on,ok"
+    },
+    {
+      "id": "ex-fit-gate-saved",
+      "context": "Pre-go-live fit gate found wrong auth model for customer ops.",
+      "branch": "pre-golive",
+      "templates_used": [
+        "fit-gate-checklist",
+        "assumption-register"
+      ],
+      "resolution": "Design changed before cutover. No war room.",
+      "log_row": "2026-W08,fit-gate,caught,pre-prod"
+    }
+  ]
+}

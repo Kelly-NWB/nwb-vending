@@ -1,0 +1,136 @@
+{
+  "artifact": "mf-tpl-085",
+  "title": "PIE Weekly Bridge Playbook",
+  "version": "1.2.0",
+  "audience": "agent",
+  "section": "templates",
+  "lane": "field-patterns",
+  "pack_type": "field-pattern",
+  "description": "Stand up a weekly PIE (Problems, Incidents, Escalations) bridge between engineering and support leadership: shared hour, live scenarios, prioritization, relationship repair, and detection of escalation abuse from sales or other groups.",
+  "mindset": {
+    "principle": "If everything is escalated, nothing is. A standing room with eng and support kills the punt culture faster than another ticket field.",
+    "mistakes": [
+      {
+        "id": "punt-and-nail",
+        "label": "Throw work over the wall then ding support for the outcome",
+        "cost": "Support hated; engineers avoid; customers wait"
+      },
+      {
+        "id": "lazy-eng-gate",
+        "label": "Engineers refuse basics with no training path for support",
+        "cost": "Eternal escalations on known answers"
+      },
+      {
+        "id": "sales-esc-hide",
+        "label": "Sales escalates to cover bad sale, fit miss, or silence",
+        "cost": "Eng and support fight each other while root cause sits in sales"
+      },
+      {
+        "id": "no-standing-forum",
+        "label": "Only ad-hoc war rooms when on fire",
+        "cost": "No relationship equity when the fire starts"
+      }
+    ]
+  },
+  "pie_blocks": [
+    {
+      "id": "problems",
+      "label": "Open problems both teams are working (not only tickets)"
+    },
+    {
+      "id": "incidents",
+      "label": "Live or recent scenarios: what worked, what failed"
+    },
+    {
+      "id": "escalations",
+      "label": "Deep dive and prioritize the escalation queue"
+    }
+  ],
+  "decision_branches": [
+    {
+      "id": "toxic-punt",
+      "situation": "Support is the dump zone; eng and support hate each other",
+      "action": "stand-up-pie"
+    },
+    {
+      "id": "esc-flood",
+      "situation": "Everything escalates; queue meaningless",
+      "action": "escalation-definition-lock"
+    },
+    {
+      "id": "sales-abuse",
+      "situation": "Escalations trace to sales/SE covering their own issues",
+      "action": "escalation-source-audit"
+    },
+    {
+      "id": "basics-loop",
+      "situation": "Engineers tired of the same basic questions",
+      "action": "knowledge-return-path"
+    }
+  ],
+  "process": {
+    "steps": [
+      {
+        "id": 1,
+        "name": "Charter PIE with eng + support leads",
+        "goal": "One hour weekly, both rooms equal",
+        "minutes": "30"
+      },
+      {
+        "id": 2,
+        "name": "Run three-block agenda",
+        "goal": "Problems, incidents, escalations",
+        "minutes": "60/week"
+      },
+      {
+        "id": 3,
+        "name": "Tag escalation source",
+        "goal": "Real tech vs sales cover vs training gap",
+        "minutes": "in meeting"
+      },
+      {
+        "id": 4,
+        "name": "Publish decisions and owners",
+        "goal": "No theater minutes",
+        "minutes": "15"
+      }
+    ]
+  },
+  "tracking": {
+    "csv_header": "week,problems_open,incidents_reviewed,esc_prioritized,esc_source_sales_pct,actions_closed,owners,notes",
+    "sheet_tab_name": "pie_weekly_bridge"
+  },
+  "related_artifacts": [
+    "mf-tpl-067",
+    "mf-tpl-082",
+    "mf-tpl-080",
+    "mf-tpl-001"
+  ],
+  "agent_signal": {
+    "use_when": "Support and engineering in conflict. Escalations everywhere. Sales punts. Need weekly PIE-style problems/incidents/escalations forum with shared ownership.",
+    "decision_criteria": [
+      "Co-own the hour: eng director-level + support lead.",
+      "Define what may escalate; audit sources weekly.",
+      "Return basics to training/KB so eng is not the FAQ."
+    ],
+    "operator_context": "Field pattern: smaller server/storage scale-up. PIE fixed relationship in weeks and exposed escalation abuse.",
+    "tags": [
+      "field-patterns",
+      "escalation",
+      "engineering",
+      "support-ops"
+    ],
+    "version": "1.2",
+    "not_for": "Generic job spine. Not a substitute for incident command tooling alone.",
+    "pairs_with": [
+      "mf-tpl-067",
+      "mf-tpl-082",
+      "mf-tpl-080",
+      "mf-tpl-001"
+    ],
+    "trigger_phrases": [
+      "Support and engineering in conflict. Escalations everywhere. Sales punts. Need w",
+      "Need playbook: PIE Weekly Bridge Playbook"
+    ]
+  }
+}

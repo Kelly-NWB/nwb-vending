@@ -1,0 +1,31 @@
+{
+  "artifact": "mf-tpl-084",
+  "version": "1.2.0",
+  "templates": [
+    {
+      "id": "stand-up-force",
+      "use_when": "dead-air",
+      "body": "FLOOR MORALE TASK FORCE STAND-UP\nSponsor (leader): _______________\n\nIC members (name queues/depts, not titles of power):\n1 ___  2 ___  3 ___  4 ___  5 ___  6 ___\nMeeting: day/time ___  length ___\nCharter one-liner: energy and morale ideas owned by the floor\nFirst meeting date: _______"
+    },
+    {
+      "id": "idea-funnel-week",
+      "use_when": "idea-drought",
+      "body": "IDEA FUNNEL WEEK\nWeek: _______\n\nIdeas proposed: _______________\nFeasible this month: _______________\nNeeds budget: _______________\nNeeds leader dare/skin: _______________\nKill list (not now): _______________"
+    },
+    {
+      "id": "sponsor-brief",
+      "use_when": "sponsor-needed",
+      "body": "SPONSOR BRIEF\nAsk: $___ or in-kind _______________\nPublic stunt if goal hits: _______________\nWhy floor-owned matters: _______________\nDecision by: _______\nLeader response: [ ] yes  [ ] change  [ ] no"
+    },
+    {
+      "id": "expansion-charter",
+      "use_when": "spread",
+      "body": "EXPANSION CHARTER\nRequesting group: _______________\nNew IC seat(s): _______________\nSame rules: ICs only, weekly, idea log\nWhat does not change: not a lead meeting\nStart date: _______"
+    },
+    {
+      "id": "event-run-sheet",
+      "use_when": "idea-drought",
+      "body": "EVENT RUN SHEET\nEvent: _______________  Date: _______\nOwner (rep): _______________\nBudget: ___  Sponsor role: _______________\nSuccess signal (energy, not only KPI): _______________\nRetro one line: _______________"
+    }
+  ]
+}

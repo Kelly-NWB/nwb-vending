@@ -1,0 +1,31 @@
+{
+  "artifact": "mf-tpl-087",
+  "version": "1.2.0",
+  "templates": [
+    {
+      "id": "account-agent-map",
+      "use_when": "stand-up-pod",
+      "body": "ACCOUNT-AGENT MAP\nAccount set name: _______________\nAccounts in set: _______________\nPrimary agents: _______________\nBackup: _______________\nSales partner: _______________\nPublished: Y/N  Date: _______"
+    },
+    {
+      "id": "segment-pool-charter",
+      "use_when": "segment-pool",
+      "body": "SEGMENT POOL CHARTER\nSegment: _______________\nWhy one pool: _______________\nAgents in pool: _______________\nIntake path: _______________\nSuccess signal: _______________"
+    },
+    {
+      "id": "bench-and-notes",
+      "use_when": "bus-factor",
+      "body": "BENCH AND NOTES\nAccount: _______________\nPrimary: _______________  Bench: _______________\nLiving notes location: _______________\nLast cross-train date: _______\nCoverage if primary out: _______________"
+    },
+    {
+      "id": "overflow-rules",
+      "use_when": "overflow",
+      "body": "OVERFLOW RULES\nPod: _______________\nWhen overflow allowed: _______________\nWho can take: _______________\nWhat must be in handoff: _______________\nReturn to pod when: _______________"
+    },
+    {
+      "id": "pod-pattern-share",
+      "use_when": "stand-up-pod",
+      "body": "POD PATTERN SHARE (weekly)\nPatterns seen: _______________\nNeeds product/eng: _______________\nNeeds process: _______________\nOwner: _______________"
+    }
+  ]
+}

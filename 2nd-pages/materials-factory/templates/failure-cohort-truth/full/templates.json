@@ -1,0 +1,31 @@
+{
+  "artifact": "mf-tpl-079",
+  "version": "1.2.0",
+  "templates": [
+    {
+      "id": "cohort-cut",
+      "use_when": "panic-room",
+      "body": "FAILURE COHORT CUT\nAccount: _______________  Period: _______\nClaimed fail % (from sales/customer): ___\n\nCohort | Units | Fails | Fail% | NDF% | Warranty band\nNew shippers | | | | |\nMid-life | | | | |\nNear EOL / OOW edge | | | | |\n\nClassification: [ ] EOL wear  [ ] new defect  [ ] mixed  [ ] process\nOwner: _______________"
+    },
+    {
+      "id": "population-split-table",
+      "use_when": "eol-vs-new",
+      "body": "POPULATION SPLIT\nSKU/family: _______________\n\nIn fleet (installed): count ___  fail% ___\nShipped last 90d: count ___  fail% ___\nManuf date bands: _______________\nConclusion: _______________"
+    },
+    {
+      "id": "manufacturer-evidence-brief",
+      "use_when": "vendor-engage",
+      "body": "MANUFACTURER EVIDENCE BRIEF\nFamily/rev: _______________  Cohort: _______________\n\nFail signature: _______________\nSamples/logs: _______________\nAsk: firmware / replace / RMA special\nSupport owner: _______________  Sales informed: Y/N"
+    },
+    {
+      "id": "truth-narrative-one-pager",
+      "use_when": "narrative-correct",
+      "body": "TRUTH NARRATIVE (internal then customer-ready)\n\nWhat was claimed: _______________\nWhat the cohorts show: _______________\nWhat we are doing: _______________\nWhat we are not claiming: _______________\nWho presents: support / sales / joint"
+    },
+    {
+      "id": "panic-room-intake",
+      "use_when": "panic-room",
+      "body": "PANIC ROOM INTAKE\nDate: _______  Attendees (roles only): sales, SE, support\nCustomer claim: _______________\nData source used so far: _______________\nSupport dig owner: _______________  Due: _______"
+    }
+  ]
+}

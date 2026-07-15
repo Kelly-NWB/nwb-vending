@@ -1,0 +1,31 @@
+{
+  "artifact": "mf-tpl-081",
+  "version": "1.2.0",
+  "templates": [
+    {
+      "id": "mtm-scorecard",
+      "use_when": "mtm-qbr",
+      "body": "METRICS THAT MATTER SCORECARD\nAccount/segment: _______________  Period: _______\n\n1) Answered (access): ___  Goal: ___\n2) On time (ASA/SL): ___  Goal: ___\n3) Fixed (true resolution): ___  Goal: ___\n4) Satisfied (CSAT): ___  Goal: ___\n\nNarrative (3 lines): _______________\nActions us / them: _______________"
+    },
+    {
+      "id": "fix-vs-shotgun-slide",
+      "use_when": "shotgun-readout",
+      "body": "FIX VS SHOTGUN\nPeriod: _______\n\nTickets closed: ___\nConfirmed fix (no reopen / verified): ___\nParts-heavy closes: ___\nShotgun index (parts events / true fixes): ___\nWhat we changed: _______________"
+    },
+    {
+      "id": "same-care-standard",
+      "use_when": "mid-market-care",
+      "body": "SAME CARE STANDARD\nAccount: _______________  Tier label (internal): _______\n\nMTM pack delivered: Y/N\nCadence: quarterly / semiannual\nEscalation path published: Y/N\nNote: big-fish treatment is process, not only logo size"
+    },
+    {
+      "id": "definition-footnote",
+      "use_when": "metric-dispute",
+      "body": "METRIC DEFINITION FOOTNOTE\nMetric: _______________\nNumerator: _______________\nDenominator: _______________\nExclusions: _______________\nSource system: _______________"
+    },
+    {
+      "id": "qbr-agenda-mtm",
+      "use_when": "mtm-qbr",
+      "body": "QBR AGENDA (MTM)\n1. Scorecard four\n2. Fix vs shotgun\n3. Top drivers / incidents\n4. Joint actions\n5. Next period goals\nAvoid: pure roadmap fluff without ops"
+    }
+  ]
+}

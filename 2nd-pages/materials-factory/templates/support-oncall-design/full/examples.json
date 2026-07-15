@@ -1,0 +1,39 @@
+{
+  "artifact": "mf-tpl-086",
+  "version": "1.2.0",
+  "description": "Design support on-call around three levers: compensation that feels distinct, tiering so specialized staff are not wasted on basics, and a locked escalation path from after-hours contact to the correct tier.",
+  "examples": [
+    {
+      "id": "ex-t3-howto",
+      "context": "Specialized tier-3 on rotation buried in basic how-tos. Near mutiny.",
+      "branch": "tier-lock",
+      "templates_used": [
+        "tier-responsibility-matrix",
+        "after-hours-path-lock"
+      ],
+      "resolution": "L1 filter mandatory. T3 only for defined break/fix classes. Rage down.",
+      "log_row": "T3-protect,L1-filter,howto-off,ok"
+    },
+    {
+      "id": "ex-comp-diff",
+      "context": "On-call unpaid relative to day staff. Felt like punishment.",
+      "branch": "bitter-rotation",
+      "templates_used": [
+        "comp-differential"
+      ],
+      "resolution": "Published differential. Coverage volunteers stabilized.",
+      "log_row": "comp-diff,published,coverage-ok"
+    },
+    {
+      "id": "ex-sales-bypass",
+      "context": "Sales direct-dialed specialists and skipped intake.",
+      "branch": "sales-bypass",
+      "templates_used": [
+        "bypass-policy",
+        "after-hours-path-lock"
+      ],
+      "resolution": "Bypass policy + path. True Sev1 exception only.",
+      "log_row": "bypass-off,path-lock,ok"
+    }
+  ]
+}

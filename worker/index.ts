@@ -532,6 +532,90 @@ const GATED_ROUTES: GatedRoute[] = [
     description: "Support Incentive Steering Playbook agent pack (mf-tpl-078)",
     artifact: "mf-tpl-078",
   },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/failure-cohort-truth/full",
+    price: "$0.08",
+    description: "Failure Cohort Truth Playbook agent pack (mf-tpl-079)",
+    artifact: "mf-tpl-079",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/solution-fit-handoff/full",
+    price: "$0.08",
+    description: "Solution Fit Handoff Playbook agent pack (mf-tpl-080)",
+    artifact: "mf-tpl-080",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/metrics-that-matter-qbr/full",
+    price: "$0.08",
+    description: "Metrics That Matter QBR Playbook agent pack (mf-tpl-081)",
+    artifact: "mf-tpl-081",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/sales-support-incident-bridge/full",
+    price: "$0.08",
+    description: "Sales Support Incident Bridge Playbook agent pack (mf-tpl-082)",
+    artifact: "mf-tpl-082",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/high-volume-interview-redesign/full",
+    price: "$0.08",
+    description: "High-Volume Interview Redesign Playbook agent pack (mf-tpl-083)",
+    artifact: "mf-tpl-083",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/floor-morale-task-force/full",
+    price: "$0.08",
+    description: "Floor Morale Task Force Playbook agent pack (mf-tpl-084)",
+    artifact: "mf-tpl-084",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/pie-weekly-bridge/full",
+    price: "$0.08",
+    description: "PIE Weekly Bridge Playbook agent pack (mf-tpl-085)",
+    artifact: "mf-tpl-085",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/support-oncall-design/full",
+    price: "$0.08",
+    description: "Support On-Call Design Playbook agent pack (mf-tpl-086)",
+    artifact: "mf-tpl-086",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/named-account-support/full",
+    price: "$0.08",
+    description: "Named Account Support Playbook agent pack (mf-tpl-087)",
+    artifact: "mf-tpl-087",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/escalation-engineer-ladder/full",
+    price: "$0.08",
+    description: "Escalation Engineer Ladder Playbook agent pack (mf-tpl-088)",
+    artifact: "mf-tpl-088",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/preventable-ticket-kill/full",
+    price: "$0.08",
+    description: "Preventable Ticket Kill Playbook agent pack (mf-tpl-089)",
+    artifact: "mf-tpl-089",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/support-knowledge-repo/full",
+    price: "$0.08",
+    description: "Support Knowledge Repo Playbook agent pack (mf-tpl-090)",
+    artifact: "mf-tpl-090",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/team-showcase-speaking/full",
+    price: "$0.08",
+    description: "Team Showcase Speaking Playbook agent pack (mf-tpl-091)",
+    artifact: "mf-tpl-091",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/customer-learning-program/full",
+    price: "$0.08",
+    description: "Customer Learning Program Playbook agent pack (mf-tpl-092)",
+    artifact: "mf-tpl-092",
+  },
 ];
 
 const NETWORK_CAIP2: Partial<Record<Env["NETWORK"], string>> = {

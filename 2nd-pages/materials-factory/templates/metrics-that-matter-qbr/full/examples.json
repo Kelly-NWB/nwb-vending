@@ -1,0 +1,40 @@
+{
+  "artifact": "mf-tpl-081",
+  "version": "1.2.0",
+  "description": "Run Metrics That Matter QBRs: the few back-end measures customers feel. Answer access, timeliness, true fix rate versus parts shotgun, and satisfaction. Position every account as important, not only logos.",
+  "examples": [
+    {
+      "id": "ex-customer-qbr",
+      "context": "Customer wanted proof support was real. Sales brought fluff. Support brought MTM.",
+      "branch": "mtm-qbr",
+      "templates_used": [
+        "qbr-agenda-mtm",
+        "mtm-scorecard"
+      ],
+      "resolution": "Meeting stayed on access and fix quality. Renewal conversation grounded.",
+      "log_row": "2026-Q2,mtm,4-metrics,renewal-ok"
+    },
+    {
+      "id": "ex-shotgun-exposed",
+      "context": "Close rate green. Customer still angry. Parts volume high.",
+      "branch": "shotgun-readout",
+      "templates_used": [
+        "fix-vs-shotgun-slide",
+        "mtm-scorecard"
+      ],
+      "resolution": "Shotgun index added to QBR. Coaching and kit rules followed.",
+      "log_row": "2026-Q3,shotgun-index,coaching,ok"
+    },
+    {
+      "id": "ex-mid-fish",
+      "context": "Mid-size account never got a real ops review.",
+      "branch": "mid-market-care",
+      "templates_used": [
+        "same-care-standard",
+        "mtm-scorecard"
+      ],
+      "resolution": "Semiannual MTM. Felt heard; escalations dropped.",
+      "log_row": "2026-H1,mid,mtm-semi,esc-down"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "artifact": "mf-tpl-080",
+  "version": "1.2.0",
+  "templates": [
+    {
+      "id": "fit-gate-checklist",
+      "use_when": "pre-golive",
+      "body": "SOLUTION FIT GATE\nAccount: _______________  Close date: _______\n\nSold use case: _______________\nExpected load/capacity: _______________\nFeatures promised: _______________\nCustomer ops model: _______________\nSupport skill match: Y/N\nVendor deps: _______________\nSE sign: _______  Support sign: _______  Date: _______"
+    },
+    {
+      "id": "use-case-gap-log",
+      "use_when": "fit-gap-found",
+      "body": "USE-CASE GAP LOG\nAccount: _______________  Found: _______\n\nSold: _______________\nActual: _______________\nGap type: [ ] oversell  [ ] undersell  [ ] wrong path  [ ] unknown\nImpact (tickets/outage/cost): _______________\nOwners: sales ___ SE ___ support ___ vendor ___\nNext action: _______________"
+    },
+    {
+      "id": "scope-truth-memo",
+      "use_when": "oversell",
+      "body": "SCOPE TRUTH MEMO (internal)\nWhat was promised: _______________\nWhat product can do: _______________\nCustomer-safe wording: _______________\nRemediation options: _______________\nWho tells the customer: _______________"
+    },
+    {
+      "id": "upsell-or-redesign-path",
+      "use_when": "undersell",
+      "body": "UNDERSELL PATH\nMissing capacity/feature: _______________\nOptions: [ ] commercial add  [ ] redesign  [ ] vendor feature  [ ] accept risk\nSupport interim controls: _______________\nDecision date: _______"
+    },
+    {
+      "id": "assumption-register",
+      "use_when": "pre-golive",
+      "body": "ASSUMPTION REGISTER\n# | Assumption | Source (SE/sales/customer) | Validated Y/N | Risk if wrong\n1 | | | |\n2 | | | |"
+    }
+  ]
+}

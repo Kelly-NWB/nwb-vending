@@ -1,0 +1,31 @@
+{
+  "artifact": "mf-tpl-083",
+  "version": "1.2.0",
+  "templates": [
+    {
+      "id": "throughput-diagnosis",
+      "use_when": "pipeline-stuck",
+      "body": "HIRING THROUGHPUT DIAGNOSIS\nTarget seats: ___  Open reqs: ___  Week: _______\n\nAvg minutes per candidate: ___\nStages: _______________\nWhere time dies: _______________\nTrainable vs must-have split: _______________\nOwner: _______________"
+    },
+    {
+      "id": "screen-first-script",
+      "use_when": "redesign-screen",
+      "body": "SCREEN-FIRST SCRIPT (trainable role)\nTime-box: ___ min\n\n1) Learning signal (e.g. last book / last skill learned): _______________\n2) Three adjectives + example of one under pressure: _______________\n3) Light judgment scenario (not product): _______________\n4) Only if pass: tech/process intro (teach later): _______________\nAdvance Y/N rule: _______________"
+    },
+    {
+      "id": "roundtable-timebox",
+      "use_when": "roundtable-chaos",
+      "body": "ROUNDTABLE TIME-BOX\nRoles on panel: _______________\nTotal minutes: ___\nPer stage: intro __ / screen __ / scenario __ / debrief __\nDecision rule same day: Y/N\nScribe: _______________"
+    },
+    {
+      "id": "scorecard-lock",
+      "use_when": "bar-drift",
+      "body": "SCORECARD LOCK\nMust-have traits (3 max): _______________\nNice-to-have: _______________\nAutomatic no: _______________\nPanel calibration note: _______________"
+    },
+    {
+      "id": "week-one-audit",
+      "use_when": "redesign-screen",
+      "body": "WEEK-ONE AUDIT\nCandidates: ___  Avg minutes: ___  Pass%: ___\nFalse pass signals: _______________\nAdjust script: _______________"
+    }
+  ]
+}

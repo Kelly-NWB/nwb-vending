@@ -1,0 +1,140 @@
+{
+  "artifact": "mf-tpl-092",
+  "title": "Customer Learning Program Playbook",
+  "version": "1.2.0",
+  "audience": "agent",
+  "section": "templates",
+  "lane": "field-patterns",
+  "pack_type": "field-pattern",
+  "description": "Design a customer learning program (short tracks, not a real school) tied to a clear warranty experience: what is covered, how to get help, how to self-serve basics. Enable sales to distribute. Measure deflection and satisfaction on real issues.",
+  "mindset": {
+    "principle": "Produce-aisle universities work because they teach without shame. Same for hardware and support: educate so the phone is for hard problems, and warranty feels like a promise not a trap.",
+    "mistakes": [
+      {
+        "id": "fine-print-only",
+        "label": "Warranty lives only in legal PDF",
+        "cost": "Support re-explains; customers feel tricked"
+      },
+      {
+        "id": "course-bloat",
+        "label": "Build a huge LMS nobody finishes",
+        "cost": "Launch theater; zero behavior change"
+      },
+      {
+        "id": "support-only-secret",
+        "label": "Great material never reaches sales or customers",
+        "cost": "Still every how-to call"
+      },
+      {
+        "id": "brand-collision",
+        "label": "Copy another company's expert slogan",
+        "cost": "IP/brand mess; not your asset"
+      }
+    ]
+  },
+  "program_parts": [
+    {
+      "id": "tracks",
+      "label": "Short learning tracks: first boot, care, when to call, warranty path"
+    },
+    {
+      "id": "warranty_card",
+      "label": "Human warranty summary: covered, not covered, how to open a case"
+    },
+    {
+      "id": "sales_hand",
+      "label": "One pack sales can send or leave with customer"
+    },
+    {
+      "id": "measure",
+      "label": "Basics volume down; CSAT on complex up"
+    }
+  ],
+  "decision_branches": [
+    {
+      "id": "stand-up-u",
+      "situation": "Need customer education program + clearer warranty story",
+      "action": "program-charter"
+    },
+    {
+      "id": "warranty-revamp",
+      "situation": "Warranty confuses customers and support",
+      "action": "warranty-human-card"
+    },
+    {
+      "id": "sales-distro",
+      "situation": "Material ready for field",
+      "action": "sales-hand-pack"
+    },
+    {
+      "id": "prove",
+      "situation": "Leadership wants ROI",
+      "action": "deflection-readout"
+    }
+  ],
+  "process": {
+    "steps": [
+      {
+        "id": 1,
+        "name": "Charter 3-5 short tracks max",
+        "goal": "Light university, not LMS empire",
+        "minutes": "half-day"
+      },
+      {
+        "id": 2,
+        "name": "Rewrite warranty into human card",
+        "goal": "Aligned with legal, readable",
+        "minutes": "with counsel/ops"
+      },
+      {
+        "id": 3,
+        "name": "Build hand pack for sales",
+        "goal": "One link or PDF set",
+        "minutes": "half-day"
+      },
+      {
+        "id": 4,
+        "name": "Measure basics vs complex",
+        "goal": "Deflection + trust",
+        "minutes": "monthly"
+      }
+    ]
+  },
+  "tracking": {
+    "csv_header": "period,track_views,sales_sends,basics_ticket_volume,complex_csat,warranty_confusion_tickets,owner",
+    "sheet_tab_name": "customer_learning_program"
+  },
+  "related_artifacts": [
+    "mf-tpl-020",
+    "mf-tpl-089",
+    "mf-tpl-090",
+    "mf-tpl-027"
+  ],
+  "agent_signal": {
+    "use_when": "Need customer education university-style program and clearer warranty experience. Sales should hand materials. Basics still flooding support. No third-party brand slogans.",
+    "decision_criteria": [
+      "Keep tracks short; avoid LMS bloat.",
+      "Warranty human card aligned with real policy.",
+      "Sales distribution is part of launch, not afterthought."
+    ],
+    "operator_context": "Field pattern: warranty revamp plus customer U concept (generic naming). Full circle with preventable tickets and knowledge repo.",
+    "tags": [
+      "field-patterns",
+      "warranty",
+      "education",
+      "support-ops"
+    ],
+    "version": "1.2",
+    "not_for": "Legal warranty drafting without counsel. Not another company's brand program.",
+    "pairs_with": [
+      "mf-tpl-020",
+      "mf-tpl-089",
+      "mf-tpl-090",
+      "mf-tpl-027"
+    ],
+    "trigger_phrases": [
+      "Need customer education university-style program and clearer warranty experience",
+      "Need playbook: Customer Learning Program Playbook"
+    ]
+  }
+}

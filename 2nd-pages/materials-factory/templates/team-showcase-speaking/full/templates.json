@@ -1,0 +1,31 @@
+{
+  "artifact": "mf-tpl-091",
+  "version": "1.2.0",
+  "templates": [
+    {
+      "id": "series-charter",
+      "use_when": "run-series",
+      "body": "TEAM SHOWCASE SERIES CHARTER\nAudience: our team (not customers yet)\nCadence: _______________  Slot length: ___ min + Q&A ___\nFormat: short slides + talk\nTopic rule: interest or skill you care about (work OK, not required)\nNot a performance review: Y\nRotation owner: _______________"
+    },
+    {
+      "id": "topic-menu",
+      "use_when": "topic-help",
+      "body": "TOPIC MENU (pick one)\n[ ] Hobby or craft\n[ ] Something you teach others\n[ ] A day-in-the-life quirk (keep light)\n[ ] A skill adjacent to work\n[ ] A story of how you got good at X\nAvoid: forced trauma, HR landmines, roasting teammates\nWorking title: _______________"
+    },
+    {
+      "id": "safety-rails",
+      "use_when": "anxiety",
+      "body": "SAFETY RAILS\nSpeaker: _______________\n[ ] Notes OK  [ ] Sit or stand OK  [ ] Friend asks first question\n[ ] Time-box hard so it ends\n[ ] One praise + optional one tip only after\n[ ] No grades\nPractice once with lead if wanted: Y/N"
+    },
+    {
+      "id": "talk-run-sheet",
+      "use_when": "run-series",
+      "body": "TALK RUN SHEET\nSpeaker: _______________  Date: _______\nTopic: _______________\nMinutes: ___  Slides: ___\nWhat the team learned about them: _______________\nSpeaking muscle note (private, kind): _______________"
+    },
+    {
+      "id": "transfer-checklist",
+      "use_when": "transfer",
+      "body": "TRANSFER CHECKLIST\nAfter N talks, person can:\n[ ] Open a room with sales without freeze\n[ ] Walk a customer through a short deck\n[ ] Explain a process to another team live\nNext stretch assignment: _______________\nDate: _______"
+    }
+  ]
+}

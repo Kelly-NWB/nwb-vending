@@ -1,0 +1,41 @@
+{
+  "artifact": "mf-tpl-085",
+  "version": "1.2.0",
+  "description": "Stand up a weekly PIE (Problems, Incidents, Escalations) bridge between engineering and support leadership: shared hour, live scenarios, prioritization, relationship repair, and detection of escalation abuse from sales or other groups.",
+  "examples": [
+    {
+      "id": "ex-stepchild-support",
+      "context": "New smaller server/storage org. Support hammered. Eng lazy on basics. Sales escalated constantly. Mutual hate.",
+      "branch": "stand-up-pie",
+      "templates_used": [
+        "stand-up-pie",
+        "pie-agenda",
+        "pie-decision-log"
+      ],
+      "resolution": "Weekly PIE eng director + support. Relationship solid in weeks. Work prioritized in the open.",
+      "log_row": "PIE-stand,1hr,eng+sup,rel-up"
+    },
+    {
+      "id": "ex-sales-hide",
+      "context": "Escalation audit showed a few sales/SE paths and their leadership using escalate to hide their own issues.",
+      "branch": "sales-abuse",
+      "templates_used": [
+        "escalation-source-audit",
+        "escalation-definition-lock"
+      ],
+      "resolution": "Definitions locked. Abuse path called out with data. Escalation volume became meaningful.",
+      "log_row": "src-audit,sales-cover,def-lock,ok"
+    },
+    {
+      "id": "ex-basics-kb",
+      "context": "Engineers exhausted by the same basic questions.",
+      "branch": "basics-loop",
+      "templates_used": [
+        "knowledge-return-path",
+        "pie-agenda"
+      ],
+      "resolution": "KB and training owned by support. Eng time freed for real problems.",
+      "log_row": "kb-return,basics-off-esc,ok"
+    }
+  ]
+}

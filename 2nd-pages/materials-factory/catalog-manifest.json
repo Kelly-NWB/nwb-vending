@@ -7,7 +7,7 @@
   "network": "base",
   "health": "/__x402/health",
   "audience": "agent",
-  "entry_count": 82,
+  "entry_count": 96,
   "job_spine": {
     "description": "Small-business job lifecycle for Treasure Valley-style ops. Fetch chain in order; attach extensions by anchor.",
     "chain": [
@@ -2817,14 +2817,463 @@
         "Need playbook: Support Incentive Steering Playbook"
       ],
       "agent_signal_version": "1.2"
+    },
+    {
+      "id": "mf-tpl-079",
+      "section": "templates",
+      "lane": "field-patterns",
+      "pack_type": "field-pattern",
+      "title": "Failure Cohort Truth Playbook",
+      "price": "$0.08",
+      "teaser": "templates/failure-cohort-truth/",
+      "full": "templates/failure-cohort-truth/full/",
+      "primary": "playbook.json",
+      "apply": "branch → template → log",
+      "description": "When sales panics on high fail rates, cut the data by age, ship date, and warranty left before the room explodes. Real fails on EOL gear are",
+      "tags": [
+        "field-patterns",
+        "sales-support",
+        "failure-analysis",
+        "qbr-data"
+      ],
+      "use_when": "Sales or customer claims high hardware fail rate. Need cohort cuts by age/ship/warranty before product panic. Suspect cherry-picked data easing the customer.",
+      "not_for": "Generic job spine. Not NDF program design (see 073-078). Not legal advice.",
+      "pairs_with": [
+        "mf-tpl-075",
+        "mf-tpl-067",
+        "mf-tpl-060",
+        "mf-tpl-082"
+      ],
+      "trigger_phrases": [
+        "Sales or customer claims high hardware fail rate. Need cohort cuts by age/ship/w",
+        "Need playbook: Failure Cohort Truth Playbook"
+      ],
+      "agent_signal_version": "1.2"
+    },
+    {
+      "id": "mf-tpl-080",
+      "section": "templates",
+      "lane": "field-patterns",
+      "pack_type": "field-pattern",
+      "title": "Solution Fit Handoff Playbook",
+      "price": "$0.08",
+      "teaser": "templates/solution-fit-handoff/",
+      "full": "templates/solution-fit-handoff/full/",
+      "primary": "playbook.json",
+      "apply": "branch → template → log",
+      "description": "Sales and SE closed a solution that does not match the real use case. Oversold or undersold, marked fine. Support inherits the gap. Gate the",
+      "tags": [
+        "field-patterns",
+        "sales-support",
+        "handoff",
+        "enterprise"
+      ],
+      "use_when": "Closed deal does not match real use case. Oversold or undersold. Support stuck fixing sales design. Need handoff fit gate and gap log.",
+      "not_for": "Generic job spine. Not NDF program design (see 073-078). Not legal advice.",
+      "pairs_with": [
+        "mf-tpl-082",
+        "mf-tpl-067",
+        "mf-tpl-075",
+        "mf-tpl-001"
+      ],
+      "trigger_phrases": [
+        "Closed deal does not match real use case. Oversold or undersold. Support stuck f",
+        "Need playbook: Solution Fit Handoff Playbook"
+      ],
+      "agent_signal_version": "1.2"
+    },
+    {
+      "id": "mf-tpl-081",
+      "section": "templates",
+      "lane": "field-patterns",
+      "pack_type": "field-pattern",
+      "title": "Metrics That Matter QBR Playbook",
+      "price": "$0.08",
+      "teaser": "templates/metrics-that-matter-qbr/",
+      "full": "templates/metrics-that-matter-qbr/full/",
+      "primary": "playbook.json",
+      "apply": "branch → template → log",
+      "description": "Customer QBR on back-end truth: did we answer, on time, did we fix (not shotgun parts), CSAT. Treat every account like a big fish. No sales ",
+      "tags": [
+        "field-patterns",
+        "qbr",
+        "csat",
+        "support-ops"
+      ],
+      "use_when": "Customer QBR needs back-end metrics not sales fluff. Need answered/on-time/fixed/CSAT and fix-vs-shotgun. Same standard for non-logo accounts.",
+      "not_for": "Generic job spine. Not NDF program design (see 073-078). Not legal advice.",
+      "pairs_with": [
+        "mf-tpl-061",
+        "mf-tpl-075",
+        "mf-tpl-060",
+        "mf-tpl-005"
+      ],
+      "trigger_phrases": [
+        "Customer QBR needs back-end metrics not sales fluff. Need answered/on-time/fixed",
+        "Need playbook: Metrics That Matter QBR Playbook"
+      ],
+      "agent_signal_version": "1.2"
+    },
+    {
+      "id": "mf-tpl-082",
+      "section": "templates",
+      "lane": "field-patterns",
+      "pack_type": "field-pattern",
+      "title": "Sales Support Incident Bridge Playbook",
+      "price": "$0.08",
+      "teaser": "templates/sales-support-incident-bridge/",
+      "full": "templates/sales-support-incident-bridge/full/",
+      "primary": "playbook.json",
+      "apply": "branch → template → log",
+      "description": "Sales vs support under fire: panic rooms, blame after the save, weekly vendor bridges on logo pain. Roles, evidence, time-boxed bridges, no ",
+      "tags": [
+        "field-patterns",
+        "sales-support",
+        "escalation",
+        "vendor"
+      ],
+      "use_when": "Sales and support in conflict on a hot account. Weekly vendor bridges with no end. Blame after a save. Need roles, evidence order, exit criteria.",
+      "not_for": "Generic job spine. Not NDF program design (see 073-078). Not legal advice.",
+      "pairs_with": [
+        "mf-tpl-079",
+        "mf-tpl-080",
+        "mf-tpl-067",
+        "mf-tpl-001"
+      ],
+      "trigger_phrases": [
+        "Sales and support in conflict on a hot account. Weekly vendor bridges with no en",
+        "Need playbook: Sales Support Incident Bridge Playbook"
+      ],
+      "agent_signal_version": "1.2"
+    },
+    {
+      "id": "mf-tpl-083",
+      "section": "templates",
+      "lane": "field-patterns",
+      "pack_type": "field-pattern",
+      "title": "High-Volume Interview Redesign Playbook",
+      "price": "$0.08",
+      "teaser": "templates/high-volume-interview-redesign/",
+      "full": "templates/high-volume-interview-redesign/full/",
+      "primary": "playbook.json",
+      "apply": "branch → template → log",
+      "description": "Hundreds of seats to fill. Roundtables stuck on call-center trivia. Flip to personality and learning signals first when the job can be taugh",
+      "tags": [
+        "field-patterns",
+        "hiring",
+        "call-center",
+        "people-ops"
+      ],
+      "use_when": "High-volume support or call-center hiring stuck. Roundtables too long on teachable tech. Need personality/learning-first redesign and time-box.",
+      "not_for": "Generic job spine. Not legal/HR compliance advice.",
+      "pairs_with": [
+        "mf-tpl-003",
+        "mf-tpl-002",
+        "mf-tpl-057",
+        "mf-tpl-058"
+      ],
+      "trigger_phrases": [
+        "High-volume support or call-center hiring stuck. Roundtables too long on teachab",
+        "Need playbook: High-Volume Interview Redesign Playbook"
+      ],
+      "agent_signal_version": "1.2"
+    },
+    {
+      "id": "mf-tpl-084",
+      "section": "templates",
+      "lane": "field-patterns",
+      "pack_type": "field-pattern",
+      "title": "Floor Morale Task Force Playbook",
+      "price": "$0.08",
+      "teaser": "templates/floor-morale-task-force/",
+      "full": "templates/floor-morale-task-force/full/",
+      "primary": "playbook.json",
+      "apply": "branch → template → log",
+      "description": "Call center air is dead. Build a rep-owned morale task force: phone people from multiple teams, not leads. They invent the energy. Managemen",
+      "tags": [
+        "field-patterns",
+        "morale",
+        "call-center",
+        "people-ops"
+      ],
+      "use_when": "Support or call-center floor morale is dead. Need rep-owned task force not HR theater. Multi-department ICs, weekly ideas, leadership sponsor.",
+      "not_for": "Generic job spine. Not legal/HR compliance advice.",
+      "pairs_with": [
+        "mf-tpl-005",
+        "mf-tpl-061",
+        "mf-tpl-078",
+        "mf-tpl-057"
+      ],
+      "trigger_phrases": [
+        "Support or call-center floor morale is dead. Need rep-owned task force not HR th",
+        "Need playbook: Floor Morale Task Force Playbook"
+      ],
+      "agent_signal_version": "1.2"
+    },
+    {
+      "id": "mf-tpl-085",
+      "section": "templates",
+      "lane": "field-patterns",
+      "pack_type": "field-pattern",
+      "title": "PIE Weekly Bridge Playbook",
+      "price": "$0.08",
+      "teaser": "templates/pie-weekly-bridge/",
+      "full": "templates/pie-weekly-bridge/full/",
+      "primary": "playbook.json",
+      "apply": "branch → template → log",
+      "description": "Problems, Incidents, Escalations. Weekly one-hour eng + support leadership forum. Kill toxic punt culture, real-time scenarios, prioritize e",
+      "tags": [
+        "field-patterns",
+        "escalation",
+        "engineering",
+        "support-ops"
+      ],
+      "use_when": "Support and engineering in conflict. Escalations everywhere. Sales punts. Need weekly PIE-style problems/incidents/escalations forum with shared ownership.",
+      "not_for": "Generic job spine. Not a substitute for incident command tooling alone.",
+      "pairs_with": [
+        "mf-tpl-067",
+        "mf-tpl-082",
+        "mf-tpl-080",
+        "mf-tpl-001"
+      ],
+      "trigger_phrases": [
+        "Support and engineering in conflict. Escalations everywhere. Sales punts. Need w",
+        "Need playbook: PIE Weekly Bridge Playbook"
+      ],
+      "agent_signal_version": "1.2"
+    },
+    {
+      "id": "mf-tpl-086",
+      "section": "templates",
+      "lane": "field-patterns",
+      "pack_type": "field-pattern",
+      "title": "Support On-Call Design Playbook",
+      "price": "$0.08",
+      "teaser": "templates/support-oncall-design/",
+      "full": "templates/support-oncall-design/full/",
+      "primary": "playbook.json",
+      "apply": "branch → template → log",
+      "description": "On-call that does not destroy the floor: pay that feels different, tiers that keep specialists off how-tos, locked path from after-hours int",
+      "tags": [
+        "field-patterns",
+        "on-call",
+        "support-ops",
+        "tiers"
+      ],
+      "use_when": "Support on-call is broken or bitter. Need pay differential, tier protection for specialists, and locked after-hours escalation path. Not a collection of night war stories.",
+      "not_for": "War-story anthology. Not legal wage advice; set pay with your counsel/HR.",
+      "pairs_with": [
+        "mf-tpl-032",
+        "mf-tpl-062",
+        "mf-tpl-085",
+        "mf-tpl-078"
+      ],
+      "trigger_phrases": [
+        "Support on-call is broken or bitter. Need pay differential, tier protection for ",
+        "Need playbook: Support On-Call Design Playbook"
+      ],
+      "agent_signal_version": "1.2"
+    },
+    {
+      "id": "mf-tpl-087",
+      "section": "templates",
+      "lane": "field-patterns",
+      "pack_type": "field-pattern",
+      "title": "Named Account Support Playbook",
+      "price": "$0.08",
+      "teaser": "templates/named-account-support/",
+      "full": "templates/named-account-support/full/",
+      "primary": "playbook.json",
+      "apply": "branch → template → log",
+      "description": "Service-account style: a set of agents wholly tied to a set of accounts. Commercial pods; large segments can be one big named pool. Continui",
+      "tags": [
+        "field-patterns",
+        "account-support",
+        "structure",
+        "support-ops"
+      ],
+      "use_when": "Need service-account or named-agent support for commercial or strategic accounts. Random queue failing relationship. Large segment as one dedicated pool.",
+      "not_for": "Generic job spine only. Not HR legal advice on titles/pay.",
+      "pairs_with": [
+        "mf-tpl-062",
+        "mf-tpl-075",
+        "mf-tpl-081",
+        "mf-tpl-020"
+      ],
+      "trigger_phrases": [
+        "Need service-account or named-agent support for commercial or strategic accounts",
+        "Need playbook: Named Account Support Playbook"
+      ],
+      "agent_signal_version": "1.2"
+    },
+    {
+      "id": "mf-tpl-088",
+      "section": "templates",
+      "lane": "field-patterns",
+      "pack_type": "field-pattern",
+      "title": "Escalation Engineer Ladder Playbook",
+      "price": "$0.08",
+      "teaser": "templates/escalation-engineer-ladder/",
+      "full": "templates/escalation-engineer-ladder/full/",
+      "primary": "playbook.json",
+      "apply": "branch → template → log",
+      "description": "Support Engineering path: support engineers into escalation engineers. Same family, feeding each other. Title and structure that counter sup",
+      "tags": [
+        "field-patterns",
+        "career-ladder",
+        "escalation",
+        "support-ops"
+      ],
+      "use_when": "Need support engineer / escalation engineer career ladder. Customers demand next level. Support stigma. Teach path when they want the wrong thing.",
+      "not_for": "Generic job spine only. Not HR legal advice on titles/pay.",
+      "pairs_with": [
+        "mf-tpl-085",
+        "mf-tpl-086",
+        "mf-tpl-083",
+        "mf-tpl-087"
+      ],
+      "trigger_phrases": [
+        "Need support engineer / escalation engineer career ladder. Customers demand next",
+        "Need playbook: Escalation Engineer Ladder Playbook"
+      ],
+      "agent_signal_version": "1.2"
+    },
+    {
+      "id": "mf-tpl-089",
+      "section": "templates",
+      "lane": "field-patterns",
+      "pack_type": "field-pattern",
+      "title": "Preventable Ticket Kill Playbook",
+      "price": "$0.08",
+      "teaser": "templates/preventable-ticket-kill/",
+      "full": "templates/preventable-ticket-kill/full/",
+      "primary": "playbook.json",
+      "apply": "branch → template → log",
+      "description": "Solve problems before they become tickets. Factory welcome packs, default passwords in the box, human phone openers with location. Design ou",
+      "tags": [
+        "field-patterns",
+        "deflection",
+        "onboarding",
+        "support-ops"
+      ],
+      "use_when": "High volume of preventable tickets (e.g. every ship calls for password). Need welcome pack or upstream kill. Phone open that signals real location/team.",
+      "not_for": "Generic job spine only. Not HR legal advice on titles/pay.",
+      "pairs_with": [
+        "mf-tpl-020",
+        "mf-tpl-027",
+        "mf-tpl-065",
+        "mf-tpl-081"
+      ],
+      "trigger_phrases": [
+        "High volume of preventable tickets (e.g. every ship calls for password). Need we",
+        "Need playbook: Preventable Ticket Kill Playbook"
+      ],
+      "agent_signal_version": "1.2"
+    },
+    {
+      "id": "mf-tpl-090",
+      "section": "templates",
+      "lane": "field-patterns",
+      "pack_type": "field-pattern",
+      "title": "Support Knowledge Repo Playbook",
+      "price": "$0.08",
+      "teaser": "templates/support-knowledge-repo/",
+      "full": "templates/support-knowledge-repo/full/",
+      "primary": "playbook.json",
+      "apply": "branch → template → log",
+      "description": "Task support engineers to build a how-to repo that solves problems before the call. Market it to sales and customers. Then govern it: origin",
+      "tags": [
+        "field-patterns",
+        "knowledge-base",
+        "integrity",
+        "support-ops"
+      ],
+      "use_when": "Support engineers building how-to/knowledge repo. Pushing KB to sales/customers. Need contribution integrity gate after plagiarism risk. Trust but verify technical heroes.",
+      "not_for": "Legal advice on IP disputes. Route serious claims to counsel.",
+      "pairs_with": [
+        "mf-tpl-089",
+        "mf-tpl-088",
+        "mf-tpl-059",
+        "mf-tpl-067"
+      ],
+      "trigger_phrases": [
+        "Support engineers building how-to/knowledge repo. Pushing KB to sales/customers.",
+        "Need playbook: Support Knowledge Repo Playbook"
+      ],
+      "agent_signal_version": "1.2"
+    },
+    {
+      "id": "mf-tpl-091",
+      "section": "templates",
+      "lane": "field-patterns",
+      "pack_type": "field-pattern",
+      "title": "Team Showcase Speaking Playbook",
+      "price": "$0.08",
+      "teaser": "templates/team-showcase-speaking/",
+      "full": "templates/team-showcase-speaking/full/",
+      "primary": "playbook.json",
+      "apply": "branch → template → log",
+      "description": "Team builds short slide talks on a personal interest for the class. Dual win: know each other, and give introvert phone-nerds safe reps at p",
+      "tags": [
+        "field-patterns",
+        "leadership",
+        "speaking",
+        "team"
+      ],
+      "use_when": "Support team strong on phone, weak in person. Need bond plus public speaking/slide reps. Leadership program not a roast or performance review.",
+      "not_for": "Performance review system or mandatory toastmasters clone.",
+      "pairs_with": [
+        "mf-tpl-084",
+        "mf-tpl-088",
+        "mf-tpl-083",
+        "mf-tpl-003"
+      ],
+      "trigger_phrases": [
+        "Support team strong on phone, weak in person. Need bond plus public speaking/sli",
+        "Need playbook: Team Showcase Speaking Playbook"
+      ],
+      "agent_signal_version": "1.2"
+    },
+    {
+      "id": "mf-tpl-092",
+      "section": "templates",
+      "lane": "field-patterns",
+      "pack_type": "field-pattern",
+      "title": "Customer Learning Program Playbook",
+      "price": "$0.08",
+      "teaser": "templates/customer-learning-program/",
+      "full": "templates/customer-learning-program/full/",
+      "primary": "playbook.json",
+      "apply": "branch → template → log",
+      "description": "Stand up a light customer university: teach product care and warranty path so problems die early. Pair with a warranty revamp customers unde",
+      "tags": [
+        "field-patterns",
+        "warranty",
+        "education",
+        "support-ops"
+      ],
+      "use_when": "Need customer education university-style program and clearer warranty experience. Sales should hand materials. Basics still flooding support. No third-party brand slogans.",
+      "not_for": "Legal warranty drafting without counsel. Not another company's brand program.",
+      "pairs_with": [
+        "mf-tpl-020",
+        "mf-tpl-089",
+        "mf-tpl-090",
+        "mf-tpl-027"
+      ],
+      "trigger_phrases": [
+        "Need customer education university-style program and clearer warranty experience",
+        "Need playbook: Customer Learning Program Playbook"
+      ],
+      "agent_signal_version": "1.2"
     }
   ],
   "agent_signal_schema": "1.2",
   "pack_lanes": {
     "job_spine": "Small-business job lifecycle templates and tools",
     "support_backbone": "Support ops metrics, queues, forecast (061-067)",
-    "field_patterns": "Field patterns from real work: people ops, returns, NDF incentives, site process, workplace exit. Not legal advice.",
+    "field_patterns": "Field patterns: people ops, returns, NDF incentives, sales/support, QBR metrics, workplace exit. Not legal advice.",
     "workplace_exit": "Severance and benefits documentation patterns (068-072). Bonus aisle.",
-    "ndf_cluster": "NDF and support incentive patterns (073-078). Complements 060."
+    "ndf_cluster": "NDF and support incentive patterns (073-078). Complements 060.",
+    "sales_support_qbr": "Sales/support bridge and Metrics That Matter QBR (079-082)."
   }
 }

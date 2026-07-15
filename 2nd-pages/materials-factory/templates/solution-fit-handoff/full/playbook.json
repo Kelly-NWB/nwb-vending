@@ -1,0 +1,125 @@
+{
+  "artifact": "mf-tpl-080",
+  "title": "Solution Fit Handoff Playbook",
+  "version": "1.2.0",
+  "audience": "agent",
+  "section": "templates",
+  "lane": "field-patterns",
+  "pack_type": "field-pattern",
+  "description": "Catch and repair solution fit gaps when sales/SE design does not match actual customer use: oversell, undersell, or fine when it is not. Structure handoff so support is not the unpaid redesign team.",
+  "mindset": {
+    "principle": "If the use case was wrong at sale, support cannot hero the architecture forever. Write the gap and re-fit, or the logo burns everyone.",
+    "mistakes": [
+      {
+        "id": "fine-in-the-room",
+        "label": "SE says it is fine without production use-case proof",
+        "cost": "Day-2 tickets become the design review"
+      },
+      {
+        "id": "silent-support",
+        "label": "Support absorbs misfit without a written gap",
+        "cost": "No leverage to change scope, SKU, or vendor path"
+      },
+      {
+        "id": "logo-exception",
+        "label": "Big name skips fit gate",
+        "cost": "Worst gaps on highest-visibility accounts"
+      }
+    ]
+  },
+  "fit_checks": [
+    "stated_use_case_vs_observed_use",
+    "capacity_headroom",
+    "feature_promised_vs_shipped",
+    "ops_staffing_customer_side",
+    "vendor_dependency_known",
+    "support_skill_match"
+  ],
+  "decision_branches": [
+    {
+      "id": "pre-golive",
+      "situation": "Deal closed; production not live",
+      "action": "fit-gate-checklist"
+    },
+    {
+      "id": "fit-gap-found",
+      "situation": "Production pain shows design miss",
+      "action": "use-case-gap-log"
+    },
+    {
+      "id": "oversell",
+      "situation": "Promises exceed product/path",
+      "action": "scope-truth-memo"
+    },
+    {
+      "id": "undersell",
+      "situation": "Sold thin; customer needs more",
+      "action": "upsell-or-redesign-path"
+    }
+  ],
+  "process": {
+    "steps": [
+      {
+        "id": 1,
+        "name": "Capture sold use case in writing",
+        "goal": "What SE believed",
+        "minutes": "30"
+      },
+      {
+        "id": 2,
+        "name": "Capture actual use case",
+        "goal": "What customer does",
+        "minutes": "60"
+      },
+      {
+        "id": 3,
+        "name": "Gap log and owners",
+        "goal": "Sales/SE/support/vendor",
+        "minutes": "45"
+      },
+      {
+        "id": 4,
+        "name": "Path: redesign, add, or exit risk",
+        "goal": "Stop silent heroics",
+        "minutes": "ongoing"
+      }
+    ]
+  },
+  "tracking": {
+    "csv_header": "account,sold_use_case,actual_use_case,gap_type,severity,owner,status",
+    "sheet_tab_name": "solution_fit_handoff"
+  },
+  "related_artifacts": [
+    "mf-tpl-082",
+    "mf-tpl-067",
+    "mf-tpl-075",
+    "mf-tpl-001"
+  ],
+  "agent_signal": {
+    "use_when": "Closed deal does not match real use case. Oversold or undersold. Support stuck fixing sales design. Need handoff fit gate and gap log.",
+    "decision_criteria": [
+      "No production ownership without written use-case assumptions.",
+      "Gaps are logged with sales/SE owners, not only support tickets.",
+      "Logo accounts get the same fit gate, not less."
+    ],
+    "operator_context": "Field pattern: sales vs support amplified on large institutional accounts. Weekly vendor bridges are a symptom of fit failure.",
+    "tags": [
+      "field-patterns",
+      "sales-support",
+      "handoff",
+      "enterprise"
+    ],
+    "version": "1.2",
+    "not_for": "Generic job spine. Not NDF program design (see 073-078). Not legal advice.",
+    "pairs_with": [
+      "mf-tpl-082",
+      "mf-tpl-067",
+      "mf-tpl-075",
+      "mf-tpl-001"
+    ],
+    "trigger_phrases": [
+      "Closed deal does not match real use case. Oversold or undersold. Support stuck f",
+      "Need playbook: Solution Fit Handoff Playbook"
+    ]
+  }
+}

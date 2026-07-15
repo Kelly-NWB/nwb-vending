@@ -1,0 +1,39 @@
+{
+  "artifact": "mf-tpl-084",
+  "version": "1.2.0",
+  "description": "Stand up a floor morale task force owned by individual contributors on the phones: multi-department reps, weekly meet, idea funnel, leadership sponsorship (budget and willingness to look silly), expansion when other groups want in.",
+  "examples": [
+    {
+      "id": "ex-dead-air-force",
+      "context": "Walked the center; air sucked out. Everyday blues. Built multi-dept phone-rep task force.",
+      "branch": "stand-up-force",
+      "templates_used": [
+        "stand-up-force",
+        "idea-funnel-week"
+      ],
+      "resolution": "Potlucks, treat days, open-floor games. Other groups asked in. Owned by the phones.",
+      "log_row": "stand-up,6-queues,weekly,spread"
+    },
+    {
+      "id": "ex-leader-dare",
+      "context": "Reps proposed public goal dare for a leader (appearance stunt) if target hit. They hit it.",
+      "branch": "sponsor-needed",
+      "templates_used": [
+        "sponsor-brief",
+        "event-run-sheet"
+      ],
+      "resolution": "Leader followed through. Credibility of the force jumped. Worth it.",
+      "log_row": "dare-hit,sponsor-did,trust-up"
+    },
+    {
+      "id": "ex-cross-dept",
+      "context": "Service and support started; other departments sent reps.",
+      "branch": "spread",
+      "templates_used": [
+        "expansion-charter"
+      ],
+      "resolution": "Same IC rule. Stayed for the people, by the people.",
+      "log_row": "expand,ic-only,ok"
+    }
+  ]
+}

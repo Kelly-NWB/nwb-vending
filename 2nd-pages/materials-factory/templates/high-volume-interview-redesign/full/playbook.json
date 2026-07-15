@@ -1,0 +1,135 @@
+{
+  "artifact": "mf-tpl-083",
+  "title": "High-Volume Interview Redesign Playbook",
+  "version": "1.2.0",
+  "audience": "agent",
+  "section": "templates",
+  "lane": "field-patterns",
+  "pack_type": "field-pattern",
+  "description": "Redesign high-volume support hiring interviews: roundtable flow, time-box, screen for learning and personality when domain tech is trainable, stop process theater that freezes the pipeline.",
+  "mindset": {
+    "principle": "Critical thinking applies to the interview process itself. If the screen is too long and points at teachable trivia, the process is the bug.",
+    "mistakes": [
+      {
+        "id": "tech-first-always",
+        "label": "Grill call-center systems for hours when the role is trainable",
+        "cost": "Pipeline dies; still hiring months later"
+      },
+      {
+        "id": "no-time-box",
+        "label": "Roundtables with no clock or decision rule",
+        "cost": "Interviewer fatigue; inconsistent hire bar"
+      },
+      {
+        "id": "ignore-learning-signal",
+        "label": "Never probe curiosity or learning habit",
+        "cost": "Hire static people into a changing floor"
+      }
+    ]
+  },
+  "screen_layers": [
+    {
+      "id": "learning",
+      "label": "Interest in learning (e.g. last book, recent skill)"
+    },
+    {
+      "id": "personality",
+      "label": "Self-description and fit for phone energy (adjectives, examples)"
+    },
+    {
+      "id": "judgment",
+      "label": "Light scenario: calm under pressure, not product trivia"
+    },
+    {
+      "id": "teachable_tech",
+      "label": "Only after pass: tools and process can be trained"
+    }
+  ],
+  "decision_branches": [
+    {
+      "id": "pipeline-stuck",
+      "situation": "Need many hires; interviews too slow",
+      "action": "throughput-diagnosis"
+    },
+    {
+      "id": "redesign-screen",
+      "situation": "Role is trainable; tech grill dominates time",
+      "action": "screen-first-script"
+    },
+    {
+      "id": "roundtable-chaos",
+      "situation": "Panel inconsistent or endless",
+      "action": "roundtable-timebox"
+    },
+    {
+      "id": "bar-drift",
+      "situation": "Yes rates wild by interviewer",
+      "action": "scorecard-lock"
+    }
+  ],
+  "process": {
+    "steps": [
+      {
+        "id": 1,
+        "name": "Measure minutes per candidate and pass rate",
+        "goal": "Prove the process is the bottleneck",
+        "minutes": "30"
+      },
+      {
+        "id": 2,
+        "name": "Separate trainable tech from must-have traits",
+        "goal": "What only hire can bring",
+        "minutes": "60"
+      },
+      {
+        "id": 3,
+        "name": "Rewrite screen order and time-box",
+        "goal": "Learning/personality first when appropriate",
+        "minutes": "half-day"
+      },
+      {
+        "id": 4,
+        "name": "Train panel and audit first week",
+        "goal": "Bar holds at speed",
+        "minutes": "ongoing"
+      }
+    ]
+  },
+  "tracking": {
+    "csv_header": "week,candidates,avg_minutes,pass_rate,offer_accept,notes,owner",
+    "sheet_tab_name": "high_volume_interview"
+  },
+  "related_artifacts": [
+    "mf-tpl-003",
+    "mf-tpl-002",
+    "mf-tpl-057",
+    "mf-tpl-058"
+  ],
+  "agent_signal": {
+    "use_when": "High-volume support or call-center hiring stuck. Roundtables too long on teachable tech. Need personality/learning-first redesign and time-box.",
+    "decision_criteria": [
+      "If tech is trainable, do not spend the interview proving tool trivia first.",
+      "Time-box every roundtable stage.",
+      "Track minutes per hire and pass rate after redesign."
+    ],
+    "operator_context": "Field pattern: insurance/support floor scale-up. Critical thinking on the hiring process itself.",
+    "tags": [
+      "field-patterns",
+      "hiring",
+      "call-center",
+      "people-ops"
+    ],
+    "version": "1.2",
+    "not_for": "Generic job spine. Not legal/HR compliance advice.",
+    "pairs_with": [
+      "mf-tpl-003",
+      "mf-tpl-002",
+      "mf-tpl-057",
+      "mf-tpl-058"
+    ],
+    "trigger_phrases": [
+      "High-volume support or call-center hiring stuck. Roundtables too long on teachab",
+      "Need playbook: High-Volume Interview Redesign Playbook"
+    ]
+  }
+}

@@ -1,0 +1,136 @@
+{
+  "artifact": "mf-tpl-086",
+  "title": "Support On-Call Design Playbook",
+  "version": "1.2.0",
+  "audience": "agent",
+  "section": "templates",
+  "lane": "field-patterns",
+  "pack_type": "field-pattern",
+  "description": "Design support on-call around three levers: compensation that feels distinct, tiering so specialized staff are not wasted on basics, and a locked escalation path from after-hours contact to the correct tier.",
+  "mindset": {
+    "principle": "On-call war stories are endless and mostly not the product. The product is pay, tiers, and path. If those are wrong, the nights will always be stupid.",
+    "mistakes": [
+      {
+        "id": "same-pay",
+        "label": "On-call with no pay or recognition difference",
+        "cost": "People feel used; quality and coverage rot"
+      },
+      {
+        "id": "tier3-howto",
+        "label": "Highly specialized tier answers basic how-tos after hours",
+        "cost": "Burnout and rage; real incidents queue behind trivia"
+      },
+      {
+        "id": "open-dial",
+        "label": "Anyone can page anyone with no filter",
+        "cost": "Chaos; sales and customers train on the wrong number"
+      },
+      {
+        "id": "path-unwritten",
+        "label": "After-hours rules live in one person's head",
+        "cost": "Breaks when that person is the one down"
+      }
+    ]
+  },
+  "design_levers": [
+    {
+      "id": "comp",
+      "label": "Pay or equivalent differential so on-call feels treated differently"
+    },
+    {
+      "id": "tiers",
+      "label": "Clear L1/L2/L3 (or equivalent) skills and what each may take"
+    },
+    {
+      "id": "path",
+      "label": "Written after-hours path: intake filter before specialist page"
+    }
+  ],
+  "decision_branches": [
+    {
+      "id": "bitter-rotation",
+      "situation": "People hate on-call; feel used",
+      "action": "comp-differential"
+    },
+    {
+      "id": "tier-lock",
+      "situation": "Specialists buried in basics after hours",
+      "action": "tier-responsibility-matrix"
+    },
+    {
+      "id": "path-chaos",
+      "situation": "Unclear who to call and when",
+      "action": "after-hours-path-lock"
+    },
+    {
+      "id": "sales-bypass",
+      "situation": "Sales or VIPs skip the path and page random experts",
+      "action": "bypass-policy"
+    }
+  ],
+  "process": {
+    "steps": [
+      {
+        "id": 1,
+        "name": "Publish what on-call pays or grants",
+        "goal": "Different treatment is visible",
+        "minutes": "half-day"
+      },
+      {
+        "id": 2,
+        "name": "Write tier matrix for nights/weekends",
+        "goal": "Who owns how-to vs break/fix",
+        "minutes": "half-day"
+      },
+      {
+        "id": 3,
+        "name": "Lock after-hours path",
+        "goal": "Intake then escalate by rule",
+        "minutes": "60"
+      },
+      {
+        "id": 4,
+        "name": "Review pages monthly",
+        "goal": "Wrong-tier hits get process fix",
+        "minutes": "monthly"
+      }
+    ]
+  },
+  "tracking": {
+    "csv_header": "period,pages_total,wrong_tier_pct,howto_on_specialist_pct,avg_ack_min,comp_policy_ver,notes,owner",
+    "sheet_tab_name": "support_oncall_design"
+  },
+  "related_artifacts": [
+    "mf-tpl-032",
+    "mf-tpl-062",
+    "mf-tpl-085",
+    "mf-tpl-078"
+  ],
+  "agent_signal": {
+    "use_when": "Support on-call is broken or bitter. Need pay differential, tier protection for specialists, and locked after-hours escalation path. Not a collection of night war stories.",
+    "decision_criteria": [
+      "On-call compensation or recognition must feel different.",
+      "Specialist tiers are not the how-to desk after hours.",
+      "Written path from after-hours contact to correct tier."
+    ],
+    "operator_context": "Field pattern: validity is structure (comp, tiers, path), not endless on-call anecdotes.",
+    "tags": [
+      "field-patterns",
+      "on-call",
+      "support-ops",
+      "tiers"
+    ],
+    "version": "1.2",
+    "not_for": "War-story anthology. Not legal wage advice; set pay with your counsel/HR.",
+    "pairs_with": [
+      "mf-tpl-032",
+      "mf-tpl-062",
+      "mf-tpl-085",
+      "mf-tpl-078"
+    ],
+    "trigger_phrases": [
+      "Support on-call is broken or bitter. Need pay differential, tier protection for ",
+      "Need playbook: Support On-Call Design Playbook"
+    ]
+  }
+}

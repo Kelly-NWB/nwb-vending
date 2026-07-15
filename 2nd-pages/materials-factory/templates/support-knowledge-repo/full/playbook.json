@@ -1,0 +1,140 @@
+{
+  "artifact": "mf-tpl-090",
+  "title": "Support Knowledge Repo Playbook",
+  "version": "1.2.0",
+  "audience": "agent",
+  "section": "templates",
+  "lane": "field-patterns",
+  "pack_type": "field-pattern",
+  "description": "Launch a support-engineer-owned knowledge repo (how-tos, help docs, preemptive fixes), distribute via sales when ready, and enforce content integrity so technical contributors cannot scrape third-party work and rebrand it as company IP.",
+  "mindset": {
+    "principle": "A great repo is a growth engine. One stolen article can torch trust with authors, customers, and your own company. Technical skill is not a character reference.",
+    "mistakes": [
+      {
+        "id": "launch-no-gate",
+        "label": "Ship volume of content with no origin or review rule",
+        "cost": "Plagiarism lands in production marketing"
+      },
+      {
+        "id": "trust-only-tech",
+        "label": "Assume top engineers self-police IP and ethics",
+        "cost": "Blind spot; discovery via angry original author"
+      },
+      {
+        "id": "kill-repo-after-one",
+        "label": "Burn the whole program because one person stole",
+        "cost": "Lose the preemptive support win; culture of fear"
+      },
+      {
+        "id": "never-market",
+        "label": "Build gold and hide it from sales/customers",
+        "cost": "Still take every how-to call"
+      }
+    ]
+  },
+  "program_phases": [
+    {
+      "id": "charter",
+      "label": "Challenge: solve problems before they ring; repo is the vehicle"
+    },
+    {
+      "id": "build",
+      "label": "Support engineers own how-tos and help depth"
+    },
+    {
+      "id": "distribute",
+      "label": "When quality holds, push to sales for customer use; market it"
+    },
+    {
+      "id": "govern",
+      "label": "Origin, license, review, takedown path"
+    }
+  ],
+  "decision_branches": [
+    {
+      "id": "stand-up-repo",
+      "situation": "Need preemptive how-to depth owned by support eng",
+      "action": "repo-charter"
+    },
+    {
+      "id": "go-to-market",
+      "situation": "Repo is strong enough for sales/customers",
+      "action": "sales-enable-pack"
+    },
+    {
+      "id": "integrity-breach",
+      "situation": "Copied or scraped third-party content found",
+      "action": "integrity-incident"
+    },
+    {
+      "id": "trust-but-verify",
+      "situation": "High-output technical contributors, low process",
+      "action": "contribution-gate"
+    }
+  ],
+  "process": {
+    "steps": [
+      {
+        "id": 1,
+        "name": "Charter repo and mission",
+        "goal": "Preemptive solve, not random wiki",
+        "minutes": "60"
+      },
+      {
+        "id": 2,
+        "name": "Set contribution and origin rules before scale",
+        "goal": "Gate before marketing",
+        "minutes": "half-day"
+      },
+      {
+        "id": 3,
+        "name": "Build and sample-review",
+        "goal": "Quality + integrity",
+        "minutes": "ongoing"
+      },
+      {
+        "id": 4,
+        "name": "Enable sales only after gate",
+        "goal": "Huge distribution without legal landmine",
+        "minutes": "when ready"
+      }
+    ]
+  },
+  "tracking": {
+    "csv_header": "week,articles_added,reviewed_pct,sales_shares,integrity_flags,takedowns,owner",
+    "sheet_tab_name": "support_knowledge_repo"
+  },
+  "related_artifacts": [
+    "mf-tpl-089",
+    "mf-tpl-088",
+    "mf-tpl-059",
+    "mf-tpl-067"
+  ],
+  "agent_signal": {
+    "use_when": "Support engineers building how-to/knowledge repo. Pushing KB to sales/customers. Need contribution integrity gate after plagiarism risk. Trust but verify technical heroes.",
+    "decision_criteria": [
+      "Charter preemptive solve before dumping docs.",
+      "Origin and review rules before external marketing.",
+      "Integrity hit: takedown and process fix; do not necessarily kill the program."
+    ],
+    "operator_context": "Field pattern: unreal repo success, then scrape-and-rebrand breach. Govern technical trust.",
+    "tags": [
+      "field-patterns",
+      "knowledge-base",
+      "integrity",
+      "support-ops"
+    ],
+    "version": "1.2",
+    "not_for": "Legal advice on IP disputes. Route serious claims to counsel.",
+    "pairs_with": [
+      "mf-tpl-089",
+      "mf-tpl-088",
+      "mf-tpl-059",
+      "mf-tpl-067"
+    ],
+    "trigger_phrases": [
+      "Support engineers building how-to/knowledge repo. Pushing KB to sales/customers.",
+      "Need playbook: Support Knowledge Repo Playbook"
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "artifact": "mf-tpl-089",
+  "version": "1.2.0",
+  "description": "Kill preventable support demand: identify recurring call classes caused by missing info or process, fix upstream (welcome pack, docs, packaging, defaults), and set simple human contact patterns that reduce friction.",
+  "examples": [
+    {
+      "id": "ex-admin-password",
+      "context": "Almost every new system triggered a call for factory admin password.",
+      "branch": "kill-pattern",
+      "templates_used": [
+        "volume-class-hunt",
+        "welcome-pack-spec",
+        "factory-default-card"
+      ],
+      "resolution": "Welcome pack in box with password and reset steps. That ticket class collapsed.",
+      "log_row": "admin-pw,welcome-pack,class-dead"
+    },
+    {
+      "id": "ex-location-open",
+      "context": "Customers assumed anonymous random support. Team was real regional.",
+      "branch": "voice",
+      "templates_used": [
+        "open-line-script"
+      ],
+      "resolution": "Open with thanks and location. Trust and patience up on hard calls.",
+      "log_row": "open-location,trust-up"
+    },
+    {
+      "id": "ex-measure",
+      "context": "Pack shipped; need proof for leadership.",
+      "branch": "measure",
+      "templates_used": [
+        "class-volume-before-after"
+      ],
+      "resolution": "Before/after volume shown. Budget for next kill approved.",
+      "log_row": "before-after,prove,next-kill"
+    }
+  ]
+}

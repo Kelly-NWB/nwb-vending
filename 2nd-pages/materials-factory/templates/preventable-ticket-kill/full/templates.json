@@ -1,0 +1,31 @@
+{
+  "artifact": "mf-tpl-089",
+  "version": "1.2.0",
+  "templates": [
+    {
+      "id": "volume-class-hunt",
+      "use_when": "kill-pattern",
+      "body": "PREVENTABLE CLASS HUNT\nPeriod: _______\n\nClass | Volume | Why preventable | Upstream owner\n_____ | | |\nTop pick to kill first: _______________"
+    },
+    {
+      "id": "welcome-pack-spec",
+      "use_when": "inbox-fix",
+      "body": "WELCOME PACK SPEC\nProduct/line: _______________\nMust include: access defaults _______________  reset steps _______________\nFirst-hour checklist: _______________\nWhere it ships (box / email / both): _______________\nOwner: packaging ___  support ___  Effective ship date: _______"
+    },
+    {
+      "id": "open-line-script",
+      "use_when": "voice",
+      "body": "OPEN LINE SCRIPT\nThanks for calling _______________\nLocation/team signal: _______________ (so not another rando)\nName: _______________\nThen: how can I help\nTime-box open: under 10 seconds"
+    },
+    {
+      "id": "class-volume-before-after",
+      "use_when": "measure",
+      "body": "CLASS BEFORE/AFTER\nClass: _______________\nBefore (4 wk): ___  After (4 wk): ___\nFix shipped: _______________\nKeep / iterate / kill project: _______________"
+    },
+    {
+      "id": "factory-default-card",
+      "use_when": "inbox-fix",
+      "body": "FACTORY DEFAULT ACCESS CARD\nSKU/line: _______________\nDefault user: _______________  Temp secret handling: _______________\nReset instruction summary: _______________\nSecurity note: change on first login Y/N"
+    }
+  ]
+}

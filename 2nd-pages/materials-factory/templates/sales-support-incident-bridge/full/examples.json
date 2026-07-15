@@ -1,0 +1,40 @@
+{
+  "artifact": "mf-tpl-082",
+  "version": "1.2.0",
+  "description": "Run sales-support incident bridges without endless politics: who owns customer narrative, who owns dig, when vendor joins, how blame is handled after a fix, and how weekly bridges end.",
+  "examples": [
+    {
+      "id": "ex-blame-after-fw",
+      "context": "Manufacturer firmware fixed the population. Sales blamed support for not being faster.",
+      "branch": "post-fix-blame",
+      "templates_used": [
+        "after-action-no-blood",
+        "joint-narrative-lock"
+      ],
+      "resolution": "After-action on system speed gates. No public blood. Next incident cleaner.",
+      "log_row": "2026-W44,fw-done,no-blood,ok"
+    },
+    {
+      "id": "ex-endless-vendor-call",
+      "context": "Weekly upstream vendor call for months on logo account with no exit.",
+      "branch": "vendor-weekly",
+      "templates_used": [
+        "bridge-cadence-exit",
+        "incident-room-charter"
+      ],
+      "resolution": "Exit criteria set. Bridge ended when criteria met. Residual owned as fit gap.",
+      "log_row": "2026-Q4,bridge-exit,criteria-met"
+    },
+    {
+      "id": "ex-story-before-dig",
+      "context": "Sales ready to email customer a fail theory same day.",
+      "branch": "narrative-risk",
+      "templates_used": [
+        "evidence-before-story",
+        "joint-narrative-lock"
+      ],
+      "resolution": "24h dig window. Cohort pack attached. Email accurate.",
+      "log_row": "2026-W12,hold-24h,cohort,ok"
+    }
+  ]
+}

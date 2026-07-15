@@ -1,0 +1,40 @@
+{
+  "artifact": "mf-tpl-091",
+  "version": "1.2.0",
+  "description": "Run a team showcase series: each person presents a short interest topic with slides to the team. Primary goals are connection and low-stakes public speaking practice for support staff who are strong on phone and weak in rooms.",
+  "examples": [
+    {
+      "id": "ex-interest-series",
+      "context": "Leadership ran class-style talks. People presented interests. Some light, some life stories, some hobby depth.",
+      "branch": "run-series",
+      "templates_used": [
+        "series-charter",
+        "talk-run-sheet"
+      ],
+      "resolution": "Team knew each other. Speaking reps landed. Ready for harder rooms later.",
+      "log_row": "series,interests,bond+speak,ok"
+    },
+    {
+      "id": "ex-phone-introvert",
+      "context": "Rep excellent on phone; in-person with sales was teeth-pulling.",
+      "branch": "anxiety",
+      "templates_used": [
+        "safety-rails",
+        "topic-menu"
+      ],
+      "resolution": "Safe first talk on a personal interest. Later transferred to customer explanation.",
+      "log_row": "safety,first-talk,transfer-later"
+    },
+    {
+      "id": "ex-not-review",
+      "context": "Team feared it was a secret performance review.",
+      "branch": "run-series",
+      "templates_used": [
+        "series-charter",
+        "transfer-checklist"
+      ],
+      "resolution": "Charter said no grades. Focus stay on bond + skill. Participation held.",
+      "log_row": "no-grade,charter,held"
+    }
+  ]
+}

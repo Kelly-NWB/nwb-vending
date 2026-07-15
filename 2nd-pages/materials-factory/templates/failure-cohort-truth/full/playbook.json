@@ -1,0 +1,125 @@
+{
+  "artifact": "mf-tpl-079",
+  "title": "Failure Cohort Truth Playbook",
+  "version": "1.2.0",
+  "audience": "agent",
+  "section": "templates",
+  "lane": "field-patterns",
+  "pack_type": "field-pattern",
+  "description": "Cut failure and NDF data into honest cohorts before enterprise panic: population age, ship date, warranty window, new vs installed base. Stop cherry-picked aggregates from driving the wrong fix and dumping cost on support.",
+  "mindset": {
+    "principle": "A single failure rate is a weapon. Cohort truth is the defense. Real fails on old gear and clean new gear can live in the same account.",
+    "mistakes": [
+      {
+        "id": "aggregate-panic",
+        "label": "Quote one fail % for the whole account with no age cut",
+        "cost": "Product line blamed; wrong escalation; support owns chaos"
+      },
+      {
+        "id": "sales-cherry",
+        "label": "Sales shows only the slice that eases the customer today",
+        "cost": "Short-term calm, long-term support cost and bad vendor fights"
+      },
+      {
+        "id": "ignore-real-fails",
+        "label": "Dismiss all fails as NDF politics when silicon is actually dying",
+        "cost": "EOL fleet burns; customer trust dies for real"
+      }
+    ]
+  },
+  "cohort_dimensions": [
+    "ship_or_install_date_band",
+    "manufacture_date_band",
+    "warranty_days_remaining",
+    "firmware_or_rev",
+    "site_or_rack_population",
+    "new_ship_vs_installed_base"
+  ],
+  "decision_branches": [
+    {
+      "id": "panic-room",
+      "situation": "Sales/SE/customer claim abnormal fail rate",
+      "action": "cohort-cut"
+    },
+    {
+      "id": "eol-vs-new",
+      "situation": "Need to separate aged fleet from current shippers",
+      "action": "population-split-table"
+    },
+    {
+      "id": "vendor-engage",
+      "situation": "Real fail signature on a defined population",
+      "action": "manufacturer-evidence-brief"
+    },
+    {
+      "id": "narrative-correct",
+      "situation": "Cherry-picked story already in market with customer",
+      "action": "truth-narrative-one-pager"
+    }
+  ],
+  "process": {
+    "steps": [
+      {
+        "id": 1,
+        "name": "Freeze the claim",
+        "goal": "Write the exact fail % and window sales is using",
+        "minutes": "15"
+      },
+      {
+        "id": 2,
+        "name": "Cut cohorts",
+        "goal": "Age, ship, warranty, rev",
+        "minutes": "60-120"
+      },
+      {
+        "id": 3,
+        "name": "Classify",
+        "goal": "EOL wear vs new-product defect vs process",
+        "minutes": "30"
+      },
+      {
+        "id": 4,
+        "name": "Path",
+        "goal": "Vendor fix, replace plan, or process; correct narrative",
+        "minutes": "ongoing"
+      }
+    ]
+  },
+  "tracking": {
+    "csv_header": "account,period,cohort,units,fails,fail_pct,ndf_pct,warranty_band,notes,owner",
+    "sheet_tab_name": "failure_cohort_truth"
+  },
+  "related_artifacts": [
+    "mf-tpl-075",
+    "mf-tpl-067",
+    "mf-tpl-060",
+    "mf-tpl-082"
+  ],
+  "agent_signal": {
+    "use_when": "Sales or customer claims high hardware fail rate. Need cohort cuts by age/ship/warranty before product panic. Suspect cherry-picked data easing the customer.",
+    "decision_criteria": [
+      "Never brief execs on a single uncut fail rate.",
+      "Split installed-base EOL from new shippers.",
+      "Real fails get vendor path; incomplete sales narratives get corrected in writing."
+    ],
+    "operator_context": "Field pattern: enterprise server/storage (and any HW) panic rooms. Same pattern decades apart. Support owns the dig.",
+    "tags": [
+      "field-patterns",
+      "sales-support",
+      "failure-analysis",
+      "qbr-data"
+    ],
+    "version": "1.2",
+    "not_for": "Generic job spine. Not NDF program design (see 073-078). Not legal advice.",
+    "pairs_with": [
+      "mf-tpl-075",
+      "mf-tpl-067",
+      "mf-tpl-060",
+      "mf-tpl-082"
+    ],
+    "trigger_phrases": [
+      "Sales or customer claims high hardware fail rate. Need cohort cuts by age/ship/w",
+      "Need playbook: Failure Cohort Truth Playbook"
+    ]
+  }
+}

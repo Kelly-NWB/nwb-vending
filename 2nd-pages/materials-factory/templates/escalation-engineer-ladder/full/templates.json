@@ -1,0 +1,31 @@
+{
+  "artifact": "mf-tpl-088",
+  "version": "1.2.0",
+  "templates": [
+    {
+      "id": "rung-definitions",
+      "use_when": "ladder-design",
+      "body": "LADDER RUNG DEFINITIONS\nSupport engineer: scope _______________  evidence to enter _______________\nEscalation engineer: scope _______________  evidence to enter _______________\nDoes not include (still product eng): _______________\nPromotion cadence: _______________"
+    },
+    {
+      "id": "teach-path-script",
+      "use_when": "customer-next-level",
+      "body": "TEACH-PATH SCRIPT\nCustomer asked for: _______________\nWhat they actually need: _______________\n\nSay: We hear you want depth. Here is how we solve this class of issue and who owns it.\nShow: steps / owner / when true escalation eng engages\nDo not: raw no or fake promise of product eng"
+    },
+    {
+      "id": "ladder-comms",
+      "use_when": "stigma",
+      "body": "LADDER COMMS (internal + customer-safe)\nInternal: why these titles exist _______________\nCustomer-safe: what next level means _______________\nSales talking points: _______________\nDate published: _______"
+    },
+    {
+      "id": "return-learning",
+      "use_when": "feed-gap",
+      "body": "RETURN LEARNING\nEscalation theme: _______________\nKB/training item: _______________\nOwner on line support: _______________  Due: _______\nSuccess: esc volume for theme drops"
+    },
+    {
+      "id": "promo-evidence-row",
+      "use_when": "ladder-design",
+      "body": "PROMO EVIDENCE ROW\nPerson: _______________  Target rung: _______________\nCases / skills shown: _______________\nGaps: _______________\nDecision: Y/N  Date: _______"
+    }
+  ]
+}

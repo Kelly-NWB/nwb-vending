@@ -616,6 +616,36 @@ const GATED_ROUTES: GatedRoute[] = [
     description: "Customer Learning Program Playbook agent pack (mf-tpl-092)",
     artifact: "mf-tpl-092",
   },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/control-panel-cabinet/full",
+    price: "$0.08",
+    description: "Control Panel Cabinet Playbook agent pack (mf-tpl-093)",
+    artifact: "mf-tpl-093",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/vendor-fleet-remediation/full",
+    price: "$0.08",
+    description: "Vendor Fleet Remediation Playbook agent pack (mf-tpl-094)",
+    artifact: "mf-tpl-094",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/service-operations-desk/full",
+    price: "$0.08",
+    description: "Service Operations Desk Playbook agent pack (mf-tpl-099)",
+    artifact: "mf-tpl-099",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/services-revenue-center/full",
+    price: "$0.08",
+    description: "Services Revenue Center Playbook agent pack (mf-tpl-100)",
+    artifact: "mf-tpl-100",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/parts-recovery-program/full",
+    price: "$0.08",
+    description: "Parts Recovery Program Playbook agent pack (mf-tpl-101)",
+    artifact: "mf-tpl-101",
+  },
 ];
 
 const NETWORK_CAIP2: Partial<Record<Env["NETWORK"], string>> = {

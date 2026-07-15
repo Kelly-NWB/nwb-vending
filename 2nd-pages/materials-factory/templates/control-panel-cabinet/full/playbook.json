@@ -1,0 +1,136 @@
+{
+  "artifact": "mf-tpl-093",
+  "title": "Control Panel Cabinet Playbook",
+  "version": "1.2.0",
+  "audience": "agent",
+  "section": "templates",
+  "lane": "field-patterns",
+  "pack_type": "field-pattern",
+  "description": "Run a control panel cabinet meeting: VP brings direct reports weekly; each covers their specific domain from a shared control panel of metrics and risks; decisions and cross-team asks are logged. Leadership operating rhythm, not a status dump.",
+  "mindset": {
+    "principle": "A cabinet works when every seat brings their portfolio and the room sees one board. Fire drills are not a rhythm.",
+    "mistakes": [
+      {
+        "id": "fire-only",
+        "label": "Only meet when something is broken",
+        "cost": "No equity; surprises in every exec review"
+      },
+      {
+        "id": "vp-monologue",
+        "label": "VP talks entire hour",
+        "cost": "Directs check out; panel is theater"
+      },
+      {
+        "id": "no-owner-slices",
+        "label": "Nobody owns a section of the panel",
+        "cost": "Vague updates; no accountability"
+      },
+      {
+        "id": "metrics-no-decisions",
+        "label": "Read numbers with no asks or decisions",
+        "cost": "Hour burned; nothing moves"
+      }
+    ]
+  },
+  "cabinet_roles": [
+    {
+      "id": "chair",
+      "label": "VP or equivalent holds time and decision rights"
+    },
+    {
+      "id": "directs",
+      "label": "Each direct owns a control panel slice"
+    },
+    {
+      "id": "scribe",
+      "label": "Decisions, risks, cross-asks logged same day"
+    }
+  ],
+  "decision_branches": [
+    {
+      "id": "stand-up-cabinet",
+      "situation": "Need weekly leadership rhythm under a VP",
+      "action": "cabinet-charter"
+    },
+    {
+      "id": "panel-design",
+      "situation": "No shared control panel yet",
+      "action": "panel-section-map"
+    },
+    {
+      "id": "stale-meeting",
+      "situation": "Meeting became status theater",
+      "action": "decision-first-agenda"
+    },
+    {
+      "id": "cross-silo",
+      "situation": "Issues span directs",
+      "action": "cross-ask-log"
+    }
+  ],
+  "process": {
+    "steps": [
+      {
+        "id": 1,
+        "name": "Charter cabinet and cadence",
+        "goal": "Weekly, fixed length, required seats",
+        "minutes": "30"
+      },
+      {
+        "id": 2,
+        "name": "Map panel sections to directs",
+        "goal": "Every row has an owner",
+        "minutes": "60"
+      },
+      {
+        "id": 3,
+        "name": "Run decision-first hour",
+        "goal": "Slice updates + asks + decisions",
+        "minutes": "60/week"
+      },
+      {
+        "id": 4,
+        "name": "Publish decision log same day",
+        "goal": "Cabinet memory",
+        "minutes": "15"
+      }
+    ]
+  },
+  "tracking": {
+    "csv_header": "week,attendees,sections_covered,decisions,open_risks,cross_asks,owner",
+    "sheet_tab_name": "control_panel_cabinet"
+  },
+  "related_artifacts": [
+    "mf-tpl-005",
+    "mf-tpl-085",
+    "mf-tpl-061",
+    "mf-tpl-081"
+  ],
+  "agent_signal": {
+    "use_when": "VP and directs need a weekly control panel / cabinet operating rhythm. Metrics and risks per owner. Not only fire drills. Sibling pattern to PIE for leadership layer.",
+    "decision_criteria": [
+      "Each direct owns a panel slice.",
+      "Decision and risk log every week.",
+      "Chair enforces time; no single monologue hour."
+    ],
+    "operator_context": "Field pattern: control panel meetings with VP and directs, cabinet-style. Pair with PIE (eng+support) and floor task forces (IC layer).",
+    "tags": [
+      "field-patterns",
+      "leadership",
+      "ops-rhythm",
+      "exec"
+    ],
+    "version": "1.2",
+    "not_for": "Generic all-hands. Not a substitute for board governance.",
+    "pairs_with": [
+      "mf-tpl-005",
+      "mf-tpl-085",
+      "mf-tpl-061",
+      "mf-tpl-081"
+    ],
+    "trigger_phrases": [
+      "VP and directs need a weekly control panel / cabinet operating rhythm. Metrics a",
+      "Need playbook: Control Panel Cabinet Playbook"
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "artifact": "mf-tpl-100",
+  "version": "1.2.0",
+  "description": "Move post-sales support toward a services revenue center: after documentation, process, and metrics exist, add warranty/license renewal programs, billable services, and clear enforcement so value is not only absorbed as cost of doing business.",
+  "examples": [
+    {
+      "id": "ex-renewal-role",
+      "context": "Ad-hoc warranty extensions. Built consistent renewal ownership and tracking.",
+      "branch": "revenue-path",
+      "templates_used": [
+        "renewal-and-billable-design",
+        "renewal-pipeline-row"
+      ],
+      "resolution": "Renewals predictable. Support still solves; commercial path clear.",
+      "log_row": "renewal-role,pipeline,ok"
+    },
+    {
+      "id": "ex-gate",
+      "context": "Push to bill before process existed.",
+      "branch": "readiness",
+      "templates_used": [
+        "foundation-gate"
+      ],
+      "resolution": "Gate failed. Fixed SOD and closure first, then revenue design.",
+      "log_row": "gate-fail,fix-ops,then-rev"
+    },
+    {
+      "id": "ex-finance",
+      "context": "Finance saw only headcount cost.",
+      "branch": "finance-story",
+      "templates_used": [
+        "services-unit-brief"
+      ],
+      "resolution": "Renewal and billable slice shown. Conversation shifted to services unit.",
+      "log_row": "brief,cfo,path"
+    }
+  ]
+}

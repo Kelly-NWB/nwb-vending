@@ -1,0 +1,39 @@
+{
+  "artifact": "mf-tpl-099",
+  "version": "1.2.0",
+  "description": "Create a Service Operations Desk (SOD): the post-sales execution arm for RMAs, shipping, returns, evals, ticket closure templates, and part collection so support engineers can focus on problem solving and customer resolution.",
+  "examples": [
+    {
+      "id": "ex-split-ship",
+      "context": "Support guys shipping parts and handling returns. Needed a group for that work.",
+      "branch": "stand-up-sod",
+      "templates_used": [
+        "sod-charter",
+        "support-to-sod-handoff"
+      ],
+      "resolution": "SOD as traditional RMA/execution arm. Support back on problems. Both lanes clearer.",
+      "log_row": "SOD-stand,split,ok"
+    },
+    {
+      "id": "ex-handoff",
+      "context": "Wrong parts shipped; packet incomplete.",
+      "branch": "handoff-breaks",
+      "templates_used": [
+        "support-to-sod-handoff",
+        "sod-scorecard"
+      ],
+      "resolution": "No ship without complete handoff. Reject rate visible then dropped.",
+      "log_row": "handoff-required,rejects-down"
+    },
+    {
+      "id": "ex-dump",
+      "context": "Org started tossing random tasks at SOD.",
+      "branch": "scope-creep",
+      "templates_used": [
+        "scope-lock"
+      ],
+      "resolution": "Scope lock republished. SOD stayed logistics-focused.",
+      "log_row": "scope-lock,held"
+    }
+  ]
+}

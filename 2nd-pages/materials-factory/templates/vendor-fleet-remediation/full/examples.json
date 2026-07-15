@@ -1,0 +1,42 @@
+{
+  "artifact": "mf-tpl-094",
+  "version": "1.2.0",
+  "description": "Run a vendor-funded fleet remediation: prove a bad population with rigorous testing, engage manufacturer for full remediation scope, require on-site vendor resources and cost ownership, and execute a time-boxed install-and-validate campaign with your support engineers.",
+  "examples": [
+    {
+      "id": "ex-dc-memory",
+      "context": "Data center constant errors. Deep test with manufacturer found bad memory batch. Entire fleet memory replace required.",
+      "branch": "vendor-funded-campaign",
+      "templates_used": [
+        "joint-deep-test-plan",
+        "vendor-scope-ask",
+        "campaign-runbook",
+        "validation-close"
+      ],
+      "resolution": "Vendor sent engineers and workers. Week-long install and test led by support eng. Cost on manufacturer. Site stabilized.",
+      "log_row": "DC-mem,batch,vendor-onsite,week,vendor-pay,ok"
+    },
+    {
+      "id": "ex-no-ticket-soak",
+      "context": "Pressure to keep RMA drip instead of campaign.",
+      "branch": "batch-proven",
+      "templates_used": [
+        "cost-ownership-memo",
+        "vendor-scope-ask"
+      ],
+      "resolution": "Memo blocked absorb path. Campaign authorized.",
+      "log_row": "no-soak,campaign-auth"
+    },
+    {
+      "id": "ex-print-fleet-batch",
+      "context": "Shop fleet of devices same error; vendor batch on a board.",
+      "branch": "fleet-signal",
+      "templates_used": [
+        "joint-deep-test-plan",
+        "campaign-runbook"
+      ],
+      "resolution": "Batch proven; vendor funded swap wave with joint validation.",
+      "log_row": "print-fleet,batch,vendor-fund,ok"
+    }
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "artifact": "mf-tpl-099",
+  "title": "Service Operations Desk Playbook",
+  "version": "1.2.0",
+  "audience": "agent",
+  "section": "templates",
+  "lane": "field-patterns",
+  "pack_type": "field-pattern",
+  "description": "Create a Service Operations Desk (SOD): the post-sales execution arm for RMAs, shipping, returns, evals, ticket closure templates, and part collection so support engineers can focus on problem solving and customer resolution.",
+  "mindset": {
+    "principle": "If your best solvers are also your shipping clerks, you chose wrong. SOD is traditional RMA done as a real department with a charter.",
+    "mistakes": [
+      {
+        "id": "eng-ships",
+        "label": "Support engineers own packing, labels, and return chase",
+        "cost": "Slow fixes; burnout; lost parts dollars"
+      },
+      {
+        "id": "sod-as-dump",
+        "label": "SOD becomes the new dump for every undefined task",
+        "cost": "Same chaos, new name"
+      },
+      {
+        "id": "no-handoff",
+        "label": "No clear handoff packet from support to SOD",
+        "cost": "Wrong parts ship; customer pain doubles"
+      },
+      {
+        "id": "status-war",
+        "label": "SOD treated as lower caste with no metrics",
+        "cost": "Quality dies; support blames logistics forever"
+      }
+    ]
+  },
+  "role_split": [
+    {
+      "id": "support",
+      "label": "Diagnose, troubleshoot, decide disposition, customer technical truth"
+    },
+    {
+      "id": "sod",
+      "label": "Execute RMA/ship/return/eval/closure templates, part collection, logistics liaison"
+    }
+  ],
+  "decision_branches": [
+    {
+      "id": "stand-up-sod",
+      "situation": "Support owns logistics and problem-solve both",
+      "action": "sod-charter"
+    },
+    {
+      "id": "handoff-breaks",
+      "situation": "Wrong ship or incomplete return packets",
+      "action": "support-to-sod-handoff"
+    },
+    {
+      "id": "scope-creep",
+      "situation": "Everything random lands on SOD",
+      "action": "scope-lock"
+    },
+    {
+      "id": "measure",
+      "situation": "Need proof SOD works",
+      "action": "sod-scorecard"
+    }
+  ],
+  "process": {
+    "steps": [
+      {
+        "id": 1,
+        "name": "Charter SOD vs support",
+        "goal": "Solve vs execute written",
+        "minutes": "half-day"
+      },
+      {
+        "id": 2,
+        "name": "Define handoff packet",
+        "goal": "Part, reason, customer, disposition",
+        "minutes": "60"
+      },
+      {
+        "id": 3,
+        "name": "Templates for closure and returns",
+        "goal": "Repeatable execution",
+        "minutes": "ongoing"
+      },
+      {
+        "id": 4,
+        "name": "Score logistics and support free capacity",
+        "goal": "Both improve",
+        "minutes": "weekly"
+      }
+    ]
+  },
+  "tracking": {
+    "csv_header": "week,rmas_opened,rmas_closed,avg_ship_hours,return_rate,support_hours_on_logistics,owner",
+    "sheet_tab_name": "service_operations_desk"
+  },
+  "related_artifacts": [
+    "mf-tpl-074",
+    "mf-tpl-088",
+    "mf-tpl-101",
+    "mf-tpl-065"
+  ],
+  "agent_signal": {
+    "use_when": "Support engineers shipping parts and handling returns instead of solving. Need SOD / RMA execution arm so support focuses on resolution.",
+    "decision_criteria": [
+      "Write solve vs execute split.",
+      "Handoff packet required before SOD ships.",
+      "SOD has metrics; not a silent dump lane."
+    ],
+    "operator_context": "Field pattern: Service Operations Department built so support stops being the ship desk. Traditional RMA group with a real charter.",
+    "tags": [
+      "field-patterns",
+      "rma",
+      "operations",
+      "support-ops"
+    ],
+    "version": "1.2",
+    "not_for": "Generic job spine. Not legal tax advice on write-offs.",
+    "pairs_with": [
+      "mf-tpl-074",
+      "mf-tpl-088",
+      "mf-tpl-101",
+      "mf-tpl-065"
+    ],
+    "trigger_phrases": [
+      "Support engineers shipping parts and handling returns instead of solving. Need S",
+      "Need playbook: Service Operations Desk Playbook"
+    ]
+  }
+}

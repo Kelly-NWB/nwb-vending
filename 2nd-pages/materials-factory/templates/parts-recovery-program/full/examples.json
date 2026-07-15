@@ -1,0 +1,39 @@
+{
+  "artifact": "mf-tpl-101",
+  "version": "1.2.0",
+  "description": "Run a parts recovery program: track shipped-not-returned material, age it, chase with clear owners, and report recovered value instead of silent write-off.",
+  "examples": [
+    {
+      "id": "ex-writeoff-stop",
+      "context": "Parts not returned were expensed. Program recovered large value previously written off.",
+      "branch": "stand-up-recovery",
+      "templates_used": [
+        "recovery-charter",
+        "open-returns-aging",
+        "recovered-value-report"
+      ],
+      "resolution": "Chase owned by ops desk. Recovered dollars visible; funded capacity.",
+      "log_row": "recovery-on,aging,recovered,ok"
+    },
+    {
+      "id": "ex-ladder",
+      "context": "Open returns sat 90 days with one email.",
+      "branch": "aging-hot",
+      "templates_used": [
+        "chase-ladder"
+      ],
+      "resolution": "Ladder forced next steps. Aging down.",
+      "log_row": "ladder,aging-down"
+    },
+    {
+      "id": "ex-bill",
+      "context": "Customer refused return of high-value part.",
+      "branch": "customer-block",
+      "templates_used": [
+        "escalation-or-bill"
+      ],
+      "resolution": "Billed per policy. Precedent set.",
+      "log_row": "bill-path,policy,ok"
+    }
+  ]
+}

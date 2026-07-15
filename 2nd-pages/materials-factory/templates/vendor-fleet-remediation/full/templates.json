@@ -1,0 +1,31 @@
+{
+  "artifact": "mf-tpl-094",
+  "version": "1.2.0",
+  "templates": [
+    {
+      "id": "joint-deep-test-plan",
+      "use_when": "fleet-signal",
+      "body": "JOINT DEEP TEST PLAN\nSite/fleet: _______________  Symptom: _______________\nUnits in scope sample: ___\nTests (hardware / stress / env): _______________\nVendor participants: _______________\nYour eng/support leads: _______________\nExit: batch isolated Y/N  Date: _______"
+    },
+    {
+      "id": "vendor-scope-ask",
+      "use_when": "batch-proven",
+      "body": "VENDOR SCOPE ASK\nBatch/population: _______________\nUnits affected (count): ___\nAsk:\n[ ] Full replace of population\n[ ] Manufacturer on-site engineers/crew\n[ ] Parts and labor at vendor expense\n[ ] Timeline not to exceed: _______\nEvidence pack attached: Y/N\nCommercial owner: _______________"
+    },
+    {
+      "id": "campaign-runbook",
+      "use_when": "vendor-funded-campaign",
+      "body": "FLEET CAMPAIGN RUNBOOK\nCampaign ID: _______________  Dates: _______\nWaves: _______________\nPer unit: remove/replace steps _______________  validate tests _______________\nYour roles: _______________\nVendor roles: _______________\nCustomer change window: _______________\nRollback if: _______________"
+    },
+    {
+      "id": "validation-close",
+      "use_when": "close-gate",
+      "body": "VALIDATION CLOSE\nUnits complete: ___ / ___\nError rate before: ___  after: ___\nOpen exceptions: _______________\nVendor written close: Y/N\nCustomer acceptance: Y/N\nLessons for PIE / product: _______________"
+    },
+    {
+      "id": "cost-ownership-memo",
+      "use_when": "batch-proven",
+      "body": "COST OWNERSHIP MEMO (internal)\nWhy not absorb under support: _______________\nVendor obligation basis: batch proof _______________\nOur labor still required for: coordination / validation\nWhat we will not pay: _______________"
+    }
+  ]
+}

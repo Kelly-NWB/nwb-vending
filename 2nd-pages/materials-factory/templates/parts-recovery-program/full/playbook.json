@@ -1,0 +1,122 @@
+{
+  "artifact": "mf-tpl-101",
+  "title": "Parts Recovery Program Playbook",
+  "version": "1.2.0",
+  "audience": "agent",
+  "section": "templates",
+  "lane": "field-patterns",
+  "pack_type": "field-pattern",
+  "description": "Run a parts recovery program: track shipped-not-returned material, age it, chase with clear owners, and report recovered value instead of silent write-off.",
+  "mindset": {
+    "principle": "Unreturned parts are not weather. They are a process with dollars attached.",
+    "mistakes": [
+      {
+        "id": "expense-default",
+        "label": "Auto-expense everything not returned",
+        "cost": "No incentive to chase; cash left on table"
+      },
+      {
+        "id": "no-aging",
+        "label": "No age buckets on open returns",
+        "cost": "Forever-open ghosts"
+      },
+      {
+        "id": "support-only-chase",
+        "label": "Only engineers chase logistics",
+        "cost": "Wrong role; weak recovery"
+      },
+      {
+        "id": "no-report",
+        "label": "Never show recovered dollars",
+        "cost": "Program dies; finance unconvinced"
+      }
+    ]
+  },
+  "decision_branches": [
+    {
+      "id": "stand-up-recovery",
+      "situation": "Parts not returned routinely written off",
+      "action": "recovery-charter"
+    },
+    {
+      "id": "aging-hot",
+      "situation": "Open returns aging past threshold",
+      "action": "chase-ladder"
+    },
+    {
+      "id": "customer-block",
+      "situation": "Customer will not return",
+      "action": "escalation-or-bill"
+    },
+    {
+      "id": "report",
+      "situation": "Need program proof",
+      "action": "recovered-value-report"
+    }
+  ],
+  "process": {
+    "steps": [
+      {
+        "id": 1,
+        "name": "Inventory open shipped-not-returned",
+        "goal": "See the hole",
+        "minutes": "half-day"
+      },
+      {
+        "id": 2,
+        "name": "Age and assign chase owner",
+        "goal": "Usually SOD",
+        "minutes": "weekly"
+      },
+      {
+        "id": 3,
+        "name": "Ladder: remind, escalate, bill/write-off rules",
+        "goal": "Consistent",
+        "minutes": "ongoing"
+      },
+      {
+        "id": 4,
+        "name": "Report recovered value",
+        "goal": "Fund narrative",
+        "minutes": "monthly"
+      }
+    ]
+  },
+  "tracking": {
+    "csv_header": "period,open_returns_value,recovered_value,writeoff_value,avg_days_open,owner",
+    "sheet_tab_name": "parts_recovery_program"
+  },
+  "related_artifacts": [
+    "mf-tpl-099",
+    "mf-tpl-074",
+    "mf-tpl-065",
+    "mf-tpl-100"
+  ],
+  "agent_signal": {
+    "use_when": "Shipped parts not returned and written off. Need recovery program with aging, chase ladder, and recovered value reporting. Often pairs with SOD.",
+    "decision_criteria": [
+      "Age every open return.",
+      "SOD (or logistics) owns chase; support owns disposition truth.",
+      "Report recovered dollars monthly."
+    ],
+    "operator_context": "Field pattern: parts previously written off recovered at scale; funds ops growth. Program not a shrug.",
+    "tags": [
+      "field-patterns",
+      "rma",
+      "parts",
+      "recovery"
+    ],
+    "version": "1.2",
+    "not_for": "Generic job spine. Not legal tax advice on write-offs.",
+    "pairs_with": [
+      "mf-tpl-099",
+      "mf-tpl-074",
+      "mf-tpl-065",
+      "mf-tpl-100"
+    ],
+    "trigger_phrases": [
+      "Shipped parts not returned and written off. Need recovery program with aging, ch",
+      "Need playbook: Parts Recovery Program Playbook"
+    ]
+  }
+}

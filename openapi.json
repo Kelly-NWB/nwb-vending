@@ -7316,6 +7316,386 @@
           }
         }
       }
+    },
+    "/2nd-pages/materials-factory/templates/control-panel-cabinet/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-093",
+        "summary": "Control Panel Cabinet Playbook",
+        "description": "Weekly cabinet with the VP and their directs. Each owner covers their slice of the control panel. Shared picture, no silo theater. Sibling t",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "pack_id",
+            "in": "query",
+            "required": false,
+            "description": "Catalog pack id (informational). Primary artifact is returned from the path after x402 payment.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "mf-tpl-093"
+              ],
+              "default": "mf-tpl-093"
+            },
+            "example": "mf-tpl-093"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "artifact": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    },
+                    "audience": {
+                      "type": "string",
+                      "enum": [
+                        "agent"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "artifact",
+                    "title",
+                    "audience"
+                  ],
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/vendor-fleet-remediation/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-094",
+        "summary": "Vendor Fleet Remediation Playbook",
+        "description": "Site-wide or fleet-wide bad batch (e.g. memory). Deep test with vendor, prove the population, then force manufacturer to fund on-site labor ",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "pack_id",
+            "in": "query",
+            "required": false,
+            "description": "Catalog pack id (informational). Primary artifact is returned from the path after x402 payment.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "mf-tpl-094"
+              ],
+              "default": "mf-tpl-094"
+            },
+            "example": "mf-tpl-094"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "artifact": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    },
+                    "audience": {
+                      "type": "string",
+                      "enum": [
+                        "agent"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "artifact",
+                    "title",
+                    "audience"
+                  ],
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/service-operations-desk/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-099",
+        "summary": "Service Operations Desk Playbook",
+        "description": "SOD: execution arm of post-sales. Traditional RMA/shipping/returns group so support engineers stop shipping parts and chase paperwork. Suppo",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "pack_id",
+            "in": "query",
+            "required": false,
+            "description": "Catalog pack id (informational). Primary artifact is returned from the path after x402 payment.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "mf-tpl-099"
+              ],
+              "default": "mf-tpl-099"
+            },
+            "example": "mf-tpl-099"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "artifact": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    },
+                    "audience": {
+                      "type": "string",
+                      "enum": [
+                        "agent"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "artifact",
+                    "title",
+                    "audience"
+                  ],
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/services-revenue-center/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-100",
+        "summary": "Services Revenue Center Playbook",
+        "description": "Graduate support from pure cost center to services revenue path: warranty and license renewals, billable work, enforcement, portal value. Fo",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "pack_id",
+            "in": "query",
+            "required": false,
+            "description": "Catalog pack id (informational). Primary artifact is returned from the path after x402 payment.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "mf-tpl-100"
+              ],
+              "default": "mf-tpl-100"
+            },
+            "example": "mf-tpl-100"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "artifact": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    },
+                    "audience": {
+                      "type": "string",
+                      "enum": [
+                        "agent"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "artifact",
+                    "title",
+                    "audience"
+                  ],
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/parts-recovery-program/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-101",
+        "summary": "Parts Recovery Program Playbook",
+        "description": "Stop writing off unreturned parts as cost of doing business. Program for collection, return discipline, and recovered value that can fund op",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "pack_id",
+            "in": "query",
+            "required": false,
+            "description": "Catalog pack id (informational). Primary artifact is returned from the path after x402 payment.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "mf-tpl-101"
+              ],
+              "default": "mf-tpl-101"
+            },
+            "example": "mf-tpl-101"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "artifact": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    },
+                    "audience": {
+                      "type": "string",
+                      "enum": [
+                        "agent"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "artifact",
+                    "title",
+                    "audience"
+                  ],
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
     }
   }
 }

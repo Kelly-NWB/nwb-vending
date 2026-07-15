@@ -7,7 +7,7 @@
   "network": "base",
   "health": "/__x402/health",
   "audience": "agent",
-  "entry_count": 96,
+  "entry_count": 101,
   "job_spine": {
     "description": "Small-business job lifecycle for Treasure Valley-style ops. Fetch chain in order; attach extensions by anchor.",
     "chain": [
@@ -3263,6 +3263,166 @@
       "trigger_phrases": [
         "Need customer education university-style program and clearer warranty experience",
         "Need playbook: Customer Learning Program Playbook"
+      ],
+      "agent_signal_version": "1.2"
+    },
+    {
+      "id": "mf-tpl-093",
+      "section": "templates",
+      "lane": "field-patterns",
+      "pack_type": "field-pattern",
+      "title": "Control Panel Cabinet Playbook",
+      "price": "$0.08",
+      "teaser": "templates/control-panel-cabinet/",
+      "full": "templates/control-panel-cabinet/full/",
+      "primary": "playbook.json",
+      "apply": "branch → template → log",
+      "description": "Weekly cabinet with the VP and their directs. Each owner covers their slice of the control panel. Shared picture, no silo theater. Sibling t",
+      "tags": [
+        "field-patterns",
+        "leadership",
+        "ops-rhythm",
+        "exec"
+      ],
+      "use_when": "VP and directs need a weekly control panel / cabinet operating rhythm. Metrics and risks per owner. Not only fire drills. Sibling pattern to PIE for leadership layer.",
+      "not_for": "Generic all-hands. Not a substitute for board governance.",
+      "pairs_with": [
+        "mf-tpl-005",
+        "mf-tpl-085",
+        "mf-tpl-061",
+        "mf-tpl-081"
+      ],
+      "trigger_phrases": [
+        "VP and directs need a weekly control panel / cabinet operating rhythm. Metrics a",
+        "Need playbook: Control Panel Cabinet Playbook"
+      ],
+      "agent_signal_version": "1.2"
+    },
+    {
+      "id": "mf-tpl-094",
+      "section": "templates",
+      "lane": "field-patterns",
+      "pack_type": "field-pattern",
+      "title": "Vendor Fleet Remediation Playbook",
+      "price": "$0.08",
+      "teaser": "templates/vendor-fleet-remediation/",
+      "full": "templates/vendor-fleet-remediation/full/",
+      "primary": "playbook.json",
+      "apply": "branch → template → log",
+      "description": "Site-wide or fleet-wide bad batch (e.g. memory). Deep test with vendor, prove the population, then force manufacturer to fund on-site labor ",
+      "tags": [
+        "field-patterns",
+        "vendor",
+        "fleet",
+        "remediation"
+      ],
+      "use_when": "Fleet or data-center scale failures. Bad batch suspected. Need deep test with vendor then full remediation at manufacturer expense with on-site joint install and validation.",
+      "not_for": "Single-unit RMA. Not legal contract drafting with vendors.",
+      "pairs_with": [
+        "mf-tpl-077",
+        "mf-tpl-079",
+        "mf-tpl-067",
+        "mf-tpl-085"
+      ],
+      "trigger_phrases": [
+        "Fleet or data-center scale failures. Bad batch suspected. Need deep test with ve",
+        "Need playbook: Vendor Fleet Remediation Playbook"
+      ],
+      "agent_signal_version": "1.2"
+    },
+    {
+      "id": "mf-tpl-099",
+      "section": "templates",
+      "lane": "field-patterns",
+      "pack_type": "field-pattern",
+      "title": "Service Operations Desk Playbook",
+      "price": "$0.08",
+      "teaser": "templates/service-operations-desk/",
+      "full": "templates/service-operations-desk/full/",
+      "primary": "playbook.json",
+      "apply": "branch → template → log",
+      "description": "SOD: execution arm of post-sales. Traditional RMA/shipping/returns group so support engineers stop shipping parts and chase paperwork. Suppo",
+      "tags": [
+        "field-patterns",
+        "rma",
+        "operations",
+        "support-ops"
+      ],
+      "use_when": "Support engineers shipping parts and handling returns instead of solving. Need SOD / RMA execution arm so support focuses on resolution.",
+      "not_for": "Generic job spine. Not legal tax advice on write-offs.",
+      "pairs_with": [
+        "mf-tpl-074",
+        "mf-tpl-088",
+        "mf-tpl-101",
+        "mf-tpl-065"
+      ],
+      "trigger_phrases": [
+        "Support engineers shipping parts and handling returns instead of solving. Need S",
+        "Need playbook: Service Operations Desk Playbook"
+      ],
+      "agent_signal_version": "1.2"
+    },
+    {
+      "id": "mf-tpl-100",
+      "section": "templates",
+      "lane": "field-patterns",
+      "pack_type": "field-pattern",
+      "title": "Services Revenue Center Playbook",
+      "price": "$0.08",
+      "teaser": "templates/services-revenue-center/",
+      "full": "templates/services-revenue-center/full/",
+      "primary": "playbook.json",
+      "apply": "branch → template → log",
+      "description": "Graduate support from pure cost center to services revenue path: warranty and license renewals, billable work, enforcement, portal value. Fo",
+      "tags": [
+        "field-patterns",
+        "revenue",
+        "warranty",
+        "services"
+      ],
+      "use_when": "Support is only a cost center. Need path to services revenue: renewals, billable work, warranty enforcement after process foundation exists.",
+      "not_for": "Generic job spine. Not legal tax advice on write-offs.",
+      "pairs_with": [
+        "mf-tpl-065",
+        "mf-tpl-092",
+        "mf-tpl-087",
+        "mf-tpl-099"
+      ],
+      "trigger_phrases": [
+        "Support is only a cost center. Need path to services revenue: renewals, billable",
+        "Need playbook: Services Revenue Center Playbook"
+      ],
+      "agent_signal_version": "1.2"
+    },
+    {
+      "id": "mf-tpl-101",
+      "section": "templates",
+      "lane": "field-patterns",
+      "pack_type": "field-pattern",
+      "title": "Parts Recovery Program Playbook",
+      "price": "$0.08",
+      "teaser": "templates/parts-recovery-program/",
+      "full": "templates/parts-recovery-program/full/",
+      "primary": "playbook.json",
+      "apply": "branch → template → log",
+      "description": "Stop writing off unreturned parts as cost of doing business. Program for collection, return discipline, and recovered value that can fund op",
+      "tags": [
+        "field-patterns",
+        "rma",
+        "parts",
+        "recovery"
+      ],
+      "use_when": "Shipped parts not returned and written off. Need recovery program with aging, chase ladder, and recovered value reporting. Often pairs with SOD.",
+      "not_for": "Generic job spine. Not legal tax advice on write-offs.",
+      "pairs_with": [
+        "mf-tpl-099",
+        "mf-tpl-074",
+        "mf-tpl-065",
+        "mf-tpl-100"
+      ],
+      "trigger_phrases": [
+        "Shipped parts not returned and written off. Need recovery program with aging, ch",
+        "Need playbook: Parts Recovery Program Playbook"
       ],
       "agent_signal_version": "1.2"
     }

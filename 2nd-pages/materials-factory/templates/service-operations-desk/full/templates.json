@@ -1,0 +1,31 @@
+{
+  "artifact": "mf-tpl-099",
+  "version": "1.2.0",
+  "templates": [
+    {
+      "id": "sod-charter",
+      "use_when": "stand-up-sod",
+      "body": "SOD CHARTER\nName: Service Operations Desk (or local name)\nOwns: RMA ship, returns, evals, closure templates, part collection chase\nDoes not own: technical diagnosis, customer engineering decisions\nSupport owns: problem solve, disposition decision\nLead SOD: _______________  Lead Support: _______________\nStart date: _______"
+    },
+    {
+      "id": "support-to-sod-handoff",
+      "use_when": "handoff-breaks",
+      "body": "SUPPORT TO SOD HANDOFF\nTicket: _______________  Customer: _______________\nDisposition: ship / return / eval / collect\nPart SKU/qty: _______________\nWhy (one line): _______________\nAddress / RMA auth: _______________\nSupport owner: _______________  SOD owner: _______________\nIncomplete = no ship"
+    },
+    {
+      "id": "scope-lock",
+      "use_when": "scope-creep",
+      "body": "SOD SCOPE LOCK\nIn: _______________\nOut (send to): _______________\nNew ask process: _______________\nReviewed: weekly with support lead"
+    },
+    {
+      "id": "sod-scorecard",
+      "use_when": "measure",
+      "body": "SOD SCORECARD\nPeriod: _______\nShip SLA hit %: ___\nReturn close %: ___\nHandoff reject % (incomplete): ___\nSupport hours still on logistics: ___\nNotes: _______________"
+    },
+    {
+      "id": "closure-template-index",
+      "use_when": "stand-up-sod",
+      "body": "CLOSURE TEMPLATE INDEX\nTemplate | Use when | Owner\nReturn received | | SOD\nEval complete | | SOD\nPart collected | | SOD\nCustomer ship notify | | SOD\n"
+    }
+  ]
+}

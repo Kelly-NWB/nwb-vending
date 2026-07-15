@@ -1,0 +1,41 @@
+{
+  "artifact": "mf-tpl-093",
+  "version": "1.2.0",
+  "description": "Run a control panel cabinet meeting: VP brings direct reports weekly; each covers their specific domain from a shared control panel of metrics and risks; decisions and cross-team asks are logged. Leadership operating rhythm, not a status dump.",
+  "examples": [
+    {
+      "id": "ex-vp-cabinet",
+      "context": "VP brought directs weekly. Each covered their control panel slice. Cabinet rhythm, not only fires.",
+      "branch": "stand-up-cabinet",
+      "templates_used": [
+        "cabinet-charter",
+        "panel-section-map",
+        "decision-first-agenda"
+      ],
+      "resolution": "Shared picture. Cross-team issues surfaced early. Exec surprises down.",
+      "log_row": "cabinet,weekly,slices,ok"
+    },
+    {
+      "id": "ex-theater-fix",
+      "context": "Meeting became status read with no decisions.",
+      "branch": "stale-meeting",
+      "templates_used": [
+        "decision-first-agenda",
+        "cabinet-decision-log"
+      ],
+      "resolution": "Every slice required one ask or one risk. Hour useful again.",
+      "log_row": "decision-first,asks-required,ok"
+    },
+    {
+      "id": "ex-cross-silo",
+      "context": "Support red on panel depended on another direct's staffing.",
+      "branch": "cross-silo",
+      "templates_used": [
+        "cross-ask-log",
+        "cabinet-decision-log"
+      ],
+      "resolution": "Cross-ask logged with due date. Fixed in two weeks without hallway war.",
+      "log_row": "cross-ask,due,closed"
+    }
+  ]
+}

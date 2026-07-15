@@ -1,0 +1,31 @@
+{
+  "artifact": "mf-tpl-101",
+  "version": "1.2.0",
+  "templates": [
+    {
+      "id": "recovery-charter",
+      "use_when": "stand-up-recovery",
+      "body": "PARTS RECOVERY CHARTER\nOwner (usually SOD): _______________\nSupport role: confirm disposition / exceptions\nAge buckets: 0-15 / 16-30 / 31-60 / 60+\nWrite-off only after: _______________\nReport cadence: monthly"
+    },
+    {
+      "id": "chase-ladder",
+      "use_when": "aging-hot",
+      "body": "CHASE LADDER\nReturn ID: _______________  Age days: ___\nDay 7: remind _______________\nDay 15: escalate customer contact _______________\nDay 30: sales/account assist _______________\nDay 45+: bill or formal write-off path _______________\nStatus: _______________"
+    },
+    {
+      "id": "escalation-or-bill",
+      "use_when": "customer-block",
+      "body": "ESCALATION OR BILL\nAccount: _______________  Part value: ___\nBlock reason: _______________\nOptions: [ ] onsite collect  [ ] bill  [ ] trade  [ ] write-off with approver\nApprover: _______________  Date: _______"
+    },
+    {
+      "id": "recovered-value-report",
+      "use_when": "report",
+      "body": "RECOVERED VALUE REPORT\nPeriod: _______\nRecovered $: ___\nStill open $: ___\nWrite-off $: ___\nTop delay accounts: _______________\nFunds applied to: _______________"
+    },
+    {
+      "id": "open-returns-aging",
+      "use_when": "stand-up-recovery",
+      "body": "OPEN RETURNS AGING\nBucket | Count | Value\n0-15 | | \n16-30 | | \n31-60 | | \n60+ | | \nOwner actions this week: _______________"
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "artifact": "mf-tpl-094",
+  "title": "Vendor Fleet Remediation Playbook",
+  "version": "1.2.0",
+  "audience": "agent",
+  "section": "templates",
+  "lane": "field-patterns",
+  "pack_type": "field-pattern",
+  "description": "Run a vendor-funded fleet remediation: prove a bad population with rigorous testing, engage manufacturer for full remediation scope, require on-site vendor resources and cost ownership, and execute a time-boxed install-and-validate campaign with your support engineers.",
+  "mindset": {
+    "principle": "Paying through support tickets forever is the expensive path. Prove the batch, then make the vendor carry the fleet fix.",
+    "mistakes": [
+      {
+        "id": "ticket-forever",
+        "label": "Keep replacing units one by one under normal support",
+        "cost": "Customer down time stacks; your cost and brand burn"
+      },
+      {
+        "id": "declare-without-proof",
+        "label": "Demand fleet replace without joint deep test",
+        "cost": "Vendor walks; you look reckless"
+      },
+      {
+        "id": "absorb-labor",
+        "label": "Your team does the whole campaign on your dime",
+        "cost": "You funded their quality failure"
+      },
+      {
+        "id": "no-validation-gate",
+        "label": "Swap everything with no test plan",
+        "cost": "Errors return; blame mud"
+      }
+    ]
+  },
+  "campaign_phases": [
+    {
+      "id": "signal",
+      "label": "Persistent site/fleet errors not explained by one-off fails"
+    },
+    {
+      "id": "prove",
+      "label": "Deep test with vendor; isolate batch/population"
+    },
+    {
+      "id": "commercial",
+      "label": "Scope: all affected units; vendor funds parts + on-site labor"
+    },
+    {
+      "id": "execute",
+      "label": "Time-boxed install + validation; your leads + their crew"
+    },
+    {
+      "id": "close",
+      "label": "Error rate gate; written close with vendor"
+    }
+  ],
+  "decision_branches": [
+    {
+      "id": "fleet-signal",
+      "situation": "Constant errors across many systems in one environment",
+      "action": "joint-deep-test-plan"
+    },
+    {
+      "id": "batch-proven",
+      "situation": "Test isolates bad population/batch",
+      "action": "vendor-scope-ask"
+    },
+    {
+      "id": "vendor-funded-campaign",
+      "situation": "Vendor agrees to remediate at their cost",
+      "action": "campaign-runbook"
+    },
+    {
+      "id": "close-gate",
+      "situation": "Install wave done",
+      "action": "validation-close"
+    }
+  ],
+  "process": {
+    "steps": [
+      {
+        "id": 1,
+        "name": "Freeze one-off heroics narrative",
+        "goal": "Treat as fleet incident",
+        "minutes": "immediate"
+      },
+      {
+        "id": 2,
+        "name": "Joint deep test with manufacturer",
+        "goal": "Batch/population proof",
+        "minutes": "days"
+      },
+      {
+        "id": 3,
+        "name": "Commercial scope and cost ownership",
+        "goal": "Vendor funds parts and on-site labor",
+        "minutes": "negotiation"
+      },
+      {
+        "id": 4,
+        "name": "Execute waves: install + test",
+        "goal": "Every unit validated",
+        "minutes": "campaign length"
+      }
+    ]
+  },
+  "tracking": {
+    "csv_header": "campaign_id,site,population,units_total,units_done,error_rate_before,error_rate_after,vendor_cost_y_n,owner",
+    "sheet_tab_name": "vendor_fleet_remediation"
+  },
+  "related_artifacts": [
+    "mf-tpl-077",
+    "mf-tpl-079",
+    "mf-tpl-067",
+    "mf-tpl-085"
+  ],
+  "agent_signal": {
+    "use_when": "Fleet or data-center scale failures. Bad batch suspected. Need deep test with vendor then full remediation at manufacturer expense with on-site joint install and validation.",
+    "decision_criteria": [
+      "Proof before fleet declaration.",
+      "Vendor funds parts and on-site labor when batch is theirs.",
+      "Your team runs install plan and test gates; not silent ticket soak."
+    ],
+    "operator_context": "Field pattern: DC-wide memory batch, week-long replace-and-test, vendor engineers on site, cost on manufacturer.",
+    "tags": [
+      "field-patterns",
+      "vendor",
+      "fleet",
+      "remediation"
+    ],
+    "version": "1.2",
+    "not_for": "Single-unit RMA. Not legal contract drafting with vendors.",
+    "pairs_with": [
+      "mf-tpl-077",
+      "mf-tpl-079",
+      "mf-tpl-067",
+      "mf-tpl-085"
+    ],
+    "trigger_phrases": [
+      "Fleet or data-center scale failures. Bad batch suspected. Need deep test with ve",
+      "Need playbook: Vendor Fleet Remediation Playbook"
+    ]
+  }
+}

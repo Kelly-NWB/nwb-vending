@@ -1,0 +1,140 @@
+{
+  "artifact": "mf-tpl-100",
+  "title": "Services Revenue Center Playbook",
+  "version": "1.2.0",
+  "audience": "agent",
+  "section": "templates",
+  "lane": "field-patterns",
+  "pack_type": "field-pattern",
+  "description": "Move post-sales support toward a services revenue center: after documentation, process, and metrics exist, add warranty/license renewal programs, billable services, and clear enforcement so value is not only absorbed as cost of doing business.",
+  "mindset": {
+    "principle": "You cannot price chaos. Build the foundation, then graduate to revenue without turning every call into a shakedown.",
+    "mistakes": [
+      {
+        "id": "charge-before-process",
+        "label": "Bill before tickets close and quality exists",
+        "cost": "Customers pay for pain; churn"
+      },
+      {
+        "id": "forever-cost",
+        "label": "Never productize renewals or billable work",
+        "cost": "Support stays a black hole in finance eyes"
+      },
+      {
+        "id": "ad-hoc-extend",
+        "label": "Warranty extensions only as favors",
+        "cost": "No forecast; unfairness; lost revenue"
+      },
+      {
+        "id": "all-stick",
+        "label": "Enforcement without education or value",
+        "cost": "Brand damage"
+      }
+    ]
+  },
+  "stages": [
+    {
+      "id": "foundation",
+      "label": "Docs, process, metrics, closure, portal basics"
+    },
+    {
+      "id": "renewals",
+      "label": "Consistent warranty/license renewal program and owner"
+    },
+    {
+      "id": "billable",
+      "label": "Menu of out-of-warranty and consult services"
+    },
+    {
+      "id": "unit",
+      "label": "Services recognized as a business unit path"
+    }
+  ],
+  "decision_branches": [
+    {
+      "id": "readiness",
+      "situation": "Want revenue but ops still chaotic",
+      "action": "foundation-gate"
+    },
+    {
+      "id": "revenue-path",
+      "situation": "Foundation solid; need earn path",
+      "action": "renewal-and-billable-design"
+    },
+    {
+      "id": "enforcement",
+      "situation": "Giveaways killing margin",
+      "action": "warranty-enforcement-rules"
+    },
+    {
+      "id": "finance-story",
+      "situation": "CFO sees only cost",
+      "action": "services-unit-brief"
+    }
+  ],
+  "process": {
+    "steps": [
+      {
+        "id": 1,
+        "name": "Pass foundation gate",
+        "goal": "Process and metrics real",
+        "minutes": "audit"
+      },
+      {
+        "id": 2,
+        "name": "Name renewal owner and pipeline",
+        "goal": "Not ad-hoc favors",
+        "minutes": "half-day"
+      },
+      {
+        "id": 3,
+        "name": "Publish billable menu",
+        "goal": "Clear SKUs and when free vs paid",
+        "minutes": "half-day"
+      },
+      {
+        "id": 4,
+        "name": "Report services P&L slice monthly",
+        "goal": "Visible earn + cost",
+        "minutes": "monthly"
+      }
+    ]
+  },
+  "tracking": {
+    "csv_header": "period,renewal_revenue,billable_revenue,giveaway_count,support_cost,notes,owner",
+    "sheet_tab_name": "services_revenue_center"
+  },
+  "related_artifacts": [
+    "mf-tpl-065",
+    "mf-tpl-092",
+    "mf-tpl-087",
+    "mf-tpl-099"
+  ],
+  "agent_signal": {
+    "use_when": "Support is only a cost center. Need path to services revenue: renewals, billable work, warranty enforcement after process foundation exists.",
+    "decision_criteria": [
+      "Foundation before aggressive charging.",
+      "Renewals are a program with an owner.",
+      "Billable menu explicit; free vs paid rules written."
+    ],
+    "operator_context": "Field pattern: graduate service/support from cost center foundation to revenue center (renewals, billable, enforcement). Generic naming only.",
+    "tags": [
+      "field-patterns",
+      "revenue",
+      "warranty",
+      "services"
+    ],
+    "version": "1.2",
+    "not_for": "Generic job spine. Not legal tax advice on write-offs.",
+    "pairs_with": [
+      "mf-tpl-065",
+      "mf-tpl-092",
+      "mf-tpl-087",
+      "mf-tpl-099"
+    ],
+    "trigger_phrases": [
+      "Support is only a cost center. Need path to services revenue: renewals, billable",
+      "Need playbook: Services Revenue Center Playbook"
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "artifact": "mf-tpl-093",
+  "version": "1.2.0",
+  "templates": [
+    {
+      "id": "cabinet-charter",
+      "use_when": "stand-up-cabinet",
+      "body": "CONTROL PANEL CABINET CHARTER\nChair (VP): _______________\nDirects (seats): _______________\nCadence: weekly  Length: ___ min\nPurpose: shared control panel + decisions\nOut of scope this hour: _______________\nScribe: _______________  First date: _______"
+    },
+    {
+      "id": "panel-section-map",
+      "use_when": "panel-design",
+      "body": "PANEL SECTION MAP\nSection | Owner direct | Metrics/risks in slice | Update minutes\nSupport ops | | | 5-8\n_____________ | | | \n_____________ | | | \nRule: no section without an owner"
+    },
+    {
+      "id": "decision-first-agenda",
+      "use_when": "stale-meeting",
+      "body": "CABINET AGENDA (60)\n0-5: open risks from last week\n5-40: each direct 5-8 min on THEIR panel slice (what moved, what is red, one ask)\n40-55: cross-silo decisions\n55-60: log owners and due dates\nBan: long monologue with no ask"
+    },
+    {
+      "id": "cross-ask-log",
+      "use_when": "cross-silo",
+      "body": "CROSS-ASK LOG\nWeek: _______\nFrom seat: _______________  To seat: _______________\nAsk: _______________\nDecision: _______________  Due: _______\nBlocks customer/revenue/risk: Y/N"
+    },
+    {
+      "id": "cabinet-decision-log",
+      "use_when": "stand-up-cabinet",
+      "body": "CABINET DECISION LOG\nWeek: _______\nDecision: _______________\nOwner: _______________  Due: _______\nPanel section affected: _______________"
+    }
+  ]
+}

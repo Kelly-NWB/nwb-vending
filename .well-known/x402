@@ -96,7 +96,12 @@
     "https://NWB-Vending.com/2nd-pages/materials-factory/templates/preventable-ticket-kill/full/playbook.json",
     "https://NWB-Vending.com/2nd-pages/materials-factory/templates/support-knowledge-repo/full/playbook.json",
     "https://NWB-Vending.com/2nd-pages/materials-factory/templates/team-showcase-speaking/full/playbook.json",
-    "https://NWB-Vending.com/2nd-pages/materials-factory/templates/customer-learning-program/full/playbook.json"
+    "https://NWB-Vending.com/2nd-pages/materials-factory/templates/customer-learning-program/full/playbook.json",
+    "https://NWB-Vending.com/2nd-pages/materials-factory/templates/control-panel-cabinet/full/playbook.json",
+    "https://NWB-Vending.com/2nd-pages/materials-factory/templates/vendor-fleet-remediation/full/playbook.json",
+    "https://NWB-Vending.com/2nd-pages/materials-factory/templates/service-operations-desk/full/playbook.json",
+    "https://NWB-Vending.com/2nd-pages/materials-factory/templates/services-revenue-center/full/playbook.json",
+    "https://NWB-Vending.com/2nd-pages/materials-factory/templates/parts-recovery-program/full/playbook.json"
   ],
   "ownershipProofs": [
     "0x53799D42E72E3d41625006d310A55EC486DA5213"

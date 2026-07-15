@@ -1,0 +1,31 @@
+{
+  "artifact": "mf-tpl-100",
+  "version": "1.2.0",
+  "templates": [
+    {
+      "id": "foundation-gate",
+      "use_when": "readiness",
+      "body": "FOUNDATION GATE (before revenue push)\n[ ] Ticket closure discipline\n[ ] RMA/SOD path clear\n[ ] Core metrics monthly\n[ ] Basic portal or KB for self-serve\nFail any = fix ops first\nSigner: _______________  Date: _______"
+    },
+    {
+      "id": "renewal-and-billable-design",
+      "use_when": "revenue-path",
+      "body": "RENEWAL + BILLABLE DESIGN\nRenewal owner role: _______________\nWarranty/license pipeline source: _______________\nBillable menu items: 1 ___ 2 ___ 3 ___\nWhen still free (goodwill rules): _______________\nSales handoff: _______________"
+    },
+    {
+      "id": "warranty-enforcement-rules",
+      "use_when": "enforcement",
+      "body": "WARRANTY ENFORCEMENT RULES\nCovered: _______________\nNot covered / billable: _______________\nWho may grant exception: _______________\nLog every exception: Y\nCustomer-safe wording: _______________"
+    },
+    {
+      "id": "services-unit-brief",
+      "use_when": "finance-story",
+      "body": "SERVICES UNIT BRIEF (finance)\nPeriod: _______\nCost of support: ___\nRenewal revenue: ___\nBillable revenue: ___\nParts recovered (see mf-tpl-101): ___\nAsk: treat as services path not pure cost sink\nNarrative: _______________"
+    },
+    {
+      "id": "renewal-pipeline-row",
+      "use_when": "revenue-path",
+      "body": "RENEWAL PIPELINE ROW\nAccount: _______________  Expire: _______\nProduct/ entitlement: _______________\nOwner: _______________  Stage: _______________\n$ : ___  Outcome: _______________"
+    }
+  ]
+}

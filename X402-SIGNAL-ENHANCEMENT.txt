@@ -1,5 +1,5 @@
-X402 agent signal enhancement 2026-07-14
-Artifacts touched: 70 tools+templates (mf-train-001 excluded)
+X402 agent signal enhancement 2026-07-15
+Artifacts touched: 75 tools+templates (mf-train-001 excluded)
 Live: nwb-vending/2nd-pages/materials-factory
 Staging sync: 402 Biz/templates + tools
 
@@ -16,7 +16,7 @@ Manifest:
 
 Unchanged: teasers, examples.json, templates.json, x402 gates, prices
 
-Modified file count: 257
+Modified file count: 267
 
 - 2nd-pages/materials-factory/templates/complaint-recovery-playbook/full/playbook.json
 - 2nd-pages/materials-factory/templates/complaint-recovery-playbook/full/AGENT.md
@@ -262,6 +262,16 @@ Modified file count: 257
 - 2nd-pages/materials-factory/templates/call-forecast-variance/full/AGENT.md
 - 2nd-pages/materials-factory/templates/rd-support-bridge/full/playbook.json
 - 2nd-pages/materials-factory/templates/rd-support-bridge/full/AGENT.md
+- 2nd-pages/materials-factory/templates/severance-agreement-trail/full/playbook.json
+- 2nd-pages/materials-factory/templates/severance-agreement-trail/full/AGENT.md
+- 2nd-pages/materials-factory/templates/severance-payment-log/full/playbook.json
+- 2nd-pages/materials-factory/templates/severance-payment-log/full/AGENT.md
+- 2nd-pages/materials-factory/templates/erisa-evidence-binder/full/playbook.json
+- 2nd-pages/materials-factory/templates/erisa-evidence-binder/full/AGENT.md
+- 2nd-pages/materials-factory/templates/bankruptcy-employee-creditor/full/playbook.json
+- 2nd-pages/materials-factory/templates/bankruptcy-employee-creditor/full/AGENT.md
+- 2nd-pages/materials-factory/templates/post-judgment-dead-debtor/full/playbook.json
+- 2nd-pages/materials-factory/templates/post-judgment-dead-debtor/full/AGENT.md
 - 2nd-pages/materials-factory/tools/should-i-automate/full/rules.json
 - 2nd-pages/materials-factory/tools/should-i-automate/full/AGENT.md
 - 402 Biz/tools/should-i-automate/full/rules.json

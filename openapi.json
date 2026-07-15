@@ -4509,7 +4509,7 @@
       "get": {
         "operationId": "mf-tpl-056",
         "summary": "Wrong Seat Rescue Playbook",
-        "description": "Rescue bored performers stuck in the wrong seat. Observe, test hard work, reassign. Not discipline-first.",
+        "description": "Wrong seat rescue: observe, test hard work, reassign bored performers. Pairs with mf-tpl-003, mf-tpl-002, mf-tpl-005.",
         "tags": [
           "templates"
         ],
@@ -4585,7 +4585,7 @@
       "get": {
         "operationId": "mf-tpl-057",
         "summary": "Workplace Department Map",
-        "description": "Route frontline issues to finance, HR, or shipping. Minimum inputs, avoid lists, manager-speak decode.",
+        "description": "Finance, HR, shipping lanes plus manager-speak decode. Combined department map for frontline routing.",
         "tags": [
           "templates"
         ],
@@ -4661,7 +4661,7 @@
       "get": {
         "operationId": "mf-tpl-058",
         "summary": "Tenured Change Adoption Playbook",
-        "description": "Structured reflection and report for longtime staff resisting process change. Not cold mandate.",
+        "description": "Structured change engagement for tenured staff: reflection, report, presentation, refusal path.",
         "tags": [
           "templates"
         ],
@@ -4737,7 +4737,7 @@
       "get": {
         "operationId": "mf-tpl-059",
         "summary": "Shadow Expert Mining Playbook",
-        "description": "Unofficial help-desk hubs punished by availability metrics. Mine repeat questions into tools and training.",
+        "description": "Shadow expert mining: metric mismatch, question sprint, tools backlog, role adjustment.",
         "tags": [
           "templates"
         ],
@@ -4813,7 +4813,7 @@
       "get": {
         "operationId": "mf-tpl-060",
         "summary": "Return Verification Signal Playbook",
-        "description": "NDF and return outcomes drive cross-training and fair metrics. QBR health check with verification data.",
+        "description": "Return verification: NDF tracking, cross-train support and test, metric proof, QBR health check.",
         "tags": [
           "templates"
         ],
@@ -4889,7 +4889,7 @@
       "get": {
         "operationId": "mf-tpl-061",
         "summary": "Support Ops Correlation Playbook",
-        "description": "Support ops and CSAT move together. Leadership dings on one KPI. QBR needs ops proof beyond surveys.",
+        "description": "Weekly ops plus CSAT correlations with written conclusions for fair metrics and QBR.",
         "tags": [
           "templates"
         ],
@@ -4965,7 +4965,7 @@
       "get": {
         "operationId": "mf-tpl-062",
         "summary": "Queue Split Design Playbook",
-        "description": "Call routing is tribal knowledge. Mixed tiers in one queue. ASA goals undocumented or wrong.",
+        "description": "Split/skill registry: priority, ASA goal, hours. Routing backbone before forecast.",
         "tags": [
           "templates"
         ],
@@ -5041,7 +5041,7 @@
       "get": {
         "operationId": "mf-tpl-063",
         "summary": "Volume Split Tracker Playbook",
-        "description": "Call volume debated without segment split. Mix shift suspected. Forecast needs actuals by queue fami",
+        "description": "Volume by segment weekly: offered, answered, abandoned. Mix shift detection.",
         "tags": [
           "templates"
         ],
@@ -5117,7 +5117,7 @@
       "get": {
         "operationId": "mf-tpl-064",
         "summary": "Understaffing Impact Log Playbook",
-        "description": "Headcount dropped and ASA/abandon moved. Someone got dinged without week context. Need fair metric p",
+        "description": "Annotated understaffing log: ASA, abandon, down-N tags, metric dispute packets.",
         "tags": [
           "templates"
         ],
@@ -5193,7 +5193,7 @@
       "get": {
         "operationId": "mf-tpl-065",
         "summary": "Support Unit Economics Playbook",
-        "description": "Budget or CFO review on support cost. Channel mix shifting. Need cost per call/email/RMA not FTE vib",
+        "description": "Support unit economics: cost per call, email, RMA. Labor burden roll-up.",
         "tags": [
           "templates"
         ],
@@ -5269,7 +5269,7 @@
       "get": {
         "operationId": "mf-tpl-066",
         "summary": "Call Forecast Variance Playbook",
-        "description": "Call forecast exists but actuals diverge. Overtime or ASA miss tied to one queue. Assumptions not do",
+        "description": "Forecast assumptions, weekly variance by queue, staffing schedule patches.",
         "tags": [
           "templates"
         ],
@@ -5345,7 +5345,7 @@
       "get": {
         "operationId": "mf-tpl-067",
         "summary": "R&D Support Bridge Playbook",
-        "description": "Support sees field pattern engineering lacks. Bridge role between support and R&D. Verify loop after",
+        "description": "R&D support bridge: field signal, engineering handoff, verify close loop.",
         "tags": [
           "templates"
         ],
@@ -5375,6 +5375,386 @@
               "default": "mf-tpl-067"
             },
             "example": "mf-tpl-067"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "artifact": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    },
+                    "audience": {
+                      "type": "string",
+                      "enum": [
+                        "agent"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "artifact",
+                    "title",
+                    "audience"
+                  ],
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/severance-agreement-trail/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-068",
+        "summary": "Severance Agreement Trail Playbook",
+        "description": "Severance offered then payments stop or reduce. Need dated document chain. Not sure what was promised vs paid.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "pack_id",
+            "in": "query",
+            "required": false,
+            "description": "Catalog pack id (informational). Primary artifact is returned from the path after x402 payment.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "mf-tpl-068"
+              ],
+              "default": "mf-tpl-068"
+            },
+            "example": "mf-tpl-068"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "artifact": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    },
+                    "audience": {
+                      "type": "string",
+                      "enum": [
+                        "agent"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "artifact",
+                    "title",
+                    "audience"
+                  ],
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/severance-payment-log/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-069",
+        "summary": "Severance Payment Log Playbook",
+        "description": "Severance installments promised but partial pay or stop. Need owed balance on paper.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "pack_id",
+            "in": "query",
+            "required": false,
+            "description": "Catalog pack id (informational). Primary artifact is returned from the path after x402 payment.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "mf-tpl-069"
+              ],
+              "default": "mf-tpl-069"
+            },
+            "example": "mf-tpl-069"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "artifact": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    },
+                    "audience": {
+                      "type": "string",
+                      "enum": [
+                        "agent"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "artifact",
+                    "title",
+                    "audience"
+                  ],
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/erisa-evidence-binder/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-070",
+        "summary": "ERISA Evidence Binder Playbook",
+        "description": "Employee benefits or severance plan dispute. Need organized evidence for lawyer or plan appeal. Not DIY lawsuit pack.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "pack_id",
+            "in": "query",
+            "required": false,
+            "description": "Catalog pack id (informational). Primary artifact is returned from the path after x402 payment.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "mf-tpl-070"
+              ],
+              "default": "mf-tpl-070"
+            },
+            "example": "mf-tpl-070"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "artifact": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    },
+                    "audience": {
+                      "type": "string",
+                      "enum": [
+                        "agent"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "artifact",
+                    "title",
+                    "audience"
+                  ],
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/bankruptcy-employee-creditor/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-071",
+        "summary": "Bankruptcy Employee Creditor Playbook",
+        "description": "Dead or bankrupt employer. Severance or judgment owed. Proof of claim deadline approaching.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "pack_id",
+            "in": "query",
+            "required": false,
+            "description": "Catalog pack id (informational). Primary artifact is returned from the path after x402 payment.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "mf-tpl-071"
+              ],
+              "default": "mf-tpl-071"
+            },
+            "example": "mf-tpl-071"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paid agent pack JSON",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "artifact": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    },
+                    "audience": {
+                      "type": "string",
+                      "enum": [
+                        "agent"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "artifact",
+                    "title",
+                    "audience"
+                  ],
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required"
+          }
+        }
+      }
+    },
+    "/2nd-pages/materials-factory/templates/post-judgment-dead-debtor/full/playbook.json": {
+      "get": {
+        "operationId": "mf-tpl-072",
+        "summary": "Post-Judgment Dead Debtor Playbook",
+        "description": "Judgment won but employer bankrupt or insolvent. Writ or costs docs in play. Need organized trail.",
+        "tags": [
+          "templates"
+        ],
+        "x-payment-info": {
+          "price": {
+            "mode": "fixed",
+            "currency": "USD",
+            "amount": "0.08"
+          },
+          "protocols": [
+            {
+              "x402": {}
+            }
+          ]
+        },
+        "parameters": [
+          {
+            "name": "pack_id",
+            "in": "query",
+            "required": false,
+            "description": "Catalog pack id (informational). Primary artifact is returned from the path after x402 payment.",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "mf-tpl-072"
+              ],
+              "default": "mf-tpl-072"
+            },
+            "example": "mf-tpl-072"
           }
         ],
         "responses": {

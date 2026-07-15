@@ -1,0 +1,18 @@
+{
+  "artifact": "mf-tpl-069",
+  "version": "1.2.0",
+  "description": "Ledger: what the plan promised, each payment received, running balance owed. Evidence row per check.",
+  "examples": [
+    {
+      "id": "ex-partial-installment",
+      "context": "One check for half of one installment. Silence after.",
+      "branch": "ledger-gap",
+      "templates_used": [
+        "payment-log-row",
+        "gap-memo"
+      ],
+      "resolution": "Gap documented. Fed into ERISA binder.",
+      "log_row": "partial-1x,gap-19k-factual"
+    }
+  ]
+}

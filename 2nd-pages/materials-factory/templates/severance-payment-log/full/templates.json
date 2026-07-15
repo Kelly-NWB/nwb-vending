@@ -1,0 +1,22 @@
+{
+  "artifact": "mf-tpl-069",
+  "version": "1.2.0",
+  "disclaimer": "Documentation and organizational patterns from field experience. Not legal advice.",
+  "templates": [
+    {
+      "id": "payment-log-row",
+      "use_when": "start-ledger",
+      "body": "SEVERANCE PAYMENT LOG\nPeriod: _______________\nPromised (per plan): $_______  Schedule: _______________\n\nDate | Promised | Paid | Owed | Evidence\n_____|__________|______|______|___________\nDisclaimer: factual ledger only."
+    },
+    {
+      "id": "gap-memo",
+      "use_when": "ledger-gap",
+      "body": "PAYMENT GAP MEMO\nAs of date: _______\nPromised to date: $_______  Received to date: $_______  Gap: $_______\nFacts only (no legal conclusion): _______________"
+    },
+    {
+      "id": "restatement-row",
+      "use_when": "plan-restatement",
+      "body": "PLAN RESTATEMENT ROW\nOld schedule: _______________  New schedule: _______________\nEffective date: _______  [ ] saved copy of restatement\nImpact on owed balance (factual): _______________"
+    }
+  ]
+}

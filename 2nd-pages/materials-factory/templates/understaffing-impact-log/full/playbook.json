@@ -68,7 +68,7 @@
     ],
     "operator_context": "Understaffing log is the fairness layer on raw ACD stats.",
     "version": "1.2",
-    "not_for": "Generic ops: fetch only when use_when matches; do not replace spine chain packs.",
+    "not_for": "Generic ops — fetch only when use_when matches; do not replace spine chain packs.",
     "pairs_with": [
       "mf-tpl-061",
       "mf-tpl-063",

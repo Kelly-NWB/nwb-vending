@@ -71,7 +71,12 @@
     "https://NWB-Vending.com/2nd-pages/materials-factory/templates/understaffing-impact-log/full/playbook.json",
     "https://NWB-Vending.com/2nd-pages/materials-factory/templates/support-unit-economics/full/playbook.json",
     "https://NWB-Vending.com/2nd-pages/materials-factory/templates/call-forecast-variance/full/playbook.json",
-    "https://NWB-Vending.com/2nd-pages/materials-factory/templates/rd-support-bridge/full/playbook.json"
+    "https://NWB-Vending.com/2nd-pages/materials-factory/templates/rd-support-bridge/full/playbook.json",
+    "https://NWB-Vending.com/2nd-pages/materials-factory/templates/severance-agreement-trail/full/playbook.json",
+    "https://NWB-Vending.com/2nd-pages/materials-factory/templates/severance-payment-log/full/playbook.json",
+    "https://NWB-Vending.com/2nd-pages/materials-factory/templates/erisa-evidence-binder/full/playbook.json",
+    "https://NWB-Vending.com/2nd-pages/materials-factory/templates/bankruptcy-employee-creditor/full/playbook.json",
+    "https://NWB-Vending.com/2nd-pages/materials-factory/templates/post-judgment-dead-debtor/full/playbook.json"
   ],
   "ownershipProofs": [
     "0x53799D42E72E3d41625006d310A55EC486DA5213"

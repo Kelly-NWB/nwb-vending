@@ -17,7 +17,7 @@
 ## Agent signal (v1.2)
 
 - **Use when:** Call volume debated without segment split. Mix shift suspected. Forecast needs actuals by queue family.
-- **Not for:** Generic ops :  fetch only when use_when matches; do not replace spine chain packs.
+- **Not for:** Generic ops — fetch only when use_when matches; do not replace spine chain packs.
 - **Pairs with:** mf-tpl-062, mf-tpl-061, mf-tpl-066, mf-tpl-064
 - **Trigger phrases:** "Call volume debated without segment split. Mix shift suspected. Forecast needs actuals by queue family."; "Need playbook: Volume Split Tracker Playbook"
 - **Decision criteria:** Log offered, answered, abandoned per segment weekly. Flag mix shift when one segment moves >10% vs 4-week avg. Feed actuals into forecast variance pack.

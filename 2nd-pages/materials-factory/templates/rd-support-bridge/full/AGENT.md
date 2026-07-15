@@ -17,7 +17,7 @@
 ## Agent signal (v1.2)
 
 - **Use when:** Support sees field pattern engineering lacks. Bridge role between support and R&D. Verify loop after fix ships.
-- **Not for:** Generic ops :  fetch only when use_when matches; do not replace spine chain packs.
+- **Not for:** Generic ops — fetch only when use_when matches; do not replace spine chain packs.
 - **Pairs with:** mf-tpl-059, mf-tpl-060, mf-tpl-061, mf-tpl-065
 - **Trigger phrases:** "Support sees field pattern engineering lacks. Bridge role between support and R&D. Verify loop after fix ships."; "Need playbook: R&D Support Bridge Playbook"
 - **Decision criteria:** Log pattern with frequency before escalation. Handoff includes repro and customer tier impact. Close loop with verification, not announcement email.

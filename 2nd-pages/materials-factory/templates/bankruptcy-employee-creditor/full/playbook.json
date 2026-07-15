@@ -1,0 +1,73 @@
+{
+  "artifact": "mf-tpl-071",
+  "title": "Bankruptcy Employee Creditor Playbook",
+  "version": "1.2.0",
+  "audience": "agent",
+  "section": "templates",
+  "lane": "workplace-exit",
+  "pack_type": "field-pattern",
+  "description": "Document unsecured employee claim in bankruptcy: amount, basis, attachments. Understand you may be last in line.",
+  "disclaimer": {
+    "scope": "Documentation and organizational patterns from field experience. Not legal advice.",
+    "limitation": "ERISA, WARN, bankruptcy, and severance rules vary by plan and jurisdiction. Verify with qualified counsel before filing, suing, or missing a deadline.",
+    "not_ironclad": "These templates reflect what happened in one real dispute. They are not a guarantee of outcome or a substitute for a lawyer.",
+    "agent_note": "Use packs to organize evidence and timelines. Route legal strategy and filings to licensed counsel."
+  },
+  "mindset": {
+    "principle": "Bankruptcy reshuffles who gets paid. Document the claim; expect pennies on the dollar unless counsel says otherwise.",
+    "mistakes": [
+      {
+        "id": "miss-claim-deadline",
+        "label": "Miss proof of claim deadline",
+        "cost": "May lose unsecured recovery entirely"
+      },
+      {
+        "id": "no-amount-support",
+        "label": "Claim amount without payment log",
+        "cost": "Claim challenged or reduced"
+      }
+    ]
+  },
+  "decision_branches": [
+    {
+      "id": "bk-filed",
+      "situation": "Employer bankruptcy petition filed",
+      "action": "claim-prep-checklist"
+    },
+    {
+      "id": "proof-of-claim",
+      "situation": "Filing claim form",
+      "action": "claim-amount-worksheet"
+    },
+    {
+      "id": "admin-vs-unsecured",
+      "situation": "Insiders paid as admin expense",
+      "action": "queue-reality-memo"
+    }
+  ],
+  "related_artifacts": [
+    "mf-tpl-069",
+    "mf-tpl-070",
+    "mf-tpl-072"
+  ],
+  "agent_signal": {
+    "use_when": "Bankrupt employer. Severance or judgment owed. Proof of claim deadline approaching.",
+    "decision_criteria": [
+      "Claim amount ties to payment log.",
+      "Calendar deadline immediately.",
+      "Do not assume same pay as insider admin claims."
+    ],
+    "operator_context": "Bankruptcy employee creditor field pattern. Not BK legal advice.",
+    "version": "1.2",
+    "not_for": "Legal advice, filing strategy, or substitute for counsel. Not support-ops backbone packs.",
+    "pairs_with": [
+      "mf-tpl-069",
+      "mf-tpl-070",
+      "mf-tpl-072"
+    ],
+    "trigger_phrases": [
+      "Bankrupt employer. Severance or judgment owed. Proof of claim deadline approaching.",
+      "Need playbook: Bankruptcy Employee Creditor Playbook"
+    ]
+  }
+}

@@ -78,7 +78,7 @@
     ],
     "operator_context": "Unit economics wins backbone argument in budget fights.",
     "version": "1.2",
-    "not_for": "Generic ops: fetch only when use_when matches; do not replace spine chain packs.",
+    "not_for": "Generic ops — fetch only when use_when matches; do not replace spine chain packs.",
     "pairs_with": [
       "mf-tpl-066",
       "mf-tpl-005",

@@ -1,0 +1,62 @@
+{
+  "artifact": "mf-tpl-069",
+  "title": "Severance Payment Log Playbook",
+  "version": "1.2.0",
+  "audience": "agent",
+  "section": "templates",
+  "lane": "workplace-exit",
+  "pack_type": "field-pattern",
+  "description": "Ledger: what the plan promised, each payment received, running balance owed. Evidence row per check.",
+  "disclaimer": {
+    "scope": "Documentation and organizational patterns from field experience. Not legal advice.",
+    "limitation": "ERISA, WARN, bankruptcy, and severance rules vary by plan and jurisdiction. Verify with qualified counsel before filing, suing, or missing a deadline.",
+    "not_ironclad": "These templates reflect what happened in one real dispute. They are not a guarantee of outcome or a substitute for a lawyer.",
+    "agent_note": "Use packs to organize evidence and timelines. Route legal strategy and filings to licensed counsel."
+  },
+  "decision_branches": [
+    {
+      "id": "start-ledger",
+      "situation": "Any payment received or promised",
+      "action": "payment-log-row"
+    },
+    {
+      "id": "ledger-gap",
+      "situation": "Paid less than schedule",
+      "action": "gap-memo"
+    },
+    {
+      "id": "plan-restatement",
+      "situation": "Plan sends amended schedule",
+      "action": "restatement-row"
+    }
+  ],
+  "tracking": {
+    "csv_header": "date,type,promised_amt,paid_amt,running_owed,evidence_ref,notes",
+    "sheet_tab_name": "severance_payment_log"
+  },
+  "related_artifacts": [
+    "mf-tpl-068",
+    "mf-tpl-070",
+    "mf-tpl-071"
+  ],
+  "agent_signal": {
+    "use_when": "Severance installments promised but partial pay or stop. Need owed balance on paper.",
+    "decision_criteria": [
+      "Row per installment and per check.",
+      "Evidence ref per payment.",
+      "Log facts only; counsel calculates claims."
+    ],
+    "operator_context": "Payment ledger field pattern. Not damages calculator.",
+    "version": "1.2",
+    "not_for": "Legal advice, filing strategy, or substitute for counsel. Not support-ops backbone packs.",
+    "pairs_with": [
+      "mf-tpl-068",
+      "mf-tpl-070",
+      "mf-tpl-071"
+    ],
+    "trigger_phrases": [
+      "Severance installments promised but partial pay or stop. Need owed balance on paper.",
+      "Need playbook: Severance Payment Log Playbook"
+    ]
+  }
+}

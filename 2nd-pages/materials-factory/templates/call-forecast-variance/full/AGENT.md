@@ -17,7 +17,7 @@
 ## Agent signal (v1.2)
 
 - **Use when:** Call forecast exists but actuals diverge. Overtime or ASA miss tied to one queue. Assumptions not documented.
-- **Not for:** Generic ops :  fetch only when use_when matches; do not replace spine chain packs.
+- **Not for:** Generic ops — fetch only when use_when matches; do not replace spine chain packs.
 - **Pairs with:** mf-tpl-062, mf-tpl-063, mf-tpl-065, mf-tpl-064
 - **Trigger phrases:** "Call forecast exists but actuals diverge. Overtime or ASA miss tied to one queue. Assumptions not documented."; "Need playbook: Call Forecast Variance Playbook"
 - **Decision criteria:** Write assumptions before forecast numbers. Weekly variance by queue, not company total only. Patch staffing schedule when variance sustains 4+ weeks.

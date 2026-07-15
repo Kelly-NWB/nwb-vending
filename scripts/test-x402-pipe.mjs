@@ -15,8 +15,8 @@ const tests = [
       if (!j.ok) throw new Error("ok !== true");
       if (j.network !== "base") throw new Error(`network=${j.network}, expected base`);
       const n = j.gated_routes?.length ?? 0;
-      if (n !== 71) throw new Error(`gated_routes=${n}, expected 71`);
-      return `71 routes, network=${j.network}, pay_to_suffix=${j.pay_to_suffix}`;
+      if (n !== 76) throw new Error(`gated_routes=${n}, expected 76`);
+      return `76 routes, network=${j.network}, pay_to_suffix=${j.pay_to_suffix}`;
     },
   },
   {
@@ -26,7 +26,7 @@ const tests = [
     check: (body) => {
       const j = JSON.parse(body);
       if (j.protocol !== "x402") throw new Error("protocol !== x402");
-      if (j.entry_count !== 71) throw new Error(`entry_count=${j.entry_count}`);
+      if (j.entry_count !== 76) throw new Error(`entry_count=${j.entry_count}`);
       return `entry_count=${j.entry_count}, protocol=${j.protocol}`;
     },
   },

@@ -1,0 +1,18 @@
+{
+  "artifact": "mf-tpl-070",
+  "version": "1.2.0",
+  "description": "Assemble tabbed evidence: plan, SPD/summary, offer, signed release, payments, cut notices, correspondence. For counsel review.",
+  "examples": [
+    {
+      "id": "ex-counsel-handoff",
+      "context": "Lawyer asked for everything in one place.",
+      "branch": "binder-assembly",
+      "templates_used": [
+        "binder-checklist",
+        "timeline-one-pager"
+      ],
+      "resolution": "Binder tabs complete. Strategy left to counsel.",
+      "log_row": "binder-ready,strategy-external"
+    }
+  ]
+}

@@ -466,6 +466,36 @@ const GATED_ROUTES: GatedRoute[] = [
     description: "R&D Support Bridge Playbook agent pack (mf-tpl-067)",
     artifact: "mf-tpl-067",
   },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/severance-agreement-trail/full",
+    price: "$0.08",
+    description: "Severance Agreement Trail Playbook agent pack (mf-tpl-068)",
+    artifact: "mf-tpl-068",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/severance-payment-log/full",
+    price: "$0.08",
+    description: "Severance Payment Log Playbook agent pack (mf-tpl-069)",
+    artifact: "mf-tpl-069",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/erisa-evidence-binder/full",
+    price: "$0.08",
+    description: "ERISA Evidence Binder Playbook agent pack (mf-tpl-070)",
+    artifact: "mf-tpl-070",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/bankruptcy-employee-creditor/full",
+    price: "$0.08",
+    description: "Bankruptcy Employee Creditor Playbook agent pack (mf-tpl-071)",
+    artifact: "mf-tpl-071",
+  },
+  {
+    prefix: "/2nd-pages/materials-factory/templates/post-judgment-dead-debtor/full",
+    price: "$0.08",
+    description: "Post-Judgment Dead Debtor Playbook agent pack (mf-tpl-072)",
+    artifact: "mf-tpl-072",
+  },
 ];
 
 const NETWORK_CAIP2: Partial<Record<Env["NETWORK"], string>> = {

@@ -1,0 +1,27 @@
+{
+  "artifact": "mf-tpl-068",
+  "version": "1.2.0",
+  "disclaimer": "Documentation and organizational patterns from field experience. Not legal advice.",
+  "templates": [
+    {
+      "id": "open-trail",
+      "use_when": "offer-received",
+      "body": "SEVERANCE TRAIL (start)\nEmployee ref: _______________  Plan name: _______________\nLayoff notice date: _______  Offer date: _______\nConsideration window: from _______ to _______\n[ ] Plan doc saved  [ ] Offer letter saved\nDisclaimer: organizational only, not legal advice."
+    },
+    {
+      "id": "consideration-tracker",
+      "use_when": "in-consideration",
+      "body": "CONSIDERATION WINDOW\nEarliest return allowed: _______  Deadline: _______\nToday: _______  Action: [ ] still reviewing  [ ] counsel consult  [ ] ready to sign\nNotes (facts only): _______________"
+    },
+    {
+      "id": "lock-trail-row",
+      "use_when": "signed-returned",
+      "body": "SIGNED AND RETURNED\nDate returned: _______  Method: _______________\n[ ] Copy of signed agreement filed\nPromised schedule (from plan): _______________\nFirst payment due (per plan): _______"
+    },
+    {
+      "id": "cut-notice-log",
+      "use_when": "payment-stopped",
+      "body": "PAYMENT STOP OR CUT\nFirst payment received: Y/N  Date: _______  Amount: $_______\nStop or cut notice date: _______  Source: _______________\nAttach: notice copy, check images, bank record\nNext: mf-tpl-069 payment log + counsel review"
+    }
+  ]
+}

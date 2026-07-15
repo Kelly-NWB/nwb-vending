@@ -1,0 +1,27 @@
+{
+  "artifact": "mf-tpl-070",
+  "version": "1.2.0",
+  "disclaimer": "Documentation and organizational patterns from field experience. Not legal advice.",
+  "templates": [
+    {
+      "id": "binder-checklist",
+      "use_when": "binder-start",
+      "body": "ERISA EVIDENCE BINDER CHECKLIST\n[ ] Plan document / SPD\n[ ] Severance offer\n[ ] Signed agreement copy\n[ ] Payment log (mf-tpl-069)\n[ ] Cut or stop notices\n[ ] WARN or layoff notice if any\n[ ] Admin correspondence\n[ ] Timeline one-pager\nNOT LEGAL ADVICE. For organization only."
+    },
+    {
+      "id": "tab-assembly",
+      "use_when": "binder-assembly",
+      "body": "TAB ASSEMBLY LOG\nTab: _______________  Document: _______________  Date: _______\nSource: _______________  Page count: ___  [ ] redacted for sharing"
+    },
+    {
+      "id": "timeline-one-pager",
+      "use_when": "binder-assembly",
+      "body": "TIMELINE ONE-PAGER (facts only)\nDate | Event | Source doc\n_____|_______|____________\n_____|_______|____________\nPrepared for: counsel review  Not a legal filing."
+    },
+    {
+      "id": "pattern-matrix",
+      "use_when": "group-pattern",
+      "body": "GROUP PATTERN MATRIX (scrub names for external use)\nRef | Same cut? | Same plan language? | Payment stop month\n____|___________|_____________________|___________________\nUse for pattern only; each claimant needs own binder."
+    }
+  ]
+}

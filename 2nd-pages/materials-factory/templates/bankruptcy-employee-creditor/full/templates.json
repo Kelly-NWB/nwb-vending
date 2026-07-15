@@ -1,0 +1,22 @@
+{
+  "artifact": "mf-tpl-071",
+  "version": "1.2.0",
+  "disclaimer": "Documentation and organizational patterns from field experience. Not legal advice.",
+  "templates": [
+    {
+      "id": "claim-prep-checklist",
+      "use_when": "bk-filed",
+      "body": "BANKRUPTCY CLAIM PREP\nCase name/number: _______________  Chapter: ___\nClaim deadline: _______  [ ] calendar alert set\nAttach: payment log, severance trail, judgment if any\nNOT LEGAL ADVICE. Counsel reviews before file."
+    },
+    {
+      "id": "claim-amount-worksheet",
+      "use_when": "proof-of-claim",
+      "body": "CLAIM AMOUNT WORKSHEET (factual)\nTotal promised per plan: $_______\nTotal paid: $_______  Owed (factual): $_______\nBasis: severance plan / agreement tab ___\nSupporting exhibits: _______________"
+    },
+    {
+      "id": "queue-reality-memo",
+      "use_when": "admin-vs-unsecured",
+      "body": "QUEUE REALITY MEMO (pattern note)\nYour claim class: unsecured employee / severance\nObserved: admin or insider motions may pay first\nImplication: discuss recovery expectations with counsel only\nFacts to track: _______________"
+    }
+  ]
+}

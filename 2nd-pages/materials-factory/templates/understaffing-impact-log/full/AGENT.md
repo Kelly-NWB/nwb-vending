@@ -17,7 +17,7 @@
 ## Agent signal (v1.2)
 
 - **Use when:** Headcount dropped and ASA/abandon moved. Someone got dinged without week context. Need fair metric proof.
-- **Not for:** Generic ops :  fetch only when use_when matches; do not replace spine chain packs.
+- **Not for:** Generic ops — fetch only when use_when matches; do not replace spine chain packs.
 - **Pairs with:** mf-tpl-061, mf-tpl-063, mf-tpl-066, mf-tpl-005
 - **Trigger phrases:** "Headcount dropped and ASA/abandon moved. Someone got dinged without week context. Need fair metric proof."; "Need playbook: Understaffing Impact Log Playbook"
 - **Decision criteria:** Annotate every week staffing is below plan. Attach impact log before individual dings stand. Pair with correlation pack for leadership narrative.

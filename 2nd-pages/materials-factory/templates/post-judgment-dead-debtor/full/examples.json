@@ -1,0 +1,19 @@
+{
+  "artifact": "mf-tpl-072",
+  "version": "1.2.0",
+  "description": "After judgment: track writ of execution, taxation of costs, fee petitions. Honest pattern when debtor has no assets.",
+  "examples": [
+    {
+      "id": "ex-won-never-paid",
+      "context": "ERISA judgment. Company in BK. Writ filed. Zero distribution.",
+      "branch": "dead-debtor",
+      "templates_used": [
+        "post-judgment-log",
+        "writ-checklist",
+        "closure-memo"
+      ],
+      "resolution": "Trail documented. Recovery none. Binder closed.",
+      "log_row": "judgment-ok,paid-0,trail-closed"
+    }
+  ]
+}

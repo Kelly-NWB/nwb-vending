@@ -1,0 +1,69 @@
+{
+  "artifact": "mf-tpl-070",
+  "title": "ERISA Evidence Binder Playbook",
+  "version": "1.2.0",
+  "audience": "agent",
+  "section": "templates",
+  "lane": "workplace-exit",
+  "pack_type": "field-pattern",
+  "description": "Assemble tabbed evidence: plan, SPD/summary, offer, signed release, payments, cut notices, correspondence. For counsel review.",
+  "disclaimer": {
+    "scope": "Documentation and organizational patterns from field experience. Not legal advice.",
+    "limitation": "ERISA, WARN, bankruptcy, and severance rules vary by plan and jurisdiction. Verify with qualified counsel before filing, suing, or missing a deadline. ERISA claims have deadlines; this pack does not compute limitations periods.",
+    "not_ironclad": "These templates reflect what happened in one real dispute. They are not a guarantee of outcome or a substitute for a lawyer.",
+    "agent_note": "Use packs to organize evidence and timelines. Route legal strategy and filings to licensed counsel."
+  },
+  "binder_tabs": [
+    "plan_and_summary",
+    "severance_offer_and_agreement",
+    "payment_records",
+    "stop_or_cut_notices",
+    "warn_or_layoff_notices",
+    "correspondence_with_plan_admin",
+    "timeline_one_pager"
+  ],
+  "decision_branches": [
+    {
+      "id": "binder-start",
+      "situation": "Considering counsel or plan appeal",
+      "action": "binder-checklist"
+    },
+    {
+      "id": "binder-assembly",
+      "situation": "Documents scattered",
+      "action": "tab-assembly"
+    },
+    {
+      "id": "group-pattern",
+      "situation": "Multiple employees same cut",
+      "action": "pattern-matrix"
+    }
+  ],
+  "related_artifacts": [
+    "mf-tpl-068",
+    "mf-tpl-069",
+    "mf-tpl-071",
+    "mf-tpl-072"
+  ],
+  "agent_signal": {
+    "use_when": "Employee benefits or severance dispute. Need organized evidence binder for counsel. Not DIY lawsuit.",
+    "decision_criteria": [
+      "Tabbed binder: plan, agreement, payments, cut notices, timeline.",
+      "Separate facts from strategy.",
+      "Does not compute ERISA deadlines."
+    ],
+    "operator_context": "ERISA-adjacent evidence organization. Lawyer fills strategy.",
+    "version": "1.2",
+    "not_for": "Legal advice, filing strategy, or substitute for counsel. Not support-ops backbone packs.",
+    "pairs_with": [
+      "mf-tpl-068",
+      "mf-tpl-069",
+      "mf-tpl-071",
+      "mf-tpl-072"
+    ],
+    "trigger_phrases": [
+      "Employee benefits or severance dispute. Need organized evidence binder for counsel. Not DIY lawsuit.",
+      "Need playbook: ERISA Evidence Binder Playbook"
+    ]
+  }
+}

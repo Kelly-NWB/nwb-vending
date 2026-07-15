@@ -1,0 +1,78 @@
+{
+  "artifact": "mf-tpl-072",
+  "title": "Post-Judgment Dead Debtor Playbook",
+  "version": "1.2.0",
+  "audience": "agent",
+  "section": "templates",
+  "lane": "workplace-exit",
+  "pack_type": "field-pattern",
+  "description": "After judgment: track writ of execution, taxation of costs, fee petitions. Honest pattern when debtor has no assets.",
+  "disclaimer": {
+    "scope": "Documentation and organizational patterns from field experience. Not legal advice.",
+    "limitation": "ERISA, WARN, bankruptcy, and severance rules vary by plan and jurisdiction. Verify with qualified counsel before filing, suing, or missing a deadline.",
+    "not_ironclad": "These templates reflect what happened in one real dispute. They are not a guarantee of outcome or a substitute for a lawyer.",
+    "agent_note": "Use packs to organize evidence and timelines. Route legal strategy and filings to licensed counsel."
+  },
+  "mindset": {
+    "principle": "Judgment is a piece of paper until someone collectible exists. Document the try anyway.",
+    "mistakes": [
+      {
+        "id": "assume-judgment-cash",
+        "label": "Assume judgment equals payment",
+        "cost": "No collection trail when assets appear later"
+      },
+      {
+        "id": "skip-costs-tax",
+        "label": "Skip taxation of costs documentation",
+        "cost": "Leave recoverable costs on table if estate pays"
+      }
+    ]
+  },
+  "decision_branches": [
+    {
+      "id": "judgment-entered",
+      "situation": "Court enters judgment",
+      "action": "post-judgment-log"
+    },
+    {
+      "id": "writ-execution",
+      "situation": "Seeking writ or levy",
+      "action": "writ-checklist"
+    },
+    {
+      "id": "costs-and-fees",
+      "situation": "Taxable costs or fee petitions",
+      "action": "costs-petition-row"
+    },
+    {
+      "id": "dead-debtor",
+      "situation": "No assets, BK, or pennies",
+      "action": "closure-memo"
+    }
+  ],
+  "related_artifacts": [
+    "mf-tpl-071",
+    "mf-tpl-070",
+    "mf-tpl-069"
+  ],
+  "agent_signal": {
+    "use_when": "Judgment won but debtor bankrupt or dead. Writ or costs docs. Need trail without promising payment.",
+    "decision_criteria": [
+      "Log post-judgment filings.",
+      "Writ and taxation of costs checklist.",
+      "Closure memo when recovery zero."
+    ],
+    "operator_context": "Won-never-paid field pattern. Documentation closure.",
+    "version": "1.2",
+    "not_for": "Legal advice, filing strategy, or substitute for counsel. Not support-ops backbone packs.",
+    "pairs_with": [
+      "mf-tpl-071",
+      "mf-tpl-070",
+      "mf-tpl-069"
+    ],
+    "trigger_phrases": [
+      "Judgment won but debtor bankrupt or dead. Writ or costs docs. Need trail without promising payment.",
+      "Need playbook: Post-Judgment Dead Debtor Playbook"
+    ]
+  }
+}

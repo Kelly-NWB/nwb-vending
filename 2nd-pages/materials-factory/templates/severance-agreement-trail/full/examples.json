@@ -1,0 +1,18 @@
+{
+  "artifact": "mf-tpl-068",
+  "version": "1.2.0",
+  "description": "Track severance from offer through consideration period, signature, first payment, and any stop or reduction notice.",
+  "examples": [
+    {
+      "id": "ex-first-then-stop",
+      "context": "First severance check cleared. Second month nothing.",
+      "branch": "payment-stopped",
+      "templates_used": [
+        "cut-notice-log",
+        "lock-trail-row"
+      ],
+      "resolution": "Trail dates locked. Payment log started. Counsel engaged.",
+      "log_row": "first-check-ok,second-missing,trail-complete"
+    }
+  ]
+}

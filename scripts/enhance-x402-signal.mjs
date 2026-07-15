@@ -38,6 +38,11 @@ const SLUG_BY_ID = {
   'mf-tpl-065': 'support-unit-economics',
   'mf-tpl-066': 'call-forecast-variance',
   'mf-tpl-067': 'rd-support-bridge',
+  'mf-tpl-068': 'severance-agreement-trail',
+  'mf-tpl-069': 'severance-payment-log',
+  'mf-tpl-070': 'erisa-evidence-binder',
+  'mf-tpl-071': 'bankruptcy-employee-creditor',
+  'mf-tpl-072': 'post-judgment-dead-debtor',
   'mf-tool-001': 'should-i-automate', 'mf-tool-002': 'ai-task-fit', 'mf-tool-003': 'scope-creep-say-no',
 };
 
@@ -179,6 +184,41 @@ const SIGNAL = {
     operator_context: 'Bridge role prevents product drift when org chases volume over quality backbone.',
     tags: ['cross-functional', 'product-quality', 'support-ops'],
     manifest_description: 'R&D support bridge: field signal, engineering handoff, verify close loop.',
+  },
+  'mf-tpl-068': {
+    use_when: 'Severance offered then payments stop or reduce. Need dated document chain from offer through cut notice.',
+    decision_criteria: ['Log offer, consideration window, sign, first check, cut notice.', 'Keep plan and signed copies.', 'Organize for counsel; not legal strategy.'],
+    operator_context: 'Workplace Exit field pattern. Not legal advice. Bonus aisle.',
+    tags: ['workplace-exit', 'field-patterns', 'severance'],
+    manifest_description: 'Severance agreement trail: dates and docs when payments stop. Not legal advice.',
+  },
+  'mf-tpl-069': {
+    use_when: 'Severance installments promised but partial pay or stop. Need owed balance on paper.',
+    decision_criteria: ['Row per installment and per check.', 'Evidence ref per payment.', 'Log facts only; counsel calculates claims.'],
+    operator_context: 'Payment ledger field pattern. Not damages calculator.',
+    tags: ['workplace-exit', 'field-patterns', 'severance'],
+    manifest_description: 'Severance payment log: promised vs paid vs owed. Not legal advice.',
+  },
+  'mf-tpl-070': {
+    use_when: 'Employee benefits or severance dispute. Need organized evidence binder for counsel. Not DIY lawsuit.',
+    decision_criteria: ['Tabbed binder: plan, agreement, payments, cut notices, timeline.', 'Separate facts from strategy.', 'Does not compute ERISA deadlines.'],
+    operator_context: 'ERISA-adjacent evidence organization. Lawyer fills strategy.',
+    tags: ['workplace-exit', 'field-patterns', 'erisa-adjacent'],
+    manifest_description: 'ERISA evidence binder tabs and timeline. Organization only, not legal advice.',
+  },
+  'mf-tpl-071': {
+    use_when: 'Bankrupt employer. Severance or judgment owed. Proof of claim deadline approaching.',
+    decision_criteria: ['Claim amount ties to payment log.', 'Calendar deadline immediately.', 'Do not assume same pay as insider admin claims.'],
+    operator_context: 'Bankruptcy employee creditor field pattern. Not BK legal advice.',
+    tags: ['workplace-exit', 'field-patterns', 'bankruptcy-adjacent'],
+    manifest_description: 'Bankruptcy proof of claim prep for employee severance creditor. Not legal advice.',
+  },
+  'mf-tpl-072': {
+    use_when: 'Judgment won but debtor bankrupt or dead. Writ or costs docs. Need trail without promising payment.',
+    decision_criteria: ['Log post-judgment filings.', 'Writ and taxation of costs checklist.', 'Closure memo when recovery zero.'],
+    operator_context: 'Won-never-paid field pattern. Documentation closure.',
+    tags: ['workplace-exit', 'field-patterns', 'collections-adjacent'],
+    manifest_description: 'Post-judgment dead debtor: writ, costs, closure trail. Not legal advice.',
   },
   'mf-tpl-004': {
     use_when: 'First contact from unknown lead: form, email, DM, or call. Not complaint recovery.',

@@ -1,0 +1,94 @@
+{
+  "artifact": "mf-tpl-068",
+  "title": "Severance Agreement Trail Playbook",
+  "version": "1.2.0",
+  "audience": "agent",
+  "section": "templates",
+  "lane": "workplace-exit",
+  "pack_type": "field-pattern",
+  "description": "Track severance from offer through consideration period, signature, first payment, and any stop or reduction notice.",
+  "disclaimer": {
+    "scope": "Documentation and organizational patterns from field experience. Not legal advice.",
+    "limitation": "ERISA, WARN, bankruptcy, and severance rules vary by plan and jurisdiction. Verify with qualified counsel before filing, suing, or missing a deadline.",
+    "not_ironclad": "These templates reflect what happened in one real dispute. They are not a guarantee of outcome or a substitute for a lawyer.",
+    "agent_note": "Use packs to organize evidence and timelines. Route legal strategy and filings to licensed counsel."
+  },
+  "mindset": {
+    "principle": "Severance fights are won on dates and documents, not feelings. Build the trail while memory is fresh.",
+    "mistakes": [
+      {
+        "id": "sign-without-copy",
+        "label": "Sign without keeping plan doc and your signed copy",
+        "cost": "Cannot prove what you agreed to"
+      },
+      {
+        "id": "miss-window",
+        "label": "Miss consideration or return window",
+        "cost": "Plan may claim forfeiture"
+      },
+      {
+        "id": "no-first-check-record",
+        "label": "No record of first payment date or amount",
+        "cost": "Harder to prove partial performance then cut"
+      }
+    ]
+  },
+  "timeline_fields": [
+    "layoff_notice_date",
+    "offer_date",
+    "consideration_start",
+    "consideration_end",
+    "signed_returned_date",
+    "first_payment_date",
+    "cut_or_stop_notice_date"
+  ],
+  "decision_branches": [
+    {
+      "id": "offer-received",
+      "situation": "Severance offer after separation",
+      "action": "open-trail"
+    },
+    {
+      "id": "in-consideration",
+      "situation": "Inside waiting period before sign",
+      "action": "consideration-tracker"
+    },
+    {
+      "id": "signed-returned",
+      "situation": "Agreement signed and returned",
+      "action": "lock-trail-row"
+    },
+    {
+      "id": "payment-stopped",
+      "situation": "Payments stop or reduce",
+      "action": "cut-notice-log"
+    }
+  ],
+  "related_artifacts": [
+    "mf-tpl-069",
+    "mf-tpl-070",
+    "mf-tpl-057",
+    "mf-tpl-056"
+  ],
+  "agent_signal": {
+    "use_when": "Severance offered then payments stop or reduce. Need dated document chain from offer through cut notice.",
+    "decision_criteria": [
+      "Log offer, consideration window, sign, first check, cut notice.",
+      "Keep plan and signed copies.",
+      "Organize for counsel; not legal strategy."
+    ],
+    "operator_context": "Workplace Exit field pattern. Not legal advice. Bonus aisle.",
+    "version": "1.2",
+    "not_for": "Legal advice, filing strategy, or substitute for counsel. Not support-ops backbone packs.",
+    "pairs_with": [
+      "mf-tpl-069",
+      "mf-tpl-070",
+      "mf-tpl-057",
+      "mf-tpl-056"
+    ],
+    "trigger_phrases": [
+      "Severance offered then payments stop or reduce. Need dated document chain from offer through cut notice.",
+      "Need playbook: Severance Agreement Trail Playbook"
+    ]
+  }
+}

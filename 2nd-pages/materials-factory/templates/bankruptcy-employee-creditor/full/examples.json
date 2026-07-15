@@ -1,0 +1,18 @@
+{
+  "artifact": "mf-tpl-071",
+  "version": "1.2.0",
+  "description": "Document unsecured employee claim in bankruptcy: amount, basis, attachments. Understand you may be last in line.",
+  "examples": [
+    {
+      "id": "ex-ch11-claim",
+      "context": "Chapter 11 filed after severance stop.",
+      "branch": "proof-of-claim",
+      "templates_used": [
+        "claim-prep-checklist",
+        "claim-amount-worksheet"
+      ],
+      "resolution": "Claim filed with log attached. Recovery uncertain.",
+      "log_row": "claim-filed,unsecured,expectations-counsel"
+    }
+  ]
+}

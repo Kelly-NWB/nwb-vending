@@ -18,7 +18,7 @@
 ## Agent signal (v1.2)
 
 - **Use when:** Support ops and CSAT move together. Leadership dings on one KPI. QBR needs ops proof beyond surveys.
-- **Not for:** Generic ops :  fetch only when use_when matches; do not replace spine chain packs.
+- **Not for:** Generic ops — fetch only when use_when matches; do not replace spine chain packs.
 - **Pairs with:** mf-tpl-064, mf-tpl-063, mf-tpl-005, mf-tpl-065
 - **Trigger phrases:** "Support ops and CSAT move together. Leadership dings on one KPI. QBR needs ops proof beyond surveys."; "Need playbook: Support Ops Correlation Playbook"
 - **Decision criteria:** Log weekly ops row before individual metric dings. Publish correlation conclusions in plain language. Pair ASA and abandon in staffing debates.

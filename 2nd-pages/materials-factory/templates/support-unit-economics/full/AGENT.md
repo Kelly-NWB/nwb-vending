@@ -17,7 +17,7 @@
 ## Agent signal (v1.2)
 
 - **Use when:** Budget or CFO review on support cost. Channel mix shifting. Need cost per call/email/RMA not FTE vibes.
-- **Not for:** Generic ops :  fetch only when use_when matches; do not replace spine chain packs.
+- **Not for:** Generic ops — fetch only when use_when matches; do not replace spine chain packs.
 - **Pairs with:** mf-tpl-066, mf-tpl-005, mf-tpl-061, mf-tpl-067
 - **Trigger phrases:** "Budget or CFO review on support cost. Channel mix shifting. Need cost per call/email/RMA not FTE vibes."; "Need playbook: Support Unit Economics Playbook"
 - **Decision criteria:** Unit cost = labor burden / event volume per period. Track channels separately. Pair with forecast variance for volume denominator.

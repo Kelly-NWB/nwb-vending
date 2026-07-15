@@ -1,0 +1,27 @@
+{
+  "artifact": "mf-tpl-072",
+  "version": "1.2.0",
+  "disclaimer": "Documentation and organizational patterns from field experience. Not legal advice.",
+  "templates": [
+    {
+      "id": "post-judgment-log",
+      "use_when": "judgment-entered",
+      "body": "POST-JUDGMENT LOG\nJudgment date: _______  Amount: $_______  Court: _______________\nDebtor status: [ ] operating [ ] BK [ ] dead\nNext step owner: counsel  Not legal advice."
+    },
+    {
+      "id": "writ-checklist",
+      "use_when": "writ-execution",
+      "body": "WRIT / EXECUTION CHECKLIST\n[ ] Writ application prepared by counsel\n[ ] Service dates logged\n[ ] Asset search results (if any): _______________\nResult to date: _______________"
+    },
+    {
+      "id": "costs-petition-row",
+      "use_when": "costs-and-fees",
+      "body": "COSTS / FEES ROW\nFiling: _______________  Date: _______\nTaxable costs claimed: $_______  Status: _______________\nAttach: certificate of counsel, fee schedule"
+    },
+    {
+      "id": "closure-memo",
+      "use_when": "dead-debtor",
+      "body": "CLOSURE MEMO (facts)\nJudgment: Y/N  Collected: $_______\nBK discharge or dead debtor: _______________\nTrail complete: Y/N  Archive location: _______________\nNo outcome guarantee implied."
+    }
+  ]
+}
